@@ -1,6 +1,8 @@
 LinqStatistics
 ==============
 
+[NuGet package](https://www.nuget.org/packages/LinqStatistics/)
+
 Linq extensions to calculate basic statistics
 
 Extension methods to compute basic statistics modeled after Enumerable.Average. Stats include:
