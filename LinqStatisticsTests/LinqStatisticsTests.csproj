@@ -68,6 +68,7 @@
     <Compile Include="RangeTests.cs" />
     <Compile Include="StandardDeviationTests.cs" />
     <Compile Include="TestData.cs" />
+    <Compile Include="KurtosisTests.cs" />
     <Compile Include="VarianceTests.cs" />
   </ItemGroup>
   <ItemGroup>
