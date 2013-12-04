@@ -26,7 +26,7 @@ namespace LinqStatistics
         //     The sum of the elements in the sequence is larger than System.Decimal.MaxValue.
         public static decimal? StandardDeviation(this IEnumerable<decimal?> source)
         {
-            IEnumerable<decimal> values = source.Coalesce();
+            IEnumerable<decimal> values = source.AllValues();
             if (values.Any())
                 return values.StandardDeviation();
 
@@ -73,7 +73,7 @@ namespace LinqStatistics
         //     source is null.
         public static double? StandardDeviation(this IEnumerable<double?> source)
         {
-            IEnumerable<double> values = source.Coalesce();
+            IEnumerable<double> values = source.AllValues();
             if (values.Any())
                 return values.StandardDeviation();
 
@@ -117,7 +117,7 @@ namespace LinqStatistics
         //     source is null.
         public static float? StandardDeviation(this IEnumerable<float?> source)
         {
-            IEnumerable<float> values = source.Coalesce();
+            IEnumerable<float> values = source.AllValues();
             if (values.Any())
                 return values.StandardDeviation();
 
@@ -214,7 +214,7 @@ namespace LinqStatistics
         //     The sum of the elements in the sequence is larger than System.Int64.MaxValue.
         public static double? StandardDeviation(this IEnumerable<long?> source)
         {
-            IEnumerable<long> values = source.Coalesce();
+            IEnumerable<long> values = source.AllValues();
             if (values.Any())
                 return values.StandardDeviation();
 

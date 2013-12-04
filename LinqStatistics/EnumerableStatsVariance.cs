@@ -26,7 +26,7 @@ namespace LinqStatistics
         //     The sum of the elements in the sequence is larger than System.Decimal.MaxValue.
         public static decimal? Variance(this IEnumerable<decimal?> source)
         {
-            IEnumerable<decimal> values = source.Coalesce();
+            IEnumerable<decimal> values = source.AllValues();
             if (values.Any())
                 return values.Variance();
 
@@ -73,7 +73,7 @@ namespace LinqStatistics
         //     source is null.
         public static double? Variance(this IEnumerable<double?> source)
         {
-            IEnumerable<double> values = source.Coalesce();
+            IEnumerable<double> values = source.AllValues();
             if (values.Any())
                 return values.Variance();
 
@@ -98,9 +98,18 @@ namespace LinqStatistics
         //     source contains no elements.
         public static double Variance(this IEnumerable<double> source)
         {
-            double avg = source.Average();
-            double d = source.Aggregate(0.0, (total, next) => total += Math.Pow(next - avg, 2));
-            return d / (source.Count() - 1);
+            int n = 0;
+            double mean = 0;
+            double M2 = 0;
+
+            foreach (double x in source)
+            {
+                n = n + 1;
+                double delta = x - mean;
+                mean = mean + delta / n;
+                M2 = M2 + delta * (x - mean);
+            }
+            return M2 / (n - 1);
         }
         //
         // Summary:
@@ -119,7 +128,7 @@ namespace LinqStatistics
         //     source is null.
         public static float? Variance(this IEnumerable<float?> source)
         {
-            IEnumerable<float> values = source.Coalesce();
+            IEnumerable<float> values = source.AllValues();
             if (values.Any())
                 return values.Variance();
 
@@ -166,7 +175,7 @@ namespace LinqStatistics
         //     The sum of the elements in the sequence is larger than System.Int64.MaxValue.
         public static double? Variance(this IEnumerable<int?> source)
         {
-            IEnumerable<int> values = source.Coalesce();
+            IEnumerable<int> values = source.AllValues();
             if (values.Any())
                 return values.Variance();
 
@@ -216,7 +225,7 @@ namespace LinqStatistics
         //     The sum of the elements in the sequence is larger than System.Int64.MaxValue.
         public static double? Variance(this IEnumerable<long?> source)
         {
-            IEnumerable<long> values = source.Coalesce();
+            IEnumerable<long> values = source.AllValues();
             if (values.Any())
                 return values.Variance();
 

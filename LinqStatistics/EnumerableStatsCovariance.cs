@@ -26,9 +26,9 @@ namespace LinqStatistics
         //     The sum of the elements in the sequence is larger than System.Decimal.MaxValue.
         public static decimal? Covariance(this IEnumerable<decimal?> source, IEnumerable<decimal?> other)
         {
-            IEnumerable<decimal> values = source.Coalesce();
+            IEnumerable<decimal> values = source.AllValues();
             if (values.Any())
-                return values.Covariance(other.Coalesce());
+                return values.Covariance(other.AllValues());
 
             return null;
         }
@@ -73,9 +73,9 @@ namespace LinqStatistics
         //     source is null.
         public static double? Covariance(this IEnumerable<double?> source, IEnumerable<double?> other)
         {
-            IEnumerable<double> values = source.Coalesce();
+            IEnumerable<double> values = source.AllValues();
             if (values.Any())
-                return values.Covariance(other.Coalesce());
+                return values.Covariance(other.AllValues());
 
             return null;
         }
@@ -129,9 +129,9 @@ namespace LinqStatistics
         //     source is null.
         public static float? Covariance(this IEnumerable<float?> source, IEnumerable<float?> other)
         {
-            IEnumerable<float> values = source.Coalesce();
+            IEnumerable<float> values = source.AllValues();
             if (values.Any())
-                return values.Covariance(other.Coalesce());
+                return values.Covariance(other.AllValues());
 
             return null;
         }
@@ -176,9 +176,9 @@ namespace LinqStatistics
         //     The sum of the elements in the sequence is larger than System.Int64.MaxValue.
         public static double? Covariance(this IEnumerable<int?> source, IEnumerable<int?> other)
         {
-            IEnumerable<int> values = source.Coalesce();
+            IEnumerable<int> values = source.AllValues();
             if (values.Any())
-                return values.Covariance(other.Coalesce());
+                return values.Covariance(other.AllValues());
 
             return null;
         }
@@ -226,9 +226,9 @@ namespace LinqStatistics
         //     The sum of the elements in the sequence is larger than System.Int64.MaxValue.
         public static double? Covariance(this IEnumerable<long?> source, IEnumerable<long?> other)
         {
-            IEnumerable<long> values = source.Coalesce();
+            IEnumerable<long> values = source.AllValues();
             if (values.Any())
-                return values.Covariance(other.Coalesce());
+                return values.Covariance(other.AllValues());
 
             return null;
         }

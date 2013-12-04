@@ -26,7 +26,7 @@ namespace LinqStatistics
         //     The sum of the elements in the sequence is larger than System.Decimal.MaxValue.
         public static decimal? StandardDeviationP(this IEnumerable<decimal?> source)
         {
-            IEnumerable<decimal> values = source.Coalesce();
+            IEnumerable<decimal> values = source.AllValues();
             if (values.Any())
                 return values.StandardDeviationP();
             
@@ -73,7 +73,7 @@ namespace LinqStatistics
         //     source is null.
         public static double? StandardDeviationP(this IEnumerable<double?> source)
         {
-            IEnumerable<double> values = source.Coalesce();
+            IEnumerable<double> values = source.AllValues();
             if (values.Any())
                 return values.StandardDeviationP();
 
@@ -117,7 +117,7 @@ namespace LinqStatistics
         //     source is null.
         public static float? StandardDeviationP(this IEnumerable<float?> source)
         {
-            IEnumerable<float> values = source.Coalesce();
+            IEnumerable<float> values = source.AllValues();
             if (values.Any())
                 return values.StandardDeviationP();
 
@@ -164,7 +164,7 @@ namespace LinqStatistics
         //     The sum of the elements in the sequence is larger than System.Int64.MaxValue.
         public static double? StandardDeviationP(this IEnumerable<int?> source)
         {
-            IEnumerable<int> values = source.Coalesce();
+            IEnumerable<int> values = source.AllValues();
             if (values.Any())
                 return values.StandardDeviationP();
 
@@ -214,7 +214,7 @@ namespace LinqStatistics
         //     The sum of the elements in the sequence is larger than System.Int64.MaxValue.
         public static double? StandardDeviationP(this IEnumerable<long?> source)
         {
-            IEnumerable<long> values = source.Coalesce();
+            IEnumerable<long> values = source.AllValues();
             if (values.Any())
                 return values.StandardDeviationP();
 

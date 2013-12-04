@@ -26,7 +26,7 @@ namespace LinqStatistics
         //     The sum of the elements in the sequence is larger than System.Decimal.MaxValue.
         public static decimal? Median(this IEnumerable<decimal?> source)
         {
-            IEnumerable<decimal> values = source.Coalesce();
+            IEnumerable<decimal> values = source.AllValues();
 
             if (values.Any())
                 return values.Median();
@@ -86,7 +86,7 @@ namespace LinqStatistics
         //     source is null.
         public static double? Median(this IEnumerable<double?> source)
         {
-            IEnumerable<double> values = source.Coalesce();
+            IEnumerable<double> values = source.AllValues();
             if (values.Any())
                 return values.Median();
 
@@ -142,7 +142,7 @@ namespace LinqStatistics
         //     source is null.
         public static float? Median(this IEnumerable<float?> source)
         {
-            IEnumerable<float> values = source.Coalesce();
+            IEnumerable<float> values = source.AllValues();
             if (values.Any())
                 return values.Median();
 
@@ -201,7 +201,7 @@ namespace LinqStatistics
         //     The sum of the elements in the sequence is larger than System.Int64.MaxValue.
         public static double? Median(this IEnumerable<int?> source)
         {
-            IEnumerable<int> values = source.Coalesce();
+            IEnumerable<int> values = source.AllValues();
             if (values.Any())
                 return values.Median();
 
@@ -263,7 +263,7 @@ namespace LinqStatistics
         //     The sum of the elements in the sequence is larger than System.Int64.MaxValue.
         public static double? Median(this IEnumerable<long?> source)
         {
-            IEnumerable<long> values = source.Coalesce();
+            IEnumerable<long> values = source.AllValues();
             if (values.Any())
                 return values.Median();
 

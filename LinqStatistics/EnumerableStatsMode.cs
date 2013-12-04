@@ -8,7 +8,7 @@ namespace LinqStatistics
     {
         public static IEnumerable<T> Modes<T>(this IEnumerable<T?> source) where T : struct
         {
-            IEnumerable<T> values = source.Coalesce();
+            IEnumerable<T> values = source.AllValues();
             if (values.Any())
                 return values.Modes<T>();
 
@@ -32,7 +32,7 @@ namespace LinqStatistics
 
         public static T? Mode<T>(this IEnumerable<T?> source) where T : struct
         {
-            IEnumerable<T> values = source.Coalesce();
+            IEnumerable<T> values = source.AllValues();
             if (values.Any())
                 return values.Mode<T>();
 

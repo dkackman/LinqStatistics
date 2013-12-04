@@ -26,7 +26,7 @@ namespace LinqStatistics
         //     The sum of the elements in the sequence is larger than System.Decimal.MaxValue.
         public static decimal? Range(this IEnumerable<decimal?> source)
         {
-            IEnumerable<decimal> values = source.Coalesce();
+            IEnumerable<decimal> values = source.AllValues();
             if (values.Any())
                 return values.Range();
 
@@ -73,7 +73,7 @@ namespace LinqStatistics
         //     source is null.
         public static double? Range(this IEnumerable<double?> source)
         {
-            IEnumerable<double> values = source.Coalesce();
+            IEnumerable<double> values = source.AllValues();
             if (values.Any())
                 return values.Range();
 
@@ -117,7 +117,7 @@ namespace LinqStatistics
         //     source is null.
         public static float? Range(this IEnumerable<float?> source)
         {
-            IEnumerable<float> values = source.Coalesce();
+            IEnumerable<float> values = source.AllValues();
             if (values.Any())
                 return values.Range();
 
@@ -164,7 +164,7 @@ namespace LinqStatistics
         //     The sum of the elements in the sequence is larger than System.Int64.MaxValue.
         public static int? Range(this IEnumerable<int?> source)
         {
-            IEnumerable<int> values = source.Coalesce();
+            IEnumerable<int> values = source.AllValues();
             if (values.Any())
                 return values.Range();
 
@@ -214,7 +214,7 @@ namespace LinqStatistics
         //     The sum of the elements in the sequence is larger than System.Int64.MaxValue.
         public static long? Range(this IEnumerable<long?> source)
         {
-            IEnumerable<long> values = source.Coalesce();
+            IEnumerable<long> values = source.AllValues();
             if (values.Any())
                 return values.Range();
 
