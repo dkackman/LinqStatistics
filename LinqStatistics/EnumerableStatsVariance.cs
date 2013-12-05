@@ -102,11 +102,14 @@ namespace LinqStatistics
             double mean = 0;
             double M2 = 0;
 
+            if (source.Count() < 2)
+                throw new ArgumentException("Source must have at least 2 elements", "source");
+
             foreach (double x in source)
             {
                 n = n + 1;
                 double delta = x - mean;
-                mean = mean + delta / n;
+                mean += delta / n;
                 M2 += delta * (x - mean);
             }
             return M2 / (n - 1);
