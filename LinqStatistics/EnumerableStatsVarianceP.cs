@@ -98,12 +98,12 @@ namespace LinqStatistics
         //     source contains no elements.
         public static double VarianceP(this IEnumerable<double> source)
         {
+            if (source.Count() < 2)
+                throw new InvalidOperationException("Source must have at least 2 elements");
+
             int n = 0;
             double mean = 0;
             double M2 = 0;
-
-            if (source.Count() < 2)
-                throw new ArgumentException("Source must have at least 2 elements", "source");
 
             foreach (double x in source)
             {
