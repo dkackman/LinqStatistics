@@ -95,11 +95,11 @@ namespace LinqStatistics
         //     source is null.
         //
         //   System.InvalidOperationException:
-        //     source contains less than 2 elements.
+        //     source contains less than 1 element.
         public static double RootMeanSquare(this IEnumerable<double> source)
         {
-            if (source.Count() < 2)
-                throw new InvalidOperationException("Source must have at least 2 elements");
+            if (source.Count() < 1)
+                throw new InvalidOperationException("Source must have at least 1 element");
 
             double s = 0;
 

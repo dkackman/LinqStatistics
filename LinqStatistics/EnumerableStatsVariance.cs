@@ -98,7 +98,6 @@ namespace LinqStatistics
         //     source contains less than 2 elements.
         public static double Variance(this IEnumerable<double> source)
         {
-
             if (source.Count() < 2)
                 throw new InvalidOperationException("Source must have at least 2 elements");
 
