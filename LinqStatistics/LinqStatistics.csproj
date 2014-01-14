@@ -48,16 +48,19 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="EnumerableStatsKurtosis.cs" />
+    <Compile Include="EnumerableStatsLeastSquares.cs" />
     <Compile Include="EnumerableStatsPearson.cs" />
     <Compile Include="EnumerableStatsCovariance.cs" />
     <Compile Include="EnumerableStats.cs" />
     <Compile Include="EnumerableStatsRange.cs" />
     <Compile Include="EnumerableStatsMode.cs" />
     <Compile Include="EnumerableStatsMedian.cs" />
+    <Compile Include="EnumerableStatsRootMeanSqaure.cs" />
     <Compile Include="EnumerableStatsStandardDeviation.cs" />
     <Compile Include="EnumerableStatsStandardDeviationP.cs" />
     <Compile Include="EnumerableStatsVariance.cs" />
     <Compile Include="EnumerableStatsVarianceP.cs" />
+    <Compile Include="LeastSquares.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
