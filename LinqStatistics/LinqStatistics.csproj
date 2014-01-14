@@ -55,7 +55,7 @@
     <Compile Include="EnumerableStatsRange.cs" />
     <Compile Include="EnumerableStatsMode.cs" />
     <Compile Include="EnumerableStatsMedian.cs" />
-    <Compile Include="EnumerableStatsRootMeanSqaure.cs" />
+    <Compile Include="EnumerableStatsRootMeanSquare.cs" />
     <Compile Include="EnumerableStatsStandardDeviation.cs" />
     <Compile Include="EnumerableStatsStandardDeviationP.cs" />
     <Compile Include="EnumerableStatsVariance.cs" />
