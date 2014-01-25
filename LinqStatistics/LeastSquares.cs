@@ -16,7 +16,11 @@ namespace LinqStatistics
         /// </summary>
         public double B { get { return _b; } }
 
-        /// <param name="points">Known points which are used to calculated coefficients</param>
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="m">The slope</param>
+        /// <param name="b">the intercept</param>
         public LeastSquares(double m, double b)
         {
             _m = m;

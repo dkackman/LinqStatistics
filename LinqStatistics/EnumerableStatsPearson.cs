@@ -32,6 +32,7 @@ namespace LinqStatistics
 
             return null;
         }
+
         //
         // Summary:
         //     Computes the Pearson of a sequence of System.Decimal values.
