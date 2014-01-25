@@ -21,5 +21,21 @@ namespace LinqStatisticsTests
 
             var ls = data.LeastSquares();
         }
+
+        [TestMethod]
+        public void SimpleLinearTrend()
+        {
+            var data = new List<Tuple<int, int>>()
+            {
+                new Tuple<int, int>(0, 0),
+                new Tuple<int, int>(1, 1),
+                new Tuple<int, int>(2, 2),
+                new Tuple<int, int>(3, 3)
+            };
+
+            var ls = data.LeastSquares();
+            Assert.AreEqual(ls.M, 1.0);
+            Assert.AreEqual(ls.B, 0.0);
+        }
     }
 }
