@@ -56,6 +56,14 @@ namespace LinqStatistics
         {
             return (decimal)source.Select(x => (double)x).Pearson(other.Select(x => (double)x));
         }
+
+        public static decimal Pearson(this IEnumerable<Tuple<decimal, decimal>> source)
+        {
+            var x = source.Select(t => t.Item1);
+            var y = source.Select(t => t.Item2);
+
+            return x.Covariance(y) / (x.StandardDeviationP() * y.StandardDeviationP());
+        }
         //
         // Summary:
         //     Computes the Pearson of a sequence of nullable System.Double values.
@@ -103,6 +111,14 @@ namespace LinqStatistics
 
             return source.Covariance(other) / (source.StandardDeviationP() * other.StandardDeviationP());
         }
+
+        public static double Pearson(this IEnumerable<Tuple<double, double>> source)
+        {
+            var x = source.Select(t => t.Item1);
+            var y = source.Select(t => t.Item2);
+
+            return x.Covariance(y) / (x.StandardDeviationP() * y.StandardDeviationP());
+        }
         //
         // Summary:
         //     Computes the Pearson of a sequence of nullable System.Single values.
@@ -146,6 +162,13 @@ namespace LinqStatistics
         public static float Pearson(this IEnumerable<float> source, IEnumerable<float> other)
         {
             return (float)source.Select(x => (double)x).Pearson(other.Select(x => (double)x));
+        }
+        public static float Pearson(this IEnumerable<Tuple<float, float>> source)
+        {
+            var x = source.Select(t => t.Item1);
+            var y = source.Select(t => t.Item2);
+
+            return x.Covariance(y) / (x.StandardDeviationP() * y.StandardDeviationP());
         }
         //
         // Summary:
@@ -197,6 +220,14 @@ namespace LinqStatistics
         {
             return source.Select(x => (double)x).Pearson(other.Select(x => (double)x));
         }
+
+        public static double Pearson(this IEnumerable<Tuple<int, int>> source)
+        {
+            var x = source.Select(t => t.Item1);
+            var y = source.Select(t => t.Item2);
+
+            return x.Covariance(y) / (x.StandardDeviationP() * y.StandardDeviationP());
+        }
         //
         // Summary:
         //     Computes the Pearson of a sequence of nullable System.Int64 values.
@@ -246,6 +277,14 @@ namespace LinqStatistics
         public static double Pearson(this IEnumerable<long> source, IEnumerable<long> other)
         {
             return source.Select(x => (double)x).Pearson(other.Select(x => (double)x));
+        }
+
+        public static double Pearson(this IEnumerable<Tuple<long, long>> source)
+        {
+            var x = source.Select(t => t.Item1);
+            var y = source.Select(t => t.Item2);
+
+            return x.Covariance(y) / (x.StandardDeviationP() * y.StandardDeviationP());
         }
         //
         // Summary:

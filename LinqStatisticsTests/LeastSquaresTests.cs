@@ -36,6 +36,9 @@ namespace LinqStatisticsTests
             var ls = data.LeastSquares();
             Assert.AreEqual(ls.M, 1.0);
             Assert.AreEqual(ls.B, 0.0);
+
+            var pearson = data.Pearson();
+            Assert.IsTrue(pearson.AboutEqual(1));
         }
     }
 }
