@@ -47,6 +47,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Bin.cs" />
+    <Compile Include="EnumerableStatsHistogram.cs" />
     <Compile Include="EnumerableStatsKurtosis.cs" />
     <Compile Include="EnumerableStatsLeastSquares.cs" />
     <Compile Include="EnumerableStatsPearson.cs" />
