@@ -25,20 +25,16 @@ namespace LinqStatistics
         //     source contains no elements.
         public static IEnumerable<Bin<T>> Histogram<T>(this IEnumerable<T> source)
         {
+            if (source == null)
+                throw new ArgumentNullException("source");
+
+            if (!source.Any())
+                throw new InvalidOperationException("source sequence contains no elements");
+
             return from t in source
                    group t by t into g
                    orderby g.Key
                    select new Bin<T>(g.Key, g.Count());
-                   
-
-            //return source.GroupBy(i => i)
-            //    .Select(g => new
-            //    {
-            //        Item = g.Key,
-            //        Count = g.Count()
-            //    })
-            //    .OrderBy(g => g.Item)
-            //    .Select(g => new Bin<T>(g.Item, g.Count));
         }
 
         //
@@ -67,6 +63,12 @@ namespace LinqStatistics
         //     source or selector is null.
         public static IEnumerable<Bin<T>> Histogram<TSource, T>(this IEnumerable<TSource> source, Func<TSource, T> selector)
         {
+            if (source == null)
+                throw new ArgumentNullException("source");
+
+            if (selector == null)
+                throw new ArgumentNullException("selector");
+
             return source.Select(selector).Histogram();
         }
     }
