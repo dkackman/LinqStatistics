@@ -24,7 +24,7 @@ namespace LinqStatistics
             while (mode.HasValue && current.Count() > 1)
             {
                 modes.Add((T)mode);
-                current = current.Where(x => x.Equals(mode) == false).ToArray();
+                current = current.Where(x => x.Equals(mode) == false).ToArray(); // <-- this looks extraneous but we need to bypass deferred execution 
                 mode = current.Mode<T>();
             }
             return modes;
