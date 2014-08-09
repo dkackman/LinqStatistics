@@ -46,5 +46,21 @@ namespace LinqStatisticsTests
             Assert.AreEqual(histogram[7].Value, 7);
             Assert.AreEqual(histogram[7].Count, 1);
         }
+
+        [TestMethod]
+        public void HistogramOrdersCorrectly()
+        {
+            var list = new List<int>()
+            {
+                9, 1, 1, 2, 8, 2, 2, 3, 3, 0, 3, 3, 4, 8, 4, 5, 4, 5, 5, 1, 5, 6, 0, 6, 7
+            };
+
+            var histogram = list.Histogram().ToList();
+
+            for (int i = 0; i < histogram.Count; i++)
+            {
+                Assert.AreEqual(i, histogram[i].Value);
+            }
+        }
     }
 }

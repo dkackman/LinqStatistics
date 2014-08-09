@@ -27,6 +27,7 @@ namespace ConsoleApplication1
                 // this int will represent that color in a numeric format
                 for (int i = 0; i < buffer.Length; i += 3)
                 {
+                    // each row stores Blue, Green, Red
                     Color c = Color.FromArgb(buffer[i + 2], buffer[i + 1], buffer[i]);
                     colors.Add(c.ToArgb());
                 }
