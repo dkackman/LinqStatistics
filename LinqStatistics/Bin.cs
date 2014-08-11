@@ -1,24 +1,30 @@
-﻿
+﻿using System.Linq;
+using System.Collections;
+
 namespace LinqStatistics
 {
     /// <summary>
     /// Represents a Histogram bin
     /// </summary>
     /// <typeparam name="T">The type of the Bin value</typeparam>
-    public struct Bin<T>
+    public class Bin<T>
     {
         private readonly T _value;
-        private readonly int _count;
+        private int _count;
 
         /// <summary>
         /// The value represented by the bin
         /// </summary>
-        public T Value { get { return _value; } }
+        public T RepresentativeValue { get { return _value; } }
 
         /// <summary>
         /// The number of times Value appears in the source data
         /// </summary>
-        public int Count { get { return _count; } }
+        public int Count
+        { 
+            get { return _count; } 
+            internal set { _count = value; } 
+        }
 
         /// <summary>
         /// ctor
@@ -65,7 +71,7 @@ namespace LinqStatistics
         /// <returns></returns>
         public override string ToString()
         {
-            return string.Format("{0}:{1}", _value, _count);
+            return string.Format("v{0}:c{1}", _value, _count);
         }
     }
 }

@@ -48,6 +48,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Bin.cs" />
+    <Compile Include="EnumerableStatsBinCount.cs" />
     <Compile Include="EnumerableStatsHistogram.cs" />
     <Compile Include="EnumerableStatsKurtosis.cs" />
     <Compile Include="EnumerableStatsLeastSquares.cs" />

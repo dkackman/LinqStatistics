@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -6,6 +7,97 @@ namespace LinqStatistics
 {
     public static partial class EnumerableStats
     {
+        //
+        // Summary:
+        //     Computes the Histogram of a sequence of nullable int values.
+        //
+        // Parameters:
+        //   source:
+        //     A sequence of nullable int values to calculate the Histogram of.
+        //
+        //   binCount:
+        //     The number of bins into which to segregate the data.
+        //
+        // Returns:
+        //     The Histogram of the sequence of values.
+        //
+        // Exceptions:
+        //   System.ArgumentNullException:
+        //     source is null.
+        //
+        //   System.InvalidOperationException:
+        //     source contains no elements.
+        //     binCount is less then or equal to 0
+        public static IEnumerable<Bin<double?>> Histogram(this IEnumerable<int?> source, int binCount)
+        {
+            var histogram = source.AllValues().Histogram(binCount);
+            var nulls = new List<Bin<double?>>(1)
+            {
+                new Bin<double?>(null, source.Count(i => i == null))
+            };
+
+            return nulls.Concat(histogram.Select(b => new Bin<Double?>(b.RepresentativeValue , b.Count)));
+        }
+
+        //
+        // Summary:
+        //     Computes the Histogram of a sequence of int values.
+        //
+        // Parameters:
+        //   source:
+        //     A sequence of int values to calculate the Histogram of.
+        //
+        //   binCount:
+        //     The number of bins into which to segregate the data.
+        //
+        // Returns:
+        //     The Histogram of the sequence of values.
+        //
+        // Exceptions:
+        //   System.ArgumentNullException:
+        //     source is null.
+        //
+        //   System.InvalidOperationException:
+        //     source contains no elements.
+        //     binCount is less then or equal to 0
+        public static IEnumerable<Bin<double>> Histogram(this IEnumerable<int> source, int binCount)
+        {
+            if (source == null)
+                throw new ArgumentNullException("source");
+
+            if (!source.Any())
+                throw new InvalidOperationException("source sequence contains no elements");
+
+            if (binCount <= 0)
+                throw new InvalidOperationException("binCount must be greater than 0");
+
+            var min = source.Min();
+
+            var bucketSize = source.Range() / (double)binCount;
+            double start = min;
+
+            List<Bin<double>> bins = new List<Bin<double>>(binCount);
+            for (int i = 0; i < binCount; i++)
+            {
+                bins.Add(new Bin<double>(start + (bucketSize * i), 0));
+            }
+
+            foreach (var value in source)
+            {
+                int bucketIndex = 0;
+                if (bucketSize > 0.0)
+                {
+                    bucketIndex = (int)Math.Round((value - min) / bucketSize, 0);
+                    if (bucketIndex == binCount)
+                    {
+                        bucketIndex--;
+                    }
+                }
+                bins[bucketIndex].Count++;
+            }
+            return bins;
+        }
+
         //
         // Summary:
         //     Computes the Histogram of a sequence of values.
