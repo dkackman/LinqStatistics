@@ -49,7 +49,6 @@
   <ItemGroup>
     <Compile Include="Bin.cs" />
     <Compile Include="EnumerableStatsBinCount.cs" />
-    <Compile Include="EnumerableStatsHistogram.cs" />
     <Compile Include="EnumerableStatsKurtosis.cs" />
     <Compile Include="EnumerableStatsLeastSquares.cs" />
     <Compile Include="EnumerableStatsPearson.cs" />
@@ -63,8 +62,22 @@
     <Compile Include="EnumerableStatsStandardDeviationP.cs" />
     <Compile Include="EnumerableStatsVariance.cs" />
     <Compile Include="EnumerableStatsVarianceP.cs" />
+    <Compile Include="EnumerableStatsHistogram.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EnumerableStatsHistogram.tt</DependentUpon>
+    </Compile>
     <Compile Include="LeastSquares.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="EnumerableStatsHistogram.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>EnumerableStatsHistogram.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
