@@ -7,6 +7,72 @@ namespace LinqStatistics
 {
     public static partial class EnumerableStats
     {
+        // Summary:
+        //     Computes the Histogram of a sequence of nullable int values that
+        //     are obtained by invoking a transform function on each element of the input
+        //     sequence.
+        //
+        // Parameters:
+        //   source:
+        //     A sequence of values to calculate the Range of.
+        //
+        //   selector:
+        //     A transform function to apply to each element.
+        //
+        // Type parameters:
+        //   TSource:
+        //     The type of the elements of source.
+        //
+        // Returns:
+        //     The Histogram of the sequence of values
+        //
+        // Exceptions:
+        //   System.ArgumentNullException:
+        //     source or selector is null.
+        public static IEnumerable<Bin<double>> Histogram<TSource>(this IEnumerable<TSource> source, Func<TSource, int> selector, int binCount)
+        {
+            if (source == null)
+                throw new ArgumentNullException("source");
+
+            if (selector == null)
+                throw new ArgumentNullException("selector");
+
+            return source.Select(selector).Histogram(binCount);
+        }
+        //
+        // Summary:
+        //     Computes the Histogram of a sequence of nullable int values that
+        //     are obtained by invoking a transform function on each element of the input
+        //     sequence.
+        //
+        // Parameters:
+        //   source:
+        //     A sequence of values to calculate the Range of.
+        //
+        //   selector:
+        //     A transform function to apply to each element.
+        //
+        // Type parameters:
+        //   TSource:
+        //     The type of the elements of source.
+        //
+        // Returns:
+        //     The Histogram of the sequence of values
+        //
+        // Exceptions:
+        //   System.ArgumentNullException:
+        //     source or selector is null.
+        public static IEnumerable<Bin<double?>> Histogram<TSource>(this IEnumerable<TSource> source, Func<TSource, int?> selector, int binCount)
+        {
+            if (source == null)
+                throw new ArgumentNullException("source");
+
+            if (selector == null)
+                throw new ArgumentNullException("selector");
+
+            return source.Select(selector).Histogram(binCount);
+        }
+
         //
         // Summary:
         //     Computes the Histogram of a sequence of nullable int values.
@@ -73,15 +139,17 @@ namespace LinqStatistics
 
             var min = source.Min();
 
-            var bucketSize = source.Range() / (double)binCount;
+            var bucketSize = (source.Max() - min) / (double)binCount;
             double start = min;
 
+            // first create a list of all the bins so even empty bins are accounted for
             List<Bin<double>> bins = new List<Bin<double>>(binCount);
             for (int i = 0; i < binCount; i++)
             {
                 bins.Add(new Bin<double>(start + (bucketSize * i), 0));
             }
 
+            // then count the members of each bin
             foreach (var value in source)
             {
                 int bucketIndex = 0;
@@ -95,6 +163,7 @@ namespace LinqStatistics
                 }
                 bins[bucketIndex].Count++;
             }
+
             return bins;
         }
 

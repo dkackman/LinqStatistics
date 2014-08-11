@@ -54,6 +54,12 @@ namespace LinqStatistics
         //     The sum of the elements in the sequence is larger than System.Decimal.MaxValue.
         public static decimal Range(this IEnumerable<decimal> source)
         {
+            if (source == null)
+                throw new ArgumentNullException("source");
+
+            if (!source.Any())
+                throw new InvalidOperationException("source sequence contains no elements");
+
             return source.Max() - source.Min();
         }
         //
@@ -98,6 +104,12 @@ namespace LinqStatistics
         //     source contains no elements.
         public static double Range(this IEnumerable<double> source)
         {
+            if (source == null)
+                throw new ArgumentNullException("source");
+
+            if (!source.Any())
+                throw new InvalidOperationException("source sequence contains no elements");
+
             return source.Max() - source.Min();
         }
         //
@@ -142,6 +154,12 @@ namespace LinqStatistics
         //     source contains no elements.
         public static float Range(this IEnumerable<float> source)
         {
+            if (source == null)
+                throw new ArgumentNullException("source");
+
+            if (!source.Any())
+                throw new InvalidOperationException("source sequence contains no elements");
+
             return source.Max() - source.Min();
         }
         //
@@ -192,6 +210,12 @@ namespace LinqStatistics
         //     The sum of the elements in the sequence is larger than System.Int64.MaxValue.
         public static int Range(this IEnumerable<int> source)
         {
+            if (source == null)
+                throw new ArgumentNullException("source");
+
+            if (!source.Any())
+                throw new InvalidOperationException("source sequence contains no elements");
+
             return source.Max() - source.Min();
         }
         //
@@ -237,11 +261,14 @@ namespace LinqStatistics
         //
         //   System.InvalidOperationException:
         //     source contains no elements.
-        //
-        //   System.OverflowException:
-        //     The sum of the elements in the sequence is larger than System.Int64.MaxValue.
         public static long Range(this IEnumerable<long> source)
         {
+            if (source == null)
+                throw new ArgumentNullException("source");
+
+            if (!source.Any())
+                throw new InvalidOperationException("source sequence contains no elements");
+
             return source.Max() - source.Min();
         }
         //
@@ -268,11 +295,14 @@ namespace LinqStatistics
         // Exceptions:
         //   System.ArgumentNullException:
         //     source or selector is null.
-        //
-        //   System.OverflowException:
-        //     The sum of the elements in the sequence is larger than System.Decimal.MaxValue.
         public static decimal? Range<TSource>(this IEnumerable<TSource> source, Func<TSource, decimal?> selector)
         {
+            if (source == null)
+                throw new ArgumentNullException("source");
+
+            if (selector == null)
+                throw new ArgumentNullException("selector");
+
             return source.Select(selector).Range();
         }
         //
@@ -305,6 +335,12 @@ namespace LinqStatistics
         //     The sum of the elements in the sequence is larger than System.Decimal.MaxValue.
         public static decimal Range<TSource>(this IEnumerable<TSource> source, Func<TSource, decimal> selector)
         {
+            if (source == null)
+                throw new ArgumentNullException("source");
+
+            if (selector == null)
+                throw new ArgumentNullException("selector");
+
             return source.Select(selector).Range();
         }
         //
@@ -333,6 +369,12 @@ namespace LinqStatistics
         //     source or selector is null.
         public static double? Range<TSource>(this IEnumerable<TSource> source, Func<TSource, double?> selector)
         {
+            if (source == null)
+                throw new ArgumentNullException("source");
+
+            if (selector == null)
+                throw new ArgumentNullException("selector");
+
             return source.Select(selector).Range();
         }
         //
@@ -362,6 +404,12 @@ namespace LinqStatistics
         //     source contains no elements.
         public static double Range<TSource>(this IEnumerable<TSource> source, Func<TSource, double> selector)
         {
+            if (source == null)
+                throw new ArgumentNullException("source");
+
+            if (selector == null)
+                throw new ArgumentNullException("selector");
+
             return source.Select(selector).Range();
         }
         //
@@ -390,6 +438,12 @@ namespace LinqStatistics
         //     source or selector is null.
         public static float? Range<TSource>(this IEnumerable<TSource> source, Func<TSource, float?> selector)
         {
+            if (source == null)
+                throw new ArgumentNullException("source");
+
+            if (selector == null)
+                throw new ArgumentNullException("selector"); 
+            
             return source.Select(selector).Range();
         }
         //
@@ -419,6 +473,12 @@ namespace LinqStatistics
         //     source contains no elements.
         public static float Range<TSource>(this IEnumerable<TSource> source, Func<TSource, float> selector)
         {
+            if (source == null)
+                throw new ArgumentNullException("source");
+
+            if (selector == null)
+                throw new ArgumentNullException("selector");
+
             return source.Select(selector).Range();
         }
         //
@@ -449,6 +509,12 @@ namespace LinqStatistics
         //     The sum of the elements in the sequence is larger than System.Int64.MaxValue.
         public static double? Range<TSource>(this IEnumerable<TSource> source, Func<TSource, int?> selector)
         {
+            if (source == null)
+                throw new ArgumentNullException("source");
+
+            if (selector == null)
+                throw new ArgumentNullException("selector");
+
             return source.Select(selector).Range();
         }
         //
@@ -481,6 +547,12 @@ namespace LinqStatistics
         //     The sum of the elements in the sequence is larger than System.Int64.MaxValue.
         public static double Range<TSource>(this IEnumerable<TSource> source, Func<TSource, int> selector)
         {
+            if (source == null)
+                throw new ArgumentNullException("source");
+
+            if (selector == null)
+                throw new ArgumentNullException("selector");
+
             return source.Select(selector).Range();
         }
         //
@@ -504,6 +576,12 @@ namespace LinqStatistics
         //     empty or contains only values that are null.
         public static double? Range<TSource>(this IEnumerable<TSource> source, Func<TSource, long?> selector)
         {
+            if (source == null)
+                throw new ArgumentNullException("source");
+
+            if (selector == null)
+                throw new ArgumentNullException("selector");
+
             return source.Select(selector).Range();
         }
         //
@@ -536,6 +614,12 @@ namespace LinqStatistics
         //     The sum of the elements in the sequence is larger than System.Int64.MaxValue.
         public static double Range<TSource>(this IEnumerable<TSource> source, Func<TSource, long> selector)
         {
+            if (source == null)
+                throw new ArgumentNullException("source");
+
+            if (selector == null)
+                throw new ArgumentNullException("selector");
+
             return source.Select(selector).Range();
         }
     }
