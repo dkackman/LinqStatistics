@@ -18,7 +18,7 @@ namespace LinqStatisticsTests
                 0, 1, 1, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 5, 5, 5, 6, 6, 7
             };
 
-            var histogram = list.Histogram().ToList();
+            var histogram = list.CountEach().ToList();
 
             Assert.AreEqual(list.Count, histogram.Select(b => b.Count).Sum());
 
@@ -57,7 +57,7 @@ namespace LinqStatisticsTests
                 9, 1, 1, 2, 8, 2, 2, 3, 3, 0, 3, 3, 4, 8, 4, 5, 4, 5, 5, 1, 5, 6, 0, 6, 7
             };
 
-            var histogram = list.Histogram().ToList();
+            var histogram = list.CountEach().ToList();
             Assert.AreEqual(list.Count, histogram.Select(b => b.Count).Sum());
 
             for (int i = 0; i < histogram.Count; i++)

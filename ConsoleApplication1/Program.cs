@@ -43,7 +43,7 @@ namespace ConsoleApplication1
                     Console.WriteLine("No modal color");
                 }
 
-                var histogram = colors.Histogram();
+                var histogram = colors.CountEach();
 
                 Console.WriteLine("");
 
