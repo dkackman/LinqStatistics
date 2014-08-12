@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>LinqStatistics</id>
+    <version>1.0.4</version>
+    <title>LinqStatistics</title>
+    <authors>dkackman</authors>
+    <owners></owners>
+    <description>
+      Extension methods that add additional simple statiistical calculations to the built in sum, min, max, average etc.
+      Includes Covariance, Median, Mode, Pearson's Chi Squared, Range, Standard Deviation (sample and population), Variance (sample and population), Histograms, Root Mean Square, Least Squares and Kurtosis
+    </description>
+    <releaseNotes>
+      Optimized Least Squares
+    </releaseNotes>
+    <summary>
+    </summary>
+    <language>en-US</language>
+    <projectUrl>https://github.com/dkackman/LinqStatistics</projectUrl>
+    <iconUrl>https://nuget.org/Content/Images/packageDefaultIcon-50x50.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <licenseUrl>http://opensource.org/licenses/Apache-2.0</licenseUrl>
+    <copyright>Copyright Don Kackman 2013</copyright>
+    <dependencies>
+        <group targetFramework="net40">
+        </group>
+    </dependencies>
+    <references></references>
+    <tags>Linq Statistics</tags>
+  </metadata>
+  <files>
+    <file src="lib\" target="lib" />
+    <file src="tools\" target="tools" />
+    <file src="content\" target="content" />
+  </files>
+</package>

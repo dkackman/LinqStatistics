@@ -38,7 +38,7 @@ namespace LinqStatistics
         }
 
         /// <summary>
-        /// <see cref="System.Object.Equals"/>
+        /// <see cref="System.Object.Equals(object)"/>
         /// </summary>
         /// <param name="obj"></param>
         /// <returns>True if obj is a Bin{T} and Value and Count are equal</returns>
