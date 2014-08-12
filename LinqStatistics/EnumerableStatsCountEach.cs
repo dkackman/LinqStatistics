@@ -24,7 +24,7 @@ namespace LinqStatistics
         //
         //   System.InvalidOperationException:
         //     source contains no elements.
-        public static IEnumerable<Bin<T>> CountEach<T>(this IEnumerable<T> source, IEqualityComparer<T> comparer)
+        public static IEnumerable<ItemCount<T>> CountEach<T>(this IEnumerable<T> source, IEqualityComparer<T> comparer)
         {
             if (source == null)
                 throw new ArgumentNullException("source");
@@ -32,7 +32,7 @@ namespace LinqStatistics
             if (!source.Any())
                 throw new InvalidOperationException("source sequence contains no elements");
 
-            return source.GroupBy(t => t, comparer).OrderBy(g => g.Key).Select(g => new Bin<T>(g.Key, g.Count()));
+            return source.GroupBy(t => t, comparer).OrderBy(g => g.Key).Select(g => new ItemCount<T>(g.Key, g.Count()));
         }
 
         //
@@ -52,7 +52,7 @@ namespace LinqStatistics
         //
         //   System.InvalidOperationException:
         //     source contains no elements.
-        public static IEnumerable<Bin<T>> CountEach<T>(this IEnumerable<T> source)
+        public static IEnumerable<ItemCount<T>> CountEach<T>(this IEnumerable<T> source)
         {
             return source.CountEach(EqualityComparer<T>.Default);
         }
@@ -81,7 +81,7 @@ namespace LinqStatistics
         // Exceptions:
         //   System.ArgumentNullException:
         //     source or selector is null.
-        public static IEnumerable<Bin<T>> CountEach<TSource, T>(this IEnumerable<TSource> source, Func<TSource, T> selector)
+        public static IEnumerable<ItemCount<TResult>> CountEach<TSource, TResult>(this IEnumerable<TSource> source, Func<TSource, TResult> selector)
         {
             if (source == null)
                 throw new ArgumentNullException("source");

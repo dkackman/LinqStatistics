@@ -49,7 +49,7 @@ namespace ConsoleApplication1
 
                 // a histogram is typically ordered by the value for graphing purposes
                 // order it by count to display most common to least common colors
-                foreach (Bin<int> bin in histogram.OrderByDescending(b => b.Count))
+                foreach (ItemCount<int> bin in histogram.OrderByDescending(b => b.Count))
                 {
                     Color color = Color.FromArgb(bin.RepresentativeValue);
                     Console.WriteLine("R={0}, G={1}, B={2} appears {3} times", color.R, color.G, color.B, bin.Count);

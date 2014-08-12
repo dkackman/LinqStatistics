@@ -28,7 +28,7 @@ namespace LinqStatistics
         // Exceptions:
         //   System.ArgumentNullException:
         //     source or selector is null.
-        public static IEnumerable<Bin<double>> Histogram<TSource>(this IEnumerable<TSource> source, Func<TSource, int> selector, int binCount)
+        public static IEnumerable<ItemCount<double>> Histogram<TSource>(this IEnumerable<TSource> source, Func<TSource, int> selector, int binCount)
         {
             if (source == null)
                 throw new ArgumentNullException("source");
@@ -62,7 +62,7 @@ namespace LinqStatistics
         // Exceptions:
         //   System.ArgumentNullException:
         //     source or selector is null.
-        public static IEnumerable<Bin<double?>> Histogram<TSource>(this IEnumerable<TSource> source, Func<TSource, int?> selector, int binCount)
+        public static IEnumerable<ItemCount<double?>> Histogram<TSource>(this IEnumerable<TSource> source, Func<TSource, int?> selector, int binCount)
         {
             if (source == null)
                 throw new ArgumentNullException("source");
@@ -94,19 +94,19 @@ namespace LinqStatistics
         //   System.InvalidOperationException:
         //     source contains no elements.
         //     binCount is less then or equal to 0
-        public static IEnumerable<Bin<double?>> Histogram(this IEnumerable<int?> source, int binCount)
+        public static IEnumerable<ItemCount<double?>> Histogram(this IEnumerable<int?> source, int binCount)
         {
             // generate the histogram of all the non-null values as normal
             var histogram = source.AllValues().Histogram(binCount);
 
             // then pre-pend a bin for all of the nulls
-            var nulls = new List<Bin<double?>>(1)
+            var nulls = new List<ItemCount<double?>>(1)
             {
-                new Bin<double?>(null, source.Count(i => i == null))
+                new ItemCount<double?>(null, source.Count(i => i == null))
             };
 
             // the Select is to get our Bin<double> back to a Bin<double?>
-            return nulls.Concat(histogram.Select(b => new Bin<Double?>(b.RepresentativeValue , b.Count)));
+            return nulls.Concat(histogram.Select(b => new ItemCount<Double?>(b.RepresentativeValue , b.Count)));
         }
 
         //
@@ -130,7 +130,7 @@ namespace LinqStatistics
         //   System.InvalidOperationException:
         //     source contains no elements.
         //     binCount is less then or equal to 0
-        public static IEnumerable<Bin<double>> Histogram(this IEnumerable<int> source, int binCount)
+        public static IEnumerable<ItemCount<double>> Histogram(this IEnumerable<int> source, int binCount)
         {
             if (source == null)
                 throw new ArgumentNullException("source");
@@ -147,10 +147,10 @@ namespace LinqStatistics
             double start = min;
 
             // first create a list of all the bins so even empty bins are accounted for
-            List<Bin<double>> bins = new List<Bin<double>>(binCount);
+            List<ItemCount<double>> bins = new List<ItemCount<double>>(binCount);
             for (int i = 0; i < binCount; i++)
             {
-                bins.Add(new Bin<double>(start + (bucketSize * i), 0));
+                bins.Add(new ItemCount<double>(start + (bucketSize * i)));
             }
 
             // then count the members of each bin
@@ -159,7 +159,7 @@ namespace LinqStatistics
                 int bucketIndex = 0;
                 if (bucketSize > 0.0)
                 {
-                    bucketIndex = (int)Math.Round((value - min) / bucketSize, 0);
+                    bucketIndex = (int)Math.Floor((value - min) / bucketSize);
                     if (bucketIndex == binCount)
                     {
                         bucketIndex--;
@@ -193,7 +193,7 @@ namespace LinqStatistics
         // Exceptions:
         //   System.ArgumentNullException:
         //     source or selector is null.
-        public static IEnumerable<Bin<double>> Histogram<TSource>(this IEnumerable<TSource> source, Func<TSource, long> selector, int binCount)
+        public static IEnumerable<ItemCount<double>> Histogram<TSource>(this IEnumerable<TSource> source, Func<TSource, long> selector, int binCount)
         {
             if (source == null)
                 throw new ArgumentNullException("source");
@@ -227,7 +227,7 @@ namespace LinqStatistics
         // Exceptions:
         //   System.ArgumentNullException:
         //     source or selector is null.
-        public static IEnumerable<Bin<double?>> Histogram<TSource>(this IEnumerable<TSource> source, Func<TSource, long?> selector, int binCount)
+        public static IEnumerable<ItemCount<double?>> Histogram<TSource>(this IEnumerable<TSource> source, Func<TSource, long?> selector, int binCount)
         {
             if (source == null)
                 throw new ArgumentNullException("source");
@@ -259,19 +259,19 @@ namespace LinqStatistics
         //   System.InvalidOperationException:
         //     source contains no elements.
         //     binCount is less then or equal to 0
-        public static IEnumerable<Bin<double?>> Histogram(this IEnumerable<long?> source, int binCount)
+        public static IEnumerable<ItemCount<double?>> Histogram(this IEnumerable<long?> source, int binCount)
         {
             // generate the histogram of all the non-null values as normal
             var histogram = source.AllValues().Histogram(binCount);
 
             // then pre-pend a bin for all of the nulls
-            var nulls = new List<Bin<double?>>(1)
+            var nulls = new List<ItemCount<double?>>(1)
             {
-                new Bin<double?>(null, source.Count(i => i == null))
+                new ItemCount<double?>(null, source.Count(i => i == null))
             };
 
             // the Select is to get our Bin<double> back to a Bin<double?>
-            return nulls.Concat(histogram.Select(b => new Bin<Double?>(b.RepresentativeValue , b.Count)));
+            return nulls.Concat(histogram.Select(b => new ItemCount<Double?>(b.RepresentativeValue , b.Count)));
         }
 
         //
@@ -295,7 +295,7 @@ namespace LinqStatistics
         //   System.InvalidOperationException:
         //     source contains no elements.
         //     binCount is less then or equal to 0
-        public static IEnumerable<Bin<double>> Histogram(this IEnumerable<long> source, int binCount)
+        public static IEnumerable<ItemCount<double>> Histogram(this IEnumerable<long> source, int binCount)
         {
             if (source == null)
                 throw new ArgumentNullException("source");
@@ -312,10 +312,10 @@ namespace LinqStatistics
             double start = min;
 
             // first create a list of all the bins so even empty bins are accounted for
-            List<Bin<double>> bins = new List<Bin<double>>(binCount);
+            List<ItemCount<double>> bins = new List<ItemCount<double>>(binCount);
             for (int i = 0; i < binCount; i++)
             {
-                bins.Add(new Bin<double>(start + (bucketSize * i), 0));
+                bins.Add(new ItemCount<double>(start + (bucketSize * i), 0));
             }
 
             // then count the members of each bin
@@ -324,7 +324,7 @@ namespace LinqStatistics
                 int bucketIndex = 0;
                 if (bucketSize > 0.0)
                 {
-                    bucketIndex = (int)Math.Round((value - min) / bucketSize, 0);
+                    bucketIndex = (int)Math.Floor((value - min) / bucketSize);
                     if (bucketIndex == binCount)
                     {
                         bucketIndex--;
@@ -358,7 +358,7 @@ namespace LinqStatistics
         // Exceptions:
         //   System.ArgumentNullException:
         //     source or selector is null.
-        public static IEnumerable<Bin<double>> Histogram<TSource>(this IEnumerable<TSource> source, Func<TSource, float> selector, int binCount)
+        public static IEnumerable<ItemCount<double>> Histogram<TSource>(this IEnumerable<TSource> source, Func<TSource, float> selector, int binCount)
         {
             if (source == null)
                 throw new ArgumentNullException("source");
@@ -392,7 +392,7 @@ namespace LinqStatistics
         // Exceptions:
         //   System.ArgumentNullException:
         //     source or selector is null.
-        public static IEnumerable<Bin<double?>> Histogram<TSource>(this IEnumerable<TSource> source, Func<TSource, float?> selector, int binCount)
+        public static IEnumerable<ItemCount<double?>> Histogram<TSource>(this IEnumerable<TSource> source, Func<TSource, float?> selector, int binCount)
         {
             if (source == null)
                 throw new ArgumentNullException("source");
@@ -424,19 +424,19 @@ namespace LinqStatistics
         //   System.InvalidOperationException:
         //     source contains no elements.
         //     binCount is less then or equal to 0
-        public static IEnumerable<Bin<double?>> Histogram(this IEnumerable<float?> source, int binCount)
+        public static IEnumerable<ItemCount<double?>> Histogram(this IEnumerable<float?> source, int binCount)
         {
             // generate the histogram of all the non-null values as normal
             var histogram = source.AllValues().Histogram(binCount);
 
             // then pre-pend a bin for all of the nulls
-            var nulls = new List<Bin<double?>>(1)
+            var nulls = new List<ItemCount<double?>>(1)
             {
-                new Bin<double?>(null, source.Count(i => i == null))
+                new ItemCount<double?>(null, source.Count(i => i == null))
             };
 
             // the Select is to get our Bin<double> back to a Bin<double?>
-            return nulls.Concat(histogram.Select(b => new Bin<Double?>(b.RepresentativeValue , b.Count)));
+            return nulls.Concat(histogram.Select(b => new ItemCount<Double?>(b.RepresentativeValue , b.Count)));
         }
 
         //
@@ -460,7 +460,7 @@ namespace LinqStatistics
         //   System.InvalidOperationException:
         //     source contains no elements.
         //     binCount is less then or equal to 0
-        public static IEnumerable<Bin<double>> Histogram(this IEnumerable<float> source, int binCount)
+        public static IEnumerable<ItemCount<double>> Histogram(this IEnumerable<float> source, int binCount)
         {
             if (source == null)
                 throw new ArgumentNullException("source");
@@ -477,10 +477,10 @@ namespace LinqStatistics
             double start = min;
 
             // first create a list of all the bins so even empty bins are accounted for
-            List<Bin<double>> bins = new List<Bin<double>>(binCount);
+            List<ItemCount<double>> bins = new List<ItemCount<double>>(binCount);
             for (int i = 0; i < binCount; i++)
             {
-                bins.Add(new Bin<double>(start + (bucketSize * i), 0));
+                bins.Add(new ItemCount<double>(start + (bucketSize * i), 0));
             }
 
             // then count the members of each bin
@@ -489,7 +489,7 @@ namespace LinqStatistics
                 int bucketIndex = 0;
                 if (bucketSize > 0.0)
                 {
-                    bucketIndex = (int)Math.Round((value - min) / bucketSize, 0);
+                    bucketIndex = (int)Math.Floor((value - min) / bucketSize);
                     if (bucketIndex == binCount)
                     {
                         bucketIndex--;
@@ -523,7 +523,7 @@ namespace LinqStatistics
         // Exceptions:
         //   System.ArgumentNullException:
         //     source or selector is null.
-        public static IEnumerable<Bin<double>> Histogram<TSource>(this IEnumerable<TSource> source, Func<TSource, double> selector, int binCount)
+        public static IEnumerable<ItemCount<double>> Histogram<TSource>(this IEnumerable<TSource> source, Func<TSource, double> selector, int binCount)
         {
             if (source == null)
                 throw new ArgumentNullException("source");
@@ -557,7 +557,7 @@ namespace LinqStatistics
         // Exceptions:
         //   System.ArgumentNullException:
         //     source or selector is null.
-        public static IEnumerable<Bin<double?>> Histogram<TSource>(this IEnumerable<TSource> source, Func<TSource, double?> selector, int binCount)
+        public static IEnumerable<ItemCount<double?>> Histogram<TSource>(this IEnumerable<TSource> source, Func<TSource, double?> selector, int binCount)
         {
             if (source == null)
                 throw new ArgumentNullException("source");
@@ -589,19 +589,19 @@ namespace LinqStatistics
         //   System.InvalidOperationException:
         //     source contains no elements.
         //     binCount is less then or equal to 0
-        public static IEnumerable<Bin<double?>> Histogram(this IEnumerable<double?> source, int binCount)
+        public static IEnumerable<ItemCount<double?>> Histogram(this IEnumerable<double?> source, int binCount)
         {
             // generate the histogram of all the non-null values as normal
             var histogram = source.AllValues().Histogram(binCount);
 
             // then pre-pend a bin for all of the nulls
-            var nulls = new List<Bin<double?>>(1)
+            var nulls = new List<ItemCount<double?>>(1)
             {
-                new Bin<double?>(null, source.Count(i => i == null))
+                new ItemCount<double?>(null, source.Count(i => i == null))
             };
 
             // the Select is to get our Bin<double> back to a Bin<double?>
-            return nulls.Concat(histogram.Select(b => new Bin<Double?>(b.RepresentativeValue , b.Count)));
+            return nulls.Concat(histogram.Select(b => new ItemCount<Double?>(b.RepresentativeValue , b.Count)));
         }
 
         //
@@ -625,7 +625,7 @@ namespace LinqStatistics
         //   System.InvalidOperationException:
         //     source contains no elements.
         //     binCount is less then or equal to 0
-        public static IEnumerable<Bin<double>> Histogram(this IEnumerable<double> source, int binCount)
+        public static IEnumerable<ItemCount<double>> Histogram(this IEnumerable<double> source, int binCount)
         {
             if (source == null)
                 throw new ArgumentNullException("source");
@@ -642,10 +642,10 @@ namespace LinqStatistics
             double start = min;
 
             // first create a list of all the bins so even empty bins are accounted for
-            List<Bin<double>> bins = new List<Bin<double>>(binCount);
+            List<ItemCount<double>> bins = new List<ItemCount<double>>(binCount);
             for (int i = 0; i < binCount; i++)
             {
-                bins.Add(new Bin<double>(start + (bucketSize * i), 0));
+                bins.Add(new ItemCount<double>(start + (bucketSize * i), 0));
             }
 
             // then count the members of each bin
@@ -654,7 +654,7 @@ namespace LinqStatistics
                 int bucketIndex = 0;
                 if (bucketSize > 0.0)
                 {
-                    bucketIndex = (int)Math.Round((value - min) / bucketSize, 0);
+                    bucketIndex = (int)Math.Floor((value - min) / bucketSize);
                     if (bucketIndex == binCount)
                     {
                         bucketIndex--;

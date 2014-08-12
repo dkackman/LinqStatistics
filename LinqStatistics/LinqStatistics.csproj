@@ -48,6 +48,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Bin.cs" />
+    <Compile Include="ItemCount.cs" />
     <Compile Include="EnumerableStatsBinCount.cs" />
     <Compile Include="EnumerableStatsCountEach.cs" />
     <Compile Include="EnumerableStatsKurtosis.cs" />
@@ -70,6 +71,7 @@
     </Compile>
     <Compile Include="LeastSquares.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Range.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="EnumerableStatsHistogram.tt">

@@ -173,7 +173,7 @@ namespace LinqStatistics
                 int bucketIndex = 0;
                 if (bucketSize > 0.0)
                 {
-                    bucketIndex = (int)Math.Round((value - min) / bucketSize, 0);
+                    bucketIndex = (int)Math.Floor((value - min) / bucketSize);
                     if (bucketIndex == binCount)
                     {
                         bucketIndex--;
