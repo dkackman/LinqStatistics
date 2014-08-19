@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Linq;
+using System.Reflection;
+using System.IO;
 using System.Collections.Generic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
@@ -67,114 +69,135 @@ namespace LinqStatisticsTests
         }
 
         [TestMethod]
-        public void HistogramTwoBins()
-        {
-            var list = new List<int>()
-            {
-                1,1,1,2,2,2
-            };
-
-            var histogram = list.Histogram(2).ToList();
-
-            Assert.AreEqual(list.Count, histogram.Select(b => b.Count).Sum());
-
-            Assert.AreEqual(2, histogram.Count);
-
-            Assert.AreEqual(3, histogram[0].Count);
-            Assert.AreEqual(3, histogram[1].Count);
-        }
-
-        [TestMethod]
-        public void HistogramThreeBins()
+        public void HistogramThreeBinsUnbounded()
         {
             var list = new List<int>()
             {
                 1,1,1,2,2,2,3,3
             };
 
-            var histogram = list.Histogram(3);
+            var histogram = list.HistogramUnbounded(3);
 
             Assert.AreEqual(list.Count, histogram.Select(b => b.Count).Sum());
 
-            Assert.AreEqual(3, histogram.Count());
+            // we get one extra bin for [bin(count - 1).Max, infinity) since this is an unbouded histogram
+            Assert.AreEqual(4, histogram.Count());
+            Assert.AreEqual(double.PositiveInfinity, histogram.Last().Range.Max);
         }
 
         [TestMethod]
-        public void HistogramMatchExcel()
+        public void HistogramUnbounded()
         {
             var list = new List<int>()
             {
                 1,2,2,3,3,3,4,4,4,4,5,5,5,5,5,6,6,6,6,7,7,7,8,8,9
             };
 
-            var histogram = list.Histogram(6).ToList();
+            var histogram = list.HistogramUnbounded(list.BinCountSquareRoot()).ToList();
 
             Assert.AreEqual(list.Count, histogram.Select(b => b.Count).Sum());
 
-            Assert.AreEqual(1, histogram[0].Count);
+            Assert.AreEqual(3, histogram[0].Count);
 
-            Assert.AreEqual(2, histogram[1].Count);
+            Assert.AreEqual(7, histogram[1].Count);
 
-            Assert.AreEqual(7, histogram[2].Count);
+            Assert.AreEqual(5, histogram[2].Count);
 
-            Assert.AreEqual(5, histogram[3].Count);
+            Assert.AreEqual(7, histogram[3].Count);
 
-            Assert.AreEqual(7, histogram[4].Count);
+            Assert.AreEqual(2, histogram[4].Count);
 
-            Assert.AreEqual(3, histogram[5].Count);
+            Assert.AreEqual(1, histogram[5].Count);
+        }
+
+        private static IEnumerable<double> LoadData()
+        {
+            using (var stream = Assembly.GetExecutingAssembly().GetManifestResourceStream("LinqStatisticsTests.HistogramData2.txt"))
+            using (StreamReader reader = new StreamReader(stream))
+            {
+                var list = new List<double>();
+                string line = reader.ReadLine();
+                while (line != null)
+                {
+                    list.Add(Math.Round(Convert.ToDouble(line),1, MidpointRounding.AwayFromZero));
+                    line = reader.ReadLine();
+                }
+                return list;
+            }
         }
 
         [TestMethod]
-        public void HistogramOfDoubles()
+        public void MatchInteractiveHistogram()
         {
-            var list = new List<double>()
-            {
-                1.1, 2.2, 2.3, 3.4, 3.5, 3.6, 4.7, 4.8, 4.9, 4.1, 5.2, 5.3, 5.4, 5.5, 5.6, 6.7, 6.8, 6.9, 6.1, 7.2, 7.3, 7.4, 8.5, 8.6, 9.7
-            };
+            var list = LoadData();
 
-            var histogram = list.Histogram(6).ToList();
+            var histogram = list.Histogram(7).ToList();
 
-            Assert.AreEqual(list.Count, histogram.Select(b => b.Count).Sum());
+            Assert.AreEqual(list.Count(), histogram.Select(b => b.Count).Sum());
 
-            Assert.AreEqual(1, histogram[0].Count);
+            Assert.AreEqual(3, histogram[0].Count);
 
-            Assert.AreEqual(2, histogram[1].Count);
+            Assert.AreEqual(7, histogram[1].Count);
 
-            Assert.AreEqual(4, histogram[2].Count);
+            Assert.AreEqual(5, histogram[2].Count);
 
-            Assert.AreEqual(9, histogram[3].Count);
+            Assert.AreEqual(7, histogram[3].Count);
 
-            Assert.AreEqual(6, histogram[4].Count);
+            Assert.AreEqual(2, histogram[4].Count);
 
-            Assert.AreEqual(3, histogram[5].Count);
+            Assert.AreEqual(1, histogram[5].Count);
         }
+        //[TestMethod]
+        //public void HistogramOfDoubles()
+        //{
+        //    var list = new List<double>()
+        //    {
+        //        1.1, 2.2, 2.3, 3.4, 3.5, 3.6, 4.7, 4.8, 4.9, 4.1, 5.2, 5.3, 5.4, 5.5, 5.6, 6.7, 6.8, 6.9, 6.1, 7.2, 7.3, 7.4, 8.5, 8.6, 9.7
+        //    };
 
-        [TestMethod]
-        public void HistogramOfNullableDoubles()
-        {
-            var list = new List<double?>()
-            {
-                null, 1.1, 2.2, 2.3, 3.4, 3.5, null, 3.6, 4.7, 4.8, 4.9, null, 4.1, 5.2, 5.3, 5.4, 5.5, null, 5.6, 6.7, 6.8, 6.9, 6.1, 7.2, 7.3, 7.4, 8.5, 8.6, 9.7
-            };
+        //    var histogram = list.Histogram(6).ToList();
 
-            var histogram = list.Histogram(6).ToList();
+        //    Assert.AreEqual(list.Count, histogram.Select(b => b.Count).Sum());
 
-            Assert.AreEqual(list.Count, histogram.Select(b => b.Count).Sum());
+        //    Assert.AreEqual(1, histogram[0].Count);
 
-            Assert.AreEqual(4, histogram[0].Count);
-            Assert.IsNull(histogram[0].RepresentativeValue);
+        //    Assert.AreEqual(2, histogram[1].Count);
 
-            Assert.AreEqual(1, histogram[1].Count);
+        //    Assert.AreEqual(4, histogram[2].Count);
 
-            Assert.AreEqual(2, histogram[2].Count);
+        //    Assert.AreEqual(9, histogram[3].Count);
 
-            Assert.AreEqual(4, histogram[3].Count);
+        //    Assert.AreEqual(6, histogram[4].Count);
 
-            Assert.AreEqual(9, histogram[4].Count);
+        //    Assert.AreEqual(3, histogram[5].Count);
+        //}
 
-            Assert.AreEqual(6, histogram[5].Count);
+        //[TestMethod]
+        //public void HistogramOfNullableDoubles()
+        //{
+        //    var list = new List<double?>()
+        //    {
+        //        null, 1.1, 2.2, 2.3, 3.4, 3.5, null, 3.6, 4.7, 4.8, 4.9, null, 4.1, 5.2, 5.3, 5.4, 5.5, null, 5.6, 6.7, 6.8, 6.9, 6.1, 7.2, 7.3, 7.4, 8.5, 8.6, 9.7
+        //    };
 
-            Assert.AreEqual(3, histogram[6].Count);
-        }
+        //    var histogram = list.Histogram(6).ToList();
+
+        //    Assert.AreEqual(list.Count, histogram.Select(b => b.Count).Sum());
+
+        //    Assert.AreEqual(4, histogram[0].Count);
+        //    Assert.IsNull(histogram[0].RepresentativeValue);
+
+        //    Assert.AreEqual(1, histogram[1].Count);
+
+        //    Assert.AreEqual(2, histogram[2].Count);
+
+        //    Assert.AreEqual(4, histogram[3].Count);
+
+        //    Assert.AreEqual(9, histogram[4].Count);
+
+        //    Assert.AreEqual(6, histogram[5].Count);
+
+        //    Assert.AreEqual(3, histogram[6].Count);
+        //}
     }
 }
