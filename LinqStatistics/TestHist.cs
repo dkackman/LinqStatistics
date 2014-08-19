@@ -21,7 +21,7 @@ namespace LinqStatistics
                 throw new InvalidOperationException("source sequence contains no elements");
 
             var bins = CreateBins(source.Min(), source.Max(), binCount, false);
-            source.AssignBuckets(bins);
+            source.AssignBins(bins);
 
             return bins;
         }
@@ -41,12 +41,12 @@ namespace LinqStatistics
                 throw new InvalidOperationException("source sequence contains no elements");
 
             var bins = CreateBins(source.Min(), source.Max(), binCount, true);
-            source.AssignBuckets(bins);
+            source.AssignBins(bins);
 
             return bins;
         }
 
-        private static void AssignBuckets(this IEnumerable<int> source, IList<Bin> bins)
+        private static void AssignBins(this IEnumerable<int> source, IList<Bin> bins)
         {
             foreach (var value in source)
             {
@@ -60,24 +60,24 @@ namespace LinqStatistics
             if (binCount <= 0)
                 throw new InvalidOperationException("binCount must be greater than 0");
 
-            double bucketSize = (max - min) / (double)binCount;
-            double halfBucket = bucketSize / 2.0;
-            double rangeMin = min - halfBucket;
-            double rangeMax = rangeMin + bucketSize;
+            double binSize = (max - min) / (double)binCount;
+            double halfBin = binSize / 2.0;
+            double rangeMin = min - halfBin;
+            double rangeMax = rangeMin + binSize;
 
             // first create a list of all the bins so even empty bins are accounted for
             List<Bin> bins = new List<Bin>(binCount);
             for (int i = 0; i < binCount; i++)
             {
-                bins.Add(new Bin(rangeMin + halfBucket, rangeMin, rangeMax));
-                rangeMin += bucketSize;
-                rangeMax += bucketSize;
+                bins.Add(new Bin(rangeMin + halfBin, rangeMin, rangeMax));
+                rangeMin += binSize;
+                rangeMax += binSize;
             }
 
             if (unbounded)
             {
                 // if sequence behavior is an unbounded histogram so add a bin for [lastBin.Range.Max, Infinity)
-                bins.Add(new Bin(rangeMin + halfBucket, rangeMin, double.PositiveInfinity));
+                bins.Add(new Bin(rangeMin + halfBin, rangeMin, double.PositiveInfinity));
             }
 
             return bins;
