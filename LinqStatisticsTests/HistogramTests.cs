@@ -76,7 +76,7 @@ namespace LinqStatisticsTests
                 1,1,1,2,2,2,3,3
             };
 
-            var histogram = list.HistogramUnbounded(3);
+            var histogram = list.Histogram(3);
 
             Assert.AreEqual(list.Count, histogram.Select(b => b.Count).Sum());
 
@@ -93,7 +93,7 @@ namespace LinqStatisticsTests
                 1,2,2,3,3,3,4,4,4,4,5,5,5,5,5,6,6,6,6,7,7,7,8,8,9
             };
 
-            var histogram = list.HistogramUnbounded(list.BinCountSquareRoot()).ToList();
+            var histogram = list.Histogram(list.BinCountSquareRoot()).ToList();
 
             Assert.AreEqual(list.Count, histogram.Select(b => b.Count).Sum());
 
@@ -131,21 +131,31 @@ namespace LinqStatisticsTests
         {
             var list = LoadData();
 
-            var histogram = list.Histogram(10).ToList();
+            // http://www.shodor.org/interactivate/activities/Histogram/#
+
+            var histogram = list.Histogram(10, BinningMode.ExpandRange).ToList();
 
             Assert.AreEqual(list.Count(), histogram.Select(b => b.Count).Sum());
 
-            Assert.AreEqual(3, histogram[0].Count);
+            Assert.AreEqual(4, histogram[0].Count);
 
-            Assert.AreEqual(7, histogram[1].Count);
+            Assert.AreEqual(8, histogram[1].Count);
 
-            Assert.AreEqual(5, histogram[2].Count);
+            Assert.AreEqual(52, histogram[2].Count);
 
-            Assert.AreEqual(7, histogram[3].Count);
+            Assert.AreEqual(41, histogram[3].Count);
 
-            Assert.AreEqual(2, histogram[4].Count);
+            Assert.AreEqual(36, histogram[4].Count);
 
-            Assert.AreEqual(1, histogram[5].Count);
+            Assert.AreEqual(20, histogram[5].Count);
+
+            Assert.AreEqual(3, histogram[6].Count);
+
+            Assert.AreEqual(5, histogram[7].Count);
+
+            Assert.AreEqual(1, histogram[8].Count);
+
+            Assert.AreEqual(3, histogram[9].Count);
         }
         //[TestMethod]
         //public void HistogramOfDoubles()
