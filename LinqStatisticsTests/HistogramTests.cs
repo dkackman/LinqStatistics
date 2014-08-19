@@ -110,16 +110,16 @@ namespace LinqStatisticsTests
             Assert.AreEqual(1, histogram[5].Count);
         }
 
-        private static IEnumerable<double> LoadData()
+        private static IEnumerable<int> LoadData()
         {
-            using (var stream = Assembly.GetExecutingAssembly().GetManifestResourceStream("LinqStatisticsTests.HistogramData2.txt"))
+            using (var stream = Assembly.GetExecutingAssembly().GetManifestResourceStream("LinqStatisticsTests.HistogramData.txt"))
             using (StreamReader reader = new StreamReader(stream))
             {
-                var list = new List<double>();
+                var list = new List<int>();
                 string line = reader.ReadLine();
                 while (line != null)
                 {
-                    list.Add(Math.Round(Convert.ToDouble(line),1, MidpointRounding.AwayFromZero));
+                    list.Add(Convert.ToInt32(line));
                     line = reader.ReadLine();
                 }
                 return list;
@@ -131,7 +131,7 @@ namespace LinqStatisticsTests
         {
             var list = LoadData();
 
-            var histogram = list.Histogram(7).ToList();
+            var histogram = list.Histogram(10).ToList();
 
             Assert.AreEqual(list.Count(), histogram.Select(b => b.Count).Sum());
 
