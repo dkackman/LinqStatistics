@@ -6,14 +6,14 @@ namespace LinqStatistics
     /// An ordered pair of values, representing a segment.
     /// </summary>
     /// <typeparam name="T">Type of each of two values of range.</typeparam>
-    public struct Range<T> : IEquatable<Range<T>> where T : IComparable<T>, IEquatable<T>
+    public struct Range
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="Range&lt;T&gt;"/> struct.
         /// </summary>
         /// <param name="min">The minimal value of segment.</param>
         /// <param name="max">The maximal value of segment.</param>
-        public Range(T min, T max, bool maxInclusive = false)
+        public Range(double min, double max, bool maxInclusive = false)
         {
             this.min = min;
             this.max = max;
@@ -26,69 +26,63 @@ namespace LinqStatistics
 
         private bool _maxInclusive;
 
-        private readonly T min;
+        private readonly double min;
         /// <summary>
         /// Gets the minimal value of segment.
         /// </summary>
         /// <value>The min.</value>
-        public T Min
+        public double Min
         {
             get { return min; }
         }
 
-        private readonly T max;
+        private readonly double max;
         /// <summary>
         /// Gets the maximal value of segment.
         /// </summary>
         /// <value>The max.</value>
-        public T Max
+        public double Max
         {
             get { return max; }
         }
 
-        public static bool operator ==(Range<T> first, Range<T> second)
+        public static bool operator ==(Range first, Range second)
         {
             return first.min.Equals(second.min) && first.max.Equals(second.max);
         }
 
-        public static bool operator !=(Range<T> first, Range<T> second)
+        public static bool operator !=(Range first, Range second)
         {
             return !(first == second);
         }
 
-        public bool Contains(T item)
+        public bool Contains(double item)
         {
             //return item >= Min && item < Max;
             if (_maxInclusive)
             {
-                if (item.Equals(3.0))
-                {
-                double s = Math.Abs((double)(object)Max - (double)(object)item);
-                    return true;
-                }
-
-                return item.CompareTo(Min) >= 0 && item.CompareTo(Max) <= 0;
+                return (item >= Min && item <= Max);
             }
 
-            return item.CompareTo(Min) >= 0 && item.CompareTo(Max) < 0;
+            return (item >= Min && item < Max);
         }
 
-        public static bool operator <(Range<T> first, Range<T> second)
+        public static bool operator <(Range first, Range second)
         {
             return first.min.CompareTo(second.Min) > 0 && first.Max.CompareTo(second.Max) < 0;
         }
 
-        public static bool operator >(Range<T> first, Range<T> second)
+        public static bool operator >(Range first, Range second)
         {
             return first.Min.CompareTo(second.min) < 0 && first.Max.CompareTo(second.max) > 0;
         }
 
-        public static bool operator <=(Range<T> first, Range<T> second)
+        public static bool operator <=(Range first, Range second)
         {
             return (first.min.CompareTo(second.Min) > 0 && first.Max.CompareTo(second.Max) < 0) || first == second;
         }
 
-        public static bool operator >=(Range<T> first, Range<T> second)
+        public static bool operator >=(Range first, Range second)
         {
             return (first.Min.CompareTo(second.min) < 0 && first.Max.CompareTo(second.max) > 0) || first == second;
         }
@@ -102,9 +96,9 @@ namespace LinqStatistics
         /// </returns>
         public override bool Equals(object obj)
         {
-            if (obj is Range<T>)
+            if (obj is Range)
             {
-                Range<T> other = (Range<T>)obj;
+                Range other = (Range)obj;
                 return min.Equals(other.min) && max.Equals(other.max) && _maxInclusive.Equals(other._maxInclusive);
             }
 
@@ -140,7 +134,7 @@ namespace LinqStatistics
         /// <returns>
         /// true if the current object is equal to the <paramref name="other"/> parameter; otherwise, false.
         /// </returns>
-        public bool Equals(Range<T> other)
+        public bool Equals(Range other)
         {
             return this == other;
         }

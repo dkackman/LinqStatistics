@@ -34,7 +34,15 @@ namespace LinqStatistics
             List<Bin> bins = new List<Bin>(binCount);
             for (int i = 0; i < binCount; i++)
             {
-                bins.Add(new Bin(rangeMin + halfBin, rangeMin, rangeMax, i == binCount - 1)); // set the last bin to be maxInclusive
+                if (i == binCount - 1)
+                {
+                    // we can get some floating point noise as the ranges are calculated to ensure that the last bin encompasses the max value
+                    bins.Add(new Bin(rangeMin + halfBin, rangeMin, max, true)); // set the last bin to be maxInclusive
+                }
+                else
+                {
+                    bins.Add(new Bin(rangeMin + halfBin, rangeMin, rangeMax)); 
+                }
                 rangeMin += binSize;
                 rangeMax += binSize;
             }

@@ -4,16 +4,16 @@ namespace LinqStatistics
 {
     public class Bin : ItemCount<double>
     {
-        private readonly Range<double> _range;
+        private readonly Range _range;
 
-        public Range<double> Range { get { return _range; } }
+        public Range Range { get { return _range; } }
 
         public double Width { get { return _range.Max - _range.Min; } }
 
         public Bin(double v, double min, double max, int count, bool maxInclusive = false)
             : base(v, count)
         {
-            _range = new Range<double>(min, max, maxInclusive);
+            _range = new Range(min, max, maxInclusive);
         }
 
         internal Bin(double v, double min, double max, bool maxInclusive = false)
