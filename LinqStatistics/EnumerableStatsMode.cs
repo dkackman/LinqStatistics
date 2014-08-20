@@ -1,6 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
+using System.Collections.Generic;
 
 namespace LinqStatistics
 {
@@ -17,17 +17,10 @@ namespace LinqStatistics
 
         public static IEnumerable<T> Modes<T>(this IEnumerable<T> source) where T : struct
         {
-            List<T> modes = new List<T>();
-
-            IEnumerable<T> current = source;
-            T? mode = current.Mode<T>();
-            while (mode.HasValue && current.Count() > 1)
-            {
-                modes.Add((T)mode);
-                current = current.Where(x => x.Equals(mode) == false).ToArray(); // <-- this looks extraneous but we need to bypass deferred execution 
-                mode = current.Mode<T>();
-            }
-            return modes;
+            return from count in source.CountEach()
+                   where count.Count > 1
+                   orderby count.Count descending
+                   select count.RepresentativeValue;
         }
 
         public static T? Mode<T>(this IEnumerable<T?> source) where T : struct
