@@ -2,16 +2,16 @@
 <package >
   <metadata>
     <id>LinqStatistics</id>
-    <version>1.0.4</version>
+    <version>1.0.5</version>
     <title>LinqStatistics</title>
     <authors>dkackman</authors>
     <owners></owners>
     <description>
       Extension methods that add additional simple statiistical calculations to the built in sum, min, max, average etc.
-      Includes Covariance, Median, Mode, Pearson's Chi Squared, Range, Standard Deviation (sample and population), Variance (sample and population), Histograms, Root Mean Square, Least Squares and Kurtosis
+      Includes Covariance, Median, Mode, Pearson's Chi Squared, Range, Standard Deviation (sample and population), Variance (sample and population), CountEach, Histograms, Root Mean Square, Least Squares and Kurtosis
     </description>
     <releaseNotes>
-      Optimized Least Squares
+      Added CountEach and Histogram
     </releaseNotes>
     <summary>
     </summary>
