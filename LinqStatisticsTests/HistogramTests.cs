@@ -13,42 +13,42 @@ namespace LinqStatisticsTests
     public class HistogramTests
     {
         [TestMethod]
-        public void SimpleHistogram()
+        public void CounEachIntegers()
         {
             var list = new List<int>()
             {
                 0, 1, 1, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 5, 5, 5, 6, 6, 7
             };
 
-            var histogram = list.CountEach().ToList();
+            var counts = list.CountEach().ToList();
 
-            Assert.AreEqual(list.Count, histogram.Select(b => b.Count).Sum());
+            Assert.AreEqual(list.Count, counts.Select(b => b.Count).Sum());
 
-            Assert.AreEqual(histogram.Count(), list.Distinct().Count());
+            Assert.AreEqual(counts.Count(), list.Distinct().Count());
 
-            Assert.AreEqual(histogram[0].RepresentativeValue, 0);
-            Assert.AreEqual(histogram[0].Count, 1);
+            Assert.AreEqual(counts[0].RepresentativeValue, 0);
+            Assert.AreEqual(counts[0].Count, 1);
 
-            Assert.AreEqual(histogram[1].RepresentativeValue, 1);
-            Assert.AreEqual(histogram[1].Count, 2);
+            Assert.AreEqual(counts[1].RepresentativeValue, 1);
+            Assert.AreEqual(counts[1].Count, 2);
 
-            Assert.AreEqual(histogram[2].RepresentativeValue, 2);
-            Assert.AreEqual(histogram[2].Count, 3);
+            Assert.AreEqual(counts[2].RepresentativeValue, 2);
+            Assert.AreEqual(counts[2].Count, 3);
 
-            Assert.AreEqual(histogram[3].RepresentativeValue, 3);
-            Assert.AreEqual(histogram[3].Count, 4);
+            Assert.AreEqual(counts[3].RepresentativeValue, 3);
+            Assert.AreEqual(counts[3].Count, 4);
 
-            Assert.AreEqual(histogram[4].RepresentativeValue, 4);
-            Assert.AreEqual(histogram[4].Count, 3);
+            Assert.AreEqual(counts[4].RepresentativeValue, 4);
+            Assert.AreEqual(counts[4].Count, 3);
 
-            Assert.AreEqual(histogram[5].RepresentativeValue, 5);
-            Assert.AreEqual(histogram[5].Count, 3);
+            Assert.AreEqual(counts[5].RepresentativeValue, 5);
+            Assert.AreEqual(counts[5].Count, 3);
 
-            Assert.AreEqual(histogram[6].RepresentativeValue, 6);
-            Assert.AreEqual(histogram[6].Count, 2);
+            Assert.AreEqual(counts[6].RepresentativeValue, 6);
+            Assert.AreEqual(counts[6].Count, 2);
 
-            Assert.AreEqual(histogram[7].RepresentativeValue, 7);
-            Assert.AreEqual(histogram[7].Count, 1);
+            Assert.AreEqual(counts[7].RepresentativeValue, 7);
+            Assert.AreEqual(counts[7].Count, 1);
         }
 
         [TestMethod]
@@ -69,7 +69,7 @@ namespace LinqStatisticsTests
         }
 
         [TestMethod]
-        public void HistogramThreeBinsUnbounded()
+        public void HistogramUnboundedLastBinHasMaxAsInfinity()
         {
             var list = new List<int>()
             {
@@ -80,9 +80,22 @@ namespace LinqStatisticsTests
 
             Assert.AreEqual(list.Count, histogram.Select(b => b.Count).Sum());
 
-            // we get one extra bin for [bin(count - 1).Max, infinity) since this is an unbouded histogram
-            Assert.AreEqual(4, histogram.Count());
             Assert.AreEqual(double.PositiveInfinity, histogram.Last().Range.Max);
+        }
+
+        [TestMethod]
+        public void HistogramMaxInclusiveLastBinHasIsMaxInclusive()
+        {
+            var list = new List<int>()
+            {
+                1,1,1,2,2,2,3,3
+            };
+
+            var histogram = list.Histogram(3, BinningMode.MaxValueInclusive);
+
+            Assert.AreEqual(list.Count, histogram.Select(b => b.Count).Sum());
+
+            Assert.IsTrue(histogram.Last().Range.Contains(list.Max()));
         }
 
         [TestMethod]
@@ -110,9 +123,9 @@ namespace LinqStatisticsTests
             Assert.AreEqual(1, histogram[5].Count);
         }
 
-        private static IEnumerable<int> LoadData()
+        private static IEnumerable<int> LoadData(string name)
         {
-            using (var stream = Assembly.GetExecutingAssembly().GetManifestResourceStream("LinqStatisticsTests.HistogramData.txt"))
+            using (var stream = Assembly.GetExecutingAssembly().GetManifestResourceStream("LinqStatisticsTests." + name))
             using (StreamReader reader = new StreamReader(stream))
             {
                 var list = new List<int>();
@@ -129,7 +142,7 @@ namespace LinqStatisticsTests
         [TestMethod]
         public void MatchInteractiveHistogram()
         {
-            var list = LoadData();
+            var list = LoadData("HistogramData.txt");
 
             // http://www.shodor.org/interactivate/activities/Histogram/#
 

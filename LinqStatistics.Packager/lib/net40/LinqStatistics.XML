@@ -1,0 +1,157 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>LinqStatistics</name>
+    </assembly>
+    <members>
+        <member name="T:LinqStatistics.ItemCount`1">
+            <summary>
+            Represents a Histogram bin
+            </summary>
+            <typeparam name="T">The type of the Bin value</typeparam>
+        </member>
+        <member name="M:LinqStatistics.ItemCount`1.#ctor(`0,System.Int32)">
+            <summary>
+            ctor
+            </summary>
+            <param name="v"></param>
+            <param name="count"></param>
+        </member>
+        <member name="M:LinqStatistics.ItemCount`1.Equals(System.Object)">
+            <summary>
+            <see cref="M:System.Object.Equals(System.Object)"/>
+            </summary>
+            <param name="obj"></param>
+            <returns>True if obj is a Bin{T} and Value and Count are equal</returns>
+        </member>
+        <member name="M:LinqStatistics.ItemCount`1.GetHashCode">
+            <summary>
+            <see cref="M:System.Object.GetHashCode"/>
+            </summary>
+            <returns>Hash of Value and Count</returns>
+        </member>
+        <member name="M:LinqStatistics.ItemCount`1.ToString">
+            <summary>
+            <see cref="M:System.Object.ToString"/>
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:LinqStatistics.ItemCount`1.RepresentativeValue">
+            <summary>
+            The value represented by the bin
+            </summary>
+        </member>
+        <member name="P:LinqStatistics.ItemCount`1.Count">
+            <summary>
+            The number of times Value appears in the source data
+            </summary>
+        </member>
+        <member name="M:LinqStatistics.EnumerableStats.BinCountSturges``1(System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            http://en.wikipedia.org/wiki/Histogram#Number_of_bins_and_width
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="source"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LinqStatistics.EnumerableStats.BinCountSquareRoot``1(System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            http://en.wikipedia.org/wiki/Histogram#Number_of_bins_and_width
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="source"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LinqStatistics.EnumerableStats.BinCountRice``1(System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            http://en.wikipedia.org/wiki/Histogram#Number_of_bins_and_width
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="source"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LinqStatistics.LeastSquares.#ctor(System.Double,System.Double)">
+            <summary>
+            
+            </summary>
+            <param name="m">The slope</param>
+            <param name="b">the intercept</param>
+        </member>
+        <member name="M:LinqStatistics.LeastSquares.Solve(System.Double)">
+            <summary>
+            Uses the calculated coefficients to solve Y for inputted X
+            </summary>
+            <param name="x">X value to solve for</param>
+            <returns>Y value (y = Mx + C)</returns>
+        </member>
+        <member name="P:LinqStatistics.LeastSquares.M">
+            <summary>
+            M Coefficient for y = Mx + B
+            </summary>
+        </member>
+        <member name="P:LinqStatistics.LeastSquares.B">
+            <summary>
+            B Coefficient for y = Mx + B
+            </summary>
+        </member>
+        <member name="T:LinqStatistics.Range`1">
+            <summary>
+            An ordered pair of values, representing a segment.
+            </summary>
+            <typeparam name="T">Type of each of two values of range.</typeparam>
+        </member>
+        <member name="M:LinqStatistics.Range`1.#ctor(`0,`0)">
+            <summary>
+            Initializes a new instance of the <see cref="T:LinqStatistics.Range`1"/> struct.
+            </summary>
+            <param name="min">The minimal value of segment.</param>
+            <param name="max">The maximal value of segment.</param>
+        </member>
+        <member name="M:LinqStatistics.Range`1.Equals(System.Object)">
+            <summary>
+            Indicates whether this instance and a specified object are equal.
+            </summary>
+            <param name="obj">Another object to compare to.</param>
+            <returns>
+            true if <paramref name="obj"/> and this instance are the same type and represent the same value; otherwise, false.
+            </returns>
+        </member>
+        <member name="M:LinqStatistics.Range`1.GetHashCode">
+            <summary>
+            Returns the hash code for this instance.
+            </summary>
+            <returns>
+            A 32-bit signed integer that is the hash code for this instance.
+            </returns>
+        </member>
+        <member name="M:LinqStatistics.Range`1.ToString">
+            <summary>
+            Returns the fully qualified type name of this instance.
+            </summary>
+            <returns>
+            A <see cref="T:System.String"/> containing a fully qualified type name.
+            </returns>
+        </member>
+        <member name="M:LinqStatistics.Range`1.Equals(LinqStatistics.Range{`0})">
+            <summary>
+            Indicates whether the current object is equal to another object of the same type.
+            </summary>
+            <param name="other">An object to compare with this object.</param>
+            <returns>
+            true if the current object is equal to the <paramref name="other"/> parameter; otherwise, false.
+            </returns>
+        </member>
+        <member name="P:LinqStatistics.Range`1.Min">
+            <summary>
+            Gets the minimal value of segment.
+            </summary>
+            <value>The min.</value>
+        </member>
+        <member name="P:LinqStatistics.Range`1.Max">
+            <summary>
+            Gets the maximal value of segment.
+            </summary>
+            <value>The max.</value>
+        </member>
+    </members>
+</doc>

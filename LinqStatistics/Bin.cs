@@ -10,15 +10,16 @@ namespace LinqStatistics
 
         public double Width { get { return _range.Max - _range.Min; } }
 
-        public Bin(double v, double min, double max, int count)
+        public Bin(double v, double min, double max, int count, bool maxInclusive = false)
             : base(v, count)
         {
-            _range = new Range<double>(min, max);
+            _range = new Range<double>(min, max, maxInclusive);
         }
 
-        internal Bin(double v, double min, double max)
-            : this(v, min, max, 0)
+        internal Bin(double v, double min, double max, bool maxInclusive = false)
+            : this(v, min, max, 0, maxInclusive)
         {
+            
         }
 
         public override int GetHashCode()

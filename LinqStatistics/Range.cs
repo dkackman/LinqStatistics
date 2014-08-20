@@ -13,14 +13,18 @@ namespace LinqStatistics
         /// </summary>
         /// <param name="min">The minimal value of segment.</param>
         /// <param name="max">The maximal value of segment.</param>
-        public Range(T min, T max)
+        public Range(T min, T max, bool maxInclusive = false)
         {
             this.min = min;
             this.max = max;
 
             if (min.CompareTo(max) >= 0)
                 throw new InvalidOperationException("Minimum must be less then maximum");
+
+            _maxInclusive = maxInclusive;
         }
+
+        private bool _maxInclusive;
 
         private readonly T min;
         /// <summary>
@@ -55,6 +59,17 @@ namespace LinqStatistics
         public bool Contains(T item)
         {
             //return item >= Min && item < Max;
+            if (_maxInclusive)
+            {
+                if (item.Equals(3.0))
+                {
+                double s = Math.Abs((double)(object)Max - (double)(object)item);
+                    return true;
+                }
+
+                return item.CompareTo(Min) >= 0 && item.CompareTo(Max) <= 0;
+            }
+
             return item.CompareTo(Min) >= 0 && item.CompareTo(Max) < 0;
         }
 
@@ -90,7 +105,7 @@ namespace LinqStatistics
             if (obj is Range<T>)
             {
                 Range<T> other = (Range<T>)obj;
-                return min.Equals(other.min) && max.Equals(other.max);
+                return min.Equals(other.min) && max.Equals(other.max) && _maxInclusive.Equals(other._maxInclusive);
             }
 
             return false;
@@ -104,7 +119,7 @@ namespace LinqStatistics
         /// </returns>
         public override int GetHashCode()
         {
-            return min.GetHashCode() ^ max.GetHashCode();
+            return min.GetHashCode() ^ max.GetHashCode() ^ _maxInclusive.GetHashCode();
         }
 
         /// <summary>
