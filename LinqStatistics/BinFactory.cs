@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Collections.Generic;
 
 namespace LinqStatistics
@@ -7,6 +8,9 @@ namespace LinqStatistics
     {
         public static IList<Bin> CreateBins(double min, double max, int binCount, BinningMode mode)
         {
+            if (binCount <= 0)
+                throw new InvalidOperationException("binCount must be greater than 0");
+            
             if (mode == BinningMode.Unbounded)
             {
                 return CreateBinsUnbounded(min, max, binCount);
@@ -17,14 +21,12 @@ namespace LinqStatistics
                 return CreateBinsExpandRange(min, max, binCount);
             }
 
+            Debug.Assert(mode == BinningMode.MaxValueInclusive);
             return CreateBinsMaxInclusive(min, max, binCount);
         }
 
         private static IList<Bin> CreateBinsMaxInclusive(double min, double max, int binCount)
-        {
-            if (binCount <= 0)
-                throw new InvalidOperationException("binCount must be greater than 0");
-
+        {            
             double binSize = (max - min) / (double)binCount;
             double halfBin = binSize / 2.0;
             double rangeMin = min;
@@ -52,9 +54,6 @@ namespace LinqStatistics
 
         private static IList<Bin> CreateBinsUnbounded(double min, double max, int binCount)
         {
-            if (binCount <= 0)
-                throw new InvalidOperationException("binCount must be greater than 0");
-
             double binSize = (max - min) / (double)binCount;
             double halfBin = binSize / 2.0;
             double rangeMin = min;
@@ -77,9 +76,6 @@ namespace LinqStatistics
 
         private static IList<Bin> CreateBinsExpandRange(double min, double max, int binCount)
         {
-            if (binCount <= 0)
-                throw new InvalidOperationException("binCount must be greater than 0");
-
             double binSize = (max - min) / ((double)binCount - 1);  // make the range such that the min and max are outside of the data set 
                                                                     // that's where the minus one comes in
             double halfBin = binSize / 2.0;

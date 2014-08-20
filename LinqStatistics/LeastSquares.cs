@@ -4,8 +4,8 @@ namespace LinqStatistics
 {
     public struct LeastSquares
     {
-        private double _m;
-        private double _b;
+        private readonly double _m;
+        private readonly double _b;
 
         /// <summary>
         /// M Coefficient for y = Mx + B
@@ -31,7 +31,7 @@ namespace LinqStatistics
         /// Uses the calculated coefficients to solve Y for inputted X
         /// </summary>
         /// <param name="x">X value to solve for</param>
-        /// <returns>Y value (y = Mx + C)</returns>
+        /// <returns>Y value (y = Mx + B)</returns>
         public double Solve(double x)
         {
             return (M * x) + B;

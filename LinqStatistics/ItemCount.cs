@@ -76,7 +76,7 @@ namespace LinqStatistics
         /// <returns></returns>
         public override string ToString()
         {
-            return string.Format("v{0}:c{1}", _value, _count);
+            return string.Format("v={0}:c={1}", _value, _count);
         }
     }
 }

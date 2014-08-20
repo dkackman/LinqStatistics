@@ -5,14 +5,14 @@ namespace LinqStatistics
     /// <summary>
     /// An ordered pair of values, representing a segment.
     /// </summary>
-    /// <typeparam name="T">Type of each of two values of range.</typeparam>
     public struct Range
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="Range&lt;T&gt;"/> struct.
+        /// Initializes a new instance of the <see cref="Range"/> struct.
         /// </summary>
         /// <param name="min">The minimal value of segment.</param>
         /// <param name="max">The maximal value of segment.</param>
+        /// <param name="maxInclusive">When true Contains will include the max value.</param>
         public Range(double min, double max, bool maxInclusive = false)
         {
             this.min = min;
@@ -24,7 +24,14 @@ namespace LinqStatistics
             _maxInclusive = maxInclusive;
         }
 
-        private bool _maxInclusive;
+        private readonly bool _maxInclusive;
+        /// <summary>
+        /// Determines whether max should be included in the range or excluded
+        /// </summary>
+        public bool MaxInclusive
+        {
+            get { return _maxInclusive; }
+        }
 
         private readonly double min;
         /// <summary>
@@ -58,7 +65,6 @@ namespace LinqStatistics
 
         public bool Contains(double item)
         {
-            //return item >= Min && item < Max;
             if (_maxInclusive)
             {
                 return (item >= Min && item <= Max);

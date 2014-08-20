@@ -6,10 +6,6 @@ namespace LinqStatistics
     {
         private readonly Range _range;
 
-        public Range Range { get { return _range; } }
-
-        public double Width { get { return _range.Max - _range.Min; } }
-
         public Bin(double v, double min, double max, int count, bool maxInclusive = false)
             : base(v, count)
         {
@@ -21,6 +17,10 @@ namespace LinqStatistics
         {
             
         }
+
+        public Range Range { get { return _range; } }
+
+        public double Width { get { return _range.Max - _range.Min; } }
 
         public override int GetHashCode()
         {

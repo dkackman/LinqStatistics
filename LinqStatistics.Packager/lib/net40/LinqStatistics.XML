@@ -82,7 +82,7 @@
             Uses the calculated coefficients to solve Y for inputted X
             </summary>
             <param name="x">X value to solve for</param>
-            <returns>Y value (y = Mx + C)</returns>
+            <returns>Y value (y = Mx + B)</returns>
         </member>
         <member name="P:LinqStatistics.LeastSquares.M">
             <summary>
@@ -94,20 +94,20 @@
             B Coefficient for y = Mx + B
             </summary>
         </member>
-        <member name="T:LinqStatistics.Range`1">
+        <member name="T:LinqStatistics.Range">
             <summary>
             An ordered pair of values, representing a segment.
             </summary>
-            <typeparam name="T">Type of each of two values of range.</typeparam>
         </member>
-        <member name="M:LinqStatistics.Range`1.#ctor(`0,`0)">
+        <member name="M:LinqStatistics.Range.#ctor(System.Double,System.Double,System.Boolean)">
             <summary>
-            Initializes a new instance of the <see cref="T:LinqStatistics.Range`1"/> struct.
+            Initializes a new instance of the <see cref="T:LinqStatistics.Range"/> struct.
             </summary>
             <param name="min">The minimal value of segment.</param>
             <param name="max">The maximal value of segment.</param>
+            <param name="maxInclusive">When true Contains will include the max value.</param>
         </member>
-        <member name="M:LinqStatistics.Range`1.Equals(System.Object)">
+        <member name="M:LinqStatistics.Range.Equals(System.Object)">
             <summary>
             Indicates whether this instance and a specified object are equal.
             </summary>
@@ -116,7 +116,7 @@
             true if <paramref name="obj"/> and this instance are the same type and represent the same value; otherwise, false.
             </returns>
         </member>
-        <member name="M:LinqStatistics.Range`1.GetHashCode">
+        <member name="M:LinqStatistics.Range.GetHashCode">
             <summary>
             Returns the hash code for this instance.
             </summary>
@@ -124,7 +124,7 @@
             A 32-bit signed integer that is the hash code for this instance.
             </returns>
         </member>
-        <member name="M:LinqStatistics.Range`1.ToString">
+        <member name="M:LinqStatistics.Range.ToString">
             <summary>
             Returns the fully qualified type name of this instance.
             </summary>
@@ -132,7 +132,7 @@
             A <see cref="T:System.String"/> containing a fully qualified type name.
             </returns>
         </member>
-        <member name="M:LinqStatistics.Range`1.Equals(LinqStatistics.Range{`0})">
+        <member name="M:LinqStatistics.Range.Equals(LinqStatistics.Range)">
             <summary>
             Indicates whether the current object is equal to another object of the same type.
             </summary>
@@ -141,17 +141,53 @@
             true if the current object is equal to the <paramref name="other"/> parameter; otherwise, false.
             </returns>
         </member>
-        <member name="P:LinqStatistics.Range`1.Min">
+        <member name="P:LinqStatistics.Range.MaxInclusive">
+            <summary>
+            Determines whether max should be included in the range or excluded
+            </summary>
+        </member>
+        <member name="P:LinqStatistics.Range.Min">
             <summary>
             Gets the minimal value of segment.
             </summary>
             <value>The min.</value>
         </member>
-        <member name="P:LinqStatistics.Range`1.Max">
+        <member name="P:LinqStatistics.Range.Max">
             <summary>
             Gets the maximal value of segment.
             </summary>
             <value>The max.</value>
+        </member>
+        <member name="T:LinqStatistics.BinningMode">
+            <summary>
+            Controls how the range of the bins are determined
+            </summary>
+        </member>
+        <member name="F:LinqStatistics.BinningMode.Unbounded">
+            <summary>
+            The minimum will be equal to the sequence min and the maximum equal to infinity
+            </summary>
+        </member>
+        <member name="F:LinqStatistics.BinningMode.MaxValueInclusive">
+            <summary>
+            The minimum will be the sequnce min and the maximxum equal to sequence max
+            The last bin will max inclusive instead of exclusive
+            </summary>
+        </member>
+        <member name="F:LinqStatistics.BinningMode.ExpandRange">
+            <summary>
+            The total range will be expanded such that the min is
+            less then the sequence min and max is greater then the sequence max
+            </summary>
+        </member>
+        <member name="M:LinqStatistics.TestHist.Histogram(System.Collections.Generic.IEnumerable{System.Int32},System.Int32,LinqStatistics.BinningMode)">
+            <summary>
+            Computes the Histogram of a sequence of int values.
+            </summary>
+            <param name="source">A sequence of int values to calculate the Histogram of.</param>
+            <param name="binCount">The number of bins into which to segregate the data.</param>
+            <param name="mode">The method used to determine the range of each bin</param>
+            <returns>The Histogram of the sequence of int values.</returns>
         </member>
     </members>
 </doc>
