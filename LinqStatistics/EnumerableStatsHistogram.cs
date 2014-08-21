@@ -11,6 +11,8 @@ namespace LinqStatistics
     {
         /// <summary>
         /// The minimum will be equal to the sequence min and the maximum equal to infinity
+        /// such that:
+        /// [min, min + binSize), [min * i, min * i + binSize), ... , [min * n, positiveInfinity)
         /// </summary>
         Unbounded,
 
@@ -18,11 +20,13 @@ namespace LinqStatistics
         /// The minimum will be the sequnce min and the maximxum equal to sequence max
         /// The last bin will max inclusive instead of exclusive
         /// </summary>
+        /// [min, min + binSize), [min * i, min * i + binSize), ... , [min * n, max]
         MaxValueInclusive,
 
         /// <summary>
         /// The total range will be expanded such that the min is
         /// less then the sequence min and max is greater then the sequence max
+        /// [min - (binSize / 2), min - (binSize / 2) + binSize), [min - (binSize / 2) * i, min - (binSize / 2) * i + binSize), ... , [min - (bin / 2) * n, min + (binSize / 2))
         /// </summary>
         ExpandRange
     }
