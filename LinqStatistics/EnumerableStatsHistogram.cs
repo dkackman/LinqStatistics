@@ -118,7 +118,7 @@ namespace LinqStatistics
             return bins;
         }
 
-		private static void AssignBins(this IEnumerable<int> source, IList<Bin> bins)
+        private static void AssignBins(this IEnumerable<int> source, IList<Bin> bins)
         {
             foreach (var value in source)
             {
@@ -215,7 +215,7 @@ namespace LinqStatistics
             return bins;
         }
 
-		private static void AssignBins(this IEnumerable<long> source, IList<Bin> bins)
+        private static void AssignBins(this IEnumerable<long> source, IList<Bin> bins)
         {
             foreach (var value in source)
             {
@@ -312,7 +312,7 @@ namespace LinqStatistics
             return bins;
         }
 
-		private static void AssignBins(this IEnumerable<float> source, IList<Bin> bins)
+        private static void AssignBins(this IEnumerable<float> source, IList<Bin> bins)
         {
             foreach (var value in source)
             {
@@ -409,7 +409,7 @@ namespace LinqStatistics
             return bins;
         }
 
-		private static void AssignBins(this IEnumerable<double> source, IList<Bin> bins)
+        private static void AssignBins(this IEnumerable<double> source, IList<Bin> bins)
         {
             foreach (var value in source)
             {

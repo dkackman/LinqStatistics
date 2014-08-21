@@ -197,33 +197,5 @@ namespace LinqStatisticsTests
 
             Assert.AreEqual(0, histogram[6].Count);
         }
-
-        [TestMethod]
-        public void HistogramOfNullableDoubles()
-        {
-            var list = new List<double?>()
-            {
-                null, 1.1, 2.2, 2.3, 3.4, 3.5, null, 3.6, 4.7, 4.8, 4.9, null, 4.1, 5.2, 5.3, 5.4, 5.5, null, 5.6, 6.7, 6.8, 6.9, 6.1, 7.2, 7.3, 7.4, 8.5, 8.6, 9.7
-            };
-
-            var histogram = list.Histogram(6).ToList();
-
-            Assert.AreEqual(list.Count, histogram.Select(b => b.Count).Sum());
-
-            Assert.AreEqual(4, histogram[0].Count);
-            Assert.IsNull(histogram[0].RepresentativeValue);
-
-            Assert.AreEqual(1, histogram[1].Count);
-
-            Assert.AreEqual(2, histogram[2].Count);
-
-            Assert.AreEqual(4, histogram[3].Count);
-
-            Assert.AreEqual(9, histogram[4].Count);
-
-            Assert.AreEqual(6, histogram[5].Count);
-
-            Assert.AreEqual(3, histogram[6].Count);
-        }
     }
 }

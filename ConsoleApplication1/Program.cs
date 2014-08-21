@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.Runtime.InteropServices;
+using System.IO;
 
 using LinqStatistics;
 
@@ -25,10 +26,10 @@ namespace ConsoleApplication1
 
                 // now pack every three bytes (3 because we have a 24 bit format (no alpha)) in an int
                 // this int will represent that color in a numeric format
-                for (int i = 0; i < buffer.Length; i += 3)
+                for (int i = 0; i < buffer.Length - 2; i += 3)
                 {
                     // each row stores Blue, Green, Red
-                    Color c = Color.FromArgb(buffer[i + 2], buffer[i + 1], buffer[i]);
+                    Color c = Color.FromArgb(0, buffer[i + 2], buffer[i + 1], buffer[i]);
                     colors.Add(c.ToArgb());
                 }
 
@@ -43,16 +44,16 @@ namespace ConsoleApplication1
                     Console.WriteLine("No modal color");
                 }
 
-                var histogram = colors.CountEach();
+                var histogram = colors.Histogram(colors.BinCountSquareRoot(), BinningMode.ExpandRange);
 
-                Console.WriteLine("");
-
-                // a histogram is typically ordered by the value for graphing purposes
-                // order it by count to display most common to least common colors
-                foreach (ItemCount<int> bin in histogram.OrderByDescending(b => b.Count))
+                using (var file = File.Create(@"d:\temp\histogram.csv"))
+                using (var writer = new StreamWriter(file))
                 {
-                    Color color = Color.FromArgb(bin.RepresentativeValue);
-                    Console.WriteLine("R={0}, G={1}, B={2} appears {3} times", color.R, color.G, color.B, bin.Count);
+                    writer.WriteLine("color,count");
+                    foreach(var bin in histogram)
+                    {
+                        writer.WriteLine("{0},{1}", Math.Round(bin.RepresentativeValue, 0, MidpointRounding.AwayFromZero), bin.Count);
+                    }
                 }
             }
         }
