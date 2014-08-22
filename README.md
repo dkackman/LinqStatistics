@@ -16,5 +16,7 @@ Extension methods to compute basic statistics modeled after Enumerable.Average. 
 - Variance (sample and population)
 - Root Mean Square
 - Least Squares
+- CountEach
+- Histogram
 
 http://www.codeproject.com/Articles/42492/Using-LINQ-to-Calculate-Basic-Statistics
