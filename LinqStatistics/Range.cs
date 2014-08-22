@@ -53,6 +53,11 @@ namespace LinqStatistics
             get { return max; }
         }
 
+        /// <summary>
+        /// The width of the range
+        /// </summary>
+        public double Width { get { return Max - Min; } }
+
         public static bool operator ==(Range first, Range second)
         {
             return first.min.Equals(second.min) && first.max.Equals(second.max);

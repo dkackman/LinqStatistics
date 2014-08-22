@@ -2,6 +2,9 @@
 
 namespace LinqStatistics
 {
+    /// <summary>
+    /// Represent the result of a LeastSquares calculation of the form y = mX + b
+    /// </summary>
     public struct LeastSquares
     {
         private readonly double _m;
