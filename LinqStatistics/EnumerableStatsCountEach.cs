@@ -6,23 +6,13 @@ namespace LinqStatistics
 {
     public static partial class EnumerableStats
     {          
-        //
-        // Summary:
-        //     Computes the Histogram of a sequence of values.
-        //
-        // Parameters:
-        //   source:
-        //     A sequence of values to calculate the Histogram of.
-        //
-        // Returns:
-        //     The Histogram of the sequence of values.
-        //
-        // Exceptions:
-        //   System.ArgumentNullException:
-        //     source is null.
-        //
-        //   System.InvalidOperationException:
-        //     source contains no elements.
+        /// <summary>
+        /// Counts each unique element in a sequence
+        /// </summary>
+        /// <typeparam name="T">The type of the sequence</typeparam>
+        /// <param name="source">The sequence to count</param>
+        /// <param name="comparer">Comparer used to determine equality between elements</param>
+        /// <returns>The count of each unique element</returns>
         public static IEnumerable<ItemCount<T>> CountEach<T>(this IEnumerable<T> source, IEqualityComparer<T> comparer)
         {
             if (source == null)
@@ -34,52 +24,25 @@ namespace LinqStatistics
             return source.GroupBy(t => t, comparer).OrderBy(g => g.Key).Select(g => new ItemCount<T>(g.Key, g.Count()));
         }
 
-        //
-        // Summary:
-        //     Computes the Histogram of a sequence of values.
-        //
-        // Parameters:
-        //   source:
-        //     A sequence of values to calculate the Histogram of.
-        //
-        // Returns:
-        //     The Histogram of the sequence of values.
-        //
-        // Exceptions:
-        //   System.ArgumentNullException:
-        //     source is null.
-        //
-        //   System.InvalidOperationException:
-        //     source contains no elements.
+        /// <summary>
+        /// Counts each unique element in a sequence
+        /// </summary>
+        /// <typeparam name="T">The type of the sequence</typeparam>
+        /// <param name="source">The sequence to count</param>
+        /// <returns>The count of each unique element</returns>
         public static IEnumerable<ItemCount<T>> CountEach<T>(this IEnumerable<T> source)
         {
             return source.CountEach(EqualityComparer<T>.Default);
         }
 
-        //
-        // Summary:
-        //     Computes the Histogram of a sequence of nullable values that
-        //     are obtained by invoking a transform function on each element of the input
-        //     sequence.
-        //
-        // Parameters:
-        //   source:
-        //     A sequence of values to calculate the Histogram of.
-        //
-        //   selector:
-        //     A transform function to apply to each element.
-        //
-        // Type parameters:
-        //   TSource:
-        //     The type of the elements of source.
-        //
-        // Returns:
-        //     The Histogram of the sequence of values, or null if the source sequence is
-        //     empty or contains only values that are null.
-        //
-        // Exceptions:
-        //   System.ArgumentNullException:
-        //     source or selector is null.
+        /// <summary>
+        /// Counts each unique element in a sequence
+        /// </summary>
+        /// <typeparam name="TSource">The type of the elements of source.</typeparam>
+        /// <typeparam name="TResult">The type of the element selected</typeparam>
+        /// <param name="source">A sequence of values to calculate the unique count of.</param>
+        /// <param name="selector">A transform function to apply to each element.</param>
+        /// <returns>The count of each unique element</returns>
         public static IEnumerable<ItemCount<TResult>> CountEach<TSource, TResult>(this IEnumerable<TSource> source, Func<TSource, TResult> selector)
         {
             if (source == null)

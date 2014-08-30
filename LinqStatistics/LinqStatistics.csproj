@@ -49,13 +49,17 @@
   <ItemGroup>
     <Compile Include="Bin.cs" />
     <Compile Include="BinFactory.cs" />
+    <Compile Include="EnumerableStatsCovariance.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EnumerableStatsCovariance.tt</DependentUpon>
+    </Compile>
     <Compile Include="ItemCount.cs" />
     <Compile Include="EnumerableStatsBinCount.cs" />
     <Compile Include="EnumerableStatsCountEach.cs" />
     <Compile Include="EnumerableStatsKurtosis.cs" />
     <Compile Include="EnumerableStatsLeastSquares.cs" />
     <Compile Include="EnumerableStatsPearson.cs" />
-    <Compile Include="EnumerableStatsCovariance.cs" />
     <Compile Include="EnumerableStats.cs" />
     <Compile Include="EnumerableStatsRange.cs" />
     <Compile Include="EnumerableStatsMode.cs" />
@@ -73,9 +77,12 @@
     <Compile Include="LeastSquares.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Range.cs" />
-    <Compile Include="TestHist.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="EnumerableStatsCovariance.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>EnumerableStatsCovariance.cs</LastGenOutput>
+    </None>
     <None Include="EnumerableStatsHistogram.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>EnumerableStatsHistogram.cs</LastGenOutput>

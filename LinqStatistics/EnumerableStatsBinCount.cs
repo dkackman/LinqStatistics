@@ -14,6 +14,12 @@ namespace LinqStatistics
         /// <returns></returns>
         public static int BinCountSturges<T>(this IEnumerable<T> source)
         {
+            if (source == null)
+                throw new ArgumentNullException("source");
+
+            if (!source.Any())
+                throw new InvalidOperationException("source sequence contains no elements");
+
             return (int)Math.Round(Math.Log(source.Count(), 2) + 1, 0);
         }
 
@@ -25,6 +31,12 @@ namespace LinqStatistics
         /// <returns></returns>
         public static int BinCountSquareRoot<T>(this IEnumerable<T> source)
         {
+            if (source == null)
+                throw new ArgumentNullException("source");
+
+            if (!source.Any())
+                throw new InvalidOperationException("source sequence contains no elements");
+
             return (int)Math.Round(Math.Sqrt(source.Count()), 0);
         }
 
@@ -36,6 +48,12 @@ namespace LinqStatistics
         /// <returns></returns>
         public static int BinCountRice<T>(this IEnumerable<T> source)
         {
+            if (source == null)
+                throw new ArgumentNullException("source");
+
+            if (!source.Any())
+                throw new InvalidOperationException("source sequence contains no elements");
+            
             return (int)Math.Round(2.0 * Math.Pow(source.Count(), 1.0 / 3.0), 0);
         }
     }

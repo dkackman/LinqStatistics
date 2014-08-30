@@ -6,98 +6,48 @@ namespace LinqStatistics
 {
     public static partial class EnumerableStats
     {
-        //
-        // Summary:
-        //     Computes the Covariance of a sequence of nullable System.Decimal values.
-        //
-        // Parameters:
-        //   source:
-        //     A sequence of nullable System.Decimal values to calculate the Covariance of.
-        //
-        // Returns:
-        //     The Covariance of the sequence of values, or null if the source sequence is
-        //     empty or contains only values that are null.
-        //
-        // Exceptions:
-        //   System.ArgumentNullException:
-        //     source is null.
-        //
-        //   System.OverflowException:
-        //     The sum of the elements in the sequence is larger than System.Decimal.MaxValue.
-        public static decimal? Covariance(this IEnumerable<decimal?> source, IEnumerable<decimal?> other)
+    	
+        /// <summary>
+        /// Computes the Covariance of two sequences of nullable int values.
+        /// </summary>
+        /// <param name="source">The first sequence of nullable int values to calculate the Covariance of.</param>
+        /// <param name="other">The second sequence of nullable int values to calculate the Covariance of.</param>
+        /// <returns>The Covariance of the two sequence of values.</returns>
+        public static double? Covariance(this IEnumerable<int?> source, IEnumerable<int?> other)
         {
-            IEnumerable<decimal> values = source.AllValues();
+            if (source == null)
+                throw new ArgumentNullException("source");
+
+            if (other == null)
+                throw new ArgumentNullException("other");
+            
+            IEnumerable<int> values = source.AllValues();
             if (values.Any())
                 return values.Covariance(other.AllValues());
 
             return null;
         }
-        //
-        // Summary:
-        //     Computes the Covariance of a sequence of System.Decimal values.
-        //
-        // Parameters:
-        //   source:
-        //     A sequence of System.Decimal values to calculate the Covariance of.
-        //
-        // Returns:
-        //     The Covariance of the sequence of values.
-        //
-        // Exceptions:
-        //   System.ArgumentNullException:
-        //     source is null.
-        //
-        //   System.InvalidOperationException:
-        //     source contains no elements.
-        //
-        //   System.OverflowException:
-        //     The sum of the elements in the sequence is larger than System.Decimal.MaxValue.
-        public static decimal Covariance(this IEnumerable<decimal> source, IEnumerable<decimal> other)
-        {
-            return (decimal)source.Select(x => (double)x).Covariance(other.Select(x => (double)x));
-        }
-        //
-        // Summary:
-        //     Computes the Covariance of a sequence of nullable System.Double values.
-        //
-        // Parameters:
-        //   source:
-        //     A sequence of nullable System.Double values to calculate the Covariance of.
-        //
-        // Returns:
-        //     The Covariance of the sequence of values, or null if the source sequence is
-        //     empty or contains only values that are null.
-        //
-        // Exceptions:
-        //   System.ArgumentNullException:
-        //     source is null.
-        public static double? Covariance(this IEnumerable<double?> source, IEnumerable<double?> other)
-        {
-            IEnumerable<double> values = source.AllValues();
-            if (values.Any())
-                return values.Covariance(other.AllValues());
 
-            return null;
-        }
-        //
-        // Summary:
-        //     Computes the Covariance of a sequence of System.Double values.
-        //
-        // Parameters:
-        //   source:
-        //     A sequence of System.Double values to calculate the Covariance of.
-        //
-        // Returns:
-        //     The Covariance of the sequence of values.
-        //
-        // Exceptions:
-        //   System.ArgumentNullException:
-        //     source is null.
-        //
-        //   System.InvalidOperationException:
-        //     source contains no elements.
-        public static double Covariance(this IEnumerable<double> source, IEnumerable<double> other)
+        /// <summary>
+        /// Computes the Covariance of two sequences of int  values.
+        /// </summary>
+        /// <param name="source">The first sequence of int values to calculate the Covariance of.</param>
+        /// <param name="other">The second sequence of int values to calculate the Covariance of.</param>
+        /// <returns>The Covariance of the two sequence of values.</returns>
+        public static double Covariance(this IEnumerable<int> source, IEnumerable<int> other)
         {
+            if (source == null)
+                throw new ArgumentNullException("source");
+
+            if (other == null)
+                throw new ArgumentNullException("other");
+
+            if (!source.Any())
+                throw new InvalidOperationException("source sequence contains no elements");
+
+            if (!other.Any())
+                throw new InvalidOperationException("other sequence contains no elements");
+
             int len = source.Count();
 
             if (len != other.Count())
@@ -108,447 +58,233 @@ namespace LinqStatistics
             double covariance = 0;
             
             for (int i = 0; i < len; i++)
-                covariance += (source.ElementAt(i) - avgSource) * (other.ElementAt(i) - avgOther);
+                covariance += (double)((source.ElementAt(i) - avgSource) * (other.ElementAt(i) - avgOther));
 
-            return covariance / len; 
-        }
-        //
-        // Summary:
-        //     Computes the Covariance of a sequence of nullable System.Single values.
-        //
-        // Parameters:
-        //   source:
-        //     A sequence of nullable System.Single values to calculate the Covariance of.
-        //
-        // Returns:
-        //     The Covariance of the sequence of values, or null if the source sequence is
-        //     empty or contains only values that are null.
-        //
-        // Exceptions:
-        //   System.ArgumentNullException:
-        //     source is null.
-        public static float? Covariance(this IEnumerable<float?> source, IEnumerable<float?> other)
-        {
-            IEnumerable<float> values = source.AllValues();
-            if (values.Any())
-                return values.Covariance(other.AllValues());
-
-            return null;
-        }
-        //
-        // Summary:
-        //     Computes the Covariance of a sequence of System.Single values.
-        //
-        // Parameters:
-        //   source:
-        //     A sequence of System.Single values to calculate the Covariance of.
-        //
-        // Returns:
-        //     The Covariance of the sequence of values.
-        //
-        // Exceptions:
-        //   System.ArgumentNullException:
-        //     source is null.
-        //
-        //   System.InvalidOperationException:
-        //     source contains no elements.
-        public static float Covariance(this IEnumerable<float> source, IEnumerable<float> other)
-        {
-            return (float)source.Select(x => (double)x).Covariance(other.Select(x => (double)x));
-        }
-        //
-        // Summary:
-        //     Computes the Covariance of a sequence of nullable System.Int32 values.
-        //
-        // Parameters:
-        //   source:
-        //     A sequence of nullable System.Int32values to calculate the Covariance of.
-        //
-        // Returns:
-        //     The Covariance of the sequence of values, or null if the source sequence is
-        //     empty or contains only values that are null.
-        //
-        // Exceptions:
-        //   System.ArgumentNullException:
-        //     source is null.
-        //
-        //   System.OverflowException:
-        //     The sum of the elements in the sequence is larger than System.Int64.MaxValue.
-        public static double? Covariance(this IEnumerable<int?> source, IEnumerable<int?> other)
-        {
-            IEnumerable<int> values = source.AllValues();
-            if (values.Any())
-                return values.Covariance(other.AllValues());
-
-            return null;
-        }
-        //
-        // Summary:
-        //     Computes the Covariance of a sequence of System.Int32 values.
-        //
-        // Parameters:
-        //   source:
-        //     A sequence of System.Int32 values to calculate the Covariance of.
-        //
-        // Returns:
-        //     The Covariance of the sequence of values.
-        //
-        // Exceptions:
-        //   System.ArgumentNullException:
-        //     source is null.
-        //
-        //   System.InvalidOperationException:
-        //     source contains no elements.
-        //
-        //   System.OverflowException:
-        //     The sum of the elements in the sequence is larger than System.Int64.MaxValue.
-        public static double Covariance(this IEnumerable<int> source, IEnumerable<int> other)
-        {
-            return source.Select(x => (double)x).Covariance(other.Select(x => (double)x));
-        }
-        //
-        // Summary:
-        //     Computes the Covariance of a sequence of nullable System.Int64 values.
-        //
-        // Parameters:
-        //   source:
-        //     A sequence of nullable System.Int64 values to calculate the Covariance of.
-        //
-        // Returns:
-        //     The Covariance of the sequence of values, or null if the source sequence is
-        //     empty or contains only values that are null.
-        //
-        // Exceptions:
-        //   System.ArgumentNullException:
-        //     source is null.
-        //
-        //   System.OverflowException:
-        //     The sum of the elements in the sequence is larger than System.Int64.MaxValue.
+            return (double)(covariance / len); 
+        }               
+ 	
+        /// <summary>
+        /// Computes the Covariance of two sequences of nullable long values.
+        /// </summary>
+        /// <param name="source">The first sequence of nullable long values to calculate the Covariance of.</param>
+        /// <param name="other">The second sequence of nullable long values to calculate the Covariance of.</param>
+        /// <returns>The Covariance of the two sequence of values.</returns>
         public static double? Covariance(this IEnumerable<long?> source, IEnumerable<long?> other)
         {
+            if (source == null)
+                throw new ArgumentNullException("source");
+
+            if (other == null)
+                throw new ArgumentNullException("other");
+            
             IEnumerable<long> values = source.AllValues();
             if (values.Any())
                 return values.Covariance(other.AllValues());
 
             return null;
         }
-        //
-        // Summary:
-        //     Computes the Covariance of a sequence of System.Int64 values.
-        //
-        // Parameters:
-        //   source:
-        //     A sequence of System.Int64 values to calculate the Covariance of.
-        //
-        // Returns:
-        //     The Covariance of the sequence of values.
-        //
-        // Exceptions:
-        //   System.ArgumentNullException:
-        //     source is null.
-        //
-        //   System.InvalidOperationException:
-        //     source contains no elements.
-        //
-        //   System.OverflowException:
-        //     The sum of the elements in the sequence is larger than System.Int64.MaxValue.
+
+        /// <summary>
+        /// Computes the Covariance of two sequences of long  values.
+        /// </summary>
+        /// <param name="source">The first sequence of long values to calculate the Covariance of.</param>
+        /// <param name="other">The second sequence of long values to calculate the Covariance of.</param>
+        /// <returns>The Covariance of the two sequence of values.</returns>
         public static double Covariance(this IEnumerable<long> source, IEnumerable<long> other)
         {
-            return source.Select(x => (double)x).Covariance(other.Select(x => (double)x));
-        }
-        //
-        // Summary:
-        //     Computes the Covariance of a sequence of nullable System.Decimal values that
-        //     are obtained by invoking a transform function on each element of the input
-        //     sequence.
-        //
-        // Parameters:
-        //   source:
-        //     A sequence of values to calculate the Covariance of.
-        //
-        //   selector:
-        //     A transform function to apply to each element.
-        //
-        // Type parameters:
-        //   TSource:
-        //     The type of the elements of source.
-        //
-        // Returns:
-        //     The Covariance of the sequence of values, or null if the source sequence is
-        //     empty or contains only values that are null.
-        //
-        // Exceptions:
-        //   System.ArgumentNullException:
-        //     source or selector is null.
-        //
-        //   System.OverflowException:
-        //     The sum of the elements in the sequence is larger than System.Decimal.MaxValue.
-        public static decimal? Covariance<TSource>(this IEnumerable<TSource> source, IEnumerable<TSource> other, Func<TSource, decimal?> selector)
+            if (source == null)
+                throw new ArgumentNullException("source");
+
+            if (other == null)
+                throw new ArgumentNullException("other");
+
+            if (!source.Any())
+                throw new InvalidOperationException("source sequence contains no elements");
+
+            if (!other.Any())
+                throw new InvalidOperationException("other sequence contains no elements");
+
+            int len = source.Count();
+
+            if (len != other.Count())
+                throw new ArgumentException("Collections are not of the same length", "other");
+
+            double avgSource = source.Average();
+            double avgOther = other.Average();
+            double covariance = 0;
+            
+            for (int i = 0; i < len; i++)
+                covariance += (double)((source.ElementAt(i) - avgSource) * (other.ElementAt(i) - avgOther));
+
+            return (double)(covariance / len); 
+        }               
+ 	
+        /// <summary>
+        /// Computes the Covariance of two sequences of nullable decimal values.
+        /// </summary>
+        /// <param name="source">The first sequence of nullable decimal values to calculate the Covariance of.</param>
+        /// <param name="other">The second sequence of nullable decimal values to calculate the Covariance of.</param>
+        /// <returns>The Covariance of the two sequence of values.</returns>
+        public static decimal? Covariance(this IEnumerable<decimal?> source, IEnumerable<decimal?> other)
         {
-            return source.Select(selector).Covariance(other.Select(selector));
+            if (source == null)
+                throw new ArgumentNullException("source");
+
+            if (other == null)
+                throw new ArgumentNullException("other");
+            
+            IEnumerable<decimal> values = source.AllValues();
+            if (values.Any())
+                return values.Covariance(other.AllValues());
+
+            return null;
         }
-        //
-        // Summary:
-        //     Computes the Covariance of a sequence of System.Decimal values that are obtained
-        //     by invoking a transform function on each element of the input sequence.
-        //
-        // Parameters:
-        //   source:
-        //     A sequence of values that are used to calculate an Covariance.
-        //
-        //   selector:
-        //     A transform function to apply to each element.
-        //
-        // Type parameters:
-        //   TSource:
-        //     The type of the elements of source.
-        //
-        // Returns:
-        //     The Covariance of the sequence of values.
-        //
-        // Exceptions:
-        //   System.ArgumentNullException:
-        //     source or selector is null.
-        //
-        //   System.InvalidOperationException:
-        //     source contains no elements.
-        //
-        //   System.OverflowException:
-        //     The sum of the elements in the sequence is larger than System.Decimal.MaxValue.
-        public static decimal Covariance<TSource>(this IEnumerable<TSource> source, IEnumerable<TSource> other, Func<TSource, decimal> selector)
+
+        /// <summary>
+        /// Computes the Covariance of two sequences of decimal  values.
+        /// </summary>
+        /// <param name="source">The first sequence of decimal values to calculate the Covariance of.</param>
+        /// <param name="other">The second sequence of decimal values to calculate the Covariance of.</param>
+        /// <returns>The Covariance of the two sequence of values.</returns>
+        public static decimal Covariance(this IEnumerable<decimal> source, IEnumerable<decimal> other)
         {
-            return source.Select(selector).Covariance(other.Select(selector));
-        }
-        //
-        // Summary:
-        //     Computes the Covariance of a sequence of nullable System.Double values that
-        //     are obtained by invoking a transform function on each element of the input
-        //     sequence.
-        //
-        // Parameters:
-        //   source:
-        //     A sequence of values to calculate the Covariance of.
-        //
-        //   selector:
-        //     A transform function to apply to each element.
-        //
-        // Type parameters:
-        //   TSource:
-        //     The type of the elements of source.
-        //
-        // Returns:
-        //     The Covariance of the sequence of values, or null if the source sequence is
-        //     empty or contains only values that are null.
-        //
-        // Exceptions:
-        //   System.ArgumentNullException:
-        //     source or selector is null.
-        public static double? Covariance<TSource>(this IEnumerable<TSource> source, IEnumerable<TSource> other, Func<TSource, double?> selector)
+            if (source == null)
+                throw new ArgumentNullException("source");
+
+            if (other == null)
+                throw new ArgumentNullException("other");
+
+            if (!source.Any())
+                throw new InvalidOperationException("source sequence contains no elements");
+
+            if (!other.Any())
+                throw new InvalidOperationException("other sequence contains no elements");
+
+            int len = source.Count();
+
+            if (len != other.Count())
+                throw new ArgumentException("Collections are not of the same length", "other");
+
+            decimal avgSource = source.Average();
+            decimal avgOther = other.Average();
+            double covariance = 0;
+            
+            for (int i = 0; i < len; i++)
+                covariance += (double)((source.ElementAt(i) - avgSource) * (other.ElementAt(i) - avgOther));
+
+            return (decimal)(covariance / len); 
+        }               
+ 	
+        /// <summary>
+        /// Computes the Covariance of two sequences of nullable float values.
+        /// </summary>
+        /// <param name="source">The first sequence of nullable float values to calculate the Covariance of.</param>
+        /// <param name="other">The second sequence of nullable float values to calculate the Covariance of.</param>
+        /// <returns>The Covariance of the two sequence of values.</returns>
+        public static float? Covariance(this IEnumerable<float?> source, IEnumerable<float?> other)
         {
-            return source.Select(selector).Covariance(other.Select(selector));
+            if (source == null)
+                throw new ArgumentNullException("source");
+
+            if (other == null)
+                throw new ArgumentNullException("other");
+            
+            IEnumerable<float> values = source.AllValues();
+            if (values.Any())
+                return values.Covariance(other.AllValues());
+
+            return null;
         }
-        //
-        // Summary:
-        //     Computes the Covariance of a sequence of System.Double values that are obtained
-        //     by invoking a transform function on each element of the input sequence.
-        //
-        // Parameters:
-        //   source:
-        //     A sequence of values to calculate the Covariance of.
-        //
-        //   selector:
-        //     A transform function to apply to each element.
-        //
-        // Type parameters:
-        //   TSource:
-        //     The type of the elements of source.
-        //
-        // Returns:
-        //     The Covariance of the sequence of values.
-        //
-        // Exceptions:
-        //   System.ArgumentNullException:
-        //     source or selector is null.
-        //
-        //   System.InvalidOperationException:
-        //     source contains no elements.
-        public static double Covariance<TSource>(this IEnumerable<TSource> source, IEnumerable<TSource> other, Func<TSource, double> selector)
+
+        /// <summary>
+        /// Computes the Covariance of two sequences of float  values.
+        /// </summary>
+        /// <param name="source">The first sequence of float values to calculate the Covariance of.</param>
+        /// <param name="other">The second sequence of float values to calculate the Covariance of.</param>
+        /// <returns>The Covariance of the two sequence of values.</returns>
+        public static float Covariance(this IEnumerable<float> source, IEnumerable<float> other)
         {
-            return source.Select(selector).Covariance(other.Select(selector));
-        }
-        //
-        // Summary:
-        //     Computes the Covariance of a sequence of nullable System.Single values that
-        //     are obtained by invoking a transform function on each element of the input
-        //     sequence.
-        //
-        // Parameters:
-        //   source:
-        //     A sequence of values to calculate the Covariance of.
-        //
-        //   selector:
-        //     A transform function to apply to each element.
-        //
-        // Type parameters:
-        //   TSource:
-        //     The type of the elements of source.
-        //
-        // Returns:
-        //     The Covariance of the sequence of values, or null if the source sequence is
-        //     empty or contains only values that are null.
-        //
-        // Exceptions:
-        //   System.ArgumentNullException:
-        //     source or selector is null.
-        public static float? Covariance<TSource>(this IEnumerable<TSource> source, IEnumerable<TSource> other, Func<TSource, float?> selector)
+            if (source == null)
+                throw new ArgumentNullException("source");
+
+            if (other == null)
+                throw new ArgumentNullException("other");
+
+            if (!source.Any())
+                throw new InvalidOperationException("source sequence contains no elements");
+
+            if (!other.Any())
+                throw new InvalidOperationException("other sequence contains no elements");
+
+            int len = source.Count();
+
+            if (len != other.Count())
+                throw new ArgumentException("Collections are not of the same length", "other");
+
+            float avgSource = source.Average();
+            float avgOther = other.Average();
+            double covariance = 0;
+            
+            for (int i = 0; i < len; i++)
+                covariance += (double)((source.ElementAt(i) - avgSource) * (other.ElementAt(i) - avgOther));
+
+            return (float)(covariance / len); 
+        }               
+ 	
+        /// <summary>
+        /// Computes the Covariance of two sequences of nullable double values.
+        /// </summary>
+        /// <param name="source">The first sequence of nullable double values to calculate the Covariance of.</param>
+        /// <param name="other">The second sequence of nullable double values to calculate the Covariance of.</param>
+        /// <returns>The Covariance of the two sequence of values.</returns>
+        public static double? Covariance(this IEnumerable<double?> source, IEnumerable<double?> other)
         {
-            return source.Select(selector).Covariance(other.Select(selector));
+            if (source == null)
+                throw new ArgumentNullException("source");
+
+            if (other == null)
+                throw new ArgumentNullException("other");
+            
+            IEnumerable<double> values = source.AllValues();
+            if (values.Any())
+                return values.Covariance(other.AllValues());
+
+            return null;
         }
-        //
-        // Summary:
-        //     Computes the Covariance of a sequence of System.Single values that are obtained
-        //     by invoking a transform function on each element of the input sequence.
-        //
-        // Parameters:
-        //   source:
-        //     A sequence of values to calculate the Covariance of.
-        //
-        //   selector:
-        //     A transform function to apply to each element.
-        //
-        // Type parameters:
-        //   TSource:
-        //     The type of the elements of source.
-        //
-        // Returns:
-        //     The Covariance of the sequence of values.
-        //
-        // Exceptions:
-        //   System.ArgumentNullException:
-        //     source or selector is null.
-        //
-        //   System.InvalidOperationException:
-        //     source contains no elements.
-        public static float Covariance<TSource>(this IEnumerable<TSource> source, IEnumerable<TSource> other, Func<TSource, float> selector)
+
+        /// <summary>
+        /// Computes the Covariance of two sequences of double  values.
+        /// </summary>
+        /// <param name="source">The first sequence of double values to calculate the Covariance of.</param>
+        /// <param name="other">The second sequence of double values to calculate the Covariance of.</param>
+        /// <returns>The Covariance of the two sequence of values.</returns>
+        public static double Covariance(this IEnumerable<double> source, IEnumerable<double> other)
         {
-            return source.Select(selector).Covariance(other.Select(selector));
-        }
-        //
-        // Summary:
-        //     Computes the Covariance of a sequence of nullable System.Int32 values that are
-        //     obtained by invoking a transform function on each element of the input sequence.
-        //
-        // Parameters:
-        //   source:
-        //     A sequence of values to calculate the Covariance of.
-        //
-        //   selector:
-        //     A transform function to apply to each element.
-        //
-        // Type parameters:
-        //   TSource:
-        //     The type of the elements of source.
-        //
-        // Returns:
-        //     The Covariance of the sequence of values, or null if the source sequence is
-        //     empty or contains only values that are null.
-        //
-        // Exceptions:
-        //   System.ArgumentNullException:
-        //     source or selector is null.
-        //
-        //   System.OverflowException:
-        //     The sum of the elements in the sequence is larger than System.Int64.MaxValue.
-        public static double? Covariance<TSource>(this IEnumerable<TSource> source, IEnumerable<TSource> other, Func<TSource, int?> selector)
-        {
-            return source.Select(selector).Covariance(other.Select(selector));
-        }
-        //
-        // Summary:
-        //     Computes the Covariance of a sequence of System.Int32 values that are obtained
-        //     by invoking a transform function on each element of the input sequence.
-        //
-        // Parameters:
-        //   source:
-        //     A sequence of values to calculate the Covariance of.
-        //
-        //   selector:
-        //     A transform function to apply to each element.
-        //
-        // Type parameters:
-        //   TSource:
-        //     The type of the elements of source.
-        //
-        // Returns:
-        //     The Covariance of the sequence of values.
-        //
-        // Exceptions:
-        //   System.ArgumentNullException:
-        //     source or selector is null.
-        //
-        //   System.InvalidOperationException:
-        //     source contains no elements.
-        //
-        //   System.OverflowException:
-        //     The sum of the elements in the sequence is larger than System.Int64.MaxValue.
-        public static double Covariance<TSource>(this IEnumerable<TSource> source, IEnumerable<TSource> other, Func<TSource, int> selector)
-        {
-            return source.Select(selector).Covariance(other.Select(selector));
-        }
-        //
-        // Summary:
-        //     Computes the Covariance of a sequence of nullable System.Int64 values that are
-        //     obtained by invoking a transform function on each element of the input sequence.
-        //
-        // Parameters:
-        //   source:
-        //     A sequence of values to calculate the Covariance of.
-        //
-        //   selector:
-        //     A transform function to apply to each element.
-        //
-        // Type parameters:
-        //   TSource:
-        //     The type of the elements of source.
-        //
-        // Returns:
-        //     The Covariance of the sequence of values, or null if the source sequence is
-        //     empty or contains only values that are null.
-        public static double? Covariance<TSource>(this IEnumerable<TSource> source, IEnumerable<TSource> other, Func<TSource, long?> selector)
-        {
-            return source.Select(selector).Covariance(other.Select(selector));
-        }
-        //
-        // Summary:
-        //     Computes the Covariance of a sequence of System.Int64 values that are obtained
-        //     by invoking a transform function on each element of the input sequence.
-        //
-        // Parameters:
-        //   source:
-        //     A sequence of values to calculate the Covariance of.
-        //
-        //   selector:
-        //     A transform function to apply to each element.
-        //
-        // Type parameters:
-        //   TSource:
-        //     The type of the elements of source.
-        //
-        // Returns:
-        //     The Covariance of the sequence of values.
-        //
-        // Exceptions:
-        //   System.ArgumentNullException:
-        //     source or selector is null.
-        //
-        //   System.InvalidOperationException:
-        //     source contains no elements.
-        //
-        //   System.OverflowException:
-        //     The sum of the elements in the sequence is larger than System.Int64.MaxValue.
-        public static double Covariance<TSource>(this IEnumerable<TSource> source, IEnumerable<TSource> other, Func<TSource, long> selector)
-        {
-            return source.Select(selector).Covariance(other.Select(selector));
-        }
-    }
+            if (source == null)
+                throw new ArgumentNullException("source");
+
+            if (other == null)
+                throw new ArgumentNullException("other");
+
+            if (!source.Any())
+                throw new InvalidOperationException("source sequence contains no elements");
+
+            if (!other.Any())
+                throw new InvalidOperationException("other sequence contains no elements");
+
+            int len = source.Count();
+
+            if (len != other.Count())
+                throw new ArgumentException("Collections are not of the same length", "other");
+
+            double avgSource = source.Average();
+            double avgOther = other.Average();
+            double covariance = 0;
+            
+            for (int i = 0; i < len; i++)
+                covariance += (double)((source.ElementAt(i) - avgSource) * (other.ElementAt(i) - avgOther));
+
+            return (double)(covariance / len); 
+        }               
+     }
 }

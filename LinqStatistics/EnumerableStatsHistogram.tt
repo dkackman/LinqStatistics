@@ -37,7 +37,7 @@ namespace LinqStatistics
     {
     <# List<string> types = new List<string>()
     {
-        "int", "long", "float", "double"
+        "int", "long", "float", "double", "decimal"
     };
 
     foreach(var type in types)
@@ -58,7 +58,7 @@ namespace LinqStatistics
             if (!source.Any())
                 throw new InvalidOperationException("source sequence contains no elements");
 
-            var bins = BinFactory.CreateBins(source.Min(), source.Max(), binCount, mode);
+            var bins = BinFactory.CreateBins((double)source.Min(), (double)source.Max(), binCount, mode);
             source.AssignBins(bins);
 
             return bins;
@@ -101,7 +101,7 @@ namespace LinqStatistics
                 throw new InvalidOperationException("source sequence contains no elements");
 
             var sequence = source.Select(t => selector(t));
-            var bins = BinFactory.CreateBins(sequence.Min(), sequence.Max(), binCount, mode);
+            var bins = BinFactory.CreateBins((double)sequence.Min(), (double)sequence.Max(), binCount, mode);
             sequence.AssignBins(bins);
 
             return bins;
@@ -126,13 +126,13 @@ namespace LinqStatistics
                 throw new InvalidOperationException("source sequence contains no elements");
 
             var sequence = source.Select(t => selector(t)).AllValues();
-            var bins = BinFactory.CreateBins(sequence.Min(), sequence.Max(), binCount, mode);
+            var bins = BinFactory.CreateBins((double)sequence.Min(), (double)sequence.Max(), binCount, mode);
             sequence.AssignBins(bins);
 
             return bins;
         }
 
-		private static void AssignBins(this IEnumerable<<#= type #>> source, IList<Bin> bins)
+        private static void AssignBins(this IEnumerable<<#= type #>> source, IList<Bin> bins)
         {
             foreach (var value in source)
             {
