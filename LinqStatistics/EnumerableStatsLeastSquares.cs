@@ -7,6 +7,12 @@ namespace LinqStatistics
     public static partial class EnumerableStats
     {
     	
+        /// <summary>
+        /// Computes the LeastSquares of a sequence of Tuple{int?, int?} values.
+        /// </summary>
+        /// <param name="source">A sequence of Tuple{int?, int?} values to calculate the LeastSquares of.</param>
+        /// <returns> The LeastSquares of the sequence of values, or null if the source sequence is
+        //     empty or contains only values that are null.</returns>
         public static LeastSquares? LeastSquares(this IEnumerable<Tuple<int?, int?>> source)
         {
             if (source == null)
@@ -19,6 +25,11 @@ namespace LinqStatistics
             return null;
         }
 
+        /// <summary>
+        /// Computes the LeastSquares of a sequence of Tuple{int, int} values.
+        /// </summary>
+        /// <param name="source">A sequence of Tuple{int, int} values to calculate the LeastSquares of.</param>
+        /// <returns> The LeastSquares of the sequence of values.</returns>
         public static LeastSquares LeastSquares(this IEnumerable<Tuple<int, int>> source)
         {
             if (source == null)
@@ -48,6 +59,14 @@ namespace LinqStatistics
             return new LeastSquares(m, b);
         }
 
+        /// <summary>
+        ///     Computes the LeastSquares of a sequence of nullable int values that are obtained
+        ///     by invoking a transform function on each element of the input sequence.
+        /// </summary>
+        /// <typeparam name="TSource">The type of the elements of source.</typeparam>
+        /// <param name="source">A sequence of values to calculate the LeastSquares of.</param>
+        /// <param name="selector">A transform function to apply to each element.</param>
+        /// <returns>The LeastSquares of the sequence of values.</returns>
         public static LeastSquares? LeastSquares<TSource>(this IEnumerable<TSource> source, Func<TSource, Tuple<int?, int?>> selector)
         {
             if (source == null)
@@ -56,6 +75,14 @@ namespace LinqStatistics
             return source.Select(selector).LeastSquares();
         }
 
+        /// <summary>
+        ///     Computes the LeastSquares of a sequence of int values that are obtained
+        ///     by invoking a transform function on each element of the input sequence.
+        /// </summary>
+        /// <typeparam name="TSource">The type of the elements of source.</typeparam>
+        /// <param name="source">A sequence of values to calculate the LeastSquares of.</param>
+        /// <param name="selector">A transform function to apply to each element.</param>
+        /// <returns>The LeastSquares of the sequence of values.</returns>
         public static LeastSquares LeastSquares<TSource>(this IEnumerable<TSource> source, Func<TSource, Tuple<int, int>> selector)
         {
             if (source == null)
@@ -64,6 +91,12 @@ namespace LinqStatistics
             return source.Select(selector).LeastSquares();
         }
  	
+        /// <summary>
+        /// Computes the LeastSquares of a sequence of Tuple{long?, long?} values.
+        /// </summary>
+        /// <param name="source">A sequence of Tuple{long?, long?} values to calculate the LeastSquares of.</param>
+        /// <returns> The LeastSquares of the sequence of values, or null if the source sequence is
+        //     empty or contains only values that are null.</returns>
         public static LeastSquares? LeastSquares(this IEnumerable<Tuple<long?, long?>> source)
         {
             if (source == null)
@@ -76,6 +109,11 @@ namespace LinqStatistics
             return null;
         }
 
+        /// <summary>
+        /// Computes the LeastSquares of a sequence of Tuple{long, long} values.
+        /// </summary>
+        /// <param name="source">A sequence of Tuple{long, long} values to calculate the LeastSquares of.</param>
+        /// <returns> The LeastSquares of the sequence of values.</returns>
         public static LeastSquares LeastSquares(this IEnumerable<Tuple<long, long>> source)
         {
             if (source == null)
@@ -105,6 +143,14 @@ namespace LinqStatistics
             return new LeastSquares(m, b);
         }
 
+        /// <summary>
+        ///     Computes the LeastSquares of a sequence of nullable long values that are obtained
+        ///     by invoking a transform function on each element of the input sequence.
+        /// </summary>
+        /// <typeparam name="TSource">The type of the elements of source.</typeparam>
+        /// <param name="source">A sequence of values to calculate the LeastSquares of.</param>
+        /// <param name="selector">A transform function to apply to each element.</param>
+        /// <returns>The LeastSquares of the sequence of values.</returns>
         public static LeastSquares? LeastSquares<TSource>(this IEnumerable<TSource> source, Func<TSource, Tuple<long?, long?>> selector)
         {
             if (source == null)
@@ -113,6 +159,14 @@ namespace LinqStatistics
             return source.Select(selector).LeastSquares();
         }
 
+        /// <summary>
+        ///     Computes the LeastSquares of a sequence of long values that are obtained
+        ///     by invoking a transform function on each element of the input sequence.
+        /// </summary>
+        /// <typeparam name="TSource">The type of the elements of source.</typeparam>
+        /// <param name="source">A sequence of values to calculate the LeastSquares of.</param>
+        /// <param name="selector">A transform function to apply to each element.</param>
+        /// <returns>The LeastSquares of the sequence of values.</returns>
         public static LeastSquares LeastSquares<TSource>(this IEnumerable<TSource> source, Func<TSource, Tuple<long, long>> selector)
         {
             if (source == null)
@@ -121,6 +175,12 @@ namespace LinqStatistics
             return source.Select(selector).LeastSquares();
         }
  	
+        /// <summary>
+        /// Computes the LeastSquares of a sequence of Tuple{float?, float?} values.
+        /// </summary>
+        /// <param name="source">A sequence of Tuple{float?, float?} values to calculate the LeastSquares of.</param>
+        /// <returns> The LeastSquares of the sequence of values, or null if the source sequence is
+        //     empty or contains only values that are null.</returns>
         public static LeastSquares? LeastSquares(this IEnumerable<Tuple<float?, float?>> source)
         {
             if (source == null)
@@ -133,6 +193,11 @@ namespace LinqStatistics
             return null;
         }
 
+        /// <summary>
+        /// Computes the LeastSquares of a sequence of Tuple{float, float} values.
+        /// </summary>
+        /// <param name="source">A sequence of Tuple{float, float} values to calculate the LeastSquares of.</param>
+        /// <returns> The LeastSquares of the sequence of values.</returns>
         public static LeastSquares LeastSquares(this IEnumerable<Tuple<float, float>> source)
         {
             if (source == null)
@@ -162,6 +227,14 @@ namespace LinqStatistics
             return new LeastSquares(m, b);
         }
 
+        /// <summary>
+        ///     Computes the LeastSquares of a sequence of nullable float values that are obtained
+        ///     by invoking a transform function on each element of the input sequence.
+        /// </summary>
+        /// <typeparam name="TSource">The type of the elements of source.</typeparam>
+        /// <param name="source">A sequence of values to calculate the LeastSquares of.</param>
+        /// <param name="selector">A transform function to apply to each element.</param>
+        /// <returns>The LeastSquares of the sequence of values.</returns>
         public static LeastSquares? LeastSquares<TSource>(this IEnumerable<TSource> source, Func<TSource, Tuple<float?, float?>> selector)
         {
             if (source == null)
@@ -170,6 +243,14 @@ namespace LinqStatistics
             return source.Select(selector).LeastSquares();
         }
 
+        /// <summary>
+        ///     Computes the LeastSquares of a sequence of float values that are obtained
+        ///     by invoking a transform function on each element of the input sequence.
+        /// </summary>
+        /// <typeparam name="TSource">The type of the elements of source.</typeparam>
+        /// <param name="source">A sequence of values to calculate the LeastSquares of.</param>
+        /// <param name="selector">A transform function to apply to each element.</param>
+        /// <returns>The LeastSquares of the sequence of values.</returns>
         public static LeastSquares LeastSquares<TSource>(this IEnumerable<TSource> source, Func<TSource, Tuple<float, float>> selector)
         {
             if (source == null)
@@ -178,6 +259,12 @@ namespace LinqStatistics
             return source.Select(selector).LeastSquares();
         }
  	
+        /// <summary>
+        /// Computes the LeastSquares of a sequence of Tuple{double?, double?} values.
+        /// </summary>
+        /// <param name="source">A sequence of Tuple{double?, double?} values to calculate the LeastSquares of.</param>
+        /// <returns> The LeastSquares of the sequence of values, or null if the source sequence is
+        //     empty or contains only values that are null.</returns>
         public static LeastSquares? LeastSquares(this IEnumerable<Tuple<double?, double?>> source)
         {
             if (source == null)
@@ -190,6 +277,11 @@ namespace LinqStatistics
             return null;
         }
 
+        /// <summary>
+        /// Computes the LeastSquares of a sequence of Tuple{double, double} values.
+        /// </summary>
+        /// <param name="source">A sequence of Tuple{double, double} values to calculate the LeastSquares of.</param>
+        /// <returns> The LeastSquares of the sequence of values.</returns>
         public static LeastSquares LeastSquares(this IEnumerable<Tuple<double, double>> source)
         {
             if (source == null)
@@ -219,6 +311,14 @@ namespace LinqStatistics
             return new LeastSquares(m, b);
         }
 
+        /// <summary>
+        ///     Computes the LeastSquares of a sequence of nullable double values that are obtained
+        ///     by invoking a transform function on each element of the input sequence.
+        /// </summary>
+        /// <typeparam name="TSource">The type of the elements of source.</typeparam>
+        /// <param name="source">A sequence of values to calculate the LeastSquares of.</param>
+        /// <param name="selector">A transform function to apply to each element.</param>
+        /// <returns>The LeastSquares of the sequence of values.</returns>
         public static LeastSquares? LeastSquares<TSource>(this IEnumerable<TSource> source, Func<TSource, Tuple<double?, double?>> selector)
         {
             if (source == null)
@@ -227,6 +327,14 @@ namespace LinqStatistics
             return source.Select(selector).LeastSquares();
         }
 
+        /// <summary>
+        ///     Computes the LeastSquares of a sequence of double values that are obtained
+        ///     by invoking a transform function on each element of the input sequence.
+        /// </summary>
+        /// <typeparam name="TSource">The type of the elements of source.</typeparam>
+        /// <param name="source">A sequence of values to calculate the LeastSquares of.</param>
+        /// <param name="selector">A transform function to apply to each element.</param>
+        /// <returns>The LeastSquares of the sequence of values.</returns>
         public static LeastSquares LeastSquares<TSource>(this IEnumerable<TSource> source, Func<TSource, Tuple<double, double>> selector)
         {
             if (source == null)
@@ -235,6 +343,12 @@ namespace LinqStatistics
             return source.Select(selector).LeastSquares();
         }
  	
+        /// <summary>
+        /// Computes the LeastSquares of a sequence of Tuple{decimal?, decimal?} values.
+        /// </summary>
+        /// <param name="source">A sequence of Tuple{decimal?, decimal?} values to calculate the LeastSquares of.</param>
+        /// <returns> The LeastSquares of the sequence of values, or null if the source sequence is
+        //     empty or contains only values that are null.</returns>
         public static LeastSquares? LeastSquares(this IEnumerable<Tuple<decimal?, decimal?>> source)
         {
             if (source == null)
@@ -247,6 +361,11 @@ namespace LinqStatistics
             return null;
         }
 
+        /// <summary>
+        /// Computes the LeastSquares of a sequence of Tuple{decimal, decimal} values.
+        /// </summary>
+        /// <param name="source">A sequence of Tuple{decimal, decimal} values to calculate the LeastSquares of.</param>
+        /// <returns> The LeastSquares of the sequence of values.</returns>
         public static LeastSquares LeastSquares(this IEnumerable<Tuple<decimal, decimal>> source)
         {
             if (source == null)
@@ -276,6 +395,14 @@ namespace LinqStatistics
             return new LeastSquares(m, b);
         }
 
+        /// <summary>
+        ///     Computes the LeastSquares of a sequence of nullable decimal values that are obtained
+        ///     by invoking a transform function on each element of the input sequence.
+        /// </summary>
+        /// <typeparam name="TSource">The type of the elements of source.</typeparam>
+        /// <param name="source">A sequence of values to calculate the LeastSquares of.</param>
+        /// <param name="selector">A transform function to apply to each element.</param>
+        /// <returns>The LeastSquares of the sequence of values.</returns>
         public static LeastSquares? LeastSquares<TSource>(this IEnumerable<TSource> source, Func<TSource, Tuple<decimal?, decimal?>> selector)
         {
             if (source == null)
@@ -284,6 +411,14 @@ namespace LinqStatistics
             return source.Select(selector).LeastSquares();
         }
 
+        /// <summary>
+        ///     Computes the LeastSquares of a sequence of decimal values that are obtained
+        ///     by invoking a transform function on each element of the input sequence.
+        /// </summary>
+        /// <typeparam name="TSource">The type of the elements of source.</typeparam>
+        /// <param name="source">A sequence of values to calculate the LeastSquares of.</param>
+        /// <param name="selector">A transform function to apply to each element.</param>
+        /// <returns>The LeastSquares of the sequence of values.</returns>
         public static LeastSquares LeastSquares<TSource>(this IEnumerable<TSource> source, Func<TSource, Tuple<decimal, decimal>> selector)
         {
             if (source == null)
