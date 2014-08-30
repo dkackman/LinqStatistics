@@ -59,10 +59,14 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>EnumerableStatsKurtosis.tt</DependentUpon>
     </Compile>
+    <Compile Include="EnumerableStatsLeastSquares.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EnumerableStatsLeastSquares.tt</DependentUpon>
+    </Compile>
     <Compile Include="ItemCount.cs" />
     <Compile Include="EnumerableStatsBinCount.cs" />
     <Compile Include="EnumerableStatsCountEach.cs" />
-    <Compile Include="EnumerableStatsLeastSquares.cs" />
     <Compile Include="EnumerableStatsPearson.cs" />
     <Compile Include="EnumerableStats.cs" />
     <Compile Include="EnumerableStatsRange.cs" />
@@ -96,6 +100,10 @@
     <None Include="EnumerableStatsKurtosis.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>EnumerableStatsKurtosis.cs</LastGenOutput>
+    </None>
+    <None Include="EnumerableStatsLeastSquares.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>EnumerableStatsLeastSquares.cs</LastGenOutput>
     </None>
   </ItemGroup>
   <ItemGroup>

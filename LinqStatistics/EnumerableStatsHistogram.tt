@@ -35,7 +35,7 @@ namespace LinqStatistics
 
     public static partial class EnumerableStats
     {
-    <# List<string> types = new List<string>()
+    <# var types = new List<string>()
     {
         "int", "long", "float", "double", "decimal"
     };
@@ -136,7 +136,7 @@ namespace LinqStatistics
         {
             foreach (var value in source)
             {
-                var bin = bins.First(b => b.Range.Contains(value));
+                var bin = bins.First(b => b.Range.Contains((double)value));
                 bin.Count++;
             }
         } 

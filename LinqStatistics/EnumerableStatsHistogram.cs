@@ -122,7 +122,7 @@ namespace LinqStatistics
         {
             foreach (var value in source)
             {
-                var bin = bins.First(b => b.Range.Contains(value));
+                var bin = bins.First(b => b.Range.Contains((double)value));
                 bin.Count++;
             }
         } 
@@ -219,7 +219,7 @@ namespace LinqStatistics
         {
             foreach (var value in source)
             {
-                var bin = bins.First(b => b.Range.Contains(value));
+                var bin = bins.First(b => b.Range.Contains((double)value));
                 bin.Count++;
             }
         } 
@@ -316,7 +316,7 @@ namespace LinqStatistics
         {
             foreach (var value in source)
             {
-                var bin = bins.First(b => b.Range.Contains(value));
+                var bin = bins.First(b => b.Range.Contains((double)value));
                 bin.Count++;
             }
         } 
@@ -413,7 +413,7 @@ namespace LinqStatistics
         {
             foreach (var value in source)
             {
-                var bin = bins.First(b => b.Range.Contains(value));
+                var bin = bins.First(b => b.Range.Contains((double)value));
                 bin.Count++;
             }
         } 
