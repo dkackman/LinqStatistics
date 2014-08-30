@@ -54,10 +54,14 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>EnumerableStatsCovariance.tt</DependentUpon>
     </Compile>
+    <Compile Include="EnumerableStatsKurtosis.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EnumerableStatsKurtosis.tt</DependentUpon>
+    </Compile>
     <Compile Include="ItemCount.cs" />
     <Compile Include="EnumerableStatsBinCount.cs" />
     <Compile Include="EnumerableStatsCountEach.cs" />
-    <Compile Include="EnumerableStatsKurtosis.cs" />
     <Compile Include="EnumerableStatsLeastSquares.cs" />
     <Compile Include="EnumerableStatsPearson.cs" />
     <Compile Include="EnumerableStats.cs" />
@@ -88,6 +92,10 @@
       <LastGenOutput>EnumerableStatsHistogram.cs</LastGenOutput>
       <Parameters>&lt;%3fxml version="1.0" encoding="utf-16"%3f&gt;
 &lt;ArrayOfParameterStorage xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" /&gt;</Parameters>
+    </None>
+    <None Include="EnumerableStatsKurtosis.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>EnumerableStatsKurtosis.cs</LastGenOutput>
     </None>
   </ItemGroup>
   <ItemGroup>
