@@ -60,7 +60,7 @@ namespace LinqStatistics
         }
 
         /// <summary>
-        ///     Computes the LeastSquares of a sequence of nullable int values that are obtained
+        ///     Computes the LeastSquares of a sequence of Tuple{int?, int?} values that are obtained
         ///     by invoking a transform function on each element of the input sequence.
         /// </summary>
         /// <typeparam name="TSource">The type of the elements of source.</typeparam>
@@ -76,7 +76,7 @@ namespace LinqStatistics
         }
 
         /// <summary>
-        ///     Computes the LeastSquares of a sequence of int values that are obtained
+        ///     Computes the LeastSquares of a sequence of Tuple{int, int} values that are obtained
         ///     by invoking a transform function on each element of the input sequence.
         /// </summary>
         /// <typeparam name="TSource">The type of the elements of source.</typeparam>
@@ -144,7 +144,7 @@ namespace LinqStatistics
         }
 
         /// <summary>
-        ///     Computes the LeastSquares of a sequence of nullable long values that are obtained
+        ///     Computes the LeastSquares of a sequence of Tuple{long?, long?} values that are obtained
         ///     by invoking a transform function on each element of the input sequence.
         /// </summary>
         /// <typeparam name="TSource">The type of the elements of source.</typeparam>
@@ -160,7 +160,7 @@ namespace LinqStatistics
         }
 
         /// <summary>
-        ///     Computes the LeastSquares of a sequence of long values that are obtained
+        ///     Computes the LeastSquares of a sequence of Tuple{long, long} values that are obtained
         ///     by invoking a transform function on each element of the input sequence.
         /// </summary>
         /// <typeparam name="TSource">The type of the elements of source.</typeparam>
@@ -228,7 +228,7 @@ namespace LinqStatistics
         }
 
         /// <summary>
-        ///     Computes the LeastSquares of a sequence of nullable float values that are obtained
+        ///     Computes the LeastSquares of a sequence of Tuple{float?, float?} values that are obtained
         ///     by invoking a transform function on each element of the input sequence.
         /// </summary>
         /// <typeparam name="TSource">The type of the elements of source.</typeparam>
@@ -244,7 +244,7 @@ namespace LinqStatistics
         }
 
         /// <summary>
-        ///     Computes the LeastSquares of a sequence of float values that are obtained
+        ///     Computes the LeastSquares of a sequence of Tuple{float, float} values that are obtained
         ///     by invoking a transform function on each element of the input sequence.
         /// </summary>
         /// <typeparam name="TSource">The type of the elements of source.</typeparam>
@@ -312,7 +312,7 @@ namespace LinqStatistics
         }
 
         /// <summary>
-        ///     Computes the LeastSquares of a sequence of nullable double values that are obtained
+        ///     Computes the LeastSquares of a sequence of Tuple{double?, double?} values that are obtained
         ///     by invoking a transform function on each element of the input sequence.
         /// </summary>
         /// <typeparam name="TSource">The type of the elements of source.</typeparam>
@@ -328,7 +328,7 @@ namespace LinqStatistics
         }
 
         /// <summary>
-        ///     Computes the LeastSquares of a sequence of double values that are obtained
+        ///     Computes the LeastSquares of a sequence of Tuple{double, double} values that are obtained
         ///     by invoking a transform function on each element of the input sequence.
         /// </summary>
         /// <typeparam name="TSource">The type of the elements of source.</typeparam>
@@ -396,7 +396,7 @@ namespace LinqStatistics
         }
 
         /// <summary>
-        ///     Computes the LeastSquares of a sequence of nullable decimal values that are obtained
+        ///     Computes the LeastSquares of a sequence of Tuple{decimal?, decimal?} values that are obtained
         ///     by invoking a transform function on each element of the input sequence.
         /// </summary>
         /// <typeparam name="TSource">The type of the elements of source.</typeparam>
@@ -412,7 +412,7 @@ namespace LinqStatistics
         }
 
         /// <summary>
-        ///     Computes the LeastSquares of a sequence of decimal values that are obtained
+        ///     Computes the LeastSquares of a sequence of Tuple{decimal, decimal} values that are obtained
         ///     by invoking a transform function on each element of the input sequence.
         /// </summary>
         /// <typeparam name="TSource">The type of the elements of source.</typeparam>

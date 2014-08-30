@@ -72,7 +72,7 @@ namespace LinqStatistics
         }
 
         /// <summary>
-        ///     Computes the LeastSquares of a sequence of nullable <#= type #> values that are obtained
+        ///     Computes the LeastSquares of a sequence of Tuple{<#= type #>?, <#= type #>?} values that are obtained
         ///     by invoking a transform function on each element of the input sequence.
         /// </summary>
         /// <typeparam name="TSource">The type of the elements of source.</typeparam>
@@ -88,7 +88,7 @@ namespace LinqStatistics
         }
 
         /// <summary>
-        ///     Computes the LeastSquares of a sequence of <#= type #> values that are obtained
+        ///     Computes the LeastSquares of a sequence of Tuple{<#= type #>, <#= type #>} values that are obtained
         ///     by invoking a transform function on each element of the input sequence.
         /// </summary>
         /// <typeparam name="TSource">The type of the elements of source.</typeparam>

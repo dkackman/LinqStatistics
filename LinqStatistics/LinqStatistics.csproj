@@ -64,6 +64,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>EnumerableStatsLeastSquares.tt</DependentUpon>
     </Compile>
+    <Compile Include="EnumerableStatsMedian.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EnumerableStatsMedian.tt</DependentUpon>
+    </Compile>
     <Compile Include="ItemCount.cs" />
     <Compile Include="EnumerableStatsBinCount.cs" />
     <Compile Include="EnumerableStatsCountEach.cs" />
@@ -71,7 +76,6 @@
     <Compile Include="EnumerableStats.cs" />
     <Compile Include="EnumerableStatsRange.cs" />
     <Compile Include="EnumerableStatsMode.cs" />
-    <Compile Include="EnumerableStatsMedian.cs" />
     <Compile Include="EnumerableStatsRootMeanSquare.cs" />
     <Compile Include="EnumerableStatsStandardDeviation.cs" />
     <Compile Include="EnumerableStatsStandardDeviationP.cs" />
@@ -104,6 +108,10 @@
     <None Include="EnumerableStatsLeastSquares.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>EnumerableStatsLeastSquares.cs</LastGenOutput>
+    </None>
+    <None Include="EnumerableStatsMedian.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>EnumerableStatsMedian.cs</LastGenOutput>
     </None>
   </ItemGroup>
   <ItemGroup>
