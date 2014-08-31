@@ -175,8 +175,8 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>xcopy "$(TargetPath)" "$(SolutionDir)LinqStatistics.Packager\lib\net40" /r /y
-xcopy "$(TargetDir)$(TargetName).xml" "$(SolutionDir)LinqStatistics.Packager\lib\net40" /r /y</PostBuildEvent>
+    <PostBuildEvent>if $(ConfigurationName) == Release xcopy "$(TargetPath)" "$(SolutionDir)LinqStatistics.Packager\lib\net40" /r /y
+if $(ConfigurationName) == Release xcopy "$(TargetDir)$(TargetName).xml" "$(SolutionDir)LinqStatistics.Packager\lib\net40" /r /y</PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
