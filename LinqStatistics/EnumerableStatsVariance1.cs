@@ -43,12 +43,13 @@ namespace LinqStatistics
             double mean = 0;
             double M2 = 0;
 
-            foreach (double x in source)
+            foreach (var x in source)
             {
-                n = n + 1;
-                double delta = x - mean;
+                n++;
+                
+                double delta = (double)x - mean;
                 mean += delta / n;
-                M2 += delta * (x - mean);
+                M2 += delta * ((double)x - mean);
             }
 
             return (double)(M2 / (n - 1));
@@ -132,12 +133,13 @@ namespace LinqStatistics
             double mean = 0;
             double M2 = 0;
 
-            foreach (double x in source)
+            foreach (var x in source)
             {
-                n = n + 1;
-                double delta = x - mean;
+                n++;
+                
+                double delta = (double)x - mean;
                 mean += delta / n;
-                M2 += delta * (x - mean);
+                M2 += delta * ((double)x - mean);
             }
 
             return (double)(M2 / (n - 1));
@@ -221,12 +223,13 @@ namespace LinqStatistics
             double mean = 0;
             double M2 = 0;
 
-            foreach (double x in source)
+            foreach (var x in source)
             {
-                n = n + 1;
-                double delta = x - mean;
+                n++;
+                
+                double delta = (double)x - mean;
                 mean += delta / n;
-                M2 += delta * (x - mean);
+                M2 += delta * ((double)x - mean);
             }
 
             return (decimal)(M2 / (n - 1));
@@ -310,12 +313,13 @@ namespace LinqStatistics
             double mean = 0;
             double M2 = 0;
 
-            foreach (double x in source)
+            foreach (var x in source)
             {
-                n = n + 1;
-                double delta = x - mean;
+                n++;
+                
+                double delta = (double)x - mean;
                 mean += delta / n;
-                M2 += delta * (x - mean);
+                M2 += delta * ((double)x - mean);
             }
 
             return (float)(M2 / (n - 1));
@@ -399,12 +403,13 @@ namespace LinqStatistics
             double mean = 0;
             double M2 = 0;
 
-            foreach (double x in source)
+            foreach (var x in source)
             {
-                n = n + 1;
-                double delta = x - mean;
+                n++;
+                
+                double delta = (double)x - mean;
                 mean += delta / n;
-                M2 += delta * (x - mean);
+                M2 += delta * ((double)x - mean);
             }
 
             return (double)(M2 / (n - 1));

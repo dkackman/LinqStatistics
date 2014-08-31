@@ -63,8 +63,8 @@ namespace LinqStatistics
             if (len != other.Count())
                 throw new ArgumentException("Collections are not of the same length", "other");
 
-            <#= type.Item2 #> avgSource = source.Average();
-            <#= type.Item2 #> avgOther = other.Average();
+            var avgSource = source.Average();
+            var avgOther = other.Average();
             double covariance = 0;
             
             for (int i = 0; i < len; i++)

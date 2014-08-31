@@ -94,7 +94,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>EnumerableStatsStandardDeviationP.tt</DependentUpon>
     </Compile>
-    <Compile Include="EnumerableStatsVariance.cs">
+    <Compile Include="EnumerableStatsVariance1.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>EnumerableStatsVariance.tt</DependentUpon>
@@ -163,7 +163,7 @@
     </None>
     <None Include="EnumerableStatsVariance.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>EnumerableStatsVariance.cs</LastGenOutput>
+      <LastGenOutput>EnumerableStatsVariance1.cs</LastGenOutput>
     </None>
     <None Include="EnumerableStatsVarianceP.tt">
       <Generator>TextTemplatingFileGenerator</Generator>

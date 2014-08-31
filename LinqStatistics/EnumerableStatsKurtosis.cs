@@ -43,8 +43,8 @@ namespace LinqStatistics
             foreach (var x in source)
             {
                 int n1 = n;
-                n += 1;
-                double delta = x - mean;
+                n++;
+                double delta = (double)x - mean;
                 double delta_n = delta / n;
                 double delta_n2 = delta_n * delta_n;
                 double term1 = delta * delta_n * n1;
@@ -53,7 +53,7 @@ namespace LinqStatistics
                 M3 += term1 * delta_n * (n - 2) - 3 * delta_n * M2;
                 M2 += term1;
             }
-            return (n * M4) / (M2 * M2) - 3;
+            return (double)((n * M4) / (M2 * M2) - 3);
         }
 
         /// <summary>
@@ -124,8 +124,8 @@ namespace LinqStatistics
             foreach (var x in source)
             {
                 int n1 = n;
-                n += 1;
-                double delta = x - mean;
+                n++;
+                double delta = (double)x - mean;
                 double delta_n = delta / n;
                 double delta_n2 = delta_n * delta_n;
                 double term1 = delta * delta_n * n1;
@@ -134,7 +134,7 @@ namespace LinqStatistics
                 M3 += term1 * delta_n * (n - 2) - 3 * delta_n * M2;
                 M2 += term1;
             }
-            return (n * M4) / (M2 * M2) - 3;
+            return (double)((n * M4) / (M2 * M2) - 3);
         }
 
         /// <summary>
@@ -197,25 +197,25 @@ namespace LinqStatistics
                 throw new InvalidOperationException("source sequence contains no elements");
 
             int n = 0;
-            decimal mean = 0;
-            decimal M2 = 0;
-            decimal M3 = 0;
-            decimal M4 = 0;
+            double mean = 0;
+            double M2 = 0;
+            double M3 = 0;
+            double M4 = 0;
 
             foreach (var x in source)
             {
                 int n1 = n;
-                n += 1;
-                decimal delta = x - mean;
-                decimal delta_n = delta / n;
-                decimal delta_n2 = delta_n * delta_n;
-                decimal term1 = delta * delta_n * n1;
+                n++;
+                double delta = (double)x - mean;
+                double delta_n = delta / n;
+                double delta_n2 = delta_n * delta_n;
+                double term1 = delta * delta_n * n1;
                 mean = mean + delta_n;
                 M4 += term1 * delta_n2 * (n * n - 3 * n + 3) + 6 * delta_n2 * M2 - 4 * delta_n * M3;
                 M3 += term1 * delta_n * (n - 2) - 3 * delta_n * M2;
                 M2 += term1;
             }
-            return (n * M4) / (M2 * M2) - 3;
+            return (decimal)((n * M4) / (M2 * M2) - 3);
         }
 
         /// <summary>
@@ -278,25 +278,25 @@ namespace LinqStatistics
                 throw new InvalidOperationException("source sequence contains no elements");
 
             int n = 0;
-            float mean = 0;
-            float M2 = 0;
-            float M3 = 0;
-            float M4 = 0;
+            double mean = 0;
+            double M2 = 0;
+            double M3 = 0;
+            double M4 = 0;
 
             foreach (var x in source)
             {
                 int n1 = n;
-                n += 1;
-                float delta = x - mean;
-                float delta_n = delta / n;
-                float delta_n2 = delta_n * delta_n;
-                float term1 = delta * delta_n * n1;
+                n++;
+                double delta = (double)x - mean;
+                double delta_n = delta / n;
+                double delta_n2 = delta_n * delta_n;
+                double term1 = delta * delta_n * n1;
                 mean = mean + delta_n;
                 M4 += term1 * delta_n2 * (n * n - 3 * n + 3) + 6 * delta_n2 * M2 - 4 * delta_n * M3;
                 M3 += term1 * delta_n * (n - 2) - 3 * delta_n * M2;
                 M2 += term1;
             }
-            return (n * M4) / (M2 * M2) - 3;
+            return (float)((n * M4) / (M2 * M2) - 3);
         }
 
         /// <summary>
@@ -367,8 +367,8 @@ namespace LinqStatistics
             foreach (var x in source)
             {
                 int n1 = n;
-                n += 1;
-                double delta = x - mean;
+                n++;
+                double delta = (double)x - mean;
                 double delta_n = delta / n;
                 double delta_n2 = delta_n * delta_n;
                 double term1 = delta * delta_n * n1;
@@ -377,7 +377,7 @@ namespace LinqStatistics
                 M3 += term1 * delta_n * (n - 2) - 3 * delta_n * M2;
                 M2 += term1;
             }
-            return (n * M4) / (M2 * M2) - 3;
+            return (double)((n * M4) / (M2 * M2) - 3);
         }
 
         /// <summary>

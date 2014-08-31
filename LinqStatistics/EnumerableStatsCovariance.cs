@@ -47,8 +47,8 @@ namespace LinqStatistics
             if (len != other.Count())
                 throw new ArgumentException("Collections are not of the same length", "other");
 
-            double avgSource = source.Average();
-            double avgOther = other.Average();
+            var avgSource = source.Average();
+            var avgOther = other.Average();
             double covariance = 0;
             
             for (int i = 0; i < len; i++)
@@ -97,8 +97,8 @@ namespace LinqStatistics
             if (len != other.Count())
                 throw new ArgumentException("Collections are not of the same length", "other");
 
-            double avgSource = source.Average();
-            double avgOther = other.Average();
+            var avgSource = source.Average();
+            var avgOther = other.Average();
             double covariance = 0;
             
             for (int i = 0; i < len; i++)
@@ -147,8 +147,8 @@ namespace LinqStatistics
             if (len != other.Count())
                 throw new ArgumentException("Collections are not of the same length", "other");
 
-            decimal avgSource = source.Average();
-            decimal avgOther = other.Average();
+            var avgSource = source.Average();
+            var avgOther = other.Average();
             double covariance = 0;
             
             for (int i = 0; i < len; i++)
@@ -197,8 +197,8 @@ namespace LinqStatistics
             if (len != other.Count())
                 throw new ArgumentException("Collections are not of the same length", "other");
 
-            float avgSource = source.Average();
-            float avgOther = other.Average();
+            var avgSource = source.Average();
+            var avgOther = other.Average();
             double covariance = 0;
             
             for (int i = 0; i < len; i++)
@@ -247,8 +247,8 @@ namespace LinqStatistics
             if (len != other.Count())
                 throw new ArgumentException("Collections are not of the same length", "other");
 
-            double avgSource = source.Average();
-            double avgOther = other.Average();
+            var avgSource = source.Average();
+            var avgOther = other.Average();
             double covariance = 0;
             
             for (int i = 0; i < len; i++)
