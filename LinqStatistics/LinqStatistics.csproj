@@ -84,12 +84,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>EnumerableStatsRootMeanSquare.tt</DependentUpon>
     </Compile>
+    <Compile Include="EnumerableStatsStandardDeviation.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EnumerableStatsStandardDeviation.tt</DependentUpon>
+    </Compile>
     <Compile Include="ItemCount.cs" />
     <Compile Include="EnumerableStatsBinCount.cs" />
     <Compile Include="EnumerableStatsCountEach.cs" />
     <Compile Include="EnumerableStats.cs" />
     <Compile Include="EnumerableStatsMode.cs" />
-    <Compile Include="EnumerableStatsStandardDeviation.cs" />
     <Compile Include="EnumerableStatsStandardDeviationP.cs" />
     <Compile Include="EnumerableStatsVariance.cs" />
     <Compile Include="EnumerableStatsVarianceP.cs" />
@@ -136,6 +140,10 @@
     <None Include="EnumerableStatsRootMeanSquare.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>EnumerableStatsRootMeanSquare.cs</LastGenOutput>
+    </None>
+    <None Include="EnumerableStatsStandardDeviation.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>EnumerableStatsStandardDeviation.cs</LastGenOutput>
     </None>
   </ItemGroup>
   <ItemGroup>
