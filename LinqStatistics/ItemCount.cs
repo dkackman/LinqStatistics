@@ -45,7 +45,7 @@ namespace LinqStatistics
         /// <summary>
         /// <see cref="System.Object.Equals(object)"/>
         /// </summary>
-        /// <param name="obj"></param>
+        /// <param name="obj">The item to compare to.</param>
         /// <returns>True if obj is a Bin{T} and Value and Count are equal</returns>
         public override bool Equals(object obj)
         {

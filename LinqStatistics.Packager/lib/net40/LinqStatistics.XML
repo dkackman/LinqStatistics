@@ -26,7 +26,7 @@
             <summary>
             <see cref="M:System.Object.Equals(System.Object)"/>
             </summary>
-            <param name="obj"></param>
+            <param name="obj">The item to compare to.</param>
             <returns>True if obj is a Bin{T} and Value and Count are equal</returns>
         </member>
         <member name="M:LinqStatistics.ItemCount`1.GetHashCode">
@@ -512,7 +512,7 @@
         </member>
         <member name="M:LinqStatistics.EnumerableStats.Median(System.Collections.Generic.IEnumerable{System.Nullable{System.Int32}})">
             <summary>
-            Computes the Median of a sequence of mullable intSystem.Int32 values, or null if the source sequence is
+            Computes the Median of a sequence of mullable int values, or null if the source sequence is
                 empty or contains only values that are null.
             </summary>
             <param name="source">A sequence of nullable int values to calculate the Median of.</param>
@@ -520,7 +520,7 @@
         </member>
         <member name="M:LinqStatistics.EnumerableStats.Median(System.Collections.Generic.IEnumerable{System.Int32})">
             <summary>
-            Computes the Median of a sequence of intSystem.Int32 values.
+            Computes the Median of a sequence of int values.
             </summary>
             <param name="source">A sequence of int values to calculate the Median of.</param>
             <returns>The Median of the sequence of values.</returns>
@@ -547,7 +547,7 @@
         </member>
         <member name="M:LinqStatistics.EnumerableStats.Median(System.Collections.Generic.IEnumerable{System.Nullable{System.Int64}})">
             <summary>
-            Computes the Median of a sequence of mullable longSystem.Int32 values, or null if the source sequence is
+            Computes the Median of a sequence of mullable long values, or null if the source sequence is
                 empty or contains only values that are null.
             </summary>
             <param name="source">A sequence of nullable long values to calculate the Median of.</param>
@@ -555,7 +555,7 @@
         </member>
         <member name="M:LinqStatistics.EnumerableStats.Median(System.Collections.Generic.IEnumerable{System.Int64})">
             <summary>
-            Computes the Median of a sequence of longSystem.Int32 values.
+            Computes the Median of a sequence of long values.
             </summary>
             <param name="source">A sequence of long values to calculate the Median of.</param>
             <returns>The Median of the sequence of values.</returns>
@@ -582,7 +582,7 @@
         </member>
         <member name="M:LinqStatistics.EnumerableStats.Median(System.Collections.Generic.IEnumerable{System.Nullable{System.Decimal}})">
             <summary>
-            Computes the Median of a sequence of mullable decimalSystem.Int32 values, or null if the source sequence is
+            Computes the Median of a sequence of mullable decimal values, or null if the source sequence is
                 empty or contains only values that are null.
             </summary>
             <param name="source">A sequence of nullable decimal values to calculate the Median of.</param>
@@ -590,7 +590,7 @@
         </member>
         <member name="M:LinqStatistics.EnumerableStats.Median(System.Collections.Generic.IEnumerable{System.Decimal})">
             <summary>
-            Computes the Median of a sequence of decimalSystem.Int32 values.
+            Computes the Median of a sequence of decimal values.
             </summary>
             <param name="source">A sequence of decimal values to calculate the Median of.</param>
             <returns>The Median of the sequence of values.</returns>
@@ -617,7 +617,7 @@
         </member>
         <member name="M:LinqStatistics.EnumerableStats.Median(System.Collections.Generic.IEnumerable{System.Nullable{System.Single}})">
             <summary>
-            Computes the Median of a sequence of mullable floatSystem.Int32 values, or null if the source sequence is
+            Computes the Median of a sequence of mullable float values, or null if the source sequence is
                 empty or contains only values that are null.
             </summary>
             <param name="source">A sequence of nullable float values to calculate the Median of.</param>
@@ -625,7 +625,7 @@
         </member>
         <member name="M:LinqStatistics.EnumerableStats.Median(System.Collections.Generic.IEnumerable{System.Single})">
             <summary>
-            Computes the Median of a sequence of floatSystem.Int32 values.
+            Computes the Median of a sequence of float values.
             </summary>
             <param name="source">A sequence of float values to calculate the Median of.</param>
             <returns>The Median of the sequence of values.</returns>
@@ -652,7 +652,7 @@
         </member>
         <member name="M:LinqStatistics.EnumerableStats.Median(System.Collections.Generic.IEnumerable{System.Nullable{System.Double}})">
             <summary>
-            Computes the Median of a sequence of mullable doubleSystem.Int32 values, or null if the source sequence is
+            Computes the Median of a sequence of mullable double values, or null if the source sequence is
                 empty or contains only values that are null.
             </summary>
             <param name="source">A sequence of nullable double values to calculate the Median of.</param>
@@ -660,7 +660,7 @@
         </member>
         <member name="M:LinqStatistics.EnumerableStats.Median(System.Collections.Generic.IEnumerable{System.Double})">
             <summary>
-            Computes the Median of a sequence of doubleSystem.Int32 values.
+            Computes the Median of a sequence of double values.
             </summary>
             <param name="source">A sequence of double values to calculate the Median of.</param>
             <returns>The Median of the sequence of values.</returns>

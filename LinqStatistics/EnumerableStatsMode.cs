@@ -103,6 +103,12 @@ namespace LinqStatistics
         /// <returns>The Mode of the sequence of values.</returns>
         public static TMode? Mode<TSource, TMode>(this IEnumerable<TSource> source, Func<TSource, TMode> selector) where TMode : struct
         {
+            if (source == null)
+                throw new ArgumentNullException("source");
+
+            if (selector == null)
+                throw new ArgumentNullException("selector");
+
             return source.Select(selector).Mode<TMode>();
         }
 
@@ -117,6 +123,12 @@ namespace LinqStatistics
         /// <returns>The Mode of the sequence of values.</returns>
         public static TMode? Mode<TSource, TMode>(this IEnumerable<TSource> source, Func<TSource, TMode?> selector) where TMode : struct
         {
+            if (source == null)
+                throw new ArgumentNullException("source");
+
+            if (selector == null)
+                throw new ArgumentNullException("selector");
+
             return source.Select(selector).Mode<TMode>();
         }
     }

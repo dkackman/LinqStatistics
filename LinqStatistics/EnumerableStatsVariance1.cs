@@ -36,9 +36,6 @@ namespace LinqStatistics
             if (source == null)
                 throw new ArgumentNullException("source");
 
-            if (source.Count() < 2)
-                throw new InvalidOperationException("Source must have at least 2 elements");
-
             int n = 0;
             double mean = 0;
             double M2 = 0;
@@ -51,6 +48,9 @@ namespace LinqStatistics
                 mean += delta / n;
                 M2 += delta * ((double)x - mean);
             }
+
+            if (n < 2)
+                throw new InvalidOperationException("Source must have at least 2 elements");
 
             return (double)(M2 / (n - 1));
         }
@@ -126,9 +126,6 @@ namespace LinqStatistics
             if (source == null)
                 throw new ArgumentNullException("source");
 
-            if (source.Count() < 2)
-                throw new InvalidOperationException("Source must have at least 2 elements");
-
             int n = 0;
             double mean = 0;
             double M2 = 0;
@@ -141,6 +138,9 @@ namespace LinqStatistics
                 mean += delta / n;
                 M2 += delta * ((double)x - mean);
             }
+
+            if (n < 2)
+                throw new InvalidOperationException("Source must have at least 2 elements");
 
             return (double)(M2 / (n - 1));
         }
@@ -216,9 +216,6 @@ namespace LinqStatistics
             if (source == null)
                 throw new ArgumentNullException("source");
 
-            if (source.Count() < 2)
-                throw new InvalidOperationException("Source must have at least 2 elements");
-
             int n = 0;
             double mean = 0;
             double M2 = 0;
@@ -231,6 +228,9 @@ namespace LinqStatistics
                 mean += delta / n;
                 M2 += delta * ((double)x - mean);
             }
+
+            if (n < 2)
+                throw new InvalidOperationException("Source must have at least 2 elements");
 
             return (decimal)(M2 / (n - 1));
         }
@@ -306,9 +306,6 @@ namespace LinqStatistics
             if (source == null)
                 throw new ArgumentNullException("source");
 
-            if (source.Count() < 2)
-                throw new InvalidOperationException("Source must have at least 2 elements");
-
             int n = 0;
             double mean = 0;
             double M2 = 0;
@@ -321,6 +318,9 @@ namespace LinqStatistics
                 mean += delta / n;
                 M2 += delta * ((double)x - mean);
             }
+
+            if (n < 2)
+                throw new InvalidOperationException("Source must have at least 2 elements");
 
             return (float)(M2 / (n - 1));
         }
@@ -396,9 +396,6 @@ namespace LinqStatistics
             if (source == null)
                 throw new ArgumentNullException("source");
 
-            if (source.Count() < 2)
-                throw new InvalidOperationException("Source must have at least 2 elements");
-
             int n = 0;
             double mean = 0;
             double M2 = 0;
@@ -411,6 +408,9 @@ namespace LinqStatistics
                 mean += delta / n;
                 M2 += delta * ((double)x - mean);
             }
+
+            if (n < 2)
+                throw new InvalidOperationException("Source must have at least 2 elements");
 
             return (double)(M2 / (n - 1));
         }

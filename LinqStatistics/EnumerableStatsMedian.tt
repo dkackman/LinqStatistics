@@ -23,12 +23,12 @@ namespace LinqStatistics
 
     foreach(var type in types)
     {#>	
-    	/// <summary>
-    	/// Computes the Median of a sequence of mullable <#= type.Item1 #>System.Int32 values, or null if the source sequence is
+        /// <summary>
+        /// Computes the Median of a sequence of mullable <#= type.Item1 #> values, or null if the source sequence is
         ///     empty or contains only values that are null.
-    	/// </summary>
-    	/// <param name="source">A sequence of nullable <#= type.Item1 #> values to calculate the Median of.</param>
-    	/// <returns>The Median of the sequence of values.</returns>
+        /// </summary>
+        /// <param name="source">A sequence of nullable <#= type.Item1 #> values to calculate the Median of.</param>
+        /// <returns>The Median of the sequence of values.</returns>
         public static <#= type.Item2 #>? Median(this IEnumerable<<#= type.Item1 #>?> source)
         {
             IEnumerable<<#= type.Item1 #>> values = source.AllValues();
@@ -38,11 +38,11 @@ namespace LinqStatistics
             return null;
         }
 
-    	/// <summary>
-    	/// Computes the Median of a sequence of <#= type.Item1 #>System.Int32 values.
-    	/// </summary>
-    	/// <param name="source">A sequence of <#= type.Item1 #> values to calculate the Median of.</param>
-    	/// <returns>The Median of the sequence of values.</returns>
+        /// <summary>
+        /// Computes the Median of a sequence of <#= type.Item1 #> values.
+        /// </summary>
+        /// <param name="source">A sequence of <#= type.Item1 #> values to calculate the Median of.</param>
+        /// <returns>The Median of the sequence of values.</returns>
         public static <#= type.Item2 #> Median(this IEnumerable<<#= type.Item1 #>> source)
         {
             if (source == null)
@@ -59,8 +59,10 @@ namespace LinqStatistics
             int itemIndex = count / 2;
 
             if (count % 2 == 0)
+            {
                 // Even number of items.
                 return (sortedList.ElementAt(itemIndex) + sortedList.ElementAt(itemIndex - 1)) / 2;
+            }
 
             // Odd number of items.
             return sortedList.ElementAt(itemIndex);
@@ -79,6 +81,9 @@ namespace LinqStatistics
             if (source == null)
                 throw new ArgumentNullException("source");
 
+            if (selector == null)
+                throw new ArgumentNullException("selector");
+
             return source.Select(selector).Median();
         }
 
@@ -94,6 +99,9 @@ namespace LinqStatistics
         {
             if (source == null)
                 throw new ArgumentNullException("source");
+
+            if (selector == null)
+                throw new ArgumentNullException("selector");
 
             return source.Select(selector).Median();
         }

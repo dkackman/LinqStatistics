@@ -69,6 +69,9 @@ namespace LinqStatistics
             if (source == null)
                 throw new ArgumentNullException("source");
 
+            if (selector == null)
+                throw new ArgumentNullException("selector");
+
             return source.Select(selector).Kurtosis();
         }
 
@@ -84,6 +87,9 @@ namespace LinqStatistics
         {
             if (source == null)
                 throw new ArgumentNullException("source");
+
+            if (selector == null)
+                throw new ArgumentNullException("selector");
 
             return source.Select(selector).Kurtosis();
         }
@@ -150,6 +156,9 @@ namespace LinqStatistics
             if (source == null)
                 throw new ArgumentNullException("source");
 
+            if (selector == null)
+                throw new ArgumentNullException("selector");
+
             return source.Select(selector).Kurtosis();
         }
 
@@ -165,6 +174,9 @@ namespace LinqStatistics
         {
             if (source == null)
                 throw new ArgumentNullException("source");
+
+            if (selector == null)
+                throw new ArgumentNullException("selector");
 
             return source.Select(selector).Kurtosis();
         }
@@ -231,6 +243,9 @@ namespace LinqStatistics
             if (source == null)
                 throw new ArgumentNullException("source");
 
+            if (selector == null)
+                throw new ArgumentNullException("selector");
+
             return source.Select(selector).Kurtosis();
         }
 
@@ -246,6 +261,9 @@ namespace LinqStatistics
         {
             if (source == null)
                 throw new ArgumentNullException("source");
+
+            if (selector == null)
+                throw new ArgumentNullException("selector");
 
             return source.Select(selector).Kurtosis();
         }
@@ -312,6 +330,9 @@ namespace LinqStatistics
             if (source == null)
                 throw new ArgumentNullException("source");
 
+            if (selector == null)
+                throw new ArgumentNullException("selector");
+
             return source.Select(selector).Kurtosis();
         }
 
@@ -327,6 +348,9 @@ namespace LinqStatistics
         {
             if (source == null)
                 throw new ArgumentNullException("source");
+
+            if (selector == null)
+                throw new ArgumentNullException("selector");
 
             return source.Select(selector).Kurtosis();
         }
@@ -393,6 +417,9 @@ namespace LinqStatistics
             if (source == null)
                 throw new ArgumentNullException("source");
 
+            if (selector == null)
+                throw new ArgumentNullException("selector");
+
             return source.Select(selector).Kurtosis();
         }
 
@@ -408,6 +435,9 @@ namespace LinqStatistics
         {
             if (source == null)
                 throw new ArgumentNullException("source");
+
+            if (selector == null)
+                throw new ArgumentNullException("selector");
 
             return source.Select(selector).Kurtosis();
         }

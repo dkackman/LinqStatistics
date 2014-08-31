@@ -32,15 +32,19 @@ namespace LinqStatistics
             if (source == null)
                 throw new ArgumentNullException("source");
 
-            if (source.Count() < 1)
-                throw new InvalidOperationException("Source must have at least 1 element");
+            if (!source.Any())
+                throw new InvalidOperationException("source sequence contains no elements");
 
             double s = 0;
+            int n = 0;
 
             foreach (var d in source)
+            {
+                n++;
                 s += Math.Pow((double)d, 2);
+            }
 
-            return (double)Math.Sqrt(s / source.Count());
+            return (double)Math.Sqrt(s / n);
         }
 
         /// <summary>
@@ -106,15 +110,19 @@ namespace LinqStatistics
             if (source == null)
                 throw new ArgumentNullException("source");
 
-            if (source.Count() < 1)
-                throw new InvalidOperationException("Source must have at least 1 element");
+            if (!source.Any())
+                throw new InvalidOperationException("source sequence contains no elements");
 
             double s = 0;
+            int n = 0;
 
             foreach (var d in source)
+            {
+                n++;
                 s += Math.Pow((double)d, 2);
+            }
 
-            return (double)Math.Sqrt(s / source.Count());
+            return (double)Math.Sqrt(s / n);
         }
 
         /// <summary>
@@ -180,15 +188,19 @@ namespace LinqStatistics
             if (source == null)
                 throw new ArgumentNullException("source");
 
-            if (source.Count() < 1)
-                throw new InvalidOperationException("Source must have at least 1 element");
+            if (!source.Any())
+                throw new InvalidOperationException("source sequence contains no elements");
 
             double s = 0;
+            int n = 0;
 
             foreach (var d in source)
+            {
+                n++;
                 s += Math.Pow((double)d, 2);
+            }
 
-            return (decimal)Math.Sqrt(s / source.Count());
+            return (decimal)Math.Sqrt(s / n);
         }
 
         /// <summary>
@@ -254,15 +266,19 @@ namespace LinqStatistics
             if (source == null)
                 throw new ArgumentNullException("source");
 
-            if (source.Count() < 1)
-                throw new InvalidOperationException("Source must have at least 1 element");
+            if (!source.Any())
+                throw new InvalidOperationException("source sequence contains no elements");
 
             double s = 0;
+            int n = 0;
 
             foreach (var d in source)
+            {
+                n++;
                 s += Math.Pow((double)d, 2);
+            }
 
-            return (float)Math.Sqrt(s / source.Count());
+            return (float)Math.Sqrt(s / n);
         }
 
         /// <summary>
@@ -328,15 +344,19 @@ namespace LinqStatistics
             if (source == null)
                 throw new ArgumentNullException("source");
 
-            if (source.Count() < 1)
-                throw new InvalidOperationException("Source must have at least 1 element");
+            if (!source.Any())
+                throw new InvalidOperationException("source sequence contains no elements");
 
             double s = 0;
+            int n = 0;
 
             foreach (var d in source)
+            {
+                n++;
                 s += Math.Pow((double)d, 2);
+            }
 
-            return (double)Math.Sqrt(s / source.Count());
+            return (double)Math.Sqrt(s / n);
         }
 
         /// <summary>

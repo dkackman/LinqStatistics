@@ -45,14 +45,16 @@ namespace LinqStatistics
             int len = source.Count();
 
             if (len != other.Count())
-                throw new ArgumentException("Collections are not of the same length", "other");
+                throw new InvalidOperationException("Collections are not of the same length");
 
             var avgSource = source.Average();
             var avgOther = other.Average();
             double covariance = 0;
             
             for (int i = 0; i < len; i++)
+            {
                 covariance += (double)((source.ElementAt(i) - avgSource) * (other.ElementAt(i) - avgOther));
+            }
 
             return (double)(covariance / len); 
         }               
@@ -95,14 +97,16 @@ namespace LinqStatistics
             int len = source.Count();
 
             if (len != other.Count())
-                throw new ArgumentException("Collections are not of the same length", "other");
+                throw new InvalidOperationException("Collections are not of the same length");
 
             var avgSource = source.Average();
             var avgOther = other.Average();
             double covariance = 0;
             
             for (int i = 0; i < len; i++)
+            {
                 covariance += (double)((source.ElementAt(i) - avgSource) * (other.ElementAt(i) - avgOther));
+            }
 
             return (double)(covariance / len); 
         }               
@@ -145,14 +149,16 @@ namespace LinqStatistics
             int len = source.Count();
 
             if (len != other.Count())
-                throw new ArgumentException("Collections are not of the same length", "other");
+                throw new InvalidOperationException("Collections are not of the same length");
 
             var avgSource = source.Average();
             var avgOther = other.Average();
             double covariance = 0;
             
             for (int i = 0; i < len; i++)
+            {
                 covariance += (double)((source.ElementAt(i) - avgSource) * (other.ElementAt(i) - avgOther));
+            }
 
             return (decimal)(covariance / len); 
         }               
@@ -195,14 +201,16 @@ namespace LinqStatistics
             int len = source.Count();
 
             if (len != other.Count())
-                throw new ArgumentException("Collections are not of the same length", "other");
+                throw new InvalidOperationException("Collections are not of the same length");
 
             var avgSource = source.Average();
             var avgOther = other.Average();
             double covariance = 0;
             
             for (int i = 0; i < len; i++)
+            {
                 covariance += (double)((source.ElementAt(i) - avgSource) * (other.ElementAt(i) - avgOther));
+            }
 
             return (float)(covariance / len); 
         }               
@@ -245,14 +253,16 @@ namespace LinqStatistics
             int len = source.Count();
 
             if (len != other.Count())
-                throw new ArgumentException("Collections are not of the same length", "other");
+                throw new InvalidOperationException("Collections are not of the same length");
 
             var avgSource = source.Average();
             var avgOther = other.Average();
             double covariance = 0;
             
             for (int i = 0; i < len; i++)
+            {
                 covariance += (double)((source.ElementAt(i) - avgSource) * (other.ElementAt(i) - avgOther));
+            }
 
             return (double)(covariance / len); 
         }               

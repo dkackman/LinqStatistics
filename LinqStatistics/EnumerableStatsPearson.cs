@@ -63,6 +63,12 @@ namespace LinqStatistics
             if (source == null)
                 throw new ArgumentNullException("source");
 
+             if (other == null)
+                throw new ArgumentNullException("other");
+
+           if (selector == null)
+                throw new ArgumentNullException("selector");
+
             return source.Select(selector).Pearson(other.Select(selector));
         }
 
@@ -79,6 +85,12 @@ namespace LinqStatistics
         {
             if (source == null)
                 throw new ArgumentNullException("source");
+
+            if (other == null)
+                throw new ArgumentNullException("other");
+
+            if (selector == null)
+                throw new ArgumentNullException("selector");
 
             return source.Select(selector).Pearson(other.Select(selector));
         }
@@ -139,6 +151,12 @@ namespace LinqStatistics
             if (source == null)
                 throw new ArgumentNullException("source");
 
+             if (other == null)
+                throw new ArgumentNullException("other");
+
+           if (selector == null)
+                throw new ArgumentNullException("selector");
+
             return source.Select(selector).Pearson(other.Select(selector));
         }
 
@@ -155,6 +173,12 @@ namespace LinqStatistics
         {
             if (source == null)
                 throw new ArgumentNullException("source");
+
+            if (other == null)
+                throw new ArgumentNullException("other");
+
+            if (selector == null)
+                throw new ArgumentNullException("selector");
 
             return source.Select(selector).Pearson(other.Select(selector));
         }
@@ -215,6 +239,12 @@ namespace LinqStatistics
             if (source == null)
                 throw new ArgumentNullException("source");
 
+             if (other == null)
+                throw new ArgumentNullException("other");
+
+           if (selector == null)
+                throw new ArgumentNullException("selector");
+
             return source.Select(selector).Pearson(other.Select(selector));
         }
 
@@ -231,6 +261,12 @@ namespace LinqStatistics
         {
             if (source == null)
                 throw new ArgumentNullException("source");
+
+            if (other == null)
+                throw new ArgumentNullException("other");
+
+            if (selector == null)
+                throw new ArgumentNullException("selector");
 
             return source.Select(selector).Pearson(other.Select(selector));
         }
@@ -291,6 +327,12 @@ namespace LinqStatistics
             if (source == null)
                 throw new ArgumentNullException("source");
 
+             if (other == null)
+                throw new ArgumentNullException("other");
+
+           if (selector == null)
+                throw new ArgumentNullException("selector");
+
             return source.Select(selector).Pearson(other.Select(selector));
         }
 
@@ -307,6 +349,12 @@ namespace LinqStatistics
         {
             if (source == null)
                 throw new ArgumentNullException("source");
+
+            if (other == null)
+                throw new ArgumentNullException("other");
+
+            if (selector == null)
+                throw new ArgumentNullException("selector");
 
             return source.Select(selector).Pearson(other.Select(selector));
         }
@@ -367,6 +415,12 @@ namespace LinqStatistics
             if (source == null)
                 throw new ArgumentNullException("source");
 
+             if (other == null)
+                throw new ArgumentNullException("other");
+
+           if (selector == null)
+                throw new ArgumentNullException("selector");
+
             return source.Select(selector).Pearson(other.Select(selector));
         }
 
@@ -383,6 +437,12 @@ namespace LinqStatistics
         {
             if (source == null)
                 throw new ArgumentNullException("source");
+
+            if (other == null)
+                throw new ArgumentNullException("other");
+
+            if (selector == null)
+                throw new ArgumentNullException("selector");
 
             return source.Select(selector).Pearson(other.Select(selector));
         }
