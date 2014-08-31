@@ -89,12 +89,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>EnumerableStatsStandardDeviation.tt</DependentUpon>
     </Compile>
+    <Compile Include="EnumerableStatsStandardDeviationP.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EnumerableStatsStandardDeviationP.tt</DependentUpon>
+    </Compile>
     <Compile Include="ItemCount.cs" />
     <Compile Include="EnumerableStatsBinCount.cs" />
     <Compile Include="EnumerableStatsCountEach.cs" />
     <Compile Include="EnumerableStats.cs" />
     <Compile Include="EnumerableStatsMode.cs" />
-    <Compile Include="EnumerableStatsStandardDeviationP.cs" />
     <Compile Include="EnumerableStatsVariance.cs" />
     <Compile Include="EnumerableStatsVarianceP.cs" />
     <Compile Include="EnumerableStatsHistogram.cs">
@@ -144,6 +148,10 @@
     <None Include="EnumerableStatsStandardDeviation.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>EnumerableStatsStandardDeviation.cs</LastGenOutput>
+    </None>
+    <None Include="EnumerableStatsStandardDeviationP.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>EnumerableStatsStandardDeviationP.cs</LastGenOutput>
     </None>
   </ItemGroup>
   <ItemGroup>
