@@ -6,6 +6,12 @@ namespace LinqStatistics
 {
     public static partial class EnumerableStats
     {
+        /// <summary>
+        /// Calculates the modes of a sequences of elements
+        /// </summary>
+        /// <typeparam name="T">The type of the elemensts in the source sequence</typeparam>
+        /// <param name="source">A sequence of values to calculate the Modes of.</param>
+        /// <returns>The modes of a sequence of values</returns>
         public static IEnumerable<T> Modes<T>(this IEnumerable<T?> source) where T : struct
         {
             IEnumerable<T> values = source.AllValues();
@@ -15,6 +21,12 @@ namespace LinqStatistics
             return Enumerable.Empty<T>();
         }
 
+        /// <summary>
+        /// Calculates the modes of a sequences of nullable elements
+        /// </summary>
+        /// <typeparam name="T">The type of the elemensts in the source sequence</typeparam>
+        /// <param name="source">A sequence of values to calculate the Modes of.</param>
+        /// <returns>The modes of a sequence of values</returns>
         public static IEnumerable<T> Modes<T>(this IEnumerable<T> source) where T : struct
         {
             return from count in source.CountEach()
@@ -23,6 +35,12 @@ namespace LinqStatistics
                    select count.RepresentativeValue;
         }
 
+        /// <summary>
+        /// Calculates the mode of a sequences of elements
+        /// </summary>
+        /// <typeparam name="T">The type of the elemensts in the source sequence</typeparam>
+        /// <param name="source">A sequence of values to calculate the Mode of.</param>
+        /// <returns>The mode of a sequence of values</returns>
         public static T? Mode<T>(this IEnumerable<T?> source) where T : struct
         {
             IEnumerable<T> values = source.AllValues();
@@ -32,6 +50,12 @@ namespace LinqStatistics
             return null;
         }
 
+        /// <summary>
+        /// Calculates the Mode of a sequences of elements
+        /// </summary>
+        /// <typeparam name="T">The type of the elemensts in the source sequence</typeparam>
+        /// <param name="source">A sequence of values to calculate the Mode of.</param>
+        /// <returns>The Mode of a sequence of values</returns>
         public static T? Mode<T>(this IEnumerable<T> source) where T : struct
         {
             var sortedList = from number in source
@@ -68,11 +92,29 @@ namespace LinqStatistics
             return null;
         }
 
+        /// <summary>
+        ///     Computes the Mode of a sequence of values that are obtained
+        ///     by invoking a transform function on each element of the input sequence.
+        /// </summary>
+        /// <typeparam name="TSource">The type of the elements of source.</typeparam>
+        /// <typeparam name="TMode">The type of the Mode</typeparam>
+        /// <param name="source">A sequence of values to calculate the Mode of.</param>
+        /// <param name="selector">A transform function to apply to each element.</param>
+        /// <returns>The Mode of the sequence of values.</returns>
         public static TMode? Mode<TSource, TMode>(this IEnumerable<TSource> source, Func<TSource, TMode> selector) where TMode : struct
         {
             return source.Select(selector).Mode<TMode>();
         }
 
+        /// <summary>
+        ///     Computes the Mode of a sequence of values that are obtained
+        ///     by invoking a transform function on each element of the input sequence.
+        /// </summary>
+        /// <typeparam name="TSource">The type of the elements of source.</typeparam>
+        /// <typeparam name="TMode">The type of the Mode</typeparam>
+        /// <param name="source">A sequence of values to calculate the Mode of.</param>
+        /// <param name="selector">A transform function to apply to each element.</param>
+        /// <returns>The Mode of the sequence of values.</returns>
         public static TMode? Mode<TSource, TMode>(this IEnumerable<TSource> source, Func<TSource, TMode?> selector) where TMode : struct
         {
             return source.Select(selector).Mode<TMode>();

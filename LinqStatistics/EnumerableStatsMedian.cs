@@ -54,7 +54,7 @@ namespace LinqStatistics
         }
 
         /// <summary>
-        ///     Computes the Median of a sequence of nullable intSystem.Int64 values that are obtained
+        ///     Computes the Median of a sequence of nullable int values that are obtained
         ///     by invoking a transform function on each element of the input sequence.
         /// </summary>
         /// <typeparam name="TSource">The type of the elements of source.</typeparam>
@@ -70,7 +70,7 @@ namespace LinqStatistics
         }
 
         /// <summary>
-        ///     Computes the Median of a sequence of intSystem.Int64 values that are obtained
+        ///     Computes the Median of a sequence of int values that are obtained
         ///     by invoking a transform function on each element of the input sequence.
         /// </summary>
         /// <typeparam name="TSource">The type of the elements of source.</typeparam>
@@ -132,7 +132,7 @@ namespace LinqStatistics
         }
 
         /// <summary>
-        ///     Computes the Median of a sequence of nullable longSystem.Int64 values that are obtained
+        ///     Computes the Median of a sequence of nullable long values that are obtained
         ///     by invoking a transform function on each element of the input sequence.
         /// </summary>
         /// <typeparam name="TSource">The type of the elements of source.</typeparam>
@@ -148,7 +148,7 @@ namespace LinqStatistics
         }
 
         /// <summary>
-        ///     Computes the Median of a sequence of longSystem.Int64 values that are obtained
+        ///     Computes the Median of a sequence of long values that are obtained
         ///     by invoking a transform function on each element of the input sequence.
         /// </summary>
         /// <typeparam name="TSource">The type of the elements of source.</typeparam>
@@ -210,7 +210,7 @@ namespace LinqStatistics
         }
 
         /// <summary>
-        ///     Computes the Median of a sequence of nullable decimalSystem.Int64 values that are obtained
+        ///     Computes the Median of a sequence of nullable decimal values that are obtained
         ///     by invoking a transform function on each element of the input sequence.
         /// </summary>
         /// <typeparam name="TSource">The type of the elements of source.</typeparam>
@@ -226,7 +226,7 @@ namespace LinqStatistics
         }
 
         /// <summary>
-        ///     Computes the Median of a sequence of decimalSystem.Int64 values that are obtained
+        ///     Computes the Median of a sequence of decimal values that are obtained
         ///     by invoking a transform function on each element of the input sequence.
         /// </summary>
         /// <typeparam name="TSource">The type of the elements of source.</typeparam>
@@ -288,7 +288,7 @@ namespace LinqStatistics
         }
 
         /// <summary>
-        ///     Computes the Median of a sequence of nullable floatSystem.Int64 values that are obtained
+        ///     Computes the Median of a sequence of nullable float values that are obtained
         ///     by invoking a transform function on each element of the input sequence.
         /// </summary>
         /// <typeparam name="TSource">The type of the elements of source.</typeparam>
@@ -304,7 +304,7 @@ namespace LinqStatistics
         }
 
         /// <summary>
-        ///     Computes the Median of a sequence of floatSystem.Int64 values that are obtained
+        ///     Computes the Median of a sequence of float values that are obtained
         ///     by invoking a transform function on each element of the input sequence.
         /// </summary>
         /// <typeparam name="TSource">The type of the elements of source.</typeparam>
@@ -366,7 +366,7 @@ namespace LinqStatistics
         }
 
         /// <summary>
-        ///     Computes the Median of a sequence of nullable doubleSystem.Int64 values that are obtained
+        ///     Computes the Median of a sequence of nullable double values that are obtained
         ///     by invoking a transform function on each element of the input sequence.
         /// </summary>
         /// <typeparam name="TSource">The type of the elements of source.</typeparam>
@@ -382,7 +382,7 @@ namespace LinqStatistics
         }
 
         /// <summary>
-        ///     Computes the Median of a sequence of doubleSystem.Int64 values that are obtained
+        ///     Computes the Median of a sequence of double values that are obtained
         ///     by invoking a transform function on each element of the input sequence.
         /// </summary>
         /// <typeparam name="TSource">The type of the elements of source.</typeparam>
