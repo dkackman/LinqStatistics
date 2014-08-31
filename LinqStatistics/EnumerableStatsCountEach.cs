@@ -32,6 +32,9 @@ namespace LinqStatistics
         /// <returns>The count of each unique element</returns>
         public static IEnumerable<ItemCount<T>> CountEach<T>(this IEnumerable<T> source)
         {
+            if (source == null)
+                throw new ArgumentNullException("source");
+
             return source.CountEach(EqualityComparer<T>.Default);
         }
 
