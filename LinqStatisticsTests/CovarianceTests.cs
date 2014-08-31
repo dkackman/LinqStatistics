@@ -47,7 +47,6 @@ namespace LinqStatistics.UnitTests
             IEnumerable<double> source = TestData.GetDoubles();
             IEnumerable<double> other = TestData.GetDoubles();
 
-
             double result = source.Covariance(other);
 
             Assert.AreEqual(result, 3.081875, double.Epsilon);
@@ -58,7 +57,6 @@ namespace LinqStatistics.UnitTests
         {
             IEnumerable<double> source = TestData.GetDoubles();
             IEnumerable<double> other = TestData.GetInts().Select(x => (double)x);
-
 
             double result = source.Covariance(other);
 
@@ -71,7 +69,6 @@ namespace LinqStatistics.UnitTests
         {
             IEnumerable<double> source = TestData.GetDoubles();
             IEnumerable<double> other = TestData.GetDoubles();
-
 
             double result = source.Pearson(other);
 

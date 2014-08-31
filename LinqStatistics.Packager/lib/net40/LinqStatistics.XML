@@ -910,6 +910,176 @@
             <param name="selector">A transform function to apply to each element.</param>
             <returns>The Pearson of the sequence of values.</returns>
         </member>
+        <member name="M:LinqStatistics.EnumerableStats.Range(System.Collections.Generic.IEnumerable{System.Nullable{System.Int32}})">
+            <summary>
+            Computes the Range of a sequence of nullable int values.
+            </summary>
+            <param name="source">The sequence of elements.</param>
+            <returns>The Range.</returns>
+        </member>
+        <member name="M:LinqStatistics.EnumerableStats.Range(System.Collections.Generic.IEnumerable{System.Int32})">
+            <summary>
+            Computes the Range of a sequence of int values.
+            </summary>
+            <param name="source">The sequence of elements.</param>
+            <returns>The Range.</returns>
+        </member>
+        <member name="M:LinqStatistics.EnumerableStats.Range``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Nullable{System.Int32}})">
+            <summary>
+                Computes the Range of a sequence of nullable int values that are obtained
+                by invoking a transform function on each element of the input sequence.
+            </summary>
+            <typeparam name="TSource">The type of the elements of source.</typeparam>
+            <param name="source">The sequence of elements.</param>
+            <param name="selector">A transform function to apply to each element.</param>
+            <returns>The Range.</returns>
+        </member>
+        <member name="M:LinqStatistics.EnumerableStats.Range``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Int32})">
+            <summary>
+                Computes the Range of a sequence of int values that are obtained
+                by invoking a transform function on each element of the input sequence.
+            </summary>
+            <typeparam name="TSource">The type of the elements of source.</typeparam>
+            <param name="source">The sequence of elements.</param>
+            <param name="selector">A transform function to apply to each element.</param>
+            <returns>The Range.</returns>
+        </member>
+        <member name="M:LinqStatistics.EnumerableStats.Range(System.Collections.Generic.IEnumerable{System.Nullable{System.Int64}})">
+            <summary>
+            Computes the Range of a sequence of nullable long values.
+            </summary>
+            <param name="source">The sequence of elements.</param>
+            <returns>The Range.</returns>
+        </member>
+        <member name="M:LinqStatistics.EnumerableStats.Range(System.Collections.Generic.IEnumerable{System.Int64})">
+            <summary>
+            Computes the Range of a sequence of long values.
+            </summary>
+            <param name="source">The sequence of elements.</param>
+            <returns>The Range.</returns>
+        </member>
+        <member name="M:LinqStatistics.EnumerableStats.Range``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Nullable{System.Int64}})">
+            <summary>
+                Computes the Range of a sequence of nullable long values that are obtained
+                by invoking a transform function on each element of the input sequence.
+            </summary>
+            <typeparam name="TSource">The type of the elements of source.</typeparam>
+            <param name="source">The sequence of elements.</param>
+            <param name="selector">A transform function to apply to each element.</param>
+            <returns>The Range.</returns>
+        </member>
+        <member name="M:LinqStatistics.EnumerableStats.Range``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Int64})">
+            <summary>
+                Computes the Range of a sequence of long values that are obtained
+                by invoking a transform function on each element of the input sequence.
+            </summary>
+            <typeparam name="TSource">The type of the elements of source.</typeparam>
+            <param name="source">The sequence of elements.</param>
+            <param name="selector">A transform function to apply to each element.</param>
+            <returns>The Range.</returns>
+        </member>
+        <member name="M:LinqStatistics.EnumerableStats.Range(System.Collections.Generic.IEnumerable{System.Nullable{System.Single}})">
+            <summary>
+            Computes the Range of a sequence of nullable float values.
+            </summary>
+            <param name="source">The sequence of elements.</param>
+            <returns>The Range.</returns>
+        </member>
+        <member name="M:LinqStatistics.EnumerableStats.Range(System.Collections.Generic.IEnumerable{System.Single})">
+            <summary>
+            Computes the Range of a sequence of float values.
+            </summary>
+            <param name="source">The sequence of elements.</param>
+            <returns>The Range.</returns>
+        </member>
+        <member name="M:LinqStatistics.EnumerableStats.Range``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Nullable{System.Single}})">
+            <summary>
+                Computes the Range of a sequence of nullable float values that are obtained
+                by invoking a transform function on each element of the input sequence.
+            </summary>
+            <typeparam name="TSource">The type of the elements of source.</typeparam>
+            <param name="source">The sequence of elements.</param>
+            <param name="selector">A transform function to apply to each element.</param>
+            <returns>The Range.</returns>
+        </member>
+        <member name="M:LinqStatistics.EnumerableStats.Range``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Single})">
+            <summary>
+                Computes the Range of a sequence of float values that are obtained
+                by invoking a transform function on each element of the input sequence.
+            </summary>
+            <typeparam name="TSource">The type of the elements of source.</typeparam>
+            <param name="source">The sequence of elements.</param>
+            <param name="selector">A transform function to apply to each element.</param>
+            <returns>The Range.</returns>
+        </member>
+        <member name="M:LinqStatistics.EnumerableStats.Range(System.Collections.Generic.IEnumerable{System.Nullable{System.Double}})">
+            <summary>
+            Computes the Range of a sequence of nullable double values.
+            </summary>
+            <param name="source">The sequence of elements.</param>
+            <returns>The Range.</returns>
+        </member>
+        <member name="M:LinqStatistics.EnumerableStats.Range(System.Collections.Generic.IEnumerable{System.Double})">
+            <summary>
+            Computes the Range of a sequence of double values.
+            </summary>
+            <param name="source">The sequence of elements.</param>
+            <returns>The Range.</returns>
+        </member>
+        <member name="M:LinqStatistics.EnumerableStats.Range``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Nullable{System.Double}})">
+            <summary>
+                Computes the Range of a sequence of nullable double values that are obtained
+                by invoking a transform function on each element of the input sequence.
+            </summary>
+            <typeparam name="TSource">The type of the elements of source.</typeparam>
+            <param name="source">The sequence of elements.</param>
+            <param name="selector">A transform function to apply to each element.</param>
+            <returns>The Range.</returns>
+        </member>
+        <member name="M:LinqStatistics.EnumerableStats.Range``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Double})">
+            <summary>
+                Computes the Range of a sequence of double values that are obtained
+                by invoking a transform function on each element of the input sequence.
+            </summary>
+            <typeparam name="TSource">The type of the elements of source.</typeparam>
+            <param name="source">The sequence of elements.</param>
+            <param name="selector">A transform function to apply to each element.</param>
+            <returns>The Range.</returns>
+        </member>
+        <member name="M:LinqStatistics.EnumerableStats.Range(System.Collections.Generic.IEnumerable{System.Nullable{System.Decimal}})">
+            <summary>
+            Computes the Range of a sequence of nullable decimal values.
+            </summary>
+            <param name="source">The sequence of elements.</param>
+            <returns>The Range.</returns>
+        </member>
+        <member name="M:LinqStatistics.EnumerableStats.Range(System.Collections.Generic.IEnumerable{System.Decimal})">
+            <summary>
+            Computes the Range of a sequence of decimal values.
+            </summary>
+            <param name="source">The sequence of elements.</param>
+            <returns>The Range.</returns>
+        </member>
+        <member name="M:LinqStatistics.EnumerableStats.Range``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Nullable{System.Decimal}})">
+            <summary>
+                Computes the Range of a sequence of nullable decimal values that are obtained
+                by invoking a transform function on each element of the input sequence.
+            </summary>
+            <typeparam name="TSource">The type of the elements of source.</typeparam>
+            <param name="source">The sequence of elements.</param>
+            <param name="selector">A transform function to apply to each element.</param>
+            <returns>The Range.</returns>
+        </member>
+        <member name="M:LinqStatistics.EnumerableStats.Range``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Decimal})">
+            <summary>
+                Computes the Range of a sequence of decimal values that are obtained
+                by invoking a transform function on each element of the input sequence.
+            </summary>
+            <typeparam name="TSource">The type of the elements of source.</typeparam>
+            <param name="source">The sequence of elements.</param>
+            <param name="selector">A transform function to apply to each element.</param>
+            <returns>The Range.</returns>
+        </member>
         <member name="M:LinqStatistics.EnumerableStats.BinCountSturges``1(System.Collections.Generic.IEnumerable{``0})">
             <summary>
             http://en.wikipedia.org/wiki/Histogram#Number_of_bins_and_width

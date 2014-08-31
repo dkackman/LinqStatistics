@@ -74,11 +74,15 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>EnumerableStatsPearson.tt</DependentUpon>
     </Compile>
+    <Compile Include="EnumerableStatsRange.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EnumerableStatsRange.tt</DependentUpon>
+    </Compile>
     <Compile Include="ItemCount.cs" />
     <Compile Include="EnumerableStatsBinCount.cs" />
     <Compile Include="EnumerableStatsCountEach.cs" />
     <Compile Include="EnumerableStats.cs" />
-    <Compile Include="EnumerableStatsRange.cs" />
     <Compile Include="EnumerableStatsMode.cs" />
     <Compile Include="EnumerableStatsRootMeanSquare.cs" />
     <Compile Include="EnumerableStatsStandardDeviation.cs" />
@@ -120,6 +124,10 @@
     <None Include="EnumerableStatsPearson.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>EnumerableStatsPearson.cs</LastGenOutput>
+    </None>
+    <None Include="EnumerableStatsRange.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>EnumerableStatsRange.cs</LastGenOutput>
     </None>
   </ItemGroup>
   <ItemGroup>
