@@ -14,9 +14,6 @@ namespace LinqStatistics
         /// <returns>The Kurtosis of the sequence of values.</returns>
         public static double? Kurtosis(this IEnumerable<int?> source)
         {
-            if (source == null)
-                throw new ArgumentNullException("source");
-
             IEnumerable<int> values = source.AllValues();
             if (values.Any())
                 return values.Kurtosis();
@@ -98,9 +95,6 @@ namespace LinqStatistics
         /// <returns>The Kurtosis of the sequence of values.</returns>
         public static double? Kurtosis(this IEnumerable<long?> source)
         {
-            if (source == null)
-                throw new ArgumentNullException("source");
-
             IEnumerable<long> values = source.AllValues();
             if (values.Any())
                 return values.Kurtosis();
@@ -182,9 +176,6 @@ namespace LinqStatistics
         /// <returns>The Kurtosis of the sequence of values.</returns>
         public static decimal? Kurtosis(this IEnumerable<decimal?> source)
         {
-            if (source == null)
-                throw new ArgumentNullException("source");
-
             IEnumerable<decimal> values = source.AllValues();
             if (values.Any())
                 return values.Kurtosis();
@@ -266,9 +257,6 @@ namespace LinqStatistics
         /// <returns>The Kurtosis of the sequence of values.</returns>
         public static float? Kurtosis(this IEnumerable<float?> source)
         {
-            if (source == null)
-                throw new ArgumentNullException("source");
-
             IEnumerable<float> values = source.AllValues();
             if (values.Any())
                 return values.Kurtosis();
@@ -350,9 +338,6 @@ namespace LinqStatistics
         /// <returns>The Kurtosis of the sequence of values.</returns>
         public static double? Kurtosis(this IEnumerable<double?> source)
         {
-            if (source == null)
-                throw new ArgumentNullException("source");
-
             IEnumerable<double> values = source.AllValues();
             if (values.Any())
                 return values.Kurtosis();

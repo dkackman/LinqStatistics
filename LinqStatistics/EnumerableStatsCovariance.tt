@@ -31,12 +31,6 @@ namespace LinqStatistics
         /// <returns>The Covariance of the two sequence of values.</returns>
         public static <#= type.Item2 #>? Covariance(this IEnumerable<<#= type.Item1 #>?> source, IEnumerable<<#= type.Item1 #>?> other)
         {
-            if (source == null)
-                throw new ArgumentNullException("source");
-
-            if (other == null)
-                throw new ArgumentNullException("other");
-            
             IEnumerable<<#= type.Item1 #>> values = source.AllValues();
             if (values.Any())
                 return values.Covariance(other.AllValues());

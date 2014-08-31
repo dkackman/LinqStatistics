@@ -69,10 +69,14 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>EnumerableStatsMedian.tt</DependentUpon>
     </Compile>
+    <Compile Include="EnumerableStatsPearson.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EnumerableStatsPearson.tt</DependentUpon>
+    </Compile>
     <Compile Include="ItemCount.cs" />
     <Compile Include="EnumerableStatsBinCount.cs" />
     <Compile Include="EnumerableStatsCountEach.cs" />
-    <Compile Include="EnumerableStatsPearson.cs" />
     <Compile Include="EnumerableStats.cs" />
     <Compile Include="EnumerableStatsRange.cs" />
     <Compile Include="EnumerableStatsMode.cs" />
@@ -112,6 +116,10 @@
     <None Include="EnumerableStatsMedian.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>EnumerableStatsMedian.cs</LastGenOutput>
+    </None>
+    <None Include="EnumerableStatsPearson.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>EnumerableStatsPearson.cs</LastGenOutput>
     </None>
   </ItemGroup>
   <ItemGroup>

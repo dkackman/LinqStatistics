@@ -30,9 +30,6 @@ namespace LinqStatistics
         /// <returns>The Kurtosis of the sequence of values.</returns>
         public static <#= type.Item2 #>? Kurtosis(this IEnumerable<<#= type.Item1 #>?> source)
         {
-            if (source == null)
-                throw new ArgumentNullException("source");
-
             IEnumerable<<#= type.Item1 #>> values = source.AllValues();
             if (values.Any())
                 return values.Kurtosis();

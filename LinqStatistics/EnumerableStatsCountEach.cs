@@ -18,6 +18,9 @@ namespace LinqStatistics
             if (source == null)
                 throw new ArgumentNullException("source");
 
+            if (comparer == null)
+                throw new ArgumentNullException("comparer");
+
             if (!source.Any())
                 throw new InvalidOperationException("source sequence contains no elements");
 

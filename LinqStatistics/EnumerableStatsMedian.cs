@@ -15,9 +15,6 @@ namespace LinqStatistics
     	/// <returns>The Median of the sequence of values.</returns>
         public static double? Median(this IEnumerable<int?> source)
         {
-            if (source == null)
-                throw new ArgumentNullException("source");
-
             IEnumerable<int> values = source.AllValues();
             if (values.Any())
                 return values.Median();
@@ -93,9 +90,6 @@ namespace LinqStatistics
     	/// <returns>The Median of the sequence of values.</returns>
         public static double? Median(this IEnumerable<long?> source)
         {
-            if (source == null)
-                throw new ArgumentNullException("source");
-
             IEnumerable<long> values = source.AllValues();
             if (values.Any())
                 return values.Median();
@@ -171,9 +165,6 @@ namespace LinqStatistics
     	/// <returns>The Median of the sequence of values.</returns>
         public static decimal? Median(this IEnumerable<decimal?> source)
         {
-            if (source == null)
-                throw new ArgumentNullException("source");
-
             IEnumerable<decimal> values = source.AllValues();
             if (values.Any())
                 return values.Median();
@@ -249,9 +240,6 @@ namespace LinqStatistics
     	/// <returns>The Median of the sequence of values.</returns>
         public static float? Median(this IEnumerable<float?> source)
         {
-            if (source == null)
-                throw new ArgumentNullException("source");
-
             IEnumerable<float> values = source.AllValues();
             if (values.Any())
                 return values.Median();
@@ -327,9 +315,6 @@ namespace LinqStatistics
     	/// <returns>The Median of the sequence of values.</returns>
         public static double? Median(this IEnumerable<double?> source)
         {
-            if (source == null)
-                throw new ArgumentNullException("source");
-
             IEnumerable<double> values = source.AllValues();
             if (values.Any())
                 return values.Median();

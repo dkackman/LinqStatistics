@@ -15,12 +15,6 @@ namespace LinqStatistics
         /// <returns>The Covariance of the two sequence of values.</returns>
         public static double? Covariance(this IEnumerable<int?> source, IEnumerable<int?> other)
         {
-            if (source == null)
-                throw new ArgumentNullException("source");
-
-            if (other == null)
-                throw new ArgumentNullException("other");
-            
             IEnumerable<int> values = source.AllValues();
             if (values.Any())
                 return values.Covariance(other.AllValues());
@@ -71,12 +65,6 @@ namespace LinqStatistics
         /// <returns>The Covariance of the two sequence of values.</returns>
         public static double? Covariance(this IEnumerable<long?> source, IEnumerable<long?> other)
         {
-            if (source == null)
-                throw new ArgumentNullException("source");
-
-            if (other == null)
-                throw new ArgumentNullException("other");
-            
             IEnumerable<long> values = source.AllValues();
             if (values.Any())
                 return values.Covariance(other.AllValues());
@@ -127,12 +115,6 @@ namespace LinqStatistics
         /// <returns>The Covariance of the two sequence of values.</returns>
         public static decimal? Covariance(this IEnumerable<decimal?> source, IEnumerable<decimal?> other)
         {
-            if (source == null)
-                throw new ArgumentNullException("source");
-
-            if (other == null)
-                throw new ArgumentNullException("other");
-            
             IEnumerable<decimal> values = source.AllValues();
             if (values.Any())
                 return values.Covariance(other.AllValues());
@@ -183,12 +165,6 @@ namespace LinqStatistics
         /// <returns>The Covariance of the two sequence of values.</returns>
         public static float? Covariance(this IEnumerable<float?> source, IEnumerable<float?> other)
         {
-            if (source == null)
-                throw new ArgumentNullException("source");
-
-            if (other == null)
-                throw new ArgumentNullException("other");
-            
             IEnumerable<float> values = source.AllValues();
             if (values.Any())
                 return values.Covariance(other.AllValues());
@@ -239,12 +215,6 @@ namespace LinqStatistics
         /// <returns>The Covariance of the two sequence of values.</returns>
         public static double? Covariance(this IEnumerable<double?> source, IEnumerable<double?> other)
         {
-            if (source == null)
-                throw new ArgumentNullException("source");
-
-            if (other == null)
-                throw new ArgumentNullException("other");
-            
             IEnumerable<double> values = source.AllValues();
             if (values.Any())
                 return values.Covariance(other.AllValues());

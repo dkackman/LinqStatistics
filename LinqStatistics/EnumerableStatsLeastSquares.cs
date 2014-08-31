@@ -12,12 +12,9 @@ namespace LinqStatistics
         /// </summary>
         /// <param name="source">A sequence of Tuple{int?, int?} values to calculate the LeastSquares of.</param>
         /// <returns> The LeastSquares of the sequence of values, or null if the source sequence is
-        //     empty or contains only values that are null.</returns>
+        ///     empty or contains only values that are null.</returns>
         public static LeastSquares? LeastSquares(this IEnumerable<Tuple<int?, int?>> source)
         {
-            if (source == null)
-                throw new ArgumentNullException("source");
-            
             IEnumerable<Tuple<int, int>> values = source.AllValues();
             if (values.Any())
                 return values.LeastSquares();
@@ -96,12 +93,9 @@ namespace LinqStatistics
         /// </summary>
         /// <param name="source">A sequence of Tuple{long?, long?} values to calculate the LeastSquares of.</param>
         /// <returns> The LeastSquares of the sequence of values, or null if the source sequence is
-        //     empty or contains only values that are null.</returns>
+        ///     empty or contains only values that are null.</returns>
         public static LeastSquares? LeastSquares(this IEnumerable<Tuple<long?, long?>> source)
         {
-            if (source == null)
-                throw new ArgumentNullException("source");
-            
             IEnumerable<Tuple<long, long>> values = source.AllValues();
             if (values.Any())
                 return values.LeastSquares();
@@ -180,12 +174,9 @@ namespace LinqStatistics
         /// </summary>
         /// <param name="source">A sequence of Tuple{float?, float?} values to calculate the LeastSquares of.</param>
         /// <returns> The LeastSquares of the sequence of values, or null if the source sequence is
-        //     empty or contains only values that are null.</returns>
+        ///     empty or contains only values that are null.</returns>
         public static LeastSquares? LeastSquares(this IEnumerable<Tuple<float?, float?>> source)
         {
-            if (source == null)
-                throw new ArgumentNullException("source");
-            
             IEnumerable<Tuple<float, float>> values = source.AllValues();
             if (values.Any())
                 return values.LeastSquares();
@@ -264,12 +255,9 @@ namespace LinqStatistics
         /// </summary>
         /// <param name="source">A sequence of Tuple{double?, double?} values to calculate the LeastSquares of.</param>
         /// <returns> The LeastSquares of the sequence of values, or null if the source sequence is
-        //     empty or contains only values that are null.</returns>
+        ///     empty or contains only values that are null.</returns>
         public static LeastSquares? LeastSquares(this IEnumerable<Tuple<double?, double?>> source)
         {
-            if (source == null)
-                throw new ArgumentNullException("source");
-            
             IEnumerable<Tuple<double, double>> values = source.AllValues();
             if (values.Any())
                 return values.LeastSquares();
@@ -348,12 +336,9 @@ namespace LinqStatistics
         /// </summary>
         /// <param name="source">A sequence of Tuple{decimal?, decimal?} values to calculate the LeastSquares of.</param>
         /// <returns> The LeastSquares of the sequence of values, or null if the source sequence is
-        //     empty or contains only values that are null.</returns>
+        ///     empty or contains only values that are null.</returns>
         public static LeastSquares? LeastSquares(this IEnumerable<Tuple<decimal?, decimal?>> source)
         {
-            if (source == null)
-                throw new ArgumentNullException("source");
-            
             IEnumerable<Tuple<decimal, decimal>> values = source.AllValues();
             if (values.Any())
                 return values.LeastSquares();

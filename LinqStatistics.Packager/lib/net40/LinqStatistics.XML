@@ -85,29 +85,854 @@
             The range
             </summary>
         </member>
+        <member name="M:LinqStatistics.EnumerableStats.Covariance(System.Collections.Generic.IEnumerable{System.Nullable{System.Int32}},System.Collections.Generic.IEnumerable{System.Nullable{System.Int32}})">
+            <summary>
+            Computes the Covariance of two sequences of nullable int values.
+            </summary>
+            <param name="source">The first sequence of nullable int values to calculate the Covariance of.</param>
+            <param name="other">The second sequence of nullable int values to calculate the Covariance of.</param>
+            <returns>The Covariance of the two sequence of values.</returns>
+        </member>
+        <member name="M:LinqStatistics.EnumerableStats.Covariance(System.Collections.Generic.IEnumerable{System.Int32},System.Collections.Generic.IEnumerable{System.Int32})">
+            <summary>
+            Computes the Covariance of two sequences of int  values.
+            </summary>
+            <param name="source">The first sequence of int values to calculate the Covariance of.</param>
+            <param name="other">The second sequence of int values to calculate the Covariance of.</param>
+            <returns>The Covariance of the two sequence of values.</returns>
+        </member>
+        <member name="M:LinqStatistics.EnumerableStats.Covariance(System.Collections.Generic.IEnumerable{System.Nullable{System.Int64}},System.Collections.Generic.IEnumerable{System.Nullable{System.Int64}})">
+            <summary>
+            Computes the Covariance of two sequences of nullable long values.
+            </summary>
+            <param name="source">The first sequence of nullable long values to calculate the Covariance of.</param>
+            <param name="other">The second sequence of nullable long values to calculate the Covariance of.</param>
+            <returns>The Covariance of the two sequence of values.</returns>
+        </member>
+        <member name="M:LinqStatistics.EnumerableStats.Covariance(System.Collections.Generic.IEnumerable{System.Int64},System.Collections.Generic.IEnumerable{System.Int64})">
+            <summary>
+            Computes the Covariance of two sequences of long  values.
+            </summary>
+            <param name="source">The first sequence of long values to calculate the Covariance of.</param>
+            <param name="other">The second sequence of long values to calculate the Covariance of.</param>
+            <returns>The Covariance of the two sequence of values.</returns>
+        </member>
+        <member name="M:LinqStatistics.EnumerableStats.Covariance(System.Collections.Generic.IEnumerable{System.Nullable{System.Decimal}},System.Collections.Generic.IEnumerable{System.Nullable{System.Decimal}})">
+            <summary>
+            Computes the Covariance of two sequences of nullable decimal values.
+            </summary>
+            <param name="source">The first sequence of nullable decimal values to calculate the Covariance of.</param>
+            <param name="other">The second sequence of nullable decimal values to calculate the Covariance of.</param>
+            <returns>The Covariance of the two sequence of values.</returns>
+        </member>
+        <member name="M:LinqStatistics.EnumerableStats.Covariance(System.Collections.Generic.IEnumerable{System.Decimal},System.Collections.Generic.IEnumerable{System.Decimal})">
+            <summary>
+            Computes the Covariance of two sequences of decimal  values.
+            </summary>
+            <param name="source">The first sequence of decimal values to calculate the Covariance of.</param>
+            <param name="other">The second sequence of decimal values to calculate the Covariance of.</param>
+            <returns>The Covariance of the two sequence of values.</returns>
+        </member>
+        <member name="M:LinqStatistics.EnumerableStats.Covariance(System.Collections.Generic.IEnumerable{System.Nullable{System.Single}},System.Collections.Generic.IEnumerable{System.Nullable{System.Single}})">
+            <summary>
+            Computes the Covariance of two sequences of nullable float values.
+            </summary>
+            <param name="source">The first sequence of nullable float values to calculate the Covariance of.</param>
+            <param name="other">The second sequence of nullable float values to calculate the Covariance of.</param>
+            <returns>The Covariance of the two sequence of values.</returns>
+        </member>
+        <member name="M:LinqStatistics.EnumerableStats.Covariance(System.Collections.Generic.IEnumerable{System.Single},System.Collections.Generic.IEnumerable{System.Single})">
+            <summary>
+            Computes the Covariance of two sequences of float  values.
+            </summary>
+            <param name="source">The first sequence of float values to calculate the Covariance of.</param>
+            <param name="other">The second sequence of float values to calculate the Covariance of.</param>
+            <returns>The Covariance of the two sequence of values.</returns>
+        </member>
+        <member name="M:LinqStatistics.EnumerableStats.Covariance(System.Collections.Generic.IEnumerable{System.Nullable{System.Double}},System.Collections.Generic.IEnumerable{System.Nullable{System.Double}})">
+            <summary>
+            Computes the Covariance of two sequences of nullable double values.
+            </summary>
+            <param name="source">The first sequence of nullable double values to calculate the Covariance of.</param>
+            <param name="other">The second sequence of nullable double values to calculate the Covariance of.</param>
+            <returns>The Covariance of the two sequence of values.</returns>
+        </member>
+        <member name="M:LinqStatistics.EnumerableStats.Covariance(System.Collections.Generic.IEnumerable{System.Double},System.Collections.Generic.IEnumerable{System.Double})">
+            <summary>
+            Computes the Covariance of two sequences of double  values.
+            </summary>
+            <param name="source">The first sequence of double values to calculate the Covariance of.</param>
+            <param name="other">The second sequence of double values to calculate the Covariance of.</param>
+            <returns>The Covariance of the two sequence of values.</returns>
+        </member>
+        <member name="M:LinqStatistics.EnumerableStats.Kurtosis(System.Collections.Generic.IEnumerable{System.Nullable{System.Int32}})">
+            <summary>
+            Computes the Kurtosis of a sequence of nullable int values
+            </summary>
+            <param name="source">A sequence of nullable int values to calculate the Kurtosis of.</param>
+            <returns>The Kurtosis of the sequence of values.</returns>
+        </member>
+        <member name="M:LinqStatistics.EnumerableStats.Kurtosis(System.Collections.Generic.IEnumerable{System.Int32})">
+            <summary>
+            Computes the Kurtosis of a sequence of int values
+            </summary>
+            <param name="source">A sequence of int values to calculate the Kurtosis of.</param>
+            <returns>The Kurtosis of the sequence of values.</returns>
+        </member>
+        <member name="M:LinqStatistics.EnumerableStats.Kurtosis``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Int32})">
+            <summary>
+                Computes the Kurtosis of a sequence of int values that are obtained
+                by invoking a transform function on each element of the input sequence.
+            </summary>
+            <typeparam name="TSource">The type of the elements of source.</typeparam>
+            <param name="source">A sequence of values that are used to calculate an Kurtosis</param>
+            <param name="selector">A transform function to apply to each element.</param>
+            <returns>The Kurtosis of the sequence of values.</returns>
+        </member>
+        <member name="M:LinqStatistics.EnumerableStats.Kurtosis``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Nullable{System.Int32}})">
+            <summary>
+                Computes the Kurtosis of a sequence of nullable int values that are obtained
+                by invoking a transform function on each element of the input sequence.
+            </summary>
+            <typeparam name="TSource">The type of the elements of source.</typeparam>
+            <param name="source">A sequence of values that are used to calculate an Kurtosis</param>
+            <param name="selector">A transform function to apply to each element.</param>
+            <returns>The Kurtosis of the sequence of values.</returns>
+        </member>
+        <member name="M:LinqStatistics.EnumerableStats.Kurtosis(System.Collections.Generic.IEnumerable{System.Nullable{System.Int64}})">
+            <summary>
+            Computes the Kurtosis of a sequence of nullable long values
+            </summary>
+            <param name="source">A sequence of nullable long values to calculate the Kurtosis of.</param>
+            <returns>The Kurtosis of the sequence of values.</returns>
+        </member>
+        <member name="M:LinqStatistics.EnumerableStats.Kurtosis(System.Collections.Generic.IEnumerable{System.Int64})">
+            <summary>
+            Computes the Kurtosis of a sequence of long values
+            </summary>
+            <param name="source">A sequence of long values to calculate the Kurtosis of.</param>
+            <returns>The Kurtosis of the sequence of values.</returns>
+        </member>
+        <member name="M:LinqStatistics.EnumerableStats.Kurtosis``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Int64})">
+            <summary>
+                Computes the Kurtosis of a sequence of long values that are obtained
+                by invoking a transform function on each element of the input sequence.
+            </summary>
+            <typeparam name="TSource">The type of the elements of source.</typeparam>
+            <param name="source">A sequence of values that are used to calculate an Kurtosis</param>
+            <param name="selector">A transform function to apply to each element.</param>
+            <returns>The Kurtosis of the sequence of values.</returns>
+        </member>
+        <member name="M:LinqStatistics.EnumerableStats.Kurtosis``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Nullable{System.Int64}})">
+            <summary>
+                Computes the Kurtosis of a sequence of nullable long values that are obtained
+                by invoking a transform function on each element of the input sequence.
+            </summary>
+            <typeparam name="TSource">The type of the elements of source.</typeparam>
+            <param name="source">A sequence of values that are used to calculate an Kurtosis</param>
+            <param name="selector">A transform function to apply to each element.</param>
+            <returns>The Kurtosis of the sequence of values.</returns>
+        </member>
+        <member name="M:LinqStatistics.EnumerableStats.Kurtosis(System.Collections.Generic.IEnumerable{System.Nullable{System.Decimal}})">
+            <summary>
+            Computes the Kurtosis of a sequence of nullable decimal values
+            </summary>
+            <param name="source">A sequence of nullable decimal values to calculate the Kurtosis of.</param>
+            <returns>The Kurtosis of the sequence of values.</returns>
+        </member>
+        <member name="M:LinqStatistics.EnumerableStats.Kurtosis(System.Collections.Generic.IEnumerable{System.Decimal})">
+            <summary>
+            Computes the Kurtosis of a sequence of decimal values
+            </summary>
+            <param name="source">A sequence of decimal values to calculate the Kurtosis of.</param>
+            <returns>The Kurtosis of the sequence of values.</returns>
+        </member>
+        <member name="M:LinqStatistics.EnumerableStats.Kurtosis``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Decimal})">
+            <summary>
+                Computes the Kurtosis of a sequence of decimal values that are obtained
+                by invoking a transform function on each element of the input sequence.
+            </summary>
+            <typeparam name="TSource">The type of the elements of source.</typeparam>
+            <param name="source">A sequence of values that are used to calculate an Kurtosis</param>
+            <param name="selector">A transform function to apply to each element.</param>
+            <returns>The Kurtosis of the sequence of values.</returns>
+        </member>
+        <member name="M:LinqStatistics.EnumerableStats.Kurtosis``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Nullable{System.Decimal}})">
+            <summary>
+                Computes the Kurtosis of a sequence of nullable decimal values that are obtained
+                by invoking a transform function on each element of the input sequence.
+            </summary>
+            <typeparam name="TSource">The type of the elements of source.</typeparam>
+            <param name="source">A sequence of values that are used to calculate an Kurtosis</param>
+            <param name="selector">A transform function to apply to each element.</param>
+            <returns>The Kurtosis of the sequence of values.</returns>
+        </member>
+        <member name="M:LinqStatistics.EnumerableStats.Kurtosis(System.Collections.Generic.IEnumerable{System.Nullable{System.Single}})">
+            <summary>
+            Computes the Kurtosis of a sequence of nullable float values
+            </summary>
+            <param name="source">A sequence of nullable float values to calculate the Kurtosis of.</param>
+            <returns>The Kurtosis of the sequence of values.</returns>
+        </member>
+        <member name="M:LinqStatistics.EnumerableStats.Kurtosis(System.Collections.Generic.IEnumerable{System.Single})">
+            <summary>
+            Computes the Kurtosis of a sequence of float values
+            </summary>
+            <param name="source">A sequence of float values to calculate the Kurtosis of.</param>
+            <returns>The Kurtosis of the sequence of values.</returns>
+        </member>
+        <member name="M:LinqStatistics.EnumerableStats.Kurtosis``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Single})">
+            <summary>
+                Computes the Kurtosis of a sequence of float values that are obtained
+                by invoking a transform function on each element of the input sequence.
+            </summary>
+            <typeparam name="TSource">The type of the elements of source.</typeparam>
+            <param name="source">A sequence of values that are used to calculate an Kurtosis</param>
+            <param name="selector">A transform function to apply to each element.</param>
+            <returns>The Kurtosis of the sequence of values.</returns>
+        </member>
+        <member name="M:LinqStatistics.EnumerableStats.Kurtosis``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Nullable{System.Single}})">
+            <summary>
+                Computes the Kurtosis of a sequence of nullable float values that are obtained
+                by invoking a transform function on each element of the input sequence.
+            </summary>
+            <typeparam name="TSource">The type of the elements of source.</typeparam>
+            <param name="source">A sequence of values that are used to calculate an Kurtosis</param>
+            <param name="selector">A transform function to apply to each element.</param>
+            <returns>The Kurtosis of the sequence of values.</returns>
+        </member>
+        <member name="M:LinqStatistics.EnumerableStats.Kurtosis(System.Collections.Generic.IEnumerable{System.Nullable{System.Double}})">
+            <summary>
+            Computes the Kurtosis of a sequence of nullable double values
+            </summary>
+            <param name="source">A sequence of nullable double values to calculate the Kurtosis of.</param>
+            <returns>The Kurtosis of the sequence of values.</returns>
+        </member>
+        <member name="M:LinqStatistics.EnumerableStats.Kurtosis(System.Collections.Generic.IEnumerable{System.Double})">
+            <summary>
+            Computes the Kurtosis of a sequence of double values
+            </summary>
+            <param name="source">A sequence of double values to calculate the Kurtosis of.</param>
+            <returns>The Kurtosis of the sequence of values.</returns>
+        </member>
+        <member name="M:LinqStatistics.EnumerableStats.Kurtosis``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Double})">
+            <summary>
+                Computes the Kurtosis of a sequence of double values that are obtained
+                by invoking a transform function on each element of the input sequence.
+            </summary>
+            <typeparam name="TSource">The type of the elements of source.</typeparam>
+            <param name="source">A sequence of values that are used to calculate an Kurtosis</param>
+            <param name="selector">A transform function to apply to each element.</param>
+            <returns>The Kurtosis of the sequence of values.</returns>
+        </member>
+        <member name="M:LinqStatistics.EnumerableStats.Kurtosis``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Nullable{System.Double}})">
+            <summary>
+                Computes the Kurtosis of a sequence of nullable double values that are obtained
+                by invoking a transform function on each element of the input sequence.
+            </summary>
+            <typeparam name="TSource">The type of the elements of source.</typeparam>
+            <param name="source">A sequence of values that are used to calculate an Kurtosis</param>
+            <param name="selector">A transform function to apply to each element.</param>
+            <returns>The Kurtosis of the sequence of values.</returns>
+        </member>
+        <member name="M:LinqStatistics.EnumerableStats.LeastSquares(System.Collections.Generic.IEnumerable{System.Tuple{System.Nullable{System.Int32},System.Nullable{System.Int32}}})">
+            <summary>
+            Computes the LeastSquares of a sequence of Tuple{int?, int?} values.
+            </summary>
+            <param name="source">A sequence of Tuple{int?, int?} values to calculate the LeastSquares of.</param>
+            <returns> The LeastSquares of the sequence of values, or null if the source sequence is
+                empty or contains only values that are null.</returns>
+        </member>
+        <member name="M:LinqStatistics.EnumerableStats.LeastSquares(System.Collections.Generic.IEnumerable{System.Tuple{System.Int32,System.Int32}})">
+            <summary>
+            Computes the LeastSquares of a sequence of Tuple{int, int} values.
+            </summary>
+            <param name="source">A sequence of Tuple{int, int} values to calculate the LeastSquares of.</param>
+            <returns> The LeastSquares of the sequence of values.</returns>
+        </member>
+        <member name="M:LinqStatistics.EnumerableStats.LeastSquares``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Tuple{System.Nullable{System.Int32},System.Nullable{System.Int32}}})">
+            <summary>
+                Computes the LeastSquares of a sequence of Tuple{int?, int?} values that are obtained
+                by invoking a transform function on each element of the input sequence.
+            </summary>
+            <typeparam name="TSource">The type of the elements of source.</typeparam>
+            <param name="source">A sequence of values to calculate the LeastSquares of.</param>
+            <param name="selector">A transform function to apply to each element.</param>
+            <returns>The LeastSquares of the sequence of values.</returns>
+        </member>
+        <member name="M:LinqStatistics.EnumerableStats.LeastSquares``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Tuple{System.Int32,System.Int32}})">
+            <summary>
+                Computes the LeastSquares of a sequence of Tuple{int, int} values that are obtained
+                by invoking a transform function on each element of the input sequence.
+            </summary>
+            <typeparam name="TSource">The type of the elements of source.</typeparam>
+            <param name="source">A sequence of values to calculate the LeastSquares of.</param>
+            <param name="selector">A transform function to apply to each element.</param>
+            <returns>The LeastSquares of the sequence of values.</returns>
+        </member>
+        <member name="M:LinqStatistics.EnumerableStats.LeastSquares(System.Collections.Generic.IEnumerable{System.Tuple{System.Nullable{System.Int64},System.Nullable{System.Int64}}})">
+            <summary>
+            Computes the LeastSquares of a sequence of Tuple{long?, long?} values.
+            </summary>
+            <param name="source">A sequence of Tuple{long?, long?} values to calculate the LeastSquares of.</param>
+            <returns> The LeastSquares of the sequence of values, or null if the source sequence is
+                empty or contains only values that are null.</returns>
+        </member>
+        <member name="M:LinqStatistics.EnumerableStats.LeastSquares(System.Collections.Generic.IEnumerable{System.Tuple{System.Int64,System.Int64}})">
+            <summary>
+            Computes the LeastSquares of a sequence of Tuple{long, long} values.
+            </summary>
+            <param name="source">A sequence of Tuple{long, long} values to calculate the LeastSquares of.</param>
+            <returns> The LeastSquares of the sequence of values.</returns>
+        </member>
+        <member name="M:LinqStatistics.EnumerableStats.LeastSquares``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Tuple{System.Nullable{System.Int64},System.Nullable{System.Int64}}})">
+            <summary>
+                Computes the LeastSquares of a sequence of Tuple{long?, long?} values that are obtained
+                by invoking a transform function on each element of the input sequence.
+            </summary>
+            <typeparam name="TSource">The type of the elements of source.</typeparam>
+            <param name="source">A sequence of values to calculate the LeastSquares of.</param>
+            <param name="selector">A transform function to apply to each element.</param>
+            <returns>The LeastSquares of the sequence of values.</returns>
+        </member>
+        <member name="M:LinqStatistics.EnumerableStats.LeastSquares``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Tuple{System.Int64,System.Int64}})">
+            <summary>
+                Computes the LeastSquares of a sequence of Tuple{long, long} values that are obtained
+                by invoking a transform function on each element of the input sequence.
+            </summary>
+            <typeparam name="TSource">The type of the elements of source.</typeparam>
+            <param name="source">A sequence of values to calculate the LeastSquares of.</param>
+            <param name="selector">A transform function to apply to each element.</param>
+            <returns>The LeastSquares of the sequence of values.</returns>
+        </member>
+        <member name="M:LinqStatistics.EnumerableStats.LeastSquares(System.Collections.Generic.IEnumerable{System.Tuple{System.Nullable{System.Single},System.Nullable{System.Single}}})">
+            <summary>
+            Computes the LeastSquares of a sequence of Tuple{float?, float?} values.
+            </summary>
+            <param name="source">A sequence of Tuple{float?, float?} values to calculate the LeastSquares of.</param>
+            <returns> The LeastSquares of the sequence of values, or null if the source sequence is
+                empty or contains only values that are null.</returns>
+        </member>
+        <member name="M:LinqStatistics.EnumerableStats.LeastSquares(System.Collections.Generic.IEnumerable{System.Tuple{System.Single,System.Single}})">
+            <summary>
+            Computes the LeastSquares of a sequence of Tuple{float, float} values.
+            </summary>
+            <param name="source">A sequence of Tuple{float, float} values to calculate the LeastSquares of.</param>
+            <returns> The LeastSquares of the sequence of values.</returns>
+        </member>
+        <member name="M:LinqStatistics.EnumerableStats.LeastSquares``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Tuple{System.Nullable{System.Single},System.Nullable{System.Single}}})">
+            <summary>
+                Computes the LeastSquares of a sequence of Tuple{float?, float?} values that are obtained
+                by invoking a transform function on each element of the input sequence.
+            </summary>
+            <typeparam name="TSource">The type of the elements of source.</typeparam>
+            <param name="source">A sequence of values to calculate the LeastSquares of.</param>
+            <param name="selector">A transform function to apply to each element.</param>
+            <returns>The LeastSquares of the sequence of values.</returns>
+        </member>
+        <member name="M:LinqStatistics.EnumerableStats.LeastSquares``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Tuple{System.Single,System.Single}})">
+            <summary>
+                Computes the LeastSquares of a sequence of Tuple{float, float} values that are obtained
+                by invoking a transform function on each element of the input sequence.
+            </summary>
+            <typeparam name="TSource">The type of the elements of source.</typeparam>
+            <param name="source">A sequence of values to calculate the LeastSquares of.</param>
+            <param name="selector">A transform function to apply to each element.</param>
+            <returns>The LeastSquares of the sequence of values.</returns>
+        </member>
+        <member name="M:LinqStatistics.EnumerableStats.LeastSquares(System.Collections.Generic.IEnumerable{System.Tuple{System.Nullable{System.Double},System.Nullable{System.Double}}})">
+            <summary>
+            Computes the LeastSquares of a sequence of Tuple{double?, double?} values.
+            </summary>
+            <param name="source">A sequence of Tuple{double?, double?} values to calculate the LeastSquares of.</param>
+            <returns> The LeastSquares of the sequence of values, or null if the source sequence is
+                empty or contains only values that are null.</returns>
+        </member>
+        <member name="M:LinqStatistics.EnumerableStats.LeastSquares(System.Collections.Generic.IEnumerable{System.Tuple{System.Double,System.Double}})">
+            <summary>
+            Computes the LeastSquares of a sequence of Tuple{double, double} values.
+            </summary>
+            <param name="source">A sequence of Tuple{double, double} values to calculate the LeastSquares of.</param>
+            <returns> The LeastSquares of the sequence of values.</returns>
+        </member>
+        <member name="M:LinqStatistics.EnumerableStats.LeastSquares``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Tuple{System.Nullable{System.Double},System.Nullable{System.Double}}})">
+            <summary>
+                Computes the LeastSquares of a sequence of Tuple{double?, double?} values that are obtained
+                by invoking a transform function on each element of the input sequence.
+            </summary>
+            <typeparam name="TSource">The type of the elements of source.</typeparam>
+            <param name="source">A sequence of values to calculate the LeastSquares of.</param>
+            <param name="selector">A transform function to apply to each element.</param>
+            <returns>The LeastSquares of the sequence of values.</returns>
+        </member>
+        <member name="M:LinqStatistics.EnumerableStats.LeastSquares``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Tuple{System.Double,System.Double}})">
+            <summary>
+                Computes the LeastSquares of a sequence of Tuple{double, double} values that are obtained
+                by invoking a transform function on each element of the input sequence.
+            </summary>
+            <typeparam name="TSource">The type of the elements of source.</typeparam>
+            <param name="source">A sequence of values to calculate the LeastSquares of.</param>
+            <param name="selector">A transform function to apply to each element.</param>
+            <returns>The LeastSquares of the sequence of values.</returns>
+        </member>
+        <member name="M:LinqStatistics.EnumerableStats.LeastSquares(System.Collections.Generic.IEnumerable{System.Tuple{System.Nullable{System.Decimal},System.Nullable{System.Decimal}}})">
+            <summary>
+            Computes the LeastSquares of a sequence of Tuple{decimal?, decimal?} values.
+            </summary>
+            <param name="source">A sequence of Tuple{decimal?, decimal?} values to calculate the LeastSquares of.</param>
+            <returns> The LeastSquares of the sequence of values, or null if the source sequence is
+                empty or contains only values that are null.</returns>
+        </member>
+        <member name="M:LinqStatistics.EnumerableStats.LeastSquares(System.Collections.Generic.IEnumerable{System.Tuple{System.Decimal,System.Decimal}})">
+            <summary>
+            Computes the LeastSquares of a sequence of Tuple{decimal, decimal} values.
+            </summary>
+            <param name="source">A sequence of Tuple{decimal, decimal} values to calculate the LeastSquares of.</param>
+            <returns> The LeastSquares of the sequence of values.</returns>
+        </member>
+        <member name="M:LinqStatistics.EnumerableStats.LeastSquares``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Tuple{System.Nullable{System.Decimal},System.Nullable{System.Decimal}}})">
+            <summary>
+                Computes the LeastSquares of a sequence of Tuple{decimal?, decimal?} values that are obtained
+                by invoking a transform function on each element of the input sequence.
+            </summary>
+            <typeparam name="TSource">The type of the elements of source.</typeparam>
+            <param name="source">A sequence of values to calculate the LeastSquares of.</param>
+            <param name="selector">A transform function to apply to each element.</param>
+            <returns>The LeastSquares of the sequence of values.</returns>
+        </member>
+        <member name="M:LinqStatistics.EnumerableStats.LeastSquares``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Tuple{System.Decimal,System.Decimal}})">
+            <summary>
+                Computes the LeastSquares of a sequence of Tuple{decimal, decimal} values that are obtained
+                by invoking a transform function on each element of the input sequence.
+            </summary>
+            <typeparam name="TSource">The type of the elements of source.</typeparam>
+            <param name="source">A sequence of values to calculate the LeastSquares of.</param>
+            <param name="selector">A transform function to apply to each element.</param>
+            <returns>The LeastSquares of the sequence of values.</returns>
+        </member>
+        <member name="M:LinqStatistics.EnumerableStats.Median(System.Collections.Generic.IEnumerable{System.Nullable{System.Int32}})">
+            <summary>
+            Computes the Median of a sequence of mullable intSystem.Int32 values, or null if the source sequence is
+                empty or contains only values that are null.
+            </summary>
+            <param name="source">A sequence of nullable int values to calculate the Median of.</param>
+            <returns>The Median of the sequence of values.</returns>
+        </member>
+        <member name="M:LinqStatistics.EnumerableStats.Median(System.Collections.Generic.IEnumerable{System.Int32})">
+            <summary>
+            Computes the Median of a sequence of intSystem.Int32 values.
+            </summary>
+            <param name="source">A sequence of int values to calculate the Median of.</param>
+            <returns>The Median of the sequence of values.</returns>
+        </member>
+        <member name="M:LinqStatistics.EnumerableStats.Median``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Nullable{System.Int32}})">
+            <summary>
+                Computes the Median of a sequence of nullable int values that are obtained
+                by invoking a transform function on each element of the input sequence.
+            </summary>
+            <typeparam name="TSource">The type of the elements of source.</typeparam>
+            <param name="source">A sequence of values to calculate the Median of.</param>
+            <param name="selector">A transform function to apply to each element.</param>
+            <returns>The Median of the sequence of values.</returns>
+        </member>
+        <member name="M:LinqStatistics.EnumerableStats.Median``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Int32})">
+            <summary>
+                Computes the Median of a sequence of int values that are obtained
+                by invoking a transform function on each element of the input sequence.
+            </summary>
+            <typeparam name="TSource">The type of the elements of source.</typeparam>
+            <param name="source">A sequence of values to calculate the Median of.</param>
+            <param name="selector">A transform function to apply to each element.</param>
+            <returns>The Median of the sequence of values.</returns>
+        </member>
+        <member name="M:LinqStatistics.EnumerableStats.Median(System.Collections.Generic.IEnumerable{System.Nullable{System.Int64}})">
+            <summary>
+            Computes the Median of a sequence of mullable longSystem.Int32 values, or null if the source sequence is
+                empty or contains only values that are null.
+            </summary>
+            <param name="source">A sequence of nullable long values to calculate the Median of.</param>
+            <returns>The Median of the sequence of values.</returns>
+        </member>
+        <member name="M:LinqStatistics.EnumerableStats.Median(System.Collections.Generic.IEnumerable{System.Int64})">
+            <summary>
+            Computes the Median of a sequence of longSystem.Int32 values.
+            </summary>
+            <param name="source">A sequence of long values to calculate the Median of.</param>
+            <returns>The Median of the sequence of values.</returns>
+        </member>
+        <member name="M:LinqStatistics.EnumerableStats.Median``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Nullable{System.Int64}})">
+            <summary>
+                Computes the Median of a sequence of nullable long values that are obtained
+                by invoking a transform function on each element of the input sequence.
+            </summary>
+            <typeparam name="TSource">The type of the elements of source.</typeparam>
+            <param name="source">A sequence of values to calculate the Median of.</param>
+            <param name="selector">A transform function to apply to each element.</param>
+            <returns>The Median of the sequence of values.</returns>
+        </member>
+        <member name="M:LinqStatistics.EnumerableStats.Median``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Int64})">
+            <summary>
+                Computes the Median of a sequence of long values that are obtained
+                by invoking a transform function on each element of the input sequence.
+            </summary>
+            <typeparam name="TSource">The type of the elements of source.</typeparam>
+            <param name="source">A sequence of values to calculate the Median of.</param>
+            <param name="selector">A transform function to apply to each element.</param>
+            <returns>The Median of the sequence of values.</returns>
+        </member>
+        <member name="M:LinqStatistics.EnumerableStats.Median(System.Collections.Generic.IEnumerable{System.Nullable{System.Decimal}})">
+            <summary>
+            Computes the Median of a sequence of mullable decimalSystem.Int32 values, or null if the source sequence is
+                empty or contains only values that are null.
+            </summary>
+            <param name="source">A sequence of nullable decimal values to calculate the Median of.</param>
+            <returns>The Median of the sequence of values.</returns>
+        </member>
+        <member name="M:LinqStatistics.EnumerableStats.Median(System.Collections.Generic.IEnumerable{System.Decimal})">
+            <summary>
+            Computes the Median of a sequence of decimalSystem.Int32 values.
+            </summary>
+            <param name="source">A sequence of decimal values to calculate the Median of.</param>
+            <returns>The Median of the sequence of values.</returns>
+        </member>
+        <member name="M:LinqStatistics.EnumerableStats.Median``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Nullable{System.Decimal}})">
+            <summary>
+                Computes the Median of a sequence of nullable decimal values that are obtained
+                by invoking a transform function on each element of the input sequence.
+            </summary>
+            <typeparam name="TSource">The type of the elements of source.</typeparam>
+            <param name="source">A sequence of values to calculate the Median of.</param>
+            <param name="selector">A transform function to apply to each element.</param>
+            <returns>The Median of the sequence of values.</returns>
+        </member>
+        <member name="M:LinqStatistics.EnumerableStats.Median``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Decimal})">
+            <summary>
+                Computes the Median of a sequence of decimal values that are obtained
+                by invoking a transform function on each element of the input sequence.
+            </summary>
+            <typeparam name="TSource">The type of the elements of source.</typeparam>
+            <param name="source">A sequence of values to calculate the Median of.</param>
+            <param name="selector">A transform function to apply to each element.</param>
+            <returns>The Median of the sequence of values.</returns>
+        </member>
+        <member name="M:LinqStatistics.EnumerableStats.Median(System.Collections.Generic.IEnumerable{System.Nullable{System.Single}})">
+            <summary>
+            Computes the Median of a sequence of mullable floatSystem.Int32 values, or null if the source sequence is
+                empty or contains only values that are null.
+            </summary>
+            <param name="source">A sequence of nullable float values to calculate the Median of.</param>
+            <returns>The Median of the sequence of values.</returns>
+        </member>
+        <member name="M:LinqStatistics.EnumerableStats.Median(System.Collections.Generic.IEnumerable{System.Single})">
+            <summary>
+            Computes the Median of a sequence of floatSystem.Int32 values.
+            </summary>
+            <param name="source">A sequence of float values to calculate the Median of.</param>
+            <returns>The Median of the sequence of values.</returns>
+        </member>
+        <member name="M:LinqStatistics.EnumerableStats.Median``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Nullable{System.Single}})">
+            <summary>
+                Computes the Median of a sequence of nullable float values that are obtained
+                by invoking a transform function on each element of the input sequence.
+            </summary>
+            <typeparam name="TSource">The type of the elements of source.</typeparam>
+            <param name="source">A sequence of values to calculate the Median of.</param>
+            <param name="selector">A transform function to apply to each element.</param>
+            <returns>The Median of the sequence of values.</returns>
+        </member>
+        <member name="M:LinqStatistics.EnumerableStats.Median``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Single})">
+            <summary>
+                Computes the Median of a sequence of float values that are obtained
+                by invoking a transform function on each element of the input sequence.
+            </summary>
+            <typeparam name="TSource">The type of the elements of source.</typeparam>
+            <param name="source">A sequence of values to calculate the Median of.</param>
+            <param name="selector">A transform function to apply to each element.</param>
+            <returns>The Median of the sequence of values.</returns>
+        </member>
+        <member name="M:LinqStatistics.EnumerableStats.Median(System.Collections.Generic.IEnumerable{System.Nullable{System.Double}})">
+            <summary>
+            Computes the Median of a sequence of mullable doubleSystem.Int32 values, or null if the source sequence is
+                empty or contains only values that are null.
+            </summary>
+            <param name="source">A sequence of nullable double values to calculate the Median of.</param>
+            <returns>The Median of the sequence of values.</returns>
+        </member>
+        <member name="M:LinqStatistics.EnumerableStats.Median(System.Collections.Generic.IEnumerable{System.Double})">
+            <summary>
+            Computes the Median of a sequence of doubleSystem.Int32 values.
+            </summary>
+            <param name="source">A sequence of double values to calculate the Median of.</param>
+            <returns>The Median of the sequence of values.</returns>
+        </member>
+        <member name="M:LinqStatistics.EnumerableStats.Median``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Nullable{System.Double}})">
+            <summary>
+                Computes the Median of a sequence of nullable double values that are obtained
+                by invoking a transform function on each element of the input sequence.
+            </summary>
+            <typeparam name="TSource">The type of the elements of source.</typeparam>
+            <param name="source">A sequence of values to calculate the Median of.</param>
+            <param name="selector">A transform function to apply to each element.</param>
+            <returns>The Median of the sequence of values.</returns>
+        </member>
+        <member name="M:LinqStatistics.EnumerableStats.Median``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Double})">
+            <summary>
+                Computes the Median of a sequence of double values that are obtained
+                by invoking a transform function on each element of the input sequence.
+            </summary>
+            <typeparam name="TSource">The type of the elements of source.</typeparam>
+            <param name="source">A sequence of values to calculate the Median of.</param>
+            <param name="selector">A transform function to apply to each element.</param>
+            <returns>The Median of the sequence of values.</returns>
+        </member>
+        <member name="M:LinqStatistics.EnumerableStats.Pearson(System.Collections.Generic.IEnumerable{System.Nullable{System.Int32}},System.Collections.Generic.IEnumerable{System.Nullable{System.Int32}})">
+            <summary>
+            Computes the Pearson of two sequences of nullable int values.
+            </summary>
+            <param name="source">The first sequence of nullable int values to calculate the Pearson of.</param>
+            <param name="other">The second sequence of nullable int values to calculate the Pearson of.</param>
+            <returns>The Pearson value of two sequences.</returns>
+        </member>
+        <member name="M:LinqStatistics.EnumerableStats.Pearson(System.Collections.Generic.IEnumerable{System.Int32},System.Collections.Generic.IEnumerable{System.Int32})">
+            <summary>
+            Computes the Pearson of two sequences of int values.
+            </summary>
+            <param name="source">The first sequence of int values to calculate the Pearson of.</param>
+            <param name="other">The second sequence of int values to calculate the Pearson of.</param>
+            <returns>The Pearson value of two sequences.</returns>
+        </member>
+        <member name="M:LinqStatistics.EnumerableStats.Pearson(System.Collections.Generic.IEnumerable{System.Tuple{System.Int32,System.Int32}})">
+            <summary>
+            Computes the Pearson of the Item values of a sequence of Tuple{int, int} values.
+            </summary>
+            <param name="source">The type of the Tuple's Items.</param>
+            <returns>The Pearson value.</returns>
+        </member>
+        <member name="M:LinqStatistics.EnumerableStats.Pearson``1(System.Collections.Generic.IEnumerable{``0},System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Nullable{System.Int32}})">
+            <summary>
+                Computes the Pearson of a sequence of nullable int values that are obtained
+                by invoking a transform function on each element of the input sequence.
+            </summary>
+            <typeparam name="TSource">The type of the elements of source.</typeparam>
+            <param name="source">The first sequence of int values to calculate the Pearson of.</param>
+            <param name="other">The second sequence of int values to calculate the Pearson of.</param>
+            <param name="selector">A transform function to apply to each element.</param>
+            <returns>The Pearson of the sequence of values.</returns>
+        </member>
+        <member name="M:LinqStatistics.EnumerableStats.Pearson``1(System.Collections.Generic.IEnumerable{``0},System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Int32})">
+            <summary>
+                Computes the Pearson of a sequence of nullable int values that are obtained
+                by invoking a transform function on each element of the input sequence.
+            </summary>
+            <typeparam name="TSource">The type of the elements of source.</typeparam>
+            <param name="source">The first sequence of int values to calculate the Pearson of.</param>
+            <param name="other">The second sequence of int values to calculate the Pearson of.</param>
+            <param name="selector">A transform function to apply to each element.</param>
+            <returns>The Pearson of the sequence of values.</returns>
+        </member>
+        <member name="M:LinqStatistics.EnumerableStats.Pearson(System.Collections.Generic.IEnumerable{System.Nullable{System.Int64}},System.Collections.Generic.IEnumerable{System.Nullable{System.Int64}})">
+            <summary>
+            Computes the Pearson of two sequences of nullable long values.
+            </summary>
+            <param name="source">The first sequence of nullable long values to calculate the Pearson of.</param>
+            <param name="other">The second sequence of nullable long values to calculate the Pearson of.</param>
+            <returns>The Pearson value of two sequences.</returns>
+        </member>
+        <member name="M:LinqStatistics.EnumerableStats.Pearson(System.Collections.Generic.IEnumerable{System.Int64},System.Collections.Generic.IEnumerable{System.Int64})">
+            <summary>
+            Computes the Pearson of two sequences of long values.
+            </summary>
+            <param name="source">The first sequence of long values to calculate the Pearson of.</param>
+            <param name="other">The second sequence of long values to calculate the Pearson of.</param>
+            <returns>The Pearson value of two sequences.</returns>
+        </member>
+        <member name="M:LinqStatistics.EnumerableStats.Pearson(System.Collections.Generic.IEnumerable{System.Tuple{System.Int64,System.Int64}})">
+            <summary>
+            Computes the Pearson of the Item values of a sequence of Tuple{long, long} values.
+            </summary>
+            <param name="source">The type of the Tuple's Items.</param>
+            <returns>The Pearson value.</returns>
+        </member>
+        <member name="M:LinqStatistics.EnumerableStats.Pearson``1(System.Collections.Generic.IEnumerable{``0},System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Nullable{System.Int64}})">
+            <summary>
+                Computes the Pearson of a sequence of nullable long values that are obtained
+                by invoking a transform function on each element of the input sequence.
+            </summary>
+            <typeparam name="TSource">The type of the elements of source.</typeparam>
+            <param name="source">The first sequence of long values to calculate the Pearson of.</param>
+            <param name="other">The second sequence of long values to calculate the Pearson of.</param>
+            <param name="selector">A transform function to apply to each element.</param>
+            <returns>The Pearson of the sequence of values.</returns>
+        </member>
+        <member name="M:LinqStatistics.EnumerableStats.Pearson``1(System.Collections.Generic.IEnumerable{``0},System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Int64})">
+            <summary>
+                Computes the Pearson of a sequence of nullable long values that are obtained
+                by invoking a transform function on each element of the input sequence.
+            </summary>
+            <typeparam name="TSource">The type of the elements of source.</typeparam>
+            <param name="source">The first sequence of long values to calculate the Pearson of.</param>
+            <param name="other">The second sequence of long values to calculate the Pearson of.</param>
+            <param name="selector">A transform function to apply to each element.</param>
+            <returns>The Pearson of the sequence of values.</returns>
+        </member>
+        <member name="M:LinqStatistics.EnumerableStats.Pearson(System.Collections.Generic.IEnumerable{System.Nullable{System.Decimal}},System.Collections.Generic.IEnumerable{System.Nullable{System.Decimal}})">
+            <summary>
+            Computes the Pearson of two sequences of nullable decimal values.
+            </summary>
+            <param name="source">The first sequence of nullable decimal values to calculate the Pearson of.</param>
+            <param name="other">The second sequence of nullable decimal values to calculate the Pearson of.</param>
+            <returns>The Pearson value of two sequences.</returns>
+        </member>
+        <member name="M:LinqStatistics.EnumerableStats.Pearson(System.Collections.Generic.IEnumerable{System.Decimal},System.Collections.Generic.IEnumerable{System.Decimal})">
+            <summary>
+            Computes the Pearson of two sequences of decimal values.
+            </summary>
+            <param name="source">The first sequence of decimal values to calculate the Pearson of.</param>
+            <param name="other">The second sequence of decimal values to calculate the Pearson of.</param>
+            <returns>The Pearson value of two sequences.</returns>
+        </member>
+        <member name="M:LinqStatistics.EnumerableStats.Pearson(System.Collections.Generic.IEnumerable{System.Tuple{System.Decimal,System.Decimal}})">
+            <summary>
+            Computes the Pearson of the Item values of a sequence of Tuple{decimal, decimal} values.
+            </summary>
+            <param name="source">The type of the Tuple's Items.</param>
+            <returns>The Pearson value.</returns>
+        </member>
+        <member name="M:LinqStatistics.EnumerableStats.Pearson``1(System.Collections.Generic.IEnumerable{``0},System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Nullable{System.Decimal}})">
+            <summary>
+                Computes the Pearson of a sequence of nullable decimal values that are obtained
+                by invoking a transform function on each element of the input sequence.
+            </summary>
+            <typeparam name="TSource">The type of the elements of source.</typeparam>
+            <param name="source">The first sequence of decimal values to calculate the Pearson of.</param>
+            <param name="other">The second sequence of decimal values to calculate the Pearson of.</param>
+            <param name="selector">A transform function to apply to each element.</param>
+            <returns>The Pearson of the sequence of values.</returns>
+        </member>
+        <member name="M:LinqStatistics.EnumerableStats.Pearson``1(System.Collections.Generic.IEnumerable{``0},System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Decimal})">
+            <summary>
+                Computes the Pearson of a sequence of nullable decimal values that are obtained
+                by invoking a transform function on each element of the input sequence.
+            </summary>
+            <typeparam name="TSource">The type of the elements of source.</typeparam>
+            <param name="source">The first sequence of decimal values to calculate the Pearson of.</param>
+            <param name="other">The second sequence of decimal values to calculate the Pearson of.</param>
+            <param name="selector">A transform function to apply to each element.</param>
+            <returns>The Pearson of the sequence of values.</returns>
+        </member>
+        <member name="M:LinqStatistics.EnumerableStats.Pearson(System.Collections.Generic.IEnumerable{System.Nullable{System.Single}},System.Collections.Generic.IEnumerable{System.Nullable{System.Single}})">
+            <summary>
+            Computes the Pearson of two sequences of nullable float values.
+            </summary>
+            <param name="source">The first sequence of nullable float values to calculate the Pearson of.</param>
+            <param name="other">The second sequence of nullable float values to calculate the Pearson of.</param>
+            <returns>The Pearson value of two sequences.</returns>
+        </member>
+        <member name="M:LinqStatistics.EnumerableStats.Pearson(System.Collections.Generic.IEnumerable{System.Single},System.Collections.Generic.IEnumerable{System.Single})">
+            <summary>
+            Computes the Pearson of two sequences of float values.
+            </summary>
+            <param name="source">The first sequence of float values to calculate the Pearson of.</param>
+            <param name="other">The second sequence of float values to calculate the Pearson of.</param>
+            <returns>The Pearson value of two sequences.</returns>
+        </member>
+        <member name="M:LinqStatistics.EnumerableStats.Pearson(System.Collections.Generic.IEnumerable{System.Tuple{System.Single,System.Single}})">
+            <summary>
+            Computes the Pearson of the Item values of a sequence of Tuple{float, float} values.
+            </summary>
+            <param name="source">The type of the Tuple's Items.</param>
+            <returns>The Pearson value.</returns>
+        </member>
+        <member name="M:LinqStatistics.EnumerableStats.Pearson``1(System.Collections.Generic.IEnumerable{``0},System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Nullable{System.Single}})">
+            <summary>
+                Computes the Pearson of a sequence of nullable float values that are obtained
+                by invoking a transform function on each element of the input sequence.
+            </summary>
+            <typeparam name="TSource">The type of the elements of source.</typeparam>
+            <param name="source">The first sequence of float values to calculate the Pearson of.</param>
+            <param name="other">The second sequence of float values to calculate the Pearson of.</param>
+            <param name="selector">A transform function to apply to each element.</param>
+            <returns>The Pearson of the sequence of values.</returns>
+        </member>
+        <member name="M:LinqStatistics.EnumerableStats.Pearson``1(System.Collections.Generic.IEnumerable{``0},System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Single})">
+            <summary>
+                Computes the Pearson of a sequence of nullable float values that are obtained
+                by invoking a transform function on each element of the input sequence.
+            </summary>
+            <typeparam name="TSource">The type of the elements of source.</typeparam>
+            <param name="source">The first sequence of float values to calculate the Pearson of.</param>
+            <param name="other">The second sequence of float values to calculate the Pearson of.</param>
+            <param name="selector">A transform function to apply to each element.</param>
+            <returns>The Pearson of the sequence of values.</returns>
+        </member>
+        <member name="M:LinqStatistics.EnumerableStats.Pearson(System.Collections.Generic.IEnumerable{System.Nullable{System.Double}},System.Collections.Generic.IEnumerable{System.Nullable{System.Double}})">
+            <summary>
+            Computes the Pearson of two sequences of nullable double values.
+            </summary>
+            <param name="source">The first sequence of nullable double values to calculate the Pearson of.</param>
+            <param name="other">The second sequence of nullable double values to calculate the Pearson of.</param>
+            <returns>The Pearson value of two sequences.</returns>
+        </member>
+        <member name="M:LinqStatistics.EnumerableStats.Pearson(System.Collections.Generic.IEnumerable{System.Double},System.Collections.Generic.IEnumerable{System.Double})">
+            <summary>
+            Computes the Pearson of two sequences of double values.
+            </summary>
+            <param name="source">The first sequence of double values to calculate the Pearson of.</param>
+            <param name="other">The second sequence of double values to calculate the Pearson of.</param>
+            <returns>The Pearson value of two sequences.</returns>
+        </member>
+        <member name="M:LinqStatistics.EnumerableStats.Pearson(System.Collections.Generic.IEnumerable{System.Tuple{System.Double,System.Double}})">
+            <summary>
+            Computes the Pearson of the Item values of a sequence of Tuple{double, double} values.
+            </summary>
+            <param name="source">The type of the Tuple's Items.</param>
+            <returns>The Pearson value.</returns>
+        </member>
+        <member name="M:LinqStatistics.EnumerableStats.Pearson``1(System.Collections.Generic.IEnumerable{``0},System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Nullable{System.Double}})">
+            <summary>
+                Computes the Pearson of a sequence of nullable double values that are obtained
+                by invoking a transform function on each element of the input sequence.
+            </summary>
+            <typeparam name="TSource">The type of the elements of source.</typeparam>
+            <param name="source">The first sequence of double values to calculate the Pearson of.</param>
+            <param name="other">The second sequence of double values to calculate the Pearson of.</param>
+            <param name="selector">A transform function to apply to each element.</param>
+            <returns>The Pearson of the sequence of values.</returns>
+        </member>
+        <member name="M:LinqStatistics.EnumerableStats.Pearson``1(System.Collections.Generic.IEnumerable{``0},System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Double})">
+            <summary>
+                Computes the Pearson of a sequence of nullable double values that are obtained
+                by invoking a transform function on each element of the input sequence.
+            </summary>
+            <typeparam name="TSource">The type of the elements of source.</typeparam>
+            <param name="source">The first sequence of double values to calculate the Pearson of.</param>
+            <param name="other">The second sequence of double values to calculate the Pearson of.</param>
+            <param name="selector">A transform function to apply to each element.</param>
+            <returns>The Pearson of the sequence of values.</returns>
+        </member>
         <member name="M:LinqStatistics.EnumerableStats.BinCountSturges``1(System.Collections.Generic.IEnumerable{``0})">
             <summary>
             http://en.wikipedia.org/wiki/Histogram#Number_of_bins_and_width
             </summary>
-            <typeparam name="T"></typeparam>
-            <param name="source"></param>
-            <returns></returns>
+            <typeparam name="T">The type of elements in the sequence</typeparam>
+            <param name="source">The sequence of elements.</param>
+            <returns>The number of bins to use to create a histogram.</returns>
         </member>
         <member name="M:LinqStatistics.EnumerableStats.BinCountSquareRoot``1(System.Collections.Generic.IEnumerable{``0})">
             <summary>
             http://en.wikipedia.org/wiki/Histogram#Number_of_bins_and_width
             </summary>
-            <typeparam name="T"></typeparam>
-            <param name="source"></param>
-            <returns></returns>
+            <typeparam name="T">The type of elements in the sequence</typeparam>
+            <param name="source">The sequence of elements.</param>
+            <returns>The number of bins to use to create a histogram.</returns>
         </member>
         <member name="M:LinqStatistics.EnumerableStats.BinCountRice``1(System.Collections.Generic.IEnumerable{``0})">
             <summary>
             http://en.wikipedia.org/wiki/Histogram#Number_of_bins_and_width
             </summary>
-            <typeparam name="T"></typeparam>
-            <param name="source"></param>
-            <returns></returns>
+            <typeparam name="T">The type of elements in the sequence</typeparam>
+            <param name="source">The sequence of elements.</param>
+            <returns>The number of bins to use to create a histogram.</returns>
         </member>
         <member name="M:LinqStatistics.EnumerableStats.CountEach``1(System.Collections.Generic.IEnumerable{``0},System.Collections.Generic.IEqualityComparer{``0})">
             <summary>
@@ -151,6 +976,60 @@
             <typeparam name="T">The type of the Tuple's Items</typeparam>
             <param name="source">The sequence</param>
             <returns>All Tuples in the sequence with non-null items</returns>
+        </member>
+        <member name="M:LinqStatistics.EnumerableStats.Modes``1(System.Collections.Generic.IEnumerable{System.Nullable{``0}})">
+            <summary>
+            Calculates the modes of a sequences of elements
+            </summary>
+            <typeparam name="T">The type of the elemensts in the source sequence</typeparam>
+            <param name="source">A sequence of values to calculate the Modes of.</param>
+            <returns>The modes of a sequence of values</returns>
+        </member>
+        <member name="M:LinqStatistics.EnumerableStats.Modes``1(System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            Calculates the modes of a sequences of nullable elements
+            </summary>
+            <typeparam name="T">The type of the elemensts in the source sequence</typeparam>
+            <param name="source">A sequence of values to calculate the Modes of.</param>
+            <returns>The modes of a sequence of values</returns>
+        </member>
+        <member name="M:LinqStatistics.EnumerableStats.Mode``1(System.Collections.Generic.IEnumerable{System.Nullable{``0}})">
+            <summary>
+            Calculates the mode of a sequences of elements
+            </summary>
+            <typeparam name="T">The type of the elemensts in the source sequence</typeparam>
+            <param name="source">A sequence of values to calculate the Mode of.</param>
+            <returns>The mode of a sequence of values</returns>
+        </member>
+        <member name="M:LinqStatistics.EnumerableStats.Mode``1(System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            Calculates the Mode of a sequences of elements
+            </summary>
+            <typeparam name="T">The type of the elemensts in the source sequence</typeparam>
+            <param name="source">A sequence of values to calculate the Mode of.</param>
+            <returns>The Mode of a sequence of values</returns>
+        </member>
+        <member name="M:LinqStatistics.EnumerableStats.Mode``2(System.Collections.Generic.IEnumerable{``0},System.Func{``0,``1})">
+            <summary>
+                Computes the Mode of a sequence of values that are obtained
+                by invoking a transform function on each element of the input sequence.
+            </summary>
+            <typeparam name="TSource">The type of the elements of source.</typeparam>
+            <typeparam name="TMode">The type of the Mode</typeparam>
+            <param name="source">A sequence of values to calculate the Mode of.</param>
+            <param name="selector">A transform function to apply to each element.</param>
+            <returns>The Mode of the sequence of values.</returns>
+        </member>
+        <member name="M:LinqStatistics.EnumerableStats.Mode``2(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Nullable{``1}})">
+            <summary>
+                Computes the Mode of a sequence of values that are obtained
+                by invoking a transform function on each element of the input sequence.
+            </summary>
+            <typeparam name="TSource">The type of the elements of source.</typeparam>
+            <typeparam name="TMode">The type of the Mode</typeparam>
+            <param name="source">A sequence of values to calculate the Mode of.</param>
+            <param name="selector">A transform function to apply to each element.</param>
+            <returns>The Mode of the sequence of values.</returns>
         </member>
         <member name="M:LinqStatistics.EnumerableStats.Histogram(System.Collections.Generic.IEnumerable{System.Int32},System.Int32,LinqStatistics.BinningMode)">
             <summary>
@@ -402,6 +1281,47 @@
             </summary>
             <param name="x">X value to solve for</param>
             <returns>Y value (y = Mx + B)</returns>
+        </member>
+        <member name="M:LinqStatistics.LeastSquares.Equals(System.Object)">
+            <summary>
+            <see cref="M:System.Object.Equals(System.Object)"/>
+            </summary>
+            <param name="obj">The object to compare to</param>
+            <returns>True if obj is a LeastSquares and has equal m and b values</returns>
+        </member>
+        <member name="M:LinqStatistics.LeastSquares.GetHashCode">
+            <summary>
+            <see cref="M:System.Object.GetHashCode"/>
+            </summary>
+            <returns>Hascode of the instance</returns>
+        </member>
+        <member name="M:LinqStatistics.LeastSquares.ToString">
+            <summary>
+            <see cref="M:System.Object.ToString"/>
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:LinqStatistics.LeastSquares.ToString(System.IFormatProvider)">
+            <summary>
+            
+            </summary>
+            <param name="provider"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LinqStatistics.LeastSquares.ToString(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="format"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LinqStatistics.LeastSquares.ToString(System.String,System.IFormatProvider)">
+            <summary>
+            
+            </summary>
+            <param name="format"></param>
+            <param name="provider"></param>
+            <returns></returns>
         </member>
         <member name="P:LinqStatistics.LeastSquares.M">
             <summary>
