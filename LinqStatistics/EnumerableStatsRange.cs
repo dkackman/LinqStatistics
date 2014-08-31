@@ -6,180 +6,12 @@ namespace LinqStatistics
 {
     public static partial class EnumerableStats
     {
-        //
-        // Summary:
-        //     Computes the Range of a sequence of nullable System.Decimal values.
-        //
-        // Parameters:
-        //   source:
-        //     A sequence of nullable System.Decimal values to calculate the Range of.
-        //
-        // Returns:
-        //     The Range of the sequence of values, or null if the source sequence is
-        //     empty or contains only values that are null.
-        //
-        // Exceptions:
-        //   System.ArgumentNullException:
-        //     source is null.
-        //
-        //   System.OverflowException:
-        //     The sum of the elements in the sequence is larger than System.Decimal.MaxValue.
-        public static decimal? Range(this IEnumerable<decimal?> source)
-        {
-            IEnumerable<decimal> values = source.AllValues();
-            if (values.Any())
-                return values.Range();
-
-            return null;
-        }
-        //
-        // Summary:
-        //     Computes the Range of a sequence of System.Decimal values.
-        //
-        // Parameters:
-        //   source:
-        //     A sequence of System.Decimal values to calculate the Range of.
-        //
-        // Returns:
-        //     The Range of the sequence of values.
-        //
-        // Exceptions:
-        //   System.ArgumentNullException:
-        //     source is null.
-        //
-        //   System.InvalidOperationException:
-        //     source contains no elements.
-        //
-        //   System.OverflowException:
-        //     The sum of the elements in the sequence is larger than System.Decimal.MaxValue.
-        public static decimal Range(this IEnumerable<decimal> source)
-        {
-            if (source == null)
-                throw new ArgumentNullException("source");
-
-            if (!source.Any())
-                throw new InvalidOperationException("source sequence contains no elements");
-
-            return source.Max() - source.Min();
-        }
-        //
-        // Summary:
-        //     Computes the Range of a sequence of nullable System.Double values.
-        //
-        // Parameters:
-        //   source:
-        //     A sequence of nullable System.Double values to calculate the Range of.
-        //
-        // Returns:
-        //     The Range of the sequence of values, or null if the source sequence is
-        //     empty or contains only values that are null.
-        //
-        // Exceptions:
-        //   System.ArgumentNullException:
-        //     source is null.
-        public static double? Range(this IEnumerable<double?> source)
-        {
-            IEnumerable<double> values = source.AllValues();
-            if (values.Any())
-                return values.Range();
-
-            return null;
-        }
-        //
-        // Summary:
-        //     Computes the Range of a sequence of System.Double values.
-        //
-        // Parameters:
-        //   source:
-        //     A sequence of System.Double values to calculate the Range of.
-        //
-        // Returns:
-        //     The Range of the sequence of values.
-        //
-        // Exceptions:
-        //   System.ArgumentNullException:
-        //     source is null.
-        //
-        //   System.InvalidOperationException:
-        //     source contains no elements.
-        public static double Range(this IEnumerable<double> source)
-        {
-            if (source == null)
-                throw new ArgumentNullException("source");
-
-            if (!source.Any())
-                throw new InvalidOperationException("source sequence contains no elements");
-
-            return source.Max() - source.Min();
-        }
-        //
-        // Summary:
-        //     Computes the Range of a sequence of nullable System.Single values.
-        //
-        // Parameters:
-        //   source:
-        //     A sequence of nullable System.Single values to calculate the Range of.
-        //
-        // Returns:
-        //     The Range of the sequence of values, or null if the source sequence is
-        //     empty or contains only values that are null.
-        //
-        // Exceptions:
-        //   System.ArgumentNullException:
-        //     source is null.
-        public static float? Range(this IEnumerable<float?> source)
-        {
-            IEnumerable<float> values = source.AllValues();
-            if (values.Any())
-                return values.Range();
-
-            return null;
-        }
-        //
-        // Summary:
-        //     Computes the Range of a sequence of System.Single values.
-        //
-        // Parameters:
-        //   source:
-        //     A sequence of System.Single values to calculate the Range of.
-        //
-        // Returns:
-        //     The Range of the sequence of values.
-        //
-        // Exceptions:
-        //   System.ArgumentNullException:
-        //     source is null.
-        //
-        //   System.InvalidOperationException:
-        //     source contains no elements.
-        public static float Range(this IEnumerable<float> source)
-        {
-            if (source == null)
-                throw new ArgumentNullException("source");
-
-            if (!source.Any())
-                throw new InvalidOperationException("source sequence contains no elements");
-
-            return source.Max() - source.Min();
-        }
-        //
-        // Summary:
-        //     Computes the Range of a sequence of nullable System.Int32 values.
-        //
-        // Parameters:
-        //   source:
-        //     A sequence of nullable System.Int32values to calculate the Range of.
-        //
-        // Returns:
-        //     The Range of the sequence of values, or null if the source sequence is
-        //     empty or contains only values that are null.
-        //
-        // Exceptions:
-        //   System.ArgumentNullException:
-        //     source is null.
-        //
-        //   System.OverflowException:
-        //     The sum of the elements in the sequence is larger than System.Int64.MaxValue.
+    	
+    	/// <summary>
+    	/// Computes the Range of a sequence of nullable int values.
+    	/// </summary>
+        /// <param name="source">The sequence of elements.</param>
+        /// <returns>The Range.</returns>
         public static int? Range(this IEnumerable<int?> source)
         {
             IEnumerable<int> values = source.AllValues();
@@ -188,54 +20,60 @@ namespace LinqStatistics
 
             return null;
         }
-        //
-        // Summary:
-        //     Computes the Range of a sequence of System.Int32 values.
-        //
-        // Parameters:
-        //   source:
-        //     A sequence of System.Int32 values to calculate the Range of.
-        //
-        // Returns:
-        //     The Range of the sequence of values.
-        //
-        // Exceptions:
-        //   System.ArgumentNullException:
-        //     source is null.
-        //
-        //   System.InvalidOperationException:
-        //     source contains no elements.
-        //
-        //   System.OverflowException:
-        //     The sum of the elements in the sequence is larger than System.Int64.MaxValue.
+
+    	/// <summary>
+    	/// Computes the Range of a sequence of int values.
+    	/// </summary>
+        /// <param name="source">The sequence of elements.</param>
+        /// <returns>The Range.</returns>
         public static int Range(this IEnumerable<int> source)
+        {
+            return source.Max() - source.Min();
+        }
+
+        /// <summary>
+        ///     Computes the Range of a sequence of nullable int values that are obtained
+        ///     by invoking a transform function on each element of the input sequence.
+        /// </summary>
+        /// <typeparam name="TSource">The type of the elements of source.</typeparam>
+        /// <param name="source">The sequence of elements.</param>
+        /// <param name="selector">A transform function to apply to each element.</param>
+        /// <returns>The Range.</returns>
+        public static int? Range<TSource>(this IEnumerable<TSource> source, Func<TSource, int?> selector)
         {
             if (source == null)
                 throw new ArgumentNullException("source");
 
-            if (!source.Any())
-                throw new InvalidOperationException("source sequence contains no elements");
+            if (selector == null)
+                throw new ArgumentNullException("selector");
 
-            return source.Max() - source.Min();
+            return source.Select(selector).Range();
         }
-        //
-        // Summary:
-        //     Computes the Range of a sequence of nullable System.Int64 values.
-        //
-        // Parameters:
-        //   source:
-        //     A sequence of nullable System.Int64 values to calculate the Range of.
-        //
-        // Returns:
-        //     The Range of the sequence of values, or null if the source sequence is
-        //     empty or contains only values that are null.
-        //
-        // Exceptions:
-        //   System.ArgumentNullException:
-        //     source is null.
-        //
-        //   System.OverflowException:
-        //     The sum of the elements in the sequence is larger than System.Int64.MaxValue.
+
+        /// <summary>
+        ///     Computes the Range of a sequence of int values that are obtained
+        ///     by invoking a transform function on each element of the input sequence.
+        /// </summary>
+        /// <typeparam name="TSource">The type of the elements of source.</typeparam>
+        /// <param name="source">The sequence of elements.</param>
+        /// <param name="selector">A transform function to apply to each element.</param>
+        /// <returns>The Range.</returns>
+        public static int Range<TSource>(this IEnumerable<TSource> source, Func<TSource, int> selector)
+        {
+            if (source == null)
+                throw new ArgumentNullException("source");
+
+            if (selector == null)
+                throw new ArgumentNullException("selector");
+
+            return source.Select(selector).Range();
+        }
+ 	
+    	/// <summary>
+    	/// Computes the Range of a sequence of nullable long values.
+    	/// </summary>
+        /// <param name="source">The sequence of elements.</param>
+        /// <returns>The Range.</returns>
         public static long? Range(this IEnumerable<long?> source)
         {
             IEnumerable<long> values = source.AllValues();
@@ -244,58 +82,26 @@ namespace LinqStatistics
 
             return null;
         }
-        //
-        // Summary:
-        //     Computes the Range of a sequence of System.Int64 values.
-        //
-        // Parameters:
-        //   source:
-        //     A sequence of System.Int64 values to calculate the Range of.
-        //
-        // Returns:
-        //     The Range of the sequence of values.
-        //
-        // Exceptions:
-        //   System.ArgumentNullException:
-        //     source is null.
-        //
-        //   System.InvalidOperationException:
-        //     source contains no elements.
+
+    	/// <summary>
+    	/// Computes the Range of a sequence of long values.
+    	/// </summary>
+        /// <param name="source">The sequence of elements.</param>
+        /// <returns>The Range.</returns>
         public static long Range(this IEnumerable<long> source)
         {
-            if (source == null)
-                throw new ArgumentNullException("source");
-
-            if (!source.Any())
-                throw new InvalidOperationException("source sequence contains no elements");
-
             return source.Max() - source.Min();
         }
-        //
-        // Summary:
-        //     Computes the Range of a sequence of nullable System.Decimal values that
-        //     are obtained by invoking a transform function on each element of the input
-        //     sequence.
-        //
-        // Parameters:
-        //   source:
-        //     A sequence of values to calculate the Range of.
-        //
-        //   selector:
-        //     A transform function to apply to each element.
-        //
-        // Type parameters:
-        //   TSource:
-        //     The type of the elements of source.
-        //
-        // Returns:
-        //     The Range of the sequence of values, or null if the source sequence is
-        //     empty or contains only values that are null.
-        //
-        // Exceptions:
-        //   System.ArgumentNullException:
-        //     source or selector is null.
-        public static decimal? Range<TSource>(this IEnumerable<TSource> source, Func<TSource, decimal?> selector)
+
+        /// <summary>
+        ///     Computes the Range of a sequence of nullable long values that are obtained
+        ///     by invoking a transform function on each element of the input sequence.
+        /// </summary>
+        /// <typeparam name="TSource">The type of the elements of source.</typeparam>
+        /// <param name="source">The sequence of elements.</param>
+        /// <param name="selector">A transform function to apply to each element.</param>
+        /// <returns>The Range.</returns>
+        public static long? Range<TSource>(this IEnumerable<TSource> source, Func<TSource, long?> selector)
         {
             if (source == null)
                 throw new ArgumentNullException("source");
@@ -305,35 +111,16 @@ namespace LinqStatistics
 
             return source.Select(selector).Range();
         }
-        //
-        // Summary:
-        //     Computes the Range of a sequence of System.Decimal values that are obtained
-        //     by invoking a transform function on each element of the input sequence.
-        //
-        // Parameters:
-        //   source:
-        //     A sequence of values that are used to calculate an Range.
-        //
-        //   selector:
-        //     A transform function to apply to each element.
-        //
-        // Type parameters:
-        //   TSource:
-        //     The type of the elements of source.
-        //
-        // Returns:
-        //     The Range of the sequence of values.
-        //
-        // Exceptions:
-        //   System.ArgumentNullException:
-        //     source or selector is null.
-        //
-        //   System.InvalidOperationException:
-        //     source contains no elements.
-        //
-        //   System.OverflowException:
-        //     The sum of the elements in the sequence is larger than System.Decimal.MaxValue.
-        public static decimal Range<TSource>(this IEnumerable<TSource> source, Func<TSource, decimal> selector)
+
+        /// <summary>
+        ///     Computes the Range of a sequence of long values that are obtained
+        ///     by invoking a transform function on each element of the input sequence.
+        /// </summary>
+        /// <typeparam name="TSource">The type of the elements of source.</typeparam>
+        /// <param name="source">The sequence of elements.</param>
+        /// <param name="selector">A transform function to apply to each element.</param>
+        /// <returns>The Range.</returns>
+        public static long Range<TSource>(this IEnumerable<TSource> source, Func<TSource, long> selector)
         {
             if (source == null)
                 throw new ArgumentNullException("source");
@@ -343,134 +130,58 @@ namespace LinqStatistics
 
             return source.Select(selector).Range();
         }
-        //
-        // Summary:
-        //     Computes the Range of a sequence of nullable System.Double values that
-        //     are obtained by invoking a transform function on each element of the input
-        //     sequence.
-        //
-        // Parameters:
-        //   source:
-        //     A sequence of values to calculate the Range of.
-        //
-        //   selector:
-        //     A transform function to apply to each element.
-        //
-        // Type parameters:
-        //   TSource:
-        //     The type of the elements of source.
-        //
-        // Returns:
-        //     The Range of the sequence of values, or null if the source sequence is
-        //     empty or contains only values that are null.
-        //
-        // Exceptions:
-        //   System.ArgumentNullException:
-        //     source or selector is null.
-        public static double? Range<TSource>(this IEnumerable<TSource> source, Func<TSource, double?> selector)
+ 	
+    	/// <summary>
+    	/// Computes the Range of a sequence of nullable float values.
+    	/// </summary>
+        /// <param name="source">The sequence of elements.</param>
+        /// <returns>The Range.</returns>
+        public static float? Range(this IEnumerable<float?> source)
         {
-            if (source == null)
-                throw new ArgumentNullException("source");
+            IEnumerable<float> values = source.AllValues();
+            if (values.Any())
+                return values.Range();
 
-            if (selector == null)
-                throw new ArgumentNullException("selector");
-
-            return source.Select(selector).Range();
+            return null;
         }
-        //
-        // Summary:
-        //     Computes the Range of a sequence of System.Double values that are obtained
-        //     by invoking a transform function on each element of the input sequence.
-        //
-        // Parameters:
-        //   source:
-        //     A sequence of values to calculate the Range of.
-        //
-        //   selector:
-        //     A transform function to apply to each element.
-        //
-        // Type parameters:
-        //   TSource:
-        //     The type of the elements of source.
-        //
-        // Returns:
-        //     The Range of the sequence of values.
-        //
-        // Exceptions:
-        //   System.ArgumentNullException:
-        //     source or selector is null.
-        //
-        //   System.InvalidOperationException:
-        //     source contains no elements.
-        public static double Range<TSource>(this IEnumerable<TSource> source, Func<TSource, double> selector)
+
+    	/// <summary>
+    	/// Computes the Range of a sequence of float values.
+    	/// </summary>
+        /// <param name="source">The sequence of elements.</param>
+        /// <returns>The Range.</returns>
+        public static float Range(this IEnumerable<float> source)
         {
-            if (source == null)
-                throw new ArgumentNullException("source");
-
-            if (selector == null)
-                throw new ArgumentNullException("selector");
-
-            return source.Select(selector).Range();
+            return source.Max() - source.Min();
         }
-        //
-        // Summary:
-        //     Computes the Range of a sequence of nullable System.Single values that
-        //     are obtained by invoking a transform function on each element of the input
-        //     sequence.
-        //
-        // Parameters:
-        //   source:
-        //     A sequence of values to calculate the Range of.
-        //
-        //   selector:
-        //     A transform function to apply to each element.
-        //
-        // Type parameters:
-        //   TSource:
-        //     The type of the elements of source.
-        //
-        // Returns:
-        //     The Range of the sequence of values, or null if the source sequence is
-        //     empty or contains only values that are null.
-        //
-        // Exceptions:
-        //   System.ArgumentNullException:
-        //     source or selector is null.
+
+        /// <summary>
+        ///     Computes the Range of a sequence of nullable float values that are obtained
+        ///     by invoking a transform function on each element of the input sequence.
+        /// </summary>
+        /// <typeparam name="TSource">The type of the elements of source.</typeparam>
+        /// <param name="source">The sequence of elements.</param>
+        /// <param name="selector">A transform function to apply to each element.</param>
+        /// <returns>The Range.</returns>
         public static float? Range<TSource>(this IEnumerable<TSource> source, Func<TSource, float?> selector)
         {
             if (source == null)
                 throw new ArgumentNullException("source");
 
             if (selector == null)
-                throw new ArgumentNullException("selector"); 
-            
+                throw new ArgumentNullException("selector");
+
             return source.Select(selector).Range();
         }
-        //
-        // Summary:
-        //     Computes the Range of a sequence of System.Single values that are obtained
-        //     by invoking a transform function on each element of the input sequence.
-        //
-        // Parameters:
-        //   source:
-        //     A sequence of values to calculate the Range of.
-        //
-        //   selector:
-        //     A transform function to apply to each element.
-        //
-        // Type parameters:
-        //   TSource:
-        //     The type of the elements of source.
-        //
-        // Returns:
-        //     The Range of the sequence of values.
-        //
-        // Exceptions:
-        //   System.ArgumentNullException:
-        //     source or selector is null.
-        //
-        //   System.InvalidOperationException:
-        //     source contains no elements.
+
+        /// <summary>
+        ///     Computes the Range of a sequence of float values that are obtained
+        ///     by invoking a transform function on each element of the input sequence.
+        /// </summary>
+        /// <typeparam name="TSource">The type of the elements of source.</typeparam>
+        /// <param name="source">The sequence of elements.</param>
+        /// <param name="selector">A transform function to apply to each element.</param>
+        /// <returns>The Range.</returns>
         public static float Range<TSource>(this IEnumerable<TSource> source, Func<TSource, float> selector)
         {
             if (source == null)
@@ -481,33 +192,40 @@ namespace LinqStatistics
 
             return source.Select(selector).Range();
         }
-        //
-        // Summary:
-        //     Computes the Range of a sequence of nullable System.Int32 values that are
-        //     obtained by invoking a transform function on each element of the input sequence.
-        //
-        // Parameters:
-        //   source:
-        //     A sequence of values to calculate the Range of.
-        //
-        //   selector:
-        //     A transform function to apply to each element.
-        //
-        // Type parameters:
-        //   TSource:
-        //     The type of the elements of source.
-        //
-        // Returns:
-        //     The Range of the sequence of values, or null if the source sequence is
-        //     empty or contains only values that are null.
-        //
-        // Exceptions:
-        //   System.ArgumentNullException:
-        //     source or selector is null.
-        //
-        //   System.OverflowException:
-        //     The sum of the elements in the sequence is larger than System.Int64.MaxValue.
-        public static double? Range<TSource>(this IEnumerable<TSource> source, Func<TSource, int?> selector)
+ 	
+    	/// <summary>
+    	/// Computes the Range of a sequence of nullable double values.
+    	/// </summary>
+        /// <param name="source">The sequence of elements.</param>
+        /// <returns>The Range.</returns>
+        public static double? Range(this IEnumerable<double?> source)
+        {
+            IEnumerable<double> values = source.AllValues();
+            if (values.Any())
+                return values.Range();
+
+            return null;
+        }
+
+    	/// <summary>
+    	/// Computes the Range of a sequence of double values.
+    	/// </summary>
+        /// <param name="source">The sequence of elements.</param>
+        /// <returns>The Range.</returns>
+        public static double Range(this IEnumerable<double> source)
+        {
+            return source.Max() - source.Min();
+        }
+
+        /// <summary>
+        ///     Computes the Range of a sequence of nullable double values that are obtained
+        ///     by invoking a transform function on each element of the input sequence.
+        /// </summary>
+        /// <typeparam name="TSource">The type of the elements of source.</typeparam>
+        /// <param name="source">The sequence of elements.</param>
+        /// <param name="selector">A transform function to apply to each element.</param>
+        /// <returns>The Range.</returns>
+        public static double? Range<TSource>(this IEnumerable<TSource> source, Func<TSource, double?> selector)
         {
             if (source == null)
                 throw new ArgumentNullException("source");
@@ -517,35 +235,16 @@ namespace LinqStatistics
 
             return source.Select(selector).Range();
         }
-        //
-        // Summary:
-        //     Computes the Range of a sequence of System.Int32 values that are obtained
-        //     by invoking a transform function on each element of the input sequence.
-        //
-        // Parameters:
-        //   source:
-        //     A sequence of values to calculate the Range of.
-        //
-        //   selector:
-        //     A transform function to apply to each element.
-        //
-        // Type parameters:
-        //   TSource:
-        //     The type of the elements of source.
-        //
-        // Returns:
-        //     The Range of the sequence of values.
-        //
-        // Exceptions:
-        //   System.ArgumentNullException:
-        //     source or selector is null.
-        //
-        //   System.InvalidOperationException:
-        //     source contains no elements.
-        //
-        //   System.OverflowException:
-        //     The sum of the elements in the sequence is larger than System.Int64.MaxValue.
-        public static double Range<TSource>(this IEnumerable<TSource> source, Func<TSource, int> selector)
+
+        /// <summary>
+        ///     Computes the Range of a sequence of double values that are obtained
+        ///     by invoking a transform function on each element of the input sequence.
+        /// </summary>
+        /// <typeparam name="TSource">The type of the elements of source.</typeparam>
+        /// <param name="source">The sequence of elements.</param>
+        /// <param name="selector">A transform function to apply to each element.</param>
+        /// <returns>The Range.</returns>
+        public static double Range<TSource>(this IEnumerable<TSource> source, Func<TSource, double> selector)
         {
             if (source == null)
                 throw new ArgumentNullException("source");
@@ -555,26 +254,40 @@ namespace LinqStatistics
 
             return source.Select(selector).Range();
         }
-        //
-        // Summary:
-        //     Computes the Range of a sequence of nullable System.Int64 values that are
-        //     obtained by invoking a transform function on each element of the input sequence.
-        //
-        // Parameters:
-        //   source:
-        //     A sequence of values to calculate the Range of.
-        //
-        //   selector:
-        //     A transform function to apply to each element.
-        //
-        // Type parameters:
-        //   TSource:
-        //     The type of the elements of source.
-        //
-        // Returns:
-        //     The Range of the sequence of values, or null if the source sequence is
-        //     empty or contains only values that are null.
-        public static double? Range<TSource>(this IEnumerable<TSource> source, Func<TSource, long?> selector)
+ 	
+    	/// <summary>
+    	/// Computes the Range of a sequence of nullable decimal values.
+    	/// </summary>
+        /// <param name="source">The sequence of elements.</param>
+        /// <returns>The Range.</returns>
+        public static decimal? Range(this IEnumerable<decimal?> source)
+        {
+            IEnumerable<decimal> values = source.AllValues();
+            if (values.Any())
+                return values.Range();
+
+            return null;
+        }
+
+    	/// <summary>
+    	/// Computes the Range of a sequence of decimal values.
+    	/// </summary>
+        /// <param name="source">The sequence of elements.</param>
+        /// <returns>The Range.</returns>
+        public static decimal Range(this IEnumerable<decimal> source)
+        {
+            return source.Max() - source.Min();
+        }
+
+        /// <summary>
+        ///     Computes the Range of a sequence of nullable decimal values that are obtained
+        ///     by invoking a transform function on each element of the input sequence.
+        /// </summary>
+        /// <typeparam name="TSource">The type of the elements of source.</typeparam>
+        /// <param name="source">The sequence of elements.</param>
+        /// <param name="selector">A transform function to apply to each element.</param>
+        /// <returns>The Range.</returns>
+        public static decimal? Range<TSource>(this IEnumerable<TSource> source, Func<TSource, decimal?> selector)
         {
             if (source == null)
                 throw new ArgumentNullException("source");
@@ -584,35 +297,16 @@ namespace LinqStatistics
 
             return source.Select(selector).Range();
         }
-        //
-        // Summary:
-        //     Computes the Range of a sequence of System.Int64 values that are obtained
-        //     by invoking a transform function on each element of the input sequence.
-        //
-        // Parameters:
-        //   source:
-        //     A sequence of values to calculate the Range of.
-        //
-        //   selector:
-        //     A transform function to apply to each element.
-        //
-        // Type parameters:
-        //   TSource:
-        //     The type of the elements of source.
-        //
-        // Returns:
-        //     The Range of the sequence of values.
-        //
-        // Exceptions:
-        //   System.ArgumentNullException:
-        //     source or selector is null.
-        //
-        //   System.InvalidOperationException:
-        //     source contains no elements.
-        //
-        //   System.OverflowException:
-        //     The sum of the elements in the sequence is larger than System.Int64.MaxValue.
-        public static double Range<TSource>(this IEnumerable<TSource> source, Func<TSource, long> selector)
+
+        /// <summary>
+        ///     Computes the Range of a sequence of decimal values that are obtained
+        ///     by invoking a transform function on each element of the input sequence.
+        /// </summary>
+        /// <typeparam name="TSource">The type of the elements of source.</typeparam>
+        /// <param name="source">The sequence of elements.</param>
+        /// <param name="selector">A transform function to apply to each element.</param>
+        /// <returns>The Range.</returns>
+        public static decimal Range<TSource>(this IEnumerable<TSource> source, Func<TSource, decimal> selector)
         {
             if (source == null)
                 throw new ArgumentNullException("source");
@@ -622,5 +316,5 @@ namespace LinqStatistics
 
             return source.Select(selector).Range();
         }
-    }
+     }
 }

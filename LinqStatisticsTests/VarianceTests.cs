@@ -56,7 +56,7 @@ namespace LinqStatistics.UnitTests
 
             double result = source.VarianceP();
 
-            Assert.AreEqual(result, 3.081875, double.Epsilon);
+            Assert.AreEqual(3.081875, result, double.Epsilon);
         }
 
         [TestMethod]
@@ -66,7 +66,7 @@ namespace LinqStatistics.UnitTests
 
             double? result = source.VarianceP();
 
-            Assert.AreEqual((double)result, 3.081875, double.Epsilon);
+            Assert.AreEqual(3.081875, (double)result, double.Epsilon);
         }
 
         [TestMethod]
@@ -76,7 +76,7 @@ namespace LinqStatistics.UnitTests
 
             double result = source.VarianceP();
 
-            Assert.AreEqual(result, 2.1875, double.Epsilon);
+            Assert.AreEqual(2.1875, result, double.Epsilon);
         }
 
         [TestMethod]
@@ -86,7 +86,7 @@ namespace LinqStatistics.UnitTests
 
             double? result = source.VarianceP();
 
-            Assert.AreEqual((double)result, 2.1875, double.Epsilon);
+            Assert.AreEqual(2.1875, (double)result, double.Epsilon);
         }
     }
 }

@@ -44,7 +44,7 @@ namespace LinqStatistics
             if (!source.Any())
                 throw new InvalidOperationException("source sequence contains no elements");
 
-            var bins = BinFactory.CreateBins(source.Min(), source.Max(), binCount, mode);
+            var bins = BinFactory.CreateBins((double)source.Min(), (double)source.Max(), binCount, mode);
             source.AssignBins(bins);
 
             return bins;
@@ -87,7 +87,7 @@ namespace LinqStatistics
                 throw new InvalidOperationException("source sequence contains no elements");
 
             var sequence = source.Select(t => selector(t));
-            var bins = BinFactory.CreateBins(sequence.Min(), sequence.Max(), binCount, mode);
+            var bins = BinFactory.CreateBins((double)sequence.Min(), (double)sequence.Max(), binCount, mode);
             sequence.AssignBins(bins);
 
             return bins;
@@ -112,17 +112,17 @@ namespace LinqStatistics
                 throw new InvalidOperationException("source sequence contains no elements");
 
             var sequence = source.Select(t => selector(t)).AllValues();
-            var bins = BinFactory.CreateBins(sequence.Min(), sequence.Max(), binCount, mode);
+            var bins = BinFactory.CreateBins((double)sequence.Min(), (double)sequence.Max(), binCount, mode);
             sequence.AssignBins(bins);
 
             return bins;
         }
 
-		private static void AssignBins(this IEnumerable<int> source, IList<Bin> bins)
+        private static void AssignBins(this IEnumerable<int> source, IList<Bin> bins)
         {
             foreach (var value in source)
             {
-                var bin = bins.First(b => b.Range.Contains(value));
+                var bin = bins.First(b => b.Range.Contains((double)value));
                 bin.Count++;
             }
         } 
@@ -141,7 +141,7 @@ namespace LinqStatistics
             if (!source.Any())
                 throw new InvalidOperationException("source sequence contains no elements");
 
-            var bins = BinFactory.CreateBins(source.Min(), source.Max(), binCount, mode);
+            var bins = BinFactory.CreateBins((double)source.Min(), (double)source.Max(), binCount, mode);
             source.AssignBins(bins);
 
             return bins;
@@ -184,7 +184,7 @@ namespace LinqStatistics
                 throw new InvalidOperationException("source sequence contains no elements");
 
             var sequence = source.Select(t => selector(t));
-            var bins = BinFactory.CreateBins(sequence.Min(), sequence.Max(), binCount, mode);
+            var bins = BinFactory.CreateBins((double)sequence.Min(), (double)sequence.Max(), binCount, mode);
             sequence.AssignBins(bins);
 
             return bins;
@@ -209,17 +209,17 @@ namespace LinqStatistics
                 throw new InvalidOperationException("source sequence contains no elements");
 
             var sequence = source.Select(t => selector(t)).AllValues();
-            var bins = BinFactory.CreateBins(sequence.Min(), sequence.Max(), binCount, mode);
+            var bins = BinFactory.CreateBins((double)sequence.Min(), (double)sequence.Max(), binCount, mode);
             sequence.AssignBins(bins);
 
             return bins;
         }
 
-		private static void AssignBins(this IEnumerable<long> source, IList<Bin> bins)
+        private static void AssignBins(this IEnumerable<long> source, IList<Bin> bins)
         {
             foreach (var value in source)
             {
-                var bin = bins.First(b => b.Range.Contains(value));
+                var bin = bins.First(b => b.Range.Contains((double)value));
                 bin.Count++;
             }
         } 
@@ -238,7 +238,7 @@ namespace LinqStatistics
             if (!source.Any())
                 throw new InvalidOperationException("source sequence contains no elements");
 
-            var bins = BinFactory.CreateBins(source.Min(), source.Max(), binCount, mode);
+            var bins = BinFactory.CreateBins((double)source.Min(), (double)source.Max(), binCount, mode);
             source.AssignBins(bins);
 
             return bins;
@@ -281,7 +281,7 @@ namespace LinqStatistics
                 throw new InvalidOperationException("source sequence contains no elements");
 
             var sequence = source.Select(t => selector(t));
-            var bins = BinFactory.CreateBins(sequence.Min(), sequence.Max(), binCount, mode);
+            var bins = BinFactory.CreateBins((double)sequence.Min(), (double)sequence.Max(), binCount, mode);
             sequence.AssignBins(bins);
 
             return bins;
@@ -306,17 +306,17 @@ namespace LinqStatistics
                 throw new InvalidOperationException("source sequence contains no elements");
 
             var sequence = source.Select(t => selector(t)).AllValues();
-            var bins = BinFactory.CreateBins(sequence.Min(), sequence.Max(), binCount, mode);
+            var bins = BinFactory.CreateBins((double)sequence.Min(), (double)sequence.Max(), binCount, mode);
             sequence.AssignBins(bins);
 
             return bins;
         }
 
-		private static void AssignBins(this IEnumerable<float> source, IList<Bin> bins)
+        private static void AssignBins(this IEnumerable<float> source, IList<Bin> bins)
         {
             foreach (var value in source)
             {
-                var bin = bins.First(b => b.Range.Contains(value));
+                var bin = bins.First(b => b.Range.Contains((double)value));
                 bin.Count++;
             }
         } 
@@ -335,7 +335,7 @@ namespace LinqStatistics
             if (!source.Any())
                 throw new InvalidOperationException("source sequence contains no elements");
 
-            var bins = BinFactory.CreateBins(source.Min(), source.Max(), binCount, mode);
+            var bins = BinFactory.CreateBins((double)source.Min(), (double)source.Max(), binCount, mode);
             source.AssignBins(bins);
 
             return bins;
@@ -378,7 +378,7 @@ namespace LinqStatistics
                 throw new InvalidOperationException("source sequence contains no elements");
 
             var sequence = source.Select(t => selector(t));
-            var bins = BinFactory.CreateBins(sequence.Min(), sequence.Max(), binCount, mode);
+            var bins = BinFactory.CreateBins((double)sequence.Min(), (double)sequence.Max(), binCount, mode);
             sequence.AssignBins(bins);
 
             return bins;
@@ -403,17 +403,114 @@ namespace LinqStatistics
                 throw new InvalidOperationException("source sequence contains no elements");
 
             var sequence = source.Select(t => selector(t)).AllValues();
-            var bins = BinFactory.CreateBins(sequence.Min(), sequence.Max(), binCount, mode);
+            var bins = BinFactory.CreateBins((double)sequence.Min(), (double)sequence.Max(), binCount, mode);
             sequence.AssignBins(bins);
 
             return bins;
         }
 
-		private static void AssignBins(this IEnumerable<double> source, IList<Bin> bins)
+        private static void AssignBins(this IEnumerable<double> source, IList<Bin> bins)
         {
             foreach (var value in source)
             {
-                var bin = bins.First(b => b.Range.Contains(value));
+                var bin = bins.First(b => b.Range.Contains((double)value));
+                bin.Count++;
+            }
+        } 
+                /// <summary>
+        /// Computes the Histogram of a sequence of decimal values.
+        /// </summary>
+        /// <param name="source">A sequence of decimal values to calculate the Histogram of.</param>
+        /// <param name="binCount">The number of bins into which to segregate the data.</param>
+        /// <param name="mode">The method used to determine the range of each bin</param>
+        /// <returns>The Histogram of the sequence of decimal values.</returns>
+        public static IEnumerable<Bin> Histogram(this IEnumerable<decimal> source, int binCount, BinningMode mode = BinningMode.Unbounded)
+        {
+            if (source == null)
+                throw new ArgumentNullException("source");
+
+            if (!source.Any())
+                throw new InvalidOperationException("source sequence contains no elements");
+
+            var bins = BinFactory.CreateBins((double)source.Min(), (double)source.Max(), binCount, mode);
+            source.AssignBins(bins);
+
+            return bins;
+        }
+
+        /// <summary>
+        /// Computes the Histogram of a sequence of nullable decimal values.
+        /// </summary>
+        /// <param name="source">A sequence of nullable decimal values to calculate the Histogram of.</param>
+        /// <param name="binCount">The number of bins into which to segregate the data.</param>
+        /// <param name="mode">The method used to determine the range of each bin</param>
+        /// <returns>The Histogram of the sequence of nullable decimal values.</returns>
+        public static IEnumerable<Bin> Histogram(this IEnumerable<decimal?> source, int binCount, BinningMode mode = BinningMode.Unbounded)
+        {
+            if (source == null)
+                throw new ArgumentNullException("source");
+
+            if (!source.Any())
+                throw new InvalidOperationException("source sequence contains no elements");
+
+            return source.AllValues().Histogram(binCount, mode);
+        }
+
+        /// <summary>
+        /// Computes the Histogram of a sequence of decimal values that are obtained
+        /// by invoking a transform function on each element of the input sequence.
+        /// </summary>
+        /// <typeparam name="TSource">The type of the elements of source.</typeparam>
+        /// <param name="source">A sequence of values to calculate the Histogram of.</param>
+        /// <param name="binCount">The number of bins into which to segregate the data.</param>
+        /// <param name="selector">A transform function to apply to each element.</param>
+        /// <param name="mode">The method used to determine the range of each bin</param>
+        /// <returns>The Histogram of the sequence of decimal values.</returns>
+        public static IEnumerable<Bin> Histogram<TSource>(this IEnumerable<TSource> source, int binCount, Func<TSource, decimal> selector, BinningMode mode = BinningMode.Unbounded)
+        {
+            if (source == null)
+                throw new ArgumentNullException("source");
+
+            if (!source.Any())
+                throw new InvalidOperationException("source sequence contains no elements");
+
+            var sequence = source.Select(t => selector(t));
+            var bins = BinFactory.CreateBins((double)sequence.Min(), (double)sequence.Max(), binCount, mode);
+            sequence.AssignBins(bins);
+
+            return bins;
+        }
+
+        /// <summary>
+        /// Computes the Histogram of a sequence of nullable decimal values that are obtained
+        /// by invoking a transform function on each element of the input sequence.
+        /// </summary>
+        /// <typeparam name="TSource">The type of the elements of source.</typeparam>
+        /// <param name="source">A sequence of values to calculate the Histogram of.</param>
+        /// <param name="binCount">The number of bins into which to segregate the data.</param>
+        /// <param name="selector">A transform function to apply to each element.</param>
+        /// <param name="mode">The method used to determine the range of each bin</param>
+        /// <returns>The Histogram of the sequence of nullable decimal values.</returns>
+        public static IEnumerable<Bin> Histogram<TSource>(this IEnumerable<TSource> source, int binCount, Func<TSource, decimal?> selector, BinningMode mode = BinningMode.Unbounded)
+        {
+            if (source == null)
+                throw new ArgumentNullException("source");
+
+            if (!source.Any())
+                throw new InvalidOperationException("source sequence contains no elements");
+
+            var sequence = source.Select(t => selector(t)).AllValues();
+            var bins = BinFactory.CreateBins((double)sequence.Min(), (double)sequence.Max(), binCount, mode);
+            sequence.AssignBins(bins);
+
+            return bins;
+        }
+
+        private static void AssignBins(this IEnumerable<decimal> source, IList<Bin> bins)
+        {
+            foreach (var value in source)
+            {
+                var bin = bins.First(b => b.Range.Contains((double)value));
                 bin.Count++;
             }
         } 

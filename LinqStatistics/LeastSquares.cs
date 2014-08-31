@@ -2,6 +2,9 @@
 
 namespace LinqStatistics
 {
+    /// <summary>
+    /// Represent the result of a LeastSquares calculation of the form y = mX + b
+    /// </summary>
     public struct LeastSquares
     {
         private readonly double _m;
@@ -46,6 +49,11 @@ namespace LinqStatistics
             return !(lhs == rhs);
         }
 
+        /// <summary>
+        /// <see cref="System.Object.Equals(object)"/>
+        /// </summary>
+        /// <param name="obj">The object to compare to</param>
+        /// <returns>True if obj is a LeastSquares and has equal m and b values</returns>
         public override bool Equals(object obj)
         {
             if (obj is LeastSquares)
@@ -54,6 +62,10 @@ namespace LinqStatistics
             return false;
         }
 
+        /// <summary>
+        /// <see cref="System.Object.GetHashCode"/>
+        /// </summary>
+        /// <returns>Hascode of the instance</returns>
         public override int GetHashCode()
         {
             return _m.GetHashCode() ^ _b.GetHashCode();
@@ -64,21 +76,41 @@ namespace LinqStatistics
             return string.Format("y = ({0} * x) + {1}", m, b);
         }
 
+        /// <summary>
+        /// <see cref="System.Object.ToString"/>
+        /// </summary>
+        /// <returns></returns>
         public override string ToString()
         {
             return Format(_m.ToString(), _b.ToString());
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="provider"></param>
+        /// <returns></returns>
         public string ToString(IFormatProvider provider)
         {
             return Format(_m.ToString(provider), _b.ToString(provider));
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="format"></param>
+        /// <returns></returns>
         public string ToString(string format)
         {
             return Format(_m.ToString(format), _b.ToString(format));
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="format"></param>
+        /// <param name="provider"></param>
+        /// <returns></returns>
         public string ToString(string format, IFormatProvider provider)
         {
             return Format(_m.ToString(format, provider), _b.ToString(format, provider));

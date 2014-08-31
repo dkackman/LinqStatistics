@@ -36,7 +36,7 @@ namespace LinqStatistics.UnitTests
 
             double result = source.Median();
 
-            Assert.AreEqual(result, 3.5, double.Epsilon);
+            Assert.AreEqual(3.5, result, double.Epsilon);
         }
 
         [TestMethod]

@@ -6,24 +6,157 @@ namespace LinqStatistics
 {
     public static partial class EnumerableStats
     {
-        //
-        // Summary:
-        //     Computes the StandardDeviationP of a sequence of nullable System.Decimal values.
-        //
-        // Parameters:
-        //   source:
-        //     A sequence of nullable System.Decimal values to calculate the StandardDeviationP of.
-        //
-        // Returns:
-        //     The StandardDeviationP of the sequence of values, or null if the source sequence is
-        //     empty or contains only values that are null.
-        //
-        // Exceptions:
-        //   System.ArgumentNullException:
-        //     source is null.
-        //
-        //   System.OverflowException:
-        //     The sum of the elements in the sequence is larger than System.Decimal.MaxValue.
+    	
+        /// <summary>
+        /// Computes the population StandardDeviation of a sequence of nullable int values.
+        /// </summary>
+        /// <param name="source">A sequence of nullable int values to calculate the population StandardDeviation of.</param>
+        /// <returns>       
+        ///     The population StandardDeviation of the sequence of values, or null if the source sequence is
+        ///     empty or contains only values that are null.
+        /// </returns>
+        public static double? StandardDeviationP(this IEnumerable<int?> source)
+        {
+            IEnumerable<int> values = source.AllValues();
+            if (values.Any())
+                return values.StandardDeviationP();
+            
+            return null;
+        }
+
+        /// <summary>
+        /// Computes the population StandardDeviation of a sequence of int values.
+        /// </summary>
+        /// <param name="source">A sequence of int values to calculate the population StandardDeviation of.</param>
+        /// <returns>       
+        ///     The population StandardDeviation of the sequence of values.
+        /// </returns>
+        public static double StandardDeviationP(this IEnumerable<int> source)
+        {
+            return (double)Math.Sqrt((double)source.VarianceP());
+        }
+
+        /// <summary>
+        /// Computes the population StandardDeviation of a sequence of nullable int values that are obtained
+        ///     by invoking a transform function on each element of the input sequence.
+        /// </summary>
+        /// <typeparam name="TSource">The type of the elements of source.</typeparam>
+        /// <param name="source">The sequence of elements.</param>
+        /// <param name="selector">A transform function to apply to each element.</param>
+        /// <returns>       
+        ///     The population StandardDeviation of the sequence of values.
+        /// </returns>
+        public static double? StandardDeviationP<TSource>(this IEnumerable<TSource> source, Func<TSource, int?> selector)
+        {
+            if (source == null)
+                throw new ArgumentNullException("source");
+
+            if (selector == null)
+                throw new ArgumentNullException("selector");
+
+            return source.Select(selector).StandardDeviationP();
+        }
+
+        /// <summary>
+        /// Computes the population StandardDeviation of a sequence of int values that are obtained
+        ///     by invoking a transform function on each element of the input sequence.
+        /// </summary>
+        /// <typeparam name="TSource">The type of the elements of source.</typeparam>
+        /// <param name="source">The sequence of elements.</param>
+        /// <param name="selector">A transform function to apply to each element.</param>
+        /// <returns>       
+        ///     The population StandardDeviation of the sequence of values.
+        /// </returns>
+        public static double StandardDeviationP<TSource>(this IEnumerable<TSource> source, Func<TSource, int> selector)
+        {
+            if (source == null)
+                throw new ArgumentNullException("source");
+
+            if (selector == null)
+                throw new ArgumentNullException("selector");
+
+            return source.Select(selector).StandardDeviation();
+        }
+ 	
+        /// <summary>
+        /// Computes the population StandardDeviation of a sequence of nullable long values.
+        /// </summary>
+        /// <param name="source">A sequence of nullable long values to calculate the population StandardDeviation of.</param>
+        /// <returns>       
+        ///     The population StandardDeviation of the sequence of values, or null if the source sequence is
+        ///     empty or contains only values that are null.
+        /// </returns>
+        public static double? StandardDeviationP(this IEnumerable<long?> source)
+        {
+            IEnumerable<long> values = source.AllValues();
+            if (values.Any())
+                return values.StandardDeviationP();
+            
+            return null;
+        }
+
+        /// <summary>
+        /// Computes the population StandardDeviation of a sequence of long values.
+        /// </summary>
+        /// <param name="source">A sequence of long values to calculate the population StandardDeviation of.</param>
+        /// <returns>       
+        ///     The population StandardDeviation of the sequence of values.
+        /// </returns>
+        public static double StandardDeviationP(this IEnumerable<long> source)
+        {
+            return (double)Math.Sqrt((double)source.VarianceP());
+        }
+
+        /// <summary>
+        /// Computes the population StandardDeviation of a sequence of nullable long values that are obtained
+        ///     by invoking a transform function on each element of the input sequence.
+        /// </summary>
+        /// <typeparam name="TSource">The type of the elements of source.</typeparam>
+        /// <param name="source">The sequence of elements.</param>
+        /// <param name="selector">A transform function to apply to each element.</param>
+        /// <returns>       
+        ///     The population StandardDeviation of the sequence of values.
+        /// </returns>
+        public static double? StandardDeviationP<TSource>(this IEnumerable<TSource> source, Func<TSource, long?> selector)
+        {
+            if (source == null)
+                throw new ArgumentNullException("source");
+
+            if (selector == null)
+                throw new ArgumentNullException("selector");
+
+            return source.Select(selector).StandardDeviationP();
+        }
+
+        /// <summary>
+        /// Computes the population StandardDeviation of a sequence of long values that are obtained
+        ///     by invoking a transform function on each element of the input sequence.
+        /// </summary>
+        /// <typeparam name="TSource">The type of the elements of source.</typeparam>
+        /// <param name="source">The sequence of elements.</param>
+        /// <param name="selector">A transform function to apply to each element.</param>
+        /// <returns>       
+        ///     The population StandardDeviation of the sequence of values.
+        /// </returns>
+        public static double StandardDeviationP<TSource>(this IEnumerable<TSource> source, Func<TSource, long> selector)
+        {
+            if (source == null)
+                throw new ArgumentNullException("source");
+
+            if (selector == null)
+                throw new ArgumentNullException("selector");
+
+            return source.Select(selector).StandardDeviation();
+        }
+ 	
+        /// <summary>
+        /// Computes the population StandardDeviation of a sequence of nullable decimal values.
+        /// </summary>
+        /// <param name="source">A sequence of nullable decimal values to calculate the population StandardDeviation of.</param>
+        /// <returns>       
+        ///     The population StandardDeviation of the sequence of values, or null if the source sequence is
+        ///     empty or contains only values that are null.
+        /// </returns>
         public static decimal? StandardDeviationP(this IEnumerable<decimal?> source)
         {
             IEnumerable<decimal> values = source.AllValues();
@@ -32,511 +165,201 @@ namespace LinqStatistics
             
             return null;
         }
-        //
-        // Summary:
-        //     Computes the StandardDeviationP of a sequence of System.Decimal values.
-        //
-        // Parameters:
-        //   source:
-        //     A sequence of System.Decimal values to calculate the StandardDeviationP of.
-        //
-        // Returns:
-        //     The StandardDeviationP of the sequence of values.
-        //
-        // Exceptions:
-        //   System.ArgumentNullException:
-        //     source is null.
-        //
-        //   System.InvalidOperationException:
-        //     source contains no elements.
-        //
-        //   System.OverflowException:
-        //     The sum of the elements in the sequence is larger than System.Decimal.MaxValue.
+
+        /// <summary>
+        /// Computes the population StandardDeviation of a sequence of decimal values.
+        /// </summary>
+        /// <param name="source">A sequence of decimal values to calculate the population StandardDeviation of.</param>
+        /// <returns>       
+        ///     The population StandardDeviation of the sequence of values.
+        /// </returns>
         public static decimal StandardDeviationP(this IEnumerable<decimal> source)
         {
-            return (decimal)source.Select(x => (double)x).StandardDeviationP();
+            return (decimal)Math.Sqrt((double)source.VarianceP());
         }
-        //
-        // Summary:
-        //     Computes the StandardDeviationP of a sequence of nullable System.Double values.
-        //
-        // Parameters:
-        //   source:
-        //     A sequence of nullable System.Double values to calculate the StandardDeviationP of.
-        //
-        // Returns:
-        //     The StandardDeviationP of the sequence of values, or null if the source sequence is
-        //     empty or contains only values that are null.
-        //
-        // Exceptions:
-        //   System.ArgumentNullException:
-        //     source is null.
-        public static double? StandardDeviationP(this IEnumerable<double?> source)
-        {
-            IEnumerable<double> values = source.AllValues();
-            if (values.Any())
-                return values.StandardDeviationP();
 
-            return null;
-        }
-        //
-        // Summary:
-        //     Computes the StandardDeviationP of a sequence of System.Double values.
-        //
-        // Parameters:
-        //   source:
-        //     A sequence of System.Double values to calculate the StandardDeviationP of.
-        //
-        // Returns:
-        //     The StandardDeviationP of the sequence of values.
-        //
-        // Exceptions:
-        //   System.ArgumentNullException:
-        //     source is null.
-        //
-        //   System.InvalidOperationException:
-        //     source contains no elements.
-        public static double StandardDeviationP(this IEnumerable<double> source)
+        /// <summary>
+        /// Computes the population StandardDeviation of a sequence of nullable decimal values that are obtained
+        ///     by invoking a transform function on each element of the input sequence.
+        /// </summary>
+        /// <typeparam name="TSource">The type of the elements of source.</typeparam>
+        /// <param name="source">The sequence of elements.</param>
+        /// <param name="selector">A transform function to apply to each element.</param>
+        /// <returns>       
+        ///     The population StandardDeviation of the sequence of values.
+        /// </returns>
+        public static decimal? StandardDeviationP<TSource>(this IEnumerable<TSource> source, Func<TSource, decimal?> selector)
         {
-            return Math.Sqrt(source.VarianceP());
+            if (source == null)
+                throw new ArgumentNullException("source");
+
+            if (selector == null)
+                throw new ArgumentNullException("selector");
+
+            return source.Select(selector).StandardDeviationP();
         }
-        //
-        // Summary:
-        //     Computes the StandardDeviationP of a sequence of nullable System.Single values.
-        //
-        // Parameters:
-        //   source:
-        //     A sequence of nullable System.Single values to calculate the StandardDeviationP of.
-        //
-        // Returns:
-        //     The StandardDeviationP of the sequence of values, or null if the source sequence is
-        //     empty or contains only values that are null.
-        //
-        // Exceptions:
-        //   System.ArgumentNullException:
-        //     source is null.
+
+        /// <summary>
+        /// Computes the population StandardDeviation of a sequence of decimal values that are obtained
+        ///     by invoking a transform function on each element of the input sequence.
+        /// </summary>
+        /// <typeparam name="TSource">The type of the elements of source.</typeparam>
+        /// <param name="source">The sequence of elements.</param>
+        /// <param name="selector">A transform function to apply to each element.</param>
+        /// <returns>       
+        ///     The population StandardDeviation of the sequence of values.
+        /// </returns>
+        public static decimal StandardDeviationP<TSource>(this IEnumerable<TSource> source, Func<TSource, decimal> selector)
+        {
+            if (source == null)
+                throw new ArgumentNullException("source");
+
+            if (selector == null)
+                throw new ArgumentNullException("selector");
+
+            return source.Select(selector).StandardDeviation();
+        }
+ 	
+        /// <summary>
+        /// Computes the population StandardDeviation of a sequence of nullable float values.
+        /// </summary>
+        /// <param name="source">A sequence of nullable float values to calculate the population StandardDeviation of.</param>
+        /// <returns>       
+        ///     The population StandardDeviation of the sequence of values, or null if the source sequence is
+        ///     empty or contains only values that are null.
+        /// </returns>
         public static float? StandardDeviationP(this IEnumerable<float?> source)
         {
             IEnumerable<float> values = source.AllValues();
             if (values.Any())
                 return values.StandardDeviationP();
-
+            
             return null;
         }
-        //
-        // Summary:
-        //     Computes the StandardDeviationP of a sequence of System.Single values.
-        //
-        // Parameters:
-        //   source:
-        //     A sequence of System.Single values to calculate the StandardDeviationP of.
-        //
-        // Returns:
-        //     The StandardDeviationP of the sequence of values.
-        //
-        // Exceptions:
-        //   System.ArgumentNullException:
-        //     source is null.
-        //
-        //   System.InvalidOperationException:
-        //     source contains no elements.
+
+        /// <summary>
+        /// Computes the population StandardDeviation of a sequence of float values.
+        /// </summary>
+        /// <param name="source">A sequence of float values to calculate the population StandardDeviation of.</param>
+        /// <returns>       
+        ///     The population StandardDeviation of the sequence of values.
+        /// </returns>
         public static float StandardDeviationP(this IEnumerable<float> source)
         {
-            return (float)source.Select(x => (double)x).StandardDeviationP();
+            return (float)Math.Sqrt((double)source.VarianceP());
         }
-        //
-        // Summary:
-        //     Computes the StandardDeviationP of a sequence of nullable System.Int32 values.
-        //
-        // Parameters:
-        //   source:
-        //     A sequence of nullable System.Int32values to calculate the StandardDeviationP of.
-        //
-        // Returns:
-        //     The StandardDeviationP of the sequence of values, or null if the source sequence is
-        //     empty or contains only values that are null.
-        //
-        // Exceptions:
-        //   System.ArgumentNullException:
-        //     source is null.
-        //
-        //   System.OverflowException:
-        //     The sum of the elements in the sequence is larger than System.Int64.MaxValue.
-        public static double? StandardDeviationP(this IEnumerable<int?> source)
-        {
-            IEnumerable<int> values = source.AllValues();
-            if (values.Any())
-                return values.StandardDeviationP();
 
-            return null;
-        }
-        //
-        // Summary:
-        //     Computes the StandardDeviationP of a sequence of System.Int32 values.
-        //
-        // Parameters:
-        //   source:
-        //     A sequence of System.Int32 values to calculate the StandardDeviationP of.
-        //
-        // Returns:
-        //     The StandardDeviationP of the sequence of values.
-        //
-        // Exceptions:
-        //   System.ArgumentNullException:
-        //     source is null.
-        //
-        //   System.InvalidOperationException:
-        //     source contains no elements.
-        //
-        //   System.OverflowException:
-        //     The sum of the elements in the sequence is larger than System.Int64.MaxValue.
-        public static double StandardDeviationP(this IEnumerable<int> source)
-        {
-            return source.Select(x => (double)x).StandardDeviationP();
-        }
-        //
-        // Summary:
-        //     Computes the StandardDeviationP of a sequence of nullable System.Int64 values.
-        //
-        // Parameters:
-        //   source:
-        //     A sequence of nullable System.Int64 values to calculate the StandardDeviationP of.
-        //
-        // Returns:
-        //     The StandardDeviationP of the sequence of values, or null if the source sequence is
-        //     empty or contains only values that are null.
-        //
-        // Exceptions:
-        //   System.ArgumentNullException:
-        //     source is null.
-        //
-        //   System.OverflowException:
-        //     The sum of the elements in the sequence is larger than System.Int64.MaxValue.
-        public static double? StandardDeviationP(this IEnumerable<long?> source)
-        {
-            IEnumerable<long> values = source.AllValues();
-            if (values.Any())
-                return values.StandardDeviationP();
-
-            return null;
-        }
-        //
-        // Summary:
-        //     Computes the StandardDeviationP of a sequence of System.Int64 values.
-        //
-        // Parameters:
-        //   source:
-        //     A sequence of System.Int64 values to calculate the StandardDeviationP of.
-        //
-        // Returns:
-        //     The StandardDeviationP of the sequence of values.
-        //
-        // Exceptions:
-        //   System.ArgumentNullException:
-        //     source is null.
-        //
-        //   System.InvalidOperationException:
-        //     source contains no elements.
-        //
-        //   System.OverflowException:
-        //     The sum of the elements in the sequence is larger than System.Int64.MaxValue.
-        public static double StandardDeviationP(this IEnumerable<long> source)
-        {
-            return source.Select(x => (double)x).StandardDeviationP();
-        }
-        //
-        // Summary:
-        //     Computes the StandardDeviationP of a sequence of nullable System.Decimal values that
-        //     are obtained by invoking a transform function on each element of the input
-        //     sequence.
-        //
-        // Parameters:
-        //   source:
-        //     A sequence of values to calculate the StandardDeviationP of.
-        //
-        //   selector:
-        //     A transform function to apply to each element.
-        //
-        // Type parameters:
-        //   TSource:
-        //     The type of the elements of source.
-        //
-        // Returns:
-        //     The StandardDeviationP of the sequence of values, or null if the source sequence is
-        //     empty or contains only values that are null.
-        //
-        // Exceptions:
-        //   System.ArgumentNullException:
-        //     source or selector is null.
-        //
-        //   System.OverflowException:
-        //     The sum of the elements in the sequence is larger than System.Decimal.MaxValue.
-        public static decimal? StandardDeviationP<TSource>(this IEnumerable<TSource> source, Func<TSource, decimal?> selector)
-        {
-            return source.Select(selector).StandardDeviationP();
-        }
-        //
-        // Summary:
-        //     Computes the StandardDeviationP of a sequence of System.Decimal values that are obtained
-        //     by invoking a transform function on each element of the input sequence.
-        //
-        // Parameters:
-        //   source:
-        //     A sequence of values that are used to calculate an StandardDeviationP.
-        //
-        //   selector:
-        //     A transform function to apply to each element.
-        //
-        // Type parameters:
-        //   TSource:
-        //     The type of the elements of source.
-        //
-        // Returns:
-        //     The StandardDeviationP of the sequence of values.
-        //
-        // Exceptions:
-        //   System.ArgumentNullException:
-        //     source or selector is null.
-        //
-        //   System.InvalidOperationException:
-        //     source contains no elements.
-        //
-        //   System.OverflowException:
-        //     The sum of the elements in the sequence is larger than System.Decimal.MaxValue.
-        public static decimal StandardDeviationP<TSource>(this IEnumerable<TSource> source, Func<TSource, decimal> selector)
-        {
-            return source.Select(selector).StandardDeviationP();
-        }
-        //
-        // Summary:
-        //     Computes the StandardDeviationP of a sequence of nullable System.Double values that
-        //     are obtained by invoking a transform function on each element of the input
-        //     sequence.
-        //
-        // Parameters:
-        //   source:
-        //     A sequence of values to calculate the StandardDeviationP of.
-        //
-        //   selector:
-        //     A transform function to apply to each element.
-        //
-        // Type parameters:
-        //   TSource:
-        //     The type of the elements of source.
-        //
-        // Returns:
-        //     The StandardDeviationP of the sequence of values, or null if the source sequence is
-        //     empty or contains only values that are null.
-        //
-        // Exceptions:
-        //   System.ArgumentNullException:
-        //     source or selector is null.
-        public static double? StandardDeviationP<TSource>(this IEnumerable<TSource> source, Func<TSource, double?> selector)
-        {
-            return source.Select(selector).StandardDeviationP();
-        }
-        //
-        // Summary:
-        //     Computes the StandardDeviationP of a sequence of System.Double values that are obtained
-        //     by invoking a transform function on each element of the input sequence.
-        //
-        // Parameters:
-        //   source:
-        //     A sequence of values to calculate the StandardDeviationP of.
-        //
-        //   selector:
-        //     A transform function to apply to each element.
-        //
-        // Type parameters:
-        //   TSource:
-        //     The type of the elements of source.
-        //
-        // Returns:
-        //     The StandardDeviationP of the sequence of values.
-        //
-        // Exceptions:
-        //   System.ArgumentNullException:
-        //     source or selector is null.
-        //
-        //   System.InvalidOperationException:
-        //     source contains no elements.
-        public static double StandardDeviationP<TSource>(this IEnumerable<TSource> source, Func<TSource, double> selector)
-        {
-            return source.Select(selector).StandardDeviationP();
-        }
-        //
-        // Summary:
-        //     Computes the StandardDeviationP of a sequence of nullable System.Single values that
-        //     are obtained by invoking a transform function on each element of the input
-        //     sequence.
-        //
-        // Parameters:
-        //   source:
-        //     A sequence of values to calculate the StandardDeviationP of.
-        //
-        //   selector:
-        //     A transform function to apply to each element.
-        //
-        // Type parameters:
-        //   TSource:
-        //     The type of the elements of source.
-        //
-        // Returns:
-        //     The StandardDeviationP of the sequence of values, or null if the source sequence is
-        //     empty or contains only values that are null.
-        //
-        // Exceptions:
-        //   System.ArgumentNullException:
-        //     source or selector is null.
+        /// <summary>
+        /// Computes the population StandardDeviation of a sequence of nullable float values that are obtained
+        ///     by invoking a transform function on each element of the input sequence.
+        /// </summary>
+        /// <typeparam name="TSource">The type of the elements of source.</typeparam>
+        /// <param name="source">The sequence of elements.</param>
+        /// <param name="selector">A transform function to apply to each element.</param>
+        /// <returns>       
+        ///     The population StandardDeviation of the sequence of values.
+        /// </returns>
         public static float? StandardDeviationP<TSource>(this IEnumerable<TSource> source, Func<TSource, float?> selector)
         {
+            if (source == null)
+                throw new ArgumentNullException("source");
+
+            if (selector == null)
+                throw new ArgumentNullException("selector");
+
             return source.Select(selector).StandardDeviationP();
         }
-        //
-        // Summary:
-        //     Computes the StandardDeviationP of a sequence of System.Single values that are obtained
-        //     by invoking a transform function on each element of the input sequence.
-        //
-        // Parameters:
-        //   source:
-        //     A sequence of values to calculate the StandardDeviationP of.
-        //
-        //   selector:
-        //     A transform function to apply to each element.
-        //
-        // Type parameters:
-        //   TSource:
-        //     The type of the elements of source.
-        //
-        // Returns:
-        //     The StandardDeviationP of the sequence of values.
-        //
-        // Exceptions:
-        //   System.ArgumentNullException:
-        //     source or selector is null.
-        //
-        //   System.InvalidOperationException:
-        //     source contains no elements.
+
+        /// <summary>
+        /// Computes the population StandardDeviation of a sequence of float values that are obtained
+        ///     by invoking a transform function on each element of the input sequence.
+        /// </summary>
+        /// <typeparam name="TSource">The type of the elements of source.</typeparam>
+        /// <param name="source">The sequence of elements.</param>
+        /// <param name="selector">A transform function to apply to each element.</param>
+        /// <returns>       
+        ///     The population StandardDeviation of the sequence of values.
+        /// </returns>
         public static float StandardDeviationP<TSource>(this IEnumerable<TSource> source, Func<TSource, float> selector)
         {
-            return source.Select(selector).StandardDeviationP();
+            if (source == null)
+                throw new ArgumentNullException("source");
+
+            if (selector == null)
+                throw new ArgumentNullException("selector");
+
+            return source.Select(selector).StandardDeviation();
         }
-        //
-        // Summary:
-        //     Computes the StandardDeviationP of a sequence of nullable System.Int32 values that are
-        //     obtained by invoking a transform function on each element of the input sequence.
-        //
-        // Parameters:
-        //   source:
-        //     A sequence of values to calculate the StandardDeviationP of.
-        //
-        //   selector:
-        //     A transform function to apply to each element.
-        //
-        // Type parameters:
-        //   TSource:
-        //     The type of the elements of source.
-        //
-        // Returns:
-        //     The StandardDeviationP of the sequence of values, or null if the source sequence is
-        //     empty or contains only values that are null.
-        //
-        // Exceptions:
-        //   System.ArgumentNullException:
-        //     source or selector is null.
-        //
-        //   System.OverflowException:
-        //     The sum of the elements in the sequence is larger than System.Int64.MaxValue.
-        public static double? StandardDeviationP<TSource>(this IEnumerable<TSource> source, Func<TSource, int?> selector)
+ 	
+        /// <summary>
+        /// Computes the population StandardDeviation of a sequence of nullable double values.
+        /// </summary>
+        /// <param name="source">A sequence of nullable double values to calculate the population StandardDeviation of.</param>
+        /// <returns>       
+        ///     The population StandardDeviation of the sequence of values, or null if the source sequence is
+        ///     empty or contains only values that are null.
+        /// </returns>
+        public static double? StandardDeviationP(this IEnumerable<double?> source)
         {
-            return source.Select(selector).StandardDeviationP();
+            IEnumerable<double> values = source.AllValues();
+            if (values.Any())
+                return values.StandardDeviationP();
+            
+            return null;
         }
-        //
-        // Summary:
-        //     Computes the StandardDeviationP of a sequence of System.Int32 values that are obtained
-        //     by invoking a transform function on each element of the input sequence.
-        //
-        // Parameters:
-        //   source:
-        //     A sequence of values to calculate the StandardDeviationP of.
-        //
-        //   selector:
-        //     A transform function to apply to each element.
-        //
-        // Type parameters:
-        //   TSource:
-        //     The type of the elements of source.
-        //
-        // Returns:
-        //     The StandardDeviationP of the sequence of values.
-        //
-        // Exceptions:
-        //   System.ArgumentNullException:
-        //     source or selector is null.
-        //
-        //   System.InvalidOperationException:
-        //     source contains no elements.
-        //
-        //   System.OverflowException:
-        //     The sum of the elements in the sequence is larger than System.Int64.MaxValue.
-        public static double StandardDeviationP<TSource>(this IEnumerable<TSource> source, Func<TSource, int> selector)
+
+        /// <summary>
+        /// Computes the population StandardDeviation of a sequence of double values.
+        /// </summary>
+        /// <param name="source">A sequence of double values to calculate the population StandardDeviation of.</param>
+        /// <returns>       
+        ///     The population StandardDeviation of the sequence of values.
+        /// </returns>
+        public static double StandardDeviationP(this IEnumerable<double> source)
         {
-            return source.Select(selector).StandardDeviationP();
+            return (double)Math.Sqrt((double)source.VarianceP());
         }
-        //
-        // Summary:
-        //     Computes the StandardDeviationP of a sequence of nullable System.Int64 values that are
-        //     obtained by invoking a transform function on each element of the input sequence.
-        //
-        // Parameters:
-        //   source:
-        //     A sequence of values to calculate the StandardDeviationP of.
-        //
-        //   selector:
-        //     A transform function to apply to each element.
-        //
-        // Type parameters:
-        //   TSource:
-        //     The type of the elements of source.
-        //
-        // Returns:
-        //     The StandardDeviationP of the sequence of values, or null if the source sequence is
-        //     empty or contains only values that are null.
-        public static double? StandardDeviationP<TSource>(this IEnumerable<TSource> source, Func<TSource, long?> selector)
+
+        /// <summary>
+        /// Computes the population StandardDeviation of a sequence of nullable double values that are obtained
+        ///     by invoking a transform function on each element of the input sequence.
+        /// </summary>
+        /// <typeparam name="TSource">The type of the elements of source.</typeparam>
+        /// <param name="source">The sequence of elements.</param>
+        /// <param name="selector">A transform function to apply to each element.</param>
+        /// <returns>       
+        ///     The population StandardDeviation of the sequence of values.
+        /// </returns>
+        public static double? StandardDeviationP<TSource>(this IEnumerable<TSource> source, Func<TSource, double?> selector)
         {
+            if (source == null)
+                throw new ArgumentNullException("source");
+
+            if (selector == null)
+                throw new ArgumentNullException("selector");
+
             return source.Select(selector).StandardDeviationP();
         }
-        //
-        // Summary:
-        //     Computes the StandardDeviationP of a sequence of System.Int64 values that are obtained
-        //     by invoking a transform function on each element of the input sequence.
-        //
-        // Parameters:
-        //   source:
-        //     A sequence of values to calculate the StandardDeviationP of.
-        //
-        //   selector:
-        //     A transform function to apply to each element.
-        //
-        // Type parameters:
-        //   TSource:
-        //     The type of the elements of source.
-        //
-        // Returns:
-        //     The StandardDeviationP of the sequence of values.
-        //
-        // Exceptions:
-        //   System.ArgumentNullException:
-        //     source or selector is null.
-        //
-        //   System.InvalidOperationException:
-        //     source contains no elements.
-        //
-        //   System.OverflowException:
-        //     The sum of the elements in the sequence is larger than System.Int64.MaxValue.
-        public static double StandardDeviationP<TSource>(this IEnumerable<TSource> source, Func<TSource, long> selector)
+
+        /// <summary>
+        /// Computes the population StandardDeviation of a sequence of double values that are obtained
+        ///     by invoking a transform function on each element of the input sequence.
+        /// </summary>
+        /// <typeparam name="TSource">The type of the elements of source.</typeparam>
+        /// <param name="source">The sequence of elements.</param>
+        /// <param name="selector">A transform function to apply to each element.</param>
+        /// <returns>       
+        ///     The population StandardDeviation of the sequence of values.
+        /// </returns>
+        public static double StandardDeviationP<TSource>(this IEnumerable<TSource> source, Func<TSource, double> selector)
         {
-            return source.Select(selector).StandardDeviationP();
+            if (source == null)
+                throw new ArgumentNullException("source");
+
+            if (selector == null)
+                throw new ArgumentNullException("selector");
+
+            return source.Select(selector).StandardDeviation();
         }
-    }
+     }
 }

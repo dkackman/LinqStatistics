@@ -49,22 +49,66 @@
   <ItemGroup>
     <Compile Include="Bin.cs" />
     <Compile Include="BinFactory.cs" />
+    <Compile Include="EnumerableStatsCovariance.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EnumerableStatsCovariance.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EnumerableStatsKurtosis.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EnumerableStatsKurtosis.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EnumerableStatsLeastSquares.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EnumerableStatsLeastSquares.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EnumerableStatsMedian.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EnumerableStatsMedian.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EnumerableStatsPearson.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EnumerableStatsPearson.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EnumerableStatsRange.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EnumerableStatsRange.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EnumerableStatsRootMeanSquare.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EnumerableStatsRootMeanSquare.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EnumerableStatsStandardDeviation.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EnumerableStatsStandardDeviation.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EnumerableStatsStandardDeviationP.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EnumerableStatsStandardDeviationP.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EnumerableStatsVariance1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EnumerableStatsVariance.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EnumerableStatsVarianceP.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EnumerableStatsVarianceP.tt</DependentUpon>
+    </Compile>
     <Compile Include="ItemCount.cs" />
     <Compile Include="EnumerableStatsBinCount.cs" />
     <Compile Include="EnumerableStatsCountEach.cs" />
-    <Compile Include="EnumerableStatsKurtosis.cs" />
-    <Compile Include="EnumerableStatsLeastSquares.cs" />
-    <Compile Include="EnumerableStatsPearson.cs" />
-    <Compile Include="EnumerableStatsCovariance.cs" />
     <Compile Include="EnumerableStats.cs" />
-    <Compile Include="EnumerableStatsRange.cs" />
     <Compile Include="EnumerableStatsMode.cs" />
-    <Compile Include="EnumerableStatsMedian.cs" />
-    <Compile Include="EnumerableStatsRootMeanSquare.cs" />
-    <Compile Include="EnumerableStatsStandardDeviation.cs" />
-    <Compile Include="EnumerableStatsStandardDeviationP.cs" />
-    <Compile Include="EnumerableStatsVariance.cs" />
-    <Compile Include="EnumerableStatsVarianceP.cs" />
     <Compile Include="EnumerableStatsHistogram.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -73,14 +117,57 @@
     <Compile Include="LeastSquares.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Range.cs" />
-    <Compile Include="TestHist.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="EnumerableStatsCovariance.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>EnumerableStatsCovariance.cs</LastGenOutput>
+    </None>
     <None Include="EnumerableStatsHistogram.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>EnumerableStatsHistogram.cs</LastGenOutput>
       <Parameters>&lt;%3fxml version="1.0" encoding="utf-16"%3f&gt;
 &lt;ArrayOfParameterStorage xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" /&gt;</Parameters>
+    </None>
+    <None Include="EnumerableStatsKurtosis.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>EnumerableStatsKurtosis.cs</LastGenOutput>
+    </None>
+    <None Include="EnumerableStatsLeastSquares.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>EnumerableStatsLeastSquares.cs</LastGenOutput>
+    </None>
+    <None Include="EnumerableStatsMedian.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>EnumerableStatsMedian.cs</LastGenOutput>
+    </None>
+    <None Include="EnumerableStatsPearson.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>EnumerableStatsPearson.cs</LastGenOutput>
+    </None>
+    <None Include="EnumerableStatsRange.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>EnumerableStatsRange.cs</LastGenOutput>
+    </None>
+    <None Include="EnumerableStatsRootMeanSquare.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>EnumerableStatsRootMeanSquare.cs</LastGenOutput>
+    </None>
+    <None Include="EnumerableStatsStandardDeviation.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>EnumerableStatsStandardDeviation.cs</LastGenOutput>
+    </None>
+    <None Include="EnumerableStatsStandardDeviationP.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>EnumerableStatsStandardDeviationP.cs</LastGenOutput>
+    </None>
+    <None Include="EnumerableStatsVariance.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>EnumerableStatsVariance1.cs</LastGenOutput>
+    </None>
+    <None Include="EnumerableStatsVarianceP.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>EnumerableStatsVarianceP.cs</LastGenOutput>
     </None>
   </ItemGroup>
   <ItemGroup>
@@ -89,7 +176,7 @@
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>xcopy "$(TargetPath)" "$(SolutionDir)LinqStatistics.Packager\lib\net40" /r /y
-xcopy "$(TargetDir)*.xml" "$(SolutionDir)LinqStatistics.Packager\lib\net40" /r /y</PostBuildEvent>
+xcopy "$(TargetDir)$(TargetName).xml" "$(SolutionDir)LinqStatistics.Packager\lib\net40" /r /y</PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
