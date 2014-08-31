@@ -42,21 +42,24 @@ namespace LinqStatistics
             if (!other.Any())
                 throw new InvalidOperationException("other sequence contains no elements");
 
-            int len = source.Count();
+            // convert to lists so we can get items by index without enumerating within the loop below
+            var listSource = source.ToList();
+            var listOther = other.ToList();
 
-            if (len != other.Count())
+            if (listSource.Count != listOther.Count)
                 throw new InvalidOperationException("Collections are not of the same length");
 
             var avgSource = source.Average();
             var avgOther = other.Average();
-            double covariance = 0;
             
-            for (int i = 0; i < len; i++)
+            double covariance = 0;
+            int n = listSource.Count;
+            for (int i = 0; i < n; i++)
             {
-                covariance += (double)((source.ElementAt(i) - avgSource) * (other.ElementAt(i) - avgOther));
+                covariance += (double)((listSource[i] - avgSource) * (listOther[i] - avgOther));
             }
 
-            return (double)(covariance / len); 
+            return (double)(covariance / n); 
         }               
  	
         /// <summary>
@@ -94,21 +97,24 @@ namespace LinqStatistics
             if (!other.Any())
                 throw new InvalidOperationException("other sequence contains no elements");
 
-            int len = source.Count();
+            // convert to lists so we can get items by index without enumerating within the loop below
+            var listSource = source.ToList();
+            var listOther = other.ToList();
 
-            if (len != other.Count())
+            if (listSource.Count != listOther.Count)
                 throw new InvalidOperationException("Collections are not of the same length");
 
             var avgSource = source.Average();
             var avgOther = other.Average();
-            double covariance = 0;
             
-            for (int i = 0; i < len; i++)
+            double covariance = 0;
+            int n = listSource.Count;
+            for (int i = 0; i < n; i++)
             {
-                covariance += (double)((source.ElementAt(i) - avgSource) * (other.ElementAt(i) - avgOther));
+                covariance += (double)((listSource[i] - avgSource) * (listOther[i] - avgOther));
             }
 
-            return (double)(covariance / len); 
+            return (double)(covariance / n); 
         }               
  	
         /// <summary>
@@ -146,21 +152,24 @@ namespace LinqStatistics
             if (!other.Any())
                 throw new InvalidOperationException("other sequence contains no elements");
 
-            int len = source.Count();
+            // convert to lists so we can get items by index without enumerating within the loop below
+            var listSource = source.ToList();
+            var listOther = other.ToList();
 
-            if (len != other.Count())
+            if (listSource.Count != listOther.Count)
                 throw new InvalidOperationException("Collections are not of the same length");
 
             var avgSource = source.Average();
             var avgOther = other.Average();
-            double covariance = 0;
             
-            for (int i = 0; i < len; i++)
+            double covariance = 0;
+            int n = listSource.Count;
+            for (int i = 0; i < n; i++)
             {
-                covariance += (double)((source.ElementAt(i) - avgSource) * (other.ElementAt(i) - avgOther));
+                covariance += (double)((listSource[i] - avgSource) * (listOther[i] - avgOther));
             }
 
-            return (decimal)(covariance / len); 
+            return (decimal)(covariance / n); 
         }               
  	
         /// <summary>
@@ -198,21 +207,24 @@ namespace LinqStatistics
             if (!other.Any())
                 throw new InvalidOperationException("other sequence contains no elements");
 
-            int len = source.Count();
+            // convert to lists so we can get items by index without enumerating within the loop below
+            var listSource = source.ToList();
+            var listOther = other.ToList();
 
-            if (len != other.Count())
+            if (listSource.Count != listOther.Count)
                 throw new InvalidOperationException("Collections are not of the same length");
 
             var avgSource = source.Average();
             var avgOther = other.Average();
-            double covariance = 0;
             
-            for (int i = 0; i < len; i++)
+            double covariance = 0;
+            int n = listSource.Count;
+            for (int i = 0; i < n; i++)
             {
-                covariance += (double)((source.ElementAt(i) - avgSource) * (other.ElementAt(i) - avgOther));
+                covariance += (double)((listSource[i] - avgSource) * (listOther[i] - avgOther));
             }
 
-            return (float)(covariance / len); 
+            return (float)(covariance / n); 
         }               
  	
         /// <summary>
@@ -250,21 +262,24 @@ namespace LinqStatistics
             if (!other.Any())
                 throw new InvalidOperationException("other sequence contains no elements");
 
-            int len = source.Count();
+            // convert to lists so we can get items by index without enumerating within the loop below
+            var listSource = source.ToList();
+            var listOther = other.ToList();
 
-            if (len != other.Count())
+            if (listSource.Count != listOther.Count)
                 throw new InvalidOperationException("Collections are not of the same length");
 
             var avgSource = source.Average();
             var avgOther = other.Average();
-            double covariance = 0;
             
-            for (int i = 0; i < len; i++)
+            double covariance = 0;
+            int n = listSource.Count;
+            for (int i = 0; i < n; i++)
             {
-                covariance += (double)((source.ElementAt(i) - avgSource) * (other.ElementAt(i) - avgOther));
+                covariance += (double)((listSource[i] - avgSource) * (listOther[i] - avgOther));
             }
 
-            return (double)(covariance / len); 
+            return (double)(covariance / n); 
         }               
      }
 }

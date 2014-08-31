@@ -35,9 +35,9 @@ namespace LinqStatistics
             if (!source.Any())
                 throw new InvalidOperationException("source sequence contains no elements");
 
-            var sortedList = from number in source
+            var sortedList = (from number in source
                              orderby number
-                             select (double)number;
+                             select (double)number).ToList();
 
             int count = sortedList.Count();
             int itemIndex = count / 2;
@@ -45,11 +45,11 @@ namespace LinqStatistics
             if (count % 2 == 0)
             {
                 // Even number of items.
-                return (sortedList.ElementAt(itemIndex) + sortedList.ElementAt(itemIndex - 1)) / 2;
+                return (sortedList[itemIndex] + sortedList[itemIndex - 1]) / (double)2;
             }
 
             // Odd number of items.
-            return sortedList.ElementAt(itemIndex);
+            return sortedList[itemIndex];
         }
 
         /// <summary>
@@ -118,9 +118,9 @@ namespace LinqStatistics
             if (!source.Any())
                 throw new InvalidOperationException("source sequence contains no elements");
 
-            var sortedList = from number in source
+            var sortedList = (from number in source
                              orderby number
-                             select (double)number;
+                             select (double)number).ToList();
 
             int count = sortedList.Count();
             int itemIndex = count / 2;
@@ -128,11 +128,11 @@ namespace LinqStatistics
             if (count % 2 == 0)
             {
                 // Even number of items.
-                return (sortedList.ElementAt(itemIndex) + sortedList.ElementAt(itemIndex - 1)) / 2;
+                return (sortedList[itemIndex] + sortedList[itemIndex - 1]) / (double)2;
             }
 
             // Odd number of items.
-            return sortedList.ElementAt(itemIndex);
+            return sortedList[itemIndex];
         }
 
         /// <summary>
@@ -201,9 +201,9 @@ namespace LinqStatistics
             if (!source.Any())
                 throw new InvalidOperationException("source sequence contains no elements");
 
-            var sortedList = from number in source
+            var sortedList = (from number in source
                              orderby number
-                             select (decimal)number;
+                             select (decimal)number).ToList();
 
             int count = sortedList.Count();
             int itemIndex = count / 2;
@@ -211,11 +211,11 @@ namespace LinqStatistics
             if (count % 2 == 0)
             {
                 // Even number of items.
-                return (sortedList.ElementAt(itemIndex) + sortedList.ElementAt(itemIndex - 1)) / 2;
+                return (sortedList[itemIndex] + sortedList[itemIndex - 1]) / (decimal)2;
             }
 
             // Odd number of items.
-            return sortedList.ElementAt(itemIndex);
+            return sortedList[itemIndex];
         }
 
         /// <summary>
@@ -284,9 +284,9 @@ namespace LinqStatistics
             if (!source.Any())
                 throw new InvalidOperationException("source sequence contains no elements");
 
-            var sortedList = from number in source
+            var sortedList = (from number in source
                              orderby number
-                             select (float)number;
+                             select (float)number).ToList();
 
             int count = sortedList.Count();
             int itemIndex = count / 2;
@@ -294,11 +294,11 @@ namespace LinqStatistics
             if (count % 2 == 0)
             {
                 // Even number of items.
-                return (sortedList.ElementAt(itemIndex) + sortedList.ElementAt(itemIndex - 1)) / 2;
+                return (sortedList[itemIndex] + sortedList[itemIndex - 1]) / (float)2;
             }
 
             // Odd number of items.
-            return sortedList.ElementAt(itemIndex);
+            return sortedList[itemIndex];
         }
 
         /// <summary>
@@ -367,9 +367,9 @@ namespace LinqStatistics
             if (!source.Any())
                 throw new InvalidOperationException("source sequence contains no elements");
 
-            var sortedList = from number in source
+            var sortedList = (from number in source
                              orderby number
-                             select (double)number;
+                             select (double)number).ToList();
 
             int count = sortedList.Count();
             int itemIndex = count / 2;
@@ -377,11 +377,11 @@ namespace LinqStatistics
             if (count % 2 == 0)
             {
                 // Even number of items.
-                return (sortedList.ElementAt(itemIndex) + sortedList.ElementAt(itemIndex - 1)) / 2;
+                return (sortedList[itemIndex] + sortedList[itemIndex - 1]) / (double)2;
             }
 
             // Odd number of items.
-            return sortedList.ElementAt(itemIndex);
+            return sortedList[itemIndex];
         }
 
         /// <summary>

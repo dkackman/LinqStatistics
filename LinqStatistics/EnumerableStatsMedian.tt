@@ -51,9 +51,9 @@ namespace LinqStatistics
             if (!source.Any())
                 throw new InvalidOperationException("source sequence contains no elements");
 
-            var sortedList = from number in source
+            var sortedList = (from number in source
                              orderby number
-                             select (<#= type.Item2 #>)number;
+                             select (<#= type.Item2 #>)number).ToList();
 
             int count = sortedList.Count();
             int itemIndex = count / 2;
@@ -61,11 +61,11 @@ namespace LinqStatistics
             if (count % 2 == 0)
             {
                 // Even number of items.
-                return (sortedList.ElementAt(itemIndex) + sortedList.ElementAt(itemIndex - 1)) / 2;
+                return (sortedList[itemIndex] + sortedList[itemIndex - 1]) / (<#= type.Item2 #>)2;
             }
 
             // Odd number of items.
-            return sortedList.ElementAt(itemIndex);
+            return sortedList[itemIndex];
         }
 
         /// <summary>
