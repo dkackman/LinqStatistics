@@ -1,0 +1,116 @@
+﻿<#@ template debug="false" hostspecific="false" language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ output extension=".cs" #>
+using System;
+using System.Collections.Generic;
+using System.Linq;
+
+namespace LinqStatistics
+{
+    public static partial class EnumerableStats
+    {
+    <# List<Tuple<string, string>> types = new List<Tuple<string, string>>()
+    {
+        new Tuple<string, string>("int", "double"),
+        new Tuple<string, string>("long", "double"),
+        new Tuple<string, string>("decimal", "decimal"),
+        new Tuple<string, string>("float", "float"),
+        new Tuple<string, string>("double", "double")
+    };
+
+    foreach(var type in types)
+    {#>	
+        /// <summary>
+        /// Computes the Variance of a sequence of nullable <#= type.Item1 #> values.
+        /// </summary>
+        /// <param name="source">A sequence of nullable <#= type.Item1 #> values to calculate the Variance of.</param>
+        /// <returns>       
+        ///     The Variance of the sequence of values, or null if the source sequence is
+        ///     empty or contains only values that are null.
+        /// </returns>
+        public static <#= type.Item2 #>? Variance(this IEnumerable<<#= type.Item1 #>?> source)
+        {
+            IEnumerable<<#= type.Item1 #>> values = source.AllValues();
+            if (values.Any())
+                return values.Variance();
+            
+            return null;
+        }
+
+        /// <summary>
+        /// Computes the Variance of a sequence of <#= type.Item1 #> values.
+        /// </summary>
+        /// <param name="source">A sequence of <#= type.Item1 #> values to calculate the Variance of.</param>
+        /// <returns>       
+        ///     The Variance of the sequence of values.
+        /// </returns>
+        public static <#= type.Item2 #> Variance(this IEnumerable<<#= type.Item1 #>> source)
+        {
+            if (source == null)
+                throw new ArgumentNullException("source");
+
+            if (source.Count() < 2)
+                throw new InvalidOperationException("Source must have at least 2 elements");
+
+            int n = 0;
+            double mean = 0;
+            double M2 = 0;
+
+            foreach (double x in source)
+            {
+                n = n + 1;
+                double delta = x - mean;
+                mean += delta / n;
+                M2 += delta * (x - mean);
+            }
+
+            return (<#= type.Item2 #>)(M2 / (n - 1));
+        }
+
+        /// <summary>
+        /// Computes the Variance of a sequence of nullable <#= type.Item1 #> values that are obtained
+        ///     by invoking a transform function on each element of the input sequence.
+        /// </summary>
+        /// <typeparam name="TSource">The type of the elements of source.</typeparam>
+        /// <param name="source">The sequence of elements.</param>
+        /// <param name="selector">A transform function to apply to each element.</param>
+        /// <returns>       
+        ///     The Variance of the sequence of values.
+        /// </returns>
+        public static <#= type.Item2 #>? Variance<TSource>(this IEnumerable<TSource> source, Func<TSource, <#= type.Item1 #>?> selector)
+        {
+            if (source == null)
+                throw new ArgumentNullException("source");
+
+            if (selector == null)
+                throw new ArgumentNullException("selector");
+
+            return source.Select(selector).Variance();
+        }
+
+        /// <summary>
+        /// Computes the Variance of a sequence of <#= type.Item1 #> values that are obtained
+        ///     by invoking a transform function on each element of the input sequence.
+        /// </summary>
+        /// <typeparam name="TSource">The type of the elements of source.</typeparam>
+        /// <param name="source">The sequence of elements.</param>
+        /// <param name="selector">A transform function to apply to each element.</param>
+        /// <returns>       
+        ///     The Variance of the sequence of values.
+        /// </returns>
+        public static <#= type.Item2 #> Variance<TSource>(this IEnumerable<TSource> source, Func<TSource, <#= type.Item1 #>> selector)
+        {
+            if (source == null)
+                throw new ArgumentNullException("source");
+
+            if (selector == null)
+                throw new ArgumentNullException("selector");
+
+            return source.Select(selector).Variance();
+        }
+ <# } #>
+    }
+}

@@ -94,13 +94,21 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>EnumerableStatsStandardDeviationP.tt</DependentUpon>
     </Compile>
+    <Compile Include="EnumerableStatsVariance.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EnumerableStatsVariance.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EnumerableStatsVarianceP.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EnumerableStatsVarianceP.tt</DependentUpon>
+    </Compile>
     <Compile Include="ItemCount.cs" />
     <Compile Include="EnumerableStatsBinCount.cs" />
     <Compile Include="EnumerableStatsCountEach.cs" />
     <Compile Include="EnumerableStats.cs" />
     <Compile Include="EnumerableStatsMode.cs" />
-    <Compile Include="EnumerableStatsVariance.cs" />
-    <Compile Include="EnumerableStatsVarianceP.cs" />
     <Compile Include="EnumerableStatsHistogram.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -152,6 +160,14 @@
     <None Include="EnumerableStatsStandardDeviationP.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>EnumerableStatsStandardDeviationP.cs</LastGenOutput>
+    </None>
+    <None Include="EnumerableStatsVariance.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>EnumerableStatsVariance.cs</LastGenOutput>
+    </None>
+    <None Include="EnumerableStatsVarianceP.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>EnumerableStatsVarianceP.cs</LastGenOutput>
     </None>
   </ItemGroup>
   <ItemGroup>

@@ -1685,6 +1685,436 @@
                 The population StandardDeviation of the sequence of values.
             </returns>
         </member>
+        <member name="M:LinqStatistics.EnumerableStats.Variance(System.Collections.Generic.IEnumerable{System.Nullable{System.Int32}})">
+            <summary>
+            Computes the Variance of a sequence of nullable int values.
+            </summary>
+            <param name="source">A sequence of nullable int values to calculate the Variance of.</param>
+            <returns>       
+                The Variance of the sequence of values, or null if the source sequence is
+                empty or contains only values that are null.
+            </returns>
+        </member>
+        <member name="M:LinqStatistics.EnumerableStats.Variance(System.Collections.Generic.IEnumerable{System.Int32})">
+            <summary>
+            Computes the Variance of a sequence of int values.
+            </summary>
+            <param name="source">A sequence of int values to calculate the Variance of.</param>
+            <returns>       
+                The Variance of the sequence of values.
+            </returns>
+        </member>
+        <member name="M:LinqStatistics.EnumerableStats.Variance``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Nullable{System.Int32}})">
+            <summary>
+            Computes the Variance of a sequence of nullable int values that are obtained
+                by invoking a transform function on each element of the input sequence.
+            </summary>
+            <typeparam name="TSource">The type of the elements of source.</typeparam>
+            <param name="source">The sequence of elements.</param>
+            <param name="selector">A transform function to apply to each element.</param>
+            <returns>       
+                The Variance of the sequence of values.
+            </returns>
+        </member>
+        <member name="M:LinqStatistics.EnumerableStats.Variance``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Int32})">
+            <summary>
+            Computes the Variance of a sequence of int values that are obtained
+                by invoking a transform function on each element of the input sequence.
+            </summary>
+            <typeparam name="TSource">The type of the elements of source.</typeparam>
+            <param name="source">The sequence of elements.</param>
+            <param name="selector">A transform function to apply to each element.</param>
+            <returns>       
+                The Variance of the sequence of values.
+            </returns>
+        </member>
+        <member name="M:LinqStatistics.EnumerableStats.Variance(System.Collections.Generic.IEnumerable{System.Nullable{System.Int64}})">
+            <summary>
+            Computes the Variance of a sequence of nullable long values.
+            </summary>
+            <param name="source">A sequence of nullable long values to calculate the Variance of.</param>
+            <returns>       
+                The Variance of the sequence of values, or null if the source sequence is
+                empty or contains only values that are null.
+            </returns>
+        </member>
+        <member name="M:LinqStatistics.EnumerableStats.Variance(System.Collections.Generic.IEnumerable{System.Int64})">
+            <summary>
+            Computes the Variance of a sequence of long values.
+            </summary>
+            <param name="source">A sequence of long values to calculate the Variance of.</param>
+            <returns>       
+                The Variance of the sequence of values.
+            </returns>
+        </member>
+        <member name="M:LinqStatistics.EnumerableStats.Variance``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Nullable{System.Int64}})">
+            <summary>
+            Computes the Variance of a sequence of nullable long values that are obtained
+                by invoking a transform function on each element of the input sequence.
+            </summary>
+            <typeparam name="TSource">The type of the elements of source.</typeparam>
+            <param name="source">The sequence of elements.</param>
+            <param name="selector">A transform function to apply to each element.</param>
+            <returns>       
+                The Variance of the sequence of values.
+            </returns>
+        </member>
+        <member name="M:LinqStatistics.EnumerableStats.Variance``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Int64})">
+            <summary>
+            Computes the Variance of a sequence of long values that are obtained
+                by invoking a transform function on each element of the input sequence.
+            </summary>
+            <typeparam name="TSource">The type of the elements of source.</typeparam>
+            <param name="source">The sequence of elements.</param>
+            <param name="selector">A transform function to apply to each element.</param>
+            <returns>       
+                The Variance of the sequence of values.
+            </returns>
+        </member>
+        <member name="M:LinqStatistics.EnumerableStats.Variance(System.Collections.Generic.IEnumerable{System.Nullable{System.Decimal}})">
+            <summary>
+            Computes the Variance of a sequence of nullable decimal values.
+            </summary>
+            <param name="source">A sequence of nullable decimal values to calculate the Variance of.</param>
+            <returns>       
+                The Variance of the sequence of values, or null if the source sequence is
+                empty or contains only values that are null.
+            </returns>
+        </member>
+        <member name="M:LinqStatistics.EnumerableStats.Variance(System.Collections.Generic.IEnumerable{System.Decimal})">
+            <summary>
+            Computes the Variance of a sequence of decimal values.
+            </summary>
+            <param name="source">A sequence of decimal values to calculate the Variance of.</param>
+            <returns>       
+                The Variance of the sequence of values.
+            </returns>
+        </member>
+        <member name="M:LinqStatistics.EnumerableStats.Variance``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Nullable{System.Decimal}})">
+            <summary>
+            Computes the Variance of a sequence of nullable decimal values that are obtained
+                by invoking a transform function on each element of the input sequence.
+            </summary>
+            <typeparam name="TSource">The type of the elements of source.</typeparam>
+            <param name="source">The sequence of elements.</param>
+            <param name="selector">A transform function to apply to each element.</param>
+            <returns>       
+                The Variance of the sequence of values.
+            </returns>
+        </member>
+        <member name="M:LinqStatistics.EnumerableStats.Variance``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Decimal})">
+            <summary>
+            Computes the Variance of a sequence of decimal values that are obtained
+                by invoking a transform function on each element of the input sequence.
+            </summary>
+            <typeparam name="TSource">The type of the elements of source.</typeparam>
+            <param name="source">The sequence of elements.</param>
+            <param name="selector">A transform function to apply to each element.</param>
+            <returns>       
+                The Variance of the sequence of values.
+            </returns>
+        </member>
+        <member name="M:LinqStatistics.EnumerableStats.Variance(System.Collections.Generic.IEnumerable{System.Nullable{System.Single}})">
+            <summary>
+            Computes the Variance of a sequence of nullable float values.
+            </summary>
+            <param name="source">A sequence of nullable float values to calculate the Variance of.</param>
+            <returns>       
+                The Variance of the sequence of values, or null if the source sequence is
+                empty or contains only values that are null.
+            </returns>
+        </member>
+        <member name="M:LinqStatistics.EnumerableStats.Variance(System.Collections.Generic.IEnumerable{System.Single})">
+            <summary>
+            Computes the Variance of a sequence of float values.
+            </summary>
+            <param name="source">A sequence of float values to calculate the Variance of.</param>
+            <returns>       
+                The Variance of the sequence of values.
+            </returns>
+        </member>
+        <member name="M:LinqStatistics.EnumerableStats.Variance``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Nullable{System.Single}})">
+            <summary>
+            Computes the Variance of a sequence of nullable float values that are obtained
+                by invoking a transform function on each element of the input sequence.
+            </summary>
+            <typeparam name="TSource">The type of the elements of source.</typeparam>
+            <param name="source">The sequence of elements.</param>
+            <param name="selector">A transform function to apply to each element.</param>
+            <returns>       
+                The Variance of the sequence of values.
+            </returns>
+        </member>
+        <member name="M:LinqStatistics.EnumerableStats.Variance``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Single})">
+            <summary>
+            Computes the Variance of a sequence of float values that are obtained
+                by invoking a transform function on each element of the input sequence.
+            </summary>
+            <typeparam name="TSource">The type of the elements of source.</typeparam>
+            <param name="source">The sequence of elements.</param>
+            <param name="selector">A transform function to apply to each element.</param>
+            <returns>       
+                The Variance of the sequence of values.
+            </returns>
+        </member>
+        <member name="M:LinqStatistics.EnumerableStats.Variance(System.Collections.Generic.IEnumerable{System.Nullable{System.Double}})">
+            <summary>
+            Computes the Variance of a sequence of nullable double values.
+            </summary>
+            <param name="source">A sequence of nullable double values to calculate the Variance of.</param>
+            <returns>       
+                The Variance of the sequence of values, or null if the source sequence is
+                empty or contains only values that are null.
+            </returns>
+        </member>
+        <member name="M:LinqStatistics.EnumerableStats.Variance(System.Collections.Generic.IEnumerable{System.Double})">
+            <summary>
+            Computes the Variance of a sequence of double values.
+            </summary>
+            <param name="source">A sequence of double values to calculate the Variance of.</param>
+            <returns>       
+                The Variance of the sequence of values.
+            </returns>
+        </member>
+        <member name="M:LinqStatistics.EnumerableStats.Variance``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Nullable{System.Double}})">
+            <summary>
+            Computes the Variance of a sequence of nullable double values that are obtained
+                by invoking a transform function on each element of the input sequence.
+            </summary>
+            <typeparam name="TSource">The type of the elements of source.</typeparam>
+            <param name="source">The sequence of elements.</param>
+            <param name="selector">A transform function to apply to each element.</param>
+            <returns>       
+                The Variance of the sequence of values.
+            </returns>
+        </member>
+        <member name="M:LinqStatistics.EnumerableStats.Variance``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Double})">
+            <summary>
+            Computes the Variance of a sequence of double values that are obtained
+                by invoking a transform function on each element of the input sequence.
+            </summary>
+            <typeparam name="TSource">The type of the elements of source.</typeparam>
+            <param name="source">The sequence of elements.</param>
+            <param name="selector">A transform function to apply to each element.</param>
+            <returns>       
+                The Variance of the sequence of values.
+            </returns>
+        </member>
+        <member name="M:LinqStatistics.EnumerableStats.VarianceP(System.Collections.Generic.IEnumerable{System.Nullable{System.Int32}})">
+            <summary>
+            Computes the population Variance of a sequence of nullable int values.
+            </summary>
+            <param name="source">A sequence of nullable int values to calculate the population Variance of.</param>
+            <returns>       
+                The Variance of the sequence of values, or null if the source sequence is
+                empty or contains only values that are null.
+            </returns>
+        </member>
+        <member name="M:LinqStatistics.EnumerableStats.VarianceP(System.Collections.Generic.IEnumerable{System.Int32})">
+            <summary>
+            Computes the population Variance of a sequence of int values.
+            </summary>
+            <param name="source">A sequence of int values to calculate the population Variance of.</param>
+            <returns>       
+                The Variance of the sequence of values.
+            </returns>
+        </member>
+        <member name="M:LinqStatistics.EnumerableStats.VarianceP``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Nullable{System.Int32}})">
+            <summary>
+            Computes the population Variance of a sequence of nullable int values that are obtained
+                by invoking a transform function on each element of the input sequence.
+            </summary>
+            <typeparam name="TSource">The type of the elements of source.</typeparam>
+            <param name="source">The sequence of elements.</param>
+            <param name="selector">A transform function to apply to each element.</param>
+            <returns>       
+                The Variance of the sequence of values.
+            </returns>
+        </member>
+        <member name="M:LinqStatistics.EnumerableStats.VarianceP``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Int32})">
+            <summary>
+            Computes the population Variance of a sequence of int values that are obtained
+                by invoking a transform function on each element of the input sequence.
+            </summary>
+            <typeparam name="TSource">The type of the elements of source.</typeparam>
+            <param name="source">The sequence of elements.</param>
+            <param name="selector">A transform function to apply to each element.</param>
+            <returns>       
+                The Variance of the sequence of values.
+            </returns>
+        </member>
+        <member name="M:LinqStatistics.EnumerableStats.VarianceP(System.Collections.Generic.IEnumerable{System.Nullable{System.Int64}})">
+            <summary>
+            Computes the population Variance of a sequence of nullable long values.
+            </summary>
+            <param name="source">A sequence of nullable long values to calculate the population Variance of.</param>
+            <returns>       
+                The Variance of the sequence of values, or null if the source sequence is
+                empty or contains only values that are null.
+            </returns>
+        </member>
+        <member name="M:LinqStatistics.EnumerableStats.VarianceP(System.Collections.Generic.IEnumerable{System.Int64})">
+            <summary>
+            Computes the population Variance of a sequence of long values.
+            </summary>
+            <param name="source">A sequence of long values to calculate the population Variance of.</param>
+            <returns>       
+                The Variance of the sequence of values.
+            </returns>
+        </member>
+        <member name="M:LinqStatistics.EnumerableStats.VarianceP``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Nullable{System.Int64}})">
+            <summary>
+            Computes the population Variance of a sequence of nullable long values that are obtained
+                by invoking a transform function on each element of the input sequence.
+            </summary>
+            <typeparam name="TSource">The type of the elements of source.</typeparam>
+            <param name="source">The sequence of elements.</param>
+            <param name="selector">A transform function to apply to each element.</param>
+            <returns>       
+                The Variance of the sequence of values.
+            </returns>
+        </member>
+        <member name="M:LinqStatistics.EnumerableStats.VarianceP``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Int64})">
+            <summary>
+            Computes the population Variance of a sequence of long values that are obtained
+                by invoking a transform function on each element of the input sequence.
+            </summary>
+            <typeparam name="TSource">The type of the elements of source.</typeparam>
+            <param name="source">The sequence of elements.</param>
+            <param name="selector">A transform function to apply to each element.</param>
+            <returns>       
+                The Variance of the sequence of values.
+            </returns>
+        </member>
+        <member name="M:LinqStatistics.EnumerableStats.VarianceP(System.Collections.Generic.IEnumerable{System.Nullable{System.Decimal}})">
+            <summary>
+            Computes the population Variance of a sequence of nullable decimal values.
+            </summary>
+            <param name="source">A sequence of nullable decimal values to calculate the population Variance of.</param>
+            <returns>       
+                The Variance of the sequence of values, or null if the source sequence is
+                empty or contains only values that are null.
+            </returns>
+        </member>
+        <member name="M:LinqStatistics.EnumerableStats.VarianceP(System.Collections.Generic.IEnumerable{System.Decimal})">
+            <summary>
+            Computes the population Variance of a sequence of decimal values.
+            </summary>
+            <param name="source">A sequence of decimal values to calculate the population Variance of.</param>
+            <returns>       
+                The Variance of the sequence of values.
+            </returns>
+        </member>
+        <member name="M:LinqStatistics.EnumerableStats.VarianceP``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Nullable{System.Decimal}})">
+            <summary>
+            Computes the population Variance of a sequence of nullable decimal values that are obtained
+                by invoking a transform function on each element of the input sequence.
+            </summary>
+            <typeparam name="TSource">The type of the elements of source.</typeparam>
+            <param name="source">The sequence of elements.</param>
+            <param name="selector">A transform function to apply to each element.</param>
+            <returns>       
+                The Variance of the sequence of values.
+            </returns>
+        </member>
+        <member name="M:LinqStatistics.EnumerableStats.VarianceP``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Decimal})">
+            <summary>
+            Computes the population Variance of a sequence of decimal values that are obtained
+                by invoking a transform function on each element of the input sequence.
+            </summary>
+            <typeparam name="TSource">The type of the elements of source.</typeparam>
+            <param name="source">The sequence of elements.</param>
+            <param name="selector">A transform function to apply to each element.</param>
+            <returns>       
+                The Variance of the sequence of values.
+            </returns>
+        </member>
+        <member name="M:LinqStatistics.EnumerableStats.VarianceP(System.Collections.Generic.IEnumerable{System.Nullable{System.Single}})">
+            <summary>
+            Computes the population Variance of a sequence of nullable float values.
+            </summary>
+            <param name="source">A sequence of nullable float values to calculate the population Variance of.</param>
+            <returns>       
+                The Variance of the sequence of values, or null if the source sequence is
+                empty or contains only values that are null.
+            </returns>
+        </member>
+        <member name="M:LinqStatistics.EnumerableStats.VarianceP(System.Collections.Generic.IEnumerable{System.Single})">
+            <summary>
+            Computes the population Variance of a sequence of float values.
+            </summary>
+            <param name="source">A sequence of float values to calculate the population Variance of.</param>
+            <returns>       
+                The Variance of the sequence of values.
+            </returns>
+        </member>
+        <member name="M:LinqStatistics.EnumerableStats.VarianceP``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Nullable{System.Single}})">
+            <summary>
+            Computes the population Variance of a sequence of nullable float values that are obtained
+                by invoking a transform function on each element of the input sequence.
+            </summary>
+            <typeparam name="TSource">The type of the elements of source.</typeparam>
+            <param name="source">The sequence of elements.</param>
+            <param name="selector">A transform function to apply to each element.</param>
+            <returns>       
+                The Variance of the sequence of values.
+            </returns>
+        </member>
+        <member name="M:LinqStatistics.EnumerableStats.VarianceP``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Single})">
+            <summary>
+            Computes the population Variance of a sequence of float values that are obtained
+                by invoking a transform function on each element of the input sequence.
+            </summary>
+            <typeparam name="TSource">The type of the elements of source.</typeparam>
+            <param name="source">The sequence of elements.</param>
+            <param name="selector">A transform function to apply to each element.</param>
+            <returns>       
+                The Variance of the sequence of values.
+            </returns>
+        </member>
+        <member name="M:LinqStatistics.EnumerableStats.VarianceP(System.Collections.Generic.IEnumerable{System.Nullable{System.Double}})">
+            <summary>
+            Computes the population Variance of a sequence of nullable double values.
+            </summary>
+            <param name="source">A sequence of nullable double values to calculate the population Variance of.</param>
+            <returns>       
+                The Variance of the sequence of values, or null if the source sequence is
+                empty or contains only values that are null.
+            </returns>
+        </member>
+        <member name="M:LinqStatistics.EnumerableStats.VarianceP(System.Collections.Generic.IEnumerable{System.Double})">
+            <summary>
+            Computes the population Variance of a sequence of double values.
+            </summary>
+            <param name="source">A sequence of double values to calculate the population Variance of.</param>
+            <returns>       
+                The Variance of the sequence of values.
+            </returns>
+        </member>
+        <member name="M:LinqStatistics.EnumerableStats.VarianceP``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Nullable{System.Double}})">
+            <summary>
+            Computes the population Variance of a sequence of nullable double values that are obtained
+                by invoking a transform function on each element of the input sequence.
+            </summary>
+            <typeparam name="TSource">The type of the elements of source.</typeparam>
+            <param name="source">The sequence of elements.</param>
+            <param name="selector">A transform function to apply to each element.</param>
+            <returns>       
+                The Variance of the sequence of values.
+            </returns>
+        </member>
+        <member name="M:LinqStatistics.EnumerableStats.VarianceP``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Double})">
+            <summary>
+            Computes the population Variance of a sequence of double values that are obtained
+                by invoking a transform function on each element of the input sequence.
+            </summary>
+            <typeparam name="TSource">The type of the elements of source.</typeparam>
+            <param name="source">The sequence of elements.</param>
+            <param name="selector">A transform function to apply to each element.</param>
+            <returns>       
+                The Variance of the sequence of values.
+            </returns>
+        </member>
         <member name="M:LinqStatistics.EnumerableStats.BinCountSturges``1(System.Collections.Generic.IEnumerable{``0})">
             <summary>
             http://en.wikipedia.org/wiki/Histogram#Number_of_bins_and_width
