@@ -86,11 +86,7 @@ namespace LinqStatistics
             if (!source.Any())
                 throw new InvalidOperationException("source sequence contains no elements");
 
-            var sequence = source.Select(t => selector(t));
-            var bins = BinFactory.CreateBins((double)sequence.Min(), (double)sequence.Max(), binCount, mode);
-            sequence.AssignBins(bins);
-
-            return bins;
+            return source.Select(t => selector(t)).Histogram(binCount, mode);
         }
 
         /// <summary>
@@ -111,11 +107,7 @@ namespace LinqStatistics
             if (!source.Any())
                 throw new InvalidOperationException("source sequence contains no elements");
 
-            var sequence = source.Select(t => selector(t)).AllValues();
-            var bins = BinFactory.CreateBins((double)sequence.Min(), (double)sequence.Max(), binCount, mode);
-            sequence.AssignBins(bins);
-
-            return bins;
+            return source.Select(t => selector(t)).Histogram(binCount, mode);
         }
 
         private static void AssignBins(this IEnumerable<int> source, IList<Bin> bins)
@@ -183,11 +175,7 @@ namespace LinqStatistics
             if (!source.Any())
                 throw new InvalidOperationException("source sequence contains no elements");
 
-            var sequence = source.Select(t => selector(t));
-            var bins = BinFactory.CreateBins((double)sequence.Min(), (double)sequence.Max(), binCount, mode);
-            sequence.AssignBins(bins);
-
-            return bins;
+            return source.Select(t => selector(t)).Histogram(binCount, mode);
         }
 
         /// <summary>
@@ -208,11 +196,7 @@ namespace LinqStatistics
             if (!source.Any())
                 throw new InvalidOperationException("source sequence contains no elements");
 
-            var sequence = source.Select(t => selector(t)).AllValues();
-            var bins = BinFactory.CreateBins((double)sequence.Min(), (double)sequence.Max(), binCount, mode);
-            sequence.AssignBins(bins);
-
-            return bins;
+            return source.Select(t => selector(t)).Histogram(binCount, mode);
         }
 
         private static void AssignBins(this IEnumerable<long> source, IList<Bin> bins)
@@ -280,11 +264,7 @@ namespace LinqStatistics
             if (!source.Any())
                 throw new InvalidOperationException("source sequence contains no elements");
 
-            var sequence = source.Select(t => selector(t));
-            var bins = BinFactory.CreateBins((double)sequence.Min(), (double)sequence.Max(), binCount, mode);
-            sequence.AssignBins(bins);
-
-            return bins;
+            return source.Select(t => selector(t)).Histogram(binCount, mode);
         }
 
         /// <summary>
@@ -305,11 +285,7 @@ namespace LinqStatistics
             if (!source.Any())
                 throw new InvalidOperationException("source sequence contains no elements");
 
-            var sequence = source.Select(t => selector(t)).AllValues();
-            var bins = BinFactory.CreateBins((double)sequence.Min(), (double)sequence.Max(), binCount, mode);
-            sequence.AssignBins(bins);
-
-            return bins;
+            return source.Select(t => selector(t)).Histogram(binCount, mode);
         }
 
         private static void AssignBins(this IEnumerable<float> source, IList<Bin> bins)
@@ -377,11 +353,7 @@ namespace LinqStatistics
             if (!source.Any())
                 throw new InvalidOperationException("source sequence contains no elements");
 
-            var sequence = source.Select(t => selector(t));
-            var bins = BinFactory.CreateBins((double)sequence.Min(), (double)sequence.Max(), binCount, mode);
-            sequence.AssignBins(bins);
-
-            return bins;
+            return source.Select(t => selector(t)).Histogram(binCount, mode);
         }
 
         /// <summary>
@@ -402,11 +374,7 @@ namespace LinqStatistics
             if (!source.Any())
                 throw new InvalidOperationException("source sequence contains no elements");
 
-            var sequence = source.Select(t => selector(t)).AllValues();
-            var bins = BinFactory.CreateBins((double)sequence.Min(), (double)sequence.Max(), binCount, mode);
-            sequence.AssignBins(bins);
-
-            return bins;
+            return source.Select(t => selector(t)).Histogram(binCount, mode);
         }
 
         private static void AssignBins(this IEnumerable<double> source, IList<Bin> bins)
@@ -474,11 +442,7 @@ namespace LinqStatistics
             if (!source.Any())
                 throw new InvalidOperationException("source sequence contains no elements");
 
-            var sequence = source.Select(t => selector(t));
-            var bins = BinFactory.CreateBins((double)sequence.Min(), (double)sequence.Max(), binCount, mode);
-            sequence.AssignBins(bins);
-
-            return bins;
+            return source.Select(t => selector(t)).Histogram(binCount, mode);
         }
 
         /// <summary>
@@ -499,11 +463,7 @@ namespace LinqStatistics
             if (!source.Any())
                 throw new InvalidOperationException("source sequence contains no elements");
 
-            var sequence = source.Select(t => selector(t)).AllValues();
-            var bins = BinFactory.CreateBins((double)sequence.Min(), (double)sequence.Max(), binCount, mode);
-            sequence.AssignBins(bins);
-
-            return bins;
+            return source.Select(t => selector(t)).Histogram(binCount, mode);
         }
 
         private static void AssignBins(this IEnumerable<decimal> source, IList<Bin> bins)
