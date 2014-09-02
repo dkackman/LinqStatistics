@@ -83,6 +83,9 @@ namespace LinqStatistics
             if (source == null)
                 throw new ArgumentNullException("source");
 
+            if (selector == null)
+                throw new ArgumentNullException("selector");
+
             if (!source.Any())
                 throw new InvalidOperationException("source sequence contains no elements");
 
@@ -103,6 +106,9 @@ namespace LinqStatistics
         {
             if (source == null)
                 throw new ArgumentNullException("source");
+
+            if (selector == null)
+                throw new ArgumentNullException("selector");
 
             if (!source.Any())
                 throw new InvalidOperationException("source sequence contains no elements");
@@ -172,6 +178,9 @@ namespace LinqStatistics
             if (source == null)
                 throw new ArgumentNullException("source");
 
+            if (selector == null)
+                throw new ArgumentNullException("selector");
+
             if (!source.Any())
                 throw new InvalidOperationException("source sequence contains no elements");
 
@@ -192,6 +201,9 @@ namespace LinqStatistics
         {
             if (source == null)
                 throw new ArgumentNullException("source");
+
+            if (selector == null)
+                throw new ArgumentNullException("selector");
 
             if (!source.Any())
                 throw new InvalidOperationException("source sequence contains no elements");
@@ -261,6 +273,9 @@ namespace LinqStatistics
             if (source == null)
                 throw new ArgumentNullException("source");
 
+            if (selector == null)
+                throw new ArgumentNullException("selector");
+
             if (!source.Any())
                 throw new InvalidOperationException("source sequence contains no elements");
 
@@ -281,6 +296,9 @@ namespace LinqStatistics
         {
             if (source == null)
                 throw new ArgumentNullException("source");
+
+            if (selector == null)
+                throw new ArgumentNullException("selector");
 
             if (!source.Any())
                 throw new InvalidOperationException("source sequence contains no elements");
@@ -350,6 +368,9 @@ namespace LinqStatistics
             if (source == null)
                 throw new ArgumentNullException("source");
 
+            if (selector == null)
+                throw new ArgumentNullException("selector");
+
             if (!source.Any())
                 throw new InvalidOperationException("source sequence contains no elements");
 
@@ -370,6 +391,9 @@ namespace LinqStatistics
         {
             if (source == null)
                 throw new ArgumentNullException("source");
+
+            if (selector == null)
+                throw new ArgumentNullException("selector");
 
             if (!source.Any())
                 throw new InvalidOperationException("source sequence contains no elements");
@@ -439,6 +463,9 @@ namespace LinqStatistics
             if (source == null)
                 throw new ArgumentNullException("source");
 
+            if (selector == null)
+                throw new ArgumentNullException("selector");
+
             if (!source.Any())
                 throw new InvalidOperationException("source sequence contains no elements");
 
@@ -459,6 +486,9 @@ namespace LinqStatistics
         {
             if (source == null)
                 throw new ArgumentNullException("source");
+
+            if (selector == null)
+                throw new ArgumentNullException("selector");
 
             if (!source.Any())
                 throw new InvalidOperationException("source sequence contains no elements");
