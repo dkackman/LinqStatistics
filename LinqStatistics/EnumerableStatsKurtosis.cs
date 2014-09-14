@@ -34,26 +34,33 @@ namespace LinqStatistics
             if (!source.Any())
                 throw new InvalidOperationException("source sequence contains no elements");
 
-            int n = 0;
-            double mean = 0;
-            double M2 = 0;
-            double M3 = 0;
-            double M4 = 0;
+            double mean = (double)source.Average();
 
+            int n = 0;
+            double meanv = 0;
+            double M2 = 0;
+            double M4 = 0;
+             
             foreach (var x in source)
             {
-                int n1 = n;
                 n++;
-                double delta = (double)x - mean;
-                double delta_n = delta / n;
-                double delta_n2 = delta_n * delta_n;
-                double term1 = delta * delta_n * n1;
-                mean = mean + delta_n;
-                M4 += term1 * delta_n2 * (n * n - 3 * n + 3) + 6 * delta_n2 * M2 - 4 * delta_n * M3;
-                M3 += term1 * delta_n * (n - 2) - 3 * delta_n * M2;
-                M2 += term1;
+
+                double delta = (double)x - meanv;
+                meanv += delta / n;
+                M2 += delta * ((double)x - meanv);
+                M4 += Math.Pow((double)x - mean, 4);
             }
-            return (double)((n * M4) / (M2 * M2) - 3);
+
+            if (n < 4)
+                throw new InvalidOperationException("Source must have at least 4 elements");
+
+            var s = Math.Sqrt((double)(M2 / (n - 1)));
+
+            double term1 = (n * (n + 1.0)) / ((n - 1.0) * (n - 2.0) * (n - 3.0));
+            double term2 = M4 / Math.Pow(s, 4);
+            double term3 = (3 * Math.Pow(n - 1, 2)) / ((n - 2.0) * (n - 3.0));
+
+            return (double)(term1 * term2 - term3);
         }
 
         /// <summary>
@@ -121,26 +128,33 @@ namespace LinqStatistics
             if (!source.Any())
                 throw new InvalidOperationException("source sequence contains no elements");
 
-            int n = 0;
-            double mean = 0;
-            double M2 = 0;
-            double M3 = 0;
-            double M4 = 0;
+            double mean = (double)source.Average();
 
+            int n = 0;
+            double meanv = 0;
+            double M2 = 0;
+            double M4 = 0;
+             
             foreach (var x in source)
             {
-                int n1 = n;
                 n++;
-                double delta = (double)x - mean;
-                double delta_n = delta / n;
-                double delta_n2 = delta_n * delta_n;
-                double term1 = delta * delta_n * n1;
-                mean = mean + delta_n;
-                M4 += term1 * delta_n2 * (n * n - 3 * n + 3) + 6 * delta_n2 * M2 - 4 * delta_n * M3;
-                M3 += term1 * delta_n * (n - 2) - 3 * delta_n * M2;
-                M2 += term1;
+
+                double delta = (double)x - meanv;
+                meanv += delta / n;
+                M2 += delta * ((double)x - meanv);
+                M4 += Math.Pow((double)x - mean, 4);
             }
-            return (double)((n * M4) / (M2 * M2) - 3);
+
+            if (n < 4)
+                throw new InvalidOperationException("Source must have at least 4 elements");
+
+            var s = Math.Sqrt((double)(M2 / (n - 1)));
+
+            double term1 = (n * (n + 1.0)) / ((n - 1.0) * (n - 2.0) * (n - 3.0));
+            double term2 = M4 / Math.Pow(s, 4);
+            double term3 = (3 * Math.Pow(n - 1, 2)) / ((n - 2.0) * (n - 3.0));
+
+            return (double)(term1 * term2 - term3);
         }
 
         /// <summary>
@@ -208,26 +222,33 @@ namespace LinqStatistics
             if (!source.Any())
                 throw new InvalidOperationException("source sequence contains no elements");
 
-            int n = 0;
-            double mean = 0;
-            double M2 = 0;
-            double M3 = 0;
-            double M4 = 0;
+            double mean = (double)source.Average();
 
+            int n = 0;
+            double meanv = 0;
+            double M2 = 0;
+            double M4 = 0;
+             
             foreach (var x in source)
             {
-                int n1 = n;
                 n++;
-                double delta = (double)x - mean;
-                double delta_n = delta / n;
-                double delta_n2 = delta_n * delta_n;
-                double term1 = delta * delta_n * n1;
-                mean = mean + delta_n;
-                M4 += term1 * delta_n2 * (n * n - 3 * n + 3) + 6 * delta_n2 * M2 - 4 * delta_n * M3;
-                M3 += term1 * delta_n * (n - 2) - 3 * delta_n * M2;
-                M2 += term1;
+
+                double delta = (double)x - meanv;
+                meanv += delta / n;
+                M2 += delta * ((double)x - meanv);
+                M4 += Math.Pow((double)x - mean, 4);
             }
-            return (decimal)((n * M4) / (M2 * M2) - 3);
+
+            if (n < 4)
+                throw new InvalidOperationException("Source must have at least 4 elements");
+
+            var s = Math.Sqrt((double)(M2 / (n - 1)));
+
+            double term1 = (n * (n + 1.0)) / ((n - 1.0) * (n - 2.0) * (n - 3.0));
+            double term2 = M4 / Math.Pow(s, 4);
+            double term3 = (3 * Math.Pow(n - 1, 2)) / ((n - 2.0) * (n - 3.0));
+
+            return (decimal)(term1 * term2 - term3);
         }
 
         /// <summary>
@@ -295,26 +316,33 @@ namespace LinqStatistics
             if (!source.Any())
                 throw new InvalidOperationException("source sequence contains no elements");
 
-            int n = 0;
-            double mean = 0;
-            double M2 = 0;
-            double M3 = 0;
-            double M4 = 0;
+            double mean = (double)source.Average();
 
+            int n = 0;
+            double meanv = 0;
+            double M2 = 0;
+            double M4 = 0;
+             
             foreach (var x in source)
             {
-                int n1 = n;
                 n++;
-                double delta = (double)x - mean;
-                double delta_n = delta / n;
-                double delta_n2 = delta_n * delta_n;
-                double term1 = delta * delta_n * n1;
-                mean = mean + delta_n;
-                M4 += term1 * delta_n2 * (n * n - 3 * n + 3) + 6 * delta_n2 * M2 - 4 * delta_n * M3;
-                M3 += term1 * delta_n * (n - 2) - 3 * delta_n * M2;
-                M2 += term1;
+
+                double delta = (double)x - meanv;
+                meanv += delta / n;
+                M2 += delta * ((double)x - meanv);
+                M4 += Math.Pow((double)x - mean, 4);
             }
-            return (float)((n * M4) / (M2 * M2) - 3);
+
+            if (n < 4)
+                throw new InvalidOperationException("Source must have at least 4 elements");
+
+            var s = Math.Sqrt((double)(M2 / (n - 1)));
+
+            double term1 = (n * (n + 1.0)) / ((n - 1.0) * (n - 2.0) * (n - 3.0));
+            double term2 = M4 / Math.Pow(s, 4);
+            double term3 = (3 * Math.Pow(n - 1, 2)) / ((n - 2.0) * (n - 3.0));
+
+            return (float)(term1 * term2 - term3);
         }
 
         /// <summary>
@@ -382,26 +410,33 @@ namespace LinqStatistics
             if (!source.Any())
                 throw new InvalidOperationException("source sequence contains no elements");
 
-            int n = 0;
-            double mean = 0;
-            double M2 = 0;
-            double M3 = 0;
-            double M4 = 0;
+            double mean = (double)source.Average();
 
+            int n = 0;
+            double meanv = 0;
+            double M2 = 0;
+            double M4 = 0;
+             
             foreach (var x in source)
             {
-                int n1 = n;
                 n++;
-                double delta = (double)x - mean;
-                double delta_n = delta / n;
-                double delta_n2 = delta_n * delta_n;
-                double term1 = delta * delta_n * n1;
-                mean = mean + delta_n;
-                M4 += term1 * delta_n2 * (n * n - 3 * n + 3) + 6 * delta_n2 * M2 - 4 * delta_n * M3;
-                M3 += term1 * delta_n * (n - 2) - 3 * delta_n * M2;
-                M2 += term1;
+
+                double delta = (double)x - meanv;
+                meanv += delta / n;
+                M2 += delta * ((double)x - meanv);
+                M4 += Math.Pow((double)x - mean, 4);
             }
-            return (double)((n * M4) / (M2 * M2) - 3);
+
+            if (n < 4)
+                throw new InvalidOperationException("Source must have at least 4 elements");
+
+            var s = Math.Sqrt((double)(M2 / (n - 1)));
+
+            double term1 = (n * (n + 1.0)) / ((n - 1.0) * (n - 2.0) * (n - 3.0));
+            double term2 = M4 / Math.Pow(s, 4);
+            double term3 = (3 * Math.Pow(n - 1, 2)) / ((n - 2.0) * (n - 3.0));
+
+            return (double)(term1 * term2 - term3);
         }
 
         /// <summary>
@@ -443,3 +478,22 @@ namespace LinqStatistics
         }
      }
 }
+// a single pass implementation 
+            //double M1 = 0, M2 = 0, M3 = 0, M4 = 0;
+
+            //int n = 0;
+            //foreach (var x in source)
+            //{
+            //    int n1 = n;
+            //    n++;
+            //    double delta = x - M1;
+            //    double delta_n = delta / n;
+            //    double delta_n2 = delta_n * delta_n;
+            //    double term1 = delta * delta_n * n1;
+            //    M1 += delta_n;
+            //    M4 += term1 * delta_n2 * (n * n - 3 * n + 3) + 6 * delta_n2 * M2 - 4 * delta_n * M3;
+            //    M3 += term1 * delta_n * (n - 2) - 3 * delta_n * M2;
+            //    M2 += term1;
+            //}
+
+            //return n * M4 / (M2 * M2) - 3.0;

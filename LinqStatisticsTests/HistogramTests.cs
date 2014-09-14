@@ -125,7 +125,7 @@ namespace LinqStatisticsTests
 
         private static IEnumerable<int> LoadData(string name)
         {
-            using (var stream = Assembly.GetExecutingAssembly().GetManifestResourceStream("LinqStatisticsTests." + name))
+            using (var stream = Assembly.GetExecutingAssembly().GetManifestResourceStream("LinqStatistics.UnitTests." + name))
             using (StreamReader reader = new StreamReader(stream))
             {
                 var list = new List<int>();

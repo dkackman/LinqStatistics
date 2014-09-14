@@ -49,6 +49,11 @@
   <ItemGroup>
     <Compile Include="Bin.cs" />
     <Compile Include="BinFactory.cs" />
+    <Compile Include="EnumerableStatsSkewness.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EnumerableStatsSkewness.tt</DependentUpon>
+    </Compile>
     <Compile Include="EnumerableStatsCovariance.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -119,6 +124,10 @@
     <Compile Include="Range.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="EnumerableStatsSkewness.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>EnumerableStatsSkewness.cs</LastGenOutput>
+    </None>
     <None Include="EnumerableStatsCovariance.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>EnumerableStatsCovariance.cs</LastGenOutput>

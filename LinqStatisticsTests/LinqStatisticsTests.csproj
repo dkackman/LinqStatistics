@@ -8,7 +8,7 @@
     <ProjectGuid>{394BAB08-076A-4290-92C4-63531E2BF87E}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>LinqStatisticsTests</RootNamespace>
+    <RootNamespace>LinqStatistics.UnitTests</RootNamespace>
     <AssemblyName>LinqStatisticsTests</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -72,6 +72,7 @@
     <Compile Include="KurtosisTests.cs" />
     <Compile Include="LeastSquaresTests.cs" />
     <Compile Include="HistogramTests.cs" />
+    <Compile Include="SkewnessTests.cs" />
     <Compile Include="VarianceTests.cs" />
   </ItemGroup>
   <ItemGroup>
