@@ -49,8 +49,8 @@ namespace LinqStatistics
             if (listSource.Count != listOther.Count)
                 throw new InvalidOperationException("Collections are not of the same length");
 
-            var avgSource = source.Average();
-            var avgOther = other.Average();
+            var avgSource = listSource.Average();
+            var avgOther = listOther.Average();
             
             double covariance = 0;
             int n = listSource.Count;
@@ -104,8 +104,8 @@ namespace LinqStatistics
             if (listSource.Count != listOther.Count)
                 throw new InvalidOperationException("Collections are not of the same length");
 
-            var avgSource = source.Average();
-            var avgOther = other.Average();
+            var avgSource = listSource.Average();
+            var avgOther = listOther.Average();
             
             double covariance = 0;
             int n = listSource.Count;
@@ -159,8 +159,8 @@ namespace LinqStatistics
             if (listSource.Count != listOther.Count)
                 throw new InvalidOperationException("Collections are not of the same length");
 
-            var avgSource = source.Average();
-            var avgOther = other.Average();
+            var avgSource = listSource.Average();
+            var avgOther = listOther.Average();
             
             double covariance = 0;
             int n = listSource.Count;
@@ -214,8 +214,8 @@ namespace LinqStatistics
             if (listSource.Count != listOther.Count)
                 throw new InvalidOperationException("Collections are not of the same length");
 
-            var avgSource = source.Average();
-            var avgOther = other.Average();
+            var avgSource = listSource.Average();
+            var avgOther = listOther.Average();
             
             double covariance = 0;
             int n = listSource.Count;
@@ -269,8 +269,8 @@ namespace LinqStatistics
             if (listSource.Count != listOther.Count)
                 throw new InvalidOperationException("Collections are not of the same length");
 
-            var avgSource = source.Average();
-            var avgOther = other.Average();
+            var avgSource = listSource.Average();
+            var avgOther = listOther.Average();
             
             double covariance = 0;
             int n = listSource.Count;
