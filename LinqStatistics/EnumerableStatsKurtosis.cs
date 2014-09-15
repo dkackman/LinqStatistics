@@ -8,7 +8,7 @@ namespace LinqStatistics
     {
     	
         /// <summary>
-        /// Computes the Kurtosis of a sequence of nullable int values
+        /// Computes the sample Kurtosis of a sequence of nullable int values
         /// </summary>
         /// <param name="source">A sequence of nullable int values to calculate the Kurtosis of.</param>
         /// <returns>The Kurtosis of the sequence of values.</returns>
@@ -22,7 +22,7 @@ namespace LinqStatistics
         }
 
         /// <summary>
-        /// Computes the Kurtosis of a sequence of int values
+        /// Computes the sample Kurtosis of a sequence of int values
         /// </summary>
         /// <param name="source">A sequence of int values to calculate the Kurtosis of.</param>
         /// <returns>The Kurtosis of the sequence of values.</returns>
@@ -54,7 +54,7 @@ namespace LinqStatistics
             if (n < 4)
                 throw new InvalidOperationException("Source must have at least 4 elements");
 
-            var s = Math.Sqrt((double)(M2 / (n - 1)));
+            var s = Math.Sqrt((double)(M2 / (n - 1))); // stdev
 
             double term1 = (n * (n + 1.0)) / ((n - 1.0) * (n - 2.0) * (n - 3.0));
             double term2 = M4 / Math.Pow(s, 4);
@@ -64,11 +64,11 @@ namespace LinqStatistics
         }
 
         /// <summary>
-        ///     Computes the Kurtosis of a sequence of int values that are obtained
+        ///     Computes the sample Kurtosis of a sequence of int values that are obtained
         ///     by invoking a transform function on each element of the input sequence.
         /// </summary>
         /// <typeparam name="TSource">The type of the elements of source.</typeparam>
-        /// <param name="source">A sequence of values that are used to calculate an Kurtosis</param>
+        /// <param name="source">A sequence of values that are used to calculate a Kurtosis</param>
         /// <param name="selector">A transform function to apply to each element.</param>
         /// <returns>The Kurtosis of the sequence of values.</returns>
         public static double Kurtosis<TSource>(this IEnumerable<TSource> source, Func<TSource, int> selector)
@@ -83,11 +83,11 @@ namespace LinqStatistics
         }
 
         /// <summary>
-        ///     Computes the Kurtosis of a sequence of nullable int values that are obtained
+        ///     Computes the sample Kurtosis of a sequence of nullable int values that are obtained
         ///     by invoking a transform function on each element of the input sequence.
         /// </summary>
         /// <typeparam name="TSource">The type of the elements of source.</typeparam>
-        /// <param name="source">A sequence of values that are used to calculate an Kurtosis</param>
+        /// <param name="source">A sequence of values that are used to calculate a Kurtosis</param>
         /// <param name="selector">A transform function to apply to each element.</param>
         /// <returns>The Kurtosis of the sequence of values.</returns>
         public static double? Kurtosis<TSource>(this IEnumerable<TSource> source, Func<TSource, int?> selector)
@@ -102,7 +102,7 @@ namespace LinqStatistics
         }
  	
         /// <summary>
-        /// Computes the Kurtosis of a sequence of nullable long values
+        /// Computes the sample Kurtosis of a sequence of nullable long values
         /// </summary>
         /// <param name="source">A sequence of nullable long values to calculate the Kurtosis of.</param>
         /// <returns>The Kurtosis of the sequence of values.</returns>
@@ -116,7 +116,7 @@ namespace LinqStatistics
         }
 
         /// <summary>
-        /// Computes the Kurtosis of a sequence of long values
+        /// Computes the sample Kurtosis of a sequence of long values
         /// </summary>
         /// <param name="source">A sequence of long values to calculate the Kurtosis of.</param>
         /// <returns>The Kurtosis of the sequence of values.</returns>
@@ -148,7 +148,7 @@ namespace LinqStatistics
             if (n < 4)
                 throw new InvalidOperationException("Source must have at least 4 elements");
 
-            var s = Math.Sqrt((double)(M2 / (n - 1)));
+            var s = Math.Sqrt((double)(M2 / (n - 1))); // stdev
 
             double term1 = (n * (n + 1.0)) / ((n - 1.0) * (n - 2.0) * (n - 3.0));
             double term2 = M4 / Math.Pow(s, 4);
@@ -158,11 +158,11 @@ namespace LinqStatistics
         }
 
         /// <summary>
-        ///     Computes the Kurtosis of a sequence of long values that are obtained
+        ///     Computes the sample Kurtosis of a sequence of long values that are obtained
         ///     by invoking a transform function on each element of the input sequence.
         /// </summary>
         /// <typeparam name="TSource">The type of the elements of source.</typeparam>
-        /// <param name="source">A sequence of values that are used to calculate an Kurtosis</param>
+        /// <param name="source">A sequence of values that are used to calculate a Kurtosis</param>
         /// <param name="selector">A transform function to apply to each element.</param>
         /// <returns>The Kurtosis of the sequence of values.</returns>
         public static double Kurtosis<TSource>(this IEnumerable<TSource> source, Func<TSource, long> selector)
@@ -177,11 +177,11 @@ namespace LinqStatistics
         }
 
         /// <summary>
-        ///     Computes the Kurtosis of a sequence of nullable long values that are obtained
+        ///     Computes the sample Kurtosis of a sequence of nullable long values that are obtained
         ///     by invoking a transform function on each element of the input sequence.
         /// </summary>
         /// <typeparam name="TSource">The type of the elements of source.</typeparam>
-        /// <param name="source">A sequence of values that are used to calculate an Kurtosis</param>
+        /// <param name="source">A sequence of values that are used to calculate a Kurtosis</param>
         /// <param name="selector">A transform function to apply to each element.</param>
         /// <returns>The Kurtosis of the sequence of values.</returns>
         public static double? Kurtosis<TSource>(this IEnumerable<TSource> source, Func<TSource, long?> selector)
@@ -196,7 +196,7 @@ namespace LinqStatistics
         }
  	
         /// <summary>
-        /// Computes the Kurtosis of a sequence of nullable decimal values
+        /// Computes the sample Kurtosis of a sequence of nullable decimal values
         /// </summary>
         /// <param name="source">A sequence of nullable decimal values to calculate the Kurtosis of.</param>
         /// <returns>The Kurtosis of the sequence of values.</returns>
@@ -210,7 +210,7 @@ namespace LinqStatistics
         }
 
         /// <summary>
-        /// Computes the Kurtosis of a sequence of decimal values
+        /// Computes the sample Kurtosis of a sequence of decimal values
         /// </summary>
         /// <param name="source">A sequence of decimal values to calculate the Kurtosis of.</param>
         /// <returns>The Kurtosis of the sequence of values.</returns>
@@ -242,7 +242,7 @@ namespace LinqStatistics
             if (n < 4)
                 throw new InvalidOperationException("Source must have at least 4 elements");
 
-            var s = Math.Sqrt((double)(M2 / (n - 1)));
+            var s = Math.Sqrt((double)(M2 / (n - 1))); // stdev
 
             double term1 = (n * (n + 1.0)) / ((n - 1.0) * (n - 2.0) * (n - 3.0));
             double term2 = M4 / Math.Pow(s, 4);
@@ -252,11 +252,11 @@ namespace LinqStatistics
         }
 
         /// <summary>
-        ///     Computes the Kurtosis of a sequence of decimal values that are obtained
+        ///     Computes the sample Kurtosis of a sequence of decimal values that are obtained
         ///     by invoking a transform function on each element of the input sequence.
         /// </summary>
         /// <typeparam name="TSource">The type of the elements of source.</typeparam>
-        /// <param name="source">A sequence of values that are used to calculate an Kurtosis</param>
+        /// <param name="source">A sequence of values that are used to calculate a Kurtosis</param>
         /// <param name="selector">A transform function to apply to each element.</param>
         /// <returns>The Kurtosis of the sequence of values.</returns>
         public static decimal Kurtosis<TSource>(this IEnumerable<TSource> source, Func<TSource, decimal> selector)
@@ -271,11 +271,11 @@ namespace LinqStatistics
         }
 
         /// <summary>
-        ///     Computes the Kurtosis of a sequence of nullable decimal values that are obtained
+        ///     Computes the sample Kurtosis of a sequence of nullable decimal values that are obtained
         ///     by invoking a transform function on each element of the input sequence.
         /// </summary>
         /// <typeparam name="TSource">The type of the elements of source.</typeparam>
-        /// <param name="source">A sequence of values that are used to calculate an Kurtosis</param>
+        /// <param name="source">A sequence of values that are used to calculate a Kurtosis</param>
         /// <param name="selector">A transform function to apply to each element.</param>
         /// <returns>The Kurtosis of the sequence of values.</returns>
         public static decimal? Kurtosis<TSource>(this IEnumerable<TSource> source, Func<TSource, decimal?> selector)
@@ -290,7 +290,7 @@ namespace LinqStatistics
         }
  	
         /// <summary>
-        /// Computes the Kurtosis of a sequence of nullable float values
+        /// Computes the sample Kurtosis of a sequence of nullable float values
         /// </summary>
         /// <param name="source">A sequence of nullable float values to calculate the Kurtosis of.</param>
         /// <returns>The Kurtosis of the sequence of values.</returns>
@@ -304,7 +304,7 @@ namespace LinqStatistics
         }
 
         /// <summary>
-        /// Computes the Kurtosis of a sequence of float values
+        /// Computes the sample Kurtosis of a sequence of float values
         /// </summary>
         /// <param name="source">A sequence of float values to calculate the Kurtosis of.</param>
         /// <returns>The Kurtosis of the sequence of values.</returns>
@@ -336,7 +336,7 @@ namespace LinqStatistics
             if (n < 4)
                 throw new InvalidOperationException("Source must have at least 4 elements");
 
-            var s = Math.Sqrt((double)(M2 / (n - 1)));
+            var s = Math.Sqrt((double)(M2 / (n - 1))); // stdev
 
             double term1 = (n * (n + 1.0)) / ((n - 1.0) * (n - 2.0) * (n - 3.0));
             double term2 = M4 / Math.Pow(s, 4);
@@ -346,11 +346,11 @@ namespace LinqStatistics
         }
 
         /// <summary>
-        ///     Computes the Kurtosis of a sequence of float values that are obtained
+        ///     Computes the sample Kurtosis of a sequence of float values that are obtained
         ///     by invoking a transform function on each element of the input sequence.
         /// </summary>
         /// <typeparam name="TSource">The type of the elements of source.</typeparam>
-        /// <param name="source">A sequence of values that are used to calculate an Kurtosis</param>
+        /// <param name="source">A sequence of values that are used to calculate a Kurtosis</param>
         /// <param name="selector">A transform function to apply to each element.</param>
         /// <returns>The Kurtosis of the sequence of values.</returns>
         public static float Kurtosis<TSource>(this IEnumerable<TSource> source, Func<TSource, float> selector)
@@ -365,11 +365,11 @@ namespace LinqStatistics
         }
 
         /// <summary>
-        ///     Computes the Kurtosis of a sequence of nullable float values that are obtained
+        ///     Computes the sample Kurtosis of a sequence of nullable float values that are obtained
         ///     by invoking a transform function on each element of the input sequence.
         /// </summary>
         /// <typeparam name="TSource">The type of the elements of source.</typeparam>
-        /// <param name="source">A sequence of values that are used to calculate an Kurtosis</param>
+        /// <param name="source">A sequence of values that are used to calculate a Kurtosis</param>
         /// <param name="selector">A transform function to apply to each element.</param>
         /// <returns>The Kurtosis of the sequence of values.</returns>
         public static float? Kurtosis<TSource>(this IEnumerable<TSource> source, Func<TSource, float?> selector)
@@ -384,7 +384,7 @@ namespace LinqStatistics
         }
  	
         /// <summary>
-        /// Computes the Kurtosis of a sequence of nullable double values
+        /// Computes the sample Kurtosis of a sequence of nullable double values
         /// </summary>
         /// <param name="source">A sequence of nullable double values to calculate the Kurtosis of.</param>
         /// <returns>The Kurtosis of the sequence of values.</returns>
@@ -398,7 +398,7 @@ namespace LinqStatistics
         }
 
         /// <summary>
-        /// Computes the Kurtosis of a sequence of double values
+        /// Computes the sample Kurtosis of a sequence of double values
         /// </summary>
         /// <param name="source">A sequence of double values to calculate the Kurtosis of.</param>
         /// <returns>The Kurtosis of the sequence of values.</returns>
@@ -430,7 +430,7 @@ namespace LinqStatistics
             if (n < 4)
                 throw new InvalidOperationException("Source must have at least 4 elements");
 
-            var s = Math.Sqrt((double)(M2 / (n - 1)));
+            var s = Math.Sqrt((double)(M2 / (n - 1))); // stdev
 
             double term1 = (n * (n + 1.0)) / ((n - 1.0) * (n - 2.0) * (n - 3.0));
             double term2 = M4 / Math.Pow(s, 4);
@@ -440,11 +440,11 @@ namespace LinqStatistics
         }
 
         /// <summary>
-        ///     Computes the Kurtosis of a sequence of double values that are obtained
+        ///     Computes the sample Kurtosis of a sequence of double values that are obtained
         ///     by invoking a transform function on each element of the input sequence.
         /// </summary>
         /// <typeparam name="TSource">The type of the elements of source.</typeparam>
-        /// <param name="source">A sequence of values that are used to calculate an Kurtosis</param>
+        /// <param name="source">A sequence of values that are used to calculate a Kurtosis</param>
         /// <param name="selector">A transform function to apply to each element.</param>
         /// <returns>The Kurtosis of the sequence of values.</returns>
         public static double Kurtosis<TSource>(this IEnumerable<TSource> source, Func<TSource, double> selector)
@@ -459,11 +459,11 @@ namespace LinqStatistics
         }
 
         /// <summary>
-        ///     Computes the Kurtosis of a sequence of nullable double values that are obtained
+        ///     Computes the sample Kurtosis of a sequence of nullable double values that are obtained
         ///     by invoking a transform function on each element of the input sequence.
         /// </summary>
         /// <typeparam name="TSource">The type of the elements of source.</typeparam>
-        /// <param name="source">A sequence of values that are used to calculate an Kurtosis</param>
+        /// <param name="source">A sequence of values that are used to calculate a Kurtosis</param>
         /// <param name="selector">A transform function to apply to each element.</param>
         /// <returns>The Kurtosis of the sequence of values.</returns>
         public static double? Kurtosis<TSource>(this IEnumerable<TSource> source, Func<TSource, double?> selector)

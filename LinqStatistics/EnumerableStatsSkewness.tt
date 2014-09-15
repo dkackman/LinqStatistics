@@ -24,7 +24,7 @@ namespace LinqStatistics
     foreach(var type in types)
     {#>	
         /// <summary>
-        /// Computes the Skewness of a sequence of nullable <#= type.Item1 #> values
+        /// Computes the sample Skewness of a sequence of nullable <#= type.Item1 #> values
         /// </summary>
         /// <param name="source">A sequence of nullable <#= type.Item1 #> values to calculate the Skewness of.</param>
         /// <returns>The Skewness of the sequence of values.</returns>
@@ -38,7 +38,7 @@ namespace LinqStatistics
         }
 
         /// <summary>
-        /// Computes the Skewness of a sequence of <#= type.Item1 #> values
+        /// Computes the sample Skewness of a sequence of <#= type.Item1 #> values
         /// </summary>
         /// <param name="source">A sequence of <#= type.Item1 #> values to calculate the Skewness of.</param>
         /// <returns>The Skewness of the sequence of values.</returns>
@@ -67,11 +67,11 @@ namespace LinqStatistics
         }
 
         /// <summary>
-        ///     Computes the Skewness of a sequence of <#= type.Item1 #> values that are obtained
+        ///     Computes the sample Skewness of a sequence of <#= type.Item1 #> values that are obtained
         ///     by invoking a transform function on each element of the input sequence.
         /// </summary>
         /// <typeparam name="TSource">The type of the elements of source.</typeparam>
-        /// <param name="source">A sequence of values that are used to calculate an Skewness</param>
+        /// <param name="source">A sequence of values that are used to calculate a Skewness</param>
         /// <param name="selector">A transform function to apply to each element.</param>
         /// <returns>The Skewness of the sequence of values.</returns>
         public static <#= type.Item2 #> Skewness<TSource>(this IEnumerable<TSource> source, Func<TSource, <#= type.Item1 #>> selector)
@@ -86,11 +86,11 @@ namespace LinqStatistics
         }
 
         /// <summary>
-        ///     Computes the Skewness of a sequence of nullable <#= type.Item1 #> values that are obtained
+        ///     Computes the sample Skewness of a sequence of nullable <#= type.Item1 #> values that are obtained
         ///     by invoking a transform function on each element of the input sequence.
         /// </summary>
         /// <typeparam name="TSource">The type of the elements of source.</typeparam>
-        /// <param name="source">A sequence of values that are used to calculate an Skewness</param>
+        /// <param name="source">A sequence of values that are used to calculate a Skewness</param>
         /// <param name="selector">A transform function to apply to each element.</param>
         /// <returns>The Skewness of the sequence of values.</returns>
         public static <#= type.Item2 #>? Skewness<TSource>(this IEnumerable<TSource> source, Func<TSource, <#= type.Item1 #>?> selector)

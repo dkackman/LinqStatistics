@@ -8,7 +8,7 @@ namespace LinqStatistics
     {
     	
         /// <summary>
-        /// Computes the Variance of a sequence of nullable int values.
+        /// Computes the sample Variance of a sequence of nullable int values.
         /// </summary>
         /// <param name="source">A sequence of nullable int values to calculate the Variance of.</param>
         /// <returns>       
@@ -25,7 +25,7 @@ namespace LinqStatistics
         }
 
         /// <summary>
-        /// Computes the Variance of a sequence of int values.
+        /// Computes the sample Variance of a sequence of int values.
         /// </summary>
         /// <param name="source">A sequence of int values to calculate the Variance of.</param>
         /// <returns>       
@@ -56,7 +56,7 @@ namespace LinqStatistics
         }
 
         /// <summary>
-        /// Computes the Variance of a sequence of nullable int values that are obtained
+        /// Computes the sample Variance of a sequence of nullable int values that are obtained
         ///     by invoking a transform function on each element of the input sequence.
         /// </summary>
         /// <typeparam name="TSource">The type of the elements of source.</typeparam>
@@ -77,7 +77,7 @@ namespace LinqStatistics
         }
 
         /// <summary>
-        /// Computes the Variance of a sequence of int values that are obtained
+        /// Computes the sample Variance of a sequence of int values that are obtained
         ///     by invoking a transform function on each element of the input sequence.
         /// </summary>
         /// <typeparam name="TSource">The type of the elements of source.</typeparam>
@@ -98,7 +98,7 @@ namespace LinqStatistics
         }
  	
         /// <summary>
-        /// Computes the Variance of a sequence of nullable long values.
+        /// Computes the sample Variance of a sequence of nullable long values.
         /// </summary>
         /// <param name="source">A sequence of nullable long values to calculate the Variance of.</param>
         /// <returns>       
@@ -115,7 +115,7 @@ namespace LinqStatistics
         }
 
         /// <summary>
-        /// Computes the Variance of a sequence of long values.
+        /// Computes the sample Variance of a sequence of long values.
         /// </summary>
         /// <param name="source">A sequence of long values to calculate the Variance of.</param>
         /// <returns>       
@@ -146,7 +146,7 @@ namespace LinqStatistics
         }
 
         /// <summary>
-        /// Computes the Variance of a sequence of nullable long values that are obtained
+        /// Computes the sample Variance of a sequence of nullable long values that are obtained
         ///     by invoking a transform function on each element of the input sequence.
         /// </summary>
         /// <typeparam name="TSource">The type of the elements of source.</typeparam>
@@ -167,7 +167,7 @@ namespace LinqStatistics
         }
 
         /// <summary>
-        /// Computes the Variance of a sequence of long values that are obtained
+        /// Computes the sample Variance of a sequence of long values that are obtained
         ///     by invoking a transform function on each element of the input sequence.
         /// </summary>
         /// <typeparam name="TSource">The type of the elements of source.</typeparam>
@@ -188,7 +188,7 @@ namespace LinqStatistics
         }
  	
         /// <summary>
-        /// Computes the Variance of a sequence of nullable decimal values.
+        /// Computes the sample Variance of a sequence of nullable decimal values.
         /// </summary>
         /// <param name="source">A sequence of nullable decimal values to calculate the Variance of.</param>
         /// <returns>       
@@ -205,7 +205,7 @@ namespace LinqStatistics
         }
 
         /// <summary>
-        /// Computes the Variance of a sequence of decimal values.
+        /// Computes the sample Variance of a sequence of decimal values.
         /// </summary>
         /// <param name="source">A sequence of decimal values to calculate the Variance of.</param>
         /// <returns>       
@@ -236,7 +236,7 @@ namespace LinqStatistics
         }
 
         /// <summary>
-        /// Computes the Variance of a sequence of nullable decimal values that are obtained
+        /// Computes the sample Variance of a sequence of nullable decimal values that are obtained
         ///     by invoking a transform function on each element of the input sequence.
         /// </summary>
         /// <typeparam name="TSource">The type of the elements of source.</typeparam>
@@ -257,7 +257,7 @@ namespace LinqStatistics
         }
 
         /// <summary>
-        /// Computes the Variance of a sequence of decimal values that are obtained
+        /// Computes the sample Variance of a sequence of decimal values that are obtained
         ///     by invoking a transform function on each element of the input sequence.
         /// </summary>
         /// <typeparam name="TSource">The type of the elements of source.</typeparam>
@@ -278,7 +278,7 @@ namespace LinqStatistics
         }
  	
         /// <summary>
-        /// Computes the Variance of a sequence of nullable float values.
+        /// Computes the sample Variance of a sequence of nullable float values.
         /// </summary>
         /// <param name="source">A sequence of nullable float values to calculate the Variance of.</param>
         /// <returns>       
@@ -295,7 +295,7 @@ namespace LinqStatistics
         }
 
         /// <summary>
-        /// Computes the Variance of a sequence of float values.
+        /// Computes the sample Variance of a sequence of float values.
         /// </summary>
         /// <param name="source">A sequence of float values to calculate the Variance of.</param>
         /// <returns>       
@@ -326,7 +326,7 @@ namespace LinqStatistics
         }
 
         /// <summary>
-        /// Computes the Variance of a sequence of nullable float values that are obtained
+        /// Computes the sample Variance of a sequence of nullable float values that are obtained
         ///     by invoking a transform function on each element of the input sequence.
         /// </summary>
         /// <typeparam name="TSource">The type of the elements of source.</typeparam>
@@ -347,7 +347,7 @@ namespace LinqStatistics
         }
 
         /// <summary>
-        /// Computes the Variance of a sequence of float values that are obtained
+        /// Computes the sample Variance of a sequence of float values that are obtained
         ///     by invoking a transform function on each element of the input sequence.
         /// </summary>
         /// <typeparam name="TSource">The type of the elements of source.</typeparam>
@@ -368,7 +368,7 @@ namespace LinqStatistics
         }
  	
         /// <summary>
-        /// Computes the Variance of a sequence of nullable double values.
+        /// Computes the sample Variance of a sequence of nullable double values.
         /// </summary>
         /// <param name="source">A sequence of nullable double values to calculate the Variance of.</param>
         /// <returns>       
@@ -385,7 +385,7 @@ namespace LinqStatistics
         }
 
         /// <summary>
-        /// Computes the Variance of a sequence of double values.
+        /// Computes the sample Variance of a sequence of double values.
         /// </summary>
         /// <param name="source">A sequence of double values to calculate the Variance of.</param>
         /// <returns>       
@@ -416,7 +416,7 @@ namespace LinqStatistics
         }
 
         /// <summary>
-        /// Computes the Variance of a sequence of nullable double values that are obtained
+        /// Computes the sample Variance of a sequence of nullable double values that are obtained
         ///     by invoking a transform function on each element of the input sequence.
         /// </summary>
         /// <typeparam name="TSource">The type of the elements of source.</typeparam>
@@ -437,7 +437,7 @@ namespace LinqStatistics
         }
 
         /// <summary>
-        /// Computes the Variance of a sequence of double values that are obtained
+        /// Computes the sample Variance of a sequence of double values that are obtained
         ///     by invoking a transform function on each element of the input sequence.
         /// </summary>
         /// <typeparam name="TSource">The type of the elements of source.</typeparam>

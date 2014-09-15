@@ -44,7 +44,7 @@ namespace LinqStatistics
             if (source == null)
                 throw new ArgumentNullException("source");
 
-            int numPoints = 0;
+            int n = 0;
             double sumX = 0;
             double sumY = 0;
             double sumXX = 0;
@@ -52,18 +52,18 @@ namespace LinqStatistics
 
             foreach (var tuple in source)
             {
-                numPoints++;
+                n++;
                 sumX += (double)tuple.Item1;
                 sumY += (double)tuple.Item2;
                 sumXX += (double)(tuple.Item1 * tuple.Item1);
                 sumXY += (double)(tuple.Item1 * tuple.Item2);
             }
 
-            if (numPoints < 2)
+            if (n < 2)
                 throw new InvalidOperationException("Source must have at least 2 elements");
 
-            double b = (-sumX * sumXY + sumXX * sumY) / (numPoints * sumXX - sumX * sumX);
-            double m = (-sumX * sumY + numPoints * sumXY) / (numPoints * sumXX - sumX * sumX);
+            double b = (-sumX * sumXY + sumXX * sumY) / (n * sumXX - sumX * sumX);
+            double m = (-sumX * sumY + n * sumXY) / (n * sumXX - sumX * sumX);
 
             return new LeastSquares(m, b);
         }

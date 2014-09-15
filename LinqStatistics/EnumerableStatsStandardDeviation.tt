@@ -24,7 +24,7 @@ namespace LinqStatistics
     foreach(var type in types)
     {#>	
         /// <summary>
-        /// Computes the StandardDeviation of a sequence of nullable <#= type.Item1 #> values.
+        /// Computes the sample StandardDeviation of a sequence of nullable <#= type.Item1 #> values.
         /// </summary>
         /// <param name="source">A sequence of nullable <#= type.Item1 #> values to calculate the StandardDeviation of.</param>
         /// <returns>       
@@ -41,7 +41,7 @@ namespace LinqStatistics
         }
 
         /// <summary>
-        /// Computes the StandardDeviation of a sequence of <#= type.Item1 #> values.
+        /// Computes the sample StandardDeviation of a sequence of <#= type.Item1 #> values.
         /// </summary>
         /// <param name="source">A sequence of <#= type.Item1 #> values to calculate the StandardDeviation of.</param>
         /// <returns>       
@@ -53,7 +53,7 @@ namespace LinqStatistics
         }
 
         /// <summary>
-        /// Computes the StandardDeviation of a sequence of nullable <#= type.Item1 #> values that are obtained
+        /// Computes the  sample StandardDeviation of a sequence of nullable <#= type.Item1 #> values that are obtained
         ///     by invoking a transform function on each element of the input sequence.
         /// </summary>
         /// <typeparam name="TSource">The type of the elements of source.</typeparam>
@@ -74,7 +74,7 @@ namespace LinqStatistics
         }
 
         /// <summary>
-        /// Computes the StandardDeviation of a sequence of <#= type.Item1 #> values that are obtained
+        /// Computes the sample StandardDeviation of a sequence of <#= type.Item1 #> values that are obtained
         ///     by invoking a transform function on each element of the input sequence.
         /// </summary>
         /// <typeparam name="TSource">The type of the elements of source.</typeparam>
