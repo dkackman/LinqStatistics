@@ -59,8 +59,8 @@ namespace LinqStatistics.UnitTests
 
             Assert.AreEqual((double)result, 3.5, double.Epsilon);
         }
-        [TestMethod]
 
+        [TestMethod]
         public void MedianNullableIntOddCount()
         {
             IEnumerable<int?> source = TestData.GetNullableInts().Concat(new List<int?> { 4 });
@@ -68,6 +68,36 @@ namespace LinqStatistics.UnitTests
             double? result = source.Median();
 
             Assert.AreEqual((double)result, 4, double.Epsilon);
+        }
+
+        [TestMethod]
+        public void MedianLongEvenCount()
+        {
+            IEnumerable<long> source = TestData.GetLongsEven();
+
+            double? result = source.Median();
+
+            Assert.AreEqual(7296849208.5, result.Value, "Should be 7296849208.5");
+        }
+
+        [TestMethod]
+        public void MedianLongMaxLongEvenCount()
+        {
+            IEnumerable<long> source = TestData.GetMaxLongsEven();
+
+            double? result = source.Median();
+
+            Assert.AreEqual(long.MaxValue, result.Value, string.Format("Should be {0}", long.MaxValue));
+        }
+
+        [TestMethod]
+        public void MedianLongMinLongEvenCount()
+        {
+            IEnumerable<long> source = TestData.GetMinimumLongsEven();
+
+            double? result = source.Median();
+
+            Assert.AreEqual(long.MinValue, result.Value, string.Format("Should be {0}", long.MinValue));
         }
     }
 }
