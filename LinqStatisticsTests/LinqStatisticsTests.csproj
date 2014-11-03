@@ -62,6 +62,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CovarianceTests.cs" />
+    <Compile Include="DataLoader.cs" />
     <Compile Include="Extensions.cs" />
     <Compile Include="MedianTests.cs" />
     <Compile Include="ModeTests.cs" />

@@ -1,13 +1,10 @@
 ﻿using System;
 using System.Linq;
-using System.Reflection;
-using System.IO;
 using System.Collections.Generic;
+
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-using LinqStatistics;
-
-namespace LinqStatisticsTests
+namespace LinqStatistics.UnitTests
 {
     [TestClass]
     public class HistogramTests
@@ -123,26 +120,10 @@ namespace LinqStatisticsTests
             Assert.AreEqual(1, histogram[5].Count);
         }
 
-        private static IEnumerable<int> LoadData(string name)
-        {
-            using (var stream = Assembly.GetExecutingAssembly().GetManifestResourceStream("LinqStatistics.UnitTests." + name))
-            using (StreamReader reader = new StreamReader(stream))
-            {
-                var list = new List<int>();
-                string line = reader.ReadLine();
-                while (line != null)
-                {
-                    list.Add(Convert.ToInt32(line));
-                    line = reader.ReadLine();
-                }
-                return list;
-            }
-        }
-
         [TestMethod]
         public void MatchInteractiveHistogram()
         {
-            var list = LoadData("HistogramData.txt");
+            var list = DataLoader.LoadData<int>("HistogramData.txt", s => Convert.ToInt32(s));
 
             // http://www.shodor.org/interactivate/activities/Histogram/#
 

@@ -5,7 +5,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 using LinqStatistics;
 
-namespace LinqStatisticsTests
+namespace LinqStatistics.UnitTests
 {
     [TestClass]
     public class LeastSquaresTests
