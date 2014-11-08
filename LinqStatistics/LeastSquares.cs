@@ -40,6 +40,11 @@ namespace LinqStatistics
             return (M * x) + B;
         }
 
+        public double SolveForX(double y)
+        {
+            return (y - B) / M;
+        }
+
         public static bool operator ==(LeastSquares lhs, LeastSquares rhs)
         {
             return lhs.M == rhs.M && lhs.B == rhs.B;

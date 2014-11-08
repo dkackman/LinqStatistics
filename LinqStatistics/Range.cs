@@ -60,7 +60,7 @@ namespace LinqStatistics
 
         public static bool operator ==(Range first, Range second)
         {
-            return first.min.Equals(second.min) && first.max.Equals(second.max);
+            return first.min.Equals(second.min) && first.max.Equals(second.max) && first._maxInclusive.Equals(second._maxInclusive);
         }
 
         public static bool operator !=(Range first, Range second)
@@ -109,8 +109,7 @@ namespace LinqStatistics
         {
             if (obj is Range)
             {
-                Range other = (Range)obj;
-                return min.Equals(other.min) && max.Equals(other.max) && _maxInclusive.Equals(other._maxInclusive);
+                return this == (Range)obj;
             }
 
             return false;
