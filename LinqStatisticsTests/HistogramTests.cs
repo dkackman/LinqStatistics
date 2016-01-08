@@ -49,7 +49,7 @@ namespace LinqStatistics.UnitTests
         }
 
         [TestMethod]
-        public void HistogramOrdersCorrectly()
+        public void CountEachOrdersCorrectly()
         {
             var list = new List<int>()
             {
