@@ -17,7 +17,7 @@
     </summary>
     <language>en-US</language>
     <projectUrl>https://github.com/dkackman/LinqStatistics</projectUrl>
-    <iconUrl>https://nuget.org/Content/Images/packageDefaultIcon-50x50.png</iconUrl>
+    <iconUrl>https://raw.githubusercontent.com/dkackman/DynamicRestProxy/master/nugeticon.png</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <licenseUrl>http://opensource.org/licenses/Apache-2.0</licenseUrl>
     <copyright>Copyright Don Kackman 2013</copyright>
