@@ -23,6 +23,8 @@ namespace LinqStatistics
         public int Count
         {
             get { return _count; }
+
+            // this is marked internal so histogram binning can update Count while counting
             internal set { _count = value; }
         }
 
