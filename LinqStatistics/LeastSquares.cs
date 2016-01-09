@@ -5,7 +5,7 @@ namespace LinqStatistics
     /// <summary>
     /// Represent the result of a LeastSquares calculation of the form y = mX + b
     /// </summary>
-    public struct LeastSquares : IEquatable<LeastSquares>
+    public struct LeastSquares : IFormattable, IEquatable<LeastSquares>
     {
         private readonly double _m;
         private readonly double _b;

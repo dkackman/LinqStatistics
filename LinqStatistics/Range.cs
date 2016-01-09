@@ -1,11 +1,12 @@
 ﻿using System;
+using System.Globalization;
 
 namespace LinqStatistics
 {
     /// <summary>
     /// An ordered pair of values, representing a segment.
     /// </summary>
-    public struct Range<T> : IEquatable<Range<T>>, IComparable, IComparable<Range<T>> where T : struct, IComparable<T>
+    public struct Range<T> : IFormattable, IEquatable<Range<T>>, IComparable, IComparable<Range<T>> where T : struct, IComparable<T>, IFormattable
     {
         private readonly T _min;
         private readonly T _max;
@@ -29,7 +30,20 @@ namespace LinqStatistics
         }
 
         /// <summary>
-            /// Determines whether Max should be included in the range or excluded
+        /// This ctor is used interally and needs to bypass the max > min check during MinMax calculation
+        /// </summary>
+        /// <param name="Min"></param>
+        /// <param name="Max"></param>
+        internal Range(T Min, T Max)
+        {
+            _min = Min;
+            _max = Max;
+
+            _maxInclusive = false; 
+        }
+
+        /// <summary>
+        /// Determines whether Max should be included in the range or excluded
         /// </summary>
         public bool MaxInclusive => _maxInclusive;
 
@@ -137,7 +151,43 @@ namespace LinqStatistics
         /// </returns>
         public override string ToString()
         {
-            return String.Format("{0} — {1}", Min, Max);
+            return Format(Min.ToString(), Max.ToString(), _maxInclusive);
+        }
+
+        private static string Format(string min, string max, bool maxInclusive)
+        {
+            return String.Format("({0} — {1}{2}", min, max, maxInclusive ? ")" : "]");
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="provider"></param>
+        /// <returns></returns>
+        public string ToString(IFormatProvider provider)
+        {
+            return Format(Min.ToString(null, provider), Max.ToString(null, provider), _maxInclusive);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="format"></param>
+        /// <returns></returns>
+        public string ToString(string format)
+        {
+            return Format(Min.ToString(format, CultureInfo.CurrentCulture), Max.ToString(format, CultureInfo.CurrentCulture), _maxInclusive);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="format"></param>
+        /// <param name="provider"></param>
+        /// <returns></returns>
+        public string ToString(string format, IFormatProvider provider)
+        {
+            return Format(Min.ToString(format, provider), Max.ToString(format, provider), _maxInclusive);
         }
 
         /// <summary>
@@ -179,5 +229,5 @@ namespace LinqStatistics
 
             return 0;
         }
-    }    
+    }
 }
