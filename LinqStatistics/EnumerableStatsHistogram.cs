@@ -113,6 +113,21 @@ namespace LinqStatistics
 
             return source.Select(t => selector(t)).Histogram(binCount, mode);
         }
+
+		private static IEnumerable<Bin> AssignBins(this IEnumerable<int> source, int binCount, BinningMode mode) 
+		{ 
+			var minMax = source.MinMax();
+
+	        var bins = BinFactory.CreateBins((double)minMax.Min, (double)minMax.Max, binCount, mode);
+
+            foreach (var value in source)
+            {
+                var bin = bins.First(b => b.Range.Contains((double)value));
+                bin.Count++;
+            }
+
+            return bins;
+		}  
                 /// <summary>
         /// Computes the Histogram of a sequence of long values.
         /// </summary>
@@ -196,6 +211,21 @@ namespace LinqStatistics
 
             return source.Select(t => selector(t)).Histogram(binCount, mode);
         }
+
+		private static IEnumerable<Bin> AssignBins(this IEnumerable<long> source, int binCount, BinningMode mode) 
+		{ 
+			var minMax = source.MinMax();
+
+	        var bins = BinFactory.CreateBins((double)minMax.Min, (double)minMax.Max, binCount, mode);
+
+            foreach (var value in source)
+            {
+                var bin = bins.First(b => b.Range.Contains((double)value));
+                bin.Count++;
+            }
+
+            return bins;
+		}  
                 /// <summary>
         /// Computes the Histogram of a sequence of float values.
         /// </summary>
@@ -279,6 +309,21 @@ namespace LinqStatistics
 
             return source.Select(t => selector(t)).Histogram(binCount, mode);
         }
+
+		private static IEnumerable<Bin> AssignBins(this IEnumerable<float> source, int binCount, BinningMode mode) 
+		{ 
+			var minMax = source.MinMax();
+
+	        var bins = BinFactory.CreateBins((double)minMax.Min, (double)minMax.Max, binCount, mode);
+
+            foreach (var value in source)
+            {
+                var bin = bins.First(b => b.Range.Contains((double)value));
+                bin.Count++;
+            }
+
+            return bins;
+		}  
                 /// <summary>
         /// Computes the Histogram of a sequence of double values.
         /// </summary>
@@ -362,6 +407,21 @@ namespace LinqStatistics
 
             return source.Select(t => selector(t)).Histogram(binCount, mode);
         }
+
+		private static IEnumerable<Bin> AssignBins(this IEnumerable<double> source, int binCount, BinningMode mode) 
+		{ 
+			var minMax = source.MinMax();
+
+	        var bins = BinFactory.CreateBins((double)minMax.Min, (double)minMax.Max, binCount, mode);
+
+            foreach (var value in source)
+            {
+                var bin = bins.First(b => b.Range.Contains((double)value));
+                bin.Count++;
+            }
+
+            return bins;
+		}  
                 /// <summary>
         /// Computes the Histogram of a sequence of decimal values.
         /// </summary>
@@ -445,19 +505,21 @@ namespace LinqStatistics
 
             return source.Select(t => selector(t)).Histogram(binCount, mode);
         }
-         
 
-        private static IEnumerable<Bin> AssignBins<T>(this IEnumerable<T> source, int binCount, BinningMode mode) where T : struct, IConvertible
-        {            
-            var bins = BinFactory.CreateBins(source.Min().ToDouble(CultureInfo.InvariantCulture), source.Max().ToDouble(CultureInfo.InvariantCulture), binCount, mode);
+		private static IEnumerable<Bin> AssignBins(this IEnumerable<decimal> source, int binCount, BinningMode mode) 
+		{ 
+			var minMax = source.MinMax();
+
+	        var bins = BinFactory.CreateBins((double)minMax.Min, (double)minMax.Max, binCount, mode);
 
             foreach (var value in source)
             {
-                var bin = bins.First(b => b.Range.Contains(value.ToDouble(CultureInfo.InvariantCulture)));
+                var bin = bins.First(b => b.Range.Contains((double)value));
                 bin.Count++;
             }
 
             return bins;
-        } 
+		}  
+         
     }
 }

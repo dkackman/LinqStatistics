@@ -1,0 +1,105 @@
+﻿<#@ template debug="false" hostspecific="false" language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ output extension=".cs" #>
+using System;
+using System.Collections.Generic;
+using System.Linq;
+
+namespace LinqStatistics
+{
+    public static partial class EnumerableStats
+    {
+    <# var types = new List<string>()
+    {
+        "int", "long", "float", "double", "decimal"
+    };
+
+    foreach(var type in types)
+    {#>	
+        /// <summary>
+        /// Computes the MinMax of a sequence of nullable <#= type #> values.
+        /// </summary>
+        /// <param name="source">The sequence of elements.</param>
+        /// <returns>The MinMax.</returns>
+        public static MinMax<<#= type #>>? MinMax(this IEnumerable<<#= type #>?> source)
+        {
+            IEnumerable<<#= type #>> values = source.AllValues();
+            if (values.Any())
+                return values.MinMax();
+
+            return null;
+        }
+
+        /// <summary>
+        /// Computes the MinMax of a sequence of <#= type #> values.
+        /// </summary>
+        /// <param name="source">The sequence of elements.</param>
+        /// <returns>The MinMax.</returns>
+        public static MinMax<<#= type #>> MinMax(this IEnumerable<<#= type #>> source)
+        {            
+            if (source == null)
+                throw new ArgumentNullException("source");
+
+            if (!source.Any())
+                throw new InvalidOperationException("source sequence contains no elements");
+
+            MinMax<<#= type #>> minMax = new MinMax<<#= type #>>();
+            minMax.Min = <#= type #>.MaxValue;
+            minMax.Max = <#= type #>.MinValue;
+
+            var ret = source.Aggregate<<#= type #>, MinMax<<#= type #>>>(minMax, (accumulator, i) =>
+            {
+                accumulator.Min = Math.Min(accumulator.Min, i);
+                accumulator.Max = Math.Max(accumulator.Max, i);
+                
+                return accumulator;
+            });
+
+            ret.Range = ret.Max - ret.Min;
+
+            return ret;
+        }
+
+        /// <summary>
+        ///     Computes the MinMax of a sequence of nullable <#= type #> values that are obtained
+        ///     by invoking a transform function on each element of the input sequence.
+        /// </summary>
+        /// <typeparam name="TSource">The type of the elements of source.</typeparam>
+        /// <param name="source">The sequence of elements.</param>
+        /// <param name="selector">A transform function to apply to each element.</param>
+        /// <returns>The MinMax.</returns>
+        public static MinMax<<#= type #>>? MinMax<TSource>(this IEnumerable<TSource> source, Func<TSource, <#= type #>?> selector)
+        {
+            if (source == null)
+                throw new ArgumentNullException("source");
+
+            if (selector == null)
+                throw new ArgumentNullException("selector");
+
+            return source.Select(selector).MinMax();
+        }
+
+        /// <summary>
+        ///     Computes the MinMax of a sequence of <#= type #> values that are obtained
+        ///     by invoking a transform function on each element of the input sequence.
+        /// </summary>
+        /// <typeparam name="TSource">The type of the elements of source.</typeparam>
+        /// <param name="source">The sequence of elements.</param>
+        /// <param name="selector">A transform function to apply to each element.</param>
+        /// <returns>The MinMax.</returns>
+        public static MinMax<<#= type #>> MinMax<TSource>(this IEnumerable<TSource> source, Func<TSource, <#= type #>> selector)
+        {
+            if (source == null)
+                throw new ArgumentNullException("source");
+
+            if (selector == null)
+                throw new ArgumentNullException("selector");
+
+            return source.Select(selector).MinMax();
+        }
+ <# } #>
+    }
+}

@@ -6,7 +6,7 @@ namespace LinqStatistics
 {
     static class BinFactory
     {
-        public static IList<Bin> CreateBins(double min, double max, int binCount, BinningMode mode)
+        public static IEnumerable<Bin> CreateBins(double min, double max, int binCount, BinningMode mode)
         {
             if (binCount <= 0)
                 throw new InvalidOperationException("binCount must be greater than 0");
@@ -25,7 +25,7 @@ namespace LinqStatistics
             return CreateBinsMaxInclusive(min, max, binCount);
         }
 
-        private static IList<Bin> CreateBinsMaxInclusive(double min, double max, int binCount)
+        private static IEnumerable<Bin> CreateBinsMaxInclusive(double min, double max, int binCount)
         {            
             double binSize = (max - min) / (double)binCount;
             double halfBin = binSize / 2.0;
@@ -52,7 +52,7 @@ namespace LinqStatistics
             return bins;
         }
 
-        private static IList<Bin> CreateBinsUnbounded(double min, double max, int binCount)
+        private static IEnumerable<Bin> CreateBinsUnbounded(double min, double max, int binCount)
         {
             double binSize = (max - min) / (double)binCount;
             double halfBin = binSize / 2.0;
@@ -74,7 +74,7 @@ namespace LinqStatistics
             return bins;
         }
 
-        private static IList<Bin> CreateBinsExpandRange(double min, double max, int binCount)
+        private static IEnumerable<Bin> CreateBinsExpandRange(double min, double max, int binCount)
         {
             double binSize = (max - min) / ((double)binCount - 1);  // make the range such that the min and max are outside of the data set 
                                                                     // that's where the minus one comes in
