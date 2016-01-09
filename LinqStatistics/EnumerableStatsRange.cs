@@ -7,9 +7,9 @@ namespace LinqStatistics
     public static partial class EnumerableStats
     {
     	
-    	/// <summary>
-    	/// Computes the Range of a sequence of nullable int values.
-    	/// </summary>
+        /// <summary>
+        /// Computes the Range of a sequence of nullable int values.
+        /// </summary>
         /// <param name="source">The sequence of elements.</param>
         /// <returns>The Range.</returns>
         public static int? Range(this IEnumerable<int?> source)
@@ -21,14 +21,15 @@ namespace LinqStatistics
             return null;
         }
 
-    	/// <summary>
-    	/// Computes the Range of a sequence of int values.
-    	/// </summary>
+        /// <summary>
+        /// Computes the Range of a sequence of int values.
+        /// </summary>
         /// <param name="source">The sequence of elements.</param>
         /// <returns>The Range.</returns>
         public static int Range(this IEnumerable<int> source)
         {
-            return source.Max() - source.Min();
+            var range = source.MinMax();
+            return range.Max - range.Min;
         }
 
         /// <summary>
@@ -69,9 +70,9 @@ namespace LinqStatistics
             return source.Select(selector).Range();
         }
  	
-    	/// <summary>
-    	/// Computes the Range of a sequence of nullable long values.
-    	/// </summary>
+        /// <summary>
+        /// Computes the Range of a sequence of nullable long values.
+        /// </summary>
         /// <param name="source">The sequence of elements.</param>
         /// <returns>The Range.</returns>
         public static long? Range(this IEnumerable<long?> source)
@@ -83,14 +84,15 @@ namespace LinqStatistics
             return null;
         }
 
-    	/// <summary>
-    	/// Computes the Range of a sequence of long values.
-    	/// </summary>
+        /// <summary>
+        /// Computes the Range of a sequence of long values.
+        /// </summary>
         /// <param name="source">The sequence of elements.</param>
         /// <returns>The Range.</returns>
         public static long Range(this IEnumerable<long> source)
         {
-            return source.Max() - source.Min();
+            var range = source.MinMax();
+            return range.Max - range.Min;
         }
 
         /// <summary>
@@ -131,9 +133,9 @@ namespace LinqStatistics
             return source.Select(selector).Range();
         }
  	
-    	/// <summary>
-    	/// Computes the Range of a sequence of nullable float values.
-    	/// </summary>
+        /// <summary>
+        /// Computes the Range of a sequence of nullable float values.
+        /// </summary>
         /// <param name="source">The sequence of elements.</param>
         /// <returns>The Range.</returns>
         public static float? Range(this IEnumerable<float?> source)
@@ -145,14 +147,15 @@ namespace LinqStatistics
             return null;
         }
 
-    	/// <summary>
-    	/// Computes the Range of a sequence of float values.
-    	/// </summary>
+        /// <summary>
+        /// Computes the Range of a sequence of float values.
+        /// </summary>
         /// <param name="source">The sequence of elements.</param>
         /// <returns>The Range.</returns>
         public static float Range(this IEnumerable<float> source)
         {
-            return source.Max() - source.Min();
+            var range = source.MinMax();
+            return range.Max - range.Min;
         }
 
         /// <summary>
@@ -193,9 +196,9 @@ namespace LinqStatistics
             return source.Select(selector).Range();
         }
  	
-    	/// <summary>
-    	/// Computes the Range of a sequence of nullable double values.
-    	/// </summary>
+        /// <summary>
+        /// Computes the Range of a sequence of nullable double values.
+        /// </summary>
         /// <param name="source">The sequence of elements.</param>
         /// <returns>The Range.</returns>
         public static double? Range(this IEnumerable<double?> source)
@@ -207,14 +210,15 @@ namespace LinqStatistics
             return null;
         }
 
-    	/// <summary>
-    	/// Computes the Range of a sequence of double values.
-    	/// </summary>
+        /// <summary>
+        /// Computes the Range of a sequence of double values.
+        /// </summary>
         /// <param name="source">The sequence of elements.</param>
         /// <returns>The Range.</returns>
         public static double Range(this IEnumerable<double> source)
         {
-            return source.Max() - source.Min();
+            var range = source.MinMax();
+            return range.Max - range.Min;
         }
 
         /// <summary>
@@ -255,9 +259,9 @@ namespace LinqStatistics
             return source.Select(selector).Range();
         }
  	
-    	/// <summary>
-    	/// Computes the Range of a sequence of nullable decimal values.
-    	/// </summary>
+        /// <summary>
+        /// Computes the Range of a sequence of nullable decimal values.
+        /// </summary>
         /// <param name="source">The sequence of elements.</param>
         /// <returns>The Range.</returns>
         public static decimal? Range(this IEnumerable<decimal?> source)
@@ -269,14 +273,15 @@ namespace LinqStatistics
             return null;
         }
 
-    	/// <summary>
-    	/// Computes the Range of a sequence of decimal values.
-    	/// </summary>
+        /// <summary>
+        /// Computes the Range of a sequence of decimal values.
+        /// </summary>
         /// <param name="source">The sequence of elements.</param>
         /// <returns>The Range.</returns>
         public static decimal Range(this IEnumerable<decimal> source)
         {
-            return source.Max() - source.Min();
+            var range = source.MinMax();
+            return range.Max - range.Min;
         }
 
         /// <summary>

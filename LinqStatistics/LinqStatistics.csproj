@@ -125,7 +125,6 @@
       <DependentUpon>EnumerableStatsHistogram.tt</DependentUpon>
     </Compile>
     <Compile Include="LeastSquares.cs" />
-    <Compile Include="MinMax.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Range.cs" />
   </ItemGroup>

@@ -5,15 +5,15 @@ namespace LinqStatistics
     /// <summary>
     /// An ordered pair of values, representing a segment.
     /// </summary>
-    public struct Range
+    public struct Range<T> : IEquatable<Range<T>>, IComparable, IComparable<Range<T>> where T : struct, IComparable<T>
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="Range"/> struct.
+        /// Initializes a new instance of the <see cref="Range[T]"/> struct.
         /// </summary>
         /// <param name="Min">The minimal value of segment.</param>
         /// <param name="Max">The maximal value of segment.</param>
         /// <param name="maxInclusive">When true Contains will include the Max value.</param>
-        public Range(double Min, double Max, bool maxInclusive = false)
+        public Range(T Min, T Max, bool maxInclusive = false)
         {
             this.Min = Min;
             this.Max = Max;
@@ -21,71 +21,66 @@ namespace LinqStatistics
             if (Min.CompareTo(Max) >= 0)
                 throw new InvalidOperationException("Minimum must be less then maximum");
 
-            _maxInclusive = maxInclusive;
+            MaxInclusive = maxInclusive;
         }
 
-        private readonly bool _maxInclusive;
         /// <summary>
         /// Determines whether Max should be included in the range or excluded
         /// </summary>
-        public bool MaxInclusive
-        {
-            get { return _maxInclusive; }
-        }
+        public bool MaxInclusive { get; private set; }
 
         /// <summary>
         /// Gets the minimal value of segment.
         /// </summary>
         /// <value>The Min.</value>
-        public double Min { get; internal set; }
+        public T Min { get; internal set; }
 
         /// <summary>
         /// Gets the maximal value of segment.
         /// </summary>
         /// <value>The Max.</value>
-        public double Max { get; internal set; }
+        public T Max { get; internal set; }
 
-        /// <summary>
-        /// The width of the range
-        /// </summary>
-        public double Width { get { return Max - Min; } }
-
-        public static bool operator ==(Range first, Range second)
+        public static bool operator ==(Range<T> first, Range<T> second)
         {
-            return first.Min.Equals(second.Min) && first.Max.Equals(second.Max) && first._maxInclusive.Equals(second._maxInclusive);
+            return first.Min.Equals(second.Min) && first.Max.Equals(second.Max) && first.MaxInclusive.Equals(second.MaxInclusive);
         }
 
-        public static bool operator !=(Range first, Range second)
+        public static bool operator !=(Range<T> first, Range<T> second)
         {
             return !(first == second);
         }
 
-        public bool Contains(double item)
+        /// <summary>
+        /// Determines if a value is contained with the segment
+        /// </summary>
+        /// <param name="item">The item to check</param>
+        /// <returns>True if item is contained in the range - taking into acount MaxInclusive</returns>
+        public bool Contains(T item)
         {
-            if (_maxInclusive)
+            if (MaxInclusive)
             {
-                return (item >= Min && item <= Max);
+                return item.CompareTo(Min) >= 0 && item.CompareTo(Max) <= 0;
             }
-
-            return (item >= Min && item < Max);
+            return item.CompareTo(Min) >= 0 && item.CompareTo(Max) < 0;
         }
 
-        public static bool operator <(Range first, Range second)
+        public static bool operator <(Range<T> first, Range<T> second)
         {
             return first.Min.CompareTo(second.Min) > 0 && first.Max.CompareTo(second.Max) < 0;
         }
 
-        public static bool operator >(Range first, Range second)
+        public static bool operator >(Range<T> first, Range<T> second)
         {
             return first.Min.CompareTo(second.Min) < 0 && first.Max.CompareTo(second.Max) > 0;
         }
 
-        public static bool operator <=(Range first, Range second)
+        public static bool operator <=(Range<T> first, Range<T> second)
         {
             return (first.Min.CompareTo(second.Min) > 0 && first.Max.CompareTo(second.Max) < 0) || first == second;
         }
 
-        public static bool operator >=(Range first, Range second)
+        public static bool operator >=(Range<T> first, Range<T> second)
         {
             return (first.Min.CompareTo(second.Min) < 0 && first.Max.CompareTo(second.Max) > 0) || first == second;
         }
@@ -99,9 +94,9 @@ namespace LinqStatistics
         /// </returns>
         public override bool Equals(object obj)
         {
-            if (obj is Range)
+            if (obj is Range<T>)
             {
-                return this == (Range)obj;
+                return this == (Range<T>)obj;
             }
 
             return false;
@@ -115,7 +110,7 @@ namespace LinqStatistics
         /// </returns>
         public override int GetHashCode()
         {
-            return Min.GetHashCode() ^ Max.GetHashCode() ^ _maxInclusive.GetHashCode();
+            return Min.GetHashCode() ^ Max.GetHashCode() ^ MaxInclusive.GetHashCode();
         }
 
         /// <summary>
@@ -136,9 +131,49 @@ namespace LinqStatistics
         /// <returns>
         /// true if the current object is equal to the <paramref name="other"/> parameter; otherwise, false.
         /// </returns>
-        public bool Equals(Range other)
+        public bool Equals(Range<T> other)
         {
             return this == other;
         }
-    }
+
+        /// <summary>
+        /// <see cref="System.IComparable.CompareTo(object)"/>
+        /// </summary>
+        /// <param name="obj"></param>
+        /// <returns></returns>
+        public int CompareTo(object obj)
+        {
+            if (obj == null)
+            {
+                return 1;
+            }
+
+            if (obj is Range<T>)
+            {
+                return this.CompareTo((Range<T>)obj);
+            }
+
+            throw new ArgumentException("Comparand must be of type Range<T>");
+        }
+
+        /// <summary>
+        /// <see cref="System.IComparable{T}.CompareTo(T)"/>
+        /// </summary>
+        /// <param name="other"></param>
+        /// <returns></returns>
+        public int CompareTo(Range<T> other)
+        {
+            if (this < other)
+            {
+                return -1;
+            }
+
+            if (this > other)
+            {
+                return 1;
+            }
+
+            return 0;
+        }
+    }    
 }

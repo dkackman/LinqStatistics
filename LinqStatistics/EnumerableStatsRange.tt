@@ -19,9 +19,9 @@ namespace LinqStatistics
 
     foreach(var type in types)
     {#>	
-    	/// <summary>
-    	/// Computes the Range of a sequence of nullable <#= type #> values.
-    	/// </summary>
+        /// <summary>
+        /// Computes the Range of a sequence of nullable <#= type #> values.
+        /// </summary>
         /// <param name="source">The sequence of elements.</param>
         /// <returns>The Range.</returns>
         public static <#= type #>? Range(this IEnumerable<<#= type #>?> source)
@@ -33,14 +33,15 @@ namespace LinqStatistics
             return null;
         }
 
-    	/// <summary>
-    	/// Computes the Range of a sequence of <#= type #> values.
-    	/// </summary>
+        /// <summary>
+        /// Computes the Range of a sequence of <#= type #> values.
+        /// </summary>
         /// <param name="source">The sequence of elements.</param>
         /// <returns>The Range.</returns>
         public static <#= type #> Range(this IEnumerable<<#= type #>> source)
         {
-            return source.Max() - source.Min();
+            var range = source.MinMax();
+            return range.Max - range.Min;
         }
 
         /// <summary>

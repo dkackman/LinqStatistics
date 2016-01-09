@@ -24,7 +24,7 @@ namespace LinqStatistics
         /// </summary>
         /// <param name="source">The sequence of elements.</param>
         /// <returns>The MinMax.</returns>
-        public static MinMax<<#= type #>>? MinMax(this IEnumerable<<#= type #>?> source)
+        public static Range<<#= type #>>? MinMax(this IEnumerable<<#= type #>?> source)
         {
             IEnumerable<<#= type #>> values = source.AllValues();
             if (values.Any())
@@ -38,7 +38,7 @@ namespace LinqStatistics
         /// </summary>
         /// <param name="source">The sequence of elements.</param>
         /// <returns>The MinMax.</returns>
-        public static MinMax<<#= type #>> MinMax(this IEnumerable<<#= type #>> source)
+        public static Range<<#= type #>> MinMax(this IEnumerable<<#= type #>> source)
         {            
             if (source == null)
                 throw new ArgumentNullException("source");
@@ -46,11 +46,11 @@ namespace LinqStatistics
             if (!source.Any())
                 throw new InvalidOperationException("source sequence contains no elements");
 
-            MinMax<<#= type #>> minMax = new MinMax<<#= type #>>();
+            Range<<#= type #>> minMax = new Range<<#= type #>>();
             minMax.Min = <#= type #>.MaxValue;
             minMax.Max = <#= type #>.MinValue;
 
-            var ret = source.Aggregate<<#= type #>, MinMax<<#= type #>>>(minMax, (accumulator, i) =>
+            var ret = source.Aggregate<<#= type #>, Range<<#= type #>>>(minMax, (accumulator, i) =>
             {
                 accumulator.Min = Math.Min(accumulator.Min, i);
                 accumulator.Max = Math.Max(accumulator.Max, i);
@@ -58,7 +58,7 @@ namespace LinqStatistics
                 return accumulator;
             });
 
-            ret.Range = ret.Max - ret.Min;
+            //Bret.Range = ret.Max - ret.Min;
 
             return ret;
         }
@@ -71,7 +71,7 @@ namespace LinqStatistics
         /// <param name="source">The sequence of elements.</param>
         /// <param name="selector">A transform function to apply to each element.</param>
         /// <returns>The MinMax.</returns>
-        public static MinMax<<#= type #>>? MinMax<TSource>(this IEnumerable<TSource> source, Func<TSource, <#= type #>?> selector)
+        public static Range<<#= type #>>? MinMax<TSource>(this IEnumerable<TSource> source, Func<TSource, <#= type #>?> selector)
         {
             if (source == null)
                 throw new ArgumentNullException("source");
@@ -90,7 +90,7 @@ namespace LinqStatistics
         /// <param name="source">The sequence of elements.</param>
         /// <param name="selector">A transform function to apply to each element.</param>
         /// <returns>The MinMax.</returns>
-        public static MinMax<<#= type #>> MinMax<TSource>(this IEnumerable<TSource> source, Func<TSource, <#= type #>> selector)
+        public static Range<<#= type #>> MinMax<TSource>(this IEnumerable<TSource> source, Func<TSource, <#= type #>> selector)
         {
             if (source == null)
                 throw new ArgumentNullException("source");

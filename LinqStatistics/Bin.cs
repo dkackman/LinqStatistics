@@ -7,7 +7,7 @@ namespace LinqStatistics
     /// </summary>
     public class Bin : ItemCount<double>
     {
-        private readonly Range _range;
+        private readonly Range<double> _range;
 
         /// <summary>
         /// ctor
@@ -20,7 +20,7 @@ namespace LinqStatistics
         public Bin(double v, double min, double max, int count, bool maxInclusive = false)
             : base(v, count)
         {
-            _range = new Range(min, max, maxInclusive);
+            _range = new Range<double>(min, max, maxInclusive);
         }
 
         internal Bin(double v, double min, double max, bool maxInclusive = false)
@@ -32,7 +32,7 @@ namespace LinqStatistics
         /// <summary>
         /// The range
         /// </summary>
-        public Range Range { get { return _range; } }
+        public Range<double> Range { get { return _range; } }
 
         /// <summary>
         /// <see cref="System.Object.GetHashCode"/>
