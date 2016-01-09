@@ -39,7 +39,7 @@ namespace LinqStatistics
             _min = Min;
             _max = Max;
 
-            _maxInclusive = false; 
+            _maxInclusive = false;
         }
 
         /// <summary>
@@ -95,12 +95,12 @@ namespace LinqStatistics
 
         public static bool operator <=(Range<T> first, Range<T> second)
         {
-            return (first.Min.CompareTo(second.Min) > 0 && first.Max.CompareTo(second.Max) < 0) || first == second;
+            return first < second || first == second;
         }
 
         public static bool operator >=(Range<T> first, Range<T> second)
         {
-            return (first.Min.CompareTo(second.Min) < 0 && first.Max.CompareTo(second.Max) > 0) || first == second;
+            return first > second || first == second;
         }
 
         /// <summary>

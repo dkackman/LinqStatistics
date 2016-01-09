@@ -48,7 +48,18 @@ namespace LinqStatistics.UnitTests
 
             int result = source.Range();
 
-            Assert.IsTrue(result == 4);
+            Assert.AreEqual(4,result);
+        }
+
+        [TestMethod]
+        public void MinMax()
+        {
+            IEnumerable<int> source = new int[] { 1, 2, 3, 4, 5 };
+
+            var result = source.MinMax();
+
+            Assert.AreEqual(1, result.Min);
+            Assert.AreEqual(5, result.Max);
         }
     }
 }
