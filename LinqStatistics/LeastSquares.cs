@@ -5,7 +5,7 @@ namespace LinqStatistics
     /// <summary>
     /// Represent the result of a LeastSquares calculation of the form y = mX + b
     /// </summary>
-    public struct LeastSquares
+    public struct LeastSquares : IEquatable<LeastSquares>
     {
         private readonly double _m;
         private readonly double _b;
@@ -62,9 +62,21 @@ namespace LinqStatistics
         public override bool Equals(object obj)
         {
             if (obj is LeastSquares)
+            {
                 return this == (LeastSquares)obj;
+            }
 
             return false;
+        }
+
+        /// <summary>
+        /// <see cref="System.IEquatable{T}.Equals(T)"/>
+        /// </summary>
+        /// <param name="other"></param>
+        /// <returns></returns>
+        public bool Equals(LeastSquares other)
+        {
+            return this == other;
         }
 
         /// <summary>

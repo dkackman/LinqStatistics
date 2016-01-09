@@ -1,13 +1,12 @@
-﻿using System.Linq;
-using System.Collections;
+﻿using System;
 
 namespace LinqStatistics
 {
     /// <summary>
-    /// Represents a Histogram bin
+    /// Represents the count of an item in a collection
     /// </summary>
-    /// <typeparam name="T">The type of the Bin value</typeparam>
-    public class ItemCount<T>
+    /// <typeparam name="T">The type of the item</typeparam>
+    public class ItemCount<T> : IEquatable<ItemCount<T>>
     {
         private readonly T _value;
         private int _count;
@@ -46,7 +45,7 @@ namespace LinqStatistics
 
         public static bool operator ==(ItemCount<T> lhs, ItemCount<T> rhs)
         {
-            if(object.ReferenceEquals(null, lhs) && object.ReferenceEquals(rhs,null))
+            if (object.ReferenceEquals(null, lhs) && object.ReferenceEquals(rhs, null))
             {
                 return true;
             }
@@ -73,14 +72,25 @@ namespace LinqStatistics
         {
             if (obj is ItemCount<T>)
             {
-                ItemCount<T> other = (ItemCount<T>)obj;
-                if (_value != null)
-                {
-                    return this._value.Equals(other._value) && this._count == other._count;
-                }
-                return other._value == null && this._count == other._count;
+                return this.Equals((ItemCount<T>)obj);
             }
+
             return false;
+        }
+
+        /// <summary>
+        /// <see cref="System.IEquatable{T}.Equals(T)"/>
+        /// </summary>
+        /// <param name="other"></param>
+        /// <returns></returns>
+        public bool Equals(ItemCount<T> other)
+        {
+            if (_value != null)
+            {
+                return this._value.Equals(other._value) && this._count == other._count;
+            }
+
+            return other._value == null && this._count == other._count;
         }
 
         /// <summary>
