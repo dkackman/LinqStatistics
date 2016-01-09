@@ -44,6 +44,26 @@ namespace LinqStatistics
         {
         }
 
+        public static bool operator ==(ItemCount<T> lhs, ItemCount<T> rhs)
+        {
+            if(object.ReferenceEquals(null, lhs) && object.ReferenceEquals(rhs,null))
+            {
+                return true;
+            }
+
+            if (object.ReferenceEquals(null, lhs) || object.ReferenceEquals(rhs, null))
+            {
+                return false;
+            }
+
+            return lhs.Equals(rhs);
+        }
+
+        public static bool operator !=(ItemCount<T> lhs, ItemCount<T> rhs)
+        {
+            return !(lhs == rhs);
+        }
+
         /// <summary>
         /// <see cref="System.Object.Equals(object)"/>
         /// </summary>

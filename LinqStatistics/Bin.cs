@@ -43,6 +43,26 @@ namespace LinqStatistics
             return base.GetHashCode() ^ _range.GetHashCode();
         }
 
+        public static bool operator ==(Bin lhs, Bin rhs)
+        {
+            if (object.ReferenceEquals(null, lhs) && object.ReferenceEquals(rhs, null))
+            {
+                return true;
+            }
+
+            if (object.ReferenceEquals(null, lhs) || object.ReferenceEquals(rhs, null))
+            {
+                return false;
+            }
+
+            return lhs.Equals(rhs);
+        }
+
+        public static bool operator !=(Bin lhs, Bin rhs)
+        {
+            return !(lhs == rhs);
+        }
+
         /// <summary>
         /// <see cref="System.Object.Equals(object)"/>
         /// </summary>

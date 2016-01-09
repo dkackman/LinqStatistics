@@ -10,15 +10,15 @@ namespace LinqStatistics
         /// <summary>
         /// Initializes a new instance of the <see cref="Range"/> struct.
         /// </summary>
-        /// <param name="min">The minimal value of segment.</param>
-        /// <param name="max">The maximal value of segment.</param>
-        /// <param name="maxInclusive">When true Contains will include the max value.</param>
-        public Range(double min, double max, bool maxInclusive = false)
+        /// <param name="Min">The minimal value of segment.</param>
+        /// <param name="Max">The maximal value of segment.</param>
+        /// <param name="maxInclusive">When true Contains will include the Max value.</param>
+        public Range(double Min, double Max, bool maxInclusive = false)
         {
-            this.min = min;
-            this.max = max;
+            this.Min = Min;
+            this.Max = Max;
 
-            if (min.CompareTo(max) >= 0)
+            if (Min.CompareTo(Max) >= 0)
                 throw new InvalidOperationException("Minimum must be less then maximum");
 
             _maxInclusive = maxInclusive;
@@ -26,32 +26,24 @@ namespace LinqStatistics
 
         private readonly bool _maxInclusive;
         /// <summary>
-        /// Determines whether max should be included in the range or excluded
+        /// Determines whether Max should be included in the range or excluded
         /// </summary>
         public bool MaxInclusive
         {
             get { return _maxInclusive; }
         }
 
-        private readonly double min;
         /// <summary>
         /// Gets the minimal value of segment.
         /// </summary>
-        /// <value>The min.</value>
-        public double Min
-        {
-            get { return min; }
-        }
+        /// <value>The Min.</value>
+        public double Min { get; internal set; }
 
-        private readonly double max;
         /// <summary>
         /// Gets the maximal value of segment.
         /// </summary>
-        /// <value>The max.</value>
-        public double Max
-        {
-            get { return max; }
-        }
+        /// <value>The Max.</value>
+        public double Max { get; internal set; }
 
         /// <summary>
         /// The width of the range
@@ -60,7 +52,7 @@ namespace LinqStatistics
 
         public static bool operator ==(Range first, Range second)
         {
-            return first.min.Equals(second.min) && first.max.Equals(second.max) && first._maxInclusive.Equals(second._maxInclusive);
+            return first.Min.Equals(second.Min) && first.Max.Equals(second.Max) && first._maxInclusive.Equals(second._maxInclusive);
         }
 
         public static bool operator !=(Range first, Range second)
@@ -80,22 +72,22 @@ namespace LinqStatistics
 
         public static bool operator <(Range first, Range second)
         {
-            return first.min.CompareTo(second.Min) > 0 && first.Max.CompareTo(second.Max) < 0;
+            return first.Min.CompareTo(second.Min) > 0 && first.Max.CompareTo(second.Max) < 0;
         }
 
         public static bool operator >(Range first, Range second)
         {
-            return first.Min.CompareTo(second.min) < 0 && first.Max.CompareTo(second.max) > 0;
+            return first.Min.CompareTo(second.Min) < 0 && first.Max.CompareTo(second.Max) > 0;
         }
 
         public static bool operator <=(Range first, Range second)
         {
-            return (first.min.CompareTo(second.Min) > 0 && first.Max.CompareTo(second.Max) < 0) || first == second;
+            return (first.Min.CompareTo(second.Min) > 0 && first.Max.CompareTo(second.Max) < 0) || first == second;
         }
 
         public static bool operator >=(Range first, Range second)
         {
-            return (first.Min.CompareTo(second.min) < 0 && first.Max.CompareTo(second.max) > 0) || first == second;
+            return (first.Min.CompareTo(second.Min) < 0 && first.Max.CompareTo(second.Max) > 0) || first == second;
         }
 
         /// <summary>
@@ -123,7 +115,7 @@ namespace LinqStatistics
         /// </returns>
         public override int GetHashCode()
         {
-            return min.GetHashCode() ^ max.GetHashCode() ^ _maxInclusive.GetHashCode();
+            return Min.GetHashCode() ^ Max.GetHashCode() ^ _maxInclusive.GetHashCode();
         }
 
         /// <summary>
@@ -134,7 +126,7 @@ namespace LinqStatistics
         /// </returns>
         public override string ToString()
         {
-            return String.Format("{0} — {1}", min, max);
+            return String.Format("{0} — {1}", Min, Max);
         }
 
         /// <summary>
