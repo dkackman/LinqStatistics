@@ -46,19 +46,15 @@ namespace LinqStatistics
             if (!source.Any())
                 throw new InvalidOperationException("source sequence contains no elements");
 
-            Range<<#= type #>> minMax = new Range<<#= type #>>();
-            minMax.Min = <#= type #>.MaxValue;
-            minMax.Max = <#= type #>.MinValue;
+            var minMax = new Range<<#= type #>>(<#= type #>.MaxValue, <#= type #>.MinValue);
 
-            var ret = source.Aggregate<<#= type #>, Range<<#= type #>>>(minMax, (accumulator, i) =>
+            var ret = source.Aggregate<<#= type #>, Range<<#= type #>>>(minMax, (accumulator, value) =>
             {
-                accumulator.Min = Math.Min(accumulator.Min, i);
-                accumulator.Max = Math.Max(accumulator.Max, i);
+                var min = Math.Min(accumulator.Min, value);
+                var max = Math.Max(accumulator.Max, value);
                 
-                return accumulator;
+                return new Range<<#= type #>>(min, max);;
             });
-
-            //Bret.Range = ret.Max - ret.Min;
 
             return ret;
         }

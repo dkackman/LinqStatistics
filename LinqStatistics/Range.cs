@@ -7,6 +7,10 @@ namespace LinqStatistics
     /// </summary>
     public struct Range<T> : IEquatable<Range<T>>, IComparable, IComparable<Range<T>> where T : struct, IComparable<T>
     {
+        private readonly T _min;
+        private readonly T _max;
+        private readonly bool _maxInclusive;
+
         /// <summary>
         /// Initializes a new instance of the <see cref="Range[T]"/> struct.
         /// </summary>
@@ -15,31 +19,31 @@ namespace LinqStatistics
         /// <param name="maxInclusive">When true Contains will include the Max value.</param>
         public Range(T Min, T Max, bool maxInclusive = false)
         {
-            this.Min = Min;
-            this.Max = Max;
+            _min = Min;
+            _max = Max;
 
             if (Min.CompareTo(Max) >= 0)
                 throw new InvalidOperationException("Minimum must be less then maximum");
 
-            MaxInclusive = maxInclusive;
+            _maxInclusive = maxInclusive;
         }
 
         /// <summary>
-        /// Determines whether Max should be included in the range or excluded
+            /// Determines whether Max should be included in the range or excluded
         /// </summary>
-        public bool MaxInclusive { get; private set; }
+        public bool MaxInclusive => _maxInclusive;
 
         /// <summary>
         /// Gets the minimal value of segment.
         /// </summary>
         /// <value>The Min.</value>
-        public T Min { get; internal set; }
+        public T Min => _min;
 
         /// <summary>
         /// Gets the maximal value of segment.
         /// </summary>
         /// <value>The Max.</value>
-        public T Max { get; internal set; }
+        public T Max => _max;
 
         public static bool operator ==(Range<T> first, Range<T> second)
         {

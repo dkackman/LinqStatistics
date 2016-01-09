@@ -34,19 +34,15 @@ namespace LinqStatistics
             if (!source.Any())
                 throw new InvalidOperationException("source sequence contains no elements");
 
-            Range<int> minMax = new Range<int>();
-            minMax.Min = int.MaxValue;
-            minMax.Max = int.MinValue;
+            var minMax = new Range<int>(int.MaxValue, int.MinValue);
 
-            var ret = source.Aggregate<int, Range<int>>(minMax, (accumulator, i) =>
+            var ret = source.Aggregate<int, Range<int>>(minMax, (accumulator, value) =>
             {
-                accumulator.Min = Math.Min(accumulator.Min, i);
-                accumulator.Max = Math.Max(accumulator.Max, i);
+                var min = Math.Min(accumulator.Min, value);
+                var max = Math.Max(accumulator.Max, value);
                 
-                return accumulator;
+                return new Range<int>(min, max);;
             });
-
-            //Bret.Range = ret.Max - ret.Min;
 
             return ret;
         }
@@ -116,19 +112,15 @@ namespace LinqStatistics
             if (!source.Any())
                 throw new InvalidOperationException("source sequence contains no elements");
 
-            Range<long> minMax = new Range<long>();
-            minMax.Min = long.MaxValue;
-            minMax.Max = long.MinValue;
+            var minMax = new Range<long>(long.MaxValue, long.MinValue);
 
-            var ret = source.Aggregate<long, Range<long>>(minMax, (accumulator, i) =>
+            var ret = source.Aggregate<long, Range<long>>(minMax, (accumulator, value) =>
             {
-                accumulator.Min = Math.Min(accumulator.Min, i);
-                accumulator.Max = Math.Max(accumulator.Max, i);
+                var min = Math.Min(accumulator.Min, value);
+                var max = Math.Max(accumulator.Max, value);
                 
-                return accumulator;
+                return new Range<long>(min, max);;
             });
-
-            //Bret.Range = ret.Max - ret.Min;
 
             return ret;
         }
@@ -198,19 +190,15 @@ namespace LinqStatistics
             if (!source.Any())
                 throw new InvalidOperationException("source sequence contains no elements");
 
-            Range<float> minMax = new Range<float>();
-            minMax.Min = float.MaxValue;
-            minMax.Max = float.MinValue;
+            var minMax = new Range<float>(float.MaxValue, float.MinValue);
 
-            var ret = source.Aggregate<float, Range<float>>(minMax, (accumulator, i) =>
+            var ret = source.Aggregate<float, Range<float>>(minMax, (accumulator, value) =>
             {
-                accumulator.Min = Math.Min(accumulator.Min, i);
-                accumulator.Max = Math.Max(accumulator.Max, i);
+                var min = Math.Min(accumulator.Min, value);
+                var max = Math.Max(accumulator.Max, value);
                 
-                return accumulator;
+                return new Range<float>(min, max);;
             });
-
-            //Bret.Range = ret.Max - ret.Min;
 
             return ret;
         }
@@ -280,19 +268,15 @@ namespace LinqStatistics
             if (!source.Any())
                 throw new InvalidOperationException("source sequence contains no elements");
 
-            Range<double> minMax = new Range<double>();
-            minMax.Min = double.MaxValue;
-            minMax.Max = double.MinValue;
+            var minMax = new Range<double>(double.MaxValue, double.MinValue);
 
-            var ret = source.Aggregate<double, Range<double>>(minMax, (accumulator, i) =>
+            var ret = source.Aggregate<double, Range<double>>(minMax, (accumulator, value) =>
             {
-                accumulator.Min = Math.Min(accumulator.Min, i);
-                accumulator.Max = Math.Max(accumulator.Max, i);
+                var min = Math.Min(accumulator.Min, value);
+                var max = Math.Max(accumulator.Max, value);
                 
-                return accumulator;
+                return new Range<double>(min, max);;
             });
-
-            //Bret.Range = ret.Max - ret.Min;
 
             return ret;
         }
@@ -362,19 +346,15 @@ namespace LinqStatistics
             if (!source.Any())
                 throw new InvalidOperationException("source sequence contains no elements");
 
-            Range<decimal> minMax = new Range<decimal>();
-            minMax.Min = decimal.MaxValue;
-            minMax.Max = decimal.MinValue;
+            var minMax = new Range<decimal>(decimal.MaxValue, decimal.MinValue);
 
-            var ret = source.Aggregate<decimal, Range<decimal>>(minMax, (accumulator, i) =>
+            var ret = source.Aggregate<decimal, Range<decimal>>(minMax, (accumulator, value) =>
             {
-                accumulator.Min = Math.Min(accumulator.Min, i);
-                accumulator.Max = Math.Max(accumulator.Max, i);
+                var min = Math.Min(accumulator.Min, value);
+                var max = Math.Max(accumulator.Max, value);
                 
-                return accumulator;
+                return new Range<decimal>(min, max);;
             });
-
-            //Bret.Range = ret.Max - ret.Min;
 
             return ret;
         }

@@ -14,7 +14,7 @@ namespace LinqStatistics
         /// <summary>
         /// The value represented by the bin
         /// </summary>
-        public T RepresentativeValue { get { return _value; } }
+        public T RepresentativeValue => _value;
 
         /// <summary>
         /// The number of times Value appears in the source data
