@@ -6,7 +6,7 @@ namespace LinqStatistics
     /// <summary>
     /// An ordered pair of values, representing a segment.
     /// </summary>
-    public struct Range<T> : IFormattable, IEquatable<Range<T>>, IComparable, IComparable<Range<T>> where T : struct, IComparable<T>, IFormattable
+    public struct Range<T> : IFormattable, IEquatable<Range<T>>, IComparable, IComparable<Range<T>> where T : struct, IComparable<T>, IFormattable, IEquatable<T>
     {
         private readonly T _min;
         private readonly T _max;
@@ -133,6 +133,46 @@ namespace LinqStatistics
         }
 
         /// <summary>
+        /// <see cref="System.IComparable.CompareTo(object)"/>
+        /// </summary>
+        /// <param name="obj"></param>
+        /// <returns></returns>
+        public int CompareTo(object obj)
+        {
+            if (obj == null)
+            {
+                return 1;
+            }
+
+            if (obj is Range<T>)
+            {
+                return this.CompareTo((Range<T>)obj);
+            }
+
+            throw new ArgumentException("Comparand must be of type Range<T>");
+        }
+
+        /// <summary>
+        /// <see cref="System.IComparable{T}.CompareTo(T)"/>
+        /// </summary>
+        /// <param name="other"></param>
+        /// <returns></returns>
+        public int CompareTo(Range<T> other)
+        {
+            if (this < other)
+            {
+                return -1;
+            }
+
+            if (this > other)
+            {
+                return 1;
+            }
+
+            return 0;
+        }
+
+        /// <summary>
         /// Returns the hash code for this instance.
         /// </summary>
         /// <returns>
@@ -188,46 +228,6 @@ namespace LinqStatistics
         public string ToString(string format, IFormatProvider provider)
         {
             return Format(Min.ToString(format, provider), Max.ToString(format, provider), _maxInclusive);
-        }
-
-        /// <summary>
-        /// <see cref="System.IComparable.CompareTo(object)"/>
-        /// </summary>
-        /// <param name="obj"></param>
-        /// <returns></returns>
-        public int CompareTo(object obj)
-        {
-            if (obj == null)
-            {
-                return 1;
-            }
-
-            if (obj is Range<T>)
-            {
-                return this.CompareTo((Range<T>)obj);
-            }
-
-            throw new ArgumentException("Comparand must be of type Range<T>");
-        }
-
-        /// <summary>
-        /// <see cref="System.IComparable{T}.CompareTo(T)"/>
-        /// </summary>
-        /// <param name="other"></param>
-        /// <returns></returns>
-        public int CompareTo(Range<T> other)
-        {
-            if (this < other)
-            {
-                return -1;
-            }
-
-            if (this > other)
-            {
-                return 1;
-            }
-
-            return 0;
         }
     }
 }
