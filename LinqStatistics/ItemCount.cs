@@ -12,22 +12,6 @@ namespace LinqStatistics
         private int _count;
 
         /// <summary>
-        /// The value represented by the bin
-        /// </summary>
-        public T RepresentativeValue => _value;
-
-        /// <summary>
-        /// The number of times Value appears in the source data
-        /// </summary>
-        public int Count
-        {
-            get { return _count; }
-
-            // this is marked internal so histogram binning can update Count while counting
-            internal set { _count = value; }
-        }
-
-        /// <summary>
         /// ctor
         /// </summary>
         /// <param name="v"></param>
@@ -41,6 +25,22 @@ namespace LinqStatistics
         internal ItemCount(T v)
             : this(v, 0)
         {
+        }
+
+        /// <summary>
+        /// The value represented by the bin
+        /// </summary>
+        public T RepresentativeValue => _value;
+
+        /// <summary>
+        /// The number of times Value appears in the source data
+        /// </summary>
+        public int Count
+        {
+            get { return _count; }
+
+            // this is marked internal so histogram binning can update Count while counting
+            internal set { _count = value; }
         }
 
         public static bool operator ==(ItemCount<T> lhs, ItemCount<T> rhs)

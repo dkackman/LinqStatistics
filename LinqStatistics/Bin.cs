@@ -27,7 +27,7 @@ namespace LinqStatistics
 
         internal Bin(double v, double min, double max, bool maxInclusive = false)
             : this(v, min, max, 0, maxInclusive)
-        {            
+        {
         }
 
         /// <summary>
@@ -38,7 +38,7 @@ namespace LinqStatistics
         /// <summary>
         /// The range
         /// </summary>
-        public Range<double> Range { get { return _range; } }
+        public Range<double> Range => _range;
 
         /// <summary>
         /// Determines if a value is contained with the segment
