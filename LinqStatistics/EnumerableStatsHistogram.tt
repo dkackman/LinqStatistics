@@ -141,7 +141,8 @@ namespace LinqStatistics
             }
 
             return bins;
-		}  
-        <# } #> 
+		}
+
+		<# } #>
     }
 }

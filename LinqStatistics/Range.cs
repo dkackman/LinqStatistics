@@ -13,37 +13,37 @@ namespace LinqStatistics
         private readonly bool _maxInclusive;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="Range[T]"/> struct.
+        /// Initializes a new instance of the <see cref="Range{T}"/> struct.
         /// </summary>
         /// <param name="Min">The minimal value of segment.</param>
         /// <param name="Max">The maximal value of segment.</param>
-        /// <param name="maxInclusive">When true Contains will include the Max value.</param>
-        public Range(T Min, T Max, bool maxInclusive = false)
+        /// <param name="maxInclusive">When true <see cref="Contains(T)"/> will include the Max value.</param>
+        public Range(T min, T max, bool maxInclusive = false)
         {
-            _min = Min;
-            _max = Max;
+            _min = min;
+            _max = max;
 
-            if (Min.CompareTo(Max) >= 0)
+            if (min.CompareTo(max) >= 0)
                 throw new InvalidOperationException("Minimum must be less then maximum");
 
             _maxInclusive = maxInclusive;
         }
 
         /// <summary>
-        /// This ctor is used interally and needs to bypass the max > min check during MinMax calculation
+        /// This ctor is used internally and used to bypass the max > min check during MinMax calculation
         /// </summary>
-        /// <param name="Min"></param>
-        /// <param name="Max"></param>
-        internal Range(T Min, T Max)
+        /// <param name="Min">The minimal value of segment.</param>
+        /// <param name="Max">The maximal value of segment.</param>
+        internal Range(T min, T max)
         {
-            _min = Min;
-            _max = Max;
+            _min = min;
+            _max = max;
 
             _maxInclusive = false;
         }
 
         /// <summary>
-        /// Determines whether Max should be included in the range or excluded
+        /// Determines whether Max should be included or excluded in the range
         /// </summary>
         public bool MaxInclusive => _maxInclusive;
 
@@ -59,16 +59,6 @@ namespace LinqStatistics
         /// <value>The Max.</value>
         public T Max => _max;
 
-        public static bool operator ==(Range<T> first, Range<T> second)
-        {
-            return first.Min.Equals(second.Min) && first.Max.Equals(second.Max) && first.MaxInclusive.Equals(second.MaxInclusive);
-        }
-
-        public static bool operator !=(Range<T> first, Range<T> second)
-        {
-            return !(first == second);
-        }
-
         /// <summary>
         /// Determines if a value is contained with the segment
         /// </summary>
@@ -80,7 +70,18 @@ namespace LinqStatistics
             {
                 return item.CompareTo(Min) >= 0 && item.CompareTo(Max) <= 0;
             }
+
             return item.CompareTo(Min) >= 0 && item.CompareTo(Max) < 0;
+        }
+
+        public static bool operator ==(Range<T> first, Range<T> second)
+        {
+            return first.Min.Equals(second.Min) && first.Max.Equals(second.Max) && first.MaxInclusive.Equals(second.MaxInclusive);
+        }
+
+        public static bool operator !=(Range<T> first, Range<T> second)
+        {
+            return !(first == second);
         }
 
         public static bool operator <(Range<T> first, Range<T> second)

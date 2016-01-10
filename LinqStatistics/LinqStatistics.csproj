@@ -37,6 +37,8 @@
     <WarningLevel>4</WarningLevel>
     <DocumentationFile>bin\Release\LinqStatistics.XML</DocumentationFile>
     <NoWarn>1591</NoWarn>
+    <RunCodeAnalysis>true</RunCodeAnalysis>
+    <CodeAnalysisIgnoreGeneratedCode>false</CodeAnalysisIgnoreGeneratedCode>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
