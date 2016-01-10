@@ -14,20 +14,6 @@ namespace LinqStatistics.UnitTests
         }
 
         [TestMethod]
-        public void RangeContainsMaxInclusiveFalse()
-        {
-            var range = new Range<int>(1, 10);
-            Assert.IsFalse(range.Contains(10));
-        }
-
-        [TestMethod]
-        public void RangeContainsMaxInclusiveTrue()
-        {
-            var range = new Range<int>(1, 10, true);
-            Assert.IsTrue(range.Contains(10));
-        }
-
-        [TestMethod]
         public void RangeEquality()
         {
             var r1 = new Range<int>(1, 10);

@@ -10,42 +10,31 @@ namespace LinqStatistics
     {
         private readonly T _min;
         private readonly T _max;
-        private readonly bool _maxInclusive;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="Range{T}"/> struct.
         /// </summary>
         /// <param name="Min">The minimal value of segment.</param>
         /// <param name="Max">The maximal value of segment.</param>
-        /// <param name="maxInclusive">When true <see cref="Contains(T)"/> will include the Max value.</param>
-        public Range(T min, T max, bool maxInclusive = false)
+        public Range(T min, T max)
         {
             _min = min;
             _max = max;
 
-            if (min.CompareTo(max) >= 0)
-                throw new InvalidOperationException("Minimum must be less then maximum");
-
-            _maxInclusive = maxInclusive;
+            //if (min.CompareTo(max) >= 0)
+            //    throw new InvalidOperationException("Minimum must be less then maximum");
         }
 
-        /// <summary>
-        /// This ctor is used internally and used to bypass the max > min check during MinMax calculation
-        /// </summary>
-        /// <param name="Min">The minimal value of segment.</param>
-        /// <param name="Max">The maximal value of segment.</param>
-        internal Range(T min, T max)
-        {
-            _min = min;
-            _max = max;
-
-            _maxInclusive = false;
-        }
-
-        /// <summary>
-        /// Determines whether Max should be included or excluded in the range
-        /// </summary>
-        public bool MaxInclusive => _maxInclusive;
+        ///// <summary>
+        ///// This ctor is used internally and used to bypass the max > min check during MinMax calculation
+        ///// </summary>
+        ///// <param name="Min">The minimal value of segment.</param>
+        ///// <param name="Max">The maximal value of segment.</param>
+        //internal Range(T min, T max)
+        //{
+        //    _min = min;
+        //    _max = max;            
+        //}
 
         /// <summary>
         /// Gets the minimal value of segment.
@@ -59,24 +48,9 @@ namespace LinqStatistics
         /// <value>The Max.</value>
         public T Max => _max;
 
-        /// <summary>
-        /// Determines if a value is contained with the segment
-        /// </summary>
-        /// <param name="item">The item to check</param>
-        /// <returns>True if item is contained in the range - taking into acount MaxInclusive</returns>
-        public bool Contains(T item)
-        {
-            if (MaxInclusive)
-            {
-                return item.CompareTo(Min) >= 0 && item.CompareTo(Max) <= 0;
-            }
-
-            return item.CompareTo(Min) >= 0 && item.CompareTo(Max) < 0;
-        }
-
         public static bool operator ==(Range<T> first, Range<T> second)
         {
-            return first.Min.Equals(second.Min) && first.Max.Equals(second.Max) && first.MaxInclusive.Equals(second.MaxInclusive);
+            return first.Min.Equals(second.Min) && first.Max.Equals(second.Max);
         }
 
         public static bool operator !=(Range<T> first, Range<T> second)
@@ -181,7 +155,7 @@ namespace LinqStatistics
         /// </returns>
         public override int GetHashCode()
         {
-            return Min.GetHashCode() ^ Max.GetHashCode() ^ MaxInclusive.GetHashCode();
+            return Min.GetHashCode() ^ Max.GetHashCode();
         }
 
         /// <summary>
@@ -192,12 +166,12 @@ namespace LinqStatistics
         /// </returns>
         public override string ToString()
         {
-            return Format(Min.ToString(), Max.ToString(), _maxInclusive);
+            return Format(Min.ToString(), Max.ToString());
         }
 
-        private static string Format(string min, string max, bool maxInclusive)
+        private static string Format(string min, string max)
         {
-            return String.Format("({0} — {1}{2}", min, max, maxInclusive ? ")" : "]");
+            return String.Format("({0} — {1}", min, max);
         }
 
         /// <summary>
@@ -207,7 +181,7 @@ namespace LinqStatistics
         /// <returns></returns>
         public string ToString(IFormatProvider provider)
         {
-            return Format(Min.ToString(null, provider), Max.ToString(null, provider), _maxInclusive);
+            return Format(Min.ToString(null, provider), Max.ToString(null, provider));
         }
 
         /// <summary>
@@ -217,7 +191,7 @@ namespace LinqStatistics
         /// <returns></returns>
         public string ToString(string format)
         {
-            return Format(Min.ToString(format, CultureInfo.CurrentCulture), Max.ToString(format, CultureInfo.CurrentCulture), _maxInclusive);
+            return Format(Min.ToString(format, CultureInfo.CurrentCulture), Max.ToString(format, CultureInfo.CurrentCulture));
         }
 
         /// <summary>
@@ -228,7 +202,7 @@ namespace LinqStatistics
         /// <returns></returns>
         public string ToString(string format, IFormatProvider provider)
         {
-            return Format(Min.ToString(format, provider), Max.ToString(format, provider), _maxInclusive);
+            return Format(Min.ToString(format, provider), Max.ToString(format, provider));
         }
     }
 }

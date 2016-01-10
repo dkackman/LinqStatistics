@@ -8,6 +8,7 @@ namespace LinqStatistics
     public class Bin : ItemCount<double>
     {
         private readonly Range<double> _range;
+        private readonly bool _maxInclusive;
 
         /// <summary>
         /// ctor
@@ -20,14 +21,19 @@ namespace LinqStatistics
         public Bin(double v, double min, double max, int count, bool maxInclusive = false)
             : base(v, count)
         {
-            _range = new Range<double>(min, max, maxInclusive);
+            _range = new Range<double>(min, max);
+            _maxInclusive = maxInclusive;
         }
 
         internal Bin(double v, double min, double max, bool maxInclusive = false)
             : this(v, min, max, 0, maxInclusive)
-        {
-            
+        {            
         }
+
+        /// <summary>
+        /// Determines whether Max should be included or excluded in the range
+        /// </summary>
+        public bool MaxInclusive => _maxInclusive;
 
         /// <summary>
         /// The range
@@ -35,12 +41,27 @@ namespace LinqStatistics
         public Range<double> Range { get { return _range; } }
 
         /// <summary>
+        /// Determines if a value is contained with the segment
+        /// </summary>
+        /// <param name="item">The item to check</param>
+        /// <returns>True if item is contained in the range - taking into acount MaxInclusive</returns>
+        public bool Contains(double item)
+        {
+            if (MaxInclusive)
+            {
+                return item.CompareTo(Range.Min) >= 0 && item.CompareTo(Range.Max) <= 0;
+            }
+
+            return item.CompareTo(Range.Min) >= 0 && item.CompareTo(Range.Max) < 0;
+        }
+
+        /// <summary>
         /// <see cref="System.Object.GetHashCode"/>
         /// </summary>
         /// <returns></returns>
         public override int GetHashCode()
         {
-            return base.GetHashCode() ^ _range.GetHashCode();
+            return base.GetHashCode() ^ _range.GetHashCode() ^ _maxInclusive.GetHashCode();
         }
 
         public static bool operator ==(Bin lhs, Bin rhs)
@@ -72,7 +93,8 @@ namespace LinqStatistics
         {
             if (obj is Bin && base.Equals(obj))
             {
-                return ((Bin)obj)._range == this._range;
+                var other = (Bin)obj;
+                return other._range == this._range && other.MaxInclusive == this.MaxInclusive;
             }
 
             return false;

@@ -92,7 +92,7 @@ namespace LinqStatistics.UnitTests
 
             Assert.AreEqual(list.Count, histogram.Select(b => b.Count).Sum());
 
-            Assert.IsTrue(histogram.Last().Range.Contains(list.Max()));
+            Assert.IsTrue(histogram.Last().Contains(list.Max()));
         }
 
         [TestMethod]
