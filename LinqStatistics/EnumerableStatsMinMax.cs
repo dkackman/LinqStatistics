@@ -36,7 +36,7 @@ namespace LinqStatistics
 
 			// initialize minimum to max possible value and maximum to minimum possible value
 			// so that the first comparisons in the aggregate function work as expected
-			var minMax = new Range<int>(int.MaxValue, int.MinValue);
+			var minMax = new Range<int>(int.MaxValue, int.MinValue, true);
 
 			return source.Aggregate<int, Range<int>>(minMax, (accumulator, value) =>
 			{
@@ -114,7 +114,7 @@ namespace LinqStatistics
 
 			// initialize minimum to max possible value and maximum to minimum possible value
 			// so that the first comparisons in the aggregate function work as expected
-			var minMax = new Range<long>(long.MaxValue, long.MinValue);
+			var minMax = new Range<long>(long.MaxValue, long.MinValue, true);
 
 			return source.Aggregate<long, Range<long>>(minMax, (accumulator, value) =>
 			{
@@ -192,7 +192,7 @@ namespace LinqStatistics
 
 			// initialize minimum to max possible value and maximum to minimum possible value
 			// so that the first comparisons in the aggregate function work as expected
-			var minMax = new Range<float>(float.MaxValue, float.MinValue);
+			var minMax = new Range<float>(float.MaxValue, float.MinValue, true);
 
 			return source.Aggregate<float, Range<float>>(minMax, (accumulator, value) =>
 			{
@@ -270,7 +270,7 @@ namespace LinqStatistics
 
 			// initialize minimum to max possible value and maximum to minimum possible value
 			// so that the first comparisons in the aggregate function work as expected
-			var minMax = new Range<double>(double.MaxValue, double.MinValue);
+			var minMax = new Range<double>(double.MaxValue, double.MinValue, true);
 
 			return source.Aggregate<double, Range<double>>(minMax, (accumulator, value) =>
 			{
@@ -348,7 +348,7 @@ namespace LinqStatistics
 
 			// initialize minimum to max possible value and maximum to minimum possible value
 			// so that the first comparisons in the aggregate function work as expected
-			var minMax = new Range<decimal>(decimal.MaxValue, decimal.MinValue);
+			var minMax = new Range<decimal>(decimal.MaxValue, decimal.MinValue, true);
 
 			return source.Aggregate<decimal, Range<decimal>>(minMax, (accumulator, value) =>
 			{

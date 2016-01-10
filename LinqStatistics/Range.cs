@@ -14,27 +14,27 @@ namespace LinqStatistics
         /// <summary>
         /// Initializes a new instance of the <see cref="Range{T}"/> struct.
         /// </summary>
-        /// <param name="Min">The minimal value of segment.</param>
-        /// <param name="Max">The maximal value of segment.</param>
+        /// <param name="min">The minimal value of segment.</param>
+        /// <param name="max">The maximal value of segment.</param>
         public Range(T min, T max)
+            : this(min, max, false)
+        {
+        }
+
+        /// <summary>
+        /// This ctor is used internally and used to bypass the max > min check during MinMax calculation
+        /// </summary>
+        /// <param name="min">The minimal value of segment.</param>
+        /// <param name="max">The maximal value of segment.</param>
+        /// <param name="noThrow">True to allow min to be less than max</param>
+        internal Range(T min, T max, bool noThrow)
         {
             _min = min;
             _max = max;
 
-            //if (min.CompareTo(max) >= 0)
-            //    throw new InvalidOperationException("Minimum must be less then maximum");
+            if (!noThrow && min.CompareTo(max) > 0)
+                throw new InvalidOperationException("Minimum must be less then maximum");
         }
-
-        ///// <summary>
-        ///// This ctor is used internally and used to bypass the max > min check during MinMax calculation
-        ///// </summary>
-        ///// <param name="Min">The minimal value of segment.</param>
-        ///// <param name="Max">The maximal value of segment.</param>
-        //internal Range(T min, T max)
-        //{
-        //    _min = min;
-        //    _max = max;            
-        //}
 
         /// <summary>
         /// Gets the minimal value of segment.
