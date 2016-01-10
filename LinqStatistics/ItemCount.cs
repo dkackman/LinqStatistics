@@ -33,7 +33,7 @@ namespace LinqStatistics
         public T RepresentativeValue => _value;
 
         /// <summary>
-        /// The number of times Value appears in the source data
+        /// The number of times RepresentativeValue appears in the source data
         /// </summary>
         public int Count
         {

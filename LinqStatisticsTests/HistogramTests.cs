@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq;
 using System.Collections.Generic;
+using System.Diagnostics;
 
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
@@ -151,6 +152,48 @@ namespace LinqStatistics.UnitTests
 
             Assert.AreEqual(3, histogram[9].Count);
         }
+
+        [TestMethod]
+        public void HistogramPerf()
+        {
+            IEnumerable<int> data = DataLoader.LoadData<int>("HistogramData.txt", s => Convert.ToInt32(s));
+
+            for (int i = 0; i < 1000; i ++)
+            {
+                data = data.Concat(DataLoader.LoadData<int>("HistogramData.txt", s => Convert.ToInt32(s)));
+            }
+
+            // http://www.shodor.org/interactivate/activities/Histogram/#
+            var stopWatch = new Stopwatch();
+
+            stopWatch.Start();
+            var histogram = data.Histogram(10, BinningMode.ExpandRange).ToList();
+            stopWatch.Stop();
+            TimeSpan ts = stopWatch.Elapsed;
+            Debug.WriteLine(ts.TotalSeconds);
+            //Assert.AreEqual(list.Count(), histogram.Select(b => b.Count).Sum());
+
+            //Assert.AreEqual(4, histogram[0].Count);
+
+            //Assert.AreEqual(8, histogram[1].Count);
+
+            //Assert.AreEqual(52, histogram[2].Count);
+
+            //Assert.AreEqual(41, histogram[3].Count);
+
+            //Assert.AreEqual(36, histogram[4].Count);
+
+            //Assert.AreEqual(20, histogram[5].Count);
+
+            //Assert.AreEqual(3, histogram[6].Count);
+
+            //Assert.AreEqual(5, histogram[7].Count);
+
+            //Assert.AreEqual(1, histogram[8].Count);
+
+            //Assert.AreEqual(3, histogram[9].Count);
+        }
+
 
         [TestMethod]
         public void HistogramOfDoubles()

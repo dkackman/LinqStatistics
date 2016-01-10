@@ -3,21 +3,12 @@
 namespace LinqStatistics
 {
     /// <summary>
-    /// Represent the result of a LeastSquares calculation of the form y = mX + b
+    /// Represents the result of a LeastSquares calculation of the form y = mX + b
     /// </summary>
     public struct LeastSquares : IFormattable, IEquatable<LeastSquares>
     {
         private readonly double _m;
         private readonly double _b;
-
-        /// <summary>
-        /// M Coefficient for y = Mx + B
-        /// </summary>
-        public double M { get { return _m; } }
-        /// <summary>
-        /// B Coefficient for y = Mx + B
-        /// </summary>
-        public double B { get { return _b; } }
 
         /// <summary>
         /// 
@@ -31,6 +22,16 @@ namespace LinqStatistics
         }
 
         /// <summary>
+        /// M Coefficient for y = Mx + B
+        /// </summary>
+        public double M { get { return _m; } }
+
+        /// <summary>
+        /// B Coefficient for y = Mx + B
+        /// </summary>
+        public double B { get { return _b; } }
+
+        /// <summary>
         /// Uses the calculated coefficients to solve Y for inputted X
         /// </summary>
         /// <param name="x">X value to solve for</param>
@@ -40,6 +41,11 @@ namespace LinqStatistics
             return (M * x) + B;
         }
 
+        /// <summary>
+        /// Uses the calculated coefficients to solve X for inputted Y
+        /// </summary>
+        /// <param name="y">Y value to solve for</param>
+        /// <returns>X value (x = (y - b) / m)</returns>
         public double SolveForX(double y)
         {
             return (y - B) / M;
