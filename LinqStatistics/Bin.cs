@@ -5,7 +5,7 @@ namespace LinqStatistics
     /// <summary>
     /// A discrete count of items which fall into a given range
     /// </summary>
-    public class Bin : ItemCount<double>
+    public class Bin : ItemCount<double>, IEquatable<Bin>
     {
         private readonly Range<double> _range;
         private readonly bool _maxInclusive;
@@ -91,9 +91,23 @@ namespace LinqStatistics
         /// <returns></returns>
         public override bool Equals(object obj)
         {
-            if (obj is Bin && base.Equals(obj))
+            if (obj is Bin)
             {
-                var other = (Bin)obj;
+                this.Equals((Bin)obj);
+            }
+
+            return false;
+        }
+
+        /// <summary>
+        /// <see cref="System.IEquatable{T}.Equals(T)"/>
+        /// </summary>
+        /// <param name="other"></param>
+        /// <returns></returns>
+        public bool Equals(Bin other)
+        {
+            if (base.Equals(other))
+            {
                 return other._range == this._range && other.MaxInclusive == this.MaxInclusive;
             }
 
