@@ -171,7 +171,7 @@ namespace LinqStatistics
 
         private static string Format(string min, string max)
         {
-            return String.Format("({0} — {1}", min, max);
+            return String.Format("{0} — {1}", min, max);
         }
 
         /// <summary>
