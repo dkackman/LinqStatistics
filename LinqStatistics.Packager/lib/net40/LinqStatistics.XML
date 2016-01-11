@@ -19,10 +19,22 @@
             <param name="count">The number of items in the Bin</param>
             <param name="maxInclusive">Should Max be included in the Range or excluded - default is excluded</param>
         </member>
+        <member name="P:LinqStatistics.Bin.MaxInclusive">
+            <summary>
+            Determines whether Max should be included or excluded in the range
+            </summary>
+        </member>
         <member name="P:LinqStatistics.Bin.Range">
             <summary>
             The range
             </summary>
+        </member>
+        <member name="M:LinqStatistics.Bin.Contains(System.Double)">
+            <summary>
+            Determines if a value is contained with the segment
+            </summary>
+            <param name="item">The item to check</param>
+            <returns>True if item is contained in the range - taking into acount MaxInclusive</returns>
         </member>
         <member name="M:LinqStatistics.Bin.GetHashCode">
             <summary>
@@ -35,6 +47,13 @@
             <see cref="M:System.Object.Equals(System.Object)"/>
             </summary>
             <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LinqStatistics.Bin.Equals(LinqStatistics.Bin)">
+            <summary>
+            <see cref="M:System.IEquatable`1.Equals(`0)"/>
+            </summary>
+            <param name="other"></param>
             <returns></returns>
         </member>
         <member name="M:LinqStatistics.Bin.ToString">
@@ -2750,6 +2769,13 @@
             </summary>
             <typeparam name="T">The type of the item</typeparam>
         </member>
+        <member name="M:LinqStatistics.ItemCount`1.#ctor(`0,System.Int32)">
+            <summary>
+            ctor
+            </summary>
+            <param name="v"></param>
+            <param name="count"></param>
+        </member>
         <member name="P:LinqStatistics.ItemCount`1.RepresentativeValue">
             <summary>
             The value represented by the bin
@@ -2757,15 +2783,8 @@
         </member>
         <member name="P:LinqStatistics.ItemCount`1.Count">
             <summary>
-            The number of times Value appears in the source data
+            The number of times RepresentativeValue appears in the source data
             </summary>
-        </member>
-        <member name="M:LinqStatistics.ItemCount`1.#ctor(`0,System.Int32)">
-            <summary>
-            ctor
-            </summary>
-            <param name="v"></param>
-            <param name="count"></param>
         </member>
         <member name="M:LinqStatistics.ItemCount`1.Equals(System.Object)">
             <summary>
@@ -2817,8 +2836,15 @@
         </member>
         <member name="T:LinqStatistics.LeastSquares">
             <summary>
-            Represent the result of a LeastSquares calculation of the form y = mX + b
+            Represents the result of a LeastSquares calculation of the form y = mX + b
             </summary>
+        </member>
+        <member name="M:LinqStatistics.LeastSquares.#ctor(System.Double,System.Double)">
+            <summary>
+            
+            </summary>
+            <param name="m">The slope</param>
+            <param name="b">the intercept</param>
         </member>
         <member name="P:LinqStatistics.LeastSquares.M">
             <summary>
@@ -2830,19 +2856,19 @@
             B Coefficient for y = Mx + B
             </summary>
         </member>
-        <member name="M:LinqStatistics.LeastSquares.#ctor(System.Double,System.Double)">
-            <summary>
-            
-            </summary>
-            <param name="m">The slope</param>
-            <param name="b">the intercept</param>
-        </member>
         <member name="M:LinqStatistics.LeastSquares.Solve(System.Double)">
             <summary>
             Uses the calculated coefficients to solve Y for inputted X
             </summary>
             <param name="x">X value to solve for</param>
             <returns>Y value (y = Mx + B)</returns>
+        </member>
+        <member name="M:LinqStatistics.LeastSquares.SolveForX(System.Double)">
+            <summary>
+            Uses the calculated coefficients to solve X for inputted Y
+            </summary>
+            <param name="y">Y value to solve for</param>
+            <returns>X value (x = (y - b) / m)</returns>
         </member>
         <member name="M:LinqStatistics.LeastSquares.Equals(System.Object)">
             <summary>
@@ -2897,25 +2923,20 @@
             An ordered pair of values, representing a segment.
             </summary>
         </member>
-        <member name="M:LinqStatistics.Range`1.#ctor(`0,`0,System.Boolean)">
+        <member name="M:LinqStatistics.Range`1.#ctor(`0,`0)">
             <summary>
             Initializes a new instance of the <see cref="T:LinqStatistics.Range`1"/> struct.
             </summary>
-            <param name="Min">The minimal value of segment.</param>
-            <param name="Max">The maximal value of segment.</param>
-            <param name="maxInclusive">When true Contains will include the Max value.</param>
+            <param name="min">The minimal value of segment.</param>
+            <param name="max">The maximal value of segment.</param>
         </member>
-        <member name="M:LinqStatistics.Range`1.#ctor(`0,`0)">
+        <member name="M:LinqStatistics.Range`1.#ctor(`0,`0,System.Boolean)">
             <summary>
-            This ctor is used interally and needs to bypass the max > min check during MinMax calculation
+            This ctor is used internally and used to bypass the max > min check during MinMax calculation
             </summary>
-            <param name="Min"></param>
-            <param name="Max"></param>
-        </member>
-        <member name="P:LinqStatistics.Range`1.MaxInclusive">
-            <summary>
-            Determines whether Max should be included in the range or excluded
-            </summary>
+            <param name="min">The minimal value of segment.</param>
+            <param name="max">The maximal value of segment.</param>
+            <param name="noThrow">True to allow min to be less than max</param>
         </member>
         <member name="P:LinqStatistics.Range`1.Min">
             <summary>
@@ -2928,13 +2949,6 @@
             Gets the maximal value of segment.
             </summary>
             <value>The Max.</value>
-        </member>
-        <member name="M:LinqStatistics.Range`1.Contains(`0)">
-            <summary>
-            Determines if a value is contained with the segment
-            </summary>
-            <param name="item">The item to check</param>
-            <returns>True if item is contained in the range - taking into acount MaxInclusive</returns>
         </member>
         <member name="M:LinqStatistics.Range`1.Equals(System.Object)">
             <summary>

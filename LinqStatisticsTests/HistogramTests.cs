@@ -159,14 +159,14 @@ namespace LinqStatistics.UnitTests
             IEnumerable<int> data = DataLoader.LoadData<int>("HistogramData.txt", s => Convert.ToInt32(s));
             IEnumerable<int> list = data;
 
-            for (int i = 0; i < 1000; i ++)
+            for (int i = 0; i < 1000; i++)
             {
                 list = list.Concat(data);
             }
 
             int count = list.Count();
 
-             var stopWatch = new Stopwatch();
+            var stopWatch = new Stopwatch();
 
             stopWatch.Start();
             var histogram = list.Histogram(10, BinningMode.ExpandRange);
@@ -174,7 +174,6 @@ namespace LinqStatistics.UnitTests
 
             Debug.WriteLine($"{count} records took {stopWatch.Elapsed.TotalSeconds} seconds");
         }
-
 
         [TestMethod]
         public void HistogramOfDoubles()
