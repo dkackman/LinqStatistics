@@ -30,6 +30,8 @@ namespace LinqStatistics
         /// <summary>
         /// The total range will be expanded such that the min is
         /// less then the sequence min and max is greater then the sequence max
+		/// The number of bins will be equal to (max - min) / (binCount - 1)
+		/// in essence adding an extra bin and shrinking the bin size
         /// </summary>
         ExpandRange
     }
