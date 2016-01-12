@@ -154,6 +154,7 @@ namespace LinqStatistics.UnitTests
         }
 
         [TestMethod]
+        [Ignore] // this test used for measuring, not actually testing
         public void HistogramPerf()
         {
             IEnumerable<int> data = DataLoader.LoadData<int>("HistogramData.txt", s => Convert.ToInt32(s));
