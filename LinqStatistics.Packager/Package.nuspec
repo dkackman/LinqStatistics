@@ -10,9 +10,9 @@
       Extension methods that add additional simple statistical calculations to the built in sum, min, max, average etc.
       Includes Covariance, Median, Mode, Pearson's Chi Squared, Range, Standard Deviation (sample and population), Variance (sample and population), CountEach, Histograms, Root Mean Square, Least Squares and Kurtosis
     </description>
-    <releaseNotes>
+    <releaseNotes>      
       1.1.0
-      - Made code comments, argument checking and implementations consistent
+      - Made code comments, argument checking and implementations consistent using T4 templates
       2.0.0
       - Added MinMax (calculate minimum and maximum in a single pass)
       - Improve performance of Histogram and Range by eliminating multiple enumeration

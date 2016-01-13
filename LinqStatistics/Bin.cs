@@ -5,6 +5,7 @@ namespace LinqStatistics
     /// <summary>
     /// A discrete count of items which fall into a given range
     /// </summary>
+    [System.Runtime.InteropServices.ComVisible(false)] // code analysis was complaining that this type was marked as com visible
     public class Bin : ItemCount<double>, IEquatable<Bin>
     {
         private readonly Range<double> _range;
