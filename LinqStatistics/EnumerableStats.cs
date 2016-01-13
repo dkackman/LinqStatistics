@@ -5,7 +5,7 @@ using System.Collections.Generic;
 namespace LinqStatistics
 {
     /// <summary>
-    /// Static class with statistical extension methods for IEnumerable{T}
+    /// Static class with statistical extension methods for <see cref="IEnumerable{T}"/>
     /// </summary>
     public static partial class EnumerableStats
     {
