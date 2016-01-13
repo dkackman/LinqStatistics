@@ -50,6 +50,51 @@
     <Compile Include="..\LinqStatistics\EnumerableStatsCountEach.cs">
       <Link>EnumerableStatsCountEach.cs</Link>
     </Compile>
+    <Compile Include="..\LinqStatistics\EnumerableStatsCovariance.cs">
+      <Link>EnumerableStatsCovariance.cs</Link>
+    </Compile>
+    <Compile Include="..\LinqStatistics\EnumerableStatsHistogram.cs">
+      <Link>EnumerableStatsHistogram.cs</Link>
+    </Compile>
+    <Compile Include="..\LinqStatistics\EnumerableStatsKurtosis.cs">
+      <Link>EnumerableStatsKurtosis.cs</Link>
+    </Compile>
+    <Compile Include="..\LinqStatistics\EnumerableStatsLeastSquares.cs">
+      <Link>EnumerableStatsLeastSquares.cs</Link>
+    </Compile>
+    <Compile Include="..\LinqStatistics\EnumerableStatsMedian.cs">
+      <Link>EnumerableStatsMedian.cs</Link>
+    </Compile>
+    <Compile Include="..\LinqStatistics\EnumerableStatsMinMax.cs">
+      <Link>EnumerableStatsMinMax.cs</Link>
+    </Compile>
+    <Compile Include="..\LinqStatistics\EnumerableStatsMode.cs">
+      <Link>EnumerableStatsMode.cs</Link>
+    </Compile>
+    <Compile Include="..\LinqStatistics\EnumerableStatsPearson.cs">
+      <Link>EnumerableStatsPearson.cs</Link>
+    </Compile>
+    <Compile Include="..\LinqStatistics\EnumerableStatsRange.cs">
+      <Link>EnumerableStatsRange.cs</Link>
+    </Compile>
+    <Compile Include="..\LinqStatistics\EnumerableStatsRootMeanSquare.cs">
+      <Link>EnumerableStatsRootMeanSquare.cs</Link>
+    </Compile>
+    <Compile Include="..\LinqStatistics\EnumerableStatsSkewness.cs">
+      <Link>EnumerableStatsSkewness.cs</Link>
+    </Compile>
+    <Compile Include="..\LinqStatistics\EnumerableStatsStandardDeviation.cs">
+      <Link>EnumerableStatsStandardDeviation.cs</Link>
+    </Compile>
+    <Compile Include="..\LinqStatistics\EnumerableStatsStandardDeviationP.cs">
+      <Link>EnumerableStatsStandardDeviationP.cs</Link>
+    </Compile>
+    <Compile Include="..\LinqStatistics\EnumerableStatsVariance.cs">
+      <Link>EnumerableStatsVariance.cs</Link>
+    </Compile>
+    <Compile Include="..\LinqStatistics\EnumerableStatsVarianceP.cs">
+      <Link>EnumerableStatsVarianceP.cs</Link>
+    </Compile>
     <Compile Include="..\LinqStatistics\ItemCount.cs">
       <Link>ItemCount.cs</Link>
     </Compile>
@@ -59,138 +104,10 @@
     <Compile Include="..\LinqStatistics\Range.cs">
       <Link>Range.cs</Link>
     </Compile>
-    <Compile Include="EnumerableStatsCovariance.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>EnumerableStatsCovariance.tt</DependentUpon>
-    </Compile>
-    <Compile Include="EnumerableStatsHistogram.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>EnumerableStatsHistogram.tt</DependentUpon>
-    </Compile>
-    <Compile Include="EnumerableStatsKurtosis.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>EnumerableStatsKurtosis.tt</DependentUpon>
-    </Compile>
-    <Compile Include="EnumerableStatsLeastSquares.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>EnumerableStatsLeastSquares.tt</DependentUpon>
-    </Compile>
-    <Compile Include="EnumerableStatsMedian.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>EnumerableStatsMedian.tt</DependentUpon>
-    </Compile>
-    <Compile Include="EnumerableStatsMinMax.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>EnumerableStatsMinMax.tt</DependentUpon>
-    </Compile>
-    <Compile Include="EnumerableStatsPearson.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>EnumerableStatsPearson.tt</DependentUpon>
-    </Compile>
-    <Compile Include="EnumerableStatsRange.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>EnumerableStatsRange.tt</DependentUpon>
-    </Compile>
-    <Compile Include="EnumerableStatsRootMeanSquare.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>EnumerableStatsRootMeanSquare.tt</DependentUpon>
-    </Compile>
-    <Compile Include="EnumerableStatsSkewness.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>EnumerableStatsSkewness.tt</DependentUpon>
-    </Compile>
-    <Compile Include="EnumerableStatsStandardDeviation.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>EnumerableStatsStandardDeviation.tt</DependentUpon>
-    </Compile>
-    <Compile Include="EnumerableStatsStandardDeviationP.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>EnumerableStatsStandardDeviationP.tt</DependentUpon>
-    </Compile>
-    <Compile Include="EnumerableStatsVariance.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>EnumerableStatsVariance.tt</DependentUpon>
-    </Compile>
-    <Compile Include="EnumerableStatsVarianceP.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>EnumerableStatsVarianceP.tt</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="EnumerableStatsCovariance.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>EnumerableStatsCovariance.cs</LastGenOutput>
-    </Content>
-    <Content Include="EnumerableStatsHistogram.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>EnumerableStatsHistogram.cs</LastGenOutput>
-    </Content>
-    <Content Include="EnumerableStatsKurtosis.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>EnumerableStatsKurtosis.cs</LastGenOutput>
-    </Content>
-    <Content Include="EnumerableStatsLeastSquares.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>EnumerableStatsLeastSquares.cs</LastGenOutput>
-    </Content>
-    <Content Include="EnumerableStatsMedian.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>EnumerableStatsMedian.cs</LastGenOutput>
-    </Content>
-    <Content Include="EnumerableStatsMinMax.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>EnumerableStatsMinMax.cs</LastGenOutput>
-    </Content>
-    <Content Include="EnumerableStatsPearson.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>EnumerableStatsPearson.cs</LastGenOutput>
-    </Content>
-    <Content Include="EnumerableStatsRange.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>EnumerableStatsRange.cs</LastGenOutput>
-    </Content>
-    <Content Include="EnumerableStatsRootMeanSquare.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>EnumerableStatsRootMeanSquare.cs</LastGenOutput>
-    </Content>
-    <Content Include="EnumerableStatsSkewness.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>EnumerableStatsSkewness.cs</LastGenOutput>
-    </Content>
-    <Content Include="EnumerableStatsStandardDeviation.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>EnumerableStatsStandardDeviation.cs</LastGenOutput>
-    </Content>
-    <Content Include="EnumerableStatsStandardDeviationP.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>EnumerableStatsStandardDeviationP.cs</LastGenOutput>
-    </Content>
-    <Content Include="EnumerableStatsVariance.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>EnumerableStatsVariance.cs</LastGenOutput>
-    </Content>
-    <Content Include="EnumerableStatsVarianceP.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>EnumerableStatsVarianceP.cs</LastGenOutput>
-    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
