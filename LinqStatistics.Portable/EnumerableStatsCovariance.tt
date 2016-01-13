@@ -1,0 +1,82 @@
+﻿<#@ template debug="false" hostspecific="false" language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ output extension=".cs" #>
+using System;
+using System.Collections.Generic;
+using System.Linq;
+
+namespace LinqStatistics
+{
+    public static partial class EnumerableStats
+    {
+    <# List<Tuple<string, string>> types = new List<Tuple<string, string>>()
+    {
+        new Tuple<string, string>("int", "double"),
+        new Tuple<string, string>("long", "double"),
+        new Tuple<string, string>("decimal", "decimal"),
+        new Tuple<string, string>("float", "float"),
+        new Tuple<string, string>("double", "double")
+    };
+
+    foreach(var type in types)
+    {#>	
+        /// <summary>
+        /// Computes the Covariance of two sequences of nullable <#= type.Item1 #> values.
+        /// </summary>
+        /// <param name="source">The first sequence of nullable <#= type.Item1 #> values to calculate the Covariance of.</param>
+        /// <param name="other">The second sequence of nullable <#= type.Item1 #> values to calculate the Covariance of.</param>
+        /// <returns>The Covariance of the two sequence of values.</returns>
+        public static <#= type.Item2 #>? Covariance(this IEnumerable<<#= type.Item1 #>?> source, IEnumerable<<#= type.Item1 #>?> other)
+        {
+            IEnumerable<<#= type.Item1 #>> values = source.AllValues();
+            if (values.Any())
+                return values.Covariance(other.AllValues());
+
+            return null;
+        }
+
+        /// <summary>
+        /// Computes the Covariance of two sequences of <#= type.Item1 #>  values.
+        /// </summary>
+        /// <param name="source">The first sequence of <#= type.Item1 #> values to calculate the Covariance of.</param>
+        /// <param name="other">The second sequence of <#= type.Item1 #> values to calculate the Covariance of.</param>
+        /// <returns>The Covariance of the two sequence of values.</returns>
+        public static <#= type.Item2 #> Covariance(this IEnumerable<<#= type.Item1 #>> source, IEnumerable<<#= type.Item1 #>> other)
+        {
+            if (source == null)
+                throw new ArgumentNullException("source");
+
+            if (other == null)
+                throw new ArgumentNullException("other");
+
+            if (!source.Any())
+                throw new InvalidOperationException("source sequence contains no elements");
+
+            if (!other.Any())
+                throw new InvalidOperationException("other sequence contains no elements");
+
+            // convert to lists so we can get items by index without enumerating within the loop below
+            var listSource = source.ToList();
+            var listOther = other.ToList();
+
+            if (listSource.Count != listOther.Count)
+                throw new InvalidOperationException("Collections are not of the same length");
+
+            var avgSource = listSource.Average();
+            var avgOther = listOther.Average();
+            
+            double covariance = 0;
+            int n = listSource.Count;
+            for (int i = 0; i < n; i++)
+            {
+                covariance += (double)((listSource[i] - avgSource) * (listOther[i] - avgOther));
+            }
+
+            return (<#= type.Item2 #>)(covariance / n); 
+        }               
+ <# } #>
+    }
+}

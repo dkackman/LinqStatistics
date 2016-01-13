@@ -1,0 +1,150 @@
+﻿<#@ template debug="false" hostspecific="false" language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ output extension=".cs" #>
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Globalization;
+
+namespace LinqStatistics
+{
+    /// <summary>
+    /// Controls how the range of the bins are determined
+    /// </summary>
+    public enum BinningMode
+    {
+        /// <summary>
+        /// The minimum will be equal to the sequence min and the maximum equal to infinity
+        /// </summary>
+        Unbounded,
+
+        /// <summary>
+        /// The minimum will be the sequnce min and the maximxum equal to sequence max
+        /// The last bin will max inclusive instead of exclusive
+        /// </summary>
+        MaxValueInclusive,
+
+        /// <summary>
+        /// The total range will be expanded such that the min is
+        /// less then the sequence min and max is greater then the sequence max
+		/// The number of bins will be equal to (max - min) / (binCount - 1)
+		/// in essence adding an extra bin and shrinking the bin size
+        /// </summary>
+        ExpandRange
+    }
+
+    public static partial class EnumerableStats
+    {
+    <# var types = new List<string>()
+    {
+        "int", "long", "float", "double", "decimal"
+    };
+
+    foreach(var type in types)
+    {
+    #>
+        /// <summary>
+        /// Computes the Histogram of a sequence of <#= type #> values.
+        /// </summary>
+        /// <param name="source">A sequence of <#= type #> values to calculate the Histogram of.</param>
+        /// <param name="binCount">The number of bins into which to segregate the data.</param>
+        /// <param name="mode">The method used to determine the range of each bin</param>
+        /// <returns>The Histogram of the sequence of <#= type #> values.</returns>
+        public static IEnumerable<Bin> Histogram(this IEnumerable<<#= type #>> source, int binCount, BinningMode mode = BinningMode.Unbounded)
+        {
+            if (source == null)
+                throw new ArgumentNullException("source");
+
+            if (!source.Any())
+                throw new InvalidOperationException("source sequence contains no elements");
+
+            return source.AssignBins(binCount, mode);
+        }
+
+        /// <summary>
+        /// Computes the Histogram of a sequence of nullable <#= type #> values.
+        /// </summary>
+        /// <param name="source">A sequence of nullable <#= type #> values to calculate the Histogram of.</param>
+        /// <param name="binCount">The number of bins into which to segregate the data.</param>
+        /// <param name="mode">The method used to determine the range of each bin</param>
+        /// <returns>The Histogram of the sequence of nullable <#= type #> values.</returns>
+        public static IEnumerable<Bin> Histogram(this IEnumerable<<#= type #>?> source, int binCount, BinningMode mode = BinningMode.Unbounded)
+        {
+            if (source == null)
+                throw new ArgumentNullException("source");
+
+            if (!source.Any())
+                throw new InvalidOperationException("source sequence contains no elements");
+
+            return source.AllValues().Histogram(binCount, mode);
+        }
+
+        /// <summary>
+        /// Computes the Histogram of a sequence of <#= type #> values that are obtained
+        /// by invoking a transform function on each element of the input sequence.
+        /// </summary>
+        /// <typeparam name="TSource">The type of the elements of source.</typeparam>
+        /// <param name="source">A sequence of values to calculate the Histogram of.</param>
+        /// <param name="binCount">The number of bins into which to segregate the data.</param>
+        /// <param name="selector">A transform function to apply to each element.</param>
+        /// <param name="mode">The method used to determine the range of each bin</param>
+        /// <returns>The Histogram of the sequence of <#= type #> values.</returns>
+        public static IEnumerable<Bin> Histogram<TSource>(this IEnumerable<TSource> source, int binCount, Func<TSource, <#= type #>> selector, BinningMode mode = BinningMode.Unbounded)
+        {
+            if (source == null)
+                throw new ArgumentNullException("source");
+
+            if (selector == null)
+                throw new ArgumentNullException("selector");
+
+            if (!source.Any())
+                throw new InvalidOperationException("source sequence contains no elements");
+
+            return source.Select(t => selector(t)).Histogram(binCount, mode);
+        }
+
+        /// <summary>
+        /// Computes the Histogram of a sequence of nullable <#= type #> values that are obtained
+        /// by invoking a transform function on each element of the input sequence.
+        /// </summary>
+        /// <typeparam name="TSource">The type of the elements of source.</typeparam>
+        /// <param name="source">A sequence of values to calculate the Histogram of.</param>
+        /// <param name="binCount">The number of bins into which to segregate the data.</param>
+        /// <param name="selector">A transform function to apply to each element.</param>
+        /// <param name="mode">The method used to determine the range of each bin</param>
+        /// <returns>The Histogram of the sequence of nullable <#= type #> values.</returns>
+        public static IEnumerable<Bin> Histogram<TSource>(this IEnumerable<TSource> source, int binCount, Func<TSource, <#= type #>?> selector, BinningMode mode = BinningMode.Unbounded)
+        {
+            if (source == null)
+                throw new ArgumentNullException("source");
+
+            if (selector == null)
+                throw new ArgumentNullException("selector");
+
+            if (!source.Any())
+                throw new InvalidOperationException("source sequence contains no elements");
+
+            return source.Select(t => selector(t)).Histogram(binCount, mode);
+        }
+
+		private static IEnumerable<Bin> AssignBins(this IEnumerable<<#= type #>> source, int binCount, BinningMode mode) 
+		{ 
+			var minMax = source.MinMax();
+
+	        var bins = BinFactory.CreateBins((double)minMax.Min, (double)minMax.Max, binCount, mode);
+
+            foreach (var value in source)
+            {
+                var bin = bins.First(b => b.Contains((double)value));
+                bin.Count++;
+            }
+
+            return bins;
+		}
+
+		<# } #>
+    }
+}

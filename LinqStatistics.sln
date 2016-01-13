@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.30723.0
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{699EEBB0-156D-483E-A05A-FAF990B0BE36}"
 	ProjectSection(SolutionItems) = preProject
@@ -18,6 +18,8 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "NuGet", "NuGet", "{47E5B368-4238-4B16-9798-5AF5A094A987}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinqStatistics.Packager", "LinqStatistics.Packager\LinqStatistics.Packager.csproj", "{0451BAEF-DF2E-4B98-8644-94EE9415E389}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinqStatistics.Portable", "LinqStatistics.Portable\LinqStatistics.Portable.csproj", "{BD1DE502-8AA8-4041-971F-2D313E06609B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{9EFCB775-B429-4EF3-9813-B9539D94A230}.Release|Any CPU.Build.0 = Release|Any CPU
 		{0451BAEF-DF2E-4B98-8644-94EE9415E389}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{0451BAEF-DF2E-4B98-8644-94EE9415E389}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BD1DE502-8AA8-4041-971F-2D313E06609B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BD1DE502-8AA8-4041-971F-2D313E06609B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BD1DE502-8AA8-4041-971F-2D313E06609B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BD1DE502-8AA8-4041-971F-2D313E06609B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

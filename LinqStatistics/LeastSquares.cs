@@ -55,10 +55,23 @@ namespace LinqStatistics
             return (y - B) / M;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="lhs"></param>
+        /// <param name="rhs"></param>
+        /// <returns></returns>
         public static bool operator ==(LeastSquares lhs, LeastSquares rhs)
         {
             return lhs.M == rhs.M && lhs.B == rhs.B;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="lhs"></param>
+        /// <param name="rhs"></param>
+        /// <returns></returns>
         public static bool operator !=(LeastSquares lhs, LeastSquares rhs)
         {
             return !(lhs == rhs);

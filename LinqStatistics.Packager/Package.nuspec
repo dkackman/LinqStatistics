@@ -7,18 +7,20 @@
     <authors>dkackman</authors>
     <owners></owners>
     <description>
-      Extension methods that add additional simple statiistical calculations to the built in sum, min, max, average etc.
+      Extension methods that add additional simple statistical calculations to the built in sum, min, max, average etc.
       Includes Covariance, Median, Mode, Pearson's Chi Squared, Range, Standard Deviation (sample and population), Variance (sample and population), CountEach, Histograms, Root Mean Square, Least Squares and Kurtosis
     </description>
     <releaseNotes>
       1.1.0
       - Made code comments, argument checking and implementations consistent
       2.0.0
-      - Added MinMax (calculate minimum and maximum in a single enumeration)
+      - Added MinMax (calculate minimum and maximum in a single pass)
       - Improve performance of Histogram and Range by eliminating multiple enumeration
       - Some interface changing refactoring (Range and Bin classes)
+      - Added portable library
     </releaseNotes>
     <summary>
+      Extension methods that add simple statistical extension methods
     </summary>
     <language>en-US</language>
     <projectUrl>https://github.com/dkackman/LinqStatistics</projectUrl>
@@ -27,17 +29,19 @@
     <licenseUrl>http://opensource.org/licenses/Apache-2.0</licenseUrl>
     <copyright>Copyright Don Kackman 2013</copyright>
     <dependencies>
-        <group targetFramework="net40">
-        </group>
     </dependencies>
     <references></references>
-    <tags>Linq Statistics stats</tags>
+    <tags>Linq Statistics stats portable PCL</tags>
   </metadata>
   <files>
-    <file src="..\LinqStatistics\bin\Release\LinqStatistics.dll" target="net40" />
-    <file src="..\LinqStatistics\bin\Release\LinqStatistics.xml" target="net40" />
-    <file src="..\LinqStatistics\bin\Release\LinqStatistics.pdb" target="net40" />
+    <file src="..\LinqStatistics.Portable\bin\Release\LinqStatistics.dll" target="lib\portable-net45+win8+wpa81+dnx45" />
+    <file src="..\LinqStatistics.Portable\bin\Release\LinqStatistics.xml" target="lib\portable-net45+win8+wpa81+dnx45" />
+    <file src="..\LinqStatistics.Portable\bin\Release\LinqStatistics.pdb" target="lib\portable-net45+win8+wpa81+dnx45" />
 
-    <file src="..\DynamicRestProxy.Portable\*.cs" target="src" />
+    <file src="..\LinqStatistics\bin\Release\LinqStatistics.dll" target="lib\net40" />
+    <file src="..\LinqStatistics\bin\Release\LinqStatistics.xml" target="lib\net40" />
+    <file src="..\LinqStatistics\bin\Release\LinqStatistics.pdb" target="lib\net40" />
+
+    <file src="..\LinqStatistics\*.cs" target="src" />
   </files>
 </package>

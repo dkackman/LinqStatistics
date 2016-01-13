@@ -48,31 +48,67 @@ namespace LinqStatistics
         /// <value>The Max.</value>
         public T Max => _max;
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="first"></param>
+        /// <param name="second"></param>
+        /// <returns></returns>
         public static bool operator ==(Range<T> first, Range<T> second)
         {
             return first.Min.Equals(second.Min) && first.Max.Equals(second.Max);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="first"></param>
+        /// <param name="second"></param>
+        /// <returns></returns>
         public static bool operator !=(Range<T> first, Range<T> second)
         {
             return !(first == second);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="first"></param>
+        /// <param name="second"></param>
+        /// <returns></returns>
         public static bool operator <(Range<T> first, Range<T> second)
         {
             return first.Min.CompareTo(second.Min) > 0 && first.Max.CompareTo(second.Max) < 0;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="first"></param>
+        /// <param name="second"></param>
+        /// <returns></returns>
         public static bool operator >(Range<T> first, Range<T> second)
         {
             return first.Min.CompareTo(second.Min) < 0 && first.Max.CompareTo(second.Max) > 0;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="first"></param>
+        /// <param name="second"></param>
+        /// <returns></returns>
         public static bool operator <=(Range<T> first, Range<T> second)
         {
             return first < second || first == second;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="first"></param>
+        /// <param name="second"></param>
+        /// <returns></returns>
         public static bool operator >=(Range<T> first, Range<T> second)
         {
             return first > second || first == second;

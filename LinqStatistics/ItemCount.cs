@@ -43,6 +43,12 @@ namespace LinqStatistics
             internal set { _count = value; }
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="lhs"></param>
+        /// <param name="rhs"></param>
+        /// <returns></returns>
         public static bool operator ==(ItemCount<T> lhs, ItemCount<T> rhs)
         {
             if (object.ReferenceEquals(null, lhs) && object.ReferenceEquals(rhs, null))
@@ -58,6 +64,12 @@ namespace LinqStatistics
             return lhs.Equals(rhs);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="lhs"></param>
+        /// <param name="rhs"></param>
+        /// <returns></returns>
         public static bool operator !=(ItemCount<T> lhs, ItemCount<T> rhs)
         {
             return !(lhs == rhs);

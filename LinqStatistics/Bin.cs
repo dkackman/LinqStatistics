@@ -64,6 +64,12 @@ namespace LinqStatistics
             return base.GetHashCode() ^ _range.GetHashCode() ^ _maxInclusive.GetHashCode();
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="lhs"></param>
+        /// <param name="rhs"></param>
+        /// <returns></returns>
         public static bool operator ==(Bin lhs, Bin rhs)
         {
             if (object.ReferenceEquals(null, lhs) && object.ReferenceEquals(rhs, null))
@@ -79,6 +85,12 @@ namespace LinqStatistics
             return lhs.Equals(rhs);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="lhs"></param>
+        /// <param name="rhs"></param>
+        /// <returns></returns>
         public static bool operator !=(Bin lhs, Bin rhs)
         {
             return !(lhs == rhs);

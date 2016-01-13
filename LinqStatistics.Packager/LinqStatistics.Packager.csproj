@@ -65,6 +65,7 @@
   <ItemGroup>
     <Folder Include="content\" />
     <Folder Include="lib\net40\" />
+    <Folder Include="lib\portable-net45+win8+wpa81+dnx45\" />
     <Folder Include="src\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
