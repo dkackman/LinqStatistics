@@ -23,11 +23,13 @@ namespace LinqStatistics
 
         /// <summary>
         /// M Coefficient for y = Mx + B
+        /// (i.e. slope)
         /// </summary>
         public double M { get { return _m; } }
 
         /// <summary>
         /// B Coefficient for y = Mx + B
+        /// (i.e. y intercept)
         /// </summary>
         public double B { get { return _b; } }
 
@@ -81,7 +83,7 @@ namespace LinqStatistics
         /// <see cref="System.IEquatable{T}.Equals(T)"/>
         /// </summary>
         /// <param name="other"></param>
-        /// <returns></returns>
+        /// <returns>True if other has equal m and b values</returns>
         public bool Equals(LeastSquares other)
         {
             return this == other;
