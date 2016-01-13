@@ -106,7 +106,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>EnumerableStatsStandardDeviationP.tt</DependentUpon>
     </Compile>
-    <Compile Include="EnumerableStatsVariance1.cs">
+    <Compile Include="EnumerableStatsVariance.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>EnumerableStatsVariance.tt</DependentUpon>
@@ -142,8 +142,6 @@
     <None Include="EnumerableStatsHistogram.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>EnumerableStatsHistogram.cs</LastGenOutput>
-      <Parameters>&lt;%3fxml version="1.0" encoding="utf-16"%3f&gt;
-&lt;ArrayOfParameterStorage xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" /&gt;</Parameters>
     </None>
     <None Include="EnumerableStatsKurtosis.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -179,7 +177,7 @@
     </None>
     <None Include="EnumerableStatsVariance.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>EnumerableStatsVariance1.cs</LastGenOutput>
+      <LastGenOutput>EnumerableStatsVariance.cs</LastGenOutput>
     </None>
     <None Include="EnumerableStatsVarianceP.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
