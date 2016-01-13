@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>LinqStatistics</id>
-    <version>1.1.0</version>
+    <version>2.0.0</version>
     <title>LinqStatistics</title>
     <authors>dkackman</authors>
     <owners></owners>
@@ -11,7 +11,12 @@
       Includes Covariance, Median, Mode, Pearson's Chi Squared, Range, Standard Deviation (sample and population), Variance (sample and population), CountEach, Histograms, Root Mean Square, Least Squares and Kurtosis
     </description>
     <releaseNotes>
-      Made code comments, argument checking and implementations consistent 
+      1.1.0
+      - Made code comments, argument checking and implementations consistent
+      2.0.0
+      - Added MinMax (calculate minimum and maximum in a single enumeration)
+      - Improve performance of Histogram and Range by eliminating multiple enumeration
+      - Some interface changing refactoring (Range and Bin classes)
     </releaseNotes>
     <summary>
     </summary>
@@ -29,8 +34,10 @@
     <tags>Linq Statistics stats</tags>
   </metadata>
   <files>
-    <file src="lib\" target="lib" />
-    <file src="tools\" target="tools" />
-    <file src="content\" target="content" />
+    <file src="..\LinqStatistics\bin\Release\LinqStatistics.dll" target="net40" />
+    <file src="..\LinqStatistics\bin\Release\LinqStatistics.xml" target="net40" />
+    <file src="..\LinqStatistics\bin\Release\LinqStatistics.pdb" target="net40" />
+
+    <file src="..\DynamicRestProxy.Portable\*.cs" target="src" />
   </files>
 </package>
