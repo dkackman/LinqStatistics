@@ -58,9 +58,9 @@ namespace LinqStatistics
         /// <returns>The Mode of a sequence of values</returns>
         public static T? Mode<T>(this IEnumerable<T> source) where T : struct
         {
-            var sortedList = from number in source
-                             orderby number
-                             select number;
+            var sortedList = from item in source
+                             orderby item
+                             select item;
 
             int count = 0;
             int max = 0;
@@ -85,11 +85,8 @@ namespace LinqStatistics
                     mode = current;
                 }
             }
-
-            if (max > 1)
-                return mode;
-
-            return null;
+            
+            return max > 1 ? mode : null;
         }
 
         /// <summary>
