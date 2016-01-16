@@ -69,7 +69,7 @@ namespace LinqStatistics
 
             foreach (T next in sortedList)
             {
-                if (current.Equals(next) == false)
+                if (!current.Equals(next))
                 {
                     current = next;
                     count = 1;
