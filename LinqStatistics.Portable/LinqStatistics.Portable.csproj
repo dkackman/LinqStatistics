@@ -106,6 +106,9 @@
     <Compile Include="..\LinqStatistics\Range.cs">
       <Link>Range.cs</Link>
     </Compile>
+    <Compile Include="..\PackageInfo.cs">
+      <Link>Properties\PackageInfo.cs</Link>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

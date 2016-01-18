@@ -49,6 +49,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="..\PackageInfo.cs">
+      <Link>Properties\PackageInfo.cs</Link>
+    </Compile>
     <Compile Include="Bin.cs" />
     <Compile Include="BinFactory.cs" />
     <Compile Include="EnumerableStatsMinMax.cs">

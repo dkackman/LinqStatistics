@@ -20,7 +20,7 @@
       - Added portable library
     </releaseNotes>
     <summary>
-      Extension methods that add simple statistical extension methods
+      Extensions that add simple statistical methods
     </summary>
     <language>en-US</language>
     <projectUrl>https://github.com/dkackman/LinqStatistics</projectUrl>
