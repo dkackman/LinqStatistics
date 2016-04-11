@@ -130,6 +130,11 @@
       <DependentUpon>EnumerableStatsHistogram.tt</DependentUpon>
     </Compile>
     <Compile Include="LeastSquares.cs" />
+    <Compile Include="NaN\EnumerableStatsVariance.cs">
+      <DependentUpon>EnumerableStatsVariance.tt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Range.cs" />
   </ItemGroup>
@@ -194,6 +199,12 @@
     <None Include="EnumerableStatsMinMax.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>EnumerableStatsMinMax.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="NaN\EnumerableStatsVariance.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>EnumerableStatsVariance.cs</LastGenOutput>
     </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
