@@ -67,14 +67,14 @@ namespace LinqStatistics
             var avgSource = listSource.Average();
             var avgOther = listOther.Average();
             
-            double covariance = 0;
+            <#= type.Item2 #> covariance = 0;
             int n = listSource.Count;
             for (int i = 0; i < n; i++)
             {
-                covariance += (double)((listSource[i] - avgSource) * (listOther[i] - avgOther));
+                covariance += (listSource[i] - avgSource) * (listOther[i] - avgOther);
             }
 
-            return (<#= type.Item2 #>)(covariance / n); 
+            return covariance / n; 
         }               
  <# } #>
     }

@@ -55,10 +55,10 @@ namespace LinqStatistics
             int n = listSource.Count;
             for (int i = 0; i < n; i++)
             {
-                covariance += (double)((listSource[i] - avgSource) * (listOther[i] - avgOther));
+                covariance += (listSource[i] - avgSource) * (listOther[i] - avgOther);
             }
 
-            return (double)(covariance / n); 
+            return covariance / n; 
         }               
  	
         /// <summary>
@@ -104,10 +104,10 @@ namespace LinqStatistics
             int n = listSource.Count;
             for (int i = 0; i < n; i++)
             {
-                covariance += (double)((listSource[i] - avgSource) * (listOther[i] - avgOther));
+                covariance += (listSource[i] - avgSource) * (listOther[i] - avgOther);
             }
 
-            return (double)(covariance / n); 
+            return covariance / n; 
         }               
  	
         /// <summary>
@@ -149,14 +149,14 @@ namespace LinqStatistics
             var avgSource = listSource.Average();
             var avgOther = listOther.Average();
             
-            double covariance = 0;
+            decimal covariance = 0;
             int n = listSource.Count;
             for (int i = 0; i < n; i++)
             {
-                covariance += (double)((listSource[i] - avgSource) * (listOther[i] - avgOther));
+                covariance += (listSource[i] - avgSource) * (listOther[i] - avgOther);
             }
 
-            return (decimal)(covariance / n); 
+            return covariance / n; 
         }               
  	
         /// <summary>
@@ -198,14 +198,14 @@ namespace LinqStatistics
             var avgSource = listSource.Average();
             var avgOther = listOther.Average();
             
-            double covariance = 0;
+            float covariance = 0;
             int n = listSource.Count;
             for (int i = 0; i < n; i++)
             {
-                covariance += (double)((listSource[i] - avgSource) * (listOther[i] - avgOther));
+                covariance += (listSource[i] - avgSource) * (listOther[i] - avgOther);
             }
 
-            return (float)(covariance / n); 
+            return covariance / n; 
         }               
  	
         /// <summary>
@@ -251,10 +251,10 @@ namespace LinqStatistics
             int n = listSource.Count;
             for (int i = 0; i < n; i++)
             {
-                covariance += (double)((listSource[i] - avgSource) * (listOther[i] - avgOther));
+                covariance += (listSource[i] - avgSource) * (listOther[i] - avgOther);
             }
 
-            return (double)(covariance / n); 
+            return covariance / n; 
         }               
      }
 }
