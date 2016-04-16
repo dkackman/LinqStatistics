@@ -13,30 +13,30 @@ namespace LinqStatistics.NaN
     {
     	
         /// <summary>
-        /// Computes the sample Variance of a sequence of nullable int values.
+        /// Computes the population Variance of a sequence of nullable int values.
         /// </summary>
-        /// <param name="source">A sequence of nullable int values to calculate the Variance of.</param>
+        /// <param name="source">A sequence of nullable int values to calculate the population Variance of.</param>
         /// <returns>       
         ///     The Variance of the sequence of values, or null if the source sequence is
         ///     empty or contains only values that are null.
         /// </returns>
-        public static double? VarianceNaN(this IEnumerable<int?> source)
+        public static double? VariancePNaN(this IEnumerable<int?> source)
         {
             IEnumerable<int> values = source.AllValues();
             if (values.Any())
-                return values.VarianceNaN();
+                return values.VariancePNaN();
             
             return null;
         }
 
         /// <summary>
-        /// Computes the sample Variance of a sequence of int values.
+        /// Computes the population Variance of a sequence of int values.
         /// </summary>
-        /// <param name="source">A sequence of int values to calculate the Variance of.</param>
+        /// <param name="source">A sequence of int values to calculate the population Variance of.</param>
         /// <returns>       
         ///     The Variance of the sequence of values.
         /// </returns>
-        public static double VarianceNaN(this IEnumerable<int> source)
+        public static double VariancePNaN(this IEnumerable<int> source)
         {
             if (source == null)
                 throw new ArgumentNullException("source");
@@ -54,14 +54,14 @@ namespace LinqStatistics.NaN
                 M2 += delta * ((double)x - mean);
             }
 
-            if (n < 2)
+            if (n < 1)
                 return double.NaN;
 
-            return (double)(M2 / (n - 1));
+            return (double)(M2 / n);
         }
 
         /// <summary>
-        /// Computes the sample Variance of a sequence of nullable int values that are obtained
+        /// Computes the population Variance of a sequence of nullable int values that are obtained
         ///     by invoking a transform function on each element of the input sequence.
         /// </summary>
         /// <typeparam name="TSource">The type of the elements of source.</typeparam>
@@ -70,7 +70,7 @@ namespace LinqStatistics.NaN
         /// <returns>       
         ///     The Variance of the sequence of values.
         /// </returns>
-        public static double? VarianceNaN<TSource>(this IEnumerable<TSource> source, Func<TSource, int?> selector)
+        public static double? VariancePNaN<TSource>(this IEnumerable<TSource> source, Func<TSource, int?> selector)
         {
             if (source == null)
                 throw new ArgumentNullException("source");
@@ -78,11 +78,11 @@ namespace LinqStatistics.NaN
             if (selector == null)
                 throw new ArgumentNullException("selector");
 
-            return source.Select(selector).VarianceNaN();
+            return source.Select(selector).VariancePNaN();
         }
 
         /// <summary>
-        /// Computes the sample Variance of a sequence of int values that are obtained
+        /// Computes the population Variance of a sequence of int values that are obtained
         ///     by invoking a transform function on each element of the input sequence.
         /// </summary>
         /// <typeparam name="TSource">The type of the elements of source.</typeparam>
@@ -91,7 +91,7 @@ namespace LinqStatistics.NaN
         /// <returns>       
         ///     The Variance of the sequence of values.
         /// </returns>
-        public static double VarianceNaN<TSource>(this IEnumerable<TSource> source, Func<TSource, int> selector)
+        public static double VariancePNaN<TSource>(this IEnumerable<TSource> source, Func<TSource, int> selector)
         {
             if (source == null)
                 throw new ArgumentNullException("source");
@@ -99,34 +99,34 @@ namespace LinqStatistics.NaN
             if (selector == null)
                 throw new ArgumentNullException("selector");
 
-            return source.Select(selector).VarianceNaN();
+            return source.Select(selector).VariancePNaN();
         }
  	
         /// <summary>
-        /// Computes the sample Variance of a sequence of nullable long values.
+        /// Computes the population Variance of a sequence of nullable long values.
         /// </summary>
-        /// <param name="source">A sequence of nullable long values to calculate the Variance of.</param>
+        /// <param name="source">A sequence of nullable long values to calculate the population Variance of.</param>
         /// <returns>       
         ///     The Variance of the sequence of values, or null if the source sequence is
         ///     empty or contains only values that are null.
         /// </returns>
-        public static double? VarianceNaN(this IEnumerable<long?> source)
+        public static double? VariancePNaN(this IEnumerable<long?> source)
         {
             IEnumerable<long> values = source.AllValues();
             if (values.Any())
-                return values.VarianceNaN();
+                return values.VariancePNaN();
             
             return null;
         }
 
         /// <summary>
-        /// Computes the sample Variance of a sequence of long values.
+        /// Computes the population Variance of a sequence of long values.
         /// </summary>
-        /// <param name="source">A sequence of long values to calculate the Variance of.</param>
+        /// <param name="source">A sequence of long values to calculate the population Variance of.</param>
         /// <returns>       
         ///     The Variance of the sequence of values.
         /// </returns>
-        public static double VarianceNaN(this IEnumerable<long> source)
+        public static double VariancePNaN(this IEnumerable<long> source)
         {
             if (source == null)
                 throw new ArgumentNullException("source");
@@ -144,14 +144,14 @@ namespace LinqStatistics.NaN
                 M2 += delta * ((double)x - mean);
             }
 
-            if (n < 2)
+            if (n < 1)
                 return double.NaN;
 
-            return (double)(M2 / (n - 1));
+            return (double)(M2 / n);
         }
 
         /// <summary>
-        /// Computes the sample Variance of a sequence of nullable long values that are obtained
+        /// Computes the population Variance of a sequence of nullable long values that are obtained
         ///     by invoking a transform function on each element of the input sequence.
         /// </summary>
         /// <typeparam name="TSource">The type of the elements of source.</typeparam>
@@ -160,7 +160,7 @@ namespace LinqStatistics.NaN
         /// <returns>       
         ///     The Variance of the sequence of values.
         /// </returns>
-        public static double? VarianceNaN<TSource>(this IEnumerable<TSource> source, Func<TSource, long?> selector)
+        public static double? VariancePNaN<TSource>(this IEnumerable<TSource> source, Func<TSource, long?> selector)
         {
             if (source == null)
                 throw new ArgumentNullException("source");
@@ -168,11 +168,11 @@ namespace LinqStatistics.NaN
             if (selector == null)
                 throw new ArgumentNullException("selector");
 
-            return source.Select(selector).VarianceNaN();
+            return source.Select(selector).VariancePNaN();
         }
 
         /// <summary>
-        /// Computes the sample Variance of a sequence of long values that are obtained
+        /// Computes the population Variance of a sequence of long values that are obtained
         ///     by invoking a transform function on each element of the input sequence.
         /// </summary>
         /// <typeparam name="TSource">The type of the elements of source.</typeparam>
@@ -181,7 +181,7 @@ namespace LinqStatistics.NaN
         /// <returns>       
         ///     The Variance of the sequence of values.
         /// </returns>
-        public static double VarianceNaN<TSource>(this IEnumerable<TSource> source, Func<TSource, long> selector)
+        public static double VariancePNaN<TSource>(this IEnumerable<TSource> source, Func<TSource, long> selector)
         {
             if (source == null)
                 throw new ArgumentNullException("source");
@@ -189,34 +189,34 @@ namespace LinqStatistics.NaN
             if (selector == null)
                 throw new ArgumentNullException("selector");
 
-            return source.Select(selector).VarianceNaN();
+            return source.Select(selector).VariancePNaN();
         }
  	
         /// <summary>
-        /// Computes the sample Variance of a sequence of nullable float values.
+        /// Computes the population Variance of a sequence of nullable float values.
         /// </summary>
-        /// <param name="source">A sequence of nullable float values to calculate the Variance of.</param>
+        /// <param name="source">A sequence of nullable float values to calculate the population Variance of.</param>
         /// <returns>       
         ///     The Variance of the sequence of values, or null if the source sequence is
         ///     empty or contains only values that are null.
         /// </returns>
-        public static float? VarianceNaN(this IEnumerable<float?> source)
+        public static float? VariancePNaN(this IEnumerable<float?> source)
         {
             IEnumerable<float> values = source.AllValues();
             if (values.Any())
-                return values.VarianceNaN();
+                return values.VariancePNaN();
             
             return null;
         }
 
         /// <summary>
-        /// Computes the sample Variance of a sequence of float values.
+        /// Computes the population Variance of a sequence of float values.
         /// </summary>
-        /// <param name="source">A sequence of float values to calculate the Variance of.</param>
+        /// <param name="source">A sequence of float values to calculate the population Variance of.</param>
         /// <returns>       
         ///     The Variance of the sequence of values.
         /// </returns>
-        public static float VarianceNaN(this IEnumerable<float> source)
+        public static float VariancePNaN(this IEnumerable<float> source)
         {
             if (source == null)
                 throw new ArgumentNullException("source");
@@ -234,14 +234,14 @@ namespace LinqStatistics.NaN
                 M2 += delta * ((double)x - mean);
             }
 
-            if (n < 2)
+            if (n < 1)
                 return float.NaN;
 
-            return (float)(M2 / (n - 1));
+            return (float)(M2 / n);
         }
 
         /// <summary>
-        /// Computes the sample Variance of a sequence of nullable float values that are obtained
+        /// Computes the population Variance of a sequence of nullable float values that are obtained
         ///     by invoking a transform function on each element of the input sequence.
         /// </summary>
         /// <typeparam name="TSource">The type of the elements of source.</typeparam>
@@ -250,7 +250,7 @@ namespace LinqStatistics.NaN
         /// <returns>       
         ///     The Variance of the sequence of values.
         /// </returns>
-        public static float? VarianceNaN<TSource>(this IEnumerable<TSource> source, Func<TSource, float?> selector)
+        public static float? VariancePNaN<TSource>(this IEnumerable<TSource> source, Func<TSource, float?> selector)
         {
             if (source == null)
                 throw new ArgumentNullException("source");
@@ -258,11 +258,11 @@ namespace LinqStatistics.NaN
             if (selector == null)
                 throw new ArgumentNullException("selector");
 
-            return source.Select(selector).VarianceNaN();
+            return source.Select(selector).VariancePNaN();
         }
 
         /// <summary>
-        /// Computes the sample Variance of a sequence of float values that are obtained
+        /// Computes the population Variance of a sequence of float values that are obtained
         ///     by invoking a transform function on each element of the input sequence.
         /// </summary>
         /// <typeparam name="TSource">The type of the elements of source.</typeparam>
@@ -271,7 +271,7 @@ namespace LinqStatistics.NaN
         /// <returns>       
         ///     The Variance of the sequence of values.
         /// </returns>
-        public static float VarianceNaN<TSource>(this IEnumerable<TSource> source, Func<TSource, float> selector)
+        public static float VariancePNaN<TSource>(this IEnumerable<TSource> source, Func<TSource, float> selector)
         {
             if (source == null)
                 throw new ArgumentNullException("source");
@@ -279,34 +279,34 @@ namespace LinqStatistics.NaN
             if (selector == null)
                 throw new ArgumentNullException("selector");
 
-            return source.Select(selector).VarianceNaN();
+            return source.Select(selector).VariancePNaN();
         }
  	
         /// <summary>
-        /// Computes the sample Variance of a sequence of nullable double values.
+        /// Computes the population Variance of a sequence of nullable double values.
         /// </summary>
-        /// <param name="source">A sequence of nullable double values to calculate the Variance of.</param>
+        /// <param name="source">A sequence of nullable double values to calculate the population Variance of.</param>
         /// <returns>       
         ///     The Variance of the sequence of values, or null if the source sequence is
         ///     empty or contains only values that are null.
         /// </returns>
-        public static double? VarianceNaN(this IEnumerable<double?> source)
+        public static double? VariancePNaN(this IEnumerable<double?> source)
         {
             IEnumerable<double> values = source.AllValues();
             if (values.Any())
-                return values.VarianceNaN();
+                return values.VariancePNaN();
             
             return null;
         }
 
         /// <summary>
-        /// Computes the sample Variance of a sequence of double values.
+        /// Computes the population Variance of a sequence of double values.
         /// </summary>
-        /// <param name="source">A sequence of double values to calculate the Variance of.</param>
+        /// <param name="source">A sequence of double values to calculate the population Variance of.</param>
         /// <returns>       
         ///     The Variance of the sequence of values.
         /// </returns>
-        public static double VarianceNaN(this IEnumerable<double> source)
+        public static double VariancePNaN(this IEnumerable<double> source)
         {
             if (source == null)
                 throw new ArgumentNullException("source");
@@ -324,14 +324,14 @@ namespace LinqStatistics.NaN
                 M2 += delta * ((double)x - mean);
             }
 
-            if (n < 2)
+            if (n < 1)
                 return double.NaN;
 
-            return (double)(M2 / (n - 1));
+            return (double)(M2 / n);
         }
 
         /// <summary>
-        /// Computes the sample Variance of a sequence of nullable double values that are obtained
+        /// Computes the population Variance of a sequence of nullable double values that are obtained
         ///     by invoking a transform function on each element of the input sequence.
         /// </summary>
         /// <typeparam name="TSource">The type of the elements of source.</typeparam>
@@ -340,7 +340,7 @@ namespace LinqStatistics.NaN
         /// <returns>       
         ///     The Variance of the sequence of values.
         /// </returns>
-        public static double? VarianceNaN<TSource>(this IEnumerable<TSource> source, Func<TSource, double?> selector)
+        public static double? VariancePNaN<TSource>(this IEnumerable<TSource> source, Func<TSource, double?> selector)
         {
             if (source == null)
                 throw new ArgumentNullException("source");
@@ -348,11 +348,11 @@ namespace LinqStatistics.NaN
             if (selector == null)
                 throw new ArgumentNullException("selector");
 
-            return source.Select(selector).VarianceNaN();
+            return source.Select(selector).VariancePNaN();
         }
 
         /// <summary>
-        /// Computes the sample Variance of a sequence of double values that are obtained
+        /// Computes the population Variance of a sequence of double values that are obtained
         ///     by invoking a transform function on each element of the input sequence.
         /// </summary>
         /// <typeparam name="TSource">The type of the elements of source.</typeparam>
@@ -361,7 +361,7 @@ namespace LinqStatistics.NaN
         /// <returns>       
         ///     The Variance of the sequence of values.
         /// </returns>
-        public static double VarianceNaN<TSource>(this IEnumerable<TSource> source, Func<TSource, double> selector)
+        public static double VariancePNaN<TSource>(this IEnumerable<TSource> source, Func<TSource, double> selector)
         {
             if (source == null)
                 throw new ArgumentNullException("source");
@@ -369,7 +369,7 @@ namespace LinqStatistics.NaN
             if (selector == null)
                 throw new ArgumentNullException("selector");
 
-            return source.Select(selector).VarianceNaN();
+            return source.Select(selector).VariancePNaN();
         }
      }
 }

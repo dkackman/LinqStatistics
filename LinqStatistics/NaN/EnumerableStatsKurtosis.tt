@@ -13,7 +13,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace LinqStatistics
+namespace LinqStatistics.NaN
 {
     public static partial class EnumerableStats
     {
@@ -21,7 +21,7 @@ namespace LinqStatistics
     {
         new Tuple<string, string>("int", "double"),
         new Tuple<string, string>("long", "double"),
-        new Tuple<string, string>("decimal", "decimal"),
+       // new Tuple<string, string>("decimal", "decimal"),
         new Tuple<string, string>("float", "float"),
         new Tuple<string, string>("double", "double")
     };
@@ -33,11 +33,11 @@ namespace LinqStatistics
         /// </summary>
         /// <param name="source">A sequence of nullable <#= type.Item1 #> values to calculate the Kurtosis of.</param>
         /// <returns>The Kurtosis of the sequence of values.</returns>
-        public static <#= type.Item2 #>? Kurtosis(this IEnumerable<<#= type.Item1 #>?> source)
+        public static <#= type.Item2 #>? KurtosisNaN(this IEnumerable<<#= type.Item1 #>?> source)
         {
             IEnumerable<<#= type.Item1 #>> values = source.AllValues();
             if (values.Any())
-                return values.Kurtosis();
+                return values.KurtosisNaN();
 
             return null;
         }
@@ -47,12 +47,15 @@ namespace LinqStatistics
         /// </summary>
         /// <param name="source">A sequence of <#= type.Item1 #> values to calculate the Kurtosis of.</param>
         /// <returns>The Kurtosis of the sequence of values.</returns>
-        public static <#= type.Item2 #> Kurtosis(this IEnumerable<<#= type.Item1 #>> source)
+        public static <#= type.Item2 #> KurtosisNaN(this IEnumerable<<#= type.Item1 #>> source)
         {
             if (source == null)
                 throw new ArgumentNullException("source");
 
-            double mean = (double)source.Average();
+             if (!source.Any())
+                return <#= type.Item2 #>.NaN;
+
+           double mean = (double)source.Average();
 
             int n = 0;
             double meanv = 0;
@@ -70,7 +73,7 @@ namespace LinqStatistics
             }
 
             if (n < 4)
-                throw new InvalidOperationException("Source must have at least 4 elements");
+                return <#= type.Item2 #>.NaN;
 
             var s = Math.Sqrt((double)(M2 / (n - 1))); // stdev
 
@@ -89,7 +92,7 @@ namespace LinqStatistics
         /// <param name="source">A sequence of values that are used to calculate a Kurtosis</param>
         /// <param name="selector">A transform function to apply to each element.</param>
         /// <returns>The Kurtosis of the sequence of values.</returns>
-        public static <#= type.Item2 #> Kurtosis<TSource>(this IEnumerable<TSource> source, Func<TSource, <#= type.Item1 #>> selector)
+        public static <#= type.Item2 #> KurtosisNaN<TSource>(this IEnumerable<TSource> source, Func<TSource, <#= type.Item1 #>> selector)
         {
             if (source == null)
                 throw new ArgumentNullException("source");
@@ -97,7 +100,7 @@ namespace LinqStatistics
             if (selector == null)
                 throw new ArgumentNullException("selector");
 
-            return source.Select(selector).Kurtosis();
+            return source.Select(selector).KurtosisNaN();
         }
 
         /// <summary>
@@ -108,7 +111,7 @@ namespace LinqStatistics
         /// <param name="source">A sequence of values that are used to calculate a Kurtosis</param>
         /// <param name="selector">A transform function to apply to each element.</param>
         /// <returns>The Kurtosis of the sequence of values.</returns>
-        public static <#= type.Item2 #>? Kurtosis<TSource>(this IEnumerable<TSource> source, Func<TSource, <#= type.Item1 #>?> selector)
+        public static <#= type.Item2 #>? KurtosisNaN<TSource>(this IEnumerable<TSource> source, Func<TSource, <#= type.Item1 #>?> selector)
         {
             if (source == null)
                 throw new ArgumentNullException("source");
@@ -116,27 +119,8 @@ namespace LinqStatistics
             if (selector == null)
                 throw new ArgumentNullException("selector");
 
-            return source.Select(selector).Kurtosis();
+            return source.Select(selector).KurtosisNaN();
         }
  <# } #>
     }
 }
-// a single pass implementation 
-            //double M1 = 0, M2 = 0, M3 = 0, M4 = 0;
-
-            //int n = 0;
-            //foreach (var x in source)
-            //{
-            //    int n1 = n;
-            //    n++;
-            //    double delta = x - M1;
-            //    double delta_n = delta / n;
-            //    double delta_n2 = delta_n * delta_n;
-            //    double term1 = delta * delta_n * n1;
-            //    M1 += delta_n;
-            //    M4 += term1 * delta_n2 * (n * n - 3 * n + 3) + 6 * delta_n2 * M2 - 4 * delta_n * M3;
-            //    M3 += term1 * delta_n * (n - 2) - 3 * delta_n * M2;
-            //    M2 += term1;
-            //}
-
-            //return n * M4 / (M2 * M2) - 3.0;

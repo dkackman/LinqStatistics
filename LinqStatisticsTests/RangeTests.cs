@@ -61,5 +61,14 @@ namespace LinqStatistics.UnitTests
             Assert.AreEqual(1, result.Min);
             Assert.AreEqual(5, result.Max);
         }
+
+        [TestMethod]
+        [ExpectedException(typeof(InvalidOperationException))]
+        public void MinMaxNoElements()
+        {
+            IEnumerable<int> source = new List<int>();
+
+            var result = source.MinMax();
+        }
     }
 }

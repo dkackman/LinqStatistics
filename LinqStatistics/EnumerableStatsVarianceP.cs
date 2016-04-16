@@ -41,9 +41,6 @@ namespace LinqStatistics
             if (source == null)
                 throw new ArgumentNullException("source");
 
-            if (!source.Any())
-                throw new InvalidOperationException("source sequence contains no elements");
-
             int n = 0;
             double mean = 0;
             double M2 = 0;
@@ -56,6 +53,9 @@ namespace LinqStatistics
                 mean += delta / n;
                 M2 += delta * ((double)x - mean);
             }
+
+            if (n < 1)
+                throw new InvalidOperationException("source sequence contains no elements");
 
             return (double)(M2 / n);
         }
@@ -131,9 +131,6 @@ namespace LinqStatistics
             if (source == null)
                 throw new ArgumentNullException("source");
 
-            if (!source.Any())
-                throw new InvalidOperationException("source sequence contains no elements");
-
             int n = 0;
             double mean = 0;
             double M2 = 0;
@@ -146,6 +143,9 @@ namespace LinqStatistics
                 mean += delta / n;
                 M2 += delta * ((double)x - mean);
             }
+
+            if (n < 1)
+                throw new InvalidOperationException("source sequence contains no elements");
 
             return (double)(M2 / n);
         }
@@ -221,9 +221,6 @@ namespace LinqStatistics
             if (source == null)
                 throw new ArgumentNullException("source");
 
-            if (!source.Any())
-                throw new InvalidOperationException("source sequence contains no elements");
-
             int n = 0;
             double mean = 0;
             double M2 = 0;
@@ -236,6 +233,9 @@ namespace LinqStatistics
                 mean += delta / n;
                 M2 += delta * ((double)x - mean);
             }
+
+            if (n < 1)
+                throw new InvalidOperationException("source sequence contains no elements");
 
             return (decimal)(M2 / n);
         }
@@ -311,9 +311,6 @@ namespace LinqStatistics
             if (source == null)
                 throw new ArgumentNullException("source");
 
-            if (!source.Any())
-                throw new InvalidOperationException("source sequence contains no elements");
-
             int n = 0;
             double mean = 0;
             double M2 = 0;
@@ -326,6 +323,9 @@ namespace LinqStatistics
                 mean += delta / n;
                 M2 += delta * ((double)x - mean);
             }
+
+            if (n < 1)
+                throw new InvalidOperationException("source sequence contains no elements");
 
             return (float)(M2 / n);
         }
@@ -401,9 +401,6 @@ namespace LinqStatistics
             if (source == null)
                 throw new ArgumentNullException("source");
 
-            if (!source.Any())
-                throw new InvalidOperationException("source sequence contains no elements");
-
             int n = 0;
             double mean = 0;
             double M2 = 0;
@@ -416,6 +413,9 @@ namespace LinqStatistics
                 mean += delta / n;
                 M2 += delta * ((double)x - mean);
             }
+
+            if (n < 1)
+                throw new InvalidOperationException("source sequence contains no elements");
 
             return (double)(M2 / n);
         }

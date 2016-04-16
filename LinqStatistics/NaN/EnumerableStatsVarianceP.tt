@@ -13,7 +13,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace LinqStatistics
+namespace LinqStatistics.NaN
 {
     public static partial class EnumerableStats
     {
@@ -21,7 +21,7 @@ namespace LinqStatistics
     {
         new Tuple<string, string>("int", "double"),
         new Tuple<string, string>("long", "double"),
-        new Tuple<string, string>("decimal", "decimal"),
+        // new Tuple<string, string>("decimal", "decimal"),
         new Tuple<string, string>("float", "float"),
         new Tuple<string, string>("double", "double")
     };
@@ -36,11 +36,11 @@ namespace LinqStatistics
         ///     The Variance of the sequence of values, or null if the source sequence is
         ///     empty or contains only values that are null.
         /// </returns>
-        public static <#= type.Item2 #>? VarianceP(this IEnumerable<<#= type.Item1 #>?> source)
+        public static <#= type.Item2 #>? VariancePNaN(this IEnumerable<<#= type.Item1 #>?> source)
         {
             IEnumerable<<#= type.Item1 #>> values = source.AllValues();
             if (values.Any())
-                return values.VarianceP();
+                return values.VariancePNaN();
             
             return null;
         }
@@ -52,7 +52,7 @@ namespace LinqStatistics
         /// <returns>       
         ///     The Variance of the sequence of values.
         /// </returns>
-        public static <#= type.Item2 #> VarianceP(this IEnumerable<<#= type.Item1 #>> source)
+        public static <#= type.Item2 #> VariancePNaN(this IEnumerable<<#= type.Item1 #>> source)
         {
             if (source == null)
                 throw new ArgumentNullException("source");
@@ -71,7 +71,7 @@ namespace LinqStatistics
             }
 
             if (n < 1)
-                throw new InvalidOperationException("source sequence contains no elements");
+                return <#= type.Item2 #>.NaN;
 
             return (<#= type.Item2 #>)(M2 / n);
         }
@@ -86,7 +86,7 @@ namespace LinqStatistics
         /// <returns>       
         ///     The Variance of the sequence of values.
         /// </returns>
-        public static <#= type.Item2 #>? VarianceP<TSource>(this IEnumerable<TSource> source, Func<TSource, <#= type.Item1 #>?> selector)
+        public static <#= type.Item2 #>? VariancePNaN<TSource>(this IEnumerable<TSource> source, Func<TSource, <#= type.Item1 #>?> selector)
         {
             if (source == null)
                 throw new ArgumentNullException("source");
@@ -94,7 +94,7 @@ namespace LinqStatistics
             if (selector == null)
                 throw new ArgumentNullException("selector");
 
-            return source.Select(selector).VarianceP();
+            return source.Select(selector).VariancePNaN();
         }
 
         /// <summary>
@@ -107,7 +107,7 @@ namespace LinqStatistics
         /// <returns>       
         ///     The Variance of the sequence of values.
         /// </returns>
-        public static <#= type.Item2 #> VarianceP<TSource>(this IEnumerable<TSource> source, Func<TSource, <#= type.Item1 #>> selector)
+        public static <#= type.Item2 #> VariancePNaN<TSource>(this IEnumerable<TSource> source, Func<TSource, <#= type.Item1 #>> selector)
         {
             if (source == null)
                 throw new ArgumentNullException("source");
@@ -115,7 +115,7 @@ namespace LinqStatistics
             if (selector == null)
                 throw new ArgumentNullException("selector");
 
-            return source.Select(selector).VarianceP();
+            return source.Select(selector).VariancePNaN();
         }
  <# } #>
     }

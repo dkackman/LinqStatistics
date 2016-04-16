@@ -40,7 +40,7 @@ namespace LinqStatistics.NaN
         {
             IEnumerable<<#= type.Item1 #>> values = source.AllValues();
             if (values.Any())
-                return values.Variance();
+                return values.VarianceNaN();
             
             return null;
         }
@@ -94,7 +94,7 @@ namespace LinqStatistics.NaN
             if (selector == null)
                 throw new ArgumentNullException("selector");
 
-            return source.Select(selector).Variance();
+            return source.Select(selector).VarianceNaN();
         }
 
         /// <summary>
@@ -115,7 +115,7 @@ namespace LinqStatistics.NaN
             if (selector == null)
                 throw new ArgumentNullException("selector");
 
-            return source.Select(selector).Variance();
+            return source.Select(selector).VarianceNaN();
         }
  <# } #>
     }
