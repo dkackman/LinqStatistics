@@ -13,9 +13,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace LinqStatistics
+namespace LinqStatistics.NaN
 {
-    public static partial class EnumerableStats
+    public static partial class EnumerableStatsNaN
     {
     <# var types = new List<string>()
     {
@@ -30,11 +30,11 @@ namespace LinqStatistics
         /// <param name="source">A sequence of Tuple{<#= type #>?, <#= type #>?} values to calculate the LeastSquares of.</param>
         /// <returns> The LeastSquares of the sequence of values, or null if the source sequence is
         ///     empty or contains only values that are null.</returns>
-        public static LeastSquares? LeastSquares(this IEnumerable<Tuple<<#= type #>?, <#= type #>?>> source)
+        public static LeastSquares? LeastSquaresNaN(this IEnumerable<Tuple<<#= type #>?, <#= type #>?>> source)
         {
             IEnumerable<Tuple<<#= type #>, <#= type #>>> values = source.AllValues();
             if (values.Any())
-                return values.LeastSquares();
+                return values.LeastSquaresNaN();
 
             return null;
         }
@@ -44,7 +44,7 @@ namespace LinqStatistics
         /// </summary>
         /// <param name="source">A sequence of Tuple{<#= type #>, <#= type #>} values to calculate the LeastSquares of.</param>
         /// <returns> The LeastSquares of the sequence of values.</returns>
-        public static LeastSquares LeastSquares(this IEnumerable<Tuple<<#= type #>, <#= type #>>> source)
+        public static LeastSquares LeastSquaresNaN(this IEnumerable<Tuple<<#= type #>, <#= type #>>> source)
         {
             if (source == null)
                 throw new ArgumentNullException("source");
@@ -65,7 +65,7 @@ namespace LinqStatistics
             }
 
             if (n < 2)
-                throw new InvalidOperationException("Source must have at least 2 elements");
+                return new LeastSquares(double.NaN, double.NaN);
             
             double denominator = (n * sumXX - sumX * sumX);
             double b = (-sumX * sumXY + sumXX * sumY) / denominator;
@@ -82,7 +82,7 @@ namespace LinqStatistics
         /// <param name="source">A sequence of values to calculate the LeastSquares of.</param>
         /// <param name="selector">A transform function to apply to each element.</param>
         /// <returns>The LeastSquares of the sequence of values.</returns>
-        public static LeastSquares? LeastSquares<TSource>(this IEnumerable<TSource> source, Func<TSource, Tuple<<#= type #>?, <#= type #>?>> selector)
+        public static LeastSquares? LeastSquaresNaN<TSource>(this IEnumerable<TSource> source, Func<TSource, Tuple<<#= type #>?, <#= type #>?>> selector)
         {
             if (source == null)
                 throw new ArgumentNullException("source");
@@ -90,7 +90,7 @@ namespace LinqStatistics
             if (selector == null)
                 throw new ArgumentNullException("selector");
 
-            return source.Select(selector).LeastSquares();
+            return source.Select(selector).LeastSquaresNaN();
         }
 
         /// <summary>
@@ -101,7 +101,7 @@ namespace LinqStatistics
         /// <param name="source">A sequence of values to calculate the LeastSquares of.</param>
         /// <param name="selector">A transform function to apply to each element.</param>
         /// <returns>The LeastSquares of the sequence of values.</returns>
-        public static LeastSquares LeastSquares<TSource>(this IEnumerable<TSource> source, Func<TSource, Tuple<<#= type #>, <#= type #>>> selector)
+        public static LeastSquares LeastSquaresNaN<TSource>(this IEnumerable<TSource> source, Func<TSource, Tuple<<#= type #>, <#= type #>>> selector)
         {
             if (source == null)
                 throw new ArgumentNullException("source");
@@ -109,7 +109,7 @@ namespace LinqStatistics
             if (selector == null)
                 throw new ArgumentNullException("selector");
 
-            return source.Select(selector).LeastSquares();
+            return source.Select(selector).LeastSquaresNaN();
         }
  <# } #>
     }

@@ -138,6 +138,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
+    <Compile Include="NaN\EnumerableStatsLeastSquares.cs">
+      <DependentUpon>EnumerableStatsLeastSquares.tt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="NaN\EnumerableStatsMinMax.cs">
       <DependentUpon>EnumerableStatsMinMax.tt</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -313,6 +318,12 @@
     <None Include="NaN\EnumerableStatsRange.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>EnumerableStatsRange.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="NaN\EnumerableStatsLeastSquares.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>EnumerableStatsLeastSquares.cs</LastGenOutput>
     </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

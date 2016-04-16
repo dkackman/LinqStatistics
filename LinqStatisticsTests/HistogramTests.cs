@@ -122,7 +122,7 @@ namespace LinqStatistics.UnitTests
         }
 
         [TestMethod]
-        public void MatchInteractiveHistogram()
+        public void HistogramMatchInteractive()
         {
             var list = DataLoader.LoadData<int>("HistogramData.txt", s => Convert.ToInt32(s));
 

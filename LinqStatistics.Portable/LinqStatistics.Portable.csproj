@@ -142,6 +142,7 @@
     <Compile Include="..\PackageInfo.cs">
       <Link>Properties\PackageInfo.cs</Link>
     </Compile>
+    <Compile Include="NaN\EnumerableStatsLeastSquares.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -60,7 +60,7 @@ namespace LinqStatistics
                 var min = Math.Min(accumulator.Min, value);
                 var max = Math.Max(accumulator.Max, value);
                 
-                return new Range<<#= type #>>(min, max);;
+                return new Range<<#= type #>>(min, max);
             });
         }
 

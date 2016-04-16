@@ -111,6 +111,16 @@ namespace LinqStatistics
             return _m.GetHashCode() ^ _b.GetHashCode();
         }
 
+        /// <summary>
+        /// Determines if the <see cref="LeastSquares"/> argument has Not a Number elements
+        /// </summary>
+        /// <param name="ls"></param>
+        /// <returns>True if either M or B is <see cref="double.NaN"/></returns>
+        public static bool IsNaN(LeastSquares ls)
+        {
+            return double.IsNaN(ls.M) || double.IsNaN(ls.B);
+        }
+
         private static string Format(string m, string b)
         {
             return string.Format("y = ({0} * x) + {1}", m, b);
