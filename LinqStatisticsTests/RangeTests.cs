@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
+using LinqStatistics.NaN;
+
 namespace LinqStatistics.UnitTests
 {
     /// <summary>
@@ -48,7 +50,26 @@ namespace LinqStatistics.UnitTests
 
             int result = source.Range();
 
-            Assert.AreEqual(4,result);
+            Assert.AreEqual(4, result);
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(InvalidOperationException))]
+        public void RangeEmptyExcepts()
+        {
+            var source = new List<double>();
+
+            var result = source.Range();
+        }
+
+        [TestMethod]
+        public void RangeNaN()
+        {
+            var source = new List<double>();
+
+            var result = source.RangeNaN();
+
+            Assert.IsTrue(double.IsNaN(result));
         }
 
         [TestMethod]
@@ -69,6 +90,17 @@ namespace LinqStatistics.UnitTests
             IEnumerable<int> source = new List<int>();
 
             var result = source.MinMax();
+        }
+
+        [TestMethod]
+        public void MinMaxNoElementsNaN()
+        {
+            IEnumerable<double> source = new List<double>();
+
+            var result = source.MinMaxNaN();
+
+            Assert.IsTrue(double.IsNaN(result.Max));
+            Assert.IsTrue(double.IsNaN(result.Min));
         }
     }
 }
