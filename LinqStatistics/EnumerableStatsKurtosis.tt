@@ -121,22 +121,3 @@ namespace LinqStatistics
  <# } #>
     }
 }
-// a single pass implementation 
-            //double M1 = 0, M2 = 0, M3 = 0, M4 = 0;
-
-            //int n = 0;
-            //foreach (var x in source)
-            //{
-            //    int n1 = n;
-            //    n++;
-            //    double delta = x - M1;
-            //    double delta_n = delta / n;
-            //    double delta_n2 = delta_n * delta_n;
-            //    double term1 = delta * delta_n * n1;
-            //    M1 += delta_n;
-            //    M4 += term1 * delta_n2 * (n * n - 3 * n + 3) + 6 * delta_n2 * M2 - 4 * delta_n * M3;
-            //    M3 += term1 * delta_n * (n - 2) - 3 * delta_n * M2;
-            //    M2 += term1;
-            //}
-
-            //return n * M4 / (M2 * M2) - 3.0;

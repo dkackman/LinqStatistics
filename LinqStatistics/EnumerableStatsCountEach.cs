@@ -21,9 +21,6 @@ namespace LinqStatistics
             if (comparer == null)
                 throw new ArgumentNullException("comparer");
 
-            if (!source.Any())
-                throw new InvalidOperationException("source sequence contains no elements");
-
             return source.GroupBy(t => t, comparer).OrderBy(g => g.Key).Select(g => new ItemCount<T>(g.Key, g.Count()));
         }
 

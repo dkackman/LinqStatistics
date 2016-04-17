@@ -195,10 +195,10 @@ namespace LinqStatistics
         }
 
         /// <summary>
-        /// Returns the fully qualified type name of this instance.
+        /// Returns a string representation of the range
         /// </summary>
         /// <returns>
-        /// A <see cref="T:System.String"/> containing a fully qualified type name.
+        /// A <see cref="T:System.String"/> representation of the range
         /// </returns>
         public override string ToString()
         {

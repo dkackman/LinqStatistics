@@ -11,6 +11,16 @@ namespace LinqStatistics.UnitTests
     public class HistogramTests
     {
         [TestMethod]
+        public void CounEachEmpty()
+        {
+            var list = new List<int>();
+
+            var counts = list.CountEach();
+
+            Assert.IsFalse(counts.Any());
+        }
+
+        [TestMethod]
         public void CounEachIntegers()
         {
             var list = new List<int>()
