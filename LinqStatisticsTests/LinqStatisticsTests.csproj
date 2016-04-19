@@ -71,6 +71,12 @@
     <Compile Include="Extensions.cs" />
     <Compile Include="MedianTests.cs" />
     <Compile Include="ModeTests.cs" />
+    <Compile Include="NaN\KurtosisNaNTests.cs" />
+    <Compile Include="NaN\LeastSquaresNaNTests.cs" />
+    <Compile Include="NaN\RootMeanSquareNaNTests.cs" />
+    <Compile Include="NaN\SkewnessNaNTests.cs" />
+    <Compile Include="NaN\StandardDeviationNaNTests.cs" />
+    <Compile Include="NaN\VarianceNaNTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RangeObjectTests.cs" />
     <Compile Include="RangeTests.cs" />
