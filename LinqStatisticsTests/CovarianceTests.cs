@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
+using LinqStatistics.NaN;
+
 namespace LinqStatistics.UnitTests
 {
     /// <summary>
@@ -50,6 +52,17 @@ namespace LinqStatistics.UnitTests
             double result = source.Covariance(other);
 
             Assert.AreEqual(3.081875, result, double.Epsilon);
+        }
+
+        [TestMethod]
+        public void CovarianceNaN()
+        {
+            IEnumerable<double> source = new List<double>();
+            IEnumerable<double> other = new List<double>();
+
+            double result = source.CovarianceNaN(other);
+
+            Assert.IsTrue(double.IsNaN(result));
         }
 
         [TestMethod]

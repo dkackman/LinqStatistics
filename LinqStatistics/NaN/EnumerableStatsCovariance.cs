@@ -41,12 +41,6 @@ namespace LinqStatistics.NaN
             if (other == null)
                 throw new ArgumentNullException("other");
 
-            if (!source.Any())
-                throw new InvalidOperationException("source sequence contains no elements");
-
-            if (!other.Any())
-                throw new InvalidOperationException("other sequence contains no elements");
-
             // convert to lists so we can get items by index without enumerating within the loop below
             var listSource = source.ToList();
             var listOther = other.ToList();
@@ -99,12 +93,6 @@ namespace LinqStatistics.NaN
 
             if (other == null)
                 throw new ArgumentNullException("other");
-
-            if (!source.Any())
-                throw new InvalidOperationException("source sequence contains no elements");
-
-            if (!other.Any())
-                throw new InvalidOperationException("other sequence contains no elements");
 
             // convert to lists so we can get items by index without enumerating within the loop below
             var listSource = source.ToList();
@@ -159,12 +147,6 @@ namespace LinqStatistics.NaN
             if (other == null)
                 throw new ArgumentNullException("other");
 
-            if (!source.Any())
-                throw new InvalidOperationException("source sequence contains no elements");
-
-            if (!other.Any())
-                throw new InvalidOperationException("other sequence contains no elements");
-
             // convert to lists so we can get items by index without enumerating within the loop below
             var listSource = source.ToList();
             var listOther = other.ToList();
@@ -217,12 +199,6 @@ namespace LinqStatistics.NaN
 
             if (other == null)
                 throw new ArgumentNullException("other");
-
-            if (!source.Any())
-                throw new InvalidOperationException("source sequence contains no elements");
-
-            if (!other.Any())
-                throw new InvalidOperationException("other sequence contains no elements");
 
             // convert to lists so we can get items by index without enumerating within the loop below
             var listSource = source.ToList();
