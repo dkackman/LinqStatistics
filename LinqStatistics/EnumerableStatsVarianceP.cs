@@ -45,13 +45,16 @@ namespace LinqStatistics
             double mean = 0;
             double M2 = 0;
 
-            foreach (var x in source)
-            {
-                n++;
+            checked
+            { 
+                foreach (var x in source)
+                {
+                    n++;
                 
-                double delta = (double)x - mean;
-                mean += delta / n;
-                M2 += delta * ((double)x - mean);
+                    double delta = (double)x - mean;
+                    mean += delta / n;
+                    M2 += delta * ((double)x - mean);
+                }
             }
 
             if (n < 1)
@@ -135,13 +138,16 @@ namespace LinqStatistics
             double mean = 0;
             double M2 = 0;
 
-            foreach (var x in source)
-            {
-                n++;
+            checked
+            { 
+                foreach (var x in source)
+                {
+                    n++;
                 
-                double delta = (double)x - mean;
-                mean += delta / n;
-                M2 += delta * ((double)x - mean);
+                    double delta = (double)x - mean;
+                    mean += delta / n;
+                    M2 += delta * ((double)x - mean);
+                }
             }
 
             if (n < 1)
@@ -225,13 +231,16 @@ namespace LinqStatistics
             double mean = 0;
             double M2 = 0;
 
-            foreach (var x in source)
-            {
-                n++;
+            checked
+            { 
+                foreach (var x in source)
+                {
+                    n++;
                 
-                double delta = (double)x - mean;
-                mean += delta / n;
-                M2 += delta * ((double)x - mean);
+                    double delta = (double)x - mean;
+                    mean += delta / n;
+                    M2 += delta * ((double)x - mean);
+                }
             }
 
             if (n < 1)
@@ -315,13 +324,16 @@ namespace LinqStatistics
             double mean = 0;
             double M2 = 0;
 
-            foreach (var x in source)
-            {
-                n++;
+            checked
+            { 
+                foreach (var x in source)
+                {
+                    n++;
                 
-                double delta = (double)x - mean;
-                mean += delta / n;
-                M2 += delta * ((double)x - mean);
+                    double delta = (double)x - mean;
+                    mean += delta / n;
+                    M2 += delta * ((double)x - mean);
+                }
             }
 
             if (n < 1)
@@ -405,13 +417,16 @@ namespace LinqStatistics
             double mean = 0;
             double M2 = 0;
 
-            foreach (var x in source)
-            {
-                n++;
+            checked
+            { 
+                foreach (var x in source)
+                {
+                    n++;
                 
-                double delta = (double)x - mean;
-                mean += delta / n;
-                M2 += delta * ((double)x - mean);
+                    double delta = (double)x - mean;
+                    mean += delta / n;
+                    M2 += delta * ((double)x - mean);
+                }
             }
 
             if (n < 1)

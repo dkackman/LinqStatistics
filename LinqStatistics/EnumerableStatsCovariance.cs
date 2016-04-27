@@ -52,10 +52,12 @@ namespace LinqStatistics
             var avgOther = listOther.Average();
             
             double covariance = 0;
-
-            for (int i = 0; i < listSource.Count; i++)
+            checked
             {
-                covariance += (listSource[i] - avgSource) * (listOther[i] - avgOther);
+                for (int i = 0; i < listSource.Count; i++)
+                {
+                    covariance += (listSource[i] - avgSource) * (listOther[i] - avgOther);
+                }
             }
 
             // Average (above) will except on empty lists so we don't need to check for divide by zero here
@@ -103,10 +105,12 @@ namespace LinqStatistics
             var avgOther = listOther.Average();
             
             double covariance = 0;
-
-            for (int i = 0; i < listSource.Count; i++)
+            checked
             {
-                covariance += (listSource[i] - avgSource) * (listOther[i] - avgOther);
+                for (int i = 0; i < listSource.Count; i++)
+                {
+                    covariance += (listSource[i] - avgSource) * (listOther[i] - avgOther);
+                }
             }
 
             // Average (above) will except on empty lists so we don't need to check for divide by zero here
@@ -154,10 +158,12 @@ namespace LinqStatistics
             var avgOther = listOther.Average();
             
             decimal covariance = 0;
-
-            for (int i = 0; i < listSource.Count; i++)
+            checked
             {
-                covariance += (listSource[i] - avgSource) * (listOther[i] - avgOther);
+                for (int i = 0; i < listSource.Count; i++)
+                {
+                    covariance += (listSource[i] - avgSource) * (listOther[i] - avgOther);
+                }
             }
 
             // Average (above) will except on empty lists so we don't need to check for divide by zero here
@@ -205,10 +211,12 @@ namespace LinqStatistics
             var avgOther = listOther.Average();
             
             float covariance = 0;
-
-            for (int i = 0; i < listSource.Count; i++)
+            checked
             {
-                covariance += (listSource[i] - avgSource) * (listOther[i] - avgOther);
+                for (int i = 0; i < listSource.Count; i++)
+                {
+                    covariance += (listSource[i] - avgSource) * (listOther[i] - avgOther);
+                }
             }
 
             // Average (above) will except on empty lists so we don't need to check for divide by zero here
@@ -256,10 +264,12 @@ namespace LinqStatistics
             var avgOther = listOther.Average();
             
             double covariance = 0;
-
-            for (int i = 0; i < listSource.Count; i++)
+            checked
             {
-                covariance += (listSource[i] - avgSource) * (listOther[i] - avgOther);
+                for (int i = 0; i < listSource.Count; i++)
+                {
+                    covariance += (listSource[i] - avgSource) * (listOther[i] - avgOther);
+                }
             }
 
             // Average (above) will except on empty lists so we don't need to check for divide by zero here

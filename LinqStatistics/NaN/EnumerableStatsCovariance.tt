@@ -73,9 +73,12 @@ namespace LinqStatistics.NaN
 
             double covariance = 0;
 
-            for (int i = 0; i < listSource.Count; i++)
-            {
-                covariance += (double)((listSource[i] - avgSource) * (listOther[i] - avgOther));
+            checked
+            { 
+                for (int i = 0; i < listSource.Count; i++)
+                {
+                    covariance += (double)((listSource[i] - avgSource) * (listOther[i] - avgOther));
+                }
             }
 
             return (<#= type.Item2 #>)(covariance / listSource.Count); 

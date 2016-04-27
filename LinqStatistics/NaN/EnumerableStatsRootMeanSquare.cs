@@ -40,10 +40,13 @@ namespace LinqStatistics.NaN
             double s = 0;
             long n = 0;
 
-            foreach (var d in source)
-            {
-                n++;
-                s += Math.Pow((double)d, 2);
+            checked
+            { 
+                foreach (var d in source)
+                {
+                    n++;
+                    s += Math.Pow((double)d, 2);
+                }
             }
 
             if (n < 1)
@@ -118,10 +121,13 @@ namespace LinqStatistics.NaN
             double s = 0;
             long n = 0;
 
-            foreach (var d in source)
-            {
-                n++;
-                s += Math.Pow((double)d, 2);
+            checked
+            { 
+                foreach (var d in source)
+                {
+                    n++;
+                    s += Math.Pow((double)d, 2);
+                }
             }
 
             if (n < 1)
@@ -196,10 +202,13 @@ namespace LinqStatistics.NaN
             double s = 0;
             long n = 0;
 
-            foreach (var d in source)
-            {
-                n++;
-                s += Math.Pow((double)d, 2);
+            checked
+            { 
+                foreach (var d in source)
+                {
+                    n++;
+                    s += Math.Pow((double)d, 2);
+                }
             }
 
             if (n < 1)
@@ -274,10 +283,13 @@ namespace LinqStatistics.NaN
             double s = 0;
             long n = 0;
 
-            foreach (var d in source)
-            {
-                n++;
-                s += Math.Pow((double)d, 2);
+            checked
+            { 
+                foreach (var d in source)
+                {
+                    n++;
+                    s += Math.Pow((double)d, 2);
+                }
             }
 
             if (n < 1)

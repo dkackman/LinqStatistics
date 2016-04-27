@@ -44,10 +44,13 @@ namespace LinqStatistics.NaN
             double M3 = 0;
             long n = 0;
 
-            foreach (var x in source)
-            {
-                n++;
-                M3 += Math.Pow(((double)x - mean) / s, 3.0);
+            checked
+            { 
+                foreach (var x in source)
+                {
+                    n++;
+                    M3 += Math.Pow(((double)x - mean) / s, 3.0);
+                }
             }
 
             if (n < 3)
@@ -126,10 +129,13 @@ namespace LinqStatistics.NaN
             double M3 = 0;
             long n = 0;
 
-            foreach (var x in source)
-            {
-                n++;
-                M3 += Math.Pow(((double)x - mean) / s, 3.0);
+            checked
+            { 
+                foreach (var x in source)
+                {
+                    n++;
+                    M3 += Math.Pow(((double)x - mean) / s, 3.0);
+                }
             }
 
             if (n < 3)
@@ -208,10 +214,13 @@ namespace LinqStatistics.NaN
             double M3 = 0;
             long n = 0;
 
-            foreach (var x in source)
-            {
-                n++;
-                M3 += Math.Pow(((double)x - mean) / s, 3.0);
+            checked
+            { 
+                foreach (var x in source)
+                {
+                    n++;
+                    M3 += Math.Pow(((double)x - mean) / s, 3.0);
+                }
             }
 
             if (n < 3)
@@ -290,10 +299,13 @@ namespace LinqStatistics.NaN
             double M3 = 0;
             long n = 0;
 
-            foreach (var x in source)
-            {
-                n++;
-                M3 += Math.Pow(((double)x - mean) / s, 3.0);
+            checked
+            { 
+                foreach (var x in source)
+                {
+                    n++;
+                    M3 += Math.Pow(((double)x - mean) / s, 3.0);
+                }
             }
 
             if (n < 3)

@@ -57,9 +57,12 @@ namespace LinqStatistics.NaN
 
             double covariance = 0;
 
-            for (int i = 0; i < listSource.Count; i++)
-            {
-                covariance += (double)((listSource[i] - avgSource) * (listOther[i] - avgOther));
+            checked
+            { 
+                for (int i = 0; i < listSource.Count; i++)
+                {
+                    covariance += (double)((listSource[i] - avgSource) * (listOther[i] - avgOther));
+                }
             }
 
             return (double)(covariance / listSource.Count); 
@@ -110,9 +113,12 @@ namespace LinqStatistics.NaN
 
             double covariance = 0;
 
-            for (int i = 0; i < listSource.Count; i++)
-            {
-                covariance += (double)((listSource[i] - avgSource) * (listOther[i] - avgOther));
+            checked
+            { 
+                for (int i = 0; i < listSource.Count; i++)
+                {
+                    covariance += (double)((listSource[i] - avgSource) * (listOther[i] - avgOther));
+                }
             }
 
             return (double)(covariance / listSource.Count); 
@@ -163,9 +169,12 @@ namespace LinqStatistics.NaN
 
             double covariance = 0;
 
-            for (int i = 0; i < listSource.Count; i++)
-            {
-                covariance += (double)((listSource[i] - avgSource) * (listOther[i] - avgOther));
+            checked
+            { 
+                for (int i = 0; i < listSource.Count; i++)
+                {
+                    covariance += (double)((listSource[i] - avgSource) * (listOther[i] - avgOther));
+                }
             }
 
             return (float)(covariance / listSource.Count); 
@@ -216,9 +225,12 @@ namespace LinqStatistics.NaN
 
             double covariance = 0;
 
-            for (int i = 0; i < listSource.Count; i++)
-            {
-                covariance += (double)((listSource[i] - avgSource) * (listOther[i] - avgOther));
+            checked
+            { 
+                for (int i = 0; i < listSource.Count; i++)
+                {
+                    covariance += (double)((listSource[i] - avgSource) * (listOther[i] - avgOther));
+                }
             }
 
             return (double)(covariance / listSource.Count); 

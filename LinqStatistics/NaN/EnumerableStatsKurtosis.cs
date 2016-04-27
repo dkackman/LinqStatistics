@@ -46,14 +46,17 @@ namespace LinqStatistics.NaN
             double M2 = 0;
             double M4 = 0;
              
-            foreach (var x in source)
-            {
-                n++;
+            checked
+            { 
+                foreach (var x in source)
+                {
+                    n++;
 
-                double delta = (double)x - meanv;
-                meanv += delta / n;
-                M2 += delta * ((double)x - meanv);
-                M4 += Math.Pow((double)x - mean, 4);
+                    double delta = (double)x - meanv;
+                    meanv += delta / n;
+                    M2 += delta * ((double)x - meanv);
+                    M4 += Math.Pow((double)x - mean, 4);
+                }
             }
 
             if (n < 4)
@@ -140,14 +143,17 @@ namespace LinqStatistics.NaN
             double M2 = 0;
             double M4 = 0;
              
-            foreach (var x in source)
-            {
-                n++;
+            checked
+            { 
+                foreach (var x in source)
+                {
+                    n++;
 
-                double delta = (double)x - meanv;
-                meanv += delta / n;
-                M2 += delta * ((double)x - meanv);
-                M4 += Math.Pow((double)x - mean, 4);
+                    double delta = (double)x - meanv;
+                    meanv += delta / n;
+                    M2 += delta * ((double)x - meanv);
+                    M4 += Math.Pow((double)x - mean, 4);
+                }
             }
 
             if (n < 4)
@@ -234,14 +240,17 @@ namespace LinqStatistics.NaN
             double M2 = 0;
             double M4 = 0;
              
-            foreach (var x in source)
-            {
-                n++;
+            checked
+            { 
+                foreach (var x in source)
+                {
+                    n++;
 
-                double delta = (double)x - meanv;
-                meanv += delta / n;
-                M2 += delta * ((double)x - meanv);
-                M4 += Math.Pow((double)x - mean, 4);
+                    double delta = (double)x - meanv;
+                    meanv += delta / n;
+                    M2 += delta * ((double)x - meanv);
+                    M4 += Math.Pow((double)x - mean, 4);
+                }
             }
 
             if (n < 4)
@@ -328,14 +337,17 @@ namespace LinqStatistics.NaN
             double M2 = 0;
             double M4 = 0;
              
-            foreach (var x in source)
-            {
-                n++;
+            checked
+            { 
+                foreach (var x in source)
+                {
+                    n++;
 
-                double delta = (double)x - meanv;
-                meanv += delta / n;
-                M2 += delta * ((double)x - meanv);
-                M4 += Math.Pow((double)x - mean, 4);
+                    double delta = (double)x - meanv;
+                    meanv += delta / n;
+                    M2 += delta * ((double)x - meanv);
+                    M4 += Math.Pow((double)x - mean, 4);
+                }
             }
 
             if (n < 4)

@@ -43,13 +43,16 @@ namespace LinqStatistics.NaN
             double sumXX = 0;
             double sumXY = 0;
 
-            foreach (var tuple in source)
-            {
-                n++;
-                sumX += (double)tuple.Item1;
-                sumY += (double)tuple.Item2;
-                sumXX += (double)(tuple.Item1 * tuple.Item1);
-                sumXY += (double)(tuple.Item1 * tuple.Item2);
+            checked
+            { 
+                foreach (var tuple in source)
+                {
+                    n++;
+                    sumX += (double)tuple.Item1;
+                    sumY += (double)tuple.Item2;
+                    sumXX += (double)(tuple.Item1 * tuple.Item1);
+                    sumXY += (double)(tuple.Item1 * tuple.Item2);
+                }
             }
 
             if (n < 2)
@@ -131,13 +134,16 @@ namespace LinqStatistics.NaN
             double sumXX = 0;
             double sumXY = 0;
 
-            foreach (var tuple in source)
-            {
-                n++;
-                sumX += (double)tuple.Item1;
-                sumY += (double)tuple.Item2;
-                sumXX += (double)(tuple.Item1 * tuple.Item1);
-                sumXY += (double)(tuple.Item1 * tuple.Item2);
+            checked
+            { 
+                foreach (var tuple in source)
+                {
+                    n++;
+                    sumX += (double)tuple.Item1;
+                    sumY += (double)tuple.Item2;
+                    sumXX += (double)(tuple.Item1 * tuple.Item1);
+                    sumXY += (double)(tuple.Item1 * tuple.Item2);
+                }
             }
 
             if (n < 2)
@@ -219,13 +225,16 @@ namespace LinqStatistics.NaN
             double sumXX = 0;
             double sumXY = 0;
 
-            foreach (var tuple in source)
-            {
-                n++;
-                sumX += (double)tuple.Item1;
-                sumY += (double)tuple.Item2;
-                sumXX += (double)(tuple.Item1 * tuple.Item1);
-                sumXY += (double)(tuple.Item1 * tuple.Item2);
+            checked
+            { 
+                foreach (var tuple in source)
+                {
+                    n++;
+                    sumX += (double)tuple.Item1;
+                    sumY += (double)tuple.Item2;
+                    sumXX += (double)(tuple.Item1 * tuple.Item1);
+                    sumXY += (double)(tuple.Item1 * tuple.Item2);
+                }
             }
 
             if (n < 2)
@@ -307,13 +316,16 @@ namespace LinqStatistics.NaN
             double sumXX = 0;
             double sumXY = 0;
 
-            foreach (var tuple in source)
-            {
-                n++;
-                sumX += (double)tuple.Item1;
-                sumY += (double)tuple.Item2;
-                sumXX += (double)(tuple.Item1 * tuple.Item1);
-                sumXY += (double)(tuple.Item1 * tuple.Item2);
+            checked
+            { 
+                foreach (var tuple in source)
+                {
+                    n++;
+                    sumX += (double)tuple.Item1;
+                    sumY += (double)tuple.Item2;
+                    sumXX += (double)(tuple.Item1 * tuple.Item1);
+                    sumXY += (double)(tuple.Item1 * tuple.Item2);
+                }
             }
 
             if (n < 2)
@@ -395,13 +407,16 @@ namespace LinqStatistics.NaN
             double sumXX = 0;
             double sumXY = 0;
 
-            foreach (var tuple in source)
-            {
-                n++;
-                sumX += (double)tuple.Item1;
-                sumY += (double)tuple.Item2;
-                sumXX += (double)(tuple.Item1 * tuple.Item1);
-                sumXY += (double)(tuple.Item1 * tuple.Item2);
+            checked
+            { 
+                foreach (var tuple in source)
+                {
+                    n++;
+                    sumX += (double)tuple.Item1;
+                    sumY += (double)tuple.Item2;
+                    sumXX += (double)(tuple.Item1 * tuple.Item1);
+                    sumXY += (double)(tuple.Item1 * tuple.Item2);
+                }
             }
 
             if (n < 2)
