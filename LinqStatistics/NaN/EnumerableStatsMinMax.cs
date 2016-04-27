@@ -36,20 +36,24 @@ namespace LinqStatistics.NaN
             if (source == null)
                 throw new ArgumentNullException("source");
 
-            if (!source.Any())
-                return new Range<float>(float.NaN, float.NaN);
-
             // initialize minimum to max possible value and maximum to minimum possible value
             // so that the first comparisons in the aggregate function work as expected
             var minMax = new Range<float>(float.MaxValue, float.MinValue, true);
 
-            return source.Aggregate<float, Range<float>>(minMax, (accumulator, value) =>
+            long n = 0;
+            var result = source.Aggregate<float, Range<float>>(minMax, (accumulator, value) =>
             {
                 var min = Math.Min(accumulator.Min, value);
                 var max = Math.Max(accumulator.Max, value);
+                n++;
                 
                 return new Range<float>(min, max);
             });
+
+            if (n > 0)
+                return result;
+
+            return new Range<float>(float.NaN, float.NaN);
         }
 
         /// <summary>
@@ -114,20 +118,24 @@ namespace LinqStatistics.NaN
             if (source == null)
                 throw new ArgumentNullException("source");
 
-            if (!source.Any())
-                return new Range<double>(double.NaN, double.NaN);
-
             // initialize minimum to max possible value and maximum to minimum possible value
             // so that the first comparisons in the aggregate function work as expected
             var minMax = new Range<double>(double.MaxValue, double.MinValue, true);
 
-            return source.Aggregate<double, Range<double>>(minMax, (accumulator, value) =>
+            long n = 0;
+            var result = source.Aggregate<double, Range<double>>(minMax, (accumulator, value) =>
             {
                 var min = Math.Min(accumulator.Min, value);
                 var max = Math.Max(accumulator.Max, value);
+                n++;
                 
                 return new Range<double>(min, max);
             });
+
+            if (n > 0)
+                return result;
+
+            return new Range<double>(double.NaN, double.NaN);
         }
 
         /// <summary>

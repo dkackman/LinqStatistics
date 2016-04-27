@@ -48,20 +48,24 @@ namespace LinqStatistics
             if (source == null)
                 throw new ArgumentNullException("source");
 
-            if (!source.Any())
-                throw new InvalidOperationException("source sequence contains no elements");
-
             // initialize minimum to max possible value and maximum to minimum possible value
             // so that the first comparisons in the aggregate function work as expected
             var minMax = new Range<<#= type #>>(<#= type #>.MaxValue, <#= type #>.MinValue, true);
 
-            return source.Aggregate<<#= type #>, Range<<#= type #>>>(minMax, (accumulator, value) =>
+            long n = 0;
+            var result = source.Aggregate<<#= type #>, Range<<#= type #>>>(minMax, (accumulator, value) =>
             {
                 var min = Math.Min(accumulator.Min, value);
                 var max = Math.Max(accumulator.Max, value);
-                
+                n++;
+
                 return new Range<<#= type #>>(min, max);
             });
+
+            if (n > 0)
+                return result;
+
+            throw new InvalidOperationException("source sequence contains no elements");
         }
 
         /// <summary>
