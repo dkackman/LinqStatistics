@@ -13,7 +13,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace LinqStatistics
+namespace LinqStatistics.NaN
 {
     public static partial class EnumerableStats
     {
@@ -21,7 +21,7 @@ namespace LinqStatistics
     {
         new Tuple<string, string>("int", "double"),
         new Tuple<string, string>("long", "double"),
-        new Tuple<string, string>("decimal", "decimal"),
+        //new Tuple<string, string>("decimal", "decimal"),
         new Tuple<string, string>("float", "float"),
         new Tuple<string, string>("double", "double")
     };
@@ -34,11 +34,11 @@ namespace LinqStatistics
         /// <param name="source">The first sequence of nullable <#= type.Item1 #> values to calculate the Covariance of.</param>
         /// <param name="other">The second sequence of nullable <#= type.Item1 #> values to calculate the Covariance of.</param>
         /// <returns>The Covariance of the two sequence of values.</returns>
-        public static <#= type.Item2 #>? Covariance(this IEnumerable<<#= type.Item1 #>?> source, IEnumerable<<#= type.Item1 #>?> other)
+        public static <#= type.Item2 #>? CovarianceNaN(this IEnumerable<<#= type.Item1 #>?> source, IEnumerable<<#= type.Item1 #>?> other)
         {
             IEnumerable<<#= type.Item1 #>> values = source.AllValues();
             if (values.Any())
-                return values.Covariance(other.AllValues());
+                return values.CovarianceNaN(other.AllValues());
 
             return null;
         }
@@ -49,7 +49,7 @@ namespace LinqStatistics
         /// <param name="source">The first sequence of <#= type.Item1 #> values to calculate the Covariance of.</param>
         /// <param name="other">The second sequence of <#= type.Item1 #> values to calculate the Covariance of.</param>
         /// <returns>The Covariance of the two sequence of values.</returns>
-        public static <#= type.Item2 #> Covariance(this IEnumerable<<#= type.Item1 #>> source, IEnumerable<<#= type.Item1 #>> other)
+        public static <#= type.Item2 #> CovarianceNaN(this IEnumerable<<#= type.Item1 #>> source, IEnumerable<<#= type.Item1 #>> other)
         {
             if (source == null)
                 throw new ArgumentNullException("source");
@@ -63,20 +63,22 @@ namespace LinqStatistics
 
             if (listSource.Count != listOther.Count)
                 throw new InvalidOperationException("Collections are not of the same length");
-
-            var avgSource = listSource.Average();
-            var avgOther = listOther.Average();
             
-            <#= type.Item2 #> covariance = 0;
+            var avgSource = listSource.AverageNaN();
+            var avgOther = listOther.AverageNaN();
+            
+            // because we checked that both lists are of the same length we only need to check one list is valid
+            if (<#= type.Item2 #>.IsNaN(avgSource))
+                return <#= type.Item2 #>.NaN;
+
+            double covariance = 0;
 
             for (int i = 0; i < listSource.Count; i++)
             {
-                covariance += (listSource[i] - avgSource) * (listOther[i] - avgOther);
+                covariance += (double)((listSource[i] - avgSource) * (listOther[i] - avgOther));
             }
 
-            // Average (above) will except on empty lists so we don't need to check for divide by zero here
-            // Also can just use one list's count since we check that both are of the same length
-            return covariance / listSource.Count; 
+            return (<#= type.Item2 #>)(covariance / listSource.Count); 
         }               
  <# } #>
     }

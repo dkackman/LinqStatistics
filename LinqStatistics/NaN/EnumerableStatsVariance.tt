@@ -13,7 +13,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace LinqStatistics
+namespace LinqStatistics.NaN
 {
     public static partial class EnumerableStats
     {
@@ -21,7 +21,7 @@ namespace LinqStatistics
     {
         new Tuple<string, string>("int", "double"),
         new Tuple<string, string>("long", "double"),
-        new Tuple<string, string>("decimal", "decimal"),
+        /* no Decimal.NaN new Tuple<string, string>("decimal", "decimal"), */
         new Tuple<string, string>("float", "float"),
         new Tuple<string, string>("double", "double")
     };
@@ -29,55 +29,64 @@ namespace LinqStatistics
     foreach(var type in types)
     {#>	
         /// <summary>
-        /// Computes the sample Skewness of a sequence of nullable <#= type.Item1 #> values
+        /// Computes the sample Variance of a sequence of nullable <#= type.Item1 #> values.
         /// </summary>
-        /// <param name="source">A sequence of nullable <#= type.Item1 #> values to calculate the Skewness of.</param>
-        /// <returns>The Skewness of the sequence of values.</returns>
-        public static <#= type.Item2 #>? Skewness(this IEnumerable<<#= type.Item1 #>?> source)
+        /// <param name="source">A sequence of nullable <#= type.Item1 #> values to calculate the Variance of.</param>
+        /// <returns>       
+        ///     The Variance of the sequence of values, or null if the source sequence is
+        ///     empty or contains only values that are null.
+        /// </returns>
+        public static <#= type.Item2 #>? VarianceNaN(this IEnumerable<<#= type.Item1 #>?> source)
         {
             IEnumerable<<#= type.Item1 #>> values = source.AllValues();
             if (values.Any())
-                return values.Skewness();
-
+                return values.VarianceNaN();
+            
             return null;
         }
 
         /// <summary>
-        /// Computes the sample Skewness of a sequence of <#= type.Item1 #> values
+        /// Computes the sample Variance of a sequence of <#= type.Item1 #> values.
         /// </summary>
-        /// <param name="source">A sequence of <#= type.Item1 #> values to calculate the Skewness of.</param>
-        /// <returns>The Skewness of the sequence of values.</returns>
-        public static <#= type.Item2 #> Skewness(this IEnumerable<<#= type.Item1 #>> source)
+        /// <param name="source">A sequence of <#= type.Item1 #> values to calculate the Variance of.</param>
+        /// <returns>       
+        ///     The Variance of the sequence of values.
+        /// </returns>
+        public static <#= type.Item2 #> VarianceNaN(this IEnumerable<<#= type.Item1 #>> source)
         {
             if (source == null)
                 throw new ArgumentNullException("source");
 
-            double mean = (double)source.Average();
-            double s = (double)source.StandardDeviation();
-            double M3 = 0;
             int n = 0;
+            double mean = 0;
+            double M2 = 0;
 
             foreach (var x in source)
             {
                 n++;
-                M3 += Math.Pow(((double)x - mean) / s, 3.0);
+                
+                double delta = (double)x - mean;
+                mean += delta / n;
+                M2 += delta * ((double)x - mean);
             }
 
-            if (n < 3)
-                throw new InvalidOperationException("Source must have at least 3 elements");
+            if (n < 2)
+                return <#= type.Item2 #>.NaN;
 
-            return (<#= type.Item2 #>)((M3 * n) / ((n - 1) * (n - 2)));
+            return (<#= type.Item2 #>)(M2 / (n - 1));
         }
 
         /// <summary>
-        ///     Computes the sample Skewness of a sequence of <#= type.Item1 #> values that are obtained
+        /// Computes the sample Variance of a sequence of nullable <#= type.Item1 #> values that are obtained
         ///     by invoking a transform function on each element of the input sequence.
         /// </summary>
         /// <typeparam name="TSource">The type of the elements of source.</typeparam>
-        /// <param name="source">A sequence of values that are used to calculate a Skewness</param>
+        /// <param name="source">The sequence of elements.</param>
         /// <param name="selector">A transform function to apply to each element.</param>
-        /// <returns>The Skewness of the sequence of values.</returns>
-        public static <#= type.Item2 #> Skewness<TSource>(this IEnumerable<TSource> source, Func<TSource, <#= type.Item1 #>> selector)
+        /// <returns>       
+        ///     The Variance of the sequence of values.
+        /// </returns>
+        public static <#= type.Item2 #>? VarianceNaN<TSource>(this IEnumerable<TSource> source, Func<TSource, <#= type.Item1 #>?> selector)
         {
             if (source == null)
                 throw new ArgumentNullException("source");
@@ -85,18 +94,20 @@ namespace LinqStatistics
             if (selector == null)
                 throw new ArgumentNullException("selector");
 
-            return source.Select(selector).Skewness();
+            return source.Select(selector).VarianceNaN();
         }
 
         /// <summary>
-        ///     Computes the sample Skewness of a sequence of nullable <#= type.Item1 #> values that are obtained
+        /// Computes the sample Variance of a sequence of <#= type.Item1 #> values that are obtained
         ///     by invoking a transform function on each element of the input sequence.
         /// </summary>
         /// <typeparam name="TSource">The type of the elements of source.</typeparam>
-        /// <param name="source">A sequence of values that are used to calculate a Skewness</param>
+        /// <param name="source">The sequence of elements.</param>
         /// <param name="selector">A transform function to apply to each element.</param>
-        /// <returns>The Skewness of the sequence of values.</returns>
-        public static <#= type.Item2 #>? Skewness<TSource>(this IEnumerable<TSource> source, Func<TSource, <#= type.Item1 #>?> selector)
+        /// <returns>       
+        ///     The Variance of the sequence of values.
+        /// </returns>
+        public static <#= type.Item2 #> VarianceNaN<TSource>(this IEnumerable<TSource> source, Func<TSource, <#= type.Item1 #>> selector)
         {
             if (source == null)
                 throw new ArgumentNullException("source");
@@ -104,7 +115,7 @@ namespace LinqStatistics
             if (selector == null)
                 throw new ArgumentNullException("selector");
 
-            return source.Select(selector).Skewness();
+            return source.Select(selector).VarianceNaN();
         }
  <# } #>
     }

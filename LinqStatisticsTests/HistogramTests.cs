@@ -11,6 +11,16 @@ namespace LinqStatistics.UnitTests
     public class HistogramTests
     {
         [TestMethod]
+        public void CounEachEmpty()
+        {
+            var list = new List<int>();
+
+            var counts = list.CountEach();
+
+            Assert.IsFalse(counts.Any());
+        }
+
+        [TestMethod]
         public void CounEachIntegers()
         {
             var list = new List<int>()
@@ -122,7 +132,7 @@ namespace LinqStatistics.UnitTests
         }
 
         [TestMethod]
-        public void MatchInteractiveHistogram()
+        public void HistogramMatchInteractive()
         {
             var list = DataLoader.LoadData<int>("HistogramData.txt", s => Convert.ToInt32(s));
 

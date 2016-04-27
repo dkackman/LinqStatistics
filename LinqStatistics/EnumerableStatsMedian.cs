@@ -37,14 +37,11 @@ namespace LinqStatistics
             if (source == null)
                 throw new ArgumentNullException("source");
 
-            if (!source.Any())
-                throw new InvalidOperationException("source sequence contains no elements");
-
             var sortedList = (from number in source
                              orderby number
                              select (double)number).ToList();
 
-            int count = sortedList.Count();
+            int count = sortedList.Count;
             int itemIndex = count / 2;
 
             if (count % 2 == 0)
@@ -120,14 +117,11 @@ namespace LinqStatistics
             if (source == null)
                 throw new ArgumentNullException("source");
 
-            if (!source.Any())
-                throw new InvalidOperationException("source sequence contains no elements");
-
             var sortedList = (from number in source
                              orderby number
                              select (double)number).ToList();
 
-            int count = sortedList.Count();
+            int count = sortedList.Count;
             int itemIndex = count / 2;
 
             if (count % 2 == 0)
@@ -203,14 +197,11 @@ namespace LinqStatistics
             if (source == null)
                 throw new ArgumentNullException("source");
 
-            if (!source.Any())
-                throw new InvalidOperationException("source sequence contains no elements");
-
             var sortedList = (from number in source
                              orderby number
                              select (decimal)number).ToList();
 
-            int count = sortedList.Count();
+            int count = sortedList.Count;
             int itemIndex = count / 2;
 
             if (count % 2 == 0)
@@ -286,14 +277,11 @@ namespace LinqStatistics
             if (source == null)
                 throw new ArgumentNullException("source");
 
-            if (!source.Any())
-                throw new InvalidOperationException("source sequence contains no elements");
-
             var sortedList = (from number in source
                              orderby number
                              select (float)number).ToList();
 
-            int count = sortedList.Count();
+            int count = sortedList.Count;
             int itemIndex = count / 2;
 
             if (count % 2 == 0)
@@ -369,14 +357,11 @@ namespace LinqStatistics
             if (source == null)
                 throw new ArgumentNullException("source");
 
-            if (!source.Any())
-                throw new InvalidOperationException("source sequence contains no elements");
-
             var sortedList = (from number in source
                              orderby number
                              select (double)number).ToList();
 
-            int count = sortedList.Count();
+            int count = sortedList.Count;
             int itemIndex = count / 2;
 
             if (count % 2 == 0)

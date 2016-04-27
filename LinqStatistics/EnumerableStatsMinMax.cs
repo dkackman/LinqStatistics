@@ -48,7 +48,7 @@ namespace LinqStatistics
                 var min = Math.Min(accumulator.Min, value);
                 var max = Math.Max(accumulator.Max, value);
                 
-                return new Range<int>(min, max);;
+                return new Range<int>(min, max);
             });
         }
 
@@ -126,7 +126,7 @@ namespace LinqStatistics
                 var min = Math.Min(accumulator.Min, value);
                 var max = Math.Max(accumulator.Max, value);
                 
-                return new Range<long>(min, max);;
+                return new Range<long>(min, max);
             });
         }
 
@@ -204,7 +204,7 @@ namespace LinqStatistics
                 var min = Math.Min(accumulator.Min, value);
                 var max = Math.Max(accumulator.Max, value);
                 
-                return new Range<float>(min, max);;
+                return new Range<float>(min, max);
             });
         }
 
@@ -282,7 +282,7 @@ namespace LinqStatistics
                 var min = Math.Min(accumulator.Min, value);
                 var max = Math.Max(accumulator.Max, value);
                 
-                return new Range<double>(min, max);;
+                return new Range<double>(min, max);
             });
         }
 
@@ -360,7 +360,7 @@ namespace LinqStatistics
                 var min = Math.Min(accumulator.Min, value);
                 var max = Math.Max(accumulator.Max, value);
                 
-                return new Range<decimal>(min, max);;
+                return new Range<decimal>(min, max);
             });
         }
 

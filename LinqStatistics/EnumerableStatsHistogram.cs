@@ -48,9 +48,6 @@ namespace LinqStatistics
             if (source == null)
                 throw new ArgumentNullException("source");
 
-            if (!source.Any())
-                throw new InvalidOperationException("source sequence contains no elements");
-
             return source.AssignBins(binCount, mode);
         }
 
@@ -65,9 +62,6 @@ namespace LinqStatistics
         {
             if (source == null)
                 throw new ArgumentNullException("source");
-
-            if (!source.Any())
-                throw new InvalidOperationException("source sequence contains no elements");
 
             return source.AllValues().Histogram(binCount, mode);
         }
@@ -90,9 +84,6 @@ namespace LinqStatistics
             if (selector == null)
                 throw new ArgumentNullException("selector");
 
-            if (!source.Any())
-                throw new InvalidOperationException("source sequence contains no elements");
-
             return source.Select(t => selector(t)).Histogram(binCount, mode);
         }
 
@@ -114,9 +105,6 @@ namespace LinqStatistics
             if (selector == null)
                 throw new ArgumentNullException("selector");
 
-            if (!source.Any())
-                throw new InvalidOperationException("source sequence contains no elements");
-
             return source.Select(t => selector(t)).Histogram(binCount, mode);
         }
 
@@ -134,7 +122,6 @@ namespace LinqStatistics
 
             return bins;
         }
-
                 /// <summary>
         /// Computes the Histogram of a sequence of long values.
         /// </summary>
@@ -146,9 +133,6 @@ namespace LinqStatistics
         {
             if (source == null)
                 throw new ArgumentNullException("source");
-
-            if (!source.Any())
-                throw new InvalidOperationException("source sequence contains no elements");
 
             return source.AssignBins(binCount, mode);
         }
@@ -164,9 +148,6 @@ namespace LinqStatistics
         {
             if (source == null)
                 throw new ArgumentNullException("source");
-
-            if (!source.Any())
-                throw new InvalidOperationException("source sequence contains no elements");
 
             return source.AllValues().Histogram(binCount, mode);
         }
@@ -189,9 +170,6 @@ namespace LinqStatistics
             if (selector == null)
                 throw new ArgumentNullException("selector");
 
-            if (!source.Any())
-                throw new InvalidOperationException("source sequence contains no elements");
-
             return source.Select(t => selector(t)).Histogram(binCount, mode);
         }
 
@@ -213,9 +191,6 @@ namespace LinqStatistics
             if (selector == null)
                 throw new ArgumentNullException("selector");
 
-            if (!source.Any())
-                throw new InvalidOperationException("source sequence contains no elements");
-
             return source.Select(t => selector(t)).Histogram(binCount, mode);
         }
 
@@ -233,7 +208,6 @@ namespace LinqStatistics
 
             return bins;
         }
-
                 /// <summary>
         /// Computes the Histogram of a sequence of float values.
         /// </summary>
@@ -245,9 +219,6 @@ namespace LinqStatistics
         {
             if (source == null)
                 throw new ArgumentNullException("source");
-
-            if (!source.Any())
-                throw new InvalidOperationException("source sequence contains no elements");
 
             return source.AssignBins(binCount, mode);
         }
@@ -263,9 +234,6 @@ namespace LinqStatistics
         {
             if (source == null)
                 throw new ArgumentNullException("source");
-
-            if (!source.Any())
-                throw new InvalidOperationException("source sequence contains no elements");
 
             return source.AllValues().Histogram(binCount, mode);
         }
@@ -288,9 +256,6 @@ namespace LinqStatistics
             if (selector == null)
                 throw new ArgumentNullException("selector");
 
-            if (!source.Any())
-                throw new InvalidOperationException("source sequence contains no elements");
-
             return source.Select(t => selector(t)).Histogram(binCount, mode);
         }
 
@@ -312,9 +277,6 @@ namespace LinqStatistics
             if (selector == null)
                 throw new ArgumentNullException("selector");
 
-            if (!source.Any())
-                throw new InvalidOperationException("source sequence contains no elements");
-
             return source.Select(t => selector(t)).Histogram(binCount, mode);
         }
 
@@ -332,7 +294,6 @@ namespace LinqStatistics
 
             return bins;
         }
-
                 /// <summary>
         /// Computes the Histogram of a sequence of double values.
         /// </summary>
@@ -344,9 +305,6 @@ namespace LinqStatistics
         {
             if (source == null)
                 throw new ArgumentNullException("source");
-
-            if (!source.Any())
-                throw new InvalidOperationException("source sequence contains no elements");
 
             return source.AssignBins(binCount, mode);
         }
@@ -362,9 +320,6 @@ namespace LinqStatistics
         {
             if (source == null)
                 throw new ArgumentNullException("source");
-
-            if (!source.Any())
-                throw new InvalidOperationException("source sequence contains no elements");
 
             return source.AllValues().Histogram(binCount, mode);
         }
@@ -387,9 +342,6 @@ namespace LinqStatistics
             if (selector == null)
                 throw new ArgumentNullException("selector");
 
-            if (!source.Any())
-                throw new InvalidOperationException("source sequence contains no elements");
-
             return source.Select(t => selector(t)).Histogram(binCount, mode);
         }
 
@@ -411,9 +363,6 @@ namespace LinqStatistics
             if (selector == null)
                 throw new ArgumentNullException("selector");
 
-            if (!source.Any())
-                throw new InvalidOperationException("source sequence contains no elements");
-
             return source.Select(t => selector(t)).Histogram(binCount, mode);
         }
 
@@ -431,7 +380,6 @@ namespace LinqStatistics
 
             return bins;
         }
-
                 /// <summary>
         /// Computes the Histogram of a sequence of decimal values.
         /// </summary>
@@ -443,9 +391,6 @@ namespace LinqStatistics
         {
             if (source == null)
                 throw new ArgumentNullException("source");
-
-            if (!source.Any())
-                throw new InvalidOperationException("source sequence contains no elements");
 
             return source.AssignBins(binCount, mode);
         }
@@ -461,9 +406,6 @@ namespace LinqStatistics
         {
             if (source == null)
                 throw new ArgumentNullException("source");
-
-            if (!source.Any())
-                throw new InvalidOperationException("source sequence contains no elements");
 
             return source.AllValues().Histogram(binCount, mode);
         }
@@ -486,9 +428,6 @@ namespace LinqStatistics
             if (selector == null)
                 throw new ArgumentNullException("selector");
 
-            if (!source.Any())
-                throw new InvalidOperationException("source sequence contains no elements");
-
             return source.Select(t => selector(t)).Histogram(binCount, mode);
         }
 
@@ -510,9 +449,6 @@ namespace LinqStatistics
             if (selector == null)
                 throw new ArgumentNullException("selector");
 
-            if (!source.Any())
-                throw new InvalidOperationException("source sequence contains no elements");
-
             return source.Select(t => selector(t)).Histogram(binCount, mode);
         }
 
@@ -530,6 +466,5 @@ namespace LinqStatistics
 
             return bins;
         }
-
             }
 }

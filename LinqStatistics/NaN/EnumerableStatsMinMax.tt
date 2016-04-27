@@ -13,13 +13,13 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace LinqStatistics
+namespace LinqStatistics.NaN
 {
     public static partial class EnumerableStats
     {
     <# var types = new List<string>()
     {
-        "int", "long", "float", "double", "decimal"
+        "float", "double" 
     };
 
     foreach(var type in types)
@@ -29,11 +29,11 @@ namespace LinqStatistics
         /// </summary>
         /// <param name="source">The sequence of elements.</param>
         /// <returns>The MinMax.</returns>
-        public static Range<<#= type #>>? MinMax(this IEnumerable<<#= type #>?> source)
+        public static Range<<#= type #>>? MinMaxNaN(this IEnumerable<<#= type #>?> source)
         {
             IEnumerable<<#= type #>> values = source.AllValues();
             if (values.Any())
-                return values.MinMax();
+                return values.MinMaxNaN();
 
             return null;
         }
@@ -43,13 +43,13 @@ namespace LinqStatistics
         /// </summary>
         /// <param name="source">The sequence of elements.</param>
         /// <returns>The MinMax.</returns>
-        public static Range<<#= type #>> MinMax(this IEnumerable<<#= type #>> source)
+        public static Range<<#= type #>> MinMaxNaN(this IEnumerable<<#= type #>> source)
         {            
             if (source == null)
                 throw new ArgumentNullException("source");
 
             if (!source.Any())
-                throw new InvalidOperationException("source sequence contains no elements");
+                return new Range<<#= type #>>(<#= type #>.NaN, <#= type #>.NaN);
 
             // initialize minimum to max possible value and maximum to minimum possible value
             // so that the first comparisons in the aggregate function work as expected
@@ -72,7 +72,7 @@ namespace LinqStatistics
         /// <param name="source">The sequence of elements.</param>
         /// <param name="selector">A transform function to apply to each element.</param>
         /// <returns>The MinMax.</returns>
-        public static Range<<#= type #>>? MinMax<TSource>(this IEnumerable<TSource> source, Func<TSource, <#= type #>?> selector)
+        public static Range<<#= type #>>? MinMaxNaN<TSource>(this IEnumerable<TSource> source, Func<TSource, <#= type #>?> selector)
         {
             if (source == null)
                 throw new ArgumentNullException("source");
@@ -80,7 +80,7 @@ namespace LinqStatistics
             if (selector == null)
                 throw new ArgumentNullException("selector");
 
-            return source.Select(selector).MinMax();
+            return source.Select(selector).MinMaxNaN();
         }
 
         /// <summary>
@@ -91,7 +91,7 @@ namespace LinqStatistics
         /// <param name="source">The sequence of elements.</param>
         /// <param name="selector">A transform function to apply to each element.</param>
         /// <returns>The MinMax.</returns>
-        public static Range<<#= type #>> MinMax<TSource>(this IEnumerable<TSource> source, Func<TSource, <#= type #>> selector)
+        public static Range<<#= type #>> MinMaxNaN<TSource>(this IEnumerable<TSource> source, Func<TSource, <#= type #>> selector)
         {
             if (source == null)
                 throw new ArgumentNullException("source");
@@ -99,7 +99,7 @@ namespace LinqStatistics
             if (selector == null)
                 throw new ArgumentNullException("selector");
 
-            return source.Select(selector).MinMax();
+            return source.Select(selector).MinMaxNaN();
         }
  <# } #>
     }

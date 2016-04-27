@@ -7,9 +7,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace LinqStatistics
+namespace LinqStatistics.NaN
 {
-    public static partial class EnumerableStats
+    public static partial class EnumerableStatsNaN
     {
     	
         /// <summary>
@@ -18,11 +18,11 @@ namespace LinqStatistics
         /// <param name="source">A sequence of Tuple{int?, int?} values to calculate the LeastSquares of.</param>
         /// <returns> The LeastSquares of the sequence of values, or null if the source sequence is
         ///     empty or contains only values that are null.</returns>
-        public static LeastSquares? LeastSquares(this IEnumerable<Tuple<int?, int?>> source)
+        public static LeastSquares? LeastSquaresNaN(this IEnumerable<Tuple<int?, int?>> source)
         {
             IEnumerable<Tuple<int, int>> values = source.AllValues();
             if (values.Any())
-                return values.LeastSquares();
+                return values.LeastSquaresNaN();
 
             return null;
         }
@@ -32,7 +32,7 @@ namespace LinqStatistics
         /// </summary>
         /// <param name="source">A sequence of Tuple{int, int} values to calculate the LeastSquares of.</param>
         /// <returns> The LeastSquares of the sequence of values.</returns>
-        public static LeastSquares LeastSquares(this IEnumerable<Tuple<int, int>> source)
+        public static LeastSquares LeastSquaresNaN(this IEnumerable<Tuple<int, int>> source)
         {
             if (source == null)
                 throw new ArgumentNullException("source");
@@ -53,7 +53,7 @@ namespace LinqStatistics
             }
 
             if (n < 2)
-                throw new InvalidOperationException("Source must have at least 2 elements");
+                return new LeastSquares(double.NaN, double.NaN);
             
             double denominator = (n * sumXX - sumX * sumX);
             double b = (-sumX * sumXY + sumXX * sumY) / denominator;
@@ -70,7 +70,7 @@ namespace LinqStatistics
         /// <param name="source">A sequence of values to calculate the LeastSquares of.</param>
         /// <param name="selector">A transform function to apply to each element.</param>
         /// <returns>The LeastSquares of the sequence of values.</returns>
-        public static LeastSquares? LeastSquares<TSource>(this IEnumerable<TSource> source, Func<TSource, Tuple<int?, int?>> selector)
+        public static LeastSquares? LeastSquaresNaN<TSource>(this IEnumerable<TSource> source, Func<TSource, Tuple<int?, int?>> selector)
         {
             if (source == null)
                 throw new ArgumentNullException("source");
@@ -78,7 +78,7 @@ namespace LinqStatistics
             if (selector == null)
                 throw new ArgumentNullException("selector");
 
-            return source.Select(selector).LeastSquares();
+            return source.Select(selector).LeastSquaresNaN();
         }
 
         /// <summary>
@@ -89,7 +89,7 @@ namespace LinqStatistics
         /// <param name="source">A sequence of values to calculate the LeastSquares of.</param>
         /// <param name="selector">A transform function to apply to each element.</param>
         /// <returns>The LeastSquares of the sequence of values.</returns>
-        public static LeastSquares LeastSquares<TSource>(this IEnumerable<TSource> source, Func<TSource, Tuple<int, int>> selector)
+        public static LeastSquares LeastSquaresNaN<TSource>(this IEnumerable<TSource> source, Func<TSource, Tuple<int, int>> selector)
         {
             if (source == null)
                 throw new ArgumentNullException("source");
@@ -97,7 +97,7 @@ namespace LinqStatistics
             if (selector == null)
                 throw new ArgumentNullException("selector");
 
-            return source.Select(selector).LeastSquares();
+            return source.Select(selector).LeastSquaresNaN();
         }
  	
         /// <summary>
@@ -106,11 +106,11 @@ namespace LinqStatistics
         /// <param name="source">A sequence of Tuple{long?, long?} values to calculate the LeastSquares of.</param>
         /// <returns> The LeastSquares of the sequence of values, or null if the source sequence is
         ///     empty or contains only values that are null.</returns>
-        public static LeastSquares? LeastSquares(this IEnumerable<Tuple<long?, long?>> source)
+        public static LeastSquares? LeastSquaresNaN(this IEnumerable<Tuple<long?, long?>> source)
         {
             IEnumerable<Tuple<long, long>> values = source.AllValues();
             if (values.Any())
-                return values.LeastSquares();
+                return values.LeastSquaresNaN();
 
             return null;
         }
@@ -120,7 +120,7 @@ namespace LinqStatistics
         /// </summary>
         /// <param name="source">A sequence of Tuple{long, long} values to calculate the LeastSquares of.</param>
         /// <returns> The LeastSquares of the sequence of values.</returns>
-        public static LeastSquares LeastSquares(this IEnumerable<Tuple<long, long>> source)
+        public static LeastSquares LeastSquaresNaN(this IEnumerable<Tuple<long, long>> source)
         {
             if (source == null)
                 throw new ArgumentNullException("source");
@@ -141,7 +141,7 @@ namespace LinqStatistics
             }
 
             if (n < 2)
-                throw new InvalidOperationException("Source must have at least 2 elements");
+                return new LeastSquares(double.NaN, double.NaN);
             
             double denominator = (n * sumXX - sumX * sumX);
             double b = (-sumX * sumXY + sumXX * sumY) / denominator;
@@ -158,7 +158,7 @@ namespace LinqStatistics
         /// <param name="source">A sequence of values to calculate the LeastSquares of.</param>
         /// <param name="selector">A transform function to apply to each element.</param>
         /// <returns>The LeastSquares of the sequence of values.</returns>
-        public static LeastSquares? LeastSquares<TSource>(this IEnumerable<TSource> source, Func<TSource, Tuple<long?, long?>> selector)
+        public static LeastSquares? LeastSquaresNaN<TSource>(this IEnumerable<TSource> source, Func<TSource, Tuple<long?, long?>> selector)
         {
             if (source == null)
                 throw new ArgumentNullException("source");
@@ -166,7 +166,7 @@ namespace LinqStatistics
             if (selector == null)
                 throw new ArgumentNullException("selector");
 
-            return source.Select(selector).LeastSquares();
+            return source.Select(selector).LeastSquaresNaN();
         }
 
         /// <summary>
@@ -177,7 +177,7 @@ namespace LinqStatistics
         /// <param name="source">A sequence of values to calculate the LeastSquares of.</param>
         /// <param name="selector">A transform function to apply to each element.</param>
         /// <returns>The LeastSquares of the sequence of values.</returns>
-        public static LeastSquares LeastSquares<TSource>(this IEnumerable<TSource> source, Func<TSource, Tuple<long, long>> selector)
+        public static LeastSquares LeastSquaresNaN<TSource>(this IEnumerable<TSource> source, Func<TSource, Tuple<long, long>> selector)
         {
             if (source == null)
                 throw new ArgumentNullException("source");
@@ -185,7 +185,7 @@ namespace LinqStatistics
             if (selector == null)
                 throw new ArgumentNullException("selector");
 
-            return source.Select(selector).LeastSquares();
+            return source.Select(selector).LeastSquaresNaN();
         }
  	
         /// <summary>
@@ -194,11 +194,11 @@ namespace LinqStatistics
         /// <param name="source">A sequence of Tuple{float?, float?} values to calculate the LeastSquares of.</param>
         /// <returns> The LeastSquares of the sequence of values, or null if the source sequence is
         ///     empty or contains only values that are null.</returns>
-        public static LeastSquares? LeastSquares(this IEnumerable<Tuple<float?, float?>> source)
+        public static LeastSquares? LeastSquaresNaN(this IEnumerable<Tuple<float?, float?>> source)
         {
             IEnumerable<Tuple<float, float>> values = source.AllValues();
             if (values.Any())
-                return values.LeastSquares();
+                return values.LeastSquaresNaN();
 
             return null;
         }
@@ -208,7 +208,7 @@ namespace LinqStatistics
         /// </summary>
         /// <param name="source">A sequence of Tuple{float, float} values to calculate the LeastSquares of.</param>
         /// <returns> The LeastSquares of the sequence of values.</returns>
-        public static LeastSquares LeastSquares(this IEnumerable<Tuple<float, float>> source)
+        public static LeastSquares LeastSquaresNaN(this IEnumerable<Tuple<float, float>> source)
         {
             if (source == null)
                 throw new ArgumentNullException("source");
@@ -229,7 +229,7 @@ namespace LinqStatistics
             }
 
             if (n < 2)
-                throw new InvalidOperationException("Source must have at least 2 elements");
+                return new LeastSquares(double.NaN, double.NaN);
             
             double denominator = (n * sumXX - sumX * sumX);
             double b = (-sumX * sumXY + sumXX * sumY) / denominator;
@@ -246,7 +246,7 @@ namespace LinqStatistics
         /// <param name="source">A sequence of values to calculate the LeastSquares of.</param>
         /// <param name="selector">A transform function to apply to each element.</param>
         /// <returns>The LeastSquares of the sequence of values.</returns>
-        public static LeastSquares? LeastSquares<TSource>(this IEnumerable<TSource> source, Func<TSource, Tuple<float?, float?>> selector)
+        public static LeastSquares? LeastSquaresNaN<TSource>(this IEnumerable<TSource> source, Func<TSource, Tuple<float?, float?>> selector)
         {
             if (source == null)
                 throw new ArgumentNullException("source");
@@ -254,7 +254,7 @@ namespace LinqStatistics
             if (selector == null)
                 throw new ArgumentNullException("selector");
 
-            return source.Select(selector).LeastSquares();
+            return source.Select(selector).LeastSquaresNaN();
         }
 
         /// <summary>
@@ -265,7 +265,7 @@ namespace LinqStatistics
         /// <param name="source">A sequence of values to calculate the LeastSquares of.</param>
         /// <param name="selector">A transform function to apply to each element.</param>
         /// <returns>The LeastSquares of the sequence of values.</returns>
-        public static LeastSquares LeastSquares<TSource>(this IEnumerable<TSource> source, Func<TSource, Tuple<float, float>> selector)
+        public static LeastSquares LeastSquaresNaN<TSource>(this IEnumerable<TSource> source, Func<TSource, Tuple<float, float>> selector)
         {
             if (source == null)
                 throw new ArgumentNullException("source");
@@ -273,7 +273,7 @@ namespace LinqStatistics
             if (selector == null)
                 throw new ArgumentNullException("selector");
 
-            return source.Select(selector).LeastSquares();
+            return source.Select(selector).LeastSquaresNaN();
         }
  	
         /// <summary>
@@ -282,11 +282,11 @@ namespace LinqStatistics
         /// <param name="source">A sequence of Tuple{double?, double?} values to calculate the LeastSquares of.</param>
         /// <returns> The LeastSquares of the sequence of values, or null if the source sequence is
         ///     empty or contains only values that are null.</returns>
-        public static LeastSquares? LeastSquares(this IEnumerable<Tuple<double?, double?>> source)
+        public static LeastSquares? LeastSquaresNaN(this IEnumerable<Tuple<double?, double?>> source)
         {
             IEnumerable<Tuple<double, double>> values = source.AllValues();
             if (values.Any())
-                return values.LeastSquares();
+                return values.LeastSquaresNaN();
 
             return null;
         }
@@ -296,7 +296,7 @@ namespace LinqStatistics
         /// </summary>
         /// <param name="source">A sequence of Tuple{double, double} values to calculate the LeastSquares of.</param>
         /// <returns> The LeastSquares of the sequence of values.</returns>
-        public static LeastSquares LeastSquares(this IEnumerable<Tuple<double, double>> source)
+        public static LeastSquares LeastSquaresNaN(this IEnumerable<Tuple<double, double>> source)
         {
             if (source == null)
                 throw new ArgumentNullException("source");
@@ -317,7 +317,7 @@ namespace LinqStatistics
             }
 
             if (n < 2)
-                throw new InvalidOperationException("Source must have at least 2 elements");
+                return new LeastSquares(double.NaN, double.NaN);
             
             double denominator = (n * sumXX - sumX * sumX);
             double b = (-sumX * sumXY + sumXX * sumY) / denominator;
@@ -334,7 +334,7 @@ namespace LinqStatistics
         /// <param name="source">A sequence of values to calculate the LeastSquares of.</param>
         /// <param name="selector">A transform function to apply to each element.</param>
         /// <returns>The LeastSquares of the sequence of values.</returns>
-        public static LeastSquares? LeastSquares<TSource>(this IEnumerable<TSource> source, Func<TSource, Tuple<double?, double?>> selector)
+        public static LeastSquares? LeastSquaresNaN<TSource>(this IEnumerable<TSource> source, Func<TSource, Tuple<double?, double?>> selector)
         {
             if (source == null)
                 throw new ArgumentNullException("source");
@@ -342,7 +342,7 @@ namespace LinqStatistics
             if (selector == null)
                 throw new ArgumentNullException("selector");
 
-            return source.Select(selector).LeastSquares();
+            return source.Select(selector).LeastSquaresNaN();
         }
 
         /// <summary>
@@ -353,7 +353,7 @@ namespace LinqStatistics
         /// <param name="source">A sequence of values to calculate the LeastSquares of.</param>
         /// <param name="selector">A transform function to apply to each element.</param>
         /// <returns>The LeastSquares of the sequence of values.</returns>
-        public static LeastSquares LeastSquares<TSource>(this IEnumerable<TSource> source, Func<TSource, Tuple<double, double>> selector)
+        public static LeastSquares LeastSquaresNaN<TSource>(this IEnumerable<TSource> source, Func<TSource, Tuple<double, double>> selector)
         {
             if (source == null)
                 throw new ArgumentNullException("source");
@@ -361,7 +361,7 @@ namespace LinqStatistics
             if (selector == null)
                 throw new ArgumentNullException("selector");
 
-            return source.Select(selector).LeastSquares();
+            return source.Select(selector).LeastSquaresNaN();
         }
  	
         /// <summary>
@@ -370,11 +370,11 @@ namespace LinqStatistics
         /// <param name="source">A sequence of Tuple{decimal?, decimal?} values to calculate the LeastSquares of.</param>
         /// <returns> The LeastSquares of the sequence of values, or null if the source sequence is
         ///     empty or contains only values that are null.</returns>
-        public static LeastSquares? LeastSquares(this IEnumerable<Tuple<decimal?, decimal?>> source)
+        public static LeastSquares? LeastSquaresNaN(this IEnumerable<Tuple<decimal?, decimal?>> source)
         {
             IEnumerable<Tuple<decimal, decimal>> values = source.AllValues();
             if (values.Any())
-                return values.LeastSquares();
+                return values.LeastSquaresNaN();
 
             return null;
         }
@@ -384,7 +384,7 @@ namespace LinqStatistics
         /// </summary>
         /// <param name="source">A sequence of Tuple{decimal, decimal} values to calculate the LeastSquares of.</param>
         /// <returns> The LeastSquares of the sequence of values.</returns>
-        public static LeastSquares LeastSquares(this IEnumerable<Tuple<decimal, decimal>> source)
+        public static LeastSquares LeastSquaresNaN(this IEnumerable<Tuple<decimal, decimal>> source)
         {
             if (source == null)
                 throw new ArgumentNullException("source");
@@ -405,7 +405,7 @@ namespace LinqStatistics
             }
 
             if (n < 2)
-                throw new InvalidOperationException("Source must have at least 2 elements");
+                return new LeastSquares(double.NaN, double.NaN);
             
             double denominator = (n * sumXX - sumX * sumX);
             double b = (-sumX * sumXY + sumXX * sumY) / denominator;
@@ -422,7 +422,7 @@ namespace LinqStatistics
         /// <param name="source">A sequence of values to calculate the LeastSquares of.</param>
         /// <param name="selector">A transform function to apply to each element.</param>
         /// <returns>The LeastSquares of the sequence of values.</returns>
-        public static LeastSquares? LeastSquares<TSource>(this IEnumerable<TSource> source, Func<TSource, Tuple<decimal?, decimal?>> selector)
+        public static LeastSquares? LeastSquaresNaN<TSource>(this IEnumerable<TSource> source, Func<TSource, Tuple<decimal?, decimal?>> selector)
         {
             if (source == null)
                 throw new ArgumentNullException("source");
@@ -430,7 +430,7 @@ namespace LinqStatistics
             if (selector == null)
                 throw new ArgumentNullException("selector");
 
-            return source.Select(selector).LeastSquares();
+            return source.Select(selector).LeastSquaresNaN();
         }
 
         /// <summary>
@@ -441,7 +441,7 @@ namespace LinqStatistics
         /// <param name="source">A sequence of values to calculate the LeastSquares of.</param>
         /// <param name="selector">A transform function to apply to each element.</param>
         /// <returns>The LeastSquares of the sequence of values.</returns>
-        public static LeastSquares LeastSquares<TSource>(this IEnumerable<TSource> source, Func<TSource, Tuple<decimal, decimal>> selector)
+        public static LeastSquares LeastSquaresNaN<TSource>(this IEnumerable<TSource> source, Func<TSource, Tuple<decimal, decimal>> selector)
         {
             if (source == null)
                 throw new ArgumentNullException("source");
@@ -449,7 +449,7 @@ namespace LinqStatistics
             if (selector == null)
                 throw new ArgumentNullException("selector");
 
-            return source.Select(selector).LeastSquares();
+            return source.Select(selector).LeastSquaresNaN();
         }
      }
 }

@@ -7,7 +7,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace LinqStatistics
+namespace LinqStatistics.NaN
 {
     public static partial class EnumerableStats
     {
@@ -18,11 +18,11 @@ namespace LinqStatistics
         /// <param name="source">The first sequence of nullable int values to calculate the Covariance of.</param>
         /// <param name="other">The second sequence of nullable int values to calculate the Covariance of.</param>
         /// <returns>The Covariance of the two sequence of values.</returns>
-        public static double? Covariance(this IEnumerable<int?> source, IEnumerable<int?> other)
+        public static double? CovarianceNaN(this IEnumerable<int?> source, IEnumerable<int?> other)
         {
             IEnumerable<int> values = source.AllValues();
             if (values.Any())
-                return values.Covariance(other.AllValues());
+                return values.CovarianceNaN(other.AllValues());
 
             return null;
         }
@@ -33,7 +33,7 @@ namespace LinqStatistics
         /// <param name="source">The first sequence of int values to calculate the Covariance of.</param>
         /// <param name="other">The second sequence of int values to calculate the Covariance of.</param>
         /// <returns>The Covariance of the two sequence of values.</returns>
-        public static double Covariance(this IEnumerable<int> source, IEnumerable<int> other)
+        public static double CovarianceNaN(this IEnumerable<int> source, IEnumerable<int> other)
         {
             if (source == null)
                 throw new ArgumentNullException("source");
@@ -47,20 +47,22 @@ namespace LinqStatistics
 
             if (listSource.Count != listOther.Count)
                 throw new InvalidOperationException("Collections are not of the same length");
-
-            var avgSource = listSource.Average();
-            var avgOther = listOther.Average();
             
+            var avgSource = listSource.AverageNaN();
+            var avgOther = listOther.AverageNaN();
+            
+            // because we checked that both lists are of the same length we only need to check one list is valid
+            if (double.IsNaN(avgSource))
+                return double.NaN;
+
             double covariance = 0;
 
             for (int i = 0; i < listSource.Count; i++)
             {
-                covariance += (listSource[i] - avgSource) * (listOther[i] - avgOther);
+                covariance += (double)((listSource[i] - avgSource) * (listOther[i] - avgOther));
             }
 
-            // Average (above) will except on empty lists so we don't need to check for divide by zero here
-            // Also can just use one list's count since we check that both are of the same length
-            return covariance / listSource.Count; 
+            return (double)(covariance / listSource.Count); 
         }               
  	
         /// <summary>
@@ -69,11 +71,11 @@ namespace LinqStatistics
         /// <param name="source">The first sequence of nullable long values to calculate the Covariance of.</param>
         /// <param name="other">The second sequence of nullable long values to calculate the Covariance of.</param>
         /// <returns>The Covariance of the two sequence of values.</returns>
-        public static double? Covariance(this IEnumerable<long?> source, IEnumerable<long?> other)
+        public static double? CovarianceNaN(this IEnumerable<long?> source, IEnumerable<long?> other)
         {
             IEnumerable<long> values = source.AllValues();
             if (values.Any())
-                return values.Covariance(other.AllValues());
+                return values.CovarianceNaN(other.AllValues());
 
             return null;
         }
@@ -84,7 +86,7 @@ namespace LinqStatistics
         /// <param name="source">The first sequence of long values to calculate the Covariance of.</param>
         /// <param name="other">The second sequence of long values to calculate the Covariance of.</param>
         /// <returns>The Covariance of the two sequence of values.</returns>
-        public static double Covariance(this IEnumerable<long> source, IEnumerable<long> other)
+        public static double CovarianceNaN(this IEnumerable<long> source, IEnumerable<long> other)
         {
             if (source == null)
                 throw new ArgumentNullException("source");
@@ -98,71 +100,22 @@ namespace LinqStatistics
 
             if (listSource.Count != listOther.Count)
                 throw new InvalidOperationException("Collections are not of the same length");
-
-            var avgSource = listSource.Average();
-            var avgOther = listOther.Average();
             
+            var avgSource = listSource.AverageNaN();
+            var avgOther = listOther.AverageNaN();
+            
+            // because we checked that both lists are of the same length we only need to check one list is valid
+            if (double.IsNaN(avgSource))
+                return double.NaN;
+
             double covariance = 0;
 
             for (int i = 0; i < listSource.Count; i++)
             {
-                covariance += (listSource[i] - avgSource) * (listOther[i] - avgOther);
+                covariance += (double)((listSource[i] - avgSource) * (listOther[i] - avgOther));
             }
 
-            // Average (above) will except on empty lists so we don't need to check for divide by zero here
-            // Also can just use one list's count since we check that both are of the same length
-            return covariance / listSource.Count; 
-        }               
- 	
-        /// <summary>
-        /// Computes the Covariance of two sequences of nullable decimal values.
-        /// </summary>
-        /// <param name="source">The first sequence of nullable decimal values to calculate the Covariance of.</param>
-        /// <param name="other">The second sequence of nullable decimal values to calculate the Covariance of.</param>
-        /// <returns>The Covariance of the two sequence of values.</returns>
-        public static decimal? Covariance(this IEnumerable<decimal?> source, IEnumerable<decimal?> other)
-        {
-            IEnumerable<decimal> values = source.AllValues();
-            if (values.Any())
-                return values.Covariance(other.AllValues());
-
-            return null;
-        }
-
-        /// <summary>
-        /// Computes the Covariance of two sequences of decimal  values.
-        /// </summary>
-        /// <param name="source">The first sequence of decimal values to calculate the Covariance of.</param>
-        /// <param name="other">The second sequence of decimal values to calculate the Covariance of.</param>
-        /// <returns>The Covariance of the two sequence of values.</returns>
-        public static decimal Covariance(this IEnumerable<decimal> source, IEnumerable<decimal> other)
-        {
-            if (source == null)
-                throw new ArgumentNullException("source");
-
-            if (other == null)
-                throw new ArgumentNullException("other");
-
-            // convert to lists so we can get items by index without enumerating within the loop below
-            var listSource = source.ToList();
-            var listOther = other.ToList();
-
-            if (listSource.Count != listOther.Count)
-                throw new InvalidOperationException("Collections are not of the same length");
-
-            var avgSource = listSource.Average();
-            var avgOther = listOther.Average();
-            
-            decimal covariance = 0;
-
-            for (int i = 0; i < listSource.Count; i++)
-            {
-                covariance += (listSource[i] - avgSource) * (listOther[i] - avgOther);
-            }
-
-            // Average (above) will except on empty lists so we don't need to check for divide by zero here
-            // Also can just use one list's count since we check that both are of the same length
-            return covariance / listSource.Count; 
+            return (double)(covariance / listSource.Count); 
         }               
  	
         /// <summary>
@@ -171,11 +124,11 @@ namespace LinqStatistics
         /// <param name="source">The first sequence of nullable float values to calculate the Covariance of.</param>
         /// <param name="other">The second sequence of nullable float values to calculate the Covariance of.</param>
         /// <returns>The Covariance of the two sequence of values.</returns>
-        public static float? Covariance(this IEnumerable<float?> source, IEnumerable<float?> other)
+        public static float? CovarianceNaN(this IEnumerable<float?> source, IEnumerable<float?> other)
         {
             IEnumerable<float> values = source.AllValues();
             if (values.Any())
-                return values.Covariance(other.AllValues());
+                return values.CovarianceNaN(other.AllValues());
 
             return null;
         }
@@ -186,7 +139,7 @@ namespace LinqStatistics
         /// <param name="source">The first sequence of float values to calculate the Covariance of.</param>
         /// <param name="other">The second sequence of float values to calculate the Covariance of.</param>
         /// <returns>The Covariance of the two sequence of values.</returns>
-        public static float Covariance(this IEnumerable<float> source, IEnumerable<float> other)
+        public static float CovarianceNaN(this IEnumerable<float> source, IEnumerable<float> other)
         {
             if (source == null)
                 throw new ArgumentNullException("source");
@@ -200,20 +153,22 @@ namespace LinqStatistics
 
             if (listSource.Count != listOther.Count)
                 throw new InvalidOperationException("Collections are not of the same length");
-
-            var avgSource = listSource.Average();
-            var avgOther = listOther.Average();
             
-            float covariance = 0;
+            var avgSource = listSource.AverageNaN();
+            var avgOther = listOther.AverageNaN();
+            
+            // because we checked that both lists are of the same length we only need to check one list is valid
+            if (float.IsNaN(avgSource))
+                return float.NaN;
+
+            double covariance = 0;
 
             for (int i = 0; i < listSource.Count; i++)
             {
-                covariance += (listSource[i] - avgSource) * (listOther[i] - avgOther);
+                covariance += (double)((listSource[i] - avgSource) * (listOther[i] - avgOther));
             }
 
-            // Average (above) will except on empty lists so we don't need to check for divide by zero here
-            // Also can just use one list's count since we check that both are of the same length
-            return covariance / listSource.Count; 
+            return (float)(covariance / listSource.Count); 
         }               
  	
         /// <summary>
@@ -222,11 +177,11 @@ namespace LinqStatistics
         /// <param name="source">The first sequence of nullable double values to calculate the Covariance of.</param>
         /// <param name="other">The second sequence of nullable double values to calculate the Covariance of.</param>
         /// <returns>The Covariance of the two sequence of values.</returns>
-        public static double? Covariance(this IEnumerable<double?> source, IEnumerable<double?> other)
+        public static double? CovarianceNaN(this IEnumerable<double?> source, IEnumerable<double?> other)
         {
             IEnumerable<double> values = source.AllValues();
             if (values.Any())
-                return values.Covariance(other.AllValues());
+                return values.CovarianceNaN(other.AllValues());
 
             return null;
         }
@@ -237,7 +192,7 @@ namespace LinqStatistics
         /// <param name="source">The first sequence of double values to calculate the Covariance of.</param>
         /// <param name="other">The second sequence of double values to calculate the Covariance of.</param>
         /// <returns>The Covariance of the two sequence of values.</returns>
-        public static double Covariance(this IEnumerable<double> source, IEnumerable<double> other)
+        public static double CovarianceNaN(this IEnumerable<double> source, IEnumerable<double> other)
         {
             if (source == null)
                 throw new ArgumentNullException("source");
@@ -251,20 +206,22 @@ namespace LinqStatistics
 
             if (listSource.Count != listOther.Count)
                 throw new InvalidOperationException("Collections are not of the same length");
-
-            var avgSource = listSource.Average();
-            var avgOther = listOther.Average();
             
+            var avgSource = listSource.AverageNaN();
+            var avgOther = listOther.AverageNaN();
+            
+            // because we checked that both lists are of the same length we only need to check one list is valid
+            if (double.IsNaN(avgSource))
+                return double.NaN;
+
             double covariance = 0;
 
             for (int i = 0; i < listSource.Count; i++)
             {
-                covariance += (listSource[i] - avgSource) * (listOther[i] - avgOther);
+                covariance += (double)((listSource[i] - avgSource) * (listOther[i] - avgOther));
             }
 
-            // Average (above) will except on empty lists so we don't need to check for divide by zero here
-            // Also can just use one list's count since we check that both are of the same length
-            return covariance / listSource.Count; 
+            return (double)(covariance / listSource.Count); 
         }               
      }
 }

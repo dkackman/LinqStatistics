@@ -103,16 +103,63 @@
     <Compile Include="..\LinqStatistics\LeastSquares.cs">
       <Link>LeastSquares.cs</Link>
     </Compile>
+    <Compile Include="..\LinqStatistics\NaN\AverageNaN.cs">
+      <Link>NaN\AverageNaN.cs</Link>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AverageNaN.tt</DependentUpon>
+    </Compile>
+    <Compile Include="..\LinqStatistics\NaN\EnumerableStatsCovariance.cs">
+      <Link>NaN\EnumerableStatsCovariance.cs</Link>
+    </Compile>
+    <Compile Include="..\LinqStatistics\NaN\EnumerableStatsKurtosis.cs">
+      <Link>NaN\EnumerableStatsKurtosis.cs</Link>
+    </Compile>
+    <Compile Include="..\LinqStatistics\NaN\EnumerableStatsMinMax.cs">
+      <Link>NaN\EnumerableStatsMinMax.cs</Link>
+    </Compile>
+    <Compile Include="..\LinqStatistics\NaN\EnumerableStatsPearson.cs">
+      <Link>NaN\EnumerableStatsPearson.cs</Link>
+    </Compile>
+    <Compile Include="..\LinqStatistics\NaN\EnumerableStatsRange.cs">
+      <Link>NaN\EnumerableStatsRange.cs</Link>
+    </Compile>
+    <Compile Include="..\LinqStatistics\NaN\EnumerableStatsRootMeanSquare.cs">
+      <Link>NaN\EnumerableStatsRootMeanSquare.cs</Link>
+    </Compile>
+    <Compile Include="..\LinqStatistics\NaN\EnumerableStatsSkewness.cs">
+      <Link>NaN\EnumerableStatsSkewness.cs</Link>
+    </Compile>
+    <Compile Include="..\LinqStatistics\NaN\EnumerableStatsStandardDeviation.cs">
+      <Link>NaN\EnumerableStatsStandardDeviation.cs</Link>
+    </Compile>
+    <Compile Include="..\LinqStatistics\NaN\EnumerableStatsStandardDeviationP.cs">
+      <Link>NaN\EnumerableStatsStandardDeviationP.cs</Link>
+    </Compile>
+    <Compile Include="..\LinqStatistics\NaN\EnumerableStatsVariance.cs">
+      <Link>NaN\EnumerableStatsVariance.cs</Link>
+    </Compile>
+    <Compile Include="..\LinqStatistics\NaN\EnumerableStatsVarianceP.cs">
+      <Link>NaN\EnumerableStatsVarianceP.cs</Link>
+    </Compile>
     <Compile Include="..\LinqStatistics\Range.cs">
       <Link>Range.cs</Link>
     </Compile>
     <Compile Include="..\PackageInfo.cs">
       <Link>Properties\PackageInfo.cs</Link>
     </Compile>
+    <Compile Include="NaN\EnumerableStatsLeastSquares.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="..\LinqStatistics\NaN\AverageNaN.tt">
+      <Link>NaN\AverageNaN.tt</Link>
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>AverageNaN.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

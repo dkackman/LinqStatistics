@@ -7,7 +7,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace LinqStatistics
+namespace LinqStatistics.NaN
 {
     public static partial class EnumerableStats
     {
@@ -17,11 +17,11 @@ namespace LinqStatistics
         /// </summary>
         /// <param name="source">A sequence of nullable int values to calculate the Skewness of.</param>
         /// <returns>The Skewness of the sequence of values.</returns>
-        public static double? Skewness(this IEnumerable<int?> source)
+        public static double? SkewnessNaN(this IEnumerable<int?> source)
         {
             IEnumerable<int> values = source.AllValues();
             if (values.Any())
-                return values.Skewness();
+                return values.SkewnessNaN();
 
             return null;
         }
@@ -31,13 +31,16 @@ namespace LinqStatistics
         /// </summary>
         /// <param name="source">A sequence of int values to calculate the Skewness of.</param>
         /// <returns>The Skewness of the sequence of values.</returns>
-        public static double Skewness(this IEnumerable<int> source)
+        public static double SkewnessNaN(this IEnumerable<int> source)
         {
             if (source == null)
                 throw new ArgumentNullException("source");
 
-            double mean = (double)source.Average();
-            double s = (double)source.StandardDeviation();
+            double mean = (double)source.AverageNaN();
+            if (double.IsNaN(mean))
+                return double.NaN;
+
+            double s = (double)source.StandardDeviationNaN();
             double M3 = 0;
             int n = 0;
 
@@ -48,7 +51,7 @@ namespace LinqStatistics
             }
 
             if (n < 3)
-                throw new InvalidOperationException("Source must have at least 3 elements");
+                return double.NaN;
 
             return (double)((M3 * n) / ((n - 1) * (n - 2)));
         }
@@ -61,7 +64,7 @@ namespace LinqStatistics
         /// <param name="source">A sequence of values that are used to calculate a Skewness</param>
         /// <param name="selector">A transform function to apply to each element.</param>
         /// <returns>The Skewness of the sequence of values.</returns>
-        public static double Skewness<TSource>(this IEnumerable<TSource> source, Func<TSource, int> selector)
+        public static double SkewnessNaN<TSource>(this IEnumerable<TSource> source, Func<TSource, int> selector)
         {
             if (source == null)
                 throw new ArgumentNullException("source");
@@ -69,7 +72,7 @@ namespace LinqStatistics
             if (selector == null)
                 throw new ArgumentNullException("selector");
 
-            return source.Select(selector).Skewness();
+            return source.Select(selector).SkewnessNaN();
         }
 
         /// <summary>
@@ -80,7 +83,7 @@ namespace LinqStatistics
         /// <param name="source">A sequence of values that are used to calculate a Skewness</param>
         /// <param name="selector">A transform function to apply to each element.</param>
         /// <returns>The Skewness of the sequence of values.</returns>
-        public static double? Skewness<TSource>(this IEnumerable<TSource> source, Func<TSource, int?> selector)
+        public static double? SkewnessNaN<TSource>(this IEnumerable<TSource> source, Func<TSource, int?> selector)
         {
             if (source == null)
                 throw new ArgumentNullException("source");
@@ -88,7 +91,7 @@ namespace LinqStatistics
             if (selector == null)
                 throw new ArgumentNullException("selector");
 
-            return source.Select(selector).Skewness();
+            return source.Select(selector).SkewnessNaN();
         }
  	
         /// <summary>
@@ -96,11 +99,11 @@ namespace LinqStatistics
         /// </summary>
         /// <param name="source">A sequence of nullable long values to calculate the Skewness of.</param>
         /// <returns>The Skewness of the sequence of values.</returns>
-        public static double? Skewness(this IEnumerable<long?> source)
+        public static double? SkewnessNaN(this IEnumerable<long?> source)
         {
             IEnumerable<long> values = source.AllValues();
             if (values.Any())
-                return values.Skewness();
+                return values.SkewnessNaN();
 
             return null;
         }
@@ -110,13 +113,16 @@ namespace LinqStatistics
         /// </summary>
         /// <param name="source">A sequence of long values to calculate the Skewness of.</param>
         /// <returns>The Skewness of the sequence of values.</returns>
-        public static double Skewness(this IEnumerable<long> source)
+        public static double SkewnessNaN(this IEnumerable<long> source)
         {
             if (source == null)
                 throw new ArgumentNullException("source");
 
-            double mean = (double)source.Average();
-            double s = (double)source.StandardDeviation();
+            double mean = (double)source.AverageNaN();
+            if (double.IsNaN(mean))
+                return double.NaN;
+
+            double s = (double)source.StandardDeviationNaN();
             double M3 = 0;
             int n = 0;
 
@@ -127,7 +133,7 @@ namespace LinqStatistics
             }
 
             if (n < 3)
-                throw new InvalidOperationException("Source must have at least 3 elements");
+                return double.NaN;
 
             return (double)((M3 * n) / ((n - 1) * (n - 2)));
         }
@@ -140,7 +146,7 @@ namespace LinqStatistics
         /// <param name="source">A sequence of values that are used to calculate a Skewness</param>
         /// <param name="selector">A transform function to apply to each element.</param>
         /// <returns>The Skewness of the sequence of values.</returns>
-        public static double Skewness<TSource>(this IEnumerable<TSource> source, Func<TSource, long> selector)
+        public static double SkewnessNaN<TSource>(this IEnumerable<TSource> source, Func<TSource, long> selector)
         {
             if (source == null)
                 throw new ArgumentNullException("source");
@@ -148,7 +154,7 @@ namespace LinqStatistics
             if (selector == null)
                 throw new ArgumentNullException("selector");
 
-            return source.Select(selector).Skewness();
+            return source.Select(selector).SkewnessNaN();
         }
 
         /// <summary>
@@ -159,7 +165,7 @@ namespace LinqStatistics
         /// <param name="source">A sequence of values that are used to calculate a Skewness</param>
         /// <param name="selector">A transform function to apply to each element.</param>
         /// <returns>The Skewness of the sequence of values.</returns>
-        public static double? Skewness<TSource>(this IEnumerable<TSource> source, Func<TSource, long?> selector)
+        public static double? SkewnessNaN<TSource>(this IEnumerable<TSource> source, Func<TSource, long?> selector)
         {
             if (source == null)
                 throw new ArgumentNullException("source");
@@ -167,86 +173,7 @@ namespace LinqStatistics
             if (selector == null)
                 throw new ArgumentNullException("selector");
 
-            return source.Select(selector).Skewness();
-        }
- 	
-        /// <summary>
-        /// Computes the sample Skewness of a sequence of nullable decimal values
-        /// </summary>
-        /// <param name="source">A sequence of nullable decimal values to calculate the Skewness of.</param>
-        /// <returns>The Skewness of the sequence of values.</returns>
-        public static decimal? Skewness(this IEnumerable<decimal?> source)
-        {
-            IEnumerable<decimal> values = source.AllValues();
-            if (values.Any())
-                return values.Skewness();
-
-            return null;
-        }
-
-        /// <summary>
-        /// Computes the sample Skewness of a sequence of decimal values
-        /// </summary>
-        /// <param name="source">A sequence of decimal values to calculate the Skewness of.</param>
-        /// <returns>The Skewness of the sequence of values.</returns>
-        public static decimal Skewness(this IEnumerable<decimal> source)
-        {
-            if (source == null)
-                throw new ArgumentNullException("source");
-
-            double mean = (double)source.Average();
-            double s = (double)source.StandardDeviation();
-            double M3 = 0;
-            int n = 0;
-
-            foreach (var x in source)
-            {
-                n++;
-                M3 += Math.Pow(((double)x - mean) / s, 3.0);
-            }
-
-            if (n < 3)
-                throw new InvalidOperationException("Source must have at least 3 elements");
-
-            return (decimal)((M3 * n) / ((n - 1) * (n - 2)));
-        }
-
-        /// <summary>
-        ///     Computes the sample Skewness of a sequence of decimal values that are obtained
-        ///     by invoking a transform function on each element of the input sequence.
-        /// </summary>
-        /// <typeparam name="TSource">The type of the elements of source.</typeparam>
-        /// <param name="source">A sequence of values that are used to calculate a Skewness</param>
-        /// <param name="selector">A transform function to apply to each element.</param>
-        /// <returns>The Skewness of the sequence of values.</returns>
-        public static decimal Skewness<TSource>(this IEnumerable<TSource> source, Func<TSource, decimal> selector)
-        {
-            if (source == null)
-                throw new ArgumentNullException("source");
-
-            if (selector == null)
-                throw new ArgumentNullException("selector");
-
-            return source.Select(selector).Skewness();
-        }
-
-        /// <summary>
-        ///     Computes the sample Skewness of a sequence of nullable decimal values that are obtained
-        ///     by invoking a transform function on each element of the input sequence.
-        /// </summary>
-        /// <typeparam name="TSource">The type of the elements of source.</typeparam>
-        /// <param name="source">A sequence of values that are used to calculate a Skewness</param>
-        /// <param name="selector">A transform function to apply to each element.</param>
-        /// <returns>The Skewness of the sequence of values.</returns>
-        public static decimal? Skewness<TSource>(this IEnumerable<TSource> source, Func<TSource, decimal?> selector)
-        {
-            if (source == null)
-                throw new ArgumentNullException("source");
-
-            if (selector == null)
-                throw new ArgumentNullException("selector");
-
-            return source.Select(selector).Skewness();
+            return source.Select(selector).SkewnessNaN();
         }
  	
         /// <summary>
@@ -254,11 +181,11 @@ namespace LinqStatistics
         /// </summary>
         /// <param name="source">A sequence of nullable float values to calculate the Skewness of.</param>
         /// <returns>The Skewness of the sequence of values.</returns>
-        public static float? Skewness(this IEnumerable<float?> source)
+        public static float? SkewnessNaN(this IEnumerable<float?> source)
         {
             IEnumerable<float> values = source.AllValues();
             if (values.Any())
-                return values.Skewness();
+                return values.SkewnessNaN();
 
             return null;
         }
@@ -268,13 +195,16 @@ namespace LinqStatistics
         /// </summary>
         /// <param name="source">A sequence of float values to calculate the Skewness of.</param>
         /// <returns>The Skewness of the sequence of values.</returns>
-        public static float Skewness(this IEnumerable<float> source)
+        public static float SkewnessNaN(this IEnumerable<float> source)
         {
             if (source == null)
                 throw new ArgumentNullException("source");
 
-            double mean = (double)source.Average();
-            double s = (double)source.StandardDeviation();
+            double mean = (double)source.AverageNaN();
+            if (double.IsNaN(mean))
+                return float.NaN;
+
+            double s = (double)source.StandardDeviationNaN();
             double M3 = 0;
             int n = 0;
 
@@ -285,7 +215,7 @@ namespace LinqStatistics
             }
 
             if (n < 3)
-                throw new InvalidOperationException("Source must have at least 3 elements");
+                return float.NaN;
 
             return (float)((M3 * n) / ((n - 1) * (n - 2)));
         }
@@ -298,7 +228,7 @@ namespace LinqStatistics
         /// <param name="source">A sequence of values that are used to calculate a Skewness</param>
         /// <param name="selector">A transform function to apply to each element.</param>
         /// <returns>The Skewness of the sequence of values.</returns>
-        public static float Skewness<TSource>(this IEnumerable<TSource> source, Func<TSource, float> selector)
+        public static float SkewnessNaN<TSource>(this IEnumerable<TSource> source, Func<TSource, float> selector)
         {
             if (source == null)
                 throw new ArgumentNullException("source");
@@ -306,7 +236,7 @@ namespace LinqStatistics
             if (selector == null)
                 throw new ArgumentNullException("selector");
 
-            return source.Select(selector).Skewness();
+            return source.Select(selector).SkewnessNaN();
         }
 
         /// <summary>
@@ -317,7 +247,7 @@ namespace LinqStatistics
         /// <param name="source">A sequence of values that are used to calculate a Skewness</param>
         /// <param name="selector">A transform function to apply to each element.</param>
         /// <returns>The Skewness of the sequence of values.</returns>
-        public static float? Skewness<TSource>(this IEnumerable<TSource> source, Func<TSource, float?> selector)
+        public static float? SkewnessNaN<TSource>(this IEnumerable<TSource> source, Func<TSource, float?> selector)
         {
             if (source == null)
                 throw new ArgumentNullException("source");
@@ -325,7 +255,7 @@ namespace LinqStatistics
             if (selector == null)
                 throw new ArgumentNullException("selector");
 
-            return source.Select(selector).Skewness();
+            return source.Select(selector).SkewnessNaN();
         }
  	
         /// <summary>
@@ -333,11 +263,11 @@ namespace LinqStatistics
         /// </summary>
         /// <param name="source">A sequence of nullable double values to calculate the Skewness of.</param>
         /// <returns>The Skewness of the sequence of values.</returns>
-        public static double? Skewness(this IEnumerable<double?> source)
+        public static double? SkewnessNaN(this IEnumerable<double?> source)
         {
             IEnumerable<double> values = source.AllValues();
             if (values.Any())
-                return values.Skewness();
+                return values.SkewnessNaN();
 
             return null;
         }
@@ -347,13 +277,16 @@ namespace LinqStatistics
         /// </summary>
         /// <param name="source">A sequence of double values to calculate the Skewness of.</param>
         /// <returns>The Skewness of the sequence of values.</returns>
-        public static double Skewness(this IEnumerable<double> source)
+        public static double SkewnessNaN(this IEnumerable<double> source)
         {
             if (source == null)
                 throw new ArgumentNullException("source");
 
-            double mean = (double)source.Average();
-            double s = (double)source.StandardDeviation();
+            double mean = (double)source.AverageNaN();
+            if (double.IsNaN(mean))
+                return double.NaN;
+
+            double s = (double)source.StandardDeviationNaN();
             double M3 = 0;
             int n = 0;
 
@@ -364,7 +297,7 @@ namespace LinqStatistics
             }
 
             if (n < 3)
-                throw new InvalidOperationException("Source must have at least 3 elements");
+                return double.NaN;
 
             return (double)((M3 * n) / ((n - 1) * (n - 2)));
         }
@@ -377,7 +310,7 @@ namespace LinqStatistics
         /// <param name="source">A sequence of values that are used to calculate a Skewness</param>
         /// <param name="selector">A transform function to apply to each element.</param>
         /// <returns>The Skewness of the sequence of values.</returns>
-        public static double Skewness<TSource>(this IEnumerable<TSource> source, Func<TSource, double> selector)
+        public static double SkewnessNaN<TSource>(this IEnumerable<TSource> source, Func<TSource, double> selector)
         {
             if (source == null)
                 throw new ArgumentNullException("source");
@@ -385,7 +318,7 @@ namespace LinqStatistics
             if (selector == null)
                 throw new ArgumentNullException("selector");
 
-            return source.Select(selector).Skewness();
+            return source.Select(selector).SkewnessNaN();
         }
 
         /// <summary>
@@ -396,7 +329,7 @@ namespace LinqStatistics
         /// <param name="source">A sequence of values that are used to calculate a Skewness</param>
         /// <param name="selector">A transform function to apply to each element.</param>
         /// <returns>The Skewness of the sequence of values.</returns>
-        public static double? Skewness<TSource>(this IEnumerable<TSource> source, Func<TSource, double?> selector)
+        public static double? SkewnessNaN<TSource>(this IEnumerable<TSource> source, Func<TSource, double?> selector)
         {
             if (source == null)
                 throw new ArgumentNullException("source");
@@ -404,7 +337,7 @@ namespace LinqStatistics
             if (selector == null)
                 throw new ArgumentNullException("selector");
 
-            return source.Select(selector).Skewness();
+            return source.Select(selector).SkewnessNaN();
         }
      }
 }

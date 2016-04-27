@@ -13,7 +13,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace LinqStatistics
+namespace LinqStatistics.NaN
 {
     public static partial class EnumerableStats
     {
@@ -21,7 +21,7 @@ namespace LinqStatistics
     {
         new Tuple<string, string>("int", "double"),
         new Tuple<string, string>("long", "double"),
-        new Tuple<string, string>("decimal", "decimal"),
+       // new Tuple<string, string>("decimal", "decimal"),
         new Tuple<string, string>("float", "float"),
         new Tuple<string, string>("double", "double")
     };
@@ -33,11 +33,11 @@ namespace LinqStatistics
         /// </summary>
         /// <param name="source">A sequence of nullable <#= type.Item1 #> values to calculate the Skewness of.</param>
         /// <returns>The Skewness of the sequence of values.</returns>
-        public static <#= type.Item2 #>? Skewness(this IEnumerable<<#= type.Item1 #>?> source)
+        public static <#= type.Item2 #>? SkewnessNaN(this IEnumerable<<#= type.Item1 #>?> source)
         {
             IEnumerable<<#= type.Item1 #>> values = source.AllValues();
             if (values.Any())
-                return values.Skewness();
+                return values.SkewnessNaN();
 
             return null;
         }
@@ -47,13 +47,16 @@ namespace LinqStatistics
         /// </summary>
         /// <param name="source">A sequence of <#= type.Item1 #> values to calculate the Skewness of.</param>
         /// <returns>The Skewness of the sequence of values.</returns>
-        public static <#= type.Item2 #> Skewness(this IEnumerable<<#= type.Item1 #>> source)
+        public static <#= type.Item2 #> SkewnessNaN(this IEnumerable<<#= type.Item1 #>> source)
         {
             if (source == null)
                 throw new ArgumentNullException("source");
 
-            double mean = (double)source.Average();
-            double s = (double)source.StandardDeviation();
+            double mean = (double)source.AverageNaN();
+            if (double.IsNaN(mean))
+                return <#= type.Item2 #>.NaN;
+
+            double s = (double)source.StandardDeviationNaN();
             double M3 = 0;
             int n = 0;
 
@@ -64,7 +67,7 @@ namespace LinqStatistics
             }
 
             if (n < 3)
-                throw new InvalidOperationException("Source must have at least 3 elements");
+                return <#= type.Item2 #>.NaN;
 
             return (<#= type.Item2 #>)((M3 * n) / ((n - 1) * (n - 2)));
         }
@@ -77,7 +80,7 @@ namespace LinqStatistics
         /// <param name="source">A sequence of values that are used to calculate a Skewness</param>
         /// <param name="selector">A transform function to apply to each element.</param>
         /// <returns>The Skewness of the sequence of values.</returns>
-        public static <#= type.Item2 #> Skewness<TSource>(this IEnumerable<TSource> source, Func<TSource, <#= type.Item1 #>> selector)
+        public static <#= type.Item2 #> SkewnessNaN<TSource>(this IEnumerable<TSource> source, Func<TSource, <#= type.Item1 #>> selector)
         {
             if (source == null)
                 throw new ArgumentNullException("source");
@@ -85,7 +88,7 @@ namespace LinqStatistics
             if (selector == null)
                 throw new ArgumentNullException("selector");
 
-            return source.Select(selector).Skewness();
+            return source.Select(selector).SkewnessNaN();
         }
 
         /// <summary>
@@ -96,7 +99,7 @@ namespace LinqStatistics
         /// <param name="source">A sequence of values that are used to calculate a Skewness</param>
         /// <param name="selector">A transform function to apply to each element.</param>
         /// <returns>The Skewness of the sequence of values.</returns>
-        public static <#= type.Item2 #>? Skewness<TSource>(this IEnumerable<TSource> source, Func<TSource, <#= type.Item1 #>?> selector)
+        public static <#= type.Item2 #>? SkewnessNaN<TSource>(this IEnumerable<TSource> source, Func<TSource, <#= type.Item1 #>?> selector)
         {
             if (source == null)
                 throw new ArgumentNullException("source");
@@ -104,7 +107,7 @@ namespace LinqStatistics
             if (selector == null)
                 throw new ArgumentNullException("selector");
 
-            return source.Select(selector).Skewness();
+            return source.Select(selector).SkewnessNaN();
         }
  <# } #>
     }

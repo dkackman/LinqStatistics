@@ -13,7 +13,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace LinqStatistics
+namespace LinqStatistics.NaN
 {
     public static partial class EnumerableStats
     {
@@ -21,7 +21,7 @@ namespace LinqStatistics
     {
         new Tuple<string, string>("int", "double"),
         new Tuple<string, string>("long", "double"),
-        new Tuple<string, string>("decimal", "decimal"),
+        /* no Decimal.NaN new Tuple<string, string>("decimal", "decimal"), */
         new Tuple<string, string>("float", "float"),
         new Tuple<string, string>("double", "double")
     };
@@ -29,64 +29,57 @@ namespace LinqStatistics
     foreach(var type in types)
     {#>	
         /// <summary>
-        /// Computes the population Variance of a sequence of nullable <#= type.Item1 #> values.
+        /// Computes the sample Average of a sequence of nullable <#= type.Item1 #> values.
         /// </summary>
-        /// <param name="source">A sequence of nullable <#= type.Item1 #> values to calculate the population Variance of.</param>
+        /// <param name="source">A sequence of nullable <#= type.Item1 #> values to calculate the Average of.</param>
         /// <returns>       
-        ///     The Variance of the sequence of values, or null if the source sequence is
+        ///     The Average of the sequence of values, or null if the source sequence is
         ///     empty or contains only values that are null.
         /// </returns>
-        public static <#= type.Item2 #>? VarianceP(this IEnumerable<<#= type.Item1 #>?> source)
+        public static <#= type.Item2 #>? AverageNaN(this IEnumerable<<#= type.Item1 #>?> source)
         {
             IEnumerable<<#= type.Item1 #>> values = source.AllValues();
             if (values.Any())
-                return values.VarianceP();
+                return values.AverageNaN();
             
             return null;
         }
 
         /// <summary>
-        /// Computes the population Variance of a sequence of <#= type.Item1 #> values.
+        /// Computes the sample Average of a sequence of <#= type.Item1 #> values.
         /// </summary>
-        /// <param name="source">A sequence of <#= type.Item1 #> values to calculate the population Variance of.</param>
+        /// <param name="source">A sequence of <#= type.Item1 #> values to calculate the Average of.</param>
         /// <returns>       
-        ///     The Variance of the sequence of values.
+        ///     The Average of the sequence of values.
         /// </returns>
-        public static <#= type.Item2 #> VarianceP(this IEnumerable<<#= type.Item1 #>> source)
+        public static <#= type.Item2 #> AverageNaN(this IEnumerable<<#= type.Item1 #>> source)
         {
             if (source == null)
                 throw new ArgumentNullException("source");
 
-            int n = 0;
-            double mean = 0;
-            double M2 = 0;
-
-            foreach (var x in source)
-            {
-                n++;
-                
-                double delta = (double)x - mean;
-                mean += delta / n;
-                M2 += delta * ((double)x - mean);
+            double sum = 0;
+            long count = 0;
+            checked {
+                foreach (var v in source) {
+                    sum += v;
+                    count++;
+                }
             }
 
-            if (n < 1)
-                throw new InvalidOperationException("source sequence contains no elements");
-
-            return (<#= type.Item2 #>)(M2 / n);
+            return count > 0 ? (<#= type.Item2 #>)(sum / count) :  <#= type.Item2 #>.NaN;
         }
 
         /// <summary>
-        /// Computes the population Variance of a sequence of nullable <#= type.Item1 #> values that are obtained
+        /// Computes the sample Average of a sequence of nullable <#= type.Item1 #> values that are obtained
         ///     by invoking a transform function on each element of the input sequence.
         /// </summary>
         /// <typeparam name="TSource">The type of the elements of source.</typeparam>
         /// <param name="source">The sequence of elements.</param>
         /// <param name="selector">A transform function to apply to each element.</param>
         /// <returns>       
-        ///     The Variance of the sequence of values.
+        ///     The Average of the sequence of values.
         /// </returns>
-        public static <#= type.Item2 #>? VarianceP<TSource>(this IEnumerable<TSource> source, Func<TSource, <#= type.Item1 #>?> selector)
+        public static <#= type.Item2 #>? AverageNaN<TSource>(this IEnumerable<TSource> source, Func<TSource, <#= type.Item1 #>?> selector)
         {
             if (source == null)
                 throw new ArgumentNullException("source");
@@ -94,20 +87,20 @@ namespace LinqStatistics
             if (selector == null)
                 throw new ArgumentNullException("selector");
 
-            return source.Select(selector).VarianceP();
+            return source.Select(selector).AverageNaN();
         }
 
         /// <summary>
-        /// Computes the population Variance of a sequence of <#= type.Item1 #> values that are obtained
+        /// Computes the sample Average of a sequence of <#= type.Item1 #> values that are obtained
         ///     by invoking a transform function on each element of the input sequence.
         /// </summary>
         /// <typeparam name="TSource">The type of the elements of source.</typeparam>
         /// <param name="source">The sequence of elements.</param>
         /// <param name="selector">A transform function to apply to each element.</param>
         /// <returns>       
-        ///     The Variance of the sequence of values.
+        ///     The Average of the sequence of values.
         /// </returns>
-        public static <#= type.Item2 #> VarianceP<TSource>(this IEnumerable<TSource> source, Func<TSource, <#= type.Item1 #>> selector)
+        public static <#= type.Item2 #> AverageNaN<TSource>(this IEnumerable<TSource> source, Func<TSource, <#= type.Item1 #>> selector)
         {
             if (source == null)
                 throw new ArgumentNullException("source");
@@ -115,7 +108,7 @@ namespace LinqStatistics
             if (selector == null)
                 throw new ArgumentNullException("selector");
 
-            return source.Select(selector).VarianceP();
+            return source.Select(selector).AverageNaN();
         }
  <# } #>
     }

@@ -13,7 +13,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace LinqStatistics
+namespace LinqStatistics.NaN
 {
     public static partial class EnumerableStats
     {
@@ -21,7 +21,7 @@ namespace LinqStatistics
     {
         new Tuple<string, string>("int", "double"),
         new Tuple<string, string>("long", "double"),
-        new Tuple<string, string>("decimal", "decimal"),
+        //new Tuple<string, string>("decimal", "decimal"),
         new Tuple<string, string>("float", "float"),
         new Tuple<string, string>("double", "double")
     };
@@ -34,11 +34,11 @@ namespace LinqStatistics
         /// </summary>
         /// <param name="source">A sequence of <#= type.Item1 #> values to calculate the RootMeanSquare of.</param>
         /// <returns>The RootMeanSquare.</returns>
-        public static <#= type.Item2 #>? RootMeanSquare(this IEnumerable<<#= type.Item1 #>?> source)
+        public static <#= type.Item2 #>? RootMeanSquareNaN(this IEnumerable<<#= type.Item1 #>?> source)
         {
             IEnumerable<<#= type.Item1 #>> values = source.AllValues();
             if (values.Any())
-                return values.RootMeanSquare();
+                return values.RootMeanSquareNaN();
 
             return null;
         }
@@ -48,7 +48,7 @@ namespace LinqStatistics
         /// </summary>
         /// <param name="source">A sequence of <#= type.Item1 #> values to calculate the RootMeanSquare of.</param>
         /// <returns>The RootMeanSquare.</returns>
-        public static <#= type.Item2 #> RootMeanSquare(this IEnumerable<<#= type.Item1 #>> source)
+        public static <#= type.Item2 #> RootMeanSquareNaN(this IEnumerable<<#= type.Item1 #>> source)
         {
             if (source == null)
                 throw new ArgumentNullException("source");
@@ -63,7 +63,7 @@ namespace LinqStatistics
             }
 
             if (n < 1)
-                throw new InvalidOperationException("source sequence contains no elements");
+                return <#= type.Item2 #>.NaN;
 
             return (<#= type.Item2 #>)Math.Sqrt(s / n);
         }
@@ -76,7 +76,7 @@ namespace LinqStatistics
         /// <param name="source">A sequence of values to calculate the RootMeanSquare of.</param>
         /// <param name="selector">A transform function to apply to each element.</param>
         /// <returns>The RootMeanSquare.</returns>
-        public static <#= type.Item2 #>? RootMeanSquare<TSource>(this IEnumerable<TSource> source, Func<TSource, <#= type.Item1 #>?> selector)
+        public static <#= type.Item2 #>? RootMeanSquareNaN<TSource>(this IEnumerable<TSource> source, Func<TSource, <#= type.Item1 #>?> selector)
         {
             if (source == null)
                 throw new ArgumentNullException("source");
@@ -84,7 +84,7 @@ namespace LinqStatistics
             if (selector == null)
                 throw new ArgumentNullException("selector");
 
-            return source.Select(selector).RootMeanSquare();
+            return source.Select(selector).RootMeanSquareNaN();
         }
 
         /// <summary>
@@ -95,7 +95,7 @@ namespace LinqStatistics
         /// <param name="source">A sequence of values to calculate the RootMeanSquare of.</param>
         /// <param name="selector">A transform function to apply to each element.</param>
         /// <returns>The RootMeanSquare.</returns>
-        public static <#= type.Item2 #> RootMeanSquare<TSource>(this IEnumerable<TSource> source, Func<TSource, <#= type.Item1 #>> selector)
+        public static <#= type.Item2 #> RootMeanSquareNaN<TSource>(this IEnumerable<TSource> source, Func<TSource, <#= type.Item1 #>> selector)
         {
              if (source == null)
                 throw new ArgumentNullException("source");
@@ -103,7 +103,7 @@ namespace LinqStatistics
             if (selector == null)
                 throw new ArgumentNullException("selector");
 
-           return source.Select(selector).RootMeanSquare();
+           return source.Select(selector).RootMeanSquareNaN();
         }
  <# } #>
     }

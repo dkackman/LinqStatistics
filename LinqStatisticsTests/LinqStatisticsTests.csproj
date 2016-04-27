@@ -80,6 +80,7 @@
     <Compile Include="LeastSquaresTests.cs" />
     <Compile Include="HistogramTests.cs" />
     <Compile Include="SkewnessTests.cs" />
+    <Compile Include="AverageTests.cs" />
     <Compile Include="VarianceTests.cs" />
   </ItemGroup>
   <ItemGroup>
