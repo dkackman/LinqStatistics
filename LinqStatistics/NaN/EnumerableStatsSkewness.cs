@@ -19,7 +19,7 @@ namespace LinqStatistics.NaN
         /// <returns>The Skewness of the sequence of values.</returns>
         public static double? SkewnessNaN(this IEnumerable<int?> source)
         {
-            IEnumerable<int> values = source.AllValues();
+            var values = source.AllValues();
             if (values.Any())
                 return values.SkewnessNaN();
 
@@ -104,7 +104,7 @@ namespace LinqStatistics.NaN
         /// <returns>The Skewness of the sequence of values.</returns>
         public static double? SkewnessNaN(this IEnumerable<long?> source)
         {
-            IEnumerable<long> values = source.AllValues();
+            var values = source.AllValues();
             if (values.Any())
                 return values.SkewnessNaN();
 
@@ -189,7 +189,7 @@ namespace LinqStatistics.NaN
         /// <returns>The Skewness of the sequence of values.</returns>
         public static float? SkewnessNaN(this IEnumerable<float?> source)
         {
-            IEnumerable<float> values = source.AllValues();
+            var values = source.AllValues();
             if (values.Any())
                 return values.SkewnessNaN();
 
@@ -274,7 +274,7 @@ namespace LinqStatistics.NaN
         /// <returns>The Skewness of the sequence of values.</returns>
         public static double? SkewnessNaN(this IEnumerable<double?> source)
         {
-            IEnumerable<double> values = source.AllValues();
+            var values = source.AllValues();
             if (values.Any())
                 return values.SkewnessNaN();
 

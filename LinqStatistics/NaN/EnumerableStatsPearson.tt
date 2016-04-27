@@ -35,7 +35,7 @@ namespace LinqStatistics.NaN
         /// <returns>The Pearson value of two sequences.</returns>
         public static <#= type.Item2 #>? PearsonNaN(this IEnumerable<<#= type.Item1 #>?> source, IEnumerable<<#= type.Item1 #>?> other)
         {
-            IEnumerable<<#= type.Item1 #>> values = source.AllValues();
+            var values = source.AllValues();
             if (values.Any())
                 return values.PearsonNaN(other.AllValues());
 

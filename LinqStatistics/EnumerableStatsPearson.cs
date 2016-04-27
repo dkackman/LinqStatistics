@@ -20,7 +20,7 @@ namespace LinqStatistics
         /// <returns>The Pearson value of two sequences.</returns>
         public static double? Pearson(this IEnumerable<int?> source, IEnumerable<int?> other)
         {
-            IEnumerable<int> values = source.AllValues();
+            var values = source.AllValues();
             if (values.Any())
                 return values.Pearson(other.AllValues());
 
@@ -108,7 +108,7 @@ namespace LinqStatistics
         /// <returns>The Pearson value of two sequences.</returns>
         public static double? Pearson(this IEnumerable<long?> source, IEnumerable<long?> other)
         {
-            IEnumerable<long> values = source.AllValues();
+            var values = source.AllValues();
             if (values.Any())
                 return values.Pearson(other.AllValues());
 
@@ -196,7 +196,7 @@ namespace LinqStatistics
         /// <returns>The Pearson value of two sequences.</returns>
         public static decimal? Pearson(this IEnumerable<decimal?> source, IEnumerable<decimal?> other)
         {
-            IEnumerable<decimal> values = source.AllValues();
+            var values = source.AllValues();
             if (values.Any())
                 return values.Pearson(other.AllValues());
 
@@ -284,7 +284,7 @@ namespace LinqStatistics
         /// <returns>The Pearson value of two sequences.</returns>
         public static float? Pearson(this IEnumerable<float?> source, IEnumerable<float?> other)
         {
-            IEnumerable<float> values = source.AllValues();
+            var values = source.AllValues();
             if (values.Any())
                 return values.Pearson(other.AllValues());
 
@@ -372,7 +372,7 @@ namespace LinqStatistics
         /// <returns>The Pearson value of two sequences.</returns>
         public static double? Pearson(this IEnumerable<double?> source, IEnumerable<double?> other)
         {
-            IEnumerable<double> values = source.AllValues();
+            var values = source.AllValues();
             if (values.Any())
                 return values.Pearson(other.AllValues());
 

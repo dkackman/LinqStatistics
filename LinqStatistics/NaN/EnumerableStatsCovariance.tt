@@ -35,7 +35,7 @@ namespace LinqStatistics.NaN
         /// <returns>The Covariance of the two sequence of values.</returns>
         public static <#= type.Item2 #>? CovarianceNaN(this IEnumerable<<#= type.Item1 #>?> source, IEnumerable<<#= type.Item1 #>?> other)
         {
-            IEnumerable<<#= type.Item1 #>> values = source.AllValues();
+            var values = source.AllValues();
             if (values.Any())
                 return values.CovarianceNaN(other.AllValues());
 

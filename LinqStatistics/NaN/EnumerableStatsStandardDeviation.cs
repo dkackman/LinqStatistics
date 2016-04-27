@@ -22,7 +22,7 @@ namespace LinqStatistics.NaN
         /// </returns>
         public static double? StandardDeviationNaN(this IEnumerable<int?> source)
         {
-            IEnumerable<int> values = source.AllValues();
+            var values = source.AllValues();
             if (values.Any())
                 return values.StandardDeviationNaN();
             
@@ -93,7 +93,7 @@ namespace LinqStatistics.NaN
         /// </returns>
         public static double? StandardDeviationNaN(this IEnumerable<long?> source)
         {
-            IEnumerable<long> values = source.AllValues();
+            var values = source.AllValues();
             if (values.Any())
                 return values.StandardDeviationNaN();
             
@@ -164,7 +164,7 @@ namespace LinqStatistics.NaN
         /// </returns>
         public static float? StandardDeviationNaN(this IEnumerable<float?> source)
         {
-            IEnumerable<float> values = source.AllValues();
+            var values = source.AllValues();
             if (values.Any())
                 return values.StandardDeviationNaN();
             
@@ -235,7 +235,7 @@ namespace LinqStatistics.NaN
         /// </returns>
         public static double? StandardDeviationNaN(this IEnumerable<double?> source)
         {
-            IEnumerable<double> values = source.AllValues();
+            var values = source.AllValues();
             if (values.Any())
                 return values.StandardDeviationNaN();
             

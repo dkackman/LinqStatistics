@@ -19,7 +19,7 @@ namespace LinqStatistics.NaN
         /// <returns>The Kurtosis of the sequence of values.</returns>
         public static double? KurtosisNaN(this IEnumerable<int?> source)
         {
-            IEnumerable<int> values = source.AllValues();
+            var values = source.AllValues();
             if (values.Any())
                 return values.KurtosisNaN();
 
@@ -116,7 +116,7 @@ namespace LinqStatistics.NaN
         /// <returns>The Kurtosis of the sequence of values.</returns>
         public static double? KurtosisNaN(this IEnumerable<long?> source)
         {
-            IEnumerable<long> values = source.AllValues();
+            var values = source.AllValues();
             if (values.Any())
                 return values.KurtosisNaN();
 
@@ -213,7 +213,7 @@ namespace LinqStatistics.NaN
         /// <returns>The Kurtosis of the sequence of values.</returns>
         public static float? KurtosisNaN(this IEnumerable<float?> source)
         {
-            IEnumerable<float> values = source.AllValues();
+            var values = source.AllValues();
             if (values.Any())
                 return values.KurtosisNaN();
 
@@ -310,7 +310,7 @@ namespace LinqStatistics.NaN
         /// <returns>The Kurtosis of the sequence of values.</returns>
         public static double? KurtosisNaN(this IEnumerable<double?> source)
         {
-            IEnumerable<double> values = source.AllValues();
+            var values = source.AllValues();
             if (values.Any())
                 return values.KurtosisNaN();
 

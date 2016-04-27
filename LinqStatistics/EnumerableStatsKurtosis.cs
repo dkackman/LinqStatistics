@@ -19,7 +19,7 @@ namespace LinqStatistics
         /// <returns>The Kurtosis of the sequence of values.</returns>
         public static double? Kurtosis(this IEnumerable<int?> source)
         {
-            IEnumerable<int> values = source.AllValues();
+            var values = source.AllValues();
             if (values.Any())
                 return values.Kurtosis();
 
@@ -113,7 +113,7 @@ namespace LinqStatistics
         /// <returns>The Kurtosis of the sequence of values.</returns>
         public static double? Kurtosis(this IEnumerable<long?> source)
         {
-            IEnumerable<long> values = source.AllValues();
+            var values = source.AllValues();
             if (values.Any())
                 return values.Kurtosis();
 
@@ -207,7 +207,7 @@ namespace LinqStatistics
         /// <returns>The Kurtosis of the sequence of values.</returns>
         public static decimal? Kurtosis(this IEnumerable<decimal?> source)
         {
-            IEnumerable<decimal> values = source.AllValues();
+            var values = source.AllValues();
             if (values.Any())
                 return values.Kurtosis();
 
@@ -301,7 +301,7 @@ namespace LinqStatistics
         /// <returns>The Kurtosis of the sequence of values.</returns>
         public static float? Kurtosis(this IEnumerable<float?> source)
         {
-            IEnumerable<float> values = source.AllValues();
+            var values = source.AllValues();
             if (values.Any())
                 return values.Kurtosis();
 
@@ -395,7 +395,7 @@ namespace LinqStatistics
         /// <returns>The Kurtosis of the sequence of values.</returns>
         public static double? Kurtosis(this IEnumerable<double?> source)
         {
-            IEnumerable<double> values = source.AllValues();
+            var values = source.AllValues();
             if (values.Any())
                 return values.Kurtosis();
 

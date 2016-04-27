@@ -22,7 +22,7 @@ namespace LinqStatistics.NaN
         /// </returns>
         public static double? VarianceNaN(this IEnumerable<int?> source)
         {
-            IEnumerable<int> values = source.AllValues();
+            var values = source.AllValues();
             if (values.Any())
                 return values.VarianceNaN();
             
@@ -115,7 +115,7 @@ namespace LinqStatistics.NaN
         /// </returns>
         public static double? VarianceNaN(this IEnumerable<long?> source)
         {
-            IEnumerable<long> values = source.AllValues();
+            var values = source.AllValues();
             if (values.Any())
                 return values.VarianceNaN();
             
@@ -208,7 +208,7 @@ namespace LinqStatistics.NaN
         /// </returns>
         public static float? VarianceNaN(this IEnumerable<float?> source)
         {
-            IEnumerable<float> values = source.AllValues();
+            var values = source.AllValues();
             if (values.Any())
                 return values.VarianceNaN();
             
@@ -301,7 +301,7 @@ namespace LinqStatistics.NaN
         /// </returns>
         public static double? VarianceNaN(this IEnumerable<double?> source)
         {
-            IEnumerable<double> values = source.AllValues();
+            var values = source.AllValues();
             if (values.Any())
                 return values.VarianceNaN();
             

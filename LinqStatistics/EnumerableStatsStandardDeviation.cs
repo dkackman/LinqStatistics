@@ -22,7 +22,7 @@ namespace LinqStatistics
         /// </returns>
         public static double? StandardDeviation(this IEnumerable<int?> source)
         {
-            IEnumerable<int> values = source.AllValues();
+            var values = source.AllValues();
             if (values.Any())
                 return values.StandardDeviation();
             
@@ -93,7 +93,7 @@ namespace LinqStatistics
         /// </returns>
         public static double? StandardDeviation(this IEnumerable<long?> source)
         {
-            IEnumerable<long> values = source.AllValues();
+            var values = source.AllValues();
             if (values.Any())
                 return values.StandardDeviation();
             
@@ -164,7 +164,7 @@ namespace LinqStatistics
         /// </returns>
         public static decimal? StandardDeviation(this IEnumerable<decimal?> source)
         {
-            IEnumerable<decimal> values = source.AllValues();
+            var values = source.AllValues();
             if (values.Any())
                 return values.StandardDeviation();
             
@@ -235,7 +235,7 @@ namespace LinqStatistics
         /// </returns>
         public static float? StandardDeviation(this IEnumerable<float?> source)
         {
-            IEnumerable<float> values = source.AllValues();
+            var values = source.AllValues();
             if (values.Any())
                 return values.StandardDeviation();
             
@@ -306,7 +306,7 @@ namespace LinqStatistics
         /// </returns>
         public static double? StandardDeviation(this IEnumerable<double?> source)
         {
-            IEnumerable<double> values = source.AllValues();
+            var values = source.AllValues();
             if (values.Any())
                 return values.StandardDeviation();
             

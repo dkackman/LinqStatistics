@@ -35,7 +35,7 @@ namespace LinqStatistics.NaN
         /// <returns>The RootMeanSquare.</returns>
         public static <#= type.Item2 #>? RootMeanSquareNaN(this IEnumerable<<#= type.Item1 #>?> source)
         {
-            IEnumerable<<#= type.Item1 #>> values = source.AllValues();
+            var values = source.AllValues();
             if (values.Any())
                 return values.RootMeanSquareNaN();
 

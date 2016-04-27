@@ -20,7 +20,7 @@ namespace LinqStatistics
         /// <returns>The RootMeanSquare.</returns>
         public static double? RootMeanSquare(this IEnumerable<int?> source)
         {
-            IEnumerable<int> values = source.AllValues();
+            var values = source.AllValues();
             if (values.Any())
                 return values.RootMeanSquare();
 
@@ -101,7 +101,7 @@ namespace LinqStatistics
         /// <returns>The RootMeanSquare.</returns>
         public static double? RootMeanSquare(this IEnumerable<long?> source)
         {
-            IEnumerable<long> values = source.AllValues();
+            var values = source.AllValues();
             if (values.Any())
                 return values.RootMeanSquare();
 
@@ -182,7 +182,7 @@ namespace LinqStatistics
         /// <returns>The RootMeanSquare.</returns>
         public static decimal? RootMeanSquare(this IEnumerable<decimal?> source)
         {
-            IEnumerable<decimal> values = source.AllValues();
+            var values = source.AllValues();
             if (values.Any())
                 return values.RootMeanSquare();
 
@@ -263,7 +263,7 @@ namespace LinqStatistics
         /// <returns>The RootMeanSquare.</returns>
         public static float? RootMeanSquare(this IEnumerable<float?> source)
         {
-            IEnumerable<float> values = source.AllValues();
+            var values = source.AllValues();
             if (values.Any())
                 return values.RootMeanSquare();
 
@@ -344,7 +344,7 @@ namespace LinqStatistics
         /// <returns>The RootMeanSquare.</returns>
         public static double? RootMeanSquare(this IEnumerable<double?> source)
         {
-            IEnumerable<double> values = source.AllValues();
+            var values = source.AllValues();
             if (values.Any())
                 return values.RootMeanSquare();
 

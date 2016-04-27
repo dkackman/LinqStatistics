@@ -22,7 +22,7 @@ namespace LinqStatistics
         /// </returns>
         public static double? VarianceP(this IEnumerable<int?> source)
         {
-            IEnumerable<int> values = source.AllValues();
+            var values = source.AllValues();
             if (values.Any())
                 return values.VarianceP();
             
@@ -115,7 +115,7 @@ namespace LinqStatistics
         /// </returns>
         public static double? VarianceP(this IEnumerable<long?> source)
         {
-            IEnumerable<long> values = source.AllValues();
+            var values = source.AllValues();
             if (values.Any())
                 return values.VarianceP();
             
@@ -208,7 +208,7 @@ namespace LinqStatistics
         /// </returns>
         public static decimal? VarianceP(this IEnumerable<decimal?> source)
         {
-            IEnumerable<decimal> values = source.AllValues();
+            var values = source.AllValues();
             if (values.Any())
                 return values.VarianceP();
             
@@ -301,7 +301,7 @@ namespace LinqStatistics
         /// </returns>
         public static float? VarianceP(this IEnumerable<float?> source)
         {
-            IEnumerable<float> values = source.AllValues();
+            var values = source.AllValues();
             if (values.Any())
                 return values.VarianceP();
             
@@ -394,7 +394,7 @@ namespace LinqStatistics
         /// </returns>
         public static double? VarianceP(this IEnumerable<double?> source)
         {
-            IEnumerable<double> values = source.AllValues();
+            var values = source.AllValues();
             if (values.Any())
                 return values.VarianceP();
             

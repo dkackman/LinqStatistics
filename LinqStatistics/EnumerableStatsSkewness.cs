@@ -19,7 +19,7 @@ namespace LinqStatistics
         /// <returns>The Skewness of the sequence of values.</returns>
         public static double? Skewness(this IEnumerable<int?> source)
         {
-            IEnumerable<int> values = source.AllValues();
+            var values = source.AllValues();
             if (values.Any())
                 return values.Skewness();
 
@@ -101,7 +101,7 @@ namespace LinqStatistics
         /// <returns>The Skewness of the sequence of values.</returns>
         public static double? Skewness(this IEnumerable<long?> source)
         {
-            IEnumerable<long> values = source.AllValues();
+            var values = source.AllValues();
             if (values.Any())
                 return values.Skewness();
 
@@ -183,7 +183,7 @@ namespace LinqStatistics
         /// <returns>The Skewness of the sequence of values.</returns>
         public static decimal? Skewness(this IEnumerable<decimal?> source)
         {
-            IEnumerable<decimal> values = source.AllValues();
+            var values = source.AllValues();
             if (values.Any())
                 return values.Skewness();
 
@@ -265,7 +265,7 @@ namespace LinqStatistics
         /// <returns>The Skewness of the sequence of values.</returns>
         public static float? Skewness(this IEnumerable<float?> source)
         {
-            IEnumerable<float> values = source.AllValues();
+            var values = source.AllValues();
             if (values.Any())
                 return values.Skewness();
 
@@ -347,7 +347,7 @@ namespace LinqStatistics
         /// <returns>The Skewness of the sequence of values.</returns>
         public static double? Skewness(this IEnumerable<double?> source)
         {
-            IEnumerable<double> values = source.AllValues();
+            var values = source.AllValues();
             if (values.Any())
                 return values.Skewness();
 

@@ -36,7 +36,7 @@ namespace LinqStatistics
         /// <returns>The Median of the sequence of values.</returns>
         public static <#= type.Item2 #>? Median(this IEnumerable<<#= type.Item1 #>?> source)
         {
-            IEnumerable<<#= type.Item1 #>> values = source.AllValues();
+            var values = source.AllValues();
             if (values.Any())
                 return values.Median();
 

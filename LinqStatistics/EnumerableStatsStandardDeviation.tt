@@ -38,7 +38,7 @@ namespace LinqStatistics
         /// </returns>
         public static <#= type.Item2 #>? StandardDeviation(this IEnumerable<<#= type.Item1 #>?> source)
         {
-            IEnumerable<<#= type.Item1 #>> values = source.AllValues();
+            var values = source.AllValues();
             if (values.Any())
                 return values.StandardDeviation();
             

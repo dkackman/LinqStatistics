@@ -20,7 +20,7 @@ namespace LinqStatistics.NaN
         /// <returns>The Covariance of the two sequence of values.</returns>
         public static double? CovarianceNaN(this IEnumerable<int?> source, IEnumerable<int?> other)
         {
-            IEnumerable<int> values = source.AllValues();
+            var values = source.AllValues();
             if (values.Any())
                 return values.CovarianceNaN(other.AllValues());
 
@@ -76,7 +76,7 @@ namespace LinqStatistics.NaN
         /// <returns>The Covariance of the two sequence of values.</returns>
         public static double? CovarianceNaN(this IEnumerable<long?> source, IEnumerable<long?> other)
         {
-            IEnumerable<long> values = source.AllValues();
+            var values = source.AllValues();
             if (values.Any())
                 return values.CovarianceNaN(other.AllValues());
 
@@ -132,7 +132,7 @@ namespace LinqStatistics.NaN
         /// <returns>The Covariance of the two sequence of values.</returns>
         public static float? CovarianceNaN(this IEnumerable<float?> source, IEnumerable<float?> other)
         {
-            IEnumerable<float> values = source.AllValues();
+            var values = source.AllValues();
             if (values.Any())
                 return values.CovarianceNaN(other.AllValues());
 
@@ -188,7 +188,7 @@ namespace LinqStatistics.NaN
         /// <returns>The Covariance of the two sequence of values.</returns>
         public static double? CovarianceNaN(this IEnumerable<double?> source, IEnumerable<double?> other)
         {
-            IEnumerable<double> values = source.AllValues();
+            var values = source.AllValues();
             if (values.Any())
                 return values.CovarianceNaN(other.AllValues());
 

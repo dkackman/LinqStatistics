@@ -20,7 +20,7 @@ namespace LinqStatistics.NaN
         /// <returns>The RootMeanSquare.</returns>
         public static double? RootMeanSquareNaN(this IEnumerable<int?> source)
         {
-            IEnumerable<int> values = source.AllValues();
+            var values = source.AllValues();
             if (values.Any())
                 return values.RootMeanSquareNaN();
 
@@ -101,7 +101,7 @@ namespace LinqStatistics.NaN
         /// <returns>The RootMeanSquare.</returns>
         public static double? RootMeanSquareNaN(this IEnumerable<long?> source)
         {
-            IEnumerable<long> values = source.AllValues();
+            var values = source.AllValues();
             if (values.Any())
                 return values.RootMeanSquareNaN();
 
@@ -182,7 +182,7 @@ namespace LinqStatistics.NaN
         /// <returns>The RootMeanSquare.</returns>
         public static float? RootMeanSquareNaN(this IEnumerable<float?> source)
         {
-            IEnumerable<float> values = source.AllValues();
+            var values = source.AllValues();
             if (values.Any())
                 return values.RootMeanSquareNaN();
 
@@ -263,7 +263,7 @@ namespace LinqStatistics.NaN
         /// <returns>The RootMeanSquare.</returns>
         public static double? RootMeanSquareNaN(this IEnumerable<double?> source)
         {
-            IEnumerable<double> values = source.AllValues();
+            var values = source.AllValues();
             if (values.Any())
                 return values.RootMeanSquareNaN();
 

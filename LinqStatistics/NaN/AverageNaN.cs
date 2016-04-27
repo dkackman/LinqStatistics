@@ -22,7 +22,7 @@ namespace LinqStatistics.NaN
         /// </returns>
         public static double? AverageNaN(this IEnumerable<int?> source)
         {
-            IEnumerable<int> values = source.AllValues();
+            var values = source.AllValues();
             if (values.Any())
                 return values.AverageNaN();
             
@@ -107,7 +107,7 @@ namespace LinqStatistics.NaN
         /// </returns>
         public static double? AverageNaN(this IEnumerable<long?> source)
         {
-            IEnumerable<long> values = source.AllValues();
+            var values = source.AllValues();
             if (values.Any())
                 return values.AverageNaN();
             
@@ -192,7 +192,7 @@ namespace LinqStatistics.NaN
         /// </returns>
         public static float? AverageNaN(this IEnumerable<float?> source)
         {
-            IEnumerable<float> values = source.AllValues();
+            var values = source.AllValues();
             if (values.Any())
                 return values.AverageNaN();
             
@@ -277,7 +277,7 @@ namespace LinqStatistics.NaN
         /// </returns>
         public static double? AverageNaN(this IEnumerable<double?> source)
         {
-            IEnumerable<double> values = source.AllValues();
+            var values = source.AllValues();
             if (values.Any())
                 return values.AverageNaN();
             

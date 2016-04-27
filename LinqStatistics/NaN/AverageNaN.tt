@@ -37,7 +37,7 @@ namespace LinqStatistics.NaN
         /// </returns>
         public static <#= type.Item2 #>? AverageNaN(this IEnumerable<<#= type.Item1 #>?> source)
         {
-            IEnumerable<<#= type.Item1 #>> values = source.AllValues();
+            var values = source.AllValues();
             if (values.Any())
                 return values.AverageNaN();
             

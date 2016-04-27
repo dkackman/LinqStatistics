@@ -20,7 +20,7 @@ namespace LinqStatistics.NaN
         /// <returns>The Pearson value of two sequences.</returns>
         public static double? PearsonNaN(this IEnumerable<int?> source, IEnumerable<int?> other)
         {
-            IEnumerable<int> values = source.AllValues();
+            var values = source.AllValues();
             if (values.Any())
                 return values.PearsonNaN(other.AllValues());
 
@@ -108,7 +108,7 @@ namespace LinqStatistics.NaN
         /// <returns>The Pearson value of two sequences.</returns>
         public static double? PearsonNaN(this IEnumerable<long?> source, IEnumerable<long?> other)
         {
-            IEnumerable<long> values = source.AllValues();
+            var values = source.AllValues();
             if (values.Any())
                 return values.PearsonNaN(other.AllValues());
 
@@ -196,7 +196,7 @@ namespace LinqStatistics.NaN
         /// <returns>The Pearson value of two sequences.</returns>
         public static float? PearsonNaN(this IEnumerable<float?> source, IEnumerable<float?> other)
         {
-            IEnumerable<float> values = source.AllValues();
+            var values = source.AllValues();
             if (values.Any())
                 return values.PearsonNaN(other.AllValues());
 
@@ -284,7 +284,7 @@ namespace LinqStatistics.NaN
         /// <returns>The Pearson value of two sequences.</returns>
         public static double? PearsonNaN(this IEnumerable<double?> source, IEnumerable<double?> other)
         {
-            IEnumerable<double> values = source.AllValues();
+            var values = source.AllValues();
             if (values.Any())
                 return values.PearsonNaN(other.AllValues());
 
