@@ -14,7 +14,7 @@ namespace LinqStatistics
         /// <returns>The modes of a sequence of values</returns>
         public static IEnumerable<T> Modes<T>(this IEnumerable<T?> source) where T : struct
         {
-            IEnumerable<T> values = source.AllValues();
+            var values = source.AllValues();
             if (values.Any())
                 return values.Modes<T>();
 
@@ -43,7 +43,7 @@ namespace LinqStatistics
         /// <returns>The mode of a sequence of values</returns>
         public static T? Mode<T>(this IEnumerable<T?> source) where T : struct
         {
-            IEnumerable<T> values = source.AllValues();
+            var values = source.AllValues();
             if (values.Any())
                 return values.Mode<T>();
 
