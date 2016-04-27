@@ -128,6 +128,11 @@
       <DependentUpon>EnumerableStatsHistogram.tt</DependentUpon>
     </Compile>
     <Compile Include="LeastSquares.cs" />
+    <Compile Include="NaN\AverageNaN.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AverageNaN.tt</DependentUpon>
+    </Compile>
     <Compile Include="NaN\EnumerableStatsCovariance.cs">
       <DependentUpon>EnumerableStatsCovariance.tt</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -324,6 +329,12 @@
     <None Include="NaN\EnumerableStatsLeastSquares.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>EnumerableStatsLeastSquares.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="NaN\AverageNaN.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>AverageNaN.cs</LastGenOutput>
     </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

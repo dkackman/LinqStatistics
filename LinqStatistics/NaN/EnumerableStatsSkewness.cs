@@ -36,10 +36,10 @@ namespace LinqStatistics.NaN
             if (source == null)
                 throw new ArgumentNullException("source");
 
-            if (!source.Any())
+            double mean = (double)source.AverageNaN();
+            if (double.IsNaN(mean))
                 return double.NaN;
 
-            double mean = (double)source.Average();
             double s = (double)source.StandardDeviationNaN();
             double M3 = 0;
             int n = 0;
@@ -118,10 +118,10 @@ namespace LinqStatistics.NaN
             if (source == null)
                 throw new ArgumentNullException("source");
 
-            if (!source.Any())
+            double mean = (double)source.AverageNaN();
+            if (double.IsNaN(mean))
                 return double.NaN;
 
-            double mean = (double)source.Average();
             double s = (double)source.StandardDeviationNaN();
             double M3 = 0;
             int n = 0;
@@ -200,10 +200,10 @@ namespace LinqStatistics.NaN
             if (source == null)
                 throw new ArgumentNullException("source");
 
-            if (!source.Any())
+            double mean = (double)source.AverageNaN();
+            if (double.IsNaN(mean))
                 return float.NaN;
 
-            double mean = (double)source.Average();
             double s = (double)source.StandardDeviationNaN();
             double M3 = 0;
             int n = 0;
@@ -282,10 +282,10 @@ namespace LinqStatistics.NaN
             if (source == null)
                 throw new ArgumentNullException("source");
 
-            if (!source.Any())
+            double mean = (double)source.AverageNaN();
+            if (double.IsNaN(mean))
                 return double.NaN;
 
-            double mean = (double)source.Average();
             double s = (double)source.StandardDeviationNaN();
             double M3 = 0;
             int n = 0;

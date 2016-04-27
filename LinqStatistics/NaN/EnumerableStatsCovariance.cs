@@ -47,22 +47,22 @@ namespace LinqStatistics.NaN
 
             if (listSource.Count != listOther.Count)
                 throw new InvalidOperationException("Collections are not of the same length");
-
-            int n = listSource.Count;
-            if (n == 0)
+            
+            var avgSource = listSource.AverageNaN();
+            var avgOther = listOther.AverageNaN();
+            
+            // because we checked that both lists are of the same length we only need to check one list is valid
+            if (double.IsNaN(avgSource))
                 return double.NaN;
 
-            var avgSource = listSource.Average();
-            var avgOther = listOther.Average();
-            
             double covariance = 0;
 
-            for (int i = 0; i < n; i++)
+            for (int i = 0; i < listSource.Count; i++)
             {
                 covariance += (double)((listSource[i] - avgSource) * (listOther[i] - avgOther));
             }
 
-            return (double)(covariance / n); 
+            return (double)(covariance / listSource.Count); 
         }               
  	
         /// <summary>
@@ -100,22 +100,22 @@ namespace LinqStatistics.NaN
 
             if (listSource.Count != listOther.Count)
                 throw new InvalidOperationException("Collections are not of the same length");
-
-            int n = listSource.Count;
-            if (n == 0)
+            
+            var avgSource = listSource.AverageNaN();
+            var avgOther = listOther.AverageNaN();
+            
+            // because we checked that both lists are of the same length we only need to check one list is valid
+            if (double.IsNaN(avgSource))
                 return double.NaN;
 
-            var avgSource = listSource.Average();
-            var avgOther = listOther.Average();
-            
             double covariance = 0;
 
-            for (int i = 0; i < n; i++)
+            for (int i = 0; i < listSource.Count; i++)
             {
                 covariance += (double)((listSource[i] - avgSource) * (listOther[i] - avgOther));
             }
 
-            return (double)(covariance / n); 
+            return (double)(covariance / listSource.Count); 
         }               
  	
         /// <summary>
@@ -153,22 +153,22 @@ namespace LinqStatistics.NaN
 
             if (listSource.Count != listOther.Count)
                 throw new InvalidOperationException("Collections are not of the same length");
-
-            int n = listSource.Count;
-            if (n == 0)
+            
+            var avgSource = listSource.AverageNaN();
+            var avgOther = listOther.AverageNaN();
+            
+            // because we checked that both lists are of the same length we only need to check one list is valid
+            if (float.IsNaN(avgSource))
                 return float.NaN;
 
-            var avgSource = listSource.Average();
-            var avgOther = listOther.Average();
-            
             double covariance = 0;
 
-            for (int i = 0; i < n; i++)
+            for (int i = 0; i < listSource.Count; i++)
             {
                 covariance += (double)((listSource[i] - avgSource) * (listOther[i] - avgOther));
             }
 
-            return (float)(covariance / n); 
+            return (float)(covariance / listSource.Count); 
         }               
  	
         /// <summary>
@@ -206,22 +206,22 @@ namespace LinqStatistics.NaN
 
             if (listSource.Count != listOther.Count)
                 throw new InvalidOperationException("Collections are not of the same length");
-
-            int n = listSource.Count;
-            if (n == 0)
+            
+            var avgSource = listSource.AverageNaN();
+            var avgOther = listOther.AverageNaN();
+            
+            // because we checked that both lists are of the same length we only need to check one list is valid
+            if (double.IsNaN(avgSource))
                 return double.NaN;
 
-            var avgSource = listSource.Average();
-            var avgOther = listOther.Average();
-            
             double covariance = 0;
 
-            for (int i = 0; i < n; i++)
+            for (int i = 0; i < listSource.Count; i++)
             {
                 covariance += (double)((listSource[i] - avgSource) * (listOther[i] - avgOther));
             }
 
-            return (double)(covariance / n); 
+            return (double)(covariance / listSource.Count); 
         }               
      }
 }

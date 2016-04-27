@@ -63,22 +63,22 @@ namespace LinqStatistics.NaN
 
             if (listSource.Count != listOther.Count)
                 throw new InvalidOperationException("Collections are not of the same length");
-
-            int n = listSource.Count;
-            if (n == 0)
+            
+            var avgSource = listSource.AverageNaN();
+            var avgOther = listOther.AverageNaN();
+            
+            // because we checked that both lists are of the same length we only need to check one list is valid
+            if (<#= type.Item2 #>.IsNaN(avgSource))
                 return <#= type.Item2 #>.NaN;
 
-            var avgSource = listSource.Average();
-            var avgOther = listOther.Average();
-            
             double covariance = 0;
 
-            for (int i = 0; i < n; i++)
+            for (int i = 0; i < listSource.Count; i++)
             {
                 covariance += (double)((listSource[i] - avgSource) * (listOther[i] - avgOther));
             }
 
-            return (<#= type.Item2 #>)(covariance / n); 
+            return (<#= type.Item2 #>)(covariance / listSource.Count); 
         }               
  <# } #>
     }

@@ -103,6 +103,12 @@
     <Compile Include="..\LinqStatistics\LeastSquares.cs">
       <Link>LeastSquares.cs</Link>
     </Compile>
+    <Compile Include="..\LinqStatistics\NaN\AverageNaN.cs">
+      <Link>NaN\AverageNaN.cs</Link>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AverageNaN.tt</DependentUpon>
+    </Compile>
     <Compile Include="..\LinqStatistics\NaN\EnumerableStatsCovariance.cs">
       <Link>NaN\EnumerableStatsCovariance.cs</Link>
     </Compile>
@@ -147,6 +153,13 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="..\LinqStatistics\NaN\AverageNaN.tt">
+      <Link>NaN\AverageNaN.tt</Link>
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>AverageNaN.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
