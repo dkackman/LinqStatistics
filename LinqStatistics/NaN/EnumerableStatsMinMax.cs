@@ -40,17 +40,17 @@ namespace LinqStatistics.NaN
             // so that the first comparisons in the aggregate function work as expected
             var minMax = new Range<float>(float.MaxValue, float.MinValue, true);
 
-            long n = 0;
+            bool any = false;
             var result = source.Aggregate<float, Range<float>>(minMax, (accumulator, value) =>
             {
                 var min = Math.Min(accumulator.Min, value);
                 var max = Math.Max(accumulator.Max, value);
-                n++;
+                any = true;
                 
                 return new Range<float>(min, max);
             });
 
-            if (n > 0)
+            if (any)
                 return result;
 
             return new Range<float>(float.NaN, float.NaN);
@@ -122,17 +122,17 @@ namespace LinqStatistics.NaN
             // so that the first comparisons in the aggregate function work as expected
             var minMax = new Range<double>(double.MaxValue, double.MinValue, true);
 
-            long n = 0;
+            bool any = false;
             var result = source.Aggregate<double, Range<double>>(minMax, (accumulator, value) =>
             {
                 var min = Math.Min(accumulator.Min, value);
                 var max = Math.Max(accumulator.Max, value);
-                n++;
+                any = true;
                 
                 return new Range<double>(min, max);
             });
 
-            if (n > 0)
+            if (any)
                 return result;
 
             return new Range<double>(double.NaN, double.NaN);
