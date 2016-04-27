@@ -21,7 +21,6 @@ namespace LinqStatistics.NaN
     {
         new Tuple<string, string>("int", "double"),
         new Tuple<string, string>("long", "double"),
-        // new Tuple<string, string>("decimal", "decimal"),
         new Tuple<string, string>("float", "float"),
         new Tuple<string, string>("double", "double")
     };
