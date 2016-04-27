@@ -48,7 +48,17 @@ namespace LinqStatistics
             if (source == null)
                 throw new ArgumentNullException("source");
 
-            return source.AssignBins(binCount, mode);
+            var minMax = source.MinMax();
+
+            var bins = BinFactory.CreateBins((double)minMax.Min, (double)minMax.Max, binCount, mode);
+
+            foreach (var value in source)
+            {
+                var bin = bins.First(b => b.Contains((double)value));
+                bin.Count++;
+            }
+
+            return bins;
         }
 
         /// <summary>
@@ -107,21 +117,6 @@ namespace LinqStatistics
 
             return source.Select(t => selector(t)).Histogram(binCount, mode);
         }
-
-        private static IEnumerable<Bin> AssignBins(this IEnumerable<int> source, int binCount, BinningMode mode) 
-        { 
-            var minMax = source.MinMax();
-
-            var bins = BinFactory.CreateBins((double)minMax.Min, (double)minMax.Max, binCount, mode);
-
-            foreach (var value in source)
-            {
-                var bin = bins.First(b => b.Contains((double)value));
-                bin.Count++;
-            }
-
-            return bins;
-        }
                 /// <summary>
         /// Computes the Histogram of a sequence of long values.
         /// </summary>
@@ -134,7 +129,17 @@ namespace LinqStatistics
             if (source == null)
                 throw new ArgumentNullException("source");
 
-            return source.AssignBins(binCount, mode);
+            var minMax = source.MinMax();
+
+            var bins = BinFactory.CreateBins((double)minMax.Min, (double)minMax.Max, binCount, mode);
+
+            foreach (var value in source)
+            {
+                var bin = bins.First(b => b.Contains((double)value));
+                bin.Count++;
+            }
+
+            return bins;
         }
 
         /// <summary>
@@ -193,21 +198,6 @@ namespace LinqStatistics
 
             return source.Select(t => selector(t)).Histogram(binCount, mode);
         }
-
-        private static IEnumerable<Bin> AssignBins(this IEnumerable<long> source, int binCount, BinningMode mode) 
-        { 
-            var minMax = source.MinMax();
-
-            var bins = BinFactory.CreateBins((double)minMax.Min, (double)minMax.Max, binCount, mode);
-
-            foreach (var value in source)
-            {
-                var bin = bins.First(b => b.Contains((double)value));
-                bin.Count++;
-            }
-
-            return bins;
-        }
                 /// <summary>
         /// Computes the Histogram of a sequence of float values.
         /// </summary>
@@ -220,7 +210,17 @@ namespace LinqStatistics
             if (source == null)
                 throw new ArgumentNullException("source");
 
-            return source.AssignBins(binCount, mode);
+            var minMax = source.MinMax();
+
+            var bins = BinFactory.CreateBins((double)minMax.Min, (double)minMax.Max, binCount, mode);
+
+            foreach (var value in source)
+            {
+                var bin = bins.First(b => b.Contains((double)value));
+                bin.Count++;
+            }
+
+            return bins;
         }
 
         /// <summary>
@@ -279,21 +279,6 @@ namespace LinqStatistics
 
             return source.Select(t => selector(t)).Histogram(binCount, mode);
         }
-
-        private static IEnumerable<Bin> AssignBins(this IEnumerable<float> source, int binCount, BinningMode mode) 
-        { 
-            var minMax = source.MinMax();
-
-            var bins = BinFactory.CreateBins((double)minMax.Min, (double)minMax.Max, binCount, mode);
-
-            foreach (var value in source)
-            {
-                var bin = bins.First(b => b.Contains((double)value));
-                bin.Count++;
-            }
-
-            return bins;
-        }
                 /// <summary>
         /// Computes the Histogram of a sequence of double values.
         /// </summary>
@@ -306,7 +291,17 @@ namespace LinqStatistics
             if (source == null)
                 throw new ArgumentNullException("source");
 
-            return source.AssignBins(binCount, mode);
+            var minMax = source.MinMax();
+
+            var bins = BinFactory.CreateBins((double)minMax.Min, (double)minMax.Max, binCount, mode);
+
+            foreach (var value in source)
+            {
+                var bin = bins.First(b => b.Contains((double)value));
+                bin.Count++;
+            }
+
+            return bins;
         }
 
         /// <summary>
@@ -365,21 +360,6 @@ namespace LinqStatistics
 
             return source.Select(t => selector(t)).Histogram(binCount, mode);
         }
-
-        private static IEnumerable<Bin> AssignBins(this IEnumerable<double> source, int binCount, BinningMode mode) 
-        { 
-            var minMax = source.MinMax();
-
-            var bins = BinFactory.CreateBins((double)minMax.Min, (double)minMax.Max, binCount, mode);
-
-            foreach (var value in source)
-            {
-                var bin = bins.First(b => b.Contains((double)value));
-                bin.Count++;
-            }
-
-            return bins;
-        }
                 /// <summary>
         /// Computes the Histogram of a sequence of decimal values.
         /// </summary>
@@ -392,7 +372,17 @@ namespace LinqStatistics
             if (source == null)
                 throw new ArgumentNullException("source");
 
-            return source.AssignBins(binCount, mode);
+            var minMax = source.MinMax();
+
+            var bins = BinFactory.CreateBins((double)minMax.Min, (double)minMax.Max, binCount, mode);
+
+            foreach (var value in source)
+            {
+                var bin = bins.First(b => b.Contains((double)value));
+                bin.Count++;
+            }
+
+            return bins;
         }
 
         /// <summary>
@@ -450,21 +440,6 @@ namespace LinqStatistics
                 throw new ArgumentNullException("selector");
 
             return source.Select(t => selector(t)).Histogram(binCount, mode);
-        }
-
-        private static IEnumerable<Bin> AssignBins(this IEnumerable<decimal> source, int binCount, BinningMode mode) 
-        { 
-            var minMax = source.MinMax();
-
-            var bins = BinFactory.CreateBins((double)minMax.Min, (double)minMax.Max, binCount, mode);
-
-            foreach (var value in source)
-            {
-                var bin = bins.First(b => b.Contains((double)value));
-                bin.Count++;
-            }
-
-            return bins;
         }
             }
 }
