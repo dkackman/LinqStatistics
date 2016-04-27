@@ -42,15 +42,17 @@ namespace LinqStatistics.NaN
                 throw new ArgumentNullException("source");
 
             double sum = 0;
-            long count = 0;
-            checked {
-                foreach (var v in source) {
+            long n = 0;
+            checked 
+            {
+                foreach (var v in source) 
+                {
                     sum += v;
-                    count++;
+                    n++;
                 }
             }
 
-            return count > 0 ? (double)(sum / count) :  double.NaN;
+            return n > 0 ? (double)(sum / n) : double.NaN;
         }
 
         /// <summary>
@@ -125,15 +127,17 @@ namespace LinqStatistics.NaN
                 throw new ArgumentNullException("source");
 
             double sum = 0;
-            long count = 0;
-            checked {
-                foreach (var v in source) {
+            long n = 0;
+            checked 
+            {
+                foreach (var v in source) 
+                {
                     sum += v;
-                    count++;
+                    n++;
                 }
             }
 
-            return count > 0 ? (double)(sum / count) :  double.NaN;
+            return n > 0 ? (double)(sum / n) : double.NaN;
         }
 
         /// <summary>
@@ -208,15 +212,17 @@ namespace LinqStatistics.NaN
                 throw new ArgumentNullException("source");
 
             double sum = 0;
-            long count = 0;
-            checked {
-                foreach (var v in source) {
+            long n = 0;
+            checked 
+            {
+                foreach (var v in source) 
+                {
                     sum += v;
-                    count++;
+                    n++;
                 }
             }
 
-            return count > 0 ? (float)(sum / count) :  float.NaN;
+            return n > 0 ? (float)(sum / n) : float.NaN;
         }
 
         /// <summary>
@@ -291,15 +297,17 @@ namespace LinqStatistics.NaN
                 throw new ArgumentNullException("source");
 
             double sum = 0;
-            long count = 0;
-            checked {
-                foreach (var v in source) {
+            long n = 0;
+            checked 
+            {
+                foreach (var v in source) 
+                {
                     sum += v;
-                    count++;
+                    n++;
                 }
             }
 
-            return count > 0 ? (double)(sum / count) :  double.NaN;
+            return n > 0 ? (double)(sum / n) : double.NaN;
         }
 
         /// <summary>
