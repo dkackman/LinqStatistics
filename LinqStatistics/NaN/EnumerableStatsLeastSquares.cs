@@ -37,7 +37,7 @@ namespace LinqStatistics.NaN
             if (source == null)
                 throw new ArgumentNullException("source");
 
-            int n = 0;
+            long n = 0;
             double sumX = 0;
             double sumY = 0;
             double sumXX = 0;
@@ -125,7 +125,7 @@ namespace LinqStatistics.NaN
             if (source == null)
                 throw new ArgumentNullException("source");
 
-            int n = 0;
+            long n = 0;
             double sumX = 0;
             double sumY = 0;
             double sumXX = 0;
@@ -213,7 +213,7 @@ namespace LinqStatistics.NaN
             if (source == null)
                 throw new ArgumentNullException("source");
 
-            int n = 0;
+            long n = 0;
             double sumX = 0;
             double sumY = 0;
             double sumXX = 0;
@@ -301,7 +301,7 @@ namespace LinqStatistics.NaN
             if (source == null)
                 throw new ArgumentNullException("source");
 
-            int n = 0;
+            long n = 0;
             double sumX = 0;
             double sumY = 0;
             double sumXX = 0;
@@ -389,7 +389,7 @@ namespace LinqStatistics.NaN
             if (source == null)
                 throw new ArgumentNullException("source");
 
-            int n = 0;
+            long n = 0;
             double sumX = 0;
             double sumY = 0;
             double sumXX = 0;

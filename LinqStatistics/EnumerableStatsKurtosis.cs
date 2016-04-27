@@ -38,7 +38,7 @@ namespace LinqStatistics
 
             double mean = (double)source.Average();
 
-            int n = 0;
+            long n = 0;
             double meanv = 0;
             double M2 = 0;
             double M4 = 0;
@@ -129,7 +129,7 @@ namespace LinqStatistics
 
             double mean = (double)source.Average();
 
-            int n = 0;
+            long n = 0;
             double meanv = 0;
             double M2 = 0;
             double M4 = 0;
@@ -220,7 +220,7 @@ namespace LinqStatistics
 
             double mean = (double)source.Average();
 
-            int n = 0;
+            long n = 0;
             double meanv = 0;
             double M2 = 0;
             double M4 = 0;
@@ -311,7 +311,7 @@ namespace LinqStatistics
 
             double mean = (double)source.Average();
 
-            int n = 0;
+            long n = 0;
             double meanv = 0;
             double M2 = 0;
             double M4 = 0;
@@ -402,7 +402,7 @@ namespace LinqStatistics
 
             double mean = (double)source.Average();
 
-            int n = 0;
+            long n = 0;
             double meanv = 0;
             double M2 = 0;
             double M4 = 0;

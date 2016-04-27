@@ -42,7 +42,7 @@ namespace LinqStatistics.NaN
 
             double s = (double)source.StandardDeviationNaN();
             double M3 = 0;
-            int n = 0;
+            long n = 0;
 
             foreach (var x in source)
             {
@@ -124,7 +124,7 @@ namespace LinqStatistics.NaN
 
             double s = (double)source.StandardDeviationNaN();
             double M3 = 0;
-            int n = 0;
+            long n = 0;
 
             foreach (var x in source)
             {
@@ -206,7 +206,7 @@ namespace LinqStatistics.NaN
 
             double s = (double)source.StandardDeviationNaN();
             double M3 = 0;
-            int n = 0;
+            long n = 0;
 
             foreach (var x in source)
             {
@@ -288,7 +288,7 @@ namespace LinqStatistics.NaN
 
             double s = (double)source.StandardDeviationNaN();
             double M3 = 0;
-            int n = 0;
+            long n = 0;
 
             foreach (var x in source)
             {

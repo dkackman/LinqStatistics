@@ -38,7 +38,7 @@ namespace LinqStatistics
                 throw new ArgumentNullException("source");
 
             double s = 0;
-            int n = 0;
+            long n = 0;
 
             foreach (var d in source)
             {
@@ -116,7 +116,7 @@ namespace LinqStatistics
                 throw new ArgumentNullException("source");
 
             double s = 0;
-            int n = 0;
+            long n = 0;
 
             foreach (var d in source)
             {
@@ -194,7 +194,7 @@ namespace LinqStatistics
                 throw new ArgumentNullException("source");
 
             double s = 0;
-            int n = 0;
+            long n = 0;
 
             foreach (var d in source)
             {
@@ -272,7 +272,7 @@ namespace LinqStatistics
                 throw new ArgumentNullException("source");
 
             double s = 0;
-            int n = 0;
+            long n = 0;
 
             foreach (var d in source)
             {
@@ -350,7 +350,7 @@ namespace LinqStatistics
                 throw new ArgumentNullException("source");
 
             double s = 0;
-            int n = 0;
+            long n = 0;
 
             foreach (var d in source)
             {

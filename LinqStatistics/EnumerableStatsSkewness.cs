@@ -39,7 +39,7 @@ namespace LinqStatistics
             double mean = (double)source.Average();
             double s = (double)source.StandardDeviation();
             double M3 = 0;
-            int n = 0;
+            long n = 0;
 
             foreach (var x in source)
             {
@@ -118,7 +118,7 @@ namespace LinqStatistics
             double mean = (double)source.Average();
             double s = (double)source.StandardDeviation();
             double M3 = 0;
-            int n = 0;
+            long n = 0;
 
             foreach (var x in source)
             {
@@ -197,7 +197,7 @@ namespace LinqStatistics
             double mean = (double)source.Average();
             double s = (double)source.StandardDeviation();
             double M3 = 0;
-            int n = 0;
+            long n = 0;
 
             foreach (var x in source)
             {
@@ -276,7 +276,7 @@ namespace LinqStatistics
             double mean = (double)source.Average();
             double s = (double)source.StandardDeviation();
             double M3 = 0;
-            int n = 0;
+            long n = 0;
 
             foreach (var x in source)
             {
@@ -355,7 +355,7 @@ namespace LinqStatistics
             double mean = (double)source.Average();
             double s = (double)source.StandardDeviation();
             double M3 = 0;
-            int n = 0;
+            long n = 0;
 
             foreach (var x in source)
             {

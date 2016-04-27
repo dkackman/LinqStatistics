@@ -41,7 +41,7 @@ namespace LinqStatistics
             if (source == null)
                 throw new ArgumentNullException("source");
 
-            int n = 0;
+            long n = 0;
             double mean = 0;
             double M2 = 0;
 
@@ -131,7 +131,7 @@ namespace LinqStatistics
             if (source == null)
                 throw new ArgumentNullException("source");
 
-            int n = 0;
+            long n = 0;
             double mean = 0;
             double M2 = 0;
 
@@ -221,7 +221,7 @@ namespace LinqStatistics
             if (source == null)
                 throw new ArgumentNullException("source");
 
-            int n = 0;
+            long n = 0;
             double mean = 0;
             double M2 = 0;
 
@@ -311,7 +311,7 @@ namespace LinqStatistics
             if (source == null)
                 throw new ArgumentNullException("source");
 
-            int n = 0;
+            long n = 0;
             double mean = 0;
             double M2 = 0;
 
@@ -401,7 +401,7 @@ namespace LinqStatistics
             if (source == null)
                 throw new ArgumentNullException("source");
 
-            int n = 0;
+            long n = 0;
             double mean = 0;
             double M2 = 0;
 

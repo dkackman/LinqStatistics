@@ -41,7 +41,7 @@ namespace LinqStatistics.NaN
             if (double.IsNaN(mean))
                 return double.NaN;
 
-            int n = 0;
+            long n = 0;
             double meanv = 0;
             double M2 = 0;
             double M4 = 0;
@@ -135,7 +135,7 @@ namespace LinqStatistics.NaN
             if (double.IsNaN(mean))
                 return double.NaN;
 
-            int n = 0;
+            long n = 0;
             double meanv = 0;
             double M2 = 0;
             double M4 = 0;
@@ -229,7 +229,7 @@ namespace LinqStatistics.NaN
             if (double.IsNaN(mean))
                 return float.NaN;
 
-            int n = 0;
+            long n = 0;
             double meanv = 0;
             double M2 = 0;
             double M4 = 0;
@@ -323,7 +323,7 @@ namespace LinqStatistics.NaN
             if (double.IsNaN(mean))
                 return double.NaN;
 
-            int n = 0;
+            long n = 0;
             double meanv = 0;
             double M2 = 0;
             double M4 = 0;
