@@ -51,7 +51,7 @@ namespace LinqStatistics.NaN
             if (source == null)
                 throw new ArgumentNullException("source");
 
-            double mean = (double)source.Average();
+            double mean = (double)source.AverageNaN();
 
             if (double.IsNaN(mean))
                 return <#= type.Item2 #>.NaN;

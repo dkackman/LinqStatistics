@@ -36,7 +36,7 @@ namespace LinqStatistics.NaN
             if (source == null)
                 throw new ArgumentNullException("source");
 
-            double mean = (double)source.Average();
+            double mean = (double)source.AverageNaN();
 
             if (double.IsNaN(mean))
                 return double.NaN;
@@ -133,7 +133,7 @@ namespace LinqStatistics.NaN
             if (source == null)
                 throw new ArgumentNullException("source");
 
-            double mean = (double)source.Average();
+            double mean = (double)source.AverageNaN();
 
             if (double.IsNaN(mean))
                 return double.NaN;
@@ -230,7 +230,7 @@ namespace LinqStatistics.NaN
             if (source == null)
                 throw new ArgumentNullException("source");
 
-            double mean = (double)source.Average();
+            double mean = (double)source.AverageNaN();
 
             if (double.IsNaN(mean))
                 return float.NaN;
@@ -327,7 +327,7 @@ namespace LinqStatistics.NaN
             if (source == null)
                 throw new ArgumentNullException("source");
 
-            double mean = (double)source.Average();
+            double mean = (double)source.AverageNaN();
 
             if (double.IsNaN(mean))
                 return double.NaN;
