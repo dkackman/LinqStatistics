@@ -20,7 +20,7 @@ namespace LinqStatistics.NaN
         ///     empty or contains only values that are null.</returns>
         public static LeastSquares? LeastSquaresNaN(this IEnumerable<Tuple<int?, int?>> source)
         {
-            IEnumerable<Tuple<int, int>> values = source.AllValues();
+            var values = source.AllValues();
             if (values.Any())
                 return values.LeastSquaresNaN();
 
@@ -111,7 +111,7 @@ namespace LinqStatistics.NaN
         ///     empty or contains only values that are null.</returns>
         public static LeastSquares? LeastSquaresNaN(this IEnumerable<Tuple<long?, long?>> source)
         {
-            IEnumerable<Tuple<long, long>> values = source.AllValues();
+            var values = source.AllValues();
             if (values.Any())
                 return values.LeastSquaresNaN();
 
@@ -202,7 +202,7 @@ namespace LinqStatistics.NaN
         ///     empty or contains only values that are null.</returns>
         public static LeastSquares? LeastSquaresNaN(this IEnumerable<Tuple<float?, float?>> source)
         {
-            IEnumerable<Tuple<float, float>> values = source.AllValues();
+            var values = source.AllValues();
             if (values.Any())
                 return values.LeastSquaresNaN();
 
@@ -293,7 +293,7 @@ namespace LinqStatistics.NaN
         ///     empty or contains only values that are null.</returns>
         public static LeastSquares? LeastSquaresNaN(this IEnumerable<Tuple<double?, double?>> source)
         {
-            IEnumerable<Tuple<double, double>> values = source.AllValues();
+            var values = source.AllValues();
             if (values.Any())
                 return values.LeastSquaresNaN();
 
@@ -384,7 +384,7 @@ namespace LinqStatistics.NaN
         ///     empty or contains only values that are null.</returns>
         public static LeastSquares? LeastSquaresNaN(this IEnumerable<Tuple<decimal?, decimal?>> source)
         {
-            IEnumerable<Tuple<decimal, decimal>> values = source.AllValues();
+            var values = source.AllValues();
             if (values.Any())
                 return values.LeastSquaresNaN();
 

@@ -31,7 +31,7 @@ namespace LinqStatistics
         /// <returns>The Range.</returns>
         public static <#= type #>? Range(this IEnumerable<<#= type #>?> source)
         {
-            IEnumerable<<#= type #>> values = source.AllValues();
+            var values = source.AllValues();
             if (values.Any())
                 return values.Range();
 

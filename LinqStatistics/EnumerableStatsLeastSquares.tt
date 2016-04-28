@@ -32,7 +32,7 @@ namespace LinqStatistics
         ///     empty or contains only values that are null.</returns>
         public static LeastSquares? LeastSquares(this IEnumerable<Tuple<<#= type #>?, <#= type #>?>> source)
         {
-            IEnumerable<Tuple<<#= type #>, <#= type #>>> values = source.AllValues();
+            var values = source.AllValues();
             if (values.Any())
                 return values.LeastSquares();
 

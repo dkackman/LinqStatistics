@@ -19,7 +19,7 @@ namespace LinqStatistics
         /// <returns>The Range.</returns>
         public static int? Range(this IEnumerable<int?> source)
         {
-            IEnumerable<int> values = source.AllValues();
+            var values = source.AllValues();
             if (values.Any())
                 return values.Range();
 
@@ -82,7 +82,7 @@ namespace LinqStatistics
         /// <returns>The Range.</returns>
         public static long? Range(this IEnumerable<long?> source)
         {
-            IEnumerable<long> values = source.AllValues();
+            var values = source.AllValues();
             if (values.Any())
                 return values.Range();
 
@@ -145,7 +145,7 @@ namespace LinqStatistics
         /// <returns>The Range.</returns>
         public static float? Range(this IEnumerable<float?> source)
         {
-            IEnumerable<float> values = source.AllValues();
+            var values = source.AllValues();
             if (values.Any())
                 return values.Range();
 
@@ -208,7 +208,7 @@ namespace LinqStatistics
         /// <returns>The Range.</returns>
         public static double? Range(this IEnumerable<double?> source)
         {
-            IEnumerable<double> values = source.AllValues();
+            var values = source.AllValues();
             if (values.Any())
                 return values.Range();
 
@@ -271,7 +271,7 @@ namespace LinqStatistics
         /// <returns>The Range.</returns>
         public static decimal? Range(this IEnumerable<decimal?> source)
         {
-            IEnumerable<decimal> values = source.AllValues();
+            var values = source.AllValues();
             if (values.Any())
                 return values.Range();
 

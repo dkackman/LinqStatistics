@@ -19,7 +19,7 @@ namespace LinqStatistics.NaN
         /// <returns>The Range.</returns>
         public static float? RangeNaN(this IEnumerable<float?> source)
         {
-            IEnumerable<float> values = source.AllValues();
+            var values = source.AllValues();
             if (values.Any())
                 return values.RangeNaN();
 
@@ -82,7 +82,7 @@ namespace LinqStatistics.NaN
         /// <returns>The Range.</returns>
         public static double? RangeNaN(this IEnumerable<double?> source)
         {
-            IEnumerable<double> values = source.AllValues();
+            var values = source.AllValues();
             if (values.Any())
                 return values.RangeNaN();
 

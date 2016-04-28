@@ -32,7 +32,7 @@ namespace LinqStatistics.NaN
         ///     empty or contains only values that are null.</returns>
         public static LeastSquares? LeastSquaresNaN(this IEnumerable<Tuple<<#= type #>?, <#= type #>?>> source)
         {
-            IEnumerable<Tuple<<#= type #>, <#= type #>>> values = source.AllValues();
+            var values = source.AllValues();
             if (values.Any())
                 return values.LeastSquaresNaN();
 
