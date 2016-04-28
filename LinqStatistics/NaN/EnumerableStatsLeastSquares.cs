@@ -9,7 +9,7 @@ using System.Linq;
 
 namespace LinqStatistics.NaN
 {
-    public static partial class EnumerableStatsNaN
+    public static partial class EnumerableStats
     {
     	
         /// <summary>

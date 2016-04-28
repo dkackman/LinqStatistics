@@ -9,6 +9,10 @@ using System.Linq;
 
 namespace LinqStatistics.NaN
 {
+    /// <summary>
+    /// Static class with statistical extension methods for <see cref="IEnumerable{T}"/>
+    /// Methods return NaN instead of throwing exceptions in cases that would result in divide by zero
+    /// </summary>
     public static partial class EnumerableStats
     {
     	
