@@ -46,5 +46,6 @@
     <file src="..\LinqStatistics\bin\Release\LinqStatistics.pdb" target="lib\net40" />
 
     <file src="..\LinqStatistics\*.cs" target="src" />
+    <file src="..\LinqStatistics\NaN\*.cs" target="src\NaN" />
   </files>
 </package>
