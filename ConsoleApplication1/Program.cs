@@ -22,7 +22,7 @@ namespace ConsoleApplication1
                 Marshal.Copy(data.Scan0, buffer, 0, buffer.Length);
                 bitmap.UnlockBits(data);
 
-                List<int> colors = new List<int>();
+                var colors = new List<int>();
 
                 // now pack every three bytes (3 because we have a 24 bit format (no alpha)) in an int
                 // this int will represent that color in a numeric format
