@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Linq;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Drawing.Imaging;
@@ -36,8 +35,8 @@ namespace ConsoleApplication1
                 int? mode = colors.Mode<int>();
                 if (mode.HasValue)
                 {
-                    Color color = Color.FromArgb(mode.Value);
-                    Console.WriteLine("Modal colors is R={0}, G={1}, B={2}", color.R, color.G, color.B);
+                    Color color = Color.FromArgb(mode.Value);                    
+                    Console.WriteLine("Modal color is R={0}, G={1}, B={2}", color.R, color.G, color.B);
                 }
                 else
                 {
@@ -50,7 +49,7 @@ namespace ConsoleApplication1
                 using (var writer = new StreamWriter(file))
                 {
                     writer.WriteLine("color,count");
-                    foreach(var bin in histogram)
+                    foreach (var bin in histogram)
                     {
                         writer.WriteLine("{0},{1}", Math.Round(bin.RepresentativeValue, 0, MidpointRounding.AwayFromZero), bin.Count);
                     }
