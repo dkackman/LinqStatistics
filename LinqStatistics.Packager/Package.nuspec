@@ -19,7 +19,7 @@
       - Some interface changing refactoring (Range and Bin classes)
       - Added portable library
       2.1.0
-      - Added alternate implmentations that return NaN instead of excepting under invalid input conditions
+      - Added alternate implementations that return NaN instead of excepting under invalid input conditions
       - Add checked scope to accumulator blocks
     </releaseNotes>
     <summary>
