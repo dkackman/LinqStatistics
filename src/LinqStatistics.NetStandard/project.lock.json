@@ -1,7 +1,7 @@
 {
   "version": 2,
   "targets": {
-    ".NETPortable,Version=v4.5,Profile=Profile111": {
+    ".NETStandard,Version=v1.1": {
       "Microsoft.NETCore.Jit/1.0.2": {
         "type": "package"
       },
@@ -118,182 +118,227 @@
       },
       "System.Collections/4.0.11": {
         "type": "package",
-        "compile": {
-          "ref/portable-net45+win8+wp8+wpa81/_._": {}
+        "dependencies": {
+          "Microsoft.NETCore.Platforms": "1.0.1",
+          "Microsoft.NETCore.Targets": "1.0.1",
+          "System.Runtime": "4.1.0"
         },
-        "runtime": {
-          "lib/portable-net45+win8+wp8+wpa81/_._": {}
+        "compile": {
+          "ref/netstandard1.0/System.Collections.dll": {}
         }
       },
       "System.Collections.Concurrent/4.0.12": {
         "type": "package",
-        "compile": {
-          "ref/portable-net45+win8+wpa81/_._": {}
+        "dependencies": {
+          "System.Runtime": "4.1.0",
+          "System.Threading.Tasks": "4.0.11"
         },
-        "runtime": {
-          "lib/portable-net45+win8+wpa81/_._": {}
+        "compile": {
+          "ref/netstandard1.1/System.Collections.Concurrent.dll": {}
         }
       },
       "System.Diagnostics.Debug/4.0.11": {
         "type": "package",
-        "compile": {
-          "ref/portable-net45+win8+wp8+wpa81/_._": {}
+        "dependencies": {
+          "Microsoft.NETCore.Platforms": "1.0.1",
+          "Microsoft.NETCore.Targets": "1.0.1",
+          "System.Runtime": "4.1.0"
         },
-        "runtime": {
-          "lib/portable-net45+win8+wp8+wpa81/_._": {}
+        "compile": {
+          "ref/netstandard1.0/System.Diagnostics.Debug.dll": {}
         }
       },
       "System.Diagnostics.Tools/4.0.1": {
         "type": "package",
-        "compile": {
-          "ref/portable-net45+win8+wp8+wpa81/_._": {}
+        "dependencies": {
+          "Microsoft.NETCore.Platforms": "1.0.1",
+          "Microsoft.NETCore.Targets": "1.0.1",
+          "System.Runtime": "4.1.0"
         },
-        "runtime": {
-          "lib/portable-net45+win8+wp8+wpa81/_._": {}
+        "compile": {
+          "ref/netstandard1.0/System.Diagnostics.Tools.dll": {}
         }
       },
       "System.Diagnostics.Tracing/4.1.0": {
         "type": "package",
-        "compile": {
-          "ref/portable-net45+win8+wpa81/_._": {}
+        "dependencies": {
+          "Microsoft.NETCore.Platforms": "1.0.1",
+          "Microsoft.NETCore.Targets": "1.0.1",
+          "System.Runtime": "4.1.0"
         },
-        "runtime": {
-          "lib/portable-net45+win8+wpa81/_._": {}
+        "compile": {
+          "ref/netstandard1.1/System.Diagnostics.Tracing.dll": {}
         }
       },
       "System.Globalization/4.0.11": {
         "type": "package",
-        "compile": {
-          "ref/portable-net45+win8+wp8+wpa81/_._": {}
+        "dependencies": {
+          "Microsoft.NETCore.Platforms": "1.0.1",
+          "Microsoft.NETCore.Targets": "1.0.1",
+          "System.Runtime": "4.1.0"
         },
-        "runtime": {
-          "lib/portable-net45+win8+wp8+wpa81/_._": {}
+        "compile": {
+          "ref/netstandard1.0/System.Globalization.dll": {}
         }
       },
       "System.IO/4.1.0": {
         "type": "package",
-        "compile": {
-          "ref/portable-net45+win8+wp8+wpa81/_._": {}
+        "dependencies": {
+          "Microsoft.NETCore.Platforms": "1.0.1",
+          "Microsoft.NETCore.Targets": "1.0.1",
+          "System.Runtime": "4.1.0",
+          "System.Text.Encoding": "4.0.11",
+          "System.Threading.Tasks": "4.0.11"
         },
-        "runtime": {
-          "lib/portable-net45+win8+wp8+wpa81/_._": {}
+        "compile": {
+          "ref/netstandard1.0/System.IO.dll": {}
         }
       },
       "System.IO.Compression/4.1.0": {
         "type": "package",
-        "compile": {
-          "ref/portable-net45+win8+wpa81/_._": {}
+        "dependencies": {
+          "System.IO": "4.1.0",
+          "System.Runtime": "4.1.0",
+          "System.Text.Encoding": "4.0.11"
         },
-        "runtime": {
-          "lib/portable-net45+win8+wpa81/_._": {}
+        "compile": {
+          "ref/netstandard1.1/System.IO.Compression.dll": {}
         }
       },
       "System.Linq/4.1.0": {
         "type": "package",
-        "compile": {
-          "ref/portable-net45+win8+wp8+wpa81/_._": {}
+        "dependencies": {
+          "System.Collections": "4.0.11",
+          "System.Runtime": "4.1.0"
         },
-        "runtime": {
-          "lib/portable-net45+win8+wp8+wpa81/_._": {}
+        "compile": {
+          "ref/netstandard1.0/System.Linq.dll": {}
         }
       },
       "System.Linq.Expressions/4.1.0": {
         "type": "package",
-        "compile": {
-          "ref/portable-net45+win8+wp8+wpa81/_._": {}
+        "dependencies": {
+          "System.Reflection": "4.1.0",
+          "System.Runtime": "4.1.0"
         },
-        "runtime": {
-          "lib/portable-net45+win8+wp8+wpa81/_._": {}
+        "compile": {
+          "ref/netstandard1.0/System.Linq.Expressions.dll": {}
         }
       },
       "System.Net.Http/4.1.0": {
         "type": "package",
-        "compile": {
-          "ref/portable-net45+win8+wpa81/_._": {}
+        "dependencies": {
+          "System.IO": "4.1.0",
+          "System.Net.Primitives": "4.0.11",
+          "System.Runtime": "4.1.0",
+          "System.Text.Encoding": "4.0.11",
+          "System.Threading.Tasks": "4.0.11"
         },
-        "runtime": {
-          "lib/portable-net45+win8+wpa81/_._": {}
+        "compile": {
+          "ref/netstandard1.1/System.Net.Http.dll": {}
         }
       },
       "System.Net.Primitives/4.0.11": {
         "type": "package",
-        "compile": {
-          "ref/portable-net45+win8+wp8+wpa81/_._": {}
+        "dependencies": {
+          "Microsoft.NETCore.Platforms": "1.0.1",
+          "Microsoft.NETCore.Targets": "1.0.1",
+          "System.Runtime": "4.1.0"
         },
-        "runtime": {
-          "lib/portable-net45+win8+wp8+wpa81/_._": {}
+        "compile": {
+          "ref/netstandard1.1/System.Net.Primitives.dll": {}
         }
       },
       "System.ObjectModel/4.0.12": {
         "type": "package",
-        "compile": {
-          "ref/portable-net45+win8+wp8+wpa81/_._": {}
+        "dependencies": {
+          "System.Runtime": "4.1.0"
         },
-        "runtime": {
-          "lib/portable-net45+win8+wp8+wpa81/_._": {}
+        "compile": {
+          "ref/netstandard1.0/System.ObjectModel.dll": {}
         }
       },
       "System.Reflection/4.1.0": {
         "type": "package",
-        "compile": {
-          "ref/portable-net45+win8+wp8+wpa81/_._": {}
+        "dependencies": {
+          "Microsoft.NETCore.Platforms": "1.0.1",
+          "Microsoft.NETCore.Targets": "1.0.1",
+          "System.IO": "4.1.0",
+          "System.Reflection.Primitives": "4.0.1",
+          "System.Runtime": "4.1.0"
         },
-        "runtime": {
-          "lib/portable-net45+win8+wp8+wpa81/_._": {}
+        "compile": {
+          "ref/netstandard1.0/System.Reflection.dll": {}
         }
       },
       "System.Reflection.Extensions/4.0.1": {
         "type": "package",
-        "compile": {
-          "ref/portable-net45+win8+wp8+wpa81/_._": {}
+        "dependencies": {
+          "Microsoft.NETCore.Platforms": "1.0.1",
+          "Microsoft.NETCore.Targets": "1.0.1",
+          "System.Reflection": "4.1.0",
+          "System.Runtime": "4.1.0"
         },
-        "runtime": {
-          "lib/portable-net45+win8+wp8+wpa81/_._": {}
+        "compile": {
+          "ref/netstandard1.0/System.Reflection.Extensions.dll": {}
         }
       },
       "System.Reflection.Primitives/4.0.1": {
         "type": "package",
-        "compile": {
-          "ref/portable-net45+win8+wp8+wpa81/_._": {}
+        "dependencies": {
+          "Microsoft.NETCore.Platforms": "1.0.1",
+          "Microsoft.NETCore.Targets": "1.0.1",
+          "System.Runtime": "4.1.0"
         },
-        "runtime": {
-          "lib/portable-net45+win8+wp8+wpa81/_._": {}
+        "compile": {
+          "ref/netstandard1.0/System.Reflection.Primitives.dll": {}
         }
       },
       "System.Resources.ResourceManager/4.0.1": {
         "type": "package",
-        "compile": {
-          "ref/portable-net45+win8+wp8+wpa81/_._": {}
+        "dependencies": {
+          "Microsoft.NETCore.Platforms": "1.0.1",
+          "Microsoft.NETCore.Targets": "1.0.1",
+          "System.Globalization": "4.0.11",
+          "System.Reflection": "4.1.0",
+          "System.Runtime": "4.1.0"
         },
-        "runtime": {
-          "lib/portable-net45+win8+wp8+wpa81/_._": {}
+        "compile": {
+          "ref/netstandard1.0/System.Resources.ResourceManager.dll": {}
         }
       },
       "System.Runtime/4.1.0": {
         "type": "package",
-        "compile": {
-          "ref/portable-net45+win8+wp80+wpa81/_._": {}
+        "dependencies": {
+          "Microsoft.NETCore.Platforms": "1.0.1",
+          "Microsoft.NETCore.Targets": "1.0.1"
         },
-        "runtime": {
-          "lib/portable-net45+win8+wp80+wpa81/_._": {}
+        "compile": {
+          "ref/netstandard1.0/System.Runtime.dll": {}
         }
       },
       "System.Runtime.Extensions/4.1.0": {
         "type": "package",
-        "compile": {
-          "ref/portable-net45+win8+wp8+wpa81/_._": {}
+        "dependencies": {
+          "Microsoft.NETCore.Platforms": "1.0.1",
+          "Microsoft.NETCore.Targets": "1.0.1",
+          "System.Runtime": "4.1.0"
         },
-        "runtime": {
-          "lib/portable-net45+win8+wp8+wpa81/_._": {}
+        "compile": {
+          "ref/netstandard1.0/System.Runtime.Extensions.dll": {}
         }
       },
       "System.Runtime.InteropServices/4.1.0": {
         "type": "package",
-        "compile": {
-          "ref/portable-net45+win8+wpa81/_._": {}
+        "dependencies": {
+          "Microsoft.NETCore.Platforms": "1.0.1",
+          "Microsoft.NETCore.Targets": "1.0.1",
+          "System.Reflection": "4.1.0",
+          "System.Reflection.Primitives": "4.0.1",
+          "System.Runtime": "4.1.0"
         },
-        "runtime": {
-          "lib/portable-net45+win8+wpa81/_._": {}
+        "compile": {
+          "ref/netstandard1.1/System.Runtime.InteropServices.dll": {}
         }
       },
       "System.Runtime.InteropServices.RuntimeInformation/4.0.0": {
@@ -323,74 +368,87 @@
       },
       "System.Runtime.Numerics/4.0.1": {
         "type": "package",
-        "compile": {
-          "ref/portable-net45+win8+wpa81/_._": {}
+        "dependencies": {
+          "System.Runtime": "4.1.0"
         },
-        "runtime": {
-          "lib/portable-net45+win8+wpa81/_._": {}
+        "compile": {
+          "ref/netstandard1.1/System.Runtime.Numerics.dll": {}
         }
       },
       "System.Text.Encoding/4.0.11": {
         "type": "package",
-        "compile": {
-          "ref/portable-net45+win8+wp8+wpa81/_._": {}
+        "dependencies": {
+          "Microsoft.NETCore.Platforms": "1.0.1",
+          "Microsoft.NETCore.Targets": "1.0.1",
+          "System.Runtime": "4.1.0"
         },
-        "runtime": {
-          "lib/portable-net45+win8+wp8+wpa81/_._": {}
+        "compile": {
+          "ref/netstandard1.0/System.Text.Encoding.dll": {}
         }
       },
       "System.Text.Encoding.Extensions/4.0.11": {
         "type": "package",
-        "compile": {
-          "ref/portable-net45+win8+wp8+wpa81/_._": {}
+        "dependencies": {
+          "Microsoft.NETCore.Platforms": "1.0.1",
+          "Microsoft.NETCore.Targets": "1.0.1",
+          "System.Runtime": "4.1.0",
+          "System.Text.Encoding": "4.0.11"
         },
-        "runtime": {
-          "lib/portable-net45+win8+wp8+wpa81/_._": {}
+        "compile": {
+          "ref/netstandard1.0/System.Text.Encoding.Extensions.dll": {}
         }
       },
       "System.Text.RegularExpressions/4.1.0": {
         "type": "package",
-        "compile": {
-          "ref/portable-net45+win8+wp8+wpa81/_._": {}
+        "dependencies": {
+          "System.Runtime": "4.1.0"
         },
-        "runtime": {
-          "lib/portable-net45+win8+wp8+wpa81/_._": {}
+        "compile": {
+          "ref/netstandard1.0/System.Text.RegularExpressions.dll": {}
         }
       },
       "System.Threading/4.0.11": {
         "type": "package",
-        "compile": {
-          "ref/portable-net45+win8+wp8+wpa81/_._": {}
+        "dependencies": {
+          "System.Runtime": "4.1.0",
+          "System.Threading.Tasks": "4.0.11"
         },
-        "runtime": {
-          "lib/portable-net45+win8+wp8+wpa81/_._": {}
+        "compile": {
+          "ref/netstandard1.0/System.Threading.dll": {}
         }
       },
       "System.Threading.Tasks/4.0.11": {
         "type": "package",
-        "compile": {
-          "ref/portable-net45+win8+wp8+wpa81/_._": {}
+        "dependencies": {
+          "Microsoft.NETCore.Platforms": "1.0.1",
+          "Microsoft.NETCore.Targets": "1.0.1",
+          "System.Runtime": "4.1.0"
         },
-        "runtime": {
-          "lib/portable-net45+win8+wp8+wpa81/_._": {}
+        "compile": {
+          "ref/netstandard1.0/System.Threading.Tasks.dll": {}
         }
       },
       "System.Xml.ReaderWriter/4.0.11": {
         "type": "package",
-        "compile": {
-          "ref/portable-net45+win8+wp8+wpa81/_._": {}
+        "dependencies": {
+          "System.IO": "4.1.0",
+          "System.Runtime": "4.1.0",
+          "System.Text.Encoding": "4.0.11",
+          "System.Threading.Tasks": "4.0.11"
         },
-        "runtime": {
-          "lib/portable-net45+win8+wp8+wpa81/_._": {}
+        "compile": {
+          "ref/netstandard1.0/System.Xml.ReaderWriter.dll": {}
         }
       },
       "System.Xml.XDocument/4.0.11": {
         "type": "package",
-        "compile": {
-          "ref/portable-net45+win8+wp8+wpa81/_._": {}
+        "dependencies": {
+          "System.IO": "4.1.0",
+          "System.Runtime": "4.1.0",
+          "System.Xml.ReaderWriter": "4.0.11"
         },
-        "runtime": {
-          "lib/portable-net45+win8+wp8+wpa81/_._": {}
+        "compile": {
+          "ref/netstandard1.0/System.Xml.XDocument.dll": {}
         }
       }
     }
@@ -2573,17 +2631,17 @@
       "Microsoft.NETCore.Portable.Compatibility >= 1.0.1",
       "NETStandard.Library >= 1.6.0"
     ],
-    ".NETPortable,Version=v4.5,Profile=Profile111": []
+    ".NETStandard,Version=v1.1": []
   },
   "packageFolders": {
     "C:\\Users\\Erffice\\.nuget\\packages\\": {}
   },
   "project": {
     "restore": {
-      "projectUniqueName": "C:\\Users\\Erffice\\Documents\\GitHub\\LinqStatistics\\src\\LinqStatistics.Portable\\LinqStatistics.Portable.csproj",
-      "projectName": "LinqStatistics.Portable",
-      "projectPath": "C:\\Users\\Erffice\\Documents\\GitHub\\LinqStatistics\\src\\LinqStatistics.Portable\\LinqStatistics.Portable.csproj",
-      "projectJsonPath": "C:\\Users\\Erffice\\Documents\\GitHub\\LinqStatistics\\src\\LinqStatistics.Portable\\project.json",
+      "projectUniqueName": "C:\\Users\\Erffice\\Documents\\GitHub\\LinqStatistics\\src\\LinqStatistics.NetStandard\\LinqStatistics.NetStandard.csproj",
+      "projectName": "LinqStatistics.NetStandard",
+      "projectPath": "C:\\Users\\Erffice\\Documents\\GitHub\\LinqStatistics\\src\\LinqStatistics.NetStandard\\LinqStatistics.NetStandard.csproj",
+      "projectJsonPath": "C:\\Users\\Erffice\\Documents\\GitHub\\LinqStatistics\\src\\LinqStatistics.NetStandard\\project.json",
       "projectStyle": "ProjectJson"
     },
     "dependencies": {
@@ -2591,7 +2649,7 @@
       "NETStandard.Library": "1.6.0"
     },
     "frameworks": {
-      "portable45-net45+win8+wpa81": {}
+      "netstandard1.1": {}
     }
   }
 }
