@@ -117,6 +117,16 @@ namespace LinqStatistics.UnitTests
         }
 
         [TestMethod]
+        public void ModeOfABimodalSeriesReturnsSmallesValue()
+        {
+            IEnumerable<int> source = new int[] { 1, 3, 4, 4, 4, 4, 2, 2, 2, 2 };
+
+            int? result = source.Mode();
+            Assert.IsTrue(result.HasValue);
+            Assert.AreEqual(result, 2);
+        }
+
+        [TestMethod]
         public void ModesMultipleNullable()
         {
             IEnumerable<int?> source = new int?[] { 1, 2, null, 2, 3, 3, 3 };
