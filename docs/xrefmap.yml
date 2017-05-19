@@ -3044,6 +3044,12 @@ references:
   commentId: M:LinqStatistics.LeastSquares.#ctor(System.Double,System.Double)
   fullName: LinqStatistics.LeastSquares.LeastSquares(System.Double, System.Double)
   nameWithType: LeastSquares.LeastSquares(Double, Double)
+- uid: LinqStatistics.LeastSquares.#ctor(System.Double,System.Double,System.Double)
+  name: LeastSquares(Double, Double, Double)
+  href: api/LinqStatistics.LeastSquares.html#LinqStatistics_LeastSquares__ctor_System_Double_System_Double_System_Double_
+  commentId: M:LinqStatistics.LeastSquares.#ctor(System.Double,System.Double,System.Double)
+  fullName: LinqStatistics.LeastSquares.LeastSquares(System.Double, System.Double, System.Double)
+  nameWithType: LeastSquares.LeastSquares(Double, Double, Double)
 - uid: LinqStatistics.LeastSquares.#ctor*
   name: LeastSquares
   href: api/LinqStatistics.LeastSquares.html#LinqStatistics_LeastSquares__ctor_
@@ -3062,6 +3068,12 @@ references:
   commentId: Overload:LinqStatistics.LeastSquares.B
   fullName: LinqStatistics.LeastSquares.B
   nameWithType: LeastSquares.B
+- uid: LinqStatistics.LeastSquares.Empty
+  name: Empty
+  href: api/LinqStatistics.LeastSquares.html#LinqStatistics_LeastSquares_Empty
+  commentId: F:LinqStatistics.LeastSquares.Empty
+  fullName: LinqStatistics.LeastSquares.Empty
+  nameWithType: LeastSquares.Empty
 - uid: LinqStatistics.LeastSquares.Equals(LinqStatistics.LeastSquares)
   name: Equals(LeastSquares)
   href: api/LinqStatistics.LeastSquares.html#LinqStatistics_LeastSquares_Equals_LinqStatistics_LeastSquares_
@@ -3128,6 +3140,24 @@ references:
   commentId: Overload:LinqStatistics.LeastSquares.op_Equality
   fullName: LinqStatistics.LeastSquares.Equality
   nameWithType: LeastSquares.Equality
+- uid: LinqStatistics.LeastSquares.op_Implicit(LinqStatistics.LeastSquares)~System.Func{System.Double,System.Double}
+  name: Implicit(LeastSquares to Func<Double, Double>)
+  href: api/LinqStatistics.LeastSquares.html#LinqStatistics_LeastSquares_op_Implicit_LinqStatistics_LeastSquares__System_Func_System_Double_System_Double_
+  commentId: M:LinqStatistics.LeastSquares.op_Implicit(LinqStatistics.LeastSquares)~System.Func{System.Double,System.Double}
+  name.vb: Widening(LeastSquares to Func(Of Double, Double))
+  fullName: LinqStatistics.LeastSquares.Implicit(LinqStatistics.LeastSquares to System.Func<System.Double, System.Double>)
+  fullName.vb: LinqStatistics.LeastSquares.Widening(LinqStatistics.LeastSquares to System.Func(Of System.Double, System.Double))
+  nameWithType: LeastSquares.Implicit(LeastSquares to Func<Double, Double>)
+  nameWithType.vb: LeastSquares.Widening(LeastSquares to Func(Of Double, Double))
+- uid: LinqStatistics.LeastSquares.op_Implicit*
+  name: Implicit
+  href: api/LinqStatistics.LeastSquares.html#LinqStatistics_LeastSquares_op_Implicit_
+  commentId: Overload:LinqStatistics.LeastSquares.op_Implicit
+  name.vb: Widening
+  fullName: LinqStatistics.LeastSquares.Implicit
+  fullName.vb: LinqStatistics.LeastSquares.Widening
+  nameWithType: LeastSquares.Implicit
+  nameWithType.vb: LeastSquares.Widening
 - uid: LinqStatistics.LeastSquares.op_Inequality(LinqStatistics.LeastSquares,LinqStatistics.LeastSquares)
   name: Inequality(LeastSquares, LeastSquares)
   href: api/LinqStatistics.LeastSquares.html#LinqStatistics_LeastSquares_op_Inequality_LinqStatistics_LeastSquares_LinqStatistics_LeastSquares_
@@ -3140,6 +3170,18 @@ references:
   commentId: Overload:LinqStatistics.LeastSquares.op_Inequality
   fullName: LinqStatistics.LeastSquares.Inequality
   nameWithType: LeastSquares.Inequality
+- uid: LinqStatistics.LeastSquares.RSquared
+  name: RSquared
+  href: api/LinqStatistics.LeastSquares.html#LinqStatistics_LeastSquares_RSquared
+  commentId: P:LinqStatistics.LeastSquares.RSquared
+  fullName: LinqStatistics.LeastSquares.RSquared
+  nameWithType: LeastSquares.RSquared
+- uid: LinqStatistics.LeastSquares.RSquared*
+  name: RSquared
+  href: api/LinqStatistics.LeastSquares.html#LinqStatistics_LeastSquares_RSquared_
+  commentId: Overload:LinqStatistics.LeastSquares.RSquared
+  fullName: LinqStatistics.LeastSquares.RSquared
+  nameWithType: LeastSquares.RSquared
 - uid: LinqStatistics.LeastSquares.Solve(System.Double)
   name: Solve(Double)
   href: api/LinqStatistics.LeastSquares.html#LinqStatistics_LeastSquares_Solve_System_Double_
