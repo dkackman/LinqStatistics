@@ -11,7 +11,6 @@ using System.Reflection;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyDescription("Extensions that add simple statistical methods")]
-[assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("LinqStatistics")]
 [assembly: AssemblyCopyright("Copyright © Don Kackman 2009, 2013, 2016")]
