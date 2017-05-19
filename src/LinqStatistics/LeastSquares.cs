@@ -8,7 +8,7 @@ namespace LinqStatistics
     public struct LeastSquares : IFormattable, IEquatable<LeastSquares>
     {
         /// <summary>
-        /// Empty instance - returned when <see cref="EnumerableStats.LeastSquares"/> is passed a singular matrix.
+        /// Empty instance - returned when EnumerableStats.LeastSquares is passed a singular matrix.
         /// All memers are zero.
         /// </summary>
         public static readonly LeastSquares Empty = new LeastSquares(0, 0, 0);

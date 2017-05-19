@@ -10,7 +10,7 @@ Methods include:
 - Standard Deviation (sample and population)
 - Variance (sample and population)
 - Root Mean Square
-- Least Squares
+- Least Squares Linear Regression
 - CountEach
 - Histogram
 
