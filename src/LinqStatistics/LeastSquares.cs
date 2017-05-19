@@ -96,7 +96,7 @@ namespace LinqStatistics
         /// <returns></returns>
         public static bool operator ==(LeastSquares lhs, LeastSquares rhs)
         {
-            return lhs.M == rhs.M && lhs.B == rhs.B;
+            return lhs.M == rhs.M && lhs.B == rhs.B && lhs.RSquared == rhs.RSquared;
         }
 
         /// <summary>
@@ -141,7 +141,7 @@ namespace LinqStatistics
         /// <returns>Hascode of the instance</returns>
         public override int GetHashCode()
         {
-            return _m.GetHashCode() ^ _b.GetHashCode();
+            return _m.GetHashCode() ^ _b.GetHashCode() ^ _r2.GetHashCode();
         }
 
         /// <summary>
