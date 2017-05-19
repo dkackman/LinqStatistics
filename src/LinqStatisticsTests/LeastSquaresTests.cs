@@ -41,7 +41,7 @@ namespace LinqStatistics.UnitTests
 
             var ls = data.LeastSquares();
             Assert.AreEqual(Math.Round(ls.M, 5), 3.43651);
-            Assert.AreEqual(Math.Round(ls.B, 6), -0.888889);
+            Assert.AreEqual(Math.Round(ls.B, 5), -0.88889);
             Assert.AreEqual(Math.Round(ls.RSquared, 4), 0.9984);
         }
 
