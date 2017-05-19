@@ -7,6 +7,12 @@ namespace LinqStatistics
     /// </summary>
     public struct LeastSquares : IFormattable, IEquatable<LeastSquares>
     {
+        /// <summary>
+        /// Empty instance - returned when <see cref="EnumerableStats.LeastSquares"/> is passed a singular matrix.
+        /// All memers are zero.
+        /// </summary>
+        public static readonly LeastSquares Empty = new LeastSquares(0, 0, 0);
+
         private readonly double _m;
         private readonly double _b;
         private readonly double _r2;
@@ -77,7 +83,7 @@ namespace LinqStatistics
         /// Casts a LeastSqaures to a Function <see cref="Solve(double)"/>
         /// </summary>
         /// <param name="ls">The LeastSquares instance</param>
-        public static implicit operator Func<double,double>(LeastSquares ls)
+        public static implicit operator Func<double, double>(LeastSquares ls)
         {
             return (double d) => ls.Solve(d);
         }

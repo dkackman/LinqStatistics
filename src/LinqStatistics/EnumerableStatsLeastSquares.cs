@@ -60,10 +60,10 @@ namespace LinqStatistics
             if (n < 2)
                 throw new InvalidOperationException("Source must have at least 2 elements");
             
-            double denominator = (n * sumXX - sumX * sumX);
+            double denominator = n * sumXX - sumX * sumX;
             if (denominator == 0.0)
             {
-                return new LeastSquares(0, 0, 0);
+                return LinqStatistics.LeastSquares.Empty;
             }
 
             double b = (-sumX * sumXY + sumXX * sumY) / denominator;
@@ -159,10 +159,10 @@ namespace LinqStatistics
             if (n < 2)
                 throw new InvalidOperationException("Source must have at least 2 elements");
             
-            double denominator = (n * sumXX - sumX * sumX);
+            double denominator = n * sumXX - sumX * sumX;
             if (denominator == 0.0)
             {
-                return new LeastSquares(0, 0, 0);
+                return LinqStatistics.LeastSquares.Empty;
             }
 
             double b = (-sumX * sumXY + sumXX * sumY) / denominator;
@@ -258,10 +258,10 @@ namespace LinqStatistics
             if (n < 2)
                 throw new InvalidOperationException("Source must have at least 2 elements");
             
-            double denominator = (n * sumXX - sumX * sumX);
+            double denominator = n * sumXX - sumX * sumX;
             if (denominator == 0.0)
             {
-                return new LeastSquares(0, 0, 0);
+                return LinqStatistics.LeastSquares.Empty;
             }
 
             double b = (-sumX * sumXY + sumXX * sumY) / denominator;
@@ -357,10 +357,10 @@ namespace LinqStatistics
             if (n < 2)
                 throw new InvalidOperationException("Source must have at least 2 elements");
             
-            double denominator = (n * sumXX - sumX * sumX);
+            double denominator = n * sumXX - sumX * sumX;
             if (denominator == 0.0)
             {
-                return new LeastSquares(0, 0, 0);
+                return LinqStatistics.LeastSquares.Empty;
             }
 
             double b = (-sumX * sumXY + sumXX * sumY) / denominator;
@@ -456,10 +456,10 @@ namespace LinqStatistics
             if (n < 2)
                 throw new InvalidOperationException("Source must have at least 2 elements");
             
-            double denominator = (n * sumXX - sumX * sumX);
+            double denominator = n * sumXX - sumX * sumX;
             if (denominator == 0.0)
             {
-                return new LeastSquares(0, 0, 0);
+                return LinqStatistics.LeastSquares.Empty;
             }
 
             double b = (-sumX * sumXY + sumXX * sumY) / denominator;

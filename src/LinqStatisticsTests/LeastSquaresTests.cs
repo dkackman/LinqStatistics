@@ -11,6 +11,20 @@ namespace LinqStatistics.UnitTests
     [TestClass]
     public class LeastSquaresTests
     {
+        [TestMethod]
+        public void SingularMatrixReturnEmpty()
+        {
+            var data = new List<Tuple<int, int>>()
+            {
+                new Tuple<int, int>(0, 0),
+                new Tuple<int, int>(0, 0),
+                new Tuple<int, int>(0, 0)
+            };
+
+            var ls = data.LeastSquares();
+            Assert.AreEqual(ls, LeastSquares.Empty);
+        }
+
         // http://stackoverflow.com/questions/5083465/fast-efficient-least-squares-fit-algorithm-in-c
         [TestMethod]
         public void RSquaredIsCorrect()
