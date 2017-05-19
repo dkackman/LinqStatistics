@@ -117,6 +117,12 @@
   <ItemGroup>
     <EmbeddedResource Include="HistogramData2.txt" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\LinqStatistics.NetStandard\LinqStatistics.NetStandard.csproj">
+      <Project>{e24b68f3-4a84-484b-bde3-a4be60b971c5}</Project>
+      <Name>LinqStatistics.NetStandard</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
