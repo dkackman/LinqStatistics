@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>LinqStatistics</id>
-    <version>2.1.0</version>
+    <version>2.2.0</version>
     <title>LinqStatistics</title>
     <authors>dkackman</authors>
     <owners></owners>
@@ -21,6 +21,8 @@
       2.1.0
       - Added alternate implementations that return NaN instead of excepting under invalid input conditions
       - Add checked scope to accumulator blocks
+      2.2.0
+      - Calculate R squared while calculating Least Squares
     </releaseNotes>
     <summary>
       Extensions that add simple statistical methods
