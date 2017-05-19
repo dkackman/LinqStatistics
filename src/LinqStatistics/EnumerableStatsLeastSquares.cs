@@ -41,6 +41,7 @@ namespace LinqStatistics
             double sumX = 0;
             double sumY = 0;
             double sumXX = 0;
+            double sumYY = 0;
             double sumXY = 0;
 
             checked
@@ -51,6 +52,7 @@ namespace LinqStatistics
                     sumX += (double)tuple.Item1;
                     sumY += (double)tuple.Item2;
                     sumXX += (double)(tuple.Item1 * tuple.Item1);
+                    sumYY += (double)(tuple.Item2 * tuple.Item2);
                     sumXY += (double)(tuple.Item1 * tuple.Item2);
                 }
             }
@@ -59,10 +61,16 @@ namespace LinqStatistics
                 throw new InvalidOperationException("Source must have at least 2 elements");
             
             double denominator = (n * sumXX - sumX * sumX);
+            if (denominator == 0.0)
+            {
+                return new LeastSquares(0, 0, 0);
+            }
+
             double b = (-sumX * sumXY + sumXX * sumY) / denominator;
             double m = (-sumX * sumY + n * sumXY) / denominator;
+			double r = (sumXY - sumX * sumY / n) / Math.Sqrt((sumXX - (sumX * sumX) / n) * (sumYY - (sumY * sumY) / n));
 
-            return new LeastSquares(m, b);
+            return new LeastSquares(m, b, r * r);
         }
 
         /// <summary>
@@ -132,6 +140,7 @@ namespace LinqStatistics
             double sumX = 0;
             double sumY = 0;
             double sumXX = 0;
+            double sumYY = 0;
             double sumXY = 0;
 
             checked
@@ -142,6 +151,7 @@ namespace LinqStatistics
                     sumX += (double)tuple.Item1;
                     sumY += (double)tuple.Item2;
                     sumXX += (double)(tuple.Item1 * tuple.Item1);
+                    sumYY += (double)(tuple.Item2 * tuple.Item2);
                     sumXY += (double)(tuple.Item1 * tuple.Item2);
                 }
             }
@@ -150,10 +160,16 @@ namespace LinqStatistics
                 throw new InvalidOperationException("Source must have at least 2 elements");
             
             double denominator = (n * sumXX - sumX * sumX);
+            if (denominator == 0.0)
+            {
+                return new LeastSquares(0, 0, 0);
+            }
+
             double b = (-sumX * sumXY + sumXX * sumY) / denominator;
             double m = (-sumX * sumY + n * sumXY) / denominator;
+			double r = (sumXY - sumX * sumY / n) / Math.Sqrt((sumXX - (sumX * sumX) / n) * (sumYY - (sumY * sumY) / n));
 
-            return new LeastSquares(m, b);
+            return new LeastSquares(m, b, r * r);
         }
 
         /// <summary>
@@ -223,6 +239,7 @@ namespace LinqStatistics
             double sumX = 0;
             double sumY = 0;
             double sumXX = 0;
+            double sumYY = 0;
             double sumXY = 0;
 
             checked
@@ -233,6 +250,7 @@ namespace LinqStatistics
                     sumX += (double)tuple.Item1;
                     sumY += (double)tuple.Item2;
                     sumXX += (double)(tuple.Item1 * tuple.Item1);
+                    sumYY += (double)(tuple.Item2 * tuple.Item2);
                     sumXY += (double)(tuple.Item1 * tuple.Item2);
                 }
             }
@@ -241,10 +259,16 @@ namespace LinqStatistics
                 throw new InvalidOperationException("Source must have at least 2 elements");
             
             double denominator = (n * sumXX - sumX * sumX);
+            if (denominator == 0.0)
+            {
+                return new LeastSquares(0, 0, 0);
+            }
+
             double b = (-sumX * sumXY + sumXX * sumY) / denominator;
             double m = (-sumX * sumY + n * sumXY) / denominator;
+			double r = (sumXY - sumX * sumY / n) / Math.Sqrt((sumXX - (sumX * sumX) / n) * (sumYY - (sumY * sumY) / n));
 
-            return new LeastSquares(m, b);
+            return new LeastSquares(m, b, r * r);
         }
 
         /// <summary>
@@ -314,6 +338,7 @@ namespace LinqStatistics
             double sumX = 0;
             double sumY = 0;
             double sumXX = 0;
+            double sumYY = 0;
             double sumXY = 0;
 
             checked
@@ -324,6 +349,7 @@ namespace LinqStatistics
                     sumX += (double)tuple.Item1;
                     sumY += (double)tuple.Item2;
                     sumXX += (double)(tuple.Item1 * tuple.Item1);
+                    sumYY += (double)(tuple.Item2 * tuple.Item2);
                     sumXY += (double)(tuple.Item1 * tuple.Item2);
                 }
             }
@@ -332,10 +358,16 @@ namespace LinqStatistics
                 throw new InvalidOperationException("Source must have at least 2 elements");
             
             double denominator = (n * sumXX - sumX * sumX);
+            if (denominator == 0.0)
+            {
+                return new LeastSquares(0, 0, 0);
+            }
+
             double b = (-sumX * sumXY + sumXX * sumY) / denominator;
             double m = (-sumX * sumY + n * sumXY) / denominator;
+			double r = (sumXY - sumX * sumY / n) / Math.Sqrt((sumXX - (sumX * sumX) / n) * (sumYY - (sumY * sumY) / n));
 
-            return new LeastSquares(m, b);
+            return new LeastSquares(m, b, r * r);
         }
 
         /// <summary>
@@ -405,6 +437,7 @@ namespace LinqStatistics
             double sumX = 0;
             double sumY = 0;
             double sumXX = 0;
+            double sumYY = 0;
             double sumXY = 0;
 
             checked
@@ -415,6 +448,7 @@ namespace LinqStatistics
                     sumX += (double)tuple.Item1;
                     sumY += (double)tuple.Item2;
                     sumXX += (double)(tuple.Item1 * tuple.Item1);
+                    sumYY += (double)(tuple.Item2 * tuple.Item2);
                     sumXY += (double)(tuple.Item1 * tuple.Item2);
                 }
             }
@@ -423,10 +457,16 @@ namespace LinqStatistics
                 throw new InvalidOperationException("Source must have at least 2 elements");
             
             double denominator = (n * sumXX - sumX * sumX);
+            if (denominator == 0.0)
+            {
+                return new LeastSquares(0, 0, 0);
+            }
+
             double b = (-sumX * sumXY + sumXX * sumY) / denominator;
             double m = (-sumX * sumY + n * sumXY) / denominator;
+			double r = (sumXY - sumX * sumY / n) / Math.Sqrt((sumXX - (sumX * sumX) / n) * (sumYY - (sumY * sumY) / n));
 
-            return new LeastSquares(m, b);
+            return new LeastSquares(m, b, r * r);
         }
 
         /// <summary>

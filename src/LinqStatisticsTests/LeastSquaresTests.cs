@@ -11,6 +11,26 @@ namespace LinqStatistics.UnitTests
     [TestClass]
     public class LeastSquaresTests
     {
+        // http://stackoverflow.com/questions/5083465/fast-efficient-least-squares-fit-algorithm-in-c
+        [TestMethod]
+        public void RSquaredIsCorrect()
+        {
+            var data = new List<Tuple<int, int>>()
+            {
+                new Tuple<int, int>(1, 4),
+                new Tuple<int, int>(2, 6),
+                new Tuple<int, int>(4, 12),
+                new Tuple<int, int>(5, 15),
+                new Tuple<int, int>(10, 34),
+                new Tuple<int, int>(20, 68)
+            };
+
+            var ls = data.LeastSquares();
+            Assert.AreEqual(Math.Round(ls.M, 5), 3.43651);
+            Assert.AreEqual(Math.Round(ls.B, 6), -0.888889);
+            Assert.AreEqual(Math.Round(ls.RSquared, 4), 0.9984);
+        }
+
         [TestMethod]
         public void LeastSquares1()
         {

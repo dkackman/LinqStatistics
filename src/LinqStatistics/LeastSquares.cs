@@ -9,29 +9,47 @@ namespace LinqStatistics
     {
         private readonly double _m;
         private readonly double _b;
+        private readonly double _r2;
 
         /// <summary>
         /// 
         /// </summary>
         /// <param name="m">The slope</param>
-        /// <param name="b">the intercept</param>
+        /// <param name="b">The intercept</param>
         public LeastSquares(double m, double b)
+            : this(m, b, 1)
+        {
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="m">The slope</param>
+        /// <param name="b">The intercept</param>
+        /// <param name="r2">The R Squared correlation coefficient</param>
+        public LeastSquares(double m, double b, double r2)
         {
             _m = m;
             _b = b;
+            _r2 = r2;
         }
 
         /// <summary>
         /// M Coefficient for y = Mx + B
         /// (i.e. slope)
         /// </summary>
-        public double M { get { return _m; } }
+        public double M => _m;
 
         /// <summary>
         /// B Coefficient for y = Mx + B
         /// (i.e. y intercept)
         /// </summary>
-        public double B { get { return _b; } }
+        public double B => _b;
+
+        /// <summary>
+        /// The R Squared correlation coefficient
+        /// </summary>
+        public double RSquared => _r2;
 
         /// <summary>
         /// Uses the calculated coefficients to solve Y for inputted X
@@ -56,7 +74,16 @@ namespace LinqStatistics
         }
 
         /// <summary>
-        /// 
+        /// Casts a LeastSqaures to a Function <see cref="Solve(double)"/>
+        /// </summary>
+        /// <param name="ls">The LeastSquares instance</param>
+        public static implicit operator Func<double,double>(LeastSquares ls)
+        {
+            return (double d) => ls.Solve(d);
+        }
+
+        /// <summary>
+        /// Equality operator (M, B and RSquared must be equal)
         /// </summary>
         /// <param name="lhs"></param>
         /// <param name="rhs"></param>
@@ -67,7 +94,7 @@ namespace LinqStatistics
         }
 
         /// <summary>
-        /// 
+        /// Inequality operatory
         /// </summary>
         /// <param name="lhs"></param>
         /// <param name="rhs"></param>
