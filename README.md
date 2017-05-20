@@ -10,7 +10,7 @@ Extension methods to compute basic statistics modeled after Enumerable.Average. 
 - Covariance
 - Median
 - Mode
-- Pearson's Chi Squared
+- Pearson's Correlation Coefficient
 - Range
 - Standard Deviation (sample and population)
 - Variance (sample and population)
