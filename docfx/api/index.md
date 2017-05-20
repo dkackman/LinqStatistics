@@ -1,2 +1,5 @@
-# PLACEHOLDER
-TODO: Add .NET projects to the *src* folder and run `docfx` to generate **REAL** *API Documentation*!
+# LinqStatistics
+
+The LinqStatistics API is a set of extension methods that are modelled after
+[Enumerable](xref:System.Linq.Enumerable), with overloads to accept the same intrinsic numeric types
+as Sum and Average.
