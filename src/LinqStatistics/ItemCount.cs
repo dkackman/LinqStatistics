@@ -82,9 +82,9 @@ namespace LinqStatistics
         /// <returns>True if obj is a Bin{T} and Value and Count are equal</returns>
         public override bool Equals(object obj)
         {
-            if (obj is ItemCount<T>)
+            if (obj is ItemCount<T> c)
             {
-                return this.Equals((ItemCount<T>)obj);
+                return this.Equals(c);
             }
 
             return false;

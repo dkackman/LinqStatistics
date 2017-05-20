@@ -117,9 +117,9 @@ namespace LinqStatistics
         /// <returns>True if obj is a LeastSquares and has equal m and b values</returns>
         public override bool Equals(object obj)
         {
-            if (obj is LeastSquares)
+            if (obj is LeastSquares ls)
             {
-                return this == (LeastSquares)obj;
+                return this == ls;
             }
 
             return false;

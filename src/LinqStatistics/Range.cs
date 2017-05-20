@@ -123,9 +123,9 @@ namespace LinqStatistics
         /// </returns>
         public override bool Equals(object obj)
         {
-            if (obj is Range<T>)
+            if (obj is Range<T> r)
             {
-                return this == (Range<T>)obj;
+                return this == r;
             }
 
             return false;
@@ -155,9 +155,9 @@ namespace LinqStatistics
                 return 1;
             }
 
-            if (obj is Range<T>)
+            if (obj is Range<T> r)
             {
-                return this.CompareTo((Range<T>)obj);
+                return this.CompareTo(r);
             }
 
             throw new ArgumentException("Comparand must be of type Range<T>");

@@ -104,9 +104,9 @@ namespace LinqStatistics
         /// <returns></returns>
         public override bool Equals(object obj)
         {
-            if (obj is Bin)
+            if (obj is Bin b)
             {
-                this.Equals((Bin)obj);
+                this.Equals(b);
             }
 
             return false;
