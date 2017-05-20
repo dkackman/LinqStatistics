@@ -9,7 +9,7 @@ namespace LinqStatistics
     {
         /// <summary>
         /// Empty instance - returned when EnumerableStats.LeastSquares is passed a singular matrix.
-        /// All memers are zero.
+        /// All members are zero.
         /// </summary>
         public static readonly LeastSquares Empty = new LeastSquares(0, 0, 0);
 
