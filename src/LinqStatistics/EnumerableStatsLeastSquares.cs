@@ -68,7 +68,7 @@ namespace LinqStatistics
 
             double b = (-sumX * sumXY + sumXX * sumY) / denominator;
             double m = (-sumX * sumY + n * sumXY) / denominator;
-			double r = (sumXY - sumX * sumY / n) / Math.Sqrt((sumXX - (sumX * sumX) / n) * (sumYY - (sumY * sumY) / n));
+            double r = (sumXY - sumX * sumY / n) / Math.Sqrt((sumXX - (sumX * sumX) / n) * (sumYY - (sumY * sumY) / n));
 
             return new LeastSquares(m, b, r * r);
         }
@@ -167,7 +167,7 @@ namespace LinqStatistics
 
             double b = (-sumX * sumXY + sumXX * sumY) / denominator;
             double m = (-sumX * sumY + n * sumXY) / denominator;
-			double r = (sumXY - sumX * sumY / n) / Math.Sqrt((sumXX - (sumX * sumX) / n) * (sumYY - (sumY * sumY) / n));
+            double r = (sumXY - sumX * sumY / n) / Math.Sqrt((sumXX - (sumX * sumX) / n) * (sumYY - (sumY * sumY) / n));
 
             return new LeastSquares(m, b, r * r);
         }
@@ -266,7 +266,7 @@ namespace LinqStatistics
 
             double b = (-sumX * sumXY + sumXX * sumY) / denominator;
             double m = (-sumX * sumY + n * sumXY) / denominator;
-			double r = (sumXY - sumX * sumY / n) / Math.Sqrt((sumXX - (sumX * sumX) / n) * (sumYY - (sumY * sumY) / n));
+            double r = (sumXY - sumX * sumY / n) / Math.Sqrt((sumXX - (sumX * sumX) / n) * (sumYY - (sumY * sumY) / n));
 
             return new LeastSquares(m, b, r * r);
         }
@@ -365,7 +365,7 @@ namespace LinqStatistics
 
             double b = (-sumX * sumXY + sumXX * sumY) / denominator;
             double m = (-sumX * sumY + n * sumXY) / denominator;
-			double r = (sumXY - sumX * sumY / n) / Math.Sqrt((sumXX - (sumX * sumX) / n) * (sumYY - (sumY * sumY) / n));
+            double r = (sumXY - sumX * sumY / n) / Math.Sqrt((sumXX - (sumX * sumX) / n) * (sumYY - (sumY * sumY) / n));
 
             return new LeastSquares(m, b, r * r);
         }
@@ -464,7 +464,7 @@ namespace LinqStatistics
 
             double b = (-sumX * sumXY + sumXX * sumY) / denominator;
             double m = (-sumX * sumY + n * sumXY) / denominator;
-			double r = (sumXY - sumX * sumY / n) / Math.Sqrt((sumXX - (sumX * sumX) / n) * (sumYY - (sumY * sumY) / n));
+            double r = (sumXY - sumX * sumY / n) / Math.Sqrt((sumXX - (sumX * sumX) / n) * (sumYY - (sumY * sumY) / n));
 
             return new LeastSquares(m, b, r * r);
         }
