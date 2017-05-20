@@ -12,6 +12,23 @@ namespace LinqStatistics.UnitTests
     public class LeastSquaresTests
     {
         [TestMethod]
+        public void CastToFunc()
+        {
+            var data = new List<Tuple<int, int>>()
+            {
+                new Tuple<int, int>(1, 1),
+                new Tuple<int, int>(2, 2),
+                new Tuple<int, int>(3, 3)
+            };
+
+            var ls = data.LeastSquares();
+            Func<double, double> func = ls;
+
+            var result = func(2);
+            Assert.AreEqual(2, result);
+        }
+
+        [TestMethod]
         public void SingularMatrixReturnEmpty()
         {
             var data = new List<Tuple<int, int>>()
