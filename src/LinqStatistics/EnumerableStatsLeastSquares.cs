@@ -60,7 +60,8 @@ namespace LinqStatistics
             if (n < 2)
                 throw new InvalidOperationException("Source must have at least 2 elements");
             
-            double denominator = n * sumXX - sumX * sumX;
+            double sumXSquared = sumX * sumX;
+            double denominator = n * sumXX - sumXSquared;
             if (denominator == 0.0)
             {
                 return LinqStatistics.LeastSquares.Empty;
@@ -68,7 +69,7 @@ namespace LinqStatistics
 
             double b = (-sumX * sumXY + sumXX * sumY) / denominator;
             double m = (-sumX * sumY + n * sumXY) / denominator;
-            double r = (sumXY - sumX * sumY / n) / Math.Sqrt((sumXX - (sumX * sumX) / n) * (sumYY - (sumY * sumY) / n));
+            double r = (sumXY - sumX * sumY / n) / Math.Sqrt((sumXX - sumXSquared / n) * (sumYY - (sumY * sumY) / n));
 
             return new LeastSquares(m, b, r * r);
         }
@@ -159,7 +160,8 @@ namespace LinqStatistics
             if (n < 2)
                 throw new InvalidOperationException("Source must have at least 2 elements");
             
-            double denominator = n * sumXX - sumX * sumX;
+            double sumXSquared = sumX * sumX;
+            double denominator = n * sumXX - sumXSquared;
             if (denominator == 0.0)
             {
                 return LinqStatistics.LeastSquares.Empty;
@@ -167,7 +169,7 @@ namespace LinqStatistics
 
             double b = (-sumX * sumXY + sumXX * sumY) / denominator;
             double m = (-sumX * sumY + n * sumXY) / denominator;
-            double r = (sumXY - sumX * sumY / n) / Math.Sqrt((sumXX - (sumX * sumX) / n) * (sumYY - (sumY * sumY) / n));
+            double r = (sumXY - sumX * sumY / n) / Math.Sqrt((sumXX - sumXSquared / n) * (sumYY - (sumY * sumY) / n));
 
             return new LeastSquares(m, b, r * r);
         }
@@ -258,7 +260,8 @@ namespace LinqStatistics
             if (n < 2)
                 throw new InvalidOperationException("Source must have at least 2 elements");
             
-            double denominator = n * sumXX - sumX * sumX;
+            double sumXSquared = sumX * sumX;
+            double denominator = n * sumXX - sumXSquared;
             if (denominator == 0.0)
             {
                 return LinqStatistics.LeastSquares.Empty;
@@ -266,7 +269,7 @@ namespace LinqStatistics
 
             double b = (-sumX * sumXY + sumXX * sumY) / denominator;
             double m = (-sumX * sumY + n * sumXY) / denominator;
-            double r = (sumXY - sumX * sumY / n) / Math.Sqrt((sumXX - (sumX * sumX) / n) * (sumYY - (sumY * sumY) / n));
+            double r = (sumXY - sumX * sumY / n) / Math.Sqrt((sumXX - sumXSquared / n) * (sumYY - (sumY * sumY) / n));
 
             return new LeastSquares(m, b, r * r);
         }
@@ -357,7 +360,8 @@ namespace LinqStatistics
             if (n < 2)
                 throw new InvalidOperationException("Source must have at least 2 elements");
             
-            double denominator = n * sumXX - sumX * sumX;
+            double sumXSquared = sumX * sumX;
+            double denominator = n * sumXX - sumXSquared;
             if (denominator == 0.0)
             {
                 return LinqStatistics.LeastSquares.Empty;
@@ -365,7 +369,7 @@ namespace LinqStatistics
 
             double b = (-sumX * sumXY + sumXX * sumY) / denominator;
             double m = (-sumX * sumY + n * sumXY) / denominator;
-            double r = (sumXY - sumX * sumY / n) / Math.Sqrt((sumXX - (sumX * sumX) / n) * (sumYY - (sumY * sumY) / n));
+            double r = (sumXY - sumX * sumY / n) / Math.Sqrt((sumXX - sumXSquared / n) * (sumYY - (sumY * sumY) / n));
 
             return new LeastSquares(m, b, r * r);
         }
@@ -456,7 +460,8 @@ namespace LinqStatistics
             if (n < 2)
                 throw new InvalidOperationException("Source must have at least 2 elements");
             
-            double denominator = n * sumXX - sumX * sumX;
+            double sumXSquared = sumX * sumX;
+            double denominator = n * sumXX - sumXSquared;
             if (denominator == 0.0)
             {
                 return LinqStatistics.LeastSquares.Empty;
@@ -464,7 +469,7 @@ namespace LinqStatistics
 
             double b = (-sumX * sumXY + sumXX * sumY) / denominator;
             double m = (-sumX * sumY + n * sumXY) / denominator;
-            double r = (sumXY - sumX * sumY / n) / Math.Sqrt((sumXX - (sumX * sumX) / n) * (sumYY - (sumY * sumY) / n));
+            double r = (sumXY - sumX * sumY / n) / Math.Sqrt((sumXX - sumXSquared / n) * (sumYY - (sumY * sumY) / n));
 
             return new LeastSquares(m, b, r * r);
         }
