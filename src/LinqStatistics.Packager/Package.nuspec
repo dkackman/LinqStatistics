@@ -22,7 +22,7 @@
       - Added alternate implementations that return NaN instead of excepting under invalid input conditions
       - Add checked scope to accumulator blocks
       2.2.0
-      - Calculate R squared while calculating Least Squares
+      - Include R squared while calculating Least Squares
     </releaseNotes>
     <summary>
       Extensions that add simple statistical methods
