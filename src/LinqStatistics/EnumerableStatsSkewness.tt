@@ -33,6 +33,7 @@ namespace LinqStatistics
         /// </summary>
         /// <param name="source">A sequence of nullable <#= type.Item1 #> values to calculate the Skewness of.</param>
         /// <returns>The Skewness of the sequence of values.</returns>
+        /// <remarks>![equation](~/images/skewness.gif)</remarks>
         public static <#= type.Item2 #>? Skewness(this IEnumerable<<#= type.Item1 #>?> source)
         {
             var values = source.AllValues();
@@ -47,6 +48,7 @@ namespace LinqStatistics
         /// </summary>
         /// <param name="source">A sequence of <#= type.Item1 #> values to calculate the Skewness of.</param>
         /// <returns>The Skewness of the sequence of values.</returns>
+        /// <remarks>![equation](~/images/skewness.gif)</remarks>
         public static <#= type.Item2 #> Skewness(this IEnumerable<<#= type.Item1 #>> source)
         {
             if (source == null)
@@ -80,6 +82,7 @@ namespace LinqStatistics
         /// <param name="source">A sequence of values that are used to calculate a Skewness</param>
         /// <param name="selector">A transform function to apply to each element.</param>
         /// <returns>The Skewness of the sequence of values.</returns>
+        /// <remarks>![equation](~/images/skewness.gif)</remarks>
         public static <#= type.Item2 #> Skewness<TSource>(this IEnumerable<TSource> source, Func<TSource, <#= type.Item1 #>> selector)
         {
             if (source == null)
@@ -99,6 +102,7 @@ namespace LinqStatistics
         /// <param name="source">A sequence of values that are used to calculate a Skewness</param>
         /// <param name="selector">A transform function to apply to each element.</param>
         /// <returns>The Skewness of the sequence of values.</returns>
+        /// <remarks>![equation](~/images/skewness.gif)</remarks>
         public static <#= type.Item2 #>? Skewness<TSource>(this IEnumerable<TSource> source, Func<TSource, <#= type.Item1 #>?> selector)
         {
             if (source == null)

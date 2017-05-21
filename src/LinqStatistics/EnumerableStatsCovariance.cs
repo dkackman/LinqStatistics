@@ -18,6 +18,7 @@ namespace LinqStatistics
         /// <param name="source">The first sequence of nullable int values to calculate the Covariance of.</param>
         /// <param name="other">The second sequence of nullable int values to calculate the Covariance of.</param>
         /// <returns>The Covariance of the two sequence of values.</returns>
+        /// <remarks>![equation](~/images/covar.gif)</remarks>
         public static double? Covariance(this IEnumerable<int?> source, IEnumerable<int?> other)
         {
             var values = source.AllValues();
@@ -33,6 +34,7 @@ namespace LinqStatistics
         /// <param name="source">The first sequence of int values to calculate the Covariance of.</param>
         /// <param name="other">The second sequence of int values to calculate the Covariance of.</param>
         /// <returns>The Covariance of the two sequence of values.</returns>
+        /// <remarks>![equation](~/images/covar.gif)</remarks>
         public static double Covariance(this IEnumerable<int> source, IEnumerable<int> other)
         {
             if (source == null)
@@ -71,6 +73,7 @@ namespace LinqStatistics
         /// <param name="source">The first sequence of nullable long values to calculate the Covariance of.</param>
         /// <param name="other">The second sequence of nullable long values to calculate the Covariance of.</param>
         /// <returns>The Covariance of the two sequence of values.</returns>
+        /// <remarks>![equation](~/images/covar.gif)</remarks>
         public static double? Covariance(this IEnumerable<long?> source, IEnumerable<long?> other)
         {
             var values = source.AllValues();
@@ -86,6 +89,7 @@ namespace LinqStatistics
         /// <param name="source">The first sequence of long values to calculate the Covariance of.</param>
         /// <param name="other">The second sequence of long values to calculate the Covariance of.</param>
         /// <returns>The Covariance of the two sequence of values.</returns>
+        /// <remarks>![equation](~/images/covar.gif)</remarks>
         public static double Covariance(this IEnumerable<long> source, IEnumerable<long> other)
         {
             if (source == null)
@@ -124,6 +128,7 @@ namespace LinqStatistics
         /// <param name="source">The first sequence of nullable decimal values to calculate the Covariance of.</param>
         /// <param name="other">The second sequence of nullable decimal values to calculate the Covariance of.</param>
         /// <returns>The Covariance of the two sequence of values.</returns>
+        /// <remarks>![equation](~/images/covar.gif)</remarks>
         public static decimal? Covariance(this IEnumerable<decimal?> source, IEnumerable<decimal?> other)
         {
             var values = source.AllValues();
@@ -139,6 +144,7 @@ namespace LinqStatistics
         /// <param name="source">The first sequence of decimal values to calculate the Covariance of.</param>
         /// <param name="other">The second sequence of decimal values to calculate the Covariance of.</param>
         /// <returns>The Covariance of the two sequence of values.</returns>
+        /// <remarks>![equation](~/images/covar.gif)</remarks>
         public static decimal Covariance(this IEnumerable<decimal> source, IEnumerable<decimal> other)
         {
             if (source == null)
@@ -177,6 +183,7 @@ namespace LinqStatistics
         /// <param name="source">The first sequence of nullable float values to calculate the Covariance of.</param>
         /// <param name="other">The second sequence of nullable float values to calculate the Covariance of.</param>
         /// <returns>The Covariance of the two sequence of values.</returns>
+        /// <remarks>![equation](~/images/covar.gif)</remarks>
         public static float? Covariance(this IEnumerable<float?> source, IEnumerable<float?> other)
         {
             var values = source.AllValues();
@@ -192,6 +199,7 @@ namespace LinqStatistics
         /// <param name="source">The first sequence of float values to calculate the Covariance of.</param>
         /// <param name="other">The second sequence of float values to calculate the Covariance of.</param>
         /// <returns>The Covariance of the two sequence of values.</returns>
+        /// <remarks>![equation](~/images/covar.gif)</remarks>
         public static float Covariance(this IEnumerable<float> source, IEnumerable<float> other)
         {
             if (source == null)
@@ -230,6 +238,7 @@ namespace LinqStatistics
         /// <param name="source">The first sequence of nullable double values to calculate the Covariance of.</param>
         /// <param name="other">The second sequence of nullable double values to calculate the Covariance of.</param>
         /// <returns>The Covariance of the two sequence of values.</returns>
+        /// <remarks>![equation](~/images/covar.gif)</remarks>
         public static double? Covariance(this IEnumerable<double?> source, IEnumerable<double?> other)
         {
             var values = source.AllValues();
@@ -245,6 +254,7 @@ namespace LinqStatistics
         /// <param name="source">The first sequence of double values to calculate the Covariance of.</param>
         /// <param name="other">The second sequence of double values to calculate the Covariance of.</param>
         /// <returns>The Covariance of the two sequence of values.</returns>
+        /// <remarks>![equation](~/images/covar.gif)</remarks>
         public static double Covariance(this IEnumerable<double> source, IEnumerable<double> other)
         {
             if (source == null)

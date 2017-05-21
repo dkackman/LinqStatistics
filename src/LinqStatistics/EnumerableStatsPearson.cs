@@ -18,6 +18,7 @@ namespace LinqStatistics
         /// <param name="source">The first sequence of nullable int values to calculate the Pearson of.</param>
         /// <param name="other">The second sequence of nullable int values to calculate the Pearson of.</param>
         /// <returns>The Pearson value of two sequences.</returns>
+        /// <remarks>![equation](~/images/pearson.gif)</remarks>
         public static double? Pearson(this IEnumerable<int?> source, IEnumerable<int?> other)
         {
             var values = source.AllValues();
@@ -33,6 +34,7 @@ namespace LinqStatistics
         /// <param name="source">The first sequence of int values to calculate the Pearson of.</param>
         /// <param name="other">The second sequence of int values to calculate the Pearson of.</param>
         /// <returns>The Pearson value of two sequences.</returns>
+        /// <remarks>![equation](~/images/pearson.gif)</remarks>
         public static double Pearson(this IEnumerable<int> source, IEnumerable<int> other)
         {
             return source.Covariance(other) / (source.StandardDeviationP() * other.StandardDeviationP());
@@ -43,6 +45,7 @@ namespace LinqStatistics
         /// </summary>
         /// <param name="source">The type of the Tuple's Items.</param>
         /// <returns>The Pearson value.</returns>
+        /// <remarks>![equation](~/images/pearson.gif)</remarks>
         public static double Pearson(this IEnumerable<Tuple<int, int>> source)
         {
             if (source == null)
@@ -63,6 +66,7 @@ namespace LinqStatistics
         /// <param name="other">The second sequence of int values to calculate the Pearson of.</param>
         /// <param name="selector">A transform function to apply to each element.</param>
         /// <returns>The Pearson of the sequence of values.</returns>
+        /// <remarks>![equation](~/images/pearson.gif)</remarks>
         public static double? Pearson<TSource>(this IEnumerable<TSource> source, IEnumerable<TSource> other, Func<TSource, int?> selector)
         {
             if (source == null)
@@ -86,6 +90,7 @@ namespace LinqStatistics
         /// <param name="other">The second sequence of int values to calculate the Pearson of.</param>
         /// <param name="selector">A transform function to apply to each element.</param>
         /// <returns>The Pearson of the sequence of values.</returns>
+        /// <remarks>![equation](~/images/pearson.gif)</remarks>
         public static double Pearson<TSource>(this IEnumerable<TSource> source, IEnumerable<TSource> other, Func<TSource, int> selector)
         {
             if (source == null)
@@ -106,6 +111,7 @@ namespace LinqStatistics
         /// <param name="source">The first sequence of nullable long values to calculate the Pearson of.</param>
         /// <param name="other">The second sequence of nullable long values to calculate the Pearson of.</param>
         /// <returns>The Pearson value of two sequences.</returns>
+        /// <remarks>![equation](~/images/pearson.gif)</remarks>
         public static double? Pearson(this IEnumerable<long?> source, IEnumerable<long?> other)
         {
             var values = source.AllValues();
@@ -121,6 +127,7 @@ namespace LinqStatistics
         /// <param name="source">The first sequence of long values to calculate the Pearson of.</param>
         /// <param name="other">The second sequence of long values to calculate the Pearson of.</param>
         /// <returns>The Pearson value of two sequences.</returns>
+        /// <remarks>![equation](~/images/pearson.gif)</remarks>
         public static double Pearson(this IEnumerable<long> source, IEnumerable<long> other)
         {
             return source.Covariance(other) / (source.StandardDeviationP() * other.StandardDeviationP());
@@ -131,6 +138,7 @@ namespace LinqStatistics
         /// </summary>
         /// <param name="source">The type of the Tuple's Items.</param>
         /// <returns>The Pearson value.</returns>
+        /// <remarks>![equation](~/images/pearson.gif)</remarks>
         public static double Pearson(this IEnumerable<Tuple<long, long>> source)
         {
             if (source == null)
@@ -151,6 +159,7 @@ namespace LinqStatistics
         /// <param name="other">The second sequence of long values to calculate the Pearson of.</param>
         /// <param name="selector">A transform function to apply to each element.</param>
         /// <returns>The Pearson of the sequence of values.</returns>
+        /// <remarks>![equation](~/images/pearson.gif)</remarks>
         public static double? Pearson<TSource>(this IEnumerable<TSource> source, IEnumerable<TSource> other, Func<TSource, long?> selector)
         {
             if (source == null)
@@ -174,6 +183,7 @@ namespace LinqStatistics
         /// <param name="other">The second sequence of long values to calculate the Pearson of.</param>
         /// <param name="selector">A transform function to apply to each element.</param>
         /// <returns>The Pearson of the sequence of values.</returns>
+        /// <remarks>![equation](~/images/pearson.gif)</remarks>
         public static double Pearson<TSource>(this IEnumerable<TSource> source, IEnumerable<TSource> other, Func<TSource, long> selector)
         {
             if (source == null)
@@ -194,6 +204,7 @@ namespace LinqStatistics
         /// <param name="source">The first sequence of nullable decimal values to calculate the Pearson of.</param>
         /// <param name="other">The second sequence of nullable decimal values to calculate the Pearson of.</param>
         /// <returns>The Pearson value of two sequences.</returns>
+        /// <remarks>![equation](~/images/pearson.gif)</remarks>
         public static decimal? Pearson(this IEnumerable<decimal?> source, IEnumerable<decimal?> other)
         {
             var values = source.AllValues();
@@ -209,6 +220,7 @@ namespace LinqStatistics
         /// <param name="source">The first sequence of decimal values to calculate the Pearson of.</param>
         /// <param name="other">The second sequence of decimal values to calculate the Pearson of.</param>
         /// <returns>The Pearson value of two sequences.</returns>
+        /// <remarks>![equation](~/images/pearson.gif)</remarks>
         public static decimal Pearson(this IEnumerable<decimal> source, IEnumerable<decimal> other)
         {
             return source.Covariance(other) / (source.StandardDeviationP() * other.StandardDeviationP());
@@ -219,6 +231,7 @@ namespace LinqStatistics
         /// </summary>
         /// <param name="source">The type of the Tuple's Items.</param>
         /// <returns>The Pearson value.</returns>
+        /// <remarks>![equation](~/images/pearson.gif)</remarks>
         public static decimal Pearson(this IEnumerable<Tuple<decimal, decimal>> source)
         {
             if (source == null)
@@ -239,6 +252,7 @@ namespace LinqStatistics
         /// <param name="other">The second sequence of decimal values to calculate the Pearson of.</param>
         /// <param name="selector">A transform function to apply to each element.</param>
         /// <returns>The Pearson of the sequence of values.</returns>
+        /// <remarks>![equation](~/images/pearson.gif)</remarks>
         public static decimal? Pearson<TSource>(this IEnumerable<TSource> source, IEnumerable<TSource> other, Func<TSource, decimal?> selector)
         {
             if (source == null)
@@ -262,6 +276,7 @@ namespace LinqStatistics
         /// <param name="other">The second sequence of decimal values to calculate the Pearson of.</param>
         /// <param name="selector">A transform function to apply to each element.</param>
         /// <returns>The Pearson of the sequence of values.</returns>
+        /// <remarks>![equation](~/images/pearson.gif)</remarks>
         public static decimal Pearson<TSource>(this IEnumerable<TSource> source, IEnumerable<TSource> other, Func<TSource, decimal> selector)
         {
             if (source == null)
@@ -282,6 +297,7 @@ namespace LinqStatistics
         /// <param name="source">The first sequence of nullable float values to calculate the Pearson of.</param>
         /// <param name="other">The second sequence of nullable float values to calculate the Pearson of.</param>
         /// <returns>The Pearson value of two sequences.</returns>
+        /// <remarks>![equation](~/images/pearson.gif)</remarks>
         public static float? Pearson(this IEnumerable<float?> source, IEnumerable<float?> other)
         {
             var values = source.AllValues();
@@ -297,6 +313,7 @@ namespace LinqStatistics
         /// <param name="source">The first sequence of float values to calculate the Pearson of.</param>
         /// <param name="other">The second sequence of float values to calculate the Pearson of.</param>
         /// <returns>The Pearson value of two sequences.</returns>
+        /// <remarks>![equation](~/images/pearson.gif)</remarks>
         public static float Pearson(this IEnumerable<float> source, IEnumerable<float> other)
         {
             return source.Covariance(other) / (source.StandardDeviationP() * other.StandardDeviationP());
@@ -307,6 +324,7 @@ namespace LinqStatistics
         /// </summary>
         /// <param name="source">The type of the Tuple's Items.</param>
         /// <returns>The Pearson value.</returns>
+        /// <remarks>![equation](~/images/pearson.gif)</remarks>
         public static float Pearson(this IEnumerable<Tuple<float, float>> source)
         {
             if (source == null)
@@ -327,6 +345,7 @@ namespace LinqStatistics
         /// <param name="other">The second sequence of float values to calculate the Pearson of.</param>
         /// <param name="selector">A transform function to apply to each element.</param>
         /// <returns>The Pearson of the sequence of values.</returns>
+        /// <remarks>![equation](~/images/pearson.gif)</remarks>
         public static float? Pearson<TSource>(this IEnumerable<TSource> source, IEnumerable<TSource> other, Func<TSource, float?> selector)
         {
             if (source == null)
@@ -350,6 +369,7 @@ namespace LinqStatistics
         /// <param name="other">The second sequence of float values to calculate the Pearson of.</param>
         /// <param name="selector">A transform function to apply to each element.</param>
         /// <returns>The Pearson of the sequence of values.</returns>
+        /// <remarks>![equation](~/images/pearson.gif)</remarks>
         public static float Pearson<TSource>(this IEnumerable<TSource> source, IEnumerable<TSource> other, Func<TSource, float> selector)
         {
             if (source == null)
@@ -370,6 +390,7 @@ namespace LinqStatistics
         /// <param name="source">The first sequence of nullable double values to calculate the Pearson of.</param>
         /// <param name="other">The second sequence of nullable double values to calculate the Pearson of.</param>
         /// <returns>The Pearson value of two sequences.</returns>
+        /// <remarks>![equation](~/images/pearson.gif)</remarks>
         public static double? Pearson(this IEnumerable<double?> source, IEnumerable<double?> other)
         {
             var values = source.AllValues();
@@ -385,6 +406,7 @@ namespace LinqStatistics
         /// <param name="source">The first sequence of double values to calculate the Pearson of.</param>
         /// <param name="other">The second sequence of double values to calculate the Pearson of.</param>
         /// <returns>The Pearson value of two sequences.</returns>
+        /// <remarks>![equation](~/images/pearson.gif)</remarks>
         public static double Pearson(this IEnumerable<double> source, IEnumerable<double> other)
         {
             return source.Covariance(other) / (source.StandardDeviationP() * other.StandardDeviationP());
@@ -395,6 +417,7 @@ namespace LinqStatistics
         /// </summary>
         /// <param name="source">The type of the Tuple's Items.</param>
         /// <returns>The Pearson value.</returns>
+        /// <remarks>![equation](~/images/pearson.gif)</remarks>
         public static double Pearson(this IEnumerable<Tuple<double, double>> source)
         {
             if (source == null)
@@ -415,6 +438,7 @@ namespace LinqStatistics
         /// <param name="other">The second sequence of double values to calculate the Pearson of.</param>
         /// <param name="selector">A transform function to apply to each element.</param>
         /// <returns>The Pearson of the sequence of values.</returns>
+        /// <remarks>![equation](~/images/pearson.gif)</remarks>
         public static double? Pearson<TSource>(this IEnumerable<TSource> source, IEnumerable<TSource> other, Func<TSource, double?> selector)
         {
             if (source == null)
@@ -438,6 +462,7 @@ namespace LinqStatistics
         /// <param name="other">The second sequence of double values to calculate the Pearson of.</param>
         /// <param name="selector">A transform function to apply to each element.</param>
         /// <returns>The Pearson of the sequence of values.</returns>
+        /// <remarks>![equation](~/images/pearson.gif)</remarks>
         public static double Pearson<TSource>(this IEnumerable<TSource> source, IEnumerable<TSource> other, Func<TSource, double> selector)
         {
             if (source == null)

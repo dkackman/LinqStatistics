@@ -9,30 +9,28 @@
     <Import_RootNamespace>docfx</Import_RootNamespace>
   </PropertyGroup>
   <ItemGroup>
-    <None Include="$(MSBuildThisFileDirectory)api\.gitignore" />
-    <None Include="$(MSBuildThisFileDirectory)api\.manifest" />
     <None Include="$(MSBuildThisFileDirectory)api\index.md" />
-    <None Include="$(MSBuildThisFileDirectory)api\LinqStatistics.Bin.yml" />
-    <None Include="$(MSBuildThisFileDirectory)api\LinqStatistics.BinningMode.yml" />
-    <None Include="$(MSBuildThisFileDirectory)api\LinqStatistics.EnumerableStats.yml" />
-    <None Include="$(MSBuildThisFileDirectory)api\LinqStatistics.ItemCount-1.yml" />
-    <None Include="$(MSBuildThisFileDirectory)api\LinqStatistics.LeastSquares.yml" />
-    <None Include="$(MSBuildThisFileDirectory)api\LinqStatistics.NaN.EnumerableStats.yml" />
-    <None Include="$(MSBuildThisFileDirectory)api\LinqStatistics.NaN.yml" />
-    <None Include="$(MSBuildThisFileDirectory)api\LinqStatistics.Range-1.yml" />
-    <None Include="$(MSBuildThisFileDirectory)api\LinqStatistics.yml" />
-    <None Include="$(MSBuildThisFileDirectory)api\toc.yml" />
     <None Include="$(MSBuildThisFileDirectory)index.md" />
-    <None Include="$(MSBuildThisFileDirectory)toc.yml" />
     <None Include="$(MSBuildThisFileDirectory)xref\msdn.4.5.2.zip" />
     <None Include="$(MSBuildThisFileDirectory)xref\namespaces.4.5.2.zip" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)apidoc\" />
     <Folder Include="$(MSBuildThisFileDirectory)articles\" />
-    <Folder Include="$(MSBuildThisFileDirectory)images\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="$(MSBuildThisFileDirectory)docfx.json" />
+    <Content Include="$(MSBuildThisFileDirectory)images\covar.gif" />
+    <Content Include="$(MSBuildThisFileDirectory)images\kurtosis.gif" />
+    <Content Include="$(MSBuildThisFileDirectory)images\ls.gif" />
+    <Content Include="$(MSBuildThisFileDirectory)images\ls_b.gif" />
+    <Content Include="$(MSBuildThisFileDirectory)images\ls_m.gif" />
+    <Content Include="$(MSBuildThisFileDirectory)images\pearson.gif" />
+    <Content Include="$(MSBuildThisFileDirectory)images\rms.gif" />
+    <Content Include="$(MSBuildThisFileDirectory)images\skewness.gif" />
+    <Content Include="$(MSBuildThisFileDirectory)images\stdev.gif" />
+    <Content Include="$(MSBuildThisFileDirectory)images\stdevp.gif" />
+    <Content Include="$(MSBuildThisFileDirectory)images\var.gif" />
+    <Content Include="$(MSBuildThisFileDirectory)images\varp.gif" />
   </ItemGroup>
 </Project>

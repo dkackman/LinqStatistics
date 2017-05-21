@@ -18,6 +18,7 @@ namespace LinqStatistics
         /// </summary>
         /// <param name="source">A sequence of int values to calculate the RootMeanSquare of.</param>
         /// <returns>The RootMeanSquare.</returns>
+        /// <remarks>![equation](~/images/rms.gif)</remarks>
         public static double? RootMeanSquare(this IEnumerable<int?> source)
         {
             var values = source.AllValues();
@@ -32,6 +33,7 @@ namespace LinqStatistics
         /// </summary>
         /// <param name="source">A sequence of int values to calculate the RootMeanSquare of.</param>
         /// <returns>The RootMeanSquare.</returns>
+        /// <remarks>![equation](~/images/rms.gif)</remarks>
         public static double RootMeanSquare(this IEnumerable<int> source)
         {
             if (source == null)
@@ -63,6 +65,7 @@ namespace LinqStatistics
         /// <param name="source">A sequence of values to calculate the RootMeanSquare of.</param>
         /// <param name="selector">A transform function to apply to each element.</param>
         /// <returns>The RootMeanSquare.</returns>
+        /// <remarks>![equation](~/images/rms.gif)</remarks>
         public static double? RootMeanSquare<TSource>(this IEnumerable<TSource> source, Func<TSource, int?> selector)
         {
             if (source == null)
@@ -82,6 +85,7 @@ namespace LinqStatistics
         /// <param name="source">A sequence of values to calculate the RootMeanSquare of.</param>
         /// <param name="selector">A transform function to apply to each element.</param>
         /// <returns>The RootMeanSquare.</returns>
+        /// <remarks>![equation](~/images/rms.gif)</remarks>
         public static double RootMeanSquare<TSource>(this IEnumerable<TSource> source, Func<TSource, int> selector)
         {
              if (source == null)
@@ -99,6 +103,7 @@ namespace LinqStatistics
         /// </summary>
         /// <param name="source">A sequence of long values to calculate the RootMeanSquare of.</param>
         /// <returns>The RootMeanSquare.</returns>
+        /// <remarks>![equation](~/images/rms.gif)</remarks>
         public static double? RootMeanSquare(this IEnumerable<long?> source)
         {
             var values = source.AllValues();
@@ -113,6 +118,7 @@ namespace LinqStatistics
         /// </summary>
         /// <param name="source">A sequence of long values to calculate the RootMeanSquare of.</param>
         /// <returns>The RootMeanSquare.</returns>
+        /// <remarks>![equation](~/images/rms.gif)</remarks>
         public static double RootMeanSquare(this IEnumerable<long> source)
         {
             if (source == null)
@@ -144,6 +150,7 @@ namespace LinqStatistics
         /// <param name="source">A sequence of values to calculate the RootMeanSquare of.</param>
         /// <param name="selector">A transform function to apply to each element.</param>
         /// <returns>The RootMeanSquare.</returns>
+        /// <remarks>![equation](~/images/rms.gif)</remarks>
         public static double? RootMeanSquare<TSource>(this IEnumerable<TSource> source, Func<TSource, long?> selector)
         {
             if (source == null)
@@ -163,6 +170,7 @@ namespace LinqStatistics
         /// <param name="source">A sequence of values to calculate the RootMeanSquare of.</param>
         /// <param name="selector">A transform function to apply to each element.</param>
         /// <returns>The RootMeanSquare.</returns>
+        /// <remarks>![equation](~/images/rms.gif)</remarks>
         public static double RootMeanSquare<TSource>(this IEnumerable<TSource> source, Func<TSource, long> selector)
         {
              if (source == null)
@@ -180,6 +188,7 @@ namespace LinqStatistics
         /// </summary>
         /// <param name="source">A sequence of decimal values to calculate the RootMeanSquare of.</param>
         /// <returns>The RootMeanSquare.</returns>
+        /// <remarks>![equation](~/images/rms.gif)</remarks>
         public static decimal? RootMeanSquare(this IEnumerable<decimal?> source)
         {
             var values = source.AllValues();
@@ -194,6 +203,7 @@ namespace LinqStatistics
         /// </summary>
         /// <param name="source">A sequence of decimal values to calculate the RootMeanSquare of.</param>
         /// <returns>The RootMeanSquare.</returns>
+        /// <remarks>![equation](~/images/rms.gif)</remarks>
         public static decimal RootMeanSquare(this IEnumerable<decimal> source)
         {
             if (source == null)
@@ -225,6 +235,7 @@ namespace LinqStatistics
         /// <param name="source">A sequence of values to calculate the RootMeanSquare of.</param>
         /// <param name="selector">A transform function to apply to each element.</param>
         /// <returns>The RootMeanSquare.</returns>
+        /// <remarks>![equation](~/images/rms.gif)</remarks>
         public static decimal? RootMeanSquare<TSource>(this IEnumerable<TSource> source, Func<TSource, decimal?> selector)
         {
             if (source == null)
@@ -244,6 +255,7 @@ namespace LinqStatistics
         /// <param name="source">A sequence of values to calculate the RootMeanSquare of.</param>
         /// <param name="selector">A transform function to apply to each element.</param>
         /// <returns>The RootMeanSquare.</returns>
+        /// <remarks>![equation](~/images/rms.gif)</remarks>
         public static decimal RootMeanSquare<TSource>(this IEnumerable<TSource> source, Func<TSource, decimal> selector)
         {
              if (source == null)
@@ -261,6 +273,7 @@ namespace LinqStatistics
         /// </summary>
         /// <param name="source">A sequence of float values to calculate the RootMeanSquare of.</param>
         /// <returns>The RootMeanSquare.</returns>
+        /// <remarks>![equation](~/images/rms.gif)</remarks>
         public static float? RootMeanSquare(this IEnumerable<float?> source)
         {
             var values = source.AllValues();
@@ -275,6 +288,7 @@ namespace LinqStatistics
         /// </summary>
         /// <param name="source">A sequence of float values to calculate the RootMeanSquare of.</param>
         /// <returns>The RootMeanSquare.</returns>
+        /// <remarks>![equation](~/images/rms.gif)</remarks>
         public static float RootMeanSquare(this IEnumerable<float> source)
         {
             if (source == null)
@@ -306,6 +320,7 @@ namespace LinqStatistics
         /// <param name="source">A sequence of values to calculate the RootMeanSquare of.</param>
         /// <param name="selector">A transform function to apply to each element.</param>
         /// <returns>The RootMeanSquare.</returns>
+        /// <remarks>![equation](~/images/rms.gif)</remarks>
         public static float? RootMeanSquare<TSource>(this IEnumerable<TSource> source, Func<TSource, float?> selector)
         {
             if (source == null)
@@ -325,6 +340,7 @@ namespace LinqStatistics
         /// <param name="source">A sequence of values to calculate the RootMeanSquare of.</param>
         /// <param name="selector">A transform function to apply to each element.</param>
         /// <returns>The RootMeanSquare.</returns>
+        /// <remarks>![equation](~/images/rms.gif)</remarks>
         public static float RootMeanSquare<TSource>(this IEnumerable<TSource> source, Func<TSource, float> selector)
         {
              if (source == null)
@@ -342,6 +358,7 @@ namespace LinqStatistics
         /// </summary>
         /// <param name="source">A sequence of double values to calculate the RootMeanSquare of.</param>
         /// <returns>The RootMeanSquare.</returns>
+        /// <remarks>![equation](~/images/rms.gif)</remarks>
         public static double? RootMeanSquare(this IEnumerable<double?> source)
         {
             var values = source.AllValues();
@@ -356,6 +373,7 @@ namespace LinqStatistics
         /// </summary>
         /// <param name="source">A sequence of double values to calculate the RootMeanSquare of.</param>
         /// <returns>The RootMeanSquare.</returns>
+        /// <remarks>![equation](~/images/rms.gif)</remarks>
         public static double RootMeanSquare(this IEnumerable<double> source)
         {
             if (source == null)
@@ -387,6 +405,7 @@ namespace LinqStatistics
         /// <param name="source">A sequence of values to calculate the RootMeanSquare of.</param>
         /// <param name="selector">A transform function to apply to each element.</param>
         /// <returns>The RootMeanSquare.</returns>
+        /// <remarks>![equation](~/images/rms.gif)</remarks>
         public static double? RootMeanSquare<TSource>(this IEnumerable<TSource> source, Func<TSource, double?> selector)
         {
             if (source == null)
@@ -406,6 +425,7 @@ namespace LinqStatistics
         /// <param name="source">A sequence of values to calculate the RootMeanSquare of.</param>
         /// <param name="selector">A transform function to apply to each element.</param>
         /// <returns>The RootMeanSquare.</returns>
+        /// <remarks>![equation](~/images/rms.gif)</remarks>
         public static double RootMeanSquare<TSource>(this IEnumerable<TSource> source, Func<TSource, double> selector)
         {
              if (source == null)

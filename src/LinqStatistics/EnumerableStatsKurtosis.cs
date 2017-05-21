@@ -17,6 +17,7 @@ namespace LinqStatistics
         /// </summary>
         /// <param name="source">A sequence of nullable int values to calculate the Kurtosis of.</param>
         /// <returns>The Kurtosis of the sequence of values.</returns>
+        /// <remarks>![equation](~/images/kurtosis.gif)</remarks>
         public static double? Kurtosis(this IEnumerable<int?> source)
         {
             var values = source.AllValues();
@@ -31,6 +32,7 @@ namespace LinqStatistics
         /// </summary>
         /// <param name="source">A sequence of int values to calculate the Kurtosis of.</param>
         /// <returns>The Kurtosis of the sequence of values.</returns>
+        /// <remarks>![equation](~/images/kurtosis.gif)</remarks>
         public static double Kurtosis(this IEnumerable<int> source)
         {
             if (source == null)
@@ -76,6 +78,7 @@ namespace LinqStatistics
         /// <param name="source">A sequence of values that are used to calculate a Kurtosis</param>
         /// <param name="selector">A transform function to apply to each element.</param>
         /// <returns>The Kurtosis of the sequence of values.</returns>
+        /// <remarks>![equation](~/images/kurtosis.gif)</remarks>
         public static double Kurtosis<TSource>(this IEnumerable<TSource> source, Func<TSource, int> selector)
         {
             if (source == null)
@@ -95,6 +98,7 @@ namespace LinqStatistics
         /// <param name="source">A sequence of values that are used to calculate a Kurtosis</param>
         /// <param name="selector">A transform function to apply to each element.</param>
         /// <returns>The Kurtosis of the sequence of values.</returns>
+        /// <remarks>![equation](~/images/kurtosis.gif)</remarks>
         public static double? Kurtosis<TSource>(this IEnumerable<TSource> source, Func<TSource, int?> selector)
         {
             if (source == null)
@@ -111,6 +115,7 @@ namespace LinqStatistics
         /// </summary>
         /// <param name="source">A sequence of nullable long values to calculate the Kurtosis of.</param>
         /// <returns>The Kurtosis of the sequence of values.</returns>
+        /// <remarks>![equation](~/images/kurtosis.gif)</remarks>
         public static double? Kurtosis(this IEnumerable<long?> source)
         {
             var values = source.AllValues();
@@ -125,6 +130,7 @@ namespace LinqStatistics
         /// </summary>
         /// <param name="source">A sequence of long values to calculate the Kurtosis of.</param>
         /// <returns>The Kurtosis of the sequence of values.</returns>
+        /// <remarks>![equation](~/images/kurtosis.gif)</remarks>
         public static double Kurtosis(this IEnumerable<long> source)
         {
             if (source == null)
@@ -170,6 +176,7 @@ namespace LinqStatistics
         /// <param name="source">A sequence of values that are used to calculate a Kurtosis</param>
         /// <param name="selector">A transform function to apply to each element.</param>
         /// <returns>The Kurtosis of the sequence of values.</returns>
+        /// <remarks>![equation](~/images/kurtosis.gif)</remarks>
         public static double Kurtosis<TSource>(this IEnumerable<TSource> source, Func<TSource, long> selector)
         {
             if (source == null)
@@ -189,6 +196,7 @@ namespace LinqStatistics
         /// <param name="source">A sequence of values that are used to calculate a Kurtosis</param>
         /// <param name="selector">A transform function to apply to each element.</param>
         /// <returns>The Kurtosis of the sequence of values.</returns>
+        /// <remarks>![equation](~/images/kurtosis.gif)</remarks>
         public static double? Kurtosis<TSource>(this IEnumerable<TSource> source, Func<TSource, long?> selector)
         {
             if (source == null)
@@ -205,6 +213,7 @@ namespace LinqStatistics
         /// </summary>
         /// <param name="source">A sequence of nullable decimal values to calculate the Kurtosis of.</param>
         /// <returns>The Kurtosis of the sequence of values.</returns>
+        /// <remarks>![equation](~/images/kurtosis.gif)</remarks>
         public static decimal? Kurtosis(this IEnumerable<decimal?> source)
         {
             var values = source.AllValues();
@@ -219,6 +228,7 @@ namespace LinqStatistics
         /// </summary>
         /// <param name="source">A sequence of decimal values to calculate the Kurtosis of.</param>
         /// <returns>The Kurtosis of the sequence of values.</returns>
+        /// <remarks>![equation](~/images/kurtosis.gif)</remarks>
         public static decimal Kurtosis(this IEnumerable<decimal> source)
         {
             if (source == null)
@@ -264,6 +274,7 @@ namespace LinqStatistics
         /// <param name="source">A sequence of values that are used to calculate a Kurtosis</param>
         /// <param name="selector">A transform function to apply to each element.</param>
         /// <returns>The Kurtosis of the sequence of values.</returns>
+        /// <remarks>![equation](~/images/kurtosis.gif)</remarks>
         public static decimal Kurtosis<TSource>(this IEnumerable<TSource> source, Func<TSource, decimal> selector)
         {
             if (source == null)
@@ -283,6 +294,7 @@ namespace LinqStatistics
         /// <param name="source">A sequence of values that are used to calculate a Kurtosis</param>
         /// <param name="selector">A transform function to apply to each element.</param>
         /// <returns>The Kurtosis of the sequence of values.</returns>
+        /// <remarks>![equation](~/images/kurtosis.gif)</remarks>
         public static decimal? Kurtosis<TSource>(this IEnumerable<TSource> source, Func<TSource, decimal?> selector)
         {
             if (source == null)
@@ -299,6 +311,7 @@ namespace LinqStatistics
         /// </summary>
         /// <param name="source">A sequence of nullable float values to calculate the Kurtosis of.</param>
         /// <returns>The Kurtosis of the sequence of values.</returns>
+        /// <remarks>![equation](~/images/kurtosis.gif)</remarks>
         public static float? Kurtosis(this IEnumerable<float?> source)
         {
             var values = source.AllValues();
@@ -313,6 +326,7 @@ namespace LinqStatistics
         /// </summary>
         /// <param name="source">A sequence of float values to calculate the Kurtosis of.</param>
         /// <returns>The Kurtosis of the sequence of values.</returns>
+        /// <remarks>![equation](~/images/kurtosis.gif)</remarks>
         public static float Kurtosis(this IEnumerable<float> source)
         {
             if (source == null)
@@ -358,6 +372,7 @@ namespace LinqStatistics
         /// <param name="source">A sequence of values that are used to calculate a Kurtosis</param>
         /// <param name="selector">A transform function to apply to each element.</param>
         /// <returns>The Kurtosis of the sequence of values.</returns>
+        /// <remarks>![equation](~/images/kurtosis.gif)</remarks>
         public static float Kurtosis<TSource>(this IEnumerable<TSource> source, Func<TSource, float> selector)
         {
             if (source == null)
@@ -377,6 +392,7 @@ namespace LinqStatistics
         /// <param name="source">A sequence of values that are used to calculate a Kurtosis</param>
         /// <param name="selector">A transform function to apply to each element.</param>
         /// <returns>The Kurtosis of the sequence of values.</returns>
+        /// <remarks>![equation](~/images/kurtosis.gif)</remarks>
         public static float? Kurtosis<TSource>(this IEnumerable<TSource> source, Func<TSource, float?> selector)
         {
             if (source == null)
@@ -393,6 +409,7 @@ namespace LinqStatistics
         /// </summary>
         /// <param name="source">A sequence of nullable double values to calculate the Kurtosis of.</param>
         /// <returns>The Kurtosis of the sequence of values.</returns>
+        /// <remarks>![equation](~/images/kurtosis.gif)</remarks>
         public static double? Kurtosis(this IEnumerable<double?> source)
         {
             var values = source.AllValues();
@@ -407,6 +424,7 @@ namespace LinqStatistics
         /// </summary>
         /// <param name="source">A sequence of double values to calculate the Kurtosis of.</param>
         /// <returns>The Kurtosis of the sequence of values.</returns>
+        /// <remarks>![equation](~/images/kurtosis.gif)</remarks>
         public static double Kurtosis(this IEnumerable<double> source)
         {
             if (source == null)
@@ -452,6 +470,7 @@ namespace LinqStatistics
         /// <param name="source">A sequence of values that are used to calculate a Kurtosis</param>
         /// <param name="selector">A transform function to apply to each element.</param>
         /// <returns>The Kurtosis of the sequence of values.</returns>
+        /// <remarks>![equation](~/images/kurtosis.gif)</remarks>
         public static double Kurtosis<TSource>(this IEnumerable<TSource> source, Func<TSource, double> selector)
         {
             if (source == null)
@@ -471,6 +490,7 @@ namespace LinqStatistics
         /// <param name="source">A sequence of values that are used to calculate a Kurtosis</param>
         /// <param name="selector">A transform function to apply to each element.</param>
         /// <returns>The Kurtosis of the sequence of values.</returns>
+        /// <remarks>![equation](~/images/kurtosis.gif)</remarks>
         public static double? Kurtosis<TSource>(this IEnumerable<TSource> source, Func<TSource, double?> selector)
         {
             if (source == null)

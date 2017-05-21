@@ -34,6 +34,7 @@ namespace LinqStatistics
         /// </summary>
         /// <param name="source">A sequence of <#= type.Item1 #> values to calculate the RootMeanSquare of.</param>
         /// <returns>The RootMeanSquare.</returns>
+        /// <remarks>![equation](~/images/rms.gif)</remarks>
         public static <#= type.Item2 #>? RootMeanSquare(this IEnumerable<<#= type.Item1 #>?> source)
         {
             var values = source.AllValues();
@@ -48,6 +49,7 @@ namespace LinqStatistics
         /// </summary>
         /// <param name="source">A sequence of <#= type.Item1 #> values to calculate the RootMeanSquare of.</param>
         /// <returns>The RootMeanSquare.</returns>
+        /// <remarks>![equation](~/images/rms.gif)</remarks>
         public static <#= type.Item2 #> RootMeanSquare(this IEnumerable<<#= type.Item1 #>> source)
         {
             if (source == null)
@@ -79,6 +81,7 @@ namespace LinqStatistics
         /// <param name="source">A sequence of values to calculate the RootMeanSquare of.</param>
         /// <param name="selector">A transform function to apply to each element.</param>
         /// <returns>The RootMeanSquare.</returns>
+        /// <remarks>![equation](~/images/rms.gif)</remarks>
         public static <#= type.Item2 #>? RootMeanSquare<TSource>(this IEnumerable<TSource> source, Func<TSource, <#= type.Item1 #>?> selector)
         {
             if (source == null)
@@ -98,6 +101,7 @@ namespace LinqStatistics
         /// <param name="source">A sequence of values to calculate the RootMeanSquare of.</param>
         /// <param name="selector">A transform function to apply to each element.</param>
         /// <returns>The RootMeanSquare.</returns>
+        /// <remarks>![equation](~/images/rms.gif)</remarks>
         public static <#= type.Item2 #> RootMeanSquare<TSource>(this IEnumerable<TSource> source, Func<TSource, <#= type.Item1 #>> selector)
         {
              if (source == null)

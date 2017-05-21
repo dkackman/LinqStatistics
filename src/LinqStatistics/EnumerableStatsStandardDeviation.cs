@@ -20,6 +20,7 @@ namespace LinqStatistics
         ///     The StandardDeviation of the sequence of values, or null if the source sequence is
         ///     empty or contains only values that are null.
         /// </returns>
+        /// <remarks>![equation](~/images/stdev.gif)</remarks>
         public static double? StandardDeviation(this IEnumerable<int?> source)
         {
             var values = source.AllValues();
@@ -36,6 +37,7 @@ namespace LinqStatistics
         /// <returns>       
         ///     The StandardDeviation of the sequence of values.
         /// </returns>
+        /// <remarks>![equation](~/images/stdev.gif)</remarks>
         public static double StandardDeviation(this IEnumerable<int> source)
         {
             return (double)Math.Sqrt((double)source.Variance());
@@ -51,6 +53,7 @@ namespace LinqStatistics
         /// <returns>       
         ///     The StandardDeviation of the sequence of values.
         /// </returns>
+        /// <remarks>![equation](~/images/stdev.gif)</remarks>
         public static double? StandardDeviation<TSource>(this IEnumerable<TSource> source, Func<TSource, int?> selector)
         {
             if (source == null)
@@ -72,6 +75,7 @@ namespace LinqStatistics
         /// <returns>       
         ///     The StandardDeviation of the sequence of values.
         /// </returns>
+        /// <remarks>![equation](~/images/stdev.gif)</remarks>
         public static double StandardDeviation<TSource>(this IEnumerable<TSource> source, Func<TSource, int> selector)
         {
             if (source == null)
@@ -91,6 +95,7 @@ namespace LinqStatistics
         ///     The StandardDeviation of the sequence of values, or null if the source sequence is
         ///     empty or contains only values that are null.
         /// </returns>
+        /// <remarks>![equation](~/images/stdev.gif)</remarks>
         public static double? StandardDeviation(this IEnumerable<long?> source)
         {
             var values = source.AllValues();
@@ -107,6 +112,7 @@ namespace LinqStatistics
         /// <returns>       
         ///     The StandardDeviation of the sequence of values.
         /// </returns>
+        /// <remarks>![equation](~/images/stdev.gif)</remarks>
         public static double StandardDeviation(this IEnumerable<long> source)
         {
             return (double)Math.Sqrt((double)source.Variance());
@@ -122,6 +128,7 @@ namespace LinqStatistics
         /// <returns>       
         ///     The StandardDeviation of the sequence of values.
         /// </returns>
+        /// <remarks>![equation](~/images/stdev.gif)</remarks>
         public static double? StandardDeviation<TSource>(this IEnumerable<TSource> source, Func<TSource, long?> selector)
         {
             if (source == null)
@@ -143,6 +150,7 @@ namespace LinqStatistics
         /// <returns>       
         ///     The StandardDeviation of the sequence of values.
         /// </returns>
+        /// <remarks>![equation](~/images/stdev.gif)</remarks>
         public static double StandardDeviation<TSource>(this IEnumerable<TSource> source, Func<TSource, long> selector)
         {
             if (source == null)
@@ -162,6 +170,7 @@ namespace LinqStatistics
         ///     The StandardDeviation of the sequence of values, or null if the source sequence is
         ///     empty or contains only values that are null.
         /// </returns>
+        /// <remarks>![equation](~/images/stdev.gif)</remarks>
         public static decimal? StandardDeviation(this IEnumerable<decimal?> source)
         {
             var values = source.AllValues();
@@ -178,6 +187,7 @@ namespace LinqStatistics
         /// <returns>       
         ///     The StandardDeviation of the sequence of values.
         /// </returns>
+        /// <remarks>![equation](~/images/stdev.gif)</remarks>
         public static decimal StandardDeviation(this IEnumerable<decimal> source)
         {
             return (decimal)Math.Sqrt((double)source.Variance());
@@ -193,6 +203,7 @@ namespace LinqStatistics
         /// <returns>       
         ///     The StandardDeviation of the sequence of values.
         /// </returns>
+        /// <remarks>![equation](~/images/stdev.gif)</remarks>
         public static decimal? StandardDeviation<TSource>(this IEnumerable<TSource> source, Func<TSource, decimal?> selector)
         {
             if (source == null)
@@ -214,6 +225,7 @@ namespace LinqStatistics
         /// <returns>       
         ///     The StandardDeviation of the sequence of values.
         /// </returns>
+        /// <remarks>![equation](~/images/stdev.gif)</remarks>
         public static decimal StandardDeviation<TSource>(this IEnumerable<TSource> source, Func<TSource, decimal> selector)
         {
             if (source == null)
@@ -233,6 +245,7 @@ namespace LinqStatistics
         ///     The StandardDeviation of the sequence of values, or null if the source sequence is
         ///     empty or contains only values that are null.
         /// </returns>
+        /// <remarks>![equation](~/images/stdev.gif)</remarks>
         public static float? StandardDeviation(this IEnumerable<float?> source)
         {
             var values = source.AllValues();
@@ -249,6 +262,7 @@ namespace LinqStatistics
         /// <returns>       
         ///     The StandardDeviation of the sequence of values.
         /// </returns>
+        /// <remarks>![equation](~/images/stdev.gif)</remarks>
         public static float StandardDeviation(this IEnumerable<float> source)
         {
             return (float)Math.Sqrt((double)source.Variance());
@@ -264,6 +278,7 @@ namespace LinqStatistics
         /// <returns>       
         ///     The StandardDeviation of the sequence of values.
         /// </returns>
+        /// <remarks>![equation](~/images/stdev.gif)</remarks>
         public static float? StandardDeviation<TSource>(this IEnumerable<TSource> source, Func<TSource, float?> selector)
         {
             if (source == null)
@@ -285,6 +300,7 @@ namespace LinqStatistics
         /// <returns>       
         ///     The StandardDeviation of the sequence of values.
         /// </returns>
+        /// <remarks>![equation](~/images/stdev.gif)</remarks>
         public static float StandardDeviation<TSource>(this IEnumerable<TSource> source, Func<TSource, float> selector)
         {
             if (source == null)
@@ -304,6 +320,7 @@ namespace LinqStatistics
         ///     The StandardDeviation of the sequence of values, or null if the source sequence is
         ///     empty or contains only values that are null.
         /// </returns>
+        /// <remarks>![equation](~/images/stdev.gif)</remarks>
         public static double? StandardDeviation(this IEnumerable<double?> source)
         {
             var values = source.AllValues();
@@ -320,6 +337,7 @@ namespace LinqStatistics
         /// <returns>       
         ///     The StandardDeviation of the sequence of values.
         /// </returns>
+        /// <remarks>![equation](~/images/stdev.gif)</remarks>
         public static double StandardDeviation(this IEnumerable<double> source)
         {
             return (double)Math.Sqrt((double)source.Variance());
@@ -335,6 +353,7 @@ namespace LinqStatistics
         /// <returns>       
         ///     The StandardDeviation of the sequence of values.
         /// </returns>
+        /// <remarks>![equation](~/images/stdev.gif)</remarks>
         public static double? StandardDeviation<TSource>(this IEnumerable<TSource> source, Func<TSource, double?> selector)
         {
             if (source == null)
@@ -356,6 +375,7 @@ namespace LinqStatistics
         /// <returns>       
         ///     The StandardDeviation of the sequence of values.
         /// </returns>
+        /// <remarks>![equation](~/images/stdev.gif)</remarks>
         public static double StandardDeviation<TSource>(this IEnumerable<TSource> source, Func<TSource, double> selector)
         {
             if (source == null)

@@ -36,6 +36,7 @@ namespace LinqStatistics
         ///     The Variance of the sequence of values, or null if the source sequence is
         ///     empty or contains only values that are null.
         /// </returns>
+        /// <remarks>![equation](~/images/var.gif)</remarks>
         public static <#= type.Item2 #>? Variance(this IEnumerable<<#= type.Item1 #>?> source)
         {
             var values = source.AllValues();
@@ -52,6 +53,7 @@ namespace LinqStatistics
         /// <returns>       
         ///     The Variance of the sequence of values.
         /// </returns>
+        /// <remarks>![equation](~/images/var.gif)</remarks>
         public static <#= type.Item2 #> Variance(this IEnumerable<<#= type.Item1 #>> source)
         {
             if (source == null)
@@ -89,6 +91,7 @@ namespace LinqStatistics
         /// <returns>       
         ///     The Variance of the sequence of values.
         /// </returns>
+        /// <remarks>![equation](~/images/var.gif)</remarks>
         public static <#= type.Item2 #>? Variance<TSource>(this IEnumerable<TSource> source, Func<TSource, <#= type.Item1 #>?> selector)
         {
             if (source == null)
@@ -110,6 +113,7 @@ namespace LinqStatistics
         /// <returns>       
         ///     The Variance of the sequence of values.
         /// </returns>
+        /// <remarks>![equation](~/images/var.gif)</remarks>
         public static <#= type.Item2 #> Variance<TSource>(this IEnumerable<TSource> source, Func<TSource, <#= type.Item1 #>> selector)
         {
             if (source == null)

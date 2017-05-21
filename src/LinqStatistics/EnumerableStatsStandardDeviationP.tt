@@ -36,6 +36,7 @@ namespace LinqStatistics
         ///     The population StandardDeviation of the sequence of values, or null if the source sequence is
         ///     empty or contains only values that are null.
         /// </returns>
+        /// <remarks>![equation](~/images/stdevp.gif)</remarks>
         public static <#= type.Item2 #>? StandardDeviationP(this IEnumerable<<#= type.Item1 #>?> source)
         {
             var values = source.AllValues();
@@ -52,6 +53,7 @@ namespace LinqStatistics
         /// <returns>       
         ///     The population StandardDeviation of the sequence of values.
         /// </returns>
+        /// <remarks>![equation](~/images/stdevp.gif)</remarks>
         public static <#= type.Item2 #> StandardDeviationP(this IEnumerable<<#= type.Item1 #>> source)
         {
             return (<#= type.Item2 #>)Math.Sqrt((double)source.VarianceP());
@@ -67,6 +69,7 @@ namespace LinqStatistics
         /// <returns>       
         ///     The population StandardDeviation of the sequence of values.
         /// </returns>
+        /// <remarks>![equation](~/images/stdevp.gif)</remarks>
         public static <#= type.Item2 #>? StandardDeviationP<TSource>(this IEnumerable<TSource> source, Func<TSource, <#= type.Item1 #>?> selector)
         {
             if (source == null)
@@ -88,6 +91,7 @@ namespace LinqStatistics
         /// <returns>       
         ///     The population StandardDeviation of the sequence of values.
         /// </returns>
+        /// <remarks>![equation](~/images/stdevp.gif)</remarks>
         public static <#= type.Item2 #> StandardDeviationP<TSource>(this IEnumerable<TSource> source, Func<TSource, <#= type.Item1 #>> selector)
         {
             if (source == null)

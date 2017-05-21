@@ -34,6 +34,7 @@ namespace LinqStatistics
         /// <param name="source">The first sequence of nullable <#= type.Item1 #> values to calculate the Covariance of.</param>
         /// <param name="other">The second sequence of nullable <#= type.Item1 #> values to calculate the Covariance of.</param>
         /// <returns>The Covariance of the two sequence of values.</returns>
+        /// <remarks>![equation](~/images/covar.gif)</remarks>
         public static <#= type.Item2 #>? Covariance(this IEnumerable<<#= type.Item1 #>?> source, IEnumerable<<#= type.Item1 #>?> other)
         {
             var values = source.AllValues();
@@ -49,6 +50,7 @@ namespace LinqStatistics
         /// <param name="source">The first sequence of <#= type.Item1 #> values to calculate the Covariance of.</param>
         /// <param name="other">The second sequence of <#= type.Item1 #> values to calculate the Covariance of.</param>
         /// <returns>The Covariance of the two sequence of values.</returns>
+        /// <remarks>![equation](~/images/covar.gif)</remarks>
         public static <#= type.Item2 #> Covariance(this IEnumerable<<#= type.Item1 #>> source, IEnumerable<<#= type.Item1 #>> other)
         {
             if (source == null)
