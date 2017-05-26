@@ -1,5 +1,6 @@
 ## Welcome to **LinqStatistics**.
-LinqStatistics is a .Net library that offers basic statisitacl extension methods, modeled after the built in Enumerable.Sum and Average.
+LinqStatistics is a .Net library that offers basic statistical extension methods. Method signatures and use are modeled after System.Linq.Enumerable's
+Average, Min, Max and Sum, with similar overloads supporting common intrinsic numeric types.
 
 Methods include:
 - Covariance
@@ -14,9 +15,8 @@ Methods include:
 - CountEach
 - Histogram
 
-Each with overloads for the intrinsic numeric data types, as appropriate.
-
 LinqStatistics isn't a high performance analysis package. It's meant for those times when your app just needs some simple stats without a lot of fuss.
 
 ## Quick Start Notes:
 1. [NuGet Package](https://www.nuget.org/packages/LinqStatistics/)
+2. [GitHub Project](https://github.com/dkackman/LinqStatistics)
