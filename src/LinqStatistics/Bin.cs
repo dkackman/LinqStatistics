@@ -62,7 +62,10 @@ namespace LinqStatistics
         /// <returns></returns>
         public override int GetHashCode()
         {
-            return base.GetHashCode() ^ _range.GetHashCode() ^ _maxInclusive.GetHashCode();
+            int hash = base.GetHashCode();
+            hash = hash * 23 + _range.GetHashCode();
+            hash = hash * 23 + _maxInclusive.GetHashCode();
+            return hash;
         }
 
         /// <summary>

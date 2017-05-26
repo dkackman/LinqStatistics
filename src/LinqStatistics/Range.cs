@@ -191,7 +191,10 @@ namespace LinqStatistics
         /// </returns>
         public override int GetHashCode()
         {
-            return Min.GetHashCode() ^ Max.GetHashCode();
+            int hash = 17;
+            hash = hash * 23 + _min.GetHashCode();
+            hash = hash * 23 + _max.GetHashCode();
+            return hash;
         }
 
         /// <summary>

@@ -111,7 +111,15 @@ namespace LinqStatistics
         /// <returns>Hash of Value and Count</returns>
         public override int GetHashCode()
         {
-            return (_value != null ? _value.GetHashCode() : 0) ^ _count.GetHashCode();
+            if (_value == null)
+            {
+                int hash = 17;
+                hash = hash * 23 + _value.GetHashCode();
+                hash = hash * 23 + _count.GetHashCode();
+                return hash;
+            }
+
+            return 0;
         }
 
         /// <summary>
