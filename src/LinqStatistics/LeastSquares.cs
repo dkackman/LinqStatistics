@@ -148,10 +148,10 @@ namespace LinqStatistics
         /// Determines if the <see cref="LeastSquares"/> argument has Not a Number elements
         /// </summary>
         /// <param name="ls"></param>
-        /// <returns>True if either M or B is <see cref="double.NaN"/></returns>
+        /// <returns>True if either <see cref="M"/>, <see cref="B"/> or <see cref="RSquared"/> is <see cref="double.NaN"/></returns>
         public static bool IsNaN(LeastSquares ls)
         {
-            return double.IsNaN(ls.M) || double.IsNaN(ls.B);
+            return double.IsNaN(ls.M) || double.IsNaN(ls.B) || double.IsNaN(ls.RSquared);
         }
 
         private static string Format(string m, string b)
