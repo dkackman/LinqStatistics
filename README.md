@@ -1,8 +1,8 @@
 LinqStatistics
 ==============
 
-[NuGet package](https://www.nuget.org/packages/LinqStatistics/)
-[API Documentation](https://dkackman.github.io/LinqStatistics/)
+- [NuGet package](https://www.nuget.org/packages/LinqStatistics/)
+- [API Documentation](https://dkackman.github.io/LinqStatistics/)
 
 Linq extensions to calculate basic statistics
 
