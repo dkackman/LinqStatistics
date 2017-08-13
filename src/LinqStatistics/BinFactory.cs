@@ -27,7 +27,7 @@ namespace LinqStatistics
 
         private static IEnumerable<Bin> CreateBinsMaxInclusive(double min, double max, int binCount)
         {            
-            double binSize = (max - min) / (double)binCount;
+            double binSize = (max - min) / binCount;
             double halfBin = binSize / 2.0;
             double rangeMin = min;
             double rangeMax = rangeMin + binSize;
@@ -54,7 +54,7 @@ namespace LinqStatistics
 
         private static IEnumerable<Bin> CreateBinsUnbounded(double min, double max, int binCount)
         {
-            double binSize = (max - min) / (double)binCount;
+            double binSize = (max - min) / binCount;
             double halfBin = binSize / 2.0;
             double rangeMin = min;
             double rangeMax = rangeMin + binSize;
