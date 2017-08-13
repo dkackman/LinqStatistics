@@ -26,6 +26,7 @@ namespace LinqStatistics.UnitTests
             var ls = data.LeastSquares();
             Assert.AreEqual(ls.M, 0.90163934426229508);
             Assert.AreEqual(ls.B, 1.6721311475409837);
+            Assert.AreEqual(ls.RSquared, 0.99180327868852458);
         }
 
         [TestMethod]
