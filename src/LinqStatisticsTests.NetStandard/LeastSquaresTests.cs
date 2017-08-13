@@ -3,7 +3,6 @@ using System.Collections.Generic;
 
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-using LinqStatistics;
 using LinqStatistics.NaN;
 
 namespace LinqStatistics.UnitTests
@@ -31,7 +30,7 @@ namespace LinqStatistics.UnitTests
 
         [TestMethod]
         [ExpectedException(typeof(InvalidOperationException))]
-        public void LeastSquaresExceptsAppropriately()
+        public void LeastSquaresExceptsOnSingleElementSource()
         {
             var data = new List<Tuple<double, double>>()
             {
@@ -42,7 +41,7 @@ namespace LinqStatistics.UnitTests
         }
 
         [TestMethod]
-        public void LeastSquaresSingleElementSourceReturnsNaN()
+        public void LeastSquaresNaNSingleElementSourceReturnsNaN()
         {
             var data = new List<Tuple<double, double>>()
             {
