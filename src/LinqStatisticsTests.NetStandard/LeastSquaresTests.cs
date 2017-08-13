@@ -52,6 +52,7 @@ namespace LinqStatistics.UnitTests
             Assert.IsTrue(LeastSquares.IsNaN(ls));
             Assert.IsTrue(double.IsNaN(ls.M));
             Assert.IsTrue(double.IsNaN(ls.B));
+            Assert.IsTrue(double.IsNaN(ls.RSquared));
         }
 
         [TestMethod]
