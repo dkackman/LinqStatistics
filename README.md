@@ -1,7 +1,9 @@
 LinqStatistics
 ==============
 
-[NuGet package](https://www.nuget.org/packages/LinqStatistics/)
+- [NuGet package](https://www.nuget.org/packages/LinqStatistics/)
+- [API Documentation](https://dkackman.github.io/LinqStatistics/)
+- [Background](http://www.codeproject.com/Articles/42492/Using-LINQ-to-Calculate-Basic-Statistics)
 
 Linq extensions to calculate basic statistics
 
@@ -18,8 +20,6 @@ Extension methods to compute basic statistics modeled after Enumerable.Average. 
 - Least Squares Linear Regression
 - CountEach
 - Histogram
-
-http://www.codeproject.com/Articles/42492/Using-LINQ-to-Calculate-Basic-Statistics
 
 Basic usage looks like:
 
