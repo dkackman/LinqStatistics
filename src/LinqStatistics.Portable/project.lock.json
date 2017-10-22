@@ -1,5 +1,5 @@
 {
-  "version": 2,
+  "version": 3,
   "targets": {
     ".NETPortable,Version=v4.5,Profile=Profile111": {
       "Microsoft.NETCore.Jit/1.0.2": {
@@ -2584,7 +2584,18 @@
       "projectName": "LinqStatistics.Portable",
       "projectPath": "C:\\Users\\Erffice\\Documents\\GitHub\\LinqStatistics\\src\\LinqStatistics.Portable\\LinqStatistics.Portable.csproj",
       "projectJsonPath": "C:\\Users\\Erffice\\Documents\\GitHub\\LinqStatistics\\src\\LinqStatistics.Portable\\project.json",
-      "projectStyle": "ProjectJson"
+      "packagesPath": "C:\\Users\\Erffice\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Erffice\\Documents\\GitHub\\LinqStatistics\\src\\LinqStatistics.Portable\\obj\\",
+      "projectStyle": "ProjectJson",
+      "configFilePaths": [
+        "C:\\Users\\Erffice\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+      ],
+      "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "D:\\NuGetTest": {},
+        "https://api.nuget.org/v3/index.json": {}
+      }
     },
     "dependencies": {
       "Microsoft.NETCore.Portable.Compatibility": "1.0.1",

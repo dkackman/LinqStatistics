@@ -1,5 +1,5 @@
 {
-  "version": 2,
+  "version": 3,
   "targets": {
     ".NETStandard,Version=v1.1": {
       "Microsoft.NETCore.Jit/1.0.2": {
@@ -2642,7 +2642,18 @@
       "projectName": "LinqStatistics.NetStandard",
       "projectPath": "C:\\Users\\Erffice\\Documents\\GitHub\\LinqStatistics\\src\\LinqStatistics.NetStandard\\LinqStatistics.NetStandard.csproj",
       "projectJsonPath": "C:\\Users\\Erffice\\Documents\\GitHub\\LinqStatistics\\src\\LinqStatistics.NetStandard\\project.json",
-      "projectStyle": "ProjectJson"
+      "packagesPath": "C:\\Users\\Erffice\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Erffice\\Documents\\GitHub\\LinqStatistics\\src\\LinqStatistics.NetStandard\\obj\\",
+      "projectStyle": "ProjectJson",
+      "configFilePaths": [
+        "C:\\Users\\Erffice\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+      ],
+      "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "D:\\NuGetTest": {},
+        "https://api.nuget.org/v3/index.json": {}
+      }
     },
     "dependencies": {
       "Microsoft.NETCore.Portable.Compatibility": "1.0.1",

@@ -20,6 +20,8 @@ $(function () {
   renderFooter();
   renderLogo();
 
+  breakText();
+
   window.refresh = function (article) {
     // Update markup result
     if (typeof article == 'undefined' || typeof article.content == 'undefined')
@@ -32,10 +34,18 @@ $(function () {
     renderAffix();
   }
 
+  function breakText() {
+    $(".xref").addClass("text-break");
+    var texts = $(".text-break");
+    texts.each(function () {
+      $(this).breakWord();
+    });
+  }
+
   // Styling for tables in conceptual documents using Bootstrap.
   // See http://getbootstrap.com/css/#tables
   function renderTables() {
-    $('table').addClass('table table-bordered table-striped table-condensed');
+    $('table').addClass('table table-bordered table-striped table-condensed').wrap('<div class=\"table-responsive\"></div>');
   }
 
   // Styling for alerts.
@@ -45,16 +55,14 @@ $(function () {
     $('.IMPORTANT, .CAUTION').addClass('alert alert-danger');
   }
 
-  // Anchorjs 3.2.2 fails when title content contains '<' and '>'.
-  // TODO: enable this when anchorjs fixes this issue
   // Enable anchors for headings.
-  // (function () {
-  //   anchors.options = {
-  //     placement: 'left',
-  //     visible: 'touch'
-  //   };
-  //   anchors.add('article h2, article h3, article h4, article h5, article h6');
-  // })();
+  (function () {
+    anchors.options = {
+      placement: 'left',
+      visible: 'touch'
+    };
+    anchors.add('article h2:not(.no-anchor), article h3:not(.no-anchor), article h4:not(.no-anchor)');
+  })();
 
   // Open links to different host in a new window.
   function renderLinks() {
@@ -114,7 +122,7 @@ $(function () {
     }
     try {
       var worker = new Worker(relHref + 'styles/search-worker.js');
-      if (!worker || !window.worker) {
+      if (!worker && !window.worker) {
         localSearch();
       } else {
         webWorkerSearch();
@@ -490,9 +498,7 @@ $(function () {
             $(e).addClass(active);
           }
 
-          $(e).text(function (index, text) {
-            return util.breakText(text);
-          })
+          $(e).breakWord();
         });
 
         renderSidebar();
@@ -711,7 +717,6 @@ $(function () {
     this.isAbsolutePath = isAbsolutePath;
     this.getDirectory = getDirectory;
     this.formList = formList;
-    this.breakText = breakText;
 
     function getAbsolutePath(href) {
       // Use anchor to normalize href
@@ -766,9 +771,26 @@ $(function () {
       }
     }
 
-    function breakText(text) {
+    /**
+     * Add <wbr> into long word.
+     * @param {String} text - The word to break. It should be in plain text without HTML tags.
+     */
+    function breakPlainText(text) {
       if (!text) return text;
-      return text.replace(/([a-z])([A-Z])|(\.)(\w)/g, '$1$3\u200B$2$4')
+      return text.replace(/([a-z])([A-Z])|(\.)(\w)/g, '$1$3<wbr>$2$4')
+    }
+
+    /**
+     * Add <wbr> into long word. The jQuery element should contain no html tags.
+     * If the jQuery element contains tags, this function will not change the element.
+     */
+    $.fn.breakWord = function() {
+      if (this.html() == this.text()) {
+        this.html(function (index, text) {
+          return breakPlainText(text);
+        })
+      }
+      return this;
     }
   }
 })
