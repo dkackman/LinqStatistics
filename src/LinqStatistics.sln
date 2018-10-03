@@ -37,6 +37,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinqStatistics.NetStandard"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinqStatisticsTests.netstandard", "LinqStatisticsTests.NetStandard\LinqStatisticsTests.netstandard.csproj", "{A595B82D-8F0D-4EBE-917B-C26B4908E69D}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LinqStatistics.NetStandard2.0", "LinqStatistics.NetStandard2.0\LinqStatistics.NetStandard2.0.csproj", "{2DB910D0-6141-42EA-89D6-D0B0E5048A70}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -69,12 +71,19 @@ Global
 		{A595B82D-8F0D-4EBE-917B-C26B4908E69D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A595B82D-8F0D-4EBE-917B-C26B4908E69D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A595B82D-8F0D-4EBE-917B-C26B4908E69D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2DB910D0-6141-42EA-89D6-D0B0E5048A70}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2DB910D0-6141-42EA-89D6-D0B0E5048A70}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2DB910D0-6141-42EA-89D6-D0B0E5048A70}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2DB910D0-6141-42EA-89D6-D0B0E5048A70}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{0451BAEF-DF2E-4B98-8644-94EE9415E389} = {47E5B368-4238-4B16-9798-5AF5A094A987}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3C158E5C-B014-46AF-BF89-1D3A10FB7B19}
 	EndGlobalSection
 	GlobalSection(TestCaseManagementSettings) = postSolution
 		CategoryFile = LinqStatistics.vsmdi

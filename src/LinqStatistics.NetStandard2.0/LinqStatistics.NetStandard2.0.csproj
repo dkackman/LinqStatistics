@@ -1,0 +1,50 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="..\LinqStatistics\Bin.cs" Link="Bin.cs" />
+    <Compile Include="..\LinqStatistics\BinFactory.cs" Link="BinFactory.cs" />
+    <Compile Include="..\LinqStatistics\EnumerableStats.cs" Link="EnumerableStats.cs" />
+    <Compile Include="..\LinqStatistics\EnumerableStatsBinCount.cs" Link="EnumerableStatsBinCount.cs" />
+    <Compile Include="..\LinqStatistics\EnumerableStatsCountEach.cs" Link="EnumerableStatsCountEach.cs" />
+    <Compile Include="..\LinqStatistics\EnumerableStatsCovariance.cs" Link="EnumerableStatsCovariance.cs" />
+    <Compile Include="..\LinqStatistics\EnumerableStatsHistogram.cs" Link="EnumerableStatsHistogram.cs" />
+    <Compile Include="..\LinqStatistics\EnumerableStatsKurtosis.cs" Link="EnumerableStatsKurtosis.cs" />
+    <Compile Include="..\LinqStatistics\EnumerableStatsLeastSquares.cs" Link="EnumerableStatsLeastSquares.cs" />
+    <Compile Include="..\LinqStatistics\EnumerableStatsMedian.cs" Link="EnumerableStatsMedian.cs" />
+    <Compile Include="..\LinqStatistics\EnumerableStatsMinMax.cs" Link="EnumerableStatsMinMax.cs" />
+    <Compile Include="..\LinqStatistics\EnumerableStatsMode.cs" Link="EnumerableStatsMode.cs" />
+    <Compile Include="..\LinqStatistics\EnumerableStatsPearson.cs" Link="EnumerableStatsPearson.cs" />
+    <Compile Include="..\LinqStatistics\EnumerableStatsRange.cs" Link="EnumerableStatsRange.cs" />
+    <Compile Include="..\LinqStatistics\EnumerableStatsRootMeanSquare.cs" Link="EnumerableStatsRootMeanSquare.cs" />
+    <Compile Include="..\LinqStatistics\EnumerableStatsSkewness.cs" Link="EnumerableStatsSkewness.cs" />
+    <Compile Include="..\LinqStatistics\EnumerableStatsStandardDeviation.cs" Link="EnumerableStatsStandardDeviation.cs" />
+    <Compile Include="..\LinqStatistics\EnumerableStatsStandardDeviationP.cs" Link="EnumerableStatsStandardDeviationP.cs" />
+    <Compile Include="..\LinqStatistics\EnumerableStatsVariance.cs" Link="EnumerableStatsVariance.cs" />
+    <Compile Include="..\LinqStatistics\EnumerableStatsVarianceP.cs" Link="EnumerableStatsVarianceP.cs" />
+    <Compile Include="..\LinqStatistics\ItemCount.cs" Link="ItemCount.cs" />
+    <Compile Include="..\LinqStatistics\LeastSquares.cs" Link="LeastSquares.cs" />
+    <Compile Include="..\LinqStatistics\NaN\AverageNaN.cs" Link="NaN\AverageNaN.cs" />
+    <Compile Include="..\LinqStatistics\NaN\EnumerableStatsCovariance.cs" Link="NaN\EnumerableStatsCovariance.cs" />
+    <Compile Include="..\LinqStatistics\NaN\EnumerableStatsKurtosis.cs" Link="NaN\EnumerableStatsKurtosis.cs" />
+    <Compile Include="..\LinqStatistics\NaN\EnumerableStatsLeastSquares.cs" Link="NaN\EnumerableStatsLeastSquares.cs" />
+    <Compile Include="..\LinqStatistics\NaN\EnumerableStatsMinMax.cs" Link="NaN\EnumerableStatsMinMax.cs" />
+    <Compile Include="..\LinqStatistics\NaN\EnumerableStatsPearson.cs" Link="NaN\EnumerableStatsPearson.cs" />
+    <Compile Include="..\LinqStatistics\NaN\EnumerableStatsRange.cs" Link="NaN\EnumerableStatsRange.cs" />
+    <Compile Include="..\LinqStatistics\NaN\EnumerableStatsRootMeanSquare.cs" Link="NaN\EnumerableStatsRootMeanSquare.cs" />
+    <Compile Include="..\LinqStatistics\NaN\EnumerableStatsSkewness.cs" Link="NaN\EnumerableStatsSkewness.cs" />
+    <Compile Include="..\LinqStatistics\NaN\EnumerableStatsStandardDeviation.cs" Link="NaN\EnumerableStatsStandardDeviation.cs" />
+    <Compile Include="..\LinqStatistics\NaN\EnumerableStatsStandardDeviationP.cs" Link="NaN\EnumerableStatsStandardDeviationP.cs" />
+    <Compile Include="..\LinqStatistics\NaN\EnumerableStatsVariance.cs" Link="NaN\EnumerableStatsVariance.cs" />
+    <Compile Include="..\LinqStatistics\NaN\EnumerableStatsVarianceP.cs" Link="NaN\EnumerableStatsVarianceP.cs" />
+    <Compile Include="..\LinqStatistics\Range.cs" Link="Range.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="NaN\" />
+  </ItemGroup>
+
+</Project>
