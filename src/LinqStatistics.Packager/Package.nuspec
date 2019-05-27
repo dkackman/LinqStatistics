@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>LinqStatistics</id>
-    <version>2.2.0</version>
+    <version>2.2.1</version>
     <title>LinqStatistics</title>
     <authors>dkackman</authors>
     <owners></owners>
@@ -23,6 +23,8 @@
       - Add checked scope to accumulator blocks
       2.2.0
       - Include R squared while calculating Least Squares
+      2.2.1
+      - Add NetStandard library
     </releaseNotes>
     <summary>
       Extensions that add simple statistical methods
@@ -46,6 +48,10 @@
     <file src="..\LinqStatistics\bin\Release\LinqStatistics.dll" target="lib\net40" />
     <file src="..\LinqStatistics\bin\Release\LinqStatistics.xml" target="lib\net40" />
     <file src="..\LinqStatistics\bin\Release\LinqStatistics.pdb" target="lib\net40" />
+
+    <file src="..\LinqStatistics.NetStandard\bin\Release\LinqStatistics.dll" target="lib\netstandard1.1" />
+    <file src="..\LinqStatistics.NetStandard\bin\Release\LinqStatistics.xml" target="lib\netstandard1.1" />
+    <file src="..\LinqStatistics.NetStandard\bin\Release\LinqStatistics.pdb" target="lib\netstandard1.1" />
 
     <file src="..\LinqStatistics\*.cs" target="src" />
     <file src="..\LinqStatistics\NaN\*.cs" target="src\NaN" />
