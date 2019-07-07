@@ -60,7 +60,7 @@ namespace LinqStatistics
         public static IEnumerable<Bin> Histogram(this IEnumerable<<#= type #>> source, int binCount, BinningMode mode = BinningMode.Unbounded)
         {
             if (source == null)
-                throw new ArgumentNullException("source");
+                throw new ArgumentNullException(nameof(source));
 
             var minMax = source.MinMax();
 
@@ -85,7 +85,7 @@ namespace LinqStatistics
         public static IEnumerable<Bin> Histogram(this IEnumerable<<#= type #>?> source, int binCount, BinningMode mode = BinningMode.Unbounded)
         {
             if (source == null)
-                throw new ArgumentNullException("source");
+                throw new ArgumentNullException(nameof(source));
 
             return source.AllValues().Histogram(binCount, mode);
         }
@@ -103,10 +103,10 @@ namespace LinqStatistics
         public static IEnumerable<Bin> Histogram<TSource>(this IEnumerable<TSource> source, int binCount, Func<TSource, <#= type #>> selector, BinningMode mode = BinningMode.Unbounded)
         {
             if (source == null)
-                throw new ArgumentNullException("source");
+                throw new ArgumentNullException(nameof(source));
 
             if (selector == null)
-                throw new ArgumentNullException("selector");
+                throw new ArgumentNullException(nameof(selector));
 
             return source.Select(t => selector(t)).Histogram(binCount, mode);
         }
@@ -124,10 +124,10 @@ namespace LinqStatistics
         public static IEnumerable<Bin> Histogram<TSource>(this IEnumerable<TSource> source, int binCount, Func<TSource, <#= type #>?> selector, BinningMode mode = BinningMode.Unbounded)
         {
             if (source == null)
-                throw new ArgumentNullException("source");
+                throw new ArgumentNullException(nameof(source));
 
             if (selector == null)
-                throw new ArgumentNullException("selector");
+                throw new ArgumentNullException(nameof(selector));
 
             return source.Select(t => selector(t)).Histogram(binCount, mode);
         }

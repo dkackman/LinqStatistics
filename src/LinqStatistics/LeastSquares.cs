@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Globalization;
 
 namespace LinqStatistics
 {
@@ -12,10 +13,6 @@ namespace LinqStatistics
         /// All members are zero.
         /// </summary>
         public static readonly LeastSquares Empty = new LeastSquares(0, 0, 0);
-
-        private readonly double _m;
-        private readonly double _b;
-        private readonly double _r2;
 
         /// <summary>
         /// 
@@ -35,27 +32,27 @@ namespace LinqStatistics
         /// <param name="r2">The R Squared correlation coefficient</param>
         public LeastSquares(double m, double b, double r2)
         {
-            _m = m;
-            _b = b;
-            _r2 = r2;
+            M = m;
+            B = b;
+            RSquared = r2;
         }
 
         /// <summary>
         /// M Coefficient for y = Mx + B
         /// (i.e. slope)
         /// </summary>
-        public double M => _m;
+        public double M { get; private set; }
 
         /// <summary>
         /// B Coefficient for y = Mx + B
         /// (i.e. y intercept)
         /// </summary>
-        public double B => _b;
+        public double B { get; private set; }
 
         /// <summary>
         /// The R Squared correlation coefficient
         /// </summary>
-        public double RSquared => _r2;
+        public double RSquared { get; private set; }
 
         /// <summary>
         /// Uses the calculated coefficients to solve Y for inputted X
@@ -84,6 +81,15 @@ namespace LinqStatistics
         /// </summary>
         /// <param name="ls">The LeastSquares instance</param>
         public static implicit operator Func<double, double>(LeastSquares ls)
+        {
+            return (double d) => ls.Solve(d);
+        }
+
+        /// <summary>
+        /// Casts a LeastSqaures to a Function <see cref="Solve(double)"/>
+        /// </summary>
+        /// <param name="ls">The LeastSquares instance</param>
+        public static Func<double, double> ToFunc(LeastSquares ls)
         {
             return (double d) => ls.Solve(d);
         }
@@ -142,9 +148,9 @@ namespace LinqStatistics
         public override int GetHashCode()
         {
             int hash = 17;
-            hash = hash * 23 + _m.GetHashCode();
-            hash = hash * 23 + _b.GetHashCode();
-            hash = hash * 23 + _r2.GetHashCode();
+            hash = hash * 23 + M.GetHashCode();
+            hash = hash * 23 + B.GetHashCode();
+            hash = hash * 23 + RSquared.GetHashCode();
             return hash;
         }
 
@@ -160,7 +166,7 @@ namespace LinqStatistics
 
         private static string Format(string m, string b)
         {
-            return string.Format("y = ({0} * x) + {1}", m, b);
+            return string.Format(CultureInfo.CurrentCulture, "y = ({0} * x) + {1}", m, b);
         }
 
         /// <summary>
@@ -169,7 +175,7 @@ namespace LinqStatistics
         /// <returns></returns>
         public override string ToString()
         {
-            return Format(_m.ToString(), _b.ToString());
+            return Format(M.ToString(CultureInfo.CurrentCulture), B.ToString(CultureInfo.CurrentCulture));
         }
 
         /// <summary>
@@ -179,7 +185,7 @@ namespace LinqStatistics
         /// <returns></returns>
         public string ToString(IFormatProvider provider)
         {
-            return Format(_m.ToString(provider), _b.ToString(provider));
+            return Format(M.ToString(provider), B.ToString(provider));
         }
 
         /// <summary>
@@ -189,7 +195,7 @@ namespace LinqStatistics
         /// <returns></returns>
         public string ToString(string format)
         {
-            return Format(_m.ToString(format), _b.ToString(format));
+            return Format(M.ToString(format, CultureInfo.CurrentCulture), B.ToString(format, CultureInfo.CurrentCulture));
         }
 
         /// <summary>
@@ -200,7 +206,7 @@ namespace LinqStatistics
         /// <returns></returns>
         public string ToString(string format, IFormatProvider provider)
         {
-            return Format(_m.ToString(format, provider), _b.ToString(format, provider));
+            return Format(M.ToString(format, provider), B.ToString(format, provider));
         }
     }
 }

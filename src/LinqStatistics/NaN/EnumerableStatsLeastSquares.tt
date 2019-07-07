@@ -47,7 +47,7 @@ namespace LinqStatistics.NaN
         public static LeastSquares LeastSquaresNaN(this IEnumerable<Tuple<<#= type #>, <#= type #>>> source)
         {
             if (source == null)
-                throw new ArgumentNullException("source");
+                throw new ArgumentNullException(nameof(source));
 
             long n = 0;
             double sumX = 0;
@@ -97,10 +97,10 @@ namespace LinqStatistics.NaN
         public static LeastSquares? LeastSquaresNaN<TSource>(this IEnumerable<TSource> source, Func<TSource, Tuple<<#= type #>?, <#= type #>?>> selector)
         {
             if (source == null)
-                throw new ArgumentNullException("source");
+                throw new ArgumentNullException(nameof(source));
 
             if (selector == null)
-                throw new ArgumentNullException("selector");
+                throw new ArgumentNullException(nameof(selector));
 
             return source.Select(selector).LeastSquaresNaN();
         }
@@ -116,10 +116,10 @@ namespace LinqStatistics.NaN
         public static LeastSquares LeastSquaresNaN<TSource>(this IEnumerable<TSource> source, Func<TSource, Tuple<<#= type #>, <#= type #>>> selector)
         {
             if (source == null)
-                throw new ArgumentNullException("source");
+                throw new ArgumentNullException(nameof(source));
 
             if (selector == null)
-                throw new ArgumentNullException("selector");
+                throw new ArgumentNullException(nameof(selector));
 
             return source.Select(selector).LeastSquaresNaN();
         }

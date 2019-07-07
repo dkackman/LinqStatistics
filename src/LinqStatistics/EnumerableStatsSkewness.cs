@@ -36,7 +36,7 @@ namespace LinqStatistics
         public static double Skewness(this IEnumerable<int> source)
         {
             if (source == null)
-                throw new ArgumentNullException("source");
+                throw new ArgumentNullException(nameof(source));
 
             double mean = (double)source.Average();
             double s = (double)source.StandardDeviation();
@@ -70,10 +70,10 @@ namespace LinqStatistics
         public static double Skewness<TSource>(this IEnumerable<TSource> source, Func<TSource, int> selector)
         {
             if (source == null)
-                throw new ArgumentNullException("source");
+                throw new ArgumentNullException(nameof(source));
 
             if (selector == null)
-                throw new ArgumentNullException("selector");
+                throw new ArgumentNullException(nameof(selector));
 
             return source.Select(selector).Skewness();
         }
@@ -90,10 +90,10 @@ namespace LinqStatistics
         public static double? Skewness<TSource>(this IEnumerable<TSource> source, Func<TSource, int?> selector)
         {
             if (source == null)
-                throw new ArgumentNullException("source");
+                throw new ArgumentNullException(nameof(source));
 
             if (selector == null)
-                throw new ArgumentNullException("selector");
+                throw new ArgumentNullException(nameof(selector));
 
             return source.Select(selector).Skewness();
         }
@@ -122,7 +122,7 @@ namespace LinqStatistics
         public static double Skewness(this IEnumerable<long> source)
         {
             if (source == null)
-                throw new ArgumentNullException("source");
+                throw new ArgumentNullException(nameof(source));
 
             double mean = (double)source.Average();
             double s = (double)source.StandardDeviation();
@@ -156,10 +156,10 @@ namespace LinqStatistics
         public static double Skewness<TSource>(this IEnumerable<TSource> source, Func<TSource, long> selector)
         {
             if (source == null)
-                throw new ArgumentNullException("source");
+                throw new ArgumentNullException(nameof(source));
 
             if (selector == null)
-                throw new ArgumentNullException("selector");
+                throw new ArgumentNullException(nameof(selector));
 
             return source.Select(selector).Skewness();
         }
@@ -176,10 +176,10 @@ namespace LinqStatistics
         public static double? Skewness<TSource>(this IEnumerable<TSource> source, Func<TSource, long?> selector)
         {
             if (source == null)
-                throw new ArgumentNullException("source");
+                throw new ArgumentNullException(nameof(source));
 
             if (selector == null)
-                throw new ArgumentNullException("selector");
+                throw new ArgumentNullException(nameof(selector));
 
             return source.Select(selector).Skewness();
         }
@@ -208,7 +208,7 @@ namespace LinqStatistics
         public static decimal Skewness(this IEnumerable<decimal> source)
         {
             if (source == null)
-                throw new ArgumentNullException("source");
+                throw new ArgumentNullException(nameof(source));
 
             double mean = (double)source.Average();
             double s = (double)source.StandardDeviation();
@@ -242,10 +242,10 @@ namespace LinqStatistics
         public static decimal Skewness<TSource>(this IEnumerable<TSource> source, Func<TSource, decimal> selector)
         {
             if (source == null)
-                throw new ArgumentNullException("source");
+                throw new ArgumentNullException(nameof(source));
 
             if (selector == null)
-                throw new ArgumentNullException("selector");
+                throw new ArgumentNullException(nameof(selector));
 
             return source.Select(selector).Skewness();
         }
@@ -262,10 +262,10 @@ namespace LinqStatistics
         public static decimal? Skewness<TSource>(this IEnumerable<TSource> source, Func<TSource, decimal?> selector)
         {
             if (source == null)
-                throw new ArgumentNullException("source");
+                throw new ArgumentNullException(nameof(source));
 
             if (selector == null)
-                throw new ArgumentNullException("selector");
+                throw new ArgumentNullException(nameof(selector));
 
             return source.Select(selector).Skewness();
         }
@@ -294,7 +294,7 @@ namespace LinqStatistics
         public static float Skewness(this IEnumerable<float> source)
         {
             if (source == null)
-                throw new ArgumentNullException("source");
+                throw new ArgumentNullException(nameof(source));
 
             double mean = (double)source.Average();
             double s = (double)source.StandardDeviation();
@@ -328,10 +328,10 @@ namespace LinqStatistics
         public static float Skewness<TSource>(this IEnumerable<TSource> source, Func<TSource, float> selector)
         {
             if (source == null)
-                throw new ArgumentNullException("source");
+                throw new ArgumentNullException(nameof(source));
 
             if (selector == null)
-                throw new ArgumentNullException("selector");
+                throw new ArgumentNullException(nameof(selector));
 
             return source.Select(selector).Skewness();
         }
@@ -348,10 +348,10 @@ namespace LinqStatistics
         public static float? Skewness<TSource>(this IEnumerable<TSource> source, Func<TSource, float?> selector)
         {
             if (source == null)
-                throw new ArgumentNullException("source");
+                throw new ArgumentNullException(nameof(source));
 
             if (selector == null)
-                throw new ArgumentNullException("selector");
+                throw new ArgumentNullException(nameof(selector));
 
             return source.Select(selector).Skewness();
         }
@@ -380,7 +380,7 @@ namespace LinqStatistics
         public static double Skewness(this IEnumerable<double> source)
         {
             if (source == null)
-                throw new ArgumentNullException("source");
+                throw new ArgumentNullException(nameof(source));
 
             double mean = (double)source.Average();
             double s = (double)source.StandardDeviation();
@@ -414,10 +414,10 @@ namespace LinqStatistics
         public static double Skewness<TSource>(this IEnumerable<TSource> source, Func<TSource, double> selector)
         {
             if (source == null)
-                throw new ArgumentNullException("source");
+                throw new ArgumentNullException(nameof(source));
 
             if (selector == null)
-                throw new ArgumentNullException("selector");
+                throw new ArgumentNullException(nameof(selector));
 
             return source.Select(selector).Skewness();
         }
@@ -434,10 +434,10 @@ namespace LinqStatistics
         public static double? Skewness<TSource>(this IEnumerable<TSource> source, Func<TSource, double?> selector)
         {
             if (source == null)
-                throw new ArgumentNullException("source");
+                throw new ArgumentNullException(nameof(source));
 
             if (selector == null)
-                throw new ArgumentNullException("selector");
+                throw new ArgumentNullException(nameof(selector));
 
             return source.Select(selector).Skewness();
         }

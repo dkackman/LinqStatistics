@@ -18,7 +18,7 @@ namespace LinqStatistics
         public static IEnumerable<T> AllValues<T>(this IEnumerable<T?> source) where T : struct
         {
             if (source == null)
-                throw new ArgumentNullException("source", "The source enumeration cannot be null");
+                throw new ArgumentNullException(nameof(source));
 
             return source.Where(x => x.HasValue).Select(x => (T)x);
         }
@@ -32,7 +32,7 @@ namespace LinqStatistics
         public static IEnumerable<Tuple<T, T>> AllValues<T>(this IEnumerable<Tuple<T?, T?>> source) where T : struct
         {
             if (source == null)
-                throw new ArgumentNullException("source", "The source enumeration cannot be null");
+                throw new ArgumentNullException(nameof(source));
 
             return source.Where(x => x.Item1.HasValue && x.Item2.HasValue).Select(t => new Tuple<T, T>((T)t.Item1, (T)t.Item2));
         }

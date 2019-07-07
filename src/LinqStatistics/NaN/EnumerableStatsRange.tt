@@ -60,10 +60,10 @@ namespace LinqStatistics.NaN
         public static <#= type #>? RangeNaN<TSource>(this IEnumerable<TSource> source, Func<TSource, <#= type #>?> selector)
         {
             if (source == null)
-                throw new ArgumentNullException("source");
+                throw new ArgumentNullException(nameof(source));
 
             if (selector == null)
-                throw new ArgumentNullException("selector");
+                throw new ArgumentNullException(nameof(selector));
 
             return source.Select(selector).RangeNaN();
         }
@@ -79,10 +79,10 @@ namespace LinqStatistics.NaN
         public static <#= type #> RangeNaN<TSource>(this IEnumerable<TSource> source, Func<TSource, <#= type #>> selector)
         {
             if (source == null)
-                throw new ArgumentNullException("source");
+                throw new ArgumentNullException(nameof(source));
 
             if (selector == null)
-                throw new ArgumentNullException("selector");
+                throw new ArgumentNullException(nameof(selector));
 
             return source.Select(selector).RangeNaN();
         }

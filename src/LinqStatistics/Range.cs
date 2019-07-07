@@ -201,7 +201,7 @@ namespace LinqStatistics
         /// Returns a string representation of the range
         /// </summary>
         /// <returns>
-        /// A <see cref="T:System.String"/> representation of the range
+        /// A <see cref="string"/> representation of the range
         /// </returns>
         public override string ToString()
         {
@@ -210,7 +210,7 @@ namespace LinqStatistics
 
         private static string Format(string min, string max)
         {
-            return String.Format("{0} — {1}", min, max);
+            return String.Format(CultureInfo.CurrentCulture, "{0} — {1}", min, max);
         }
 
         /// <summary>

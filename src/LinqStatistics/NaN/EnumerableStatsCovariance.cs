@@ -36,10 +36,10 @@ namespace LinqStatistics.NaN
         public static double CovarianceNaN(this IEnumerable<int> source, IEnumerable<int> other)
         {
             if (source == null)
-                throw new ArgumentNullException("source");
+                throw new ArgumentNullException(nameof(source));
 
             if (other == null)
-                throw new ArgumentNullException("other");
+                throw new ArgumentNullException(nameof(other));
 
             // convert to lists so we can get items by index without enumerating within the loop below
             var listSource = source.ToList();
@@ -92,10 +92,10 @@ namespace LinqStatistics.NaN
         public static double CovarianceNaN(this IEnumerable<long> source, IEnumerable<long> other)
         {
             if (source == null)
-                throw new ArgumentNullException("source");
+                throw new ArgumentNullException(nameof(source));
 
             if (other == null)
-                throw new ArgumentNullException("other");
+                throw new ArgumentNullException(nameof(other));
 
             // convert to lists so we can get items by index without enumerating within the loop below
             var listSource = source.ToList();
@@ -148,10 +148,10 @@ namespace LinqStatistics.NaN
         public static float CovarianceNaN(this IEnumerable<float> source, IEnumerable<float> other)
         {
             if (source == null)
-                throw new ArgumentNullException("source");
+                throw new ArgumentNullException(nameof(source));
 
             if (other == null)
-                throw new ArgumentNullException("other");
+                throw new ArgumentNullException(nameof(other));
 
             // convert to lists so we can get items by index without enumerating within the loop below
             var listSource = source.ToList();
@@ -204,10 +204,10 @@ namespace LinqStatistics.NaN
         public static double CovarianceNaN(this IEnumerable<double> source, IEnumerable<double> other)
         {
             if (source == null)
-                throw new ArgumentNullException("source");
+                throw new ArgumentNullException(nameof(source));
 
             if (other == null)
-                throw new ArgumentNullException("other");
+                throw new ArgumentNullException(nameof(other));
 
             // convert to lists so we can get items by index without enumerating within the loop below
             var listSource = source.ToList();

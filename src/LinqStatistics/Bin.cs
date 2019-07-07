@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Globalization;
 
 namespace LinqStatistics
 {
@@ -8,9 +9,6 @@ namespace LinqStatistics
     [System.Runtime.InteropServices.ComVisible(false)] // code analysis was complaining that this type was marked as com visible
     public sealed class Bin : ItemCount<double>, IEquatable<Bin>
     {
-        private readonly Range<double> _range;
-        private readonly bool _maxInclusive;
-
         /// <summary>
         /// ctor
         /// </summary>
@@ -22,8 +20,8 @@ namespace LinqStatistics
         public Bin(double v, double min, double max, int count, bool maxInclusive = false)
             : base(v, count)
         {
-            _range = new Range<double>(min, max);
-            _maxInclusive = maxInclusive;
+            Range = new Range<double>(min, max);
+            MaxInclusive = maxInclusive;
         }
 
         internal Bin(double v, double min, double max, bool maxInclusive = false)
@@ -34,12 +32,12 @@ namespace LinqStatistics
         /// <summary>
         /// Determines whether Max should be included or excluded in the range
         /// </summary>
-        public bool MaxInclusive => _maxInclusive;
+        public bool MaxInclusive { get; private set; }
 
         /// <summary>
         /// The range
         /// </summary>
-        public Range<double> Range => _range;
+        public Range<double> Range { get; private set; }
 
         /// <summary>
         /// Determines if a value is contained with the segment
@@ -63,8 +61,8 @@ namespace LinqStatistics
         public override int GetHashCode()
         {
             int hash = base.GetHashCode();
-            hash = hash * 23 + _range.GetHashCode();
-            hash = hash * 23 + _maxInclusive.GetHashCode();
+            hash = hash * 23 + Range.GetHashCode();
+            hash = hash * 23 + MaxInclusive.GetHashCode();
             return hash;
         }
 
@@ -124,7 +122,7 @@ namespace LinqStatistics
         {
             if (base.Equals(other))
             {
-                return other._range == this._range && other.MaxInclusive == this.MaxInclusive;
+                return other.Range == this.Range && other.MaxInclusive == this.MaxInclusive;
             }
 
             return false;
@@ -136,7 +134,7 @@ namespace LinqStatistics
         /// <returns></returns>
         public override string ToString()
         {
-            return base.ToString() + " " + _range.ToString();
+            return base.ToString() + " " + Range.ToString(CultureInfo.CurrentCulture);
         }
     }
 }

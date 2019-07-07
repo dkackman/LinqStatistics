@@ -34,7 +34,7 @@ namespace LinqStatistics.NaN
         public static double SkewnessNaN(this IEnumerable<int> source)
         {
             if (source == null)
-                throw new ArgumentNullException("source");
+                throw new ArgumentNullException(nameof(source));
 
             double mean = (double)source.AverageNaN();
             if (double.IsNaN(mean))
@@ -70,10 +70,10 @@ namespace LinqStatistics.NaN
         public static double SkewnessNaN<TSource>(this IEnumerable<TSource> source, Func<TSource, int> selector)
         {
             if (source == null)
-                throw new ArgumentNullException("source");
+                throw new ArgumentNullException(nameof(source));
 
             if (selector == null)
-                throw new ArgumentNullException("selector");
+                throw new ArgumentNullException(nameof(selector));
 
             return source.Select(selector).SkewnessNaN();
         }
@@ -89,10 +89,10 @@ namespace LinqStatistics.NaN
         public static double? SkewnessNaN<TSource>(this IEnumerable<TSource> source, Func<TSource, int?> selector)
         {
             if (source == null)
-                throw new ArgumentNullException("source");
+                throw new ArgumentNullException(nameof(source));
 
             if (selector == null)
-                throw new ArgumentNullException("selector");
+                throw new ArgumentNullException(nameof(selector));
 
             return source.Select(selector).SkewnessNaN();
         }
@@ -119,7 +119,7 @@ namespace LinqStatistics.NaN
         public static double SkewnessNaN(this IEnumerable<long> source)
         {
             if (source == null)
-                throw new ArgumentNullException("source");
+                throw new ArgumentNullException(nameof(source));
 
             double mean = (double)source.AverageNaN();
             if (double.IsNaN(mean))
@@ -155,10 +155,10 @@ namespace LinqStatistics.NaN
         public static double SkewnessNaN<TSource>(this IEnumerable<TSource> source, Func<TSource, long> selector)
         {
             if (source == null)
-                throw new ArgumentNullException("source");
+                throw new ArgumentNullException(nameof(source));
 
             if (selector == null)
-                throw new ArgumentNullException("selector");
+                throw new ArgumentNullException(nameof(selector));
 
             return source.Select(selector).SkewnessNaN();
         }
@@ -174,10 +174,10 @@ namespace LinqStatistics.NaN
         public static double? SkewnessNaN<TSource>(this IEnumerable<TSource> source, Func<TSource, long?> selector)
         {
             if (source == null)
-                throw new ArgumentNullException("source");
+                throw new ArgumentNullException(nameof(source));
 
             if (selector == null)
-                throw new ArgumentNullException("selector");
+                throw new ArgumentNullException(nameof(selector));
 
             return source.Select(selector).SkewnessNaN();
         }
@@ -204,7 +204,7 @@ namespace LinqStatistics.NaN
         public static float SkewnessNaN(this IEnumerable<float> source)
         {
             if (source == null)
-                throw new ArgumentNullException("source");
+                throw new ArgumentNullException(nameof(source));
 
             double mean = (double)source.AverageNaN();
             if (double.IsNaN(mean))
@@ -240,10 +240,10 @@ namespace LinqStatistics.NaN
         public static float SkewnessNaN<TSource>(this IEnumerable<TSource> source, Func<TSource, float> selector)
         {
             if (source == null)
-                throw new ArgumentNullException("source");
+                throw new ArgumentNullException(nameof(source));
 
             if (selector == null)
-                throw new ArgumentNullException("selector");
+                throw new ArgumentNullException(nameof(selector));
 
             return source.Select(selector).SkewnessNaN();
         }
@@ -259,10 +259,10 @@ namespace LinqStatistics.NaN
         public static float? SkewnessNaN<TSource>(this IEnumerable<TSource> source, Func<TSource, float?> selector)
         {
             if (source == null)
-                throw new ArgumentNullException("source");
+                throw new ArgumentNullException(nameof(source));
 
             if (selector == null)
-                throw new ArgumentNullException("selector");
+                throw new ArgumentNullException(nameof(selector));
 
             return source.Select(selector).SkewnessNaN();
         }
@@ -289,7 +289,7 @@ namespace LinqStatistics.NaN
         public static double SkewnessNaN(this IEnumerable<double> source)
         {
             if (source == null)
-                throw new ArgumentNullException("source");
+                throw new ArgumentNullException(nameof(source));
 
             double mean = (double)source.AverageNaN();
             if (double.IsNaN(mean))
@@ -325,10 +325,10 @@ namespace LinqStatistics.NaN
         public static double SkewnessNaN<TSource>(this IEnumerable<TSource> source, Func<TSource, double> selector)
         {
             if (source == null)
-                throw new ArgumentNullException("source");
+                throw new ArgumentNullException(nameof(source));
 
             if (selector == null)
-                throw new ArgumentNullException("selector");
+                throw new ArgumentNullException(nameof(selector));
 
             return source.Select(selector).SkewnessNaN();
         }
@@ -344,10 +344,10 @@ namespace LinqStatistics.NaN
         public static double? SkewnessNaN<TSource>(this IEnumerable<TSource> source, Func<TSource, double?> selector)
         {
             if (source == null)
-                throw new ArgumentNullException("source");
+                throw new ArgumentNullException(nameof(source));
 
             if (selector == null)
-                throw new ArgumentNullException("selector");
+                throw new ArgumentNullException(nameof(selector));
 
             return source.Select(selector).SkewnessNaN();
         }

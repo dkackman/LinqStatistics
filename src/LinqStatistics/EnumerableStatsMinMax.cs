@@ -34,7 +34,7 @@ namespace LinqStatistics
         public static Range<int> MinMax(this IEnumerable<int> source)
         {            
             if (source == null)
-                throw new ArgumentNullException("source");
+                throw new ArgumentNullException(nameof(source));
 
             // initialize minimum to max possible value and maximum to minimum possible value
             // so that the first comparisons in the aggregate function work as expected
@@ -67,10 +67,10 @@ namespace LinqStatistics
         public static Range<int>? MinMax<TSource>(this IEnumerable<TSource> source, Func<TSource, int?> selector)
         {
             if (source == null)
-                throw new ArgumentNullException("source");
+                throw new ArgumentNullException(nameof(source));
 
             if (selector == null)
-                throw new ArgumentNullException("selector");
+                throw new ArgumentNullException(nameof(selector));
 
             return source.Select(selector).MinMax();
         }
@@ -86,10 +86,10 @@ namespace LinqStatistics
         public static Range<int> MinMax<TSource>(this IEnumerable<TSource> source, Func<TSource, int> selector)
         {
             if (source == null)
-                throw new ArgumentNullException("source");
+                throw new ArgumentNullException(nameof(source));
 
             if (selector == null)
-                throw new ArgumentNullException("selector");
+                throw new ArgumentNullException(nameof(selector));
 
             return source.Select(selector).MinMax();
         }
@@ -116,7 +116,7 @@ namespace LinqStatistics
         public static Range<long> MinMax(this IEnumerable<long> source)
         {            
             if (source == null)
-                throw new ArgumentNullException("source");
+                throw new ArgumentNullException(nameof(source));
 
             // initialize minimum to max possible value and maximum to minimum possible value
             // so that the first comparisons in the aggregate function work as expected
@@ -149,10 +149,10 @@ namespace LinqStatistics
         public static Range<long>? MinMax<TSource>(this IEnumerable<TSource> source, Func<TSource, long?> selector)
         {
             if (source == null)
-                throw new ArgumentNullException("source");
+                throw new ArgumentNullException(nameof(source));
 
             if (selector == null)
-                throw new ArgumentNullException("selector");
+                throw new ArgumentNullException(nameof(selector));
 
             return source.Select(selector).MinMax();
         }
@@ -168,10 +168,10 @@ namespace LinqStatistics
         public static Range<long> MinMax<TSource>(this IEnumerable<TSource> source, Func<TSource, long> selector)
         {
             if (source == null)
-                throw new ArgumentNullException("source");
+                throw new ArgumentNullException(nameof(source));
 
             if (selector == null)
-                throw new ArgumentNullException("selector");
+                throw new ArgumentNullException(nameof(selector));
 
             return source.Select(selector).MinMax();
         }
@@ -198,7 +198,7 @@ namespace LinqStatistics
         public static Range<float> MinMax(this IEnumerable<float> source)
         {            
             if (source == null)
-                throw new ArgumentNullException("source");
+                throw new ArgumentNullException(nameof(source));
 
             // initialize minimum to max possible value and maximum to minimum possible value
             // so that the first comparisons in the aggregate function work as expected
@@ -231,10 +231,10 @@ namespace LinqStatistics
         public static Range<float>? MinMax<TSource>(this IEnumerable<TSource> source, Func<TSource, float?> selector)
         {
             if (source == null)
-                throw new ArgumentNullException("source");
+                throw new ArgumentNullException(nameof(source));
 
             if (selector == null)
-                throw new ArgumentNullException("selector");
+                throw new ArgumentNullException(nameof(selector));
 
             return source.Select(selector).MinMax();
         }
@@ -250,10 +250,10 @@ namespace LinqStatistics
         public static Range<float> MinMax<TSource>(this IEnumerable<TSource> source, Func<TSource, float> selector)
         {
             if (source == null)
-                throw new ArgumentNullException("source");
+                throw new ArgumentNullException(nameof(source));
 
             if (selector == null)
-                throw new ArgumentNullException("selector");
+                throw new ArgumentNullException(nameof(selector));
 
             return source.Select(selector).MinMax();
         }
@@ -280,7 +280,7 @@ namespace LinqStatistics
         public static Range<double> MinMax(this IEnumerable<double> source)
         {            
             if (source == null)
-                throw new ArgumentNullException("source");
+                throw new ArgumentNullException(nameof(source));
 
             // initialize minimum to max possible value and maximum to minimum possible value
             // so that the first comparisons in the aggregate function work as expected
@@ -313,10 +313,10 @@ namespace LinqStatistics
         public static Range<double>? MinMax<TSource>(this IEnumerable<TSource> source, Func<TSource, double?> selector)
         {
             if (source == null)
-                throw new ArgumentNullException("source");
+                throw new ArgumentNullException(nameof(source));
 
             if (selector == null)
-                throw new ArgumentNullException("selector");
+                throw new ArgumentNullException(nameof(selector));
 
             return source.Select(selector).MinMax();
         }
@@ -332,10 +332,10 @@ namespace LinqStatistics
         public static Range<double> MinMax<TSource>(this IEnumerable<TSource> source, Func<TSource, double> selector)
         {
             if (source == null)
-                throw new ArgumentNullException("source");
+                throw new ArgumentNullException(nameof(source));
 
             if (selector == null)
-                throw new ArgumentNullException("selector");
+                throw new ArgumentNullException(nameof(selector));
 
             return source.Select(selector).MinMax();
         }
@@ -362,7 +362,7 @@ namespace LinqStatistics
         public static Range<decimal> MinMax(this IEnumerable<decimal> source)
         {            
             if (source == null)
-                throw new ArgumentNullException("source");
+                throw new ArgumentNullException(nameof(source));
 
             // initialize minimum to max possible value and maximum to minimum possible value
             // so that the first comparisons in the aggregate function work as expected
@@ -395,10 +395,10 @@ namespace LinqStatistics
         public static Range<decimal>? MinMax<TSource>(this IEnumerable<TSource> source, Func<TSource, decimal?> selector)
         {
             if (source == null)
-                throw new ArgumentNullException("source");
+                throw new ArgumentNullException(nameof(source));
 
             if (selector == null)
-                throw new ArgumentNullException("selector");
+                throw new ArgumentNullException(nameof(selector));
 
             return source.Select(selector).MinMax();
         }
@@ -414,10 +414,10 @@ namespace LinqStatistics
         public static Range<decimal> MinMax<TSource>(this IEnumerable<TSource> source, Func<TSource, decimal> selector)
         {
             if (source == null)
-                throw new ArgumentNullException("source");
+                throw new ArgumentNullException(nameof(source));
 
             if (selector == null)
-                throw new ArgumentNullException("selector");
+                throw new ArgumentNullException(nameof(selector));
 
             return source.Select(selector).MinMax();
         }

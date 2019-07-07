@@ -57,7 +57,7 @@ namespace LinqStatistics
         public static <#= type.Item2 #> VarianceP(this IEnumerable<<#= type.Item1 #>> source)
         {
             if (source == null)
-                throw new ArgumentNullException("source");
+                throw new ArgumentNullException(nameof(source));
 
             long n = 0;
             double mean = 0;
@@ -95,10 +95,10 @@ namespace LinqStatistics
         public static <#= type.Item2 #>? VarianceP<TSource>(this IEnumerable<TSource> source, Func<TSource, <#= type.Item1 #>?> selector)
         {
             if (source == null)
-                throw new ArgumentNullException("source");
+                throw new ArgumentNullException(nameof(source));
 
             if (selector == null)
-                throw new ArgumentNullException("selector");
+                throw new ArgumentNullException(nameof(selector));
 
             return source.Select(selector).VarianceP();
         }
@@ -117,10 +117,10 @@ namespace LinqStatistics
         public static <#= type.Item2 #> VarianceP<TSource>(this IEnumerable<TSource> source, Func<TSource, <#= type.Item1 #>> selector)
         {
             if (source == null)
-                throw new ArgumentNullException("source");
+                throw new ArgumentNullException(nameof(source));
 
             if (selector == null)
-                throw new ArgumentNullException("selector");
+                throw new ArgumentNullException(nameof(selector));
 
             return source.Select(selector).VarianceP();
         }

@@ -2,7 +2,7 @@
   "supports": {},
   "dependencies": {
     "Microsoft.NETCore.Portable.Compatibility": "1.0.1",
-    "NETStandard.Library": "1.6.0"
+    "NETStandard.Library": "2.0.3"
   },
   "frameworks": {
     ".NETPortable,Version=v4.5,Profile=Profile111": {}

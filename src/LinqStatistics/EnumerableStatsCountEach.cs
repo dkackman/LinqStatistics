@@ -16,10 +16,10 @@ namespace LinqStatistics
         public static IEnumerable<ItemCount<T>> CountEach<T>(this IEnumerable<T> source, IEqualityComparer<T> comparer)
         {
             if (source == null)
-                throw new ArgumentNullException("source");
+                throw new ArgumentNullException(nameof(source));
 
             if (comparer == null)
-                throw new ArgumentNullException("comparer");
+                throw new ArgumentNullException(nameof(comparer));
 
             return source.GroupBy(t => t, comparer).OrderBy(g => g.Key).Select(g => new ItemCount<T>(g.Key, g.Count()));
         }
@@ -33,7 +33,7 @@ namespace LinqStatistics
         public static IEnumerable<ItemCount<T>> CountEach<T>(this IEnumerable<T> source)
         {
             if (source == null)
-                throw new ArgumentNullException("source");
+                throw new ArgumentNullException(nameof(source));
 
             return source.CountEach(EqualityComparer<T>.Default);
         }
@@ -49,10 +49,10 @@ namespace LinqStatistics
         public static IEnumerable<ItemCount<TResult>> CountEach<TSource, TResult>(this IEnumerable<TSource> source, Func<TSource, TResult> selector)
         {
             if (source == null)
-                throw new ArgumentNullException("source");
+                throw new ArgumentNullException(nameof(source));
 
             if (selector == null)
-                throw new ArgumentNullException("selector");
+                throw new ArgumentNullException(nameof(selector));
 
             return source.Select(selector).CountEach();
         }

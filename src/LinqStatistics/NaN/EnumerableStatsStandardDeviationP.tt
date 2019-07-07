@@ -69,10 +69,10 @@ namespace LinqStatistics.NaN
         public static <#= type.Item2 #>? StandardDeviationPNaN<TSource>(this IEnumerable<TSource> source, Func<TSource, <#= type.Item1 #>?> selector)
         {
             if (source == null)
-                throw new ArgumentNullException("source");
+                throw new ArgumentNullException(nameof(source));
 
             if (selector == null)
-                throw new ArgumentNullException("selector");
+                throw new ArgumentNullException(nameof(selector));
 
             return source.Select(selector).StandardDeviationPNaN();
         }
@@ -90,10 +90,10 @@ namespace LinqStatistics.NaN
         public static <#= type.Item2 #> StandardDeviationPNaN<TSource>(this IEnumerable<TSource> source, Func<TSource, <#= type.Item1 #>> selector)
         {
             if (source == null)
-                throw new ArgumentNullException("source");
+                throw new ArgumentNullException(nameof(source));
 
             if (selector == null)
-                throw new ArgumentNullException("selector");
+                throw new ArgumentNullException(nameof(selector));
 
             return source.Select(selector).StandardDeviationNaN();
         }

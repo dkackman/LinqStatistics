@@ -52,7 +52,7 @@ namespace LinqStatistics
         public static <#= type.Item2 #> Kurtosis(this IEnumerable<<#= type.Item1 #>> source)
         {
             if (source == null)
-                throw new ArgumentNullException("source");
+                throw new ArgumentNullException(nameof(source));
 
             double mean = (double)source.Average();
 
@@ -98,10 +98,10 @@ namespace LinqStatistics
         public static <#= type.Item2 #> Kurtosis<TSource>(this IEnumerable<TSource> source, Func<TSource, <#= type.Item1 #>> selector)
         {
             if (source == null)
-                throw new ArgumentNullException("source");
+                throw new ArgumentNullException(nameof(source));
 
             if (selector == null)
-                throw new ArgumentNullException("selector");
+                throw new ArgumentNullException(nameof(selector));
 
             return source.Select(selector).Kurtosis();
         }
@@ -118,10 +118,10 @@ namespace LinqStatistics
         public static <#= type.Item2 #>? Kurtosis<TSource>(this IEnumerable<TSource> source, Func<TSource, <#= type.Item1 #>?> selector)
         {
             if (source == null)
-                throw new ArgumentNullException("source");
+                throw new ArgumentNullException(nameof(source));
 
             if (selector == null)
-                throw new ArgumentNullException("selector");
+                throw new ArgumentNullException(nameof(selector));
 
             return source.Select(selector).Kurtosis();
         }

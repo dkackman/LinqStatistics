@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Globalization;
 
 namespace LinqStatistics
 {
@@ -97,6 +98,11 @@ namespace LinqStatistics
         /// <returns></returns>
         public bool Equals(ItemCount<T> other)
         {
+            if (other == null)
+            {
+                return false;
+            }
+
             if (_value != null)
             {
                 return this._value.Equals(other._value) && this._count == other._count;
@@ -128,7 +134,7 @@ namespace LinqStatistics
         /// <returns></returns>
         public override string ToString()
         {
-            return string.Format("v={0}:c={1}", _value, _count);
+            return string.Format(CultureInfo.CurrentCulture, "v={0}:c={1}", _value, _count);
         }
     }
 }

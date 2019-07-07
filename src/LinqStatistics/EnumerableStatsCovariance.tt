@@ -54,10 +54,10 @@ namespace LinqStatistics
         public static <#= type.Item2 #> Covariance(this IEnumerable<<#= type.Item1 #>> source, IEnumerable<<#= type.Item1 #>> other)
         {
             if (source == null)
-                throw new ArgumentNullException("source");
+                throw new ArgumentNullException(nameof(source));
 
             if (other == null)
-                throw new ArgumentNullException("other");
+                throw new ArgumentNullException(nameof(other));
 
             // convert to lists so we can get items by index without enumerating within the loop below
             var listSource = source.ToList();

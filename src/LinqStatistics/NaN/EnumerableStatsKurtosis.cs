@@ -34,7 +34,7 @@ namespace LinqStatistics.NaN
         public static double KurtosisNaN(this IEnumerable<int> source)
         {
             if (source == null)
-                throw new ArgumentNullException("source");
+                throw new ArgumentNullException(nameof(source));
 
             double mean = (double)source.AverageNaN();
 
@@ -82,10 +82,10 @@ namespace LinqStatistics.NaN
         public static double KurtosisNaN<TSource>(this IEnumerable<TSource> source, Func<TSource, int> selector)
         {
             if (source == null)
-                throw new ArgumentNullException("source");
+                throw new ArgumentNullException(nameof(source));
 
             if (selector == null)
-                throw new ArgumentNullException("selector");
+                throw new ArgumentNullException(nameof(selector));
 
             return source.Select(selector).KurtosisNaN();
         }
@@ -101,10 +101,10 @@ namespace LinqStatistics.NaN
         public static double? KurtosisNaN<TSource>(this IEnumerable<TSource> source, Func<TSource, int?> selector)
         {
             if (source == null)
-                throw new ArgumentNullException("source");
+                throw new ArgumentNullException(nameof(source));
 
             if (selector == null)
-                throw new ArgumentNullException("selector");
+                throw new ArgumentNullException(nameof(selector));
 
             return source.Select(selector).KurtosisNaN();
         }
@@ -131,7 +131,7 @@ namespace LinqStatistics.NaN
         public static double KurtosisNaN(this IEnumerable<long> source)
         {
             if (source == null)
-                throw new ArgumentNullException("source");
+                throw new ArgumentNullException(nameof(source));
 
             double mean = (double)source.AverageNaN();
 
@@ -179,10 +179,10 @@ namespace LinqStatistics.NaN
         public static double KurtosisNaN<TSource>(this IEnumerable<TSource> source, Func<TSource, long> selector)
         {
             if (source == null)
-                throw new ArgumentNullException("source");
+                throw new ArgumentNullException(nameof(source));
 
             if (selector == null)
-                throw new ArgumentNullException("selector");
+                throw new ArgumentNullException(nameof(selector));
 
             return source.Select(selector).KurtosisNaN();
         }
@@ -198,10 +198,10 @@ namespace LinqStatistics.NaN
         public static double? KurtosisNaN<TSource>(this IEnumerable<TSource> source, Func<TSource, long?> selector)
         {
             if (source == null)
-                throw new ArgumentNullException("source");
+                throw new ArgumentNullException(nameof(source));
 
             if (selector == null)
-                throw new ArgumentNullException("selector");
+                throw new ArgumentNullException(nameof(selector));
 
             return source.Select(selector).KurtosisNaN();
         }
@@ -228,7 +228,7 @@ namespace LinqStatistics.NaN
         public static float KurtosisNaN(this IEnumerable<float> source)
         {
             if (source == null)
-                throw new ArgumentNullException("source");
+                throw new ArgumentNullException(nameof(source));
 
             double mean = (double)source.AverageNaN();
 
@@ -276,10 +276,10 @@ namespace LinqStatistics.NaN
         public static float KurtosisNaN<TSource>(this IEnumerable<TSource> source, Func<TSource, float> selector)
         {
             if (source == null)
-                throw new ArgumentNullException("source");
+                throw new ArgumentNullException(nameof(source));
 
             if (selector == null)
-                throw new ArgumentNullException("selector");
+                throw new ArgumentNullException(nameof(selector));
 
             return source.Select(selector).KurtosisNaN();
         }
@@ -295,10 +295,10 @@ namespace LinqStatistics.NaN
         public static float? KurtosisNaN<TSource>(this IEnumerable<TSource> source, Func<TSource, float?> selector)
         {
             if (source == null)
-                throw new ArgumentNullException("source");
+                throw new ArgumentNullException(nameof(source));
 
             if (selector == null)
-                throw new ArgumentNullException("selector");
+                throw new ArgumentNullException(nameof(selector));
 
             return source.Select(selector).KurtosisNaN();
         }
@@ -325,7 +325,7 @@ namespace LinqStatistics.NaN
         public static double KurtosisNaN(this IEnumerable<double> source)
         {
             if (source == null)
-                throw new ArgumentNullException("source");
+                throw new ArgumentNullException(nameof(source));
 
             double mean = (double)source.AverageNaN();
 
@@ -373,10 +373,10 @@ namespace LinqStatistics.NaN
         public static double KurtosisNaN<TSource>(this IEnumerable<TSource> source, Func<TSource, double> selector)
         {
             if (source == null)
-                throw new ArgumentNullException("source");
+                throw new ArgumentNullException(nameof(source));
 
             if (selector == null)
-                throw new ArgumentNullException("selector");
+                throw new ArgumentNullException(nameof(selector));
 
             return source.Select(selector).KurtosisNaN();
         }
@@ -392,10 +392,10 @@ namespace LinqStatistics.NaN
         public static double? KurtosisNaN<TSource>(this IEnumerable<TSource> source, Func<TSource, double?> selector)
         {
             if (source == null)
-                throw new ArgumentNullException("source");
+                throw new ArgumentNullException(nameof(source));
 
             if (selector == null)
-                throw new ArgumentNullException("selector");
+                throw new ArgumentNullException(nameof(selector));
 
             return source.Select(selector).KurtosisNaN();
         }

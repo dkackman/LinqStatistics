@@ -38,10 +38,10 @@ namespace LinqStatistics
         public static double Covariance(this IEnumerable<int> source, IEnumerable<int> other)
         {
             if (source == null)
-                throw new ArgumentNullException("source");
+                throw new ArgumentNullException(nameof(source));
 
             if (other == null)
-                throw new ArgumentNullException("other");
+                throw new ArgumentNullException(nameof(other));
 
             // convert to lists so we can get items by index without enumerating within the loop below
             var listSource = source.ToList();
@@ -93,10 +93,10 @@ namespace LinqStatistics
         public static double Covariance(this IEnumerable<long> source, IEnumerable<long> other)
         {
             if (source == null)
-                throw new ArgumentNullException("source");
+                throw new ArgumentNullException(nameof(source));
 
             if (other == null)
-                throw new ArgumentNullException("other");
+                throw new ArgumentNullException(nameof(other));
 
             // convert to lists so we can get items by index without enumerating within the loop below
             var listSource = source.ToList();
@@ -148,10 +148,10 @@ namespace LinqStatistics
         public static decimal Covariance(this IEnumerable<decimal> source, IEnumerable<decimal> other)
         {
             if (source == null)
-                throw new ArgumentNullException("source");
+                throw new ArgumentNullException(nameof(source));
 
             if (other == null)
-                throw new ArgumentNullException("other");
+                throw new ArgumentNullException(nameof(other));
 
             // convert to lists so we can get items by index without enumerating within the loop below
             var listSource = source.ToList();
@@ -203,10 +203,10 @@ namespace LinqStatistics
         public static float Covariance(this IEnumerable<float> source, IEnumerable<float> other)
         {
             if (source == null)
-                throw new ArgumentNullException("source");
+                throw new ArgumentNullException(nameof(source));
 
             if (other == null)
-                throw new ArgumentNullException("other");
+                throw new ArgumentNullException(nameof(other));
 
             // convert to lists so we can get items by index without enumerating within the loop below
             var listSource = source.ToList();
@@ -258,10 +258,10 @@ namespace LinqStatistics
         public static double Covariance(this IEnumerable<double> source, IEnumerable<double> other)
         {
             if (source == null)
-                throw new ArgumentNullException("source");
+                throw new ArgumentNullException(nameof(source));
 
             if (other == null)
-                throw new ArgumentNullException("other");
+                throw new ArgumentNullException(nameof(other));
 
             // convert to lists so we can get items by index without enumerating within the loop below
             var listSource = source.ToList();

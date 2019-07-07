@@ -37,7 +37,7 @@ namespace LinqStatistics
         public static double RootMeanSquare(this IEnumerable<int> source)
         {
             if (source == null)
-                throw new ArgumentNullException("source");
+                throw new ArgumentNullException(nameof(source));
 
             double s = 0;
             long n = 0;
@@ -69,10 +69,10 @@ namespace LinqStatistics
         public static double? RootMeanSquare<TSource>(this IEnumerable<TSource> source, Func<TSource, int?> selector)
         {
             if (source == null)
-                throw new ArgumentNullException("source");
+                throw new ArgumentNullException(nameof(source));
 
             if (selector == null)
-                throw new ArgumentNullException("selector");
+                throw new ArgumentNullException(nameof(selector));
 
             return source.Select(selector).RootMeanSquare();
         }
@@ -89,10 +89,10 @@ namespace LinqStatistics
         public static double RootMeanSquare<TSource>(this IEnumerable<TSource> source, Func<TSource, int> selector)
         {
              if (source == null)
-                throw new ArgumentNullException("source");
+                throw new ArgumentNullException(nameof(source));
 
             if (selector == null)
-                throw new ArgumentNullException("selector");
+                throw new ArgumentNullException(nameof(selector));
 
            return source.Select(selector).RootMeanSquare();
         }
@@ -122,7 +122,7 @@ namespace LinqStatistics
         public static double RootMeanSquare(this IEnumerable<long> source)
         {
             if (source == null)
-                throw new ArgumentNullException("source");
+                throw new ArgumentNullException(nameof(source));
 
             double s = 0;
             long n = 0;
@@ -154,10 +154,10 @@ namespace LinqStatistics
         public static double? RootMeanSquare<TSource>(this IEnumerable<TSource> source, Func<TSource, long?> selector)
         {
             if (source == null)
-                throw new ArgumentNullException("source");
+                throw new ArgumentNullException(nameof(source));
 
             if (selector == null)
-                throw new ArgumentNullException("selector");
+                throw new ArgumentNullException(nameof(selector));
 
             return source.Select(selector).RootMeanSquare();
         }
@@ -174,10 +174,10 @@ namespace LinqStatistics
         public static double RootMeanSquare<TSource>(this IEnumerable<TSource> source, Func<TSource, long> selector)
         {
              if (source == null)
-                throw new ArgumentNullException("source");
+                throw new ArgumentNullException(nameof(source));
 
             if (selector == null)
-                throw new ArgumentNullException("selector");
+                throw new ArgumentNullException(nameof(selector));
 
            return source.Select(selector).RootMeanSquare();
         }
@@ -207,7 +207,7 @@ namespace LinqStatistics
         public static decimal RootMeanSquare(this IEnumerable<decimal> source)
         {
             if (source == null)
-                throw new ArgumentNullException("source");
+                throw new ArgumentNullException(nameof(source));
 
             double s = 0;
             long n = 0;
@@ -239,10 +239,10 @@ namespace LinqStatistics
         public static decimal? RootMeanSquare<TSource>(this IEnumerable<TSource> source, Func<TSource, decimal?> selector)
         {
             if (source == null)
-                throw new ArgumentNullException("source");
+                throw new ArgumentNullException(nameof(source));
 
             if (selector == null)
-                throw new ArgumentNullException("selector");
+                throw new ArgumentNullException(nameof(selector));
 
             return source.Select(selector).RootMeanSquare();
         }
@@ -259,10 +259,10 @@ namespace LinqStatistics
         public static decimal RootMeanSquare<TSource>(this IEnumerable<TSource> source, Func<TSource, decimal> selector)
         {
              if (source == null)
-                throw new ArgumentNullException("source");
+                throw new ArgumentNullException(nameof(source));
 
             if (selector == null)
-                throw new ArgumentNullException("selector");
+                throw new ArgumentNullException(nameof(selector));
 
            return source.Select(selector).RootMeanSquare();
         }
@@ -292,7 +292,7 @@ namespace LinqStatistics
         public static float RootMeanSquare(this IEnumerable<float> source)
         {
             if (source == null)
-                throw new ArgumentNullException("source");
+                throw new ArgumentNullException(nameof(source));
 
             double s = 0;
             long n = 0;
@@ -324,10 +324,10 @@ namespace LinqStatistics
         public static float? RootMeanSquare<TSource>(this IEnumerable<TSource> source, Func<TSource, float?> selector)
         {
             if (source == null)
-                throw new ArgumentNullException("source");
+                throw new ArgumentNullException(nameof(source));
 
             if (selector == null)
-                throw new ArgumentNullException("selector");
+                throw new ArgumentNullException(nameof(selector));
 
             return source.Select(selector).RootMeanSquare();
         }
@@ -344,10 +344,10 @@ namespace LinqStatistics
         public static float RootMeanSquare<TSource>(this IEnumerable<TSource> source, Func<TSource, float> selector)
         {
              if (source == null)
-                throw new ArgumentNullException("source");
+                throw new ArgumentNullException(nameof(source));
 
             if (selector == null)
-                throw new ArgumentNullException("selector");
+                throw new ArgumentNullException(nameof(selector));
 
            return source.Select(selector).RootMeanSquare();
         }
@@ -377,7 +377,7 @@ namespace LinqStatistics
         public static double RootMeanSquare(this IEnumerable<double> source)
         {
             if (source == null)
-                throw new ArgumentNullException("source");
+                throw new ArgumentNullException(nameof(source));
 
             double s = 0;
             long n = 0;
@@ -409,10 +409,10 @@ namespace LinqStatistics
         public static double? RootMeanSquare<TSource>(this IEnumerable<TSource> source, Func<TSource, double?> selector)
         {
             if (source == null)
-                throw new ArgumentNullException("source");
+                throw new ArgumentNullException(nameof(source));
 
             if (selector == null)
-                throw new ArgumentNullException("selector");
+                throw new ArgumentNullException(nameof(selector));
 
             return source.Select(selector).RootMeanSquare();
         }
@@ -429,10 +429,10 @@ namespace LinqStatistics
         public static double RootMeanSquare<TSource>(this IEnumerable<TSource> source, Func<TSource, double> selector)
         {
              if (source == null)
-                throw new ArgumentNullException("source");
+                throw new ArgumentNullException(nameof(source));
 
             if (selector == null)
-                throw new ArgumentNullException("selector");
+                throw new ArgumentNullException(nameof(selector));
 
            return source.Select(selector).RootMeanSquare();
         }

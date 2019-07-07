@@ -20,7 +20,7 @@ namespace LinqStatistics
         /// <returns>The Median of the sequence of values.</returns>
         public static double? Median(this IEnumerable<int?> source)
         {
-            IEnumerable<int> values = source.AllValues();
+            var values = source.AllValues();
             if (values.Any())
                 return values.Median();
 
@@ -35,7 +35,7 @@ namespace LinqStatistics
         public static double Median(this IEnumerable<int> source)
         {
             if (source == null)
-                throw new ArgumentNullException("source");
+                throw new ArgumentNullException(nameof(source));
 
             var sortedList = (from number in source
                              orderby number
@@ -65,10 +65,10 @@ namespace LinqStatistics
         public static double? Median<TSource>(this IEnumerable<TSource> source, Func<TSource, int?> selector)
         {
             if (source == null)
-                throw new ArgumentNullException("source");
+                throw new ArgumentNullException(nameof(source));
 
             if (selector == null)
-                throw new ArgumentNullException("selector");
+                throw new ArgumentNullException(nameof(selector));
 
             return source.Select(selector).Median();
         }
@@ -84,10 +84,10 @@ namespace LinqStatistics
         public static double Median<TSource>(this IEnumerable<TSource> source, Func<TSource, int> selector)
         {
             if (source == null)
-                throw new ArgumentNullException("source");
+                throw new ArgumentNullException(nameof(source));
 
             if (selector == null)
-                throw new ArgumentNullException("selector");
+                throw new ArgumentNullException(nameof(selector));
 
             return source.Select(selector).Median();
         }
@@ -100,7 +100,7 @@ namespace LinqStatistics
         /// <returns>The Median of the sequence of values.</returns>
         public static double? Median(this IEnumerable<long?> source)
         {
-            IEnumerable<long> values = source.AllValues();
+            var values = source.AllValues();
             if (values.Any())
                 return values.Median();
 
@@ -115,7 +115,7 @@ namespace LinqStatistics
         public static double Median(this IEnumerable<long> source)
         {
             if (source == null)
-                throw new ArgumentNullException("source");
+                throw new ArgumentNullException(nameof(source));
 
             var sortedList = (from number in source
                              orderby number
@@ -145,10 +145,10 @@ namespace LinqStatistics
         public static double? Median<TSource>(this IEnumerable<TSource> source, Func<TSource, long?> selector)
         {
             if (source == null)
-                throw new ArgumentNullException("source");
+                throw new ArgumentNullException(nameof(source));
 
             if (selector == null)
-                throw new ArgumentNullException("selector");
+                throw new ArgumentNullException(nameof(selector));
 
             return source.Select(selector).Median();
         }
@@ -164,10 +164,10 @@ namespace LinqStatistics
         public static double Median<TSource>(this IEnumerable<TSource> source, Func<TSource, long> selector)
         {
             if (source == null)
-                throw new ArgumentNullException("source");
+                throw new ArgumentNullException(nameof(source));
 
             if (selector == null)
-                throw new ArgumentNullException("selector");
+                throw new ArgumentNullException(nameof(selector));
 
             return source.Select(selector).Median();
         }
@@ -180,7 +180,7 @@ namespace LinqStatistics
         /// <returns>The Median of the sequence of values.</returns>
         public static decimal? Median(this IEnumerable<decimal?> source)
         {
-            IEnumerable<decimal> values = source.AllValues();
+            var values = source.AllValues();
             if (values.Any())
                 return values.Median();
 
@@ -195,7 +195,7 @@ namespace LinqStatistics
         public static decimal Median(this IEnumerable<decimal> source)
         {
             if (source == null)
-                throw new ArgumentNullException("source");
+                throw new ArgumentNullException(nameof(source));
 
             var sortedList = (from number in source
                              orderby number
@@ -225,10 +225,10 @@ namespace LinqStatistics
         public static decimal? Median<TSource>(this IEnumerable<TSource> source, Func<TSource, decimal?> selector)
         {
             if (source == null)
-                throw new ArgumentNullException("source");
+                throw new ArgumentNullException(nameof(source));
 
             if (selector == null)
-                throw new ArgumentNullException("selector");
+                throw new ArgumentNullException(nameof(selector));
 
             return source.Select(selector).Median();
         }
@@ -244,10 +244,10 @@ namespace LinqStatistics
         public static decimal Median<TSource>(this IEnumerable<TSource> source, Func<TSource, decimal> selector)
         {
             if (source == null)
-                throw new ArgumentNullException("source");
+                throw new ArgumentNullException(nameof(source));
 
             if (selector == null)
-                throw new ArgumentNullException("selector");
+                throw new ArgumentNullException(nameof(selector));
 
             return source.Select(selector).Median();
         }
@@ -260,7 +260,7 @@ namespace LinqStatistics
         /// <returns>The Median of the sequence of values.</returns>
         public static float? Median(this IEnumerable<float?> source)
         {
-            IEnumerable<float> values = source.AllValues();
+            var values = source.AllValues();
             if (values.Any())
                 return values.Median();
 
@@ -275,7 +275,7 @@ namespace LinqStatistics
         public static float Median(this IEnumerable<float> source)
         {
             if (source == null)
-                throw new ArgumentNullException("source");
+                throw new ArgumentNullException(nameof(source));
 
             var sortedList = (from number in source
                              orderby number
@@ -305,10 +305,10 @@ namespace LinqStatistics
         public static float? Median<TSource>(this IEnumerable<TSource> source, Func<TSource, float?> selector)
         {
             if (source == null)
-                throw new ArgumentNullException("source");
+                throw new ArgumentNullException(nameof(source));
 
             if (selector == null)
-                throw new ArgumentNullException("selector");
+                throw new ArgumentNullException(nameof(selector));
 
             return source.Select(selector).Median();
         }
@@ -324,10 +324,10 @@ namespace LinqStatistics
         public static float Median<TSource>(this IEnumerable<TSource> source, Func<TSource, float> selector)
         {
             if (source == null)
-                throw new ArgumentNullException("source");
+                throw new ArgumentNullException(nameof(source));
 
             if (selector == null)
-                throw new ArgumentNullException("selector");
+                throw new ArgumentNullException(nameof(selector));
 
             return source.Select(selector).Median();
         }
@@ -340,7 +340,7 @@ namespace LinqStatistics
         /// <returns>The Median of the sequence of values.</returns>
         public static double? Median(this IEnumerable<double?> source)
         {
-            IEnumerable<double> values = source.AllValues();
+            var values = source.AllValues();
             if (values.Any())
                 return values.Median();
 
@@ -355,7 +355,7 @@ namespace LinqStatistics
         public static double Median(this IEnumerable<double> source)
         {
             if (source == null)
-                throw new ArgumentNullException("source");
+                throw new ArgumentNullException(nameof(source));
 
             var sortedList = (from number in source
                              orderby number
@@ -385,10 +385,10 @@ namespace LinqStatistics
         public static double? Median<TSource>(this IEnumerable<TSource> source, Func<TSource, double?> selector)
         {
             if (source == null)
-                throw new ArgumentNullException("source");
+                throw new ArgumentNullException(nameof(source));
 
             if (selector == null)
-                throw new ArgumentNullException("selector");
+                throw new ArgumentNullException(nameof(selector));
 
             return source.Select(selector).Median();
         }
@@ -404,10 +404,10 @@ namespace LinqStatistics
         public static double Median<TSource>(this IEnumerable<TSource> source, Func<TSource, double> selector)
         {
             if (source == null)
-                throw new ArgumentNullException("source");
+                throw new ArgumentNullException(nameof(source));
 
             if (selector == null)
-                throw new ArgumentNullException("selector");
+                throw new ArgumentNullException(nameof(selector));
 
             return source.Select(selector).Median();
         }

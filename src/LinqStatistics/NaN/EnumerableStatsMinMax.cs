@@ -34,7 +34,7 @@ namespace LinqStatistics.NaN
         public static Range<float> MinMaxNaN(this IEnumerable<float> source)
         {            
             if (source == null)
-                throw new ArgumentNullException("source");
+                throw new ArgumentNullException(nameof(source));
 
             // initialize minimum to max possible value and maximum to minimum possible value
             // so that the first comparisons in the aggregate function work as expected
@@ -67,10 +67,10 @@ namespace LinqStatistics.NaN
         public static Range<float>? MinMaxNaN<TSource>(this IEnumerable<TSource> source, Func<TSource, float?> selector)
         {
             if (source == null)
-                throw new ArgumentNullException("source");
+                throw new ArgumentNullException(nameof(source));
 
             if (selector == null)
-                throw new ArgumentNullException("selector");
+                throw new ArgumentNullException(nameof(selector));
 
             return source.Select(selector).MinMaxNaN();
         }
@@ -86,10 +86,10 @@ namespace LinqStatistics.NaN
         public static Range<float> MinMaxNaN<TSource>(this IEnumerable<TSource> source, Func<TSource, float> selector)
         {
             if (source == null)
-                throw new ArgumentNullException("source");
+                throw new ArgumentNullException(nameof(source));
 
             if (selector == null)
-                throw new ArgumentNullException("selector");
+                throw new ArgumentNullException(nameof(selector));
 
             return source.Select(selector).MinMaxNaN();
         }
@@ -116,7 +116,7 @@ namespace LinqStatistics.NaN
         public static Range<double> MinMaxNaN(this IEnumerable<double> source)
         {            
             if (source == null)
-                throw new ArgumentNullException("source");
+                throw new ArgumentNullException(nameof(source));
 
             // initialize minimum to max possible value and maximum to minimum possible value
             // so that the first comparisons in the aggregate function work as expected
@@ -149,10 +149,10 @@ namespace LinqStatistics.NaN
         public static Range<double>? MinMaxNaN<TSource>(this IEnumerable<TSource> source, Func<TSource, double?> selector)
         {
             if (source == null)
-                throw new ArgumentNullException("source");
+                throw new ArgumentNullException(nameof(source));
 
             if (selector == null)
-                throw new ArgumentNullException("selector");
+                throw new ArgumentNullException(nameof(selector));
 
             return source.Select(selector).MinMaxNaN();
         }
@@ -168,10 +168,10 @@ namespace LinqStatistics.NaN
         public static Range<double> MinMaxNaN<TSource>(this IEnumerable<TSource> source, Func<TSource, double> selector)
         {
             if (source == null)
-                throw new ArgumentNullException("source");
+                throw new ArgumentNullException(nameof(source));
 
             if (selector == null)
-                throw new ArgumentNullException("selector");
+                throw new ArgumentNullException(nameof(selector));
 
             return source.Select(selector).MinMaxNaN();
         }

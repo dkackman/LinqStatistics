@@ -65,7 +65,7 @@ namespace LinqStatistics
         public static <#= type.Item2 #> Pearson(this IEnumerable<Tuple<<#= type.Item1 #>, <#= type.Item1 #>>> source)
         {
             if (source == null)
-                throw new ArgumentNullException("source");
+                throw new ArgumentNullException(nameof(source));
 
             var x = source.Select(t => t.Item1);
             var y = source.Select(t => t.Item2);
@@ -86,13 +86,13 @@ namespace LinqStatistics
         public static <#= type.Item2 #>? Pearson<TSource>(this IEnumerable<TSource> source, IEnumerable<TSource> other, Func<TSource, <#= type.Item1 #>?> selector)
         {
             if (source == null)
-                throw new ArgumentNullException("source");
+                throw new ArgumentNullException(nameof(source));
 
              if (other == null)
-                throw new ArgumentNullException("other");
+                throw new ArgumentNullException(nameof(other));
 
            if (selector == null)
-                throw new ArgumentNullException("selector");
+                throw new ArgumentNullException(nameof(selector));
 
             return source.Select(selector).Pearson(other.Select(selector));
         }
@@ -110,13 +110,13 @@ namespace LinqStatistics
         public static <#= type.Item2 #> Pearson<TSource>(this IEnumerable<TSource> source, IEnumerable<TSource> other, Func<TSource, <#= type.Item1 #>> selector)
         {
             if (source == null)
-                throw new ArgumentNullException("source");
+                throw new ArgumentNullException(nameof(source));
 
             if (other == null)
-                throw new ArgumentNullException("other");
+                throw new ArgumentNullException(nameof(other));
 
             if (selector == null)
-                throw new ArgumentNullException("selector");
+                throw new ArgumentNullException(nameof(selector));
 
             return source.Select(selector).Pearson(other.Select(selector));
         }
