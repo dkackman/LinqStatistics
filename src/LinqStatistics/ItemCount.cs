@@ -9,9 +9,6 @@ namespace LinqStatistics
     /// <typeparam name="T">The type of the item</typeparam>
     public class ItemCount<T> : IEquatable<ItemCount<T>>
     {
-        private readonly T _value;
-        private int _count;
-
         /// <summary>
         /// ctor
         /// </summary>
@@ -19,8 +16,8 @@ namespace LinqStatistics
         /// <param name="count"></param>
         public ItemCount(T v, int count)
         {
-            _value = v;
-            _count = count;
+            RepresentativeValue = v;
+            Count = count;
         }
 
         internal ItemCount(T v)
@@ -31,18 +28,15 @@ namespace LinqStatistics
         /// <summary>
         /// The value represented by the bin
         /// </summary>
-        public T RepresentativeValue => _value;
+        public T RepresentativeValue { get; private set; }
 
         /// <summary>
         /// The number of times RepresentativeValue appears in the source data
         /// </summary>
-        public int Count
-        {
-            get { return _count; }
+        public int Count { get;
 
             // this is marked internal so histogram binning can update Count while counting
-            internal set { _count = value; }
-        }
+            internal set; }
 
         /// <summary>
         /// 
@@ -103,12 +97,12 @@ namespace LinqStatistics
                 return false;
             }
 
-            if (_value != null)
+            if (RepresentativeValue != null)
             {
-                return this._value.Equals(other._value) && this._count == other._count;
+                return this.RepresentativeValue.Equals(other.RepresentativeValue) && this.Count == other.Count;
             }
 
-            return other._value == null && this._count == other._count;
+            return other.RepresentativeValue == null && this.Count == other.Count;
         }
 
         /// <summary>
@@ -117,11 +111,11 @@ namespace LinqStatistics
         /// <returns>Hash of Value and Count</returns>
         public override int GetHashCode()
         {
-            if (_value == null)
+            if (RepresentativeValue == null)
             {
                 int hash = 17;
-                hash = hash * 23 + _value.GetHashCode();
-                hash = hash * 23 + _count.GetHashCode();
+                hash = hash * 23 + RepresentativeValue.GetHashCode();
+                hash = hash * 23 + Count.GetHashCode();
                 return hash;
             }
 
@@ -134,7 +128,7 @@ namespace LinqStatistics
         /// <returns></returns>
         public override string ToString()
         {
-            return string.Format(CultureInfo.CurrentCulture, "v={0}:c={1}", _value, _count);
+            return string.Format(CultureInfo.CurrentCulture, "v={0}:c={1}", RepresentativeValue, Count);
         }
     }
 }

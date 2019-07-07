@@ -8,9 +8,6 @@ namespace LinqStatistics
     /// </summary>
     public struct Range<T> : IFormattable, IEquatable<Range<T>>, IComparable, IComparable<Range<T>> where T : struct, IComparable<T>, IFormattable, IEquatable<T>
     {
-        private readonly T _min;
-        private readonly T _max;
-
         /// <summary>
         /// Initializes a new instance of the <see cref="Range{T}"/> struct.
         /// </summary>
@@ -29,8 +26,8 @@ namespace LinqStatistics
         /// <param name="noThrow">True to allow min to be less than max</param>
         internal Range(T min, T max, bool noThrow)
         {
-            _min = min;
-            _max = max;
+            Min = min;
+            Max = max;
 
             if (!noThrow && min.CompareTo(max) > 0)
                 throw new InvalidOperationException("Minimum must be less then maximum");
@@ -40,13 +37,13 @@ namespace LinqStatistics
         /// Gets the minimal value of segment.
         /// </summary>
         /// <value>The Min.</value>
-        public T Min => _min;
+        public T Min { get; private set; }
 
         /// <summary>
         /// Gets the maximal value of segment.
         /// </summary>
         /// <value>The Max.</value>
-        public T Max => _max;
+        public T Max { get; private set; }
 
         /// <summary>
         /// 
@@ -192,8 +189,8 @@ namespace LinqStatistics
         public override int GetHashCode()
         {
             int hash = 17;
-            hash = hash * 23 + _min.GetHashCode();
-            hash = hash * 23 + _max.GetHashCode();
+            hash = hash * 23 + Min.GetHashCode();
+            hash = hash * 23 + Max.GetHashCode();
             return hash;
         }
 
