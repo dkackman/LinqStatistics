@@ -5,7 +5,7 @@ using System.Linq;
 namespace LinqStatistics
 {
     public static partial class EnumerableStats
-    {          
+    {
         /// <summary>
         /// Counts each unique element in a sequence
         /// </summary>

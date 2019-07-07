@@ -1,6 +1,6 @@
 ﻿using System;
-using System.Diagnostics;
 using System.Collections.Generic;
+using System.Diagnostics;
 
 namespace LinqStatistics
 {
@@ -10,7 +10,7 @@ namespace LinqStatistics
         {
             if (binCount <= 0)
                 throw new InvalidOperationException("binCount must be greater than 0");
-            
+
             if (mode == BinningMode.Unbounded)
             {
                 return CreateBinsUnbounded(min, max, binCount);
@@ -26,7 +26,7 @@ namespace LinqStatistics
         }
 
         private static IEnumerable<Bin> CreateBinsMaxInclusive(double min, double max, int binCount)
-        {            
+        {
             double binSize = (max - min) / binCount;
             double halfBin = binSize / 2.0;
             double rangeMin = min;
@@ -43,7 +43,7 @@ namespace LinqStatistics
                 }
                 else
                 {
-                    bins.Add(new Bin(rangeMin + halfBin, rangeMin, rangeMax)); 
+                    bins.Add(new Bin(rangeMin + halfBin, rangeMin, rangeMax));
                 }
                 rangeMin += binSize;
                 rangeMax += binSize;

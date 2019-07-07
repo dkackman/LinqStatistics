@@ -11,7 +11,7 @@ namespace LinqStatistics.NaN
 {
     public static partial class EnumerableStats
     {
-    	
+
         /// <summary>
         /// Computes the sample Skewness of a sequence of nullable int values
         /// </summary>
@@ -45,7 +45,7 @@ namespace LinqStatistics.NaN
             long n = 0;
 
             checked
-            { 
+            {
                 foreach (var x in source)
                 {
                     n++;
@@ -96,7 +96,7 @@ namespace LinqStatistics.NaN
 
             return source.Select(selector).SkewnessNaN();
         }
- 	
+
         /// <summary>
         /// Computes the sample Skewness of a sequence of nullable long values
         /// </summary>
@@ -130,7 +130,7 @@ namespace LinqStatistics.NaN
             long n = 0;
 
             checked
-            { 
+            {
                 foreach (var x in source)
                 {
                     n++;
@@ -181,7 +181,7 @@ namespace LinqStatistics.NaN
 
             return source.Select(selector).SkewnessNaN();
         }
- 	
+
         /// <summary>
         /// Computes the sample Skewness of a sequence of nullable float values
         /// </summary>
@@ -215,7 +215,7 @@ namespace LinqStatistics.NaN
             long n = 0;
 
             checked
-            { 
+            {
                 foreach (var x in source)
                 {
                     n++;
@@ -266,7 +266,7 @@ namespace LinqStatistics.NaN
 
             return source.Select(selector).SkewnessNaN();
         }
- 	
+
         /// <summary>
         /// Computes the sample Skewness of a sequence of nullable double values
         /// </summary>
@@ -300,7 +300,7 @@ namespace LinqStatistics.NaN
             long n = 0;
 
             checked
-            { 
+            {
                 foreach (var x in source)
                 {
                     n++;
@@ -351,5 +351,5 @@ namespace LinqStatistics.NaN
 
             return source.Select(selector).SkewnessNaN();
         }
-     }
+    }
 }

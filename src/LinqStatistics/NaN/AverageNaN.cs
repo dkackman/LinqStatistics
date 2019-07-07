@@ -15,7 +15,7 @@ namespace LinqStatistics.NaN
     /// </summary>
     public static partial class EnumerableStats
     {
-    	
+
         /// <summary>
         /// Computes the sample Average of a sequence of nullable int values.
         /// </summary>
@@ -29,7 +29,7 @@ namespace LinqStatistics.NaN
             var values = source.AllValues();
             if (values.Any())
                 return values.AverageNaN();
-            
+
             return null;
         }
 
@@ -47,9 +47,9 @@ namespace LinqStatistics.NaN
 
             double sum = 0;
             long n = 0;
-            checked 
+            checked
             {
-                foreach (var v in source) 
+                foreach (var v in source)
                 {
                     sum += v;
                     n++;
@@ -100,7 +100,7 @@ namespace LinqStatistics.NaN
 
             return source.Select(selector).AverageNaN();
         }
- 	
+
         /// <summary>
         /// Computes the sample Average of a sequence of nullable long values.
         /// </summary>
@@ -114,7 +114,7 @@ namespace LinqStatistics.NaN
             var values = source.AllValues();
             if (values.Any())
                 return values.AverageNaN();
-            
+
             return null;
         }
 
@@ -132,9 +132,9 @@ namespace LinqStatistics.NaN
 
             double sum = 0;
             long n = 0;
-            checked 
+            checked
             {
-                foreach (var v in source) 
+                foreach (var v in source)
                 {
                     sum += v;
                     n++;
@@ -185,7 +185,7 @@ namespace LinqStatistics.NaN
 
             return source.Select(selector).AverageNaN();
         }
- 	
+
         /// <summary>
         /// Computes the sample Average of a sequence of nullable float values.
         /// </summary>
@@ -199,7 +199,7 @@ namespace LinqStatistics.NaN
             var values = source.AllValues();
             if (values.Any())
                 return values.AverageNaN();
-            
+
             return null;
         }
 
@@ -217,9 +217,9 @@ namespace LinqStatistics.NaN
 
             double sum = 0;
             long n = 0;
-            checked 
+            checked
             {
-                foreach (var v in source) 
+                foreach (var v in source)
                 {
                     sum += v;
                     n++;
@@ -270,7 +270,7 @@ namespace LinqStatistics.NaN
 
             return source.Select(selector).AverageNaN();
         }
- 	
+
         /// <summary>
         /// Computes the sample Average of a sequence of nullable double values.
         /// </summary>
@@ -284,7 +284,7 @@ namespace LinqStatistics.NaN
             var values = source.AllValues();
             if (values.Any())
                 return values.AverageNaN();
-            
+
             return null;
         }
 
@@ -302,9 +302,9 @@ namespace LinqStatistics.NaN
 
             double sum = 0;
             long n = 0;
-            checked 
+            checked
             {
-                foreach (var v in source) 
+                foreach (var v in source)
                 {
                     sum += v;
                     n++;
@@ -355,5 +355,5 @@ namespace LinqStatistics.NaN
 
             return source.Select(selector).AverageNaN();
         }
-     }
+    }
 }

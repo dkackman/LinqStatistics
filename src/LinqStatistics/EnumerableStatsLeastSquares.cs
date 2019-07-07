@@ -11,7 +11,7 @@ namespace LinqStatistics
 {
     public static partial class EnumerableStats
     {
-    	
+
         /// <summary>
         /// Computes the LeastSquares of a sequence of Tuple{int?, int?} values.
         /// </summary>
@@ -45,7 +45,7 @@ namespace LinqStatistics
             double sumXY = 0;
 
             checked
-            { 
+            {
                 foreach (var tuple in source)
                 {
                     n++;
@@ -59,7 +59,7 @@ namespace LinqStatistics
 
             if (n < 2)
                 throw new InvalidOperationException("Source must have at least 2 elements");
-            
+
             double sumXSquared = sumX * sumX;
             double denominator = n * sumXX - sumXSquared;
             if (denominator == 0.0)
@@ -111,7 +111,7 @@ namespace LinqStatistics
 
             return source.Select(selector).LeastSquares();
         }
- 	
+
         /// <summary>
         /// Computes the LeastSquares of a sequence of Tuple{long?, long?} values.
         /// </summary>
@@ -145,7 +145,7 @@ namespace LinqStatistics
             double sumXY = 0;
 
             checked
-            { 
+            {
                 foreach (var tuple in source)
                 {
                     n++;
@@ -159,7 +159,7 @@ namespace LinqStatistics
 
             if (n < 2)
                 throw new InvalidOperationException("Source must have at least 2 elements");
-            
+
             double sumXSquared = sumX * sumX;
             double denominator = n * sumXX - sumXSquared;
             if (denominator == 0.0)
@@ -211,7 +211,7 @@ namespace LinqStatistics
 
             return source.Select(selector).LeastSquares();
         }
- 	
+
         /// <summary>
         /// Computes the LeastSquares of a sequence of Tuple{float?, float?} values.
         /// </summary>
@@ -245,7 +245,7 @@ namespace LinqStatistics
             double sumXY = 0;
 
             checked
-            { 
+            {
                 foreach (var tuple in source)
                 {
                     n++;
@@ -259,7 +259,7 @@ namespace LinqStatistics
 
             if (n < 2)
                 throw new InvalidOperationException("Source must have at least 2 elements");
-            
+
             double sumXSquared = sumX * sumX;
             double denominator = n * sumXX - sumXSquared;
             if (denominator == 0.0)
@@ -311,7 +311,7 @@ namespace LinqStatistics
 
             return source.Select(selector).LeastSquares();
         }
- 	
+
         /// <summary>
         /// Computes the LeastSquares of a sequence of Tuple{double?, double?} values.
         /// </summary>
@@ -345,7 +345,7 @@ namespace LinqStatistics
             double sumXY = 0;
 
             checked
-            { 
+            {
                 foreach (var tuple in source)
                 {
                     n++;
@@ -359,7 +359,7 @@ namespace LinqStatistics
 
             if (n < 2)
                 throw new InvalidOperationException("Source must have at least 2 elements");
-            
+
             double sumXSquared = sumX * sumX;
             double denominator = n * sumXX - sumXSquared;
             if (denominator == 0.0)
@@ -411,7 +411,7 @@ namespace LinqStatistics
 
             return source.Select(selector).LeastSquares();
         }
- 	
+
         /// <summary>
         /// Computes the LeastSquares of a sequence of Tuple{decimal?, decimal?} values.
         /// </summary>
@@ -445,7 +445,7 @@ namespace LinqStatistics
             double sumXY = 0;
 
             checked
-            { 
+            {
                 foreach (var tuple in source)
                 {
                     n++;
@@ -459,7 +459,7 @@ namespace LinqStatistics
 
             if (n < 2)
                 throw new InvalidOperationException("Source must have at least 2 elements");
-            
+
             double sumXSquared = sumX * sumX;
             double denominator = n * sumXX - sumXSquared;
             if (denominator == 0.0)
@@ -511,5 +511,5 @@ namespace LinqStatistics
 
             return source.Select(selector).LeastSquares();
         }
-     }
+    }
 }

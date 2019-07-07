@@ -11,7 +11,7 @@ namespace LinqStatistics
 {
     public static partial class EnumerableStats
     {
-    	
+
         /// <summary>
         /// Computes the sample Kurtosis of a sequence of nullable int values
         /// </summary>
@@ -44,9 +44,9 @@ namespace LinqStatistics
             double meanv = 0;
             double M2 = 0;
             double M4 = 0;
-            
+
             checked
-            { 
+            {
                 foreach (var x in source)
                 {
                     n++;
@@ -109,7 +109,7 @@ namespace LinqStatistics
 
             return source.Select(selector).Kurtosis();
         }
- 	
+
         /// <summary>
         /// Computes the sample Kurtosis of a sequence of nullable long values
         /// </summary>
@@ -142,9 +142,9 @@ namespace LinqStatistics
             double meanv = 0;
             double M2 = 0;
             double M4 = 0;
-            
+
             checked
-            { 
+            {
                 foreach (var x in source)
                 {
                     n++;
@@ -207,7 +207,7 @@ namespace LinqStatistics
 
             return source.Select(selector).Kurtosis();
         }
- 	
+
         /// <summary>
         /// Computes the sample Kurtosis of a sequence of nullable decimal values
         /// </summary>
@@ -240,9 +240,9 @@ namespace LinqStatistics
             double meanv = 0;
             double M2 = 0;
             double M4 = 0;
-            
+
             checked
-            { 
+            {
                 foreach (var x in source)
                 {
                     n++;
@@ -305,7 +305,7 @@ namespace LinqStatistics
 
             return source.Select(selector).Kurtosis();
         }
- 	
+
         /// <summary>
         /// Computes the sample Kurtosis of a sequence of nullable float values
         /// </summary>
@@ -338,9 +338,9 @@ namespace LinqStatistics
             double meanv = 0;
             double M2 = 0;
             double M4 = 0;
-            
+
             checked
-            { 
+            {
                 foreach (var x in source)
                 {
                     n++;
@@ -403,7 +403,7 @@ namespace LinqStatistics
 
             return source.Select(selector).Kurtosis();
         }
- 	
+
         /// <summary>
         /// Computes the sample Kurtosis of a sequence of nullable double values
         /// </summary>
@@ -436,9 +436,9 @@ namespace LinqStatistics
             double meanv = 0;
             double M2 = 0;
             double M4 = 0;
-            
+
             checked
-            { 
+            {
                 foreach (var x in source)
                 {
                     n++;
@@ -501,5 +501,5 @@ namespace LinqStatistics
 
             return source.Select(selector).Kurtosis();
         }
-     }
+    }
 }

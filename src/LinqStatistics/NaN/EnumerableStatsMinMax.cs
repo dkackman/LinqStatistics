@@ -11,7 +11,7 @@ namespace LinqStatistics.NaN
 {
     public static partial class EnumerableStats
     {
-    	
+
         /// <summary>
         /// Computes the MinMax of a sequence of nullable float values.
         /// </summary>
@@ -32,7 +32,7 @@ namespace LinqStatistics.NaN
         /// <param name="source">The sequence of elements.</param>
         /// <returns>The MinMax.</returns>
         public static Range<float> MinMaxNaN(this IEnumerable<float> source)
-        {            
+        {
             if (source == null)
                 throw new ArgumentNullException(nameof(source));
 
@@ -46,7 +46,7 @@ namespace LinqStatistics.NaN
                 var min = Math.Min(accumulator.Min, value);
                 var max = Math.Max(accumulator.Max, value);
                 any = true;
-                
+
                 return new Range<float>(min, max);
             });
 
@@ -93,7 +93,7 @@ namespace LinqStatistics.NaN
 
             return source.Select(selector).MinMaxNaN();
         }
- 	
+
         /// <summary>
         /// Computes the MinMax of a sequence of nullable double values.
         /// </summary>
@@ -114,7 +114,7 @@ namespace LinqStatistics.NaN
         /// <param name="source">The sequence of elements.</param>
         /// <returns>The MinMax.</returns>
         public static Range<double> MinMaxNaN(this IEnumerable<double> source)
-        {            
+        {
             if (source == null)
                 throw new ArgumentNullException(nameof(source));
 
@@ -128,7 +128,7 @@ namespace LinqStatistics.NaN
                 var min = Math.Min(accumulator.Min, value);
                 var max = Math.Max(accumulator.Max, value);
                 any = true;
-                
+
                 return new Range<double>(min, max);
             });
 
@@ -175,5 +175,5 @@ namespace LinqStatistics.NaN
 
             return source.Select(selector).MinMaxNaN();
         }
-     }
+    }
 }

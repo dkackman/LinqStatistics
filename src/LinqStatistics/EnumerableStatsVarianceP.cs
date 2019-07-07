@@ -11,7 +11,7 @@ namespace LinqStatistics
 {
     public static partial class EnumerableStats
     {
-    	
+
         /// <summary>
         /// Computes the population Variance of a sequence of nullable int values.
         /// </summary>
@@ -26,7 +26,7 @@ namespace LinqStatistics
             var values = source.AllValues();
             if (values.Any())
                 return values.VarianceP();
-            
+
             return null;
         }
 
@@ -48,11 +48,11 @@ namespace LinqStatistics
             double M2 = 0;
 
             checked
-            { 
+            {
                 foreach (var x in source)
                 {
                     n++;
-                
+
                     double delta = (double)x - mean;
                     mean += delta / n;
                     M2 += delta * ((double)x - mean);
@@ -108,7 +108,7 @@ namespace LinqStatistics
 
             return source.Select(selector).VarianceP();
         }
- 	
+
         /// <summary>
         /// Computes the population Variance of a sequence of nullable long values.
         /// </summary>
@@ -123,7 +123,7 @@ namespace LinqStatistics
             var values = source.AllValues();
             if (values.Any())
                 return values.VarianceP();
-            
+
             return null;
         }
 
@@ -145,11 +145,11 @@ namespace LinqStatistics
             double M2 = 0;
 
             checked
-            { 
+            {
                 foreach (var x in source)
                 {
                     n++;
-                
+
                     double delta = (double)x - mean;
                     mean += delta / n;
                     M2 += delta * ((double)x - mean);
@@ -205,7 +205,7 @@ namespace LinqStatistics
 
             return source.Select(selector).VarianceP();
         }
- 	
+
         /// <summary>
         /// Computes the population Variance of a sequence of nullable decimal values.
         /// </summary>
@@ -220,7 +220,7 @@ namespace LinqStatistics
             var values = source.AllValues();
             if (values.Any())
                 return values.VarianceP();
-            
+
             return null;
         }
 
@@ -242,11 +242,11 @@ namespace LinqStatistics
             double M2 = 0;
 
             checked
-            { 
+            {
                 foreach (var x in source)
                 {
                     n++;
-                
+
                     double delta = (double)x - mean;
                     mean += delta / n;
                     M2 += delta * ((double)x - mean);
@@ -302,7 +302,7 @@ namespace LinqStatistics
 
             return source.Select(selector).VarianceP();
         }
- 	
+
         /// <summary>
         /// Computes the population Variance of a sequence of nullable float values.
         /// </summary>
@@ -317,7 +317,7 @@ namespace LinqStatistics
             var values = source.AllValues();
             if (values.Any())
                 return values.VarianceP();
-            
+
             return null;
         }
 
@@ -339,11 +339,11 @@ namespace LinqStatistics
             double M2 = 0;
 
             checked
-            { 
+            {
                 foreach (var x in source)
                 {
                     n++;
-                
+
                     double delta = (double)x - mean;
                     mean += delta / n;
                     M2 += delta * ((double)x - mean);
@@ -399,7 +399,7 @@ namespace LinqStatistics
 
             return source.Select(selector).VarianceP();
         }
- 	
+
         /// <summary>
         /// Computes the population Variance of a sequence of nullable double values.
         /// </summary>
@@ -414,7 +414,7 @@ namespace LinqStatistics
             var values = source.AllValues();
             if (values.Any())
                 return values.VarianceP();
-            
+
             return null;
         }
 
@@ -436,11 +436,11 @@ namespace LinqStatistics
             double M2 = 0;
 
             checked
-            { 
+            {
                 foreach (var x in source)
                 {
                     n++;
-                
+
                     double delta = (double)x - mean;
                     mean += delta / n;
                     M2 += delta * ((double)x - mean);
@@ -496,5 +496,5 @@ namespace LinqStatistics
 
             return source.Select(selector).VarianceP();
         }
-     }
+    }
 }

@@ -11,7 +11,7 @@ namespace LinqStatistics.NaN
 {
     public static partial class EnumerableStats
     {
-    	
+
         /// <summary>
         /// Computes the Range of a sequence of nullable float values.
         /// </summary>
@@ -74,7 +74,7 @@ namespace LinqStatistics.NaN
 
             return source.Select(selector).RangeNaN();
         }
- 	
+
         /// <summary>
         /// Computes the Range of a sequence of nullable double values.
         /// </summary>
@@ -137,5 +137,5 @@ namespace LinqStatistics.NaN
 
             return source.Select(selector).RangeNaN();
         }
-     }
+    }
 }

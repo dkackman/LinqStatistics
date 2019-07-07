@@ -44,7 +44,7 @@ namespace LinqStatistics
         {
             if (source == null)
                 throw new ArgumentNullException(nameof(source));
-            
+
             return (int)Math.Round(2.0 * Math.Pow(source.Count(), 1.0 / 3.0), 0);
         }
     }

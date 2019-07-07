@@ -11,7 +11,7 @@ namespace LinqStatistics
 {
     public static partial class EnumerableStats
     {
-    	
+
         /// <summary>
         /// Computes the Pearson of two sequences of nullable int values.
         /// </summary>
@@ -56,7 +56,7 @@ namespace LinqStatistics
 
             return x.Covariance(y) / (x.StandardDeviationP() * y.StandardDeviationP());
         }
-        
+
         /// <summary>
         ///     Computes the Pearson of a sequence of nullable int values that are obtained
         ///     by invoking a transform function on each element of the input sequence.
@@ -72,10 +72,10 @@ namespace LinqStatistics
             if (source == null)
                 throw new ArgumentNullException(nameof(source));
 
-             if (other == null)
+            if (other == null)
                 throw new ArgumentNullException(nameof(other));
 
-           if (selector == null)
+            if (selector == null)
                 throw new ArgumentNullException(nameof(selector));
 
             return source.Select(selector).Pearson(other.Select(selector));
@@ -104,7 +104,7 @@ namespace LinqStatistics
 
             return source.Select(selector).Pearson(other.Select(selector));
         }
- 	
+
         /// <summary>
         /// Computes the Pearson of two sequences of nullable long values.
         /// </summary>
@@ -149,7 +149,7 @@ namespace LinqStatistics
 
             return x.Covariance(y) / (x.StandardDeviationP() * y.StandardDeviationP());
         }
-        
+
         /// <summary>
         ///     Computes the Pearson of a sequence of nullable long values that are obtained
         ///     by invoking a transform function on each element of the input sequence.
@@ -165,10 +165,10 @@ namespace LinqStatistics
             if (source == null)
                 throw new ArgumentNullException(nameof(source));
 
-             if (other == null)
+            if (other == null)
                 throw new ArgumentNullException(nameof(other));
 
-           if (selector == null)
+            if (selector == null)
                 throw new ArgumentNullException(nameof(selector));
 
             return source.Select(selector).Pearson(other.Select(selector));
@@ -197,7 +197,7 @@ namespace LinqStatistics
 
             return source.Select(selector).Pearson(other.Select(selector));
         }
- 	
+
         /// <summary>
         /// Computes the Pearson of two sequences of nullable decimal values.
         /// </summary>
@@ -242,7 +242,7 @@ namespace LinqStatistics
 
             return x.Covariance(y) / (x.StandardDeviationP() * y.StandardDeviationP());
         }
-        
+
         /// <summary>
         ///     Computes the Pearson of a sequence of nullable decimal values that are obtained
         ///     by invoking a transform function on each element of the input sequence.
@@ -258,10 +258,10 @@ namespace LinqStatistics
             if (source == null)
                 throw new ArgumentNullException(nameof(source));
 
-             if (other == null)
+            if (other == null)
                 throw new ArgumentNullException(nameof(other));
 
-           if (selector == null)
+            if (selector == null)
                 throw new ArgumentNullException(nameof(selector));
 
             return source.Select(selector).Pearson(other.Select(selector));
@@ -290,7 +290,7 @@ namespace LinqStatistics
 
             return source.Select(selector).Pearson(other.Select(selector));
         }
- 	
+
         /// <summary>
         /// Computes the Pearson of two sequences of nullable float values.
         /// </summary>
@@ -335,7 +335,7 @@ namespace LinqStatistics
 
             return x.Covariance(y) / (x.StandardDeviationP() * y.StandardDeviationP());
         }
-        
+
         /// <summary>
         ///     Computes the Pearson of a sequence of nullable float values that are obtained
         ///     by invoking a transform function on each element of the input sequence.
@@ -351,10 +351,10 @@ namespace LinqStatistics
             if (source == null)
                 throw new ArgumentNullException(nameof(source));
 
-             if (other == null)
+            if (other == null)
                 throw new ArgumentNullException(nameof(other));
 
-           if (selector == null)
+            if (selector == null)
                 throw new ArgumentNullException(nameof(selector));
 
             return source.Select(selector).Pearson(other.Select(selector));
@@ -383,7 +383,7 @@ namespace LinqStatistics
 
             return source.Select(selector).Pearson(other.Select(selector));
         }
- 	
+
         /// <summary>
         /// Computes the Pearson of two sequences of nullable double values.
         /// </summary>
@@ -428,7 +428,7 @@ namespace LinqStatistics
 
             return x.Covariance(y) / (x.StandardDeviationP() * y.StandardDeviationP());
         }
-        
+
         /// <summary>
         ///     Computes the Pearson of a sequence of nullable double values that are obtained
         ///     by invoking a transform function on each element of the input sequence.
@@ -444,10 +444,10 @@ namespace LinqStatistics
             if (source == null)
                 throw new ArgumentNullException(nameof(source));
 
-             if (other == null)
+            if (other == null)
                 throw new ArgumentNullException(nameof(other));
 
-           if (selector == null)
+            if (selector == null)
                 throw new ArgumentNullException(nameof(selector));
 
             return source.Select(selector).Pearson(other.Select(selector));
@@ -476,5 +476,5 @@ namespace LinqStatistics
 
             return source.Select(selector).Pearson(other.Select(selector));
         }
-     }
+    }
 }

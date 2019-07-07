@@ -11,7 +11,7 @@ namespace LinqStatistics.NaN
 {
     public static partial class EnumerableStats
     {
-    	
+
         /// <summary>
         /// Computes the sample Kurtosis of a sequence of nullable int values
         /// </summary>
@@ -45,9 +45,9 @@ namespace LinqStatistics.NaN
             double meanv = 0;
             double M2 = 0;
             double M4 = 0;
-             
+
             checked
-            { 
+            {
                 foreach (var x in source)
                 {
                     n++;
@@ -108,7 +108,7 @@ namespace LinqStatistics.NaN
 
             return source.Select(selector).KurtosisNaN();
         }
- 	
+
         /// <summary>
         /// Computes the sample Kurtosis of a sequence of nullable long values
         /// </summary>
@@ -142,9 +142,9 @@ namespace LinqStatistics.NaN
             double meanv = 0;
             double M2 = 0;
             double M4 = 0;
-             
+
             checked
-            { 
+            {
                 foreach (var x in source)
                 {
                     n++;
@@ -205,7 +205,7 @@ namespace LinqStatistics.NaN
 
             return source.Select(selector).KurtosisNaN();
         }
- 	
+
         /// <summary>
         /// Computes the sample Kurtosis of a sequence of nullable float values
         /// </summary>
@@ -239,9 +239,9 @@ namespace LinqStatistics.NaN
             double meanv = 0;
             double M2 = 0;
             double M4 = 0;
-             
+
             checked
-            { 
+            {
                 foreach (var x in source)
                 {
                     n++;
@@ -302,7 +302,7 @@ namespace LinqStatistics.NaN
 
             return source.Select(selector).KurtosisNaN();
         }
- 	
+
         /// <summary>
         /// Computes the sample Kurtosis of a sequence of nullable double values
         /// </summary>
@@ -336,9 +336,9 @@ namespace LinqStatistics.NaN
             double meanv = 0;
             double M2 = 0;
             double M4 = 0;
-             
+
             checked
-            { 
+            {
                 foreach (var x in source)
                 {
                     n++;
@@ -399,5 +399,5 @@ namespace LinqStatistics.NaN
 
             return source.Select(selector).KurtosisNaN();
         }
-     }
+    }
 }
