@@ -124,6 +124,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>EnumerableStatsVarianceP.tt</DependentUpon>
     </Compile>
+    <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="ItemCount.cs" />
     <Compile Include="EnumerableStatsBinCount.cs" />
     <Compile Include="EnumerableStatsCountEach.cs" />

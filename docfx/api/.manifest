@@ -24,6 +24,7 @@
   "LinqStatistics.EnumerableStats.CountEach``1(System.Collections.Generic.IEnumerable{``0})": "LinqStatistics.EnumerableStats.yml",
   "LinqStatistics.EnumerableStats.CountEach``1(System.Collections.Generic.IEnumerable{``0},System.Collections.Generic.IEqualityComparer{``0})": "LinqStatistics.EnumerableStats.yml",
   "LinqStatistics.EnumerableStats.CountEach``2(System.Collections.Generic.IEnumerable{``0},System.Func{``0,``1})": "LinqStatistics.EnumerableStats.yml",
+  "LinqStatistics.EnumerableStats.CountEach``2(System.Collections.Generic.IEnumerable{``0},System.Func{``0,``1},System.Collections.Generic.IEqualityComparer{``1})": "LinqStatistics.EnumerableStats.yml",
   "LinqStatistics.EnumerableStats.Covariance(System.Collections.Generic.IEnumerable{System.Decimal},System.Collections.Generic.IEnumerable{System.Decimal})": "LinqStatistics.EnumerableStats.yml",
   "LinqStatistics.EnumerableStats.Covariance(System.Collections.Generic.IEnumerable{System.Double},System.Collections.Generic.IEnumerable{System.Double})": "LinqStatistics.EnumerableStats.yml",
   "LinqStatistics.EnumerableStats.Covariance(System.Collections.Generic.IEnumerable{System.Int32},System.Collections.Generic.IEnumerable{System.Int32})": "LinqStatistics.EnumerableStats.yml",
