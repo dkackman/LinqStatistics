@@ -331,6 +331,7 @@
   "LinqStatistics.LeastSquares.RSquared": "LinqStatistics.LeastSquares.yml",
   "LinqStatistics.LeastSquares.Solve(System.Double)": "LinqStatistics.LeastSquares.yml",
   "LinqStatistics.LeastSquares.SolveForX(System.Double)": "LinqStatistics.LeastSquares.yml",
+  "LinqStatistics.LeastSquares.ToFunc(LinqStatistics.LeastSquares)": "LinqStatistics.LeastSquares.yml",
   "LinqStatistics.LeastSquares.ToString": "LinqStatistics.LeastSquares.yml",
   "LinqStatistics.LeastSquares.ToString(System.IFormatProvider)": "LinqStatistics.LeastSquares.yml",
   "LinqStatistics.LeastSquares.ToString(System.String)": "LinqStatistics.LeastSquares.yml",
