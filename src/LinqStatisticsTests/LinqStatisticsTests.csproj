@@ -66,6 +66,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CountEachTests.cs" />
     <Compile Include="CovarianceTests.cs" />
     <Compile Include="DataLoader.cs" />
     <Compile Include="Extensions.cs" />
