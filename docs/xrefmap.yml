@@ -23,6 +23,7 @@ references:
   name: Bin
   href: api/LinqStatistics.Bin.html#LinqStatistics_Bin__ctor_
   commentId: Overload:LinqStatistics.Bin.#ctor
+  isSpec: "True"
   fullName: LinqStatistics.Bin.Bin
   nameWithType: Bin.Bin
 - uid: LinqStatistics.Bin.Contains(System.Double)
@@ -35,6 +36,7 @@ references:
   name: Contains
   href: api/LinqStatistics.Bin.html#LinqStatistics_Bin_Contains_
   commentId: Overload:LinqStatistics.Bin.Contains
+  isSpec: "True"
   fullName: LinqStatistics.Bin.Contains
   nameWithType: Bin.Contains
 - uid: LinqStatistics.Bin.Equals(LinqStatistics.Bin)
@@ -53,6 +55,7 @@ references:
   name: Equals
   href: api/LinqStatistics.Bin.html#LinqStatistics_Bin_Equals_
   commentId: Overload:LinqStatistics.Bin.Equals
+  isSpec: "True"
   fullName: LinqStatistics.Bin.Equals
   nameWithType: Bin.Equals
 - uid: LinqStatistics.Bin.GetHashCode
@@ -65,6 +68,7 @@ references:
   name: GetHashCode
   href: api/LinqStatistics.Bin.html#LinqStatistics_Bin_GetHashCode_
   commentId: Overload:LinqStatistics.Bin.GetHashCode
+  isSpec: "True"
   fullName: LinqStatistics.Bin.GetHashCode
   nameWithType: Bin.GetHashCode
 - uid: LinqStatistics.Bin.MaxInclusive
@@ -77,6 +81,7 @@ references:
   name: MaxInclusive
   href: api/LinqStatistics.Bin.html#LinqStatistics_Bin_MaxInclusive_
   commentId: Overload:LinqStatistics.Bin.MaxInclusive
+  isSpec: "True"
   fullName: LinqStatistics.Bin.MaxInclusive
   nameWithType: Bin.MaxInclusive
 - uid: LinqStatistics.Bin.op_Equality(LinqStatistics.Bin,LinqStatistics.Bin)
@@ -89,6 +94,7 @@ references:
   name: Equality
   href: api/LinqStatistics.Bin.html#LinqStatistics_Bin_op_Equality_
   commentId: Overload:LinqStatistics.Bin.op_Equality
+  isSpec: "True"
   fullName: LinqStatistics.Bin.Equality
   nameWithType: Bin.Equality
 - uid: LinqStatistics.Bin.op_Inequality(LinqStatistics.Bin,LinqStatistics.Bin)
@@ -101,6 +107,7 @@ references:
   name: Inequality
   href: api/LinqStatistics.Bin.html#LinqStatistics_Bin_op_Inequality_
   commentId: Overload:LinqStatistics.Bin.op_Inequality
+  isSpec: "True"
   fullName: LinqStatistics.Bin.Inequality
   nameWithType: Bin.Inequality
 - uid: LinqStatistics.Bin.Range
@@ -113,6 +120,7 @@ references:
   name: Range
   href: api/LinqStatistics.Bin.html#LinqStatistics_Bin_Range_
   commentId: Overload:LinqStatistics.Bin.Range
+  isSpec: "True"
   fullName: LinqStatistics.Bin.Range
   nameWithType: Bin.Range
 - uid: LinqStatistics.Bin.ToString
@@ -125,6 +133,7 @@ references:
   name: ToString
   href: api/LinqStatistics.Bin.html#LinqStatistics_Bin_ToString_
   commentId: Overload:LinqStatistics.Bin.ToString
+  isSpec: "True"
   fullName: LinqStatistics.Bin.ToString
   nameWithType: Bin.ToString
 - uid: LinqStatistics.BinningMode
@@ -161,6 +170,7 @@ references:
   name: AllValues
   href: api/LinqStatistics.EnumerableStats.html#LinqStatistics_EnumerableStats_AllValues_
   commentId: Overload:LinqStatistics.EnumerableStats.AllValues
+  isSpec: "True"
   fullName: LinqStatistics.EnumerableStats.AllValues
   nameWithType: EnumerableStats.AllValues
 - uid: LinqStatistics.EnumerableStats.AllValues``1(System.Collections.Generic.IEnumerable{System.Nullable{``0}})
@@ -185,6 +195,7 @@ references:
   name: BinCountRice
   href: api/LinqStatistics.EnumerableStats.html#LinqStatistics_EnumerableStats_BinCountRice_
   commentId: Overload:LinqStatistics.EnumerableStats.BinCountRice
+  isSpec: "True"
   fullName: LinqStatistics.EnumerableStats.BinCountRice
   nameWithType: EnumerableStats.BinCountRice
 - uid: LinqStatistics.EnumerableStats.BinCountRice``1(System.Collections.Generic.IEnumerable{``0})
@@ -200,6 +211,7 @@ references:
   name: BinCountSquareRoot
   href: api/LinqStatistics.EnumerableStats.html#LinqStatistics_EnumerableStats_BinCountSquareRoot_
   commentId: Overload:LinqStatistics.EnumerableStats.BinCountSquareRoot
+  isSpec: "True"
   fullName: LinqStatistics.EnumerableStats.BinCountSquareRoot
   nameWithType: EnumerableStats.BinCountSquareRoot
 - uid: LinqStatistics.EnumerableStats.BinCountSquareRoot``1(System.Collections.Generic.IEnumerable{``0})
@@ -215,6 +227,7 @@ references:
   name: BinCountSturges
   href: api/LinqStatistics.EnumerableStats.html#LinqStatistics_EnumerableStats_BinCountSturges_
   commentId: Overload:LinqStatistics.EnumerableStats.BinCountSturges
+  isSpec: "True"
   fullName: LinqStatistics.EnumerableStats.BinCountSturges
   nameWithType: EnumerableStats.BinCountSturges
 - uid: LinqStatistics.EnumerableStats.BinCountSturges``1(System.Collections.Generic.IEnumerable{``0})
@@ -230,6 +243,7 @@ references:
   name: CountEach
   href: api/LinqStatistics.EnumerableStats.html#LinqStatistics_EnumerableStats_CountEach_
   commentId: Overload:LinqStatistics.EnumerableStats.CountEach
+  isSpec: "True"
   fullName: LinqStatistics.EnumerableStats.CountEach
   nameWithType: EnumerableStats.CountEach
 - uid: LinqStatistics.EnumerableStats.CountEach``1(System.Collections.Generic.IEnumerable{``0})
@@ -259,6 +273,15 @@ references:
   fullName.vb: LinqStatistics.EnumerableStats.CountEach(Of TSource, TResult)(System.Collections.Generic.IEnumerable(Of TSource), System.Func(Of TSource, TResult))
   nameWithType: EnumerableStats.CountEach<TSource, TResult>(IEnumerable<TSource>, Func<TSource, TResult>)
   nameWithType.vb: EnumerableStats.CountEach(Of TSource, TResult)(IEnumerable(Of TSource), Func(Of TSource, TResult))
+- uid: LinqStatistics.EnumerableStats.CountEach``2(System.Collections.Generic.IEnumerable{``0},System.Func{``0,``1},System.Collections.Generic.IEqualityComparer{``1})
+  name: CountEach<TSource, TResult>(IEnumerable<TSource>, Func<TSource, TResult>, IEqualityComparer<TResult>)
+  href: api/LinqStatistics.EnumerableStats.html#LinqStatistics_EnumerableStats_CountEach__2_System_Collections_Generic_IEnumerable___0__System_Func___0___1__System_Collections_Generic_IEqualityComparer___1__
+  commentId: M:LinqStatistics.EnumerableStats.CountEach``2(System.Collections.Generic.IEnumerable{``0},System.Func{``0,``1},System.Collections.Generic.IEqualityComparer{``1})
+  name.vb: CountEach(Of TSource, TResult)(IEnumerable(Of TSource), Func(Of TSource, TResult), IEqualityComparer(Of TResult))
+  fullName: LinqStatistics.EnumerableStats.CountEach<TSource, TResult>(System.Collections.Generic.IEnumerable<TSource>, System.Func<TSource, TResult>, System.Collections.Generic.IEqualityComparer<TResult>)
+  fullName.vb: LinqStatistics.EnumerableStats.CountEach(Of TSource, TResult)(System.Collections.Generic.IEnumerable(Of TSource), System.Func(Of TSource, TResult), System.Collections.Generic.IEqualityComparer(Of TResult))
+  nameWithType: EnumerableStats.CountEach<TSource, TResult>(IEnumerable<TSource>, Func<TSource, TResult>, IEqualityComparer<TResult>)
+  nameWithType.vb: EnumerableStats.CountEach(Of TSource, TResult)(IEnumerable(Of TSource), Func(Of TSource, TResult), IEqualityComparer(Of TResult))
 - uid: LinqStatistics.EnumerableStats.Covariance(System.Collections.Generic.IEnumerable{System.Decimal},System.Collections.Generic.IEnumerable{System.Decimal})
   name: Covariance(IEnumerable<Decimal>, IEnumerable<Decimal>)
   href: api/LinqStatistics.EnumerableStats.html#LinqStatistics_EnumerableStats_Covariance_System_Collections_Generic_IEnumerable_System_Decimal__System_Collections_Generic_IEnumerable_System_Decimal__
@@ -353,6 +376,7 @@ references:
   name: Covariance
   href: api/LinqStatistics.EnumerableStats.html#LinqStatistics_EnumerableStats_Covariance_
   commentId: Overload:LinqStatistics.EnumerableStats.Covariance
+  isSpec: "True"
   fullName: LinqStatistics.EnumerableStats.Covariance
   nameWithType: EnumerableStats.Covariance
 - uid: LinqStatistics.EnumerableStats.Histogram(System.Collections.Generic.IEnumerable{System.Decimal},System.Int32,LinqStatistics.BinningMode)
@@ -449,6 +473,7 @@ references:
   name: Histogram
   href: api/LinqStatistics.EnumerableStats.html#LinqStatistics_EnumerableStats_Histogram_
   commentId: Overload:LinqStatistics.EnumerableStats.Histogram
+  isSpec: "True"
   fullName: LinqStatistics.EnumerableStats.Histogram
   nameWithType: EnumerableStats.Histogram
 - uid: LinqStatistics.EnumerableStats.Histogram``1(System.Collections.Generic.IEnumerable{``0},System.Int32,System.Func{``0,System.Decimal},LinqStatistics.BinningMode)
@@ -635,6 +660,7 @@ references:
   name: Kurtosis
   href: api/LinqStatistics.EnumerableStats.html#LinqStatistics_EnumerableStats_Kurtosis_
   commentId: Overload:LinqStatistics.EnumerableStats.Kurtosis
+  isSpec: "True"
   fullName: LinqStatistics.EnumerableStats.Kurtosis
   nameWithType: EnumerableStats.Kurtosis
 - uid: LinqStatistics.EnumerableStats.Kurtosis``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Decimal})
@@ -821,6 +847,7 @@ references:
   name: LeastSquares
   href: api/LinqStatistics.EnumerableStats.html#LinqStatistics_EnumerableStats_LeastSquares_
   commentId: Overload:LinqStatistics.EnumerableStats.LeastSquares
+  isSpec: "True"
   fullName: LinqStatistics.EnumerableStats.LeastSquares
   nameWithType: EnumerableStats.LeastSquares
 - uid: LinqStatistics.EnumerableStats.LeastSquares``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Tuple{System.Decimal,System.Decimal}})
@@ -1007,6 +1034,7 @@ references:
   name: Median
   href: api/LinqStatistics.EnumerableStats.html#LinqStatistics_EnumerableStats_Median_
   commentId: Overload:LinqStatistics.EnumerableStats.Median
+  isSpec: "True"
   fullName: LinqStatistics.EnumerableStats.Median
   nameWithType: EnumerableStats.Median
 - uid: LinqStatistics.EnumerableStats.Median``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Decimal})
@@ -1193,6 +1221,7 @@ references:
   name: MinMax
   href: api/LinqStatistics.EnumerableStats.html#LinqStatistics_EnumerableStats_MinMax_
   commentId: Overload:LinqStatistics.EnumerableStats.MinMax
+  isSpec: "True"
   fullName: LinqStatistics.EnumerableStats.MinMax
   nameWithType: EnumerableStats.MinMax
 - uid: LinqStatistics.EnumerableStats.MinMax``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Decimal})
@@ -1289,6 +1318,7 @@ references:
   name: Mode
   href: api/LinqStatistics.EnumerableStats.html#LinqStatistics_EnumerableStats_Mode_
   commentId: Overload:LinqStatistics.EnumerableStats.Mode
+  isSpec: "True"
   fullName: LinqStatistics.EnumerableStats.Mode
   nameWithType: EnumerableStats.Mode
 - uid: LinqStatistics.EnumerableStats.Mode``1(System.Collections.Generic.IEnumerable{``0})
@@ -1331,6 +1361,7 @@ references:
   name: Modes
   href: api/LinqStatistics.EnumerableStats.html#LinqStatistics_EnumerableStats_Modes_
   commentId: Overload:LinqStatistics.EnumerableStats.Modes
+  isSpec: "True"
   fullName: LinqStatistics.EnumerableStats.Modes
   nameWithType: EnumerableStats.Modes
 - uid: LinqStatistics.EnumerableStats.Modes``1(System.Collections.Generic.IEnumerable{``0})
@@ -1490,6 +1521,7 @@ references:
   name: Pearson
   href: api/LinqStatistics.EnumerableStats.html#LinqStatistics_EnumerableStats_Pearson_
   commentId: Overload:LinqStatistics.EnumerableStats.Pearson
+  isSpec: "True"
   fullName: LinqStatistics.EnumerableStats.Pearson
   nameWithType: EnumerableStats.Pearson
 - uid: LinqStatistics.EnumerableStats.Pearson``1(System.Collections.Generic.IEnumerable{``0},System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Decimal})
@@ -1676,6 +1708,7 @@ references:
   name: Range
   href: api/LinqStatistics.EnumerableStats.html#LinqStatistics_EnumerableStats_Range_
   commentId: Overload:LinqStatistics.EnumerableStats.Range
+  isSpec: "True"
   fullName: LinqStatistics.EnumerableStats.Range
   nameWithType: EnumerableStats.Range
 - uid: LinqStatistics.EnumerableStats.Range``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Decimal})
@@ -1862,6 +1895,7 @@ references:
   name: RootMeanSquare
   href: api/LinqStatistics.EnumerableStats.html#LinqStatistics_EnumerableStats_RootMeanSquare_
   commentId: Overload:LinqStatistics.EnumerableStats.RootMeanSquare
+  isSpec: "True"
   fullName: LinqStatistics.EnumerableStats.RootMeanSquare
   nameWithType: EnumerableStats.RootMeanSquare
 - uid: LinqStatistics.EnumerableStats.RootMeanSquare``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Decimal})
@@ -2048,6 +2082,7 @@ references:
   name: Skewness
   href: api/LinqStatistics.EnumerableStats.html#LinqStatistics_EnumerableStats_Skewness_
   commentId: Overload:LinqStatistics.EnumerableStats.Skewness
+  isSpec: "True"
   fullName: LinqStatistics.EnumerableStats.Skewness
   nameWithType: EnumerableStats.Skewness
 - uid: LinqStatistics.EnumerableStats.Skewness``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Decimal})
@@ -2234,6 +2269,7 @@ references:
   name: StandardDeviation
   href: api/LinqStatistics.EnumerableStats.html#LinqStatistics_EnumerableStats_StandardDeviation_
   commentId: Overload:LinqStatistics.EnumerableStats.StandardDeviation
+  isSpec: "True"
   fullName: LinqStatistics.EnumerableStats.StandardDeviation
   nameWithType: EnumerableStats.StandardDeviation
 - uid: LinqStatistics.EnumerableStats.StandardDeviation``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Decimal})
@@ -2420,6 +2456,7 @@ references:
   name: StandardDeviationP
   href: api/LinqStatistics.EnumerableStats.html#LinqStatistics_EnumerableStats_StandardDeviationP_
   commentId: Overload:LinqStatistics.EnumerableStats.StandardDeviationP
+  isSpec: "True"
   fullName: LinqStatistics.EnumerableStats.StandardDeviationP
   nameWithType: EnumerableStats.StandardDeviationP
 - uid: LinqStatistics.EnumerableStats.StandardDeviationP``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Decimal})
@@ -2606,6 +2643,7 @@ references:
   name: Variance
   href: api/LinqStatistics.EnumerableStats.html#LinqStatistics_EnumerableStats_Variance_
   commentId: Overload:LinqStatistics.EnumerableStats.Variance
+  isSpec: "True"
   fullName: LinqStatistics.EnumerableStats.Variance
   nameWithType: EnumerableStats.Variance
 - uid: LinqStatistics.EnumerableStats.Variance``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Decimal})
@@ -2792,6 +2830,7 @@ references:
   name: VarianceP
   href: api/LinqStatistics.EnumerableStats.html#LinqStatistics_EnumerableStats_VarianceP_
   commentId: Overload:LinqStatistics.EnumerableStats.VarianceP
+  isSpec: "True"
   fullName: LinqStatistics.EnumerableStats.VarianceP
   nameWithType: EnumerableStats.VarianceP
 - uid: LinqStatistics.EnumerableStats.VarianceP``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Decimal})
@@ -2905,6 +2944,7 @@ references:
   name: ItemCount
   href: api/LinqStatistics.ItemCount-1.html#LinqStatistics_ItemCount_1__ctor_
   commentId: Overload:LinqStatistics.ItemCount`1.#ctor
+  isSpec: "True"
   fullName: LinqStatistics.ItemCount<T>.ItemCount
   fullName.vb: LinqStatistics.ItemCount(Of T).ItemCount
   nameWithType: ItemCount<T>.ItemCount
@@ -2921,6 +2961,7 @@ references:
   name: Count
   href: api/LinqStatistics.ItemCount-1.html#LinqStatistics_ItemCount_1_Count_
   commentId: Overload:LinqStatistics.ItemCount`1.Count
+  isSpec: "True"
   fullName: LinqStatistics.ItemCount<T>.Count
   fullName.vb: LinqStatistics.ItemCount(Of T).Count
   nameWithType: ItemCount<T>.Count
@@ -2946,6 +2987,7 @@ references:
   name: Equals
   href: api/LinqStatistics.ItemCount-1.html#LinqStatistics_ItemCount_1_Equals_
   commentId: Overload:LinqStatistics.ItemCount`1.Equals
+  isSpec: "True"
   fullName: LinqStatistics.ItemCount<T>.Equals
   fullName.vb: LinqStatistics.ItemCount(Of T).Equals
   nameWithType: ItemCount<T>.Equals
@@ -2962,6 +3004,7 @@ references:
   name: GetHashCode
   href: api/LinqStatistics.ItemCount-1.html#LinqStatistics_ItemCount_1_GetHashCode_
   commentId: Overload:LinqStatistics.ItemCount`1.GetHashCode
+  isSpec: "True"
   fullName: LinqStatistics.ItemCount<T>.GetHashCode
   fullName.vb: LinqStatistics.ItemCount(Of T).GetHashCode
   nameWithType: ItemCount<T>.GetHashCode
@@ -2979,6 +3022,7 @@ references:
   name: Equality
   href: api/LinqStatistics.ItemCount-1.html#LinqStatistics_ItemCount_1_op_Equality_
   commentId: Overload:LinqStatistics.ItemCount`1.op_Equality
+  isSpec: "True"
   fullName: LinqStatistics.ItemCount<T>.Equality
   fullName.vb: LinqStatistics.ItemCount(Of T).Equality
   nameWithType: ItemCount<T>.Equality
@@ -2996,6 +3040,7 @@ references:
   name: Inequality
   href: api/LinqStatistics.ItemCount-1.html#LinqStatistics_ItemCount_1_op_Inequality_
   commentId: Overload:LinqStatistics.ItemCount`1.op_Inequality
+  isSpec: "True"
   fullName: LinqStatistics.ItemCount<T>.Inequality
   fullName.vb: LinqStatistics.ItemCount(Of T).Inequality
   nameWithType: ItemCount<T>.Inequality
@@ -3012,6 +3057,7 @@ references:
   name: RepresentativeValue
   href: api/LinqStatistics.ItemCount-1.html#LinqStatistics_ItemCount_1_RepresentativeValue_
   commentId: Overload:LinqStatistics.ItemCount`1.RepresentativeValue
+  isSpec: "True"
   fullName: LinqStatistics.ItemCount<T>.RepresentativeValue
   fullName.vb: LinqStatistics.ItemCount(Of T).RepresentativeValue
   nameWithType: ItemCount<T>.RepresentativeValue
@@ -3028,6 +3074,7 @@ references:
   name: ToString
   href: api/LinqStatistics.ItemCount-1.html#LinqStatistics_ItemCount_1_ToString_
   commentId: Overload:LinqStatistics.ItemCount`1.ToString
+  isSpec: "True"
   fullName: LinqStatistics.ItemCount<T>.ToString
   fullName.vb: LinqStatistics.ItemCount(Of T).ToString
   nameWithType: ItemCount<T>.ToString
@@ -3054,6 +3101,7 @@ references:
   name: LeastSquares
   href: api/LinqStatistics.LeastSquares.html#LinqStatistics_LeastSquares__ctor_
   commentId: Overload:LinqStatistics.LeastSquares.#ctor
+  isSpec: "True"
   fullName: LinqStatistics.LeastSquares.LeastSquares
   nameWithType: LeastSquares.LeastSquares
 - uid: LinqStatistics.LeastSquares.B
@@ -3066,6 +3114,7 @@ references:
   name: B
   href: api/LinqStatistics.LeastSquares.html#LinqStatistics_LeastSquares_B_
   commentId: Overload:LinqStatistics.LeastSquares.B
+  isSpec: "True"
   fullName: LinqStatistics.LeastSquares.B
   nameWithType: LeastSquares.B
 - uid: LinqStatistics.LeastSquares.Empty
@@ -3090,6 +3139,7 @@ references:
   name: Equals
   href: api/LinqStatistics.LeastSquares.html#LinqStatistics_LeastSquares_Equals_
   commentId: Overload:LinqStatistics.LeastSquares.Equals
+  isSpec: "True"
   fullName: LinqStatistics.LeastSquares.Equals
   nameWithType: LeastSquares.Equals
 - uid: LinqStatistics.LeastSquares.GetHashCode
@@ -3102,6 +3152,7 @@ references:
   name: GetHashCode
   href: api/LinqStatistics.LeastSquares.html#LinqStatistics_LeastSquares_GetHashCode_
   commentId: Overload:LinqStatistics.LeastSquares.GetHashCode
+  isSpec: "True"
   fullName: LinqStatistics.LeastSquares.GetHashCode
   nameWithType: LeastSquares.GetHashCode
 - uid: LinqStatistics.LeastSquares.IsNaN(LinqStatistics.LeastSquares)
@@ -3114,6 +3165,7 @@ references:
   name: IsNaN
   href: api/LinqStatistics.LeastSquares.html#LinqStatistics_LeastSquares_IsNaN_
   commentId: Overload:LinqStatistics.LeastSquares.IsNaN
+  isSpec: "True"
   fullName: LinqStatistics.LeastSquares.IsNaN
   nameWithType: LeastSquares.IsNaN
 - uid: LinqStatistics.LeastSquares.M
@@ -3126,6 +3178,7 @@ references:
   name: M
   href: api/LinqStatistics.LeastSquares.html#LinqStatistics_LeastSquares_M_
   commentId: Overload:LinqStatistics.LeastSquares.M
+  isSpec: "True"
   fullName: LinqStatistics.LeastSquares.M
   nameWithType: LeastSquares.M
 - uid: LinqStatistics.LeastSquares.op_Equality(LinqStatistics.LeastSquares,LinqStatistics.LeastSquares)
@@ -3138,6 +3191,7 @@ references:
   name: Equality
   href: api/LinqStatistics.LeastSquares.html#LinqStatistics_LeastSquares_op_Equality_
   commentId: Overload:LinqStatistics.LeastSquares.op_Equality
+  isSpec: "True"
   fullName: LinqStatistics.LeastSquares.Equality
   nameWithType: LeastSquares.Equality
 - uid: LinqStatistics.LeastSquares.op_Implicit(LinqStatistics.LeastSquares)~System.Func{System.Double,System.Double}
@@ -3153,6 +3207,7 @@ references:
   name: Implicit
   href: api/LinqStatistics.LeastSquares.html#LinqStatistics_LeastSquares_op_Implicit_
   commentId: Overload:LinqStatistics.LeastSquares.op_Implicit
+  isSpec: "True"
   name.vb: Widening
   fullName: LinqStatistics.LeastSquares.Implicit
   fullName.vb: LinqStatistics.LeastSquares.Widening
@@ -3168,6 +3223,7 @@ references:
   name: Inequality
   href: api/LinqStatistics.LeastSquares.html#LinqStatistics_LeastSquares_op_Inequality_
   commentId: Overload:LinqStatistics.LeastSquares.op_Inequality
+  isSpec: "True"
   fullName: LinqStatistics.LeastSquares.Inequality
   nameWithType: LeastSquares.Inequality
 - uid: LinqStatistics.LeastSquares.RSquared
@@ -3180,6 +3236,7 @@ references:
   name: RSquared
   href: api/LinqStatistics.LeastSquares.html#LinqStatistics_LeastSquares_RSquared_
   commentId: Overload:LinqStatistics.LeastSquares.RSquared
+  isSpec: "True"
   fullName: LinqStatistics.LeastSquares.RSquared
   nameWithType: LeastSquares.RSquared
 - uid: LinqStatistics.LeastSquares.Solve(System.Double)
@@ -3192,6 +3249,7 @@ references:
   name: Solve
   href: api/LinqStatistics.LeastSquares.html#LinqStatistics_LeastSquares_Solve_
   commentId: Overload:LinqStatistics.LeastSquares.Solve
+  isSpec: "True"
   fullName: LinqStatistics.LeastSquares.Solve
   nameWithType: LeastSquares.Solve
 - uid: LinqStatistics.LeastSquares.SolveForX(System.Double)
@@ -3204,8 +3262,22 @@ references:
   name: SolveForX
   href: api/LinqStatistics.LeastSquares.html#LinqStatistics_LeastSquares_SolveForX_
   commentId: Overload:LinqStatistics.LeastSquares.SolveForX
+  isSpec: "True"
   fullName: LinqStatistics.LeastSquares.SolveForX
   nameWithType: LeastSquares.SolveForX
+- uid: LinqStatistics.LeastSquares.ToFunc(LinqStatistics.LeastSquares)
+  name: ToFunc(LeastSquares)
+  href: api/LinqStatistics.LeastSquares.html#LinqStatistics_LeastSquares_ToFunc_LinqStatistics_LeastSquares_
+  commentId: M:LinqStatistics.LeastSquares.ToFunc(LinqStatistics.LeastSquares)
+  fullName: LinqStatistics.LeastSquares.ToFunc(LinqStatistics.LeastSquares)
+  nameWithType: LeastSquares.ToFunc(LeastSquares)
+- uid: LinqStatistics.LeastSquares.ToFunc*
+  name: ToFunc
+  href: api/LinqStatistics.LeastSquares.html#LinqStatistics_LeastSquares_ToFunc_
+  commentId: Overload:LinqStatistics.LeastSquares.ToFunc
+  isSpec: "True"
+  fullName: LinqStatistics.LeastSquares.ToFunc
+  nameWithType: LeastSquares.ToFunc
 - uid: LinqStatistics.LeastSquares.ToString
   name: ToString()
   href: api/LinqStatistics.LeastSquares.html#LinqStatistics_LeastSquares_ToString
@@ -3234,6 +3306,7 @@ references:
   name: ToString
   href: api/LinqStatistics.LeastSquares.html#LinqStatistics_LeastSquares_ToString_
   commentId: Overload:LinqStatistics.LeastSquares.ToString
+  isSpec: "True"
   fullName: LinqStatistics.LeastSquares.ToString
   nameWithType: LeastSquares.ToString
 - uid: LinqStatistics.NaN
@@ -3324,6 +3397,7 @@ references:
   name: AverageNaN
   href: api/LinqStatistics.NaN.EnumerableStats.html#LinqStatistics_NaN_EnumerableStats_AverageNaN_
   commentId: Overload:LinqStatistics.NaN.EnumerableStats.AverageNaN
+  isSpec: "True"
   fullName: LinqStatistics.NaN.EnumerableStats.AverageNaN
   nameWithType: EnumerableStats.AverageNaN
 - uid: LinqStatistics.NaN.EnumerableStats.AverageNaN``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Double})
@@ -3474,6 +3548,7 @@ references:
   name: CovarianceNaN
   href: api/LinqStatistics.NaN.EnumerableStats.html#LinqStatistics_NaN_EnumerableStats_CovarianceNaN_
   commentId: Overload:LinqStatistics.NaN.EnumerableStats.CovarianceNaN
+  isSpec: "True"
   fullName: LinqStatistics.NaN.EnumerableStats.CovarianceNaN
   nameWithType: EnumerableStats.CovarianceNaN
 - uid: LinqStatistics.NaN.EnumerableStats.KurtosisNaN(System.Collections.Generic.IEnumerable{System.Double})
@@ -3552,6 +3627,7 @@ references:
   name: KurtosisNaN
   href: api/LinqStatistics.NaN.EnumerableStats.html#LinqStatistics_NaN_EnumerableStats_KurtosisNaN_
   commentId: Overload:LinqStatistics.NaN.EnumerableStats.KurtosisNaN
+  isSpec: "True"
   fullName: LinqStatistics.NaN.EnumerableStats.KurtosisNaN
   nameWithType: EnumerableStats.KurtosisNaN
 - uid: LinqStatistics.NaN.EnumerableStats.KurtosisNaN``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Double})
@@ -3720,6 +3796,7 @@ references:
   name: LeastSquaresNaN
   href: api/LinqStatistics.NaN.EnumerableStats.html#LinqStatistics_NaN_EnumerableStats_LeastSquaresNaN_
   commentId: Overload:LinqStatistics.NaN.EnumerableStats.LeastSquaresNaN
+  isSpec: "True"
   fullName: LinqStatistics.NaN.EnumerableStats.LeastSquaresNaN
   nameWithType: EnumerableStats.LeastSquaresNaN
 - uid: LinqStatistics.NaN.EnumerableStats.LeastSquaresNaN``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Tuple{System.Decimal,System.Decimal}})
@@ -3852,6 +3929,7 @@ references:
   name: MinMaxNaN
   href: api/LinqStatistics.NaN.EnumerableStats.html#LinqStatistics_NaN_EnumerableStats_MinMaxNaN_
   commentId: Overload:LinqStatistics.NaN.EnumerableStats.MinMaxNaN
+  isSpec: "True"
   fullName: LinqStatistics.NaN.EnumerableStats.MinMaxNaN
   nameWithType: EnumerableStats.MinMaxNaN
 - uid: LinqStatistics.NaN.EnumerableStats.MinMaxNaN``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Double})
@@ -4002,6 +4080,7 @@ references:
   name: PearsonNaN
   href: api/LinqStatistics.NaN.EnumerableStats.html#LinqStatistics_NaN_EnumerableStats_PearsonNaN_
   commentId: Overload:LinqStatistics.NaN.EnumerableStats.PearsonNaN
+  isSpec: "True"
   fullName: LinqStatistics.NaN.EnumerableStats.PearsonNaN
   nameWithType: EnumerableStats.PearsonNaN
 - uid: LinqStatistics.NaN.EnumerableStats.PearsonNaN``1(System.Collections.Generic.IEnumerable{``0},System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Double})
@@ -4116,6 +4195,7 @@ references:
   name: RangeNaN
   href: api/LinqStatistics.NaN.EnumerableStats.html#LinqStatistics_NaN_EnumerableStats_RangeNaN_
   commentId: Overload:LinqStatistics.NaN.EnumerableStats.RangeNaN
+  isSpec: "True"
   fullName: LinqStatistics.NaN.EnumerableStats.RangeNaN
   nameWithType: EnumerableStats.RangeNaN
 - uid: LinqStatistics.NaN.EnumerableStats.RangeNaN``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Double})
@@ -4230,6 +4310,7 @@ references:
   name: RootMeanSquareNaN
   href: api/LinqStatistics.NaN.EnumerableStats.html#LinqStatistics_NaN_EnumerableStats_RootMeanSquareNaN_
   commentId: Overload:LinqStatistics.NaN.EnumerableStats.RootMeanSquareNaN
+  isSpec: "True"
   fullName: LinqStatistics.NaN.EnumerableStats.RootMeanSquareNaN
   nameWithType: EnumerableStats.RootMeanSquareNaN
 - uid: LinqStatistics.NaN.EnumerableStats.RootMeanSquareNaN``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Double})
@@ -4380,6 +4461,7 @@ references:
   name: SkewnessNaN
   href: api/LinqStatistics.NaN.EnumerableStats.html#LinqStatistics_NaN_EnumerableStats_SkewnessNaN_
   commentId: Overload:LinqStatistics.NaN.EnumerableStats.SkewnessNaN
+  isSpec: "True"
   fullName: LinqStatistics.NaN.EnumerableStats.SkewnessNaN
   nameWithType: EnumerableStats.SkewnessNaN
 - uid: LinqStatistics.NaN.EnumerableStats.SkewnessNaN``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Double})
@@ -4530,6 +4612,7 @@ references:
   name: StandardDeviationNaN
   href: api/LinqStatistics.NaN.EnumerableStats.html#LinqStatistics_NaN_EnumerableStats_StandardDeviationNaN_
   commentId: Overload:LinqStatistics.NaN.EnumerableStats.StandardDeviationNaN
+  isSpec: "True"
   fullName: LinqStatistics.NaN.EnumerableStats.StandardDeviationNaN
   nameWithType: EnumerableStats.StandardDeviationNaN
 - uid: LinqStatistics.NaN.EnumerableStats.StandardDeviationNaN``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Double})
@@ -4680,6 +4763,7 @@ references:
   name: StandardDeviationPNaN
   href: api/LinqStatistics.NaN.EnumerableStats.html#LinqStatistics_NaN_EnumerableStats_StandardDeviationPNaN_
   commentId: Overload:LinqStatistics.NaN.EnumerableStats.StandardDeviationPNaN
+  isSpec: "True"
   fullName: LinqStatistics.NaN.EnumerableStats.StandardDeviationPNaN
   nameWithType: EnumerableStats.StandardDeviationPNaN
 - uid: LinqStatistics.NaN.EnumerableStats.StandardDeviationPNaN``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Double})
@@ -4830,6 +4914,7 @@ references:
   name: VarianceNaN
   href: api/LinqStatistics.NaN.EnumerableStats.html#LinqStatistics_NaN_EnumerableStats_VarianceNaN_
   commentId: Overload:LinqStatistics.NaN.EnumerableStats.VarianceNaN
+  isSpec: "True"
   fullName: LinqStatistics.NaN.EnumerableStats.VarianceNaN
   nameWithType: EnumerableStats.VarianceNaN
 - uid: LinqStatistics.NaN.EnumerableStats.VarianceNaN``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Double})
@@ -4980,6 +5065,7 @@ references:
   name: VariancePNaN
   href: api/LinqStatistics.NaN.EnumerableStats.html#LinqStatistics_NaN_EnumerableStats_VariancePNaN_
   commentId: Overload:LinqStatistics.NaN.EnumerableStats.VariancePNaN
+  isSpec: "True"
   fullName: LinqStatistics.NaN.EnumerableStats.VariancePNaN
   nameWithType: EnumerableStats.VariancePNaN
 - uid: LinqStatistics.NaN.EnumerableStats.VariancePNaN``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Double})
@@ -5075,6 +5161,7 @@ references:
   name: Range
   href: api/LinqStatistics.Range-1.html#LinqStatistics_Range_1__ctor_
   commentId: Overload:LinqStatistics.Range`1.#ctor
+  isSpec: "True"
   fullName: LinqStatistics.Range<T>.Range
   fullName.vb: LinqStatistics.Range(Of T).Range
   nameWithType: Range<T>.Range
@@ -5100,6 +5187,7 @@ references:
   name: CompareTo
   href: api/LinqStatistics.Range-1.html#LinqStatistics_Range_1_CompareTo_
   commentId: Overload:LinqStatistics.Range`1.CompareTo
+  isSpec: "True"
   fullName: LinqStatistics.Range<T>.CompareTo
   fullName.vb: LinqStatistics.Range(Of T).CompareTo
   nameWithType: Range<T>.CompareTo
@@ -5125,6 +5213,7 @@ references:
   name: Equals
   href: api/LinqStatistics.Range-1.html#LinqStatistics_Range_1_Equals_
   commentId: Overload:LinqStatistics.Range`1.Equals
+  isSpec: "True"
   fullName: LinqStatistics.Range<T>.Equals
   fullName.vb: LinqStatistics.Range(Of T).Equals
   nameWithType: Range<T>.Equals
@@ -5141,6 +5230,7 @@ references:
   name: GetHashCode
   href: api/LinqStatistics.Range-1.html#LinqStatistics_Range_1_GetHashCode_
   commentId: Overload:LinqStatistics.Range`1.GetHashCode
+  isSpec: "True"
   fullName: LinqStatistics.Range<T>.GetHashCode
   fullName.vb: LinqStatistics.Range(Of T).GetHashCode
   nameWithType: Range<T>.GetHashCode
@@ -5157,6 +5247,7 @@ references:
   name: Max
   href: api/LinqStatistics.Range-1.html#LinqStatistics_Range_1_Max_
   commentId: Overload:LinqStatistics.Range`1.Max
+  isSpec: "True"
   fullName: LinqStatistics.Range<T>.Max
   fullName.vb: LinqStatistics.Range(Of T).Max
   nameWithType: Range<T>.Max
@@ -5173,6 +5264,7 @@ references:
   name: Min
   href: api/LinqStatistics.Range-1.html#LinqStatistics_Range_1_Min_
   commentId: Overload:LinqStatistics.Range`1.Min
+  isSpec: "True"
   fullName: LinqStatistics.Range<T>.Min
   fullName.vb: LinqStatistics.Range(Of T).Min
   nameWithType: Range<T>.Min
@@ -5190,6 +5282,7 @@ references:
   name: Equality
   href: api/LinqStatistics.Range-1.html#LinqStatistics_Range_1_op_Equality_
   commentId: Overload:LinqStatistics.Range`1.op_Equality
+  isSpec: "True"
   fullName: LinqStatistics.Range<T>.Equality
   fullName.vb: LinqStatistics.Range(Of T).Equality
   nameWithType: Range<T>.Equality
@@ -5207,6 +5300,7 @@ references:
   name: GreaterThan
   href: api/LinqStatistics.Range-1.html#LinqStatistics_Range_1_op_GreaterThan_
   commentId: Overload:LinqStatistics.Range`1.op_GreaterThan
+  isSpec: "True"
   fullName: LinqStatistics.Range<T>.GreaterThan
   fullName.vb: LinqStatistics.Range(Of T).GreaterThan
   nameWithType: Range<T>.GreaterThan
@@ -5224,6 +5318,7 @@ references:
   name: GreaterThanOrEqual
   href: api/LinqStatistics.Range-1.html#LinqStatistics_Range_1_op_GreaterThanOrEqual_
   commentId: Overload:LinqStatistics.Range`1.op_GreaterThanOrEqual
+  isSpec: "True"
   fullName: LinqStatistics.Range<T>.GreaterThanOrEqual
   fullName.vb: LinqStatistics.Range(Of T).GreaterThanOrEqual
   nameWithType: Range<T>.GreaterThanOrEqual
@@ -5241,6 +5336,7 @@ references:
   name: Inequality
   href: api/LinqStatistics.Range-1.html#LinqStatistics_Range_1_op_Inequality_
   commentId: Overload:LinqStatistics.Range`1.op_Inequality
+  isSpec: "True"
   fullName: LinqStatistics.Range<T>.Inequality
   fullName.vb: LinqStatistics.Range(Of T).Inequality
   nameWithType: Range<T>.Inequality
@@ -5258,6 +5354,7 @@ references:
   name: LessThan
   href: api/LinqStatistics.Range-1.html#LinqStatistics_Range_1_op_LessThan_
   commentId: Overload:LinqStatistics.Range`1.op_LessThan
+  isSpec: "True"
   fullName: LinqStatistics.Range<T>.LessThan
   fullName.vb: LinqStatistics.Range(Of T).LessThan
   nameWithType: Range<T>.LessThan
@@ -5275,6 +5372,7 @@ references:
   name: LessThanOrEqual
   href: api/LinqStatistics.Range-1.html#LinqStatistics_Range_1_op_LessThanOrEqual_
   commentId: Overload:LinqStatistics.Range`1.op_LessThanOrEqual
+  isSpec: "True"
   fullName: LinqStatistics.Range<T>.LessThanOrEqual
   fullName.vb: LinqStatistics.Range(Of T).LessThanOrEqual
   nameWithType: Range<T>.LessThanOrEqual
@@ -5315,6 +5413,7 @@ references:
   name: ToString
   href: api/LinqStatistics.Range-1.html#LinqStatistics_Range_1_ToString_
   commentId: Overload:LinqStatistics.Range`1.ToString
+  isSpec: "True"
   fullName: LinqStatistics.Range<T>.ToString
   fullName.vb: LinqStatistics.Range(Of T).ToString
   nameWithType: Range<T>.ToString

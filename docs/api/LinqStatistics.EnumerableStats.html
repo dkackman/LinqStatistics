@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Class EnumerableStats
    ">
-    <meta name="generator" content="docfx 2.25.2.0">
+    <meta name="generator" content="docfx 2.48.0.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -22,7 +22,7 @@
     
     
   </head>
-  <body data-spy="scroll" data-target="#affix">
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
     <div id="wrapper">
       <header>
         
@@ -127,7 +127,8 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static IEnumerable&lt;T&gt; AllValues&lt;T&gt;(this IEnumerable&lt;T? &gt; source)where T : struct</code></pre>
+    <pre><code class="lang-csharp hljs">public static IEnumerable&lt;T&gt; AllValues&lt;T&gt;(this IEnumerable&lt;T?&gt; source)
+    where T : struct</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -193,7 +194,8 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static IEnumerable&lt;Tuple&lt;T, T&gt;&gt; AllValues&lt;T&gt;(this IEnumerable&lt;Tuple&lt;T? , T? &gt;&gt; source)where T : struct</code></pre>
+    <pre><code class="lang-csharp hljs">public static IEnumerable&lt;Tuple&lt;T, T&gt;&gt; AllValues&lt;T&gt;(this IEnumerable&lt;Tuple&lt;T?, T?&gt;&gt; source)
+    where T : struct</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -660,6 +662,89 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
+    <a href="https://github.com/dkackman/LinqStatistics/new/master/apiSpec/new?filename=LinqStatistics_EnumerableStats_CountEach__2_System_Collections_Generic_IEnumerable___0__System_Func___0___1__System_Collections_Generic_IEqualityComparer___1__.md&amp;value=---%0Auid%3A%20LinqStatistics.EnumerableStats.CountEach%60%602(System.Collections.Generic.IEnumerable%7B%60%600%7D%2CSystem.Func%7B%60%600%2C%60%601%7D%2CSystem.Collections.Generic.IEqualityComparer%7B%60%601%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dkackman/LinqStatistics/blob/master/src/LinqStatistics/EnumerableStatsCountEach.cs/#L69">View Source</a>
+  </span>
+  <a id="LinqStatistics_EnumerableStats_CountEach_" data-uid="LinqStatistics.EnumerableStats.CountEach*"></a>
+  <h4 id="LinqStatistics_EnumerableStats_CountEach__2_System_Collections_Generic_IEnumerable___0__System_Func___0___1__System_Collections_Generic_IEqualityComparer___1__" data-uid="LinqStatistics.EnumerableStats.CountEach``2(System.Collections.Generic.IEnumerable{``0},System.Func{``0,``1},System.Collections.Generic.IEqualityComparer{``1})">CountEach&lt;TSource, TResult&gt;(IEnumerable&lt;TSource&gt;, Func&lt;TSource, TResult&gt;, IEqualityComparer&lt;TResult&gt;)</h4>
+  <div class="markdown level1 summary"><p>Counts each unique element in a sequence</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static IEnumerable&lt;ItemCount&lt;TResult&gt;&gt; CountEach&lt;TSource, TResult&gt;(this IEnumerable&lt;TSource&gt; source, Func&lt;TSource, TResult&gt; selector, IEqualityComparer&lt;TResult&gt; comparer)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://msdn.microsoft.com/en-us/library/9eekhta0(v=vs.110).aspx">IEnumerable</a>&lt;TSource&gt;</td>
+        <td><span class="parametername">source</span></td>
+        <td><p>A sequence of values to calculate the unique count of.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://msdn.microsoft.com/en-us/library/bb549151(v=vs.110).aspx">Func</a>&lt;TSource, TResult&gt;</td>
+        <td><span class="parametername">selector</span></td>
+        <td><p>A transform function to apply to each element.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://msdn.microsoft.com/en-us/library/ms132151(v=vs.110).aspx">IEqualityComparer</a>&lt;TResult&gt;</td>
+        <td><span class="parametername">comparer</span></td>
+        <td><p>Comparer used to determine equality between elements</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://msdn.microsoft.com/en-us/library/9eekhta0(v=vs.110).aspx">IEnumerable</a>&lt;<a class="xref" href="LinqStatistics.ItemCount-1.html">ItemCount</a>&lt;TResult&gt;&gt;</td>
+        <td><p>The count of each unique element</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TSource</span></td>
+        <td><p>The type of the elements of source.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="parametername">TResult</span></td>
+        <td><p>The type of the element selected</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
     <a href="https://github.com/dkackman/LinqStatistics/new/master/apiSpec/new?filename=LinqStatistics_EnumerableStats_Covariance_System_Collections_Generic_IEnumerable_System_Decimal__System_Collections_Generic_IEnumerable_System_Decimal__.md&amp;value=---%0Auid%3A%20LinqStatistics.EnumerableStats.Covariance(System.Collections.Generic.IEnumerable%7BSystem.Decimal%7D%2CSystem.Collections.Generic.IEnumerable%7BSystem.Decimal%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
@@ -908,7 +993,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static decimal ? Covariance(this IEnumerable&lt;decimal ? &gt; source, IEnumerable&lt;decimal ? &gt; other)</code></pre>
+    <pre><code class="lang-csharp hljs">public static decimal? Covariance(this IEnumerable&lt;decimal?&gt; source, IEnumerable&lt;decimal?&gt; other)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -967,7 +1052,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static double ? Covariance(this IEnumerable&lt;double ? &gt; source, IEnumerable&lt;double ? &gt; other)</code></pre>
+    <pre><code class="lang-csharp hljs">public static double? Covariance(this IEnumerable&lt;double?&gt; source, IEnumerable&lt;double?&gt; other)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1026,7 +1111,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static double ? Covariance(this IEnumerable&lt;int ? &gt; source, IEnumerable&lt;int ? &gt; other)</code></pre>
+    <pre><code class="lang-csharp hljs">public static double? Covariance(this IEnumerable&lt;int?&gt; source, IEnumerable&lt;int?&gt; other)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1085,7 +1170,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static double ? Covariance(this IEnumerable&lt;long ? &gt; source, IEnumerable&lt;long ? &gt; other)</code></pre>
+    <pre><code class="lang-csharp hljs">public static double? Covariance(this IEnumerable&lt;long?&gt; source, IEnumerable&lt;long?&gt; other)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1144,7 +1229,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static float ? Covariance(this IEnumerable&lt;float ? &gt; source, IEnumerable&lt;float ? &gt; other)</code></pre>
+    <pre><code class="lang-csharp hljs">public static float? Covariance(this IEnumerable&lt;float?&gt; source, IEnumerable&lt;float?&gt; other)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1510,7 +1595,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static IEnumerable&lt;Bin&gt; Histogram(this IEnumerable&lt;decimal ? &gt; source, int binCount, BinningMode mode = BinningMode.Unbounded)</code></pre>
+    <pre><code class="lang-csharp hljs">public static IEnumerable&lt;Bin&gt; Histogram(this IEnumerable&lt;decimal?&gt; source, int binCount, BinningMode mode = BinningMode.Unbounded)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1572,7 +1657,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static IEnumerable&lt;Bin&gt; Histogram(this IEnumerable&lt;double ? &gt; source, int binCount, BinningMode mode = BinningMode.Unbounded)</code></pre>
+    <pre><code class="lang-csharp hljs">public static IEnumerable&lt;Bin&gt; Histogram(this IEnumerable&lt;double?&gt; source, int binCount, BinningMode mode = BinningMode.Unbounded)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1634,7 +1719,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static IEnumerable&lt;Bin&gt; Histogram(this IEnumerable&lt;int ? &gt; source, int binCount, BinningMode mode = BinningMode.Unbounded)</code></pre>
+    <pre><code class="lang-csharp hljs">public static IEnumerable&lt;Bin&gt; Histogram(this IEnumerable&lt;int?&gt; source, int binCount, BinningMode mode = BinningMode.Unbounded)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1696,7 +1781,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static IEnumerable&lt;Bin&gt; Histogram(this IEnumerable&lt;long ? &gt; source, int binCount, BinningMode mode = BinningMode.Unbounded)</code></pre>
+    <pre><code class="lang-csharp hljs">public static IEnumerable&lt;Bin&gt; Histogram(this IEnumerable&lt;long?&gt; source, int binCount, BinningMode mode = BinningMode.Unbounded)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1758,7 +1843,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static IEnumerable&lt;Bin&gt; Histogram(this IEnumerable&lt;float ? &gt; source, int binCount, BinningMode mode = BinningMode.Unbounded)</code></pre>
+    <pre><code class="lang-csharp hljs">public static IEnumerable&lt;Bin&gt; Histogram(this IEnumerable&lt;float?&gt; source, int binCount, BinningMode mode = BinningMode.Unbounded)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -2223,7 +2308,7 @@ by invoking a transform function on each element of the input sequence.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static IEnumerable&lt;Bin&gt; Histogram&lt;TSource&gt;(this IEnumerable&lt;TSource&gt; source, int binCount, Func&lt;TSource, decimal ? &gt; selector, BinningMode mode = BinningMode.Unbounded)</code></pre>
+    <pre><code class="lang-csharp hljs">public static IEnumerable&lt;Bin&gt; Histogram&lt;TSource&gt;(this IEnumerable&lt;TSource&gt; source, int binCount, Func&lt;TSource, decimal?&gt; selector, BinningMode mode = BinningMode.Unbounded)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -2308,7 +2393,7 @@ by invoking a transform function on each element of the input sequence.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static IEnumerable&lt;Bin&gt; Histogram&lt;TSource&gt;(this IEnumerable&lt;TSource&gt; source, int binCount, Func&lt;TSource, double ? &gt; selector, BinningMode mode = BinningMode.Unbounded)</code></pre>
+    <pre><code class="lang-csharp hljs">public static IEnumerable&lt;Bin&gt; Histogram&lt;TSource&gt;(this IEnumerable&lt;TSource&gt; source, int binCount, Func&lt;TSource, double?&gt; selector, BinningMode mode = BinningMode.Unbounded)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -2393,7 +2478,7 @@ by invoking a transform function on each element of the input sequence.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static IEnumerable&lt;Bin&gt; Histogram&lt;TSource&gt;(this IEnumerable&lt;TSource&gt; source, int binCount, Func&lt;TSource, int ? &gt; selector, BinningMode mode = BinningMode.Unbounded)</code></pre>
+    <pre><code class="lang-csharp hljs">public static IEnumerable&lt;Bin&gt; Histogram&lt;TSource&gt;(this IEnumerable&lt;TSource&gt; source, int binCount, Func&lt;TSource, int?&gt; selector, BinningMode mode = BinningMode.Unbounded)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -2478,7 +2563,7 @@ by invoking a transform function on each element of the input sequence.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static IEnumerable&lt;Bin&gt; Histogram&lt;TSource&gt;(this IEnumerable&lt;TSource&gt; source, int binCount, Func&lt;TSource, long ? &gt; selector, BinningMode mode = BinningMode.Unbounded)</code></pre>
+    <pre><code class="lang-csharp hljs">public static IEnumerable&lt;Bin&gt; Histogram&lt;TSource&gt;(this IEnumerable&lt;TSource&gt; source, int binCount, Func&lt;TSource, long?&gt; selector, BinningMode mode = BinningMode.Unbounded)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -2563,7 +2648,7 @@ by invoking a transform function on each element of the input sequence.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static IEnumerable&lt;Bin&gt; Histogram&lt;TSource&gt;(this IEnumerable&lt;TSource&gt; source, int binCount, Func&lt;TSource, float ? &gt; selector, BinningMode mode = BinningMode.Unbounded)</code></pre>
+    <pre><code class="lang-csharp hljs">public static IEnumerable&lt;Bin&gt; Histogram&lt;TSource&gt;(this IEnumerable&lt;TSource&gt; source, int binCount, Func&lt;TSource, float?&gt; selector, BinningMode mode = BinningMode.Unbounded)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -2944,7 +3029,7 @@ by invoking a transform function on each element of the input sequence.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static decimal ? Kurtosis(this IEnumerable&lt;decimal ? &gt; source)</code></pre>
+    <pre><code class="lang-csharp hljs">public static decimal? Kurtosis(this IEnumerable&lt;decimal?&gt; source)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -2997,7 +3082,7 @@ by invoking a transform function on each element of the input sequence.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static double ? Kurtosis(this IEnumerable&lt;double ? &gt; source)</code></pre>
+    <pre><code class="lang-csharp hljs">public static double? Kurtosis(this IEnumerable&lt;double?&gt; source)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -3050,7 +3135,7 @@ by invoking a transform function on each element of the input sequence.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static double ? Kurtosis(this IEnumerable&lt;int ? &gt; source)</code></pre>
+    <pre><code class="lang-csharp hljs">public static double? Kurtosis(this IEnumerable&lt;int?&gt; source)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -3103,7 +3188,7 @@ by invoking a transform function on each element of the input sequence.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static double ? Kurtosis(this IEnumerable&lt;long ? &gt; source)</code></pre>
+    <pre><code class="lang-csharp hljs">public static double? Kurtosis(this IEnumerable&lt;long?&gt; source)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -3156,7 +3241,7 @@ by invoking a transform function on each element of the input sequence.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static float ? Kurtosis(this IEnumerable&lt;float ? &gt; source)</code></pre>
+    <pre><code class="lang-csharp hljs">public static float? Kurtosis(this IEnumerable&lt;float?&gt; source)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -3567,7 +3652,7 @@ by invoking a transform function on each element of the input sequence.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static decimal ? Kurtosis&lt;TSource&gt;(this IEnumerable&lt;TSource&gt; source, Func&lt;TSource, decimal ? &gt; selector)</code></pre>
+    <pre><code class="lang-csharp hljs">public static decimal? Kurtosis&lt;TSource&gt;(this IEnumerable&lt;TSource&gt; source, Func&lt;TSource, decimal?&gt; selector)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -3643,7 +3728,7 @@ by invoking a transform function on each element of the input sequence.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static double ? Kurtosis&lt;TSource&gt;(this IEnumerable&lt;TSource&gt; source, Func&lt;TSource, double ? &gt; selector)</code></pre>
+    <pre><code class="lang-csharp hljs">public static double? Kurtosis&lt;TSource&gt;(this IEnumerable&lt;TSource&gt; source, Func&lt;TSource, double?&gt; selector)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -3719,7 +3804,7 @@ by invoking a transform function on each element of the input sequence.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static double ? Kurtosis&lt;TSource&gt;(this IEnumerable&lt;TSource&gt; source, Func&lt;TSource, int ? &gt; selector)</code></pre>
+    <pre><code class="lang-csharp hljs">public static double? Kurtosis&lt;TSource&gt;(this IEnumerable&lt;TSource&gt; source, Func&lt;TSource, int?&gt; selector)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -3795,7 +3880,7 @@ by invoking a transform function on each element of the input sequence.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static double ? Kurtosis&lt;TSource&gt;(this IEnumerable&lt;TSource&gt; source, Func&lt;TSource, long ? &gt; selector)</code></pre>
+    <pre><code class="lang-csharp hljs">public static double? Kurtosis&lt;TSource&gt;(this IEnumerable&lt;TSource&gt; source, Func&lt;TSource, long?&gt; selector)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -3871,7 +3956,7 @@ by invoking a transform function on each element of the input sequence.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static float ? Kurtosis&lt;TSource&gt;(this IEnumerable&lt;TSource&gt; source, Func&lt;TSource, float ? &gt; selector)</code></pre>
+    <pre><code class="lang-csharp hljs">public static float? Kurtosis&lt;TSource&gt;(this IEnumerable&lt;TSource&gt; source, Func&lt;TSource, float?&gt; selector)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -4222,7 +4307,7 @@ by invoking a transform function on each element of the input sequence.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static LeastSquares? LeastSquares(this IEnumerable&lt;Tuple&lt;decimal ? , decimal ? &gt;&gt; source)</code></pre>
+    <pre><code class="lang-csharp hljs">public static LeastSquares? LeastSquares(this IEnumerable&lt;Tuple&lt;decimal?, decimal?&gt;&gt; source)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -4273,7 +4358,7 @@ by invoking a transform function on each element of the input sequence.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static LeastSquares? LeastSquares(this IEnumerable&lt;Tuple&lt;double ? , double ? &gt;&gt; source)</code></pre>
+    <pre><code class="lang-csharp hljs">public static LeastSquares? LeastSquares(this IEnumerable&lt;Tuple&lt;double?, double?&gt;&gt; source)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -4324,7 +4409,7 @@ by invoking a transform function on each element of the input sequence.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static LeastSquares? LeastSquares(this IEnumerable&lt;Tuple&lt;int ? , int ? &gt;&gt; source)</code></pre>
+    <pre><code class="lang-csharp hljs">public static LeastSquares? LeastSquares(this IEnumerable&lt;Tuple&lt;int?, int?&gt;&gt; source)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -4375,7 +4460,7 @@ by invoking a transform function on each element of the input sequence.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static LeastSquares? LeastSquares(this IEnumerable&lt;Tuple&lt;long ? , long ? &gt;&gt; source)</code></pre>
+    <pre><code class="lang-csharp hljs">public static LeastSquares? LeastSquares(this IEnumerable&lt;Tuple&lt;long?, long?&gt;&gt; source)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -4426,7 +4511,7 @@ by invoking a transform function on each element of the input sequence.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static LeastSquares? LeastSquares(this IEnumerable&lt;Tuple&lt;float ? , float ? &gt;&gt; source)</code></pre>
+    <pre><code class="lang-csharp hljs">public static LeastSquares? LeastSquares(this IEnumerable&lt;Tuple&lt;float?, float?&gt;&gt; source)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -4820,7 +4905,7 @@ by invoking a transform function on each element of the input sequence.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static LeastSquares? LeastSquares&lt;TSource&gt;(this IEnumerable&lt;TSource&gt; source, Func&lt;TSource, Tuple&lt;decimal ? , decimal ? &gt;&gt; selector)</code></pre>
+    <pre><code class="lang-csharp hljs">public static LeastSquares? LeastSquares&lt;TSource&gt;(this IEnumerable&lt;TSource&gt; source, Func&lt;TSource, Tuple&lt;decimal?, decimal?&gt;&gt; selector)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -4893,7 +4978,7 @@ by invoking a transform function on each element of the input sequence.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static LeastSquares? LeastSquares&lt;TSource&gt;(this IEnumerable&lt;TSource&gt; source, Func&lt;TSource, Tuple&lt;double ? , double ? &gt;&gt; selector)</code></pre>
+    <pre><code class="lang-csharp hljs">public static LeastSquares? LeastSquares&lt;TSource&gt;(this IEnumerable&lt;TSource&gt; source, Func&lt;TSource, Tuple&lt;double?, double?&gt;&gt; selector)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -4966,7 +5051,7 @@ by invoking a transform function on each element of the input sequence.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static LeastSquares? LeastSquares&lt;TSource&gt;(this IEnumerable&lt;TSource&gt; source, Func&lt;TSource, Tuple&lt;int ? , int ? &gt;&gt; selector)</code></pre>
+    <pre><code class="lang-csharp hljs">public static LeastSquares? LeastSquares&lt;TSource&gt;(this IEnumerable&lt;TSource&gt; source, Func&lt;TSource, Tuple&lt;int?, int?&gt;&gt; selector)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -5039,7 +5124,7 @@ by invoking a transform function on each element of the input sequence.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static LeastSquares? LeastSquares&lt;TSource&gt;(this IEnumerable&lt;TSource&gt; source, Func&lt;TSource, Tuple&lt;long ? , long ? &gt;&gt; selector)</code></pre>
+    <pre><code class="lang-csharp hljs">public static LeastSquares? LeastSquares&lt;TSource&gt;(this IEnumerable&lt;TSource&gt; source, Func&lt;TSource, Tuple&lt;long?, long?&gt;&gt; selector)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -5112,7 +5197,7 @@ by invoking a transform function on each element of the input sequence.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static LeastSquares? LeastSquares&lt;TSource&gt;(this IEnumerable&lt;TSource&gt; source, Func&lt;TSource, Tuple&lt;float ? , float ? &gt;&gt; selector)</code></pre>
+    <pre><code class="lang-csharp hljs">public static LeastSquares? LeastSquares&lt;TSource&gt;(this IEnumerable&lt;TSource&gt; source, Func&lt;TSource, Tuple&lt;float?, float?&gt;&gt; selector)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -5458,7 +5543,7 @@ empty or contains only values that are null.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static decimal ? Median(this IEnumerable&lt;decimal ? &gt; source)</code></pre>
+    <pre><code class="lang-csharp hljs">public static decimal? Median(this IEnumerable&lt;decimal?&gt; source)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -5509,7 +5594,7 @@ empty or contains only values that are null.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static double ? Median(this IEnumerable&lt;double ? &gt; source)</code></pre>
+    <pre><code class="lang-csharp hljs">public static double? Median(this IEnumerable&lt;double?&gt; source)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -5560,7 +5645,7 @@ empty or contains only values that are null.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static double ? Median(this IEnumerable&lt;int ? &gt; source)</code></pre>
+    <pre><code class="lang-csharp hljs">public static double? Median(this IEnumerable&lt;int?&gt; source)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -5611,7 +5696,7 @@ empty or contains only values that are null.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static double ? Median(this IEnumerable&lt;long ? &gt; source)</code></pre>
+    <pre><code class="lang-csharp hljs">public static double? Median(this IEnumerable&lt;long?&gt; source)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -5662,7 +5747,7 @@ empty or contains only values that are null.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static float ? Median(this IEnumerable&lt;float ? &gt; source)</code></pre>
+    <pre><code class="lang-csharp hljs">public static float? Median(this IEnumerable&lt;float?&gt; source)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -6055,7 +6140,7 @@ by invoking a transform function on each element of the input sequence.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static decimal ? Median&lt;TSource&gt;(this IEnumerable&lt;TSource&gt; source, Func&lt;TSource, decimal ? &gt; selector)</code></pre>
+    <pre><code class="lang-csharp hljs">public static decimal? Median&lt;TSource&gt;(this IEnumerable&lt;TSource&gt; source, Func&lt;TSource, decimal?&gt; selector)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -6128,7 +6213,7 @@ by invoking a transform function on each element of the input sequence.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static double ? Median&lt;TSource&gt;(this IEnumerable&lt;TSource&gt; source, Func&lt;TSource, double ? &gt; selector)</code></pre>
+    <pre><code class="lang-csharp hljs">public static double? Median&lt;TSource&gt;(this IEnumerable&lt;TSource&gt; source, Func&lt;TSource, double?&gt; selector)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -6201,7 +6286,7 @@ by invoking a transform function on each element of the input sequence.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static double ? Median&lt;TSource&gt;(this IEnumerable&lt;TSource&gt; source, Func&lt;TSource, int ? &gt; selector)</code></pre>
+    <pre><code class="lang-csharp hljs">public static double? Median&lt;TSource&gt;(this IEnumerable&lt;TSource&gt; source, Func&lt;TSource, int?&gt; selector)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -6274,7 +6359,7 @@ by invoking a transform function on each element of the input sequence.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static double ? Median&lt;TSource&gt;(this IEnumerable&lt;TSource&gt; source, Func&lt;TSource, long ? &gt; selector)</code></pre>
+    <pre><code class="lang-csharp hljs">public static double? Median&lt;TSource&gt;(this IEnumerable&lt;TSource&gt; source, Func&lt;TSource, long?&gt; selector)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -6347,7 +6432,7 @@ by invoking a transform function on each element of the input sequence.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static float ? Median&lt;TSource&gt;(this IEnumerable&lt;TSource&gt; source, Func&lt;TSource, float ? &gt; selector)</code></pre>
+    <pre><code class="lang-csharp hljs">public static float? Median&lt;TSource&gt;(this IEnumerable&lt;TSource&gt; source, Func&lt;TSource, float?&gt; selector)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -6692,7 +6777,7 @@ by invoking a transform function on each element of the input sequence.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static Range&lt;decimal&gt;? MinMax(this IEnumerable&lt;decimal ? &gt; source)</code></pre>
+    <pre><code class="lang-csharp hljs">public static Range&lt;decimal&gt;? MinMax(this IEnumerable&lt;decimal?&gt; source)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -6742,7 +6827,7 @@ by invoking a transform function on each element of the input sequence.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static Range&lt;double&gt;? MinMax(this IEnumerable&lt;double ? &gt; source)</code></pre>
+    <pre><code class="lang-csharp hljs">public static Range&lt;double&gt;? MinMax(this IEnumerable&lt;double?&gt; source)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -6792,7 +6877,7 @@ by invoking a transform function on each element of the input sequence.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static Range&lt;int&gt;? MinMax(this IEnumerable&lt;int ? &gt; source)</code></pre>
+    <pre><code class="lang-csharp hljs">public static Range&lt;int&gt;? MinMax(this IEnumerable&lt;int?&gt; source)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -6842,7 +6927,7 @@ by invoking a transform function on each element of the input sequence.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static Range&lt;long&gt;? MinMax(this IEnumerable&lt;long ? &gt; source)</code></pre>
+    <pre><code class="lang-csharp hljs">public static Range&lt;long&gt;? MinMax(this IEnumerable&lt;long?&gt; source)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -6892,7 +6977,7 @@ by invoking a transform function on each element of the input sequence.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static Range&lt;float&gt;? MinMax(this IEnumerable&lt;float ? &gt; source)</code></pre>
+    <pre><code class="lang-csharp hljs">public static Range&lt;float&gt;? MinMax(this IEnumerable&lt;float?&gt; source)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -7285,7 +7370,7 @@ by invoking a transform function on each element of the input sequence.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static Range&lt;decimal&gt;? MinMax&lt;TSource&gt;(this IEnumerable&lt;TSource&gt; source, Func&lt;TSource, decimal ? &gt; selector)</code></pre>
+    <pre><code class="lang-csharp hljs">public static Range&lt;decimal&gt;? MinMax&lt;TSource&gt;(this IEnumerable&lt;TSource&gt; source, Func&lt;TSource, decimal?&gt; selector)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -7358,7 +7443,7 @@ by invoking a transform function on each element of the input sequence.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static Range&lt;double&gt;? MinMax&lt;TSource&gt;(this IEnumerable&lt;TSource&gt; source, Func&lt;TSource, double ? &gt; selector)</code></pre>
+    <pre><code class="lang-csharp hljs">public static Range&lt;double&gt;? MinMax&lt;TSource&gt;(this IEnumerable&lt;TSource&gt; source, Func&lt;TSource, double?&gt; selector)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -7431,7 +7516,7 @@ by invoking a transform function on each element of the input sequence.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static Range&lt;int&gt;? MinMax&lt;TSource&gt;(this IEnumerable&lt;TSource&gt; source, Func&lt;TSource, int ? &gt; selector)</code></pre>
+    <pre><code class="lang-csharp hljs">public static Range&lt;int&gt;? MinMax&lt;TSource&gt;(this IEnumerable&lt;TSource&gt; source, Func&lt;TSource, int?&gt; selector)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -7504,7 +7589,7 @@ by invoking a transform function on each element of the input sequence.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static Range&lt;long&gt;? MinMax&lt;TSource&gt;(this IEnumerable&lt;TSource&gt; source, Func&lt;TSource, long ? &gt; selector)</code></pre>
+    <pre><code class="lang-csharp hljs">public static Range&lt;long&gt;? MinMax&lt;TSource&gt;(this IEnumerable&lt;TSource&gt; source, Func&lt;TSource, long?&gt; selector)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -7577,7 +7662,7 @@ by invoking a transform function on each element of the input sequence.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static Range&lt;float&gt;? MinMax&lt;TSource&gt;(this IEnumerable&lt;TSource&gt; source, Func&lt;TSource, float ? &gt; selector)</code></pre>
+    <pre><code class="lang-csharp hljs">public static Range&lt;float&gt;? MinMax&lt;TSource&gt;(this IEnumerable&lt;TSource&gt; source, Func&lt;TSource, float?&gt; selector)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -7722,7 +7807,8 @@ by invoking a transform function on each element of the input sequence.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static T? Mode&lt;T&gt;(this IEnumerable&lt;T&gt; source)where T : struct</code></pre>
+    <pre><code class="lang-csharp hljs">public static T? Mode&lt;T&gt;(this IEnumerable&lt;T&gt; source)
+    where T : struct</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -7788,7 +7874,8 @@ by invoking a transform function on each element of the input sequence.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static T? Mode&lt;T&gt;(this IEnumerable&lt;T? &gt; source)where T : struct</code></pre>
+    <pre><code class="lang-csharp hljs">public static T? Mode&lt;T&gt;(this IEnumerable&lt;T?&gt; source)
+    where T : struct</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -7855,7 +7942,8 @@ by invoking a transform function on each element of the input sequence.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static TMode? Mode&lt;TSource, TMode&gt;(this IEnumerable&lt;TSource&gt; source, Func&lt;TSource, TMode&gt; selector)where TMode : struct</code></pre>
+    <pre><code class="lang-csharp hljs">public static TMode? Mode&lt;TSource, TMode&gt;(this IEnumerable&lt;TSource&gt; source, Func&lt;TSource, TMode&gt; selector)
+    where TMode : struct</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -7933,7 +8021,8 @@ by invoking a transform function on each element of the input sequence.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static TMode? Mode&lt;TSource, TMode&gt;(this IEnumerable&lt;TSource&gt; source, Func&lt;TSource, TMode? &gt; selector)where TMode : struct</code></pre>
+    <pre><code class="lang-csharp hljs">public static TMode? Mode&lt;TSource, TMode&gt;(this IEnumerable&lt;TSource&gt; source, Func&lt;TSource, TMode?&gt; selector)
+    where TMode : struct</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -8010,7 +8099,8 @@ by invoking a transform function on each element of the input sequence.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static IEnumerable&lt;T&gt; Modes&lt;T&gt;(this IEnumerable&lt;T&gt; source)where T : struct</code></pre>
+    <pre><code class="lang-csharp hljs">public static IEnumerable&lt;T&gt; Modes&lt;T&gt;(this IEnumerable&lt;T&gt; source)
+    where T : struct</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -8076,7 +8166,8 @@ by invoking a transform function on each element of the input sequence.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static IEnumerable&lt;T&gt; Modes&lt;T&gt;(this IEnumerable&lt;T? &gt; source)where T : struct</code></pre>
+    <pre><code class="lang-csharp hljs">public static IEnumerable&lt;T&gt; Modes&lt;T&gt;(this IEnumerable&lt;T?&gt; source)
+    where T : struct</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -8378,7 +8469,7 @@ by invoking a transform function on each element of the input sequence.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static decimal ? Pearson(this IEnumerable&lt;decimal ? &gt; source, IEnumerable&lt;decimal ? &gt; other)</code></pre>
+    <pre><code class="lang-csharp hljs">public static decimal? Pearson(this IEnumerable&lt;decimal?&gt; source, IEnumerable&lt;decimal?&gt; other)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -8437,7 +8528,7 @@ by invoking a transform function on each element of the input sequence.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static double ? Pearson(this IEnumerable&lt;double ? &gt; source, IEnumerable&lt;double ? &gt; other)</code></pre>
+    <pre><code class="lang-csharp hljs">public static double? Pearson(this IEnumerable&lt;double?&gt; source, IEnumerable&lt;double?&gt; other)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -8496,7 +8587,7 @@ by invoking a transform function on each element of the input sequence.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static double ? Pearson(this IEnumerable&lt;int ? &gt; source, IEnumerable&lt;int ? &gt; other)</code></pre>
+    <pre><code class="lang-csharp hljs">public static double? Pearson(this IEnumerable&lt;int?&gt; source, IEnumerable&lt;int?&gt; other)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -8555,7 +8646,7 @@ by invoking a transform function on each element of the input sequence.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static double ? Pearson(this IEnumerable&lt;long ? &gt; source, IEnumerable&lt;long ? &gt; other)</code></pre>
+    <pre><code class="lang-csharp hljs">public static double? Pearson(this IEnumerable&lt;long?&gt; source, IEnumerable&lt;long?&gt; other)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -8614,7 +8705,7 @@ by invoking a transform function on each element of the input sequence.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static float ? Pearson(this IEnumerable&lt;float ? &gt; source, IEnumerable&lt;float ? &gt; other)</code></pre>
+    <pre><code class="lang-csharp hljs">public static float? Pearson(this IEnumerable&lt;float?&gt; source, IEnumerable&lt;float?&gt; other)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -9326,7 +9417,7 @@ by invoking a transform function on each element of the input sequence.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static decimal ? Pearson&lt;TSource&gt;(this IEnumerable&lt;TSource&gt; source, IEnumerable&lt;TSource&gt; other, Func&lt;TSource, decimal ? &gt; selector)</code></pre>
+    <pre><code class="lang-csharp hljs">public static decimal? Pearson&lt;TSource&gt;(this IEnumerable&lt;TSource&gt; source, IEnumerable&lt;TSource&gt; other, Func&lt;TSource, decimal?&gt; selector)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -9408,7 +9499,7 @@ by invoking a transform function on each element of the input sequence.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static double ? Pearson&lt;TSource&gt;(this IEnumerable&lt;TSource&gt; source, IEnumerable&lt;TSource&gt; other, Func&lt;TSource, double ? &gt; selector)</code></pre>
+    <pre><code class="lang-csharp hljs">public static double? Pearson&lt;TSource&gt;(this IEnumerable&lt;TSource&gt; source, IEnumerable&lt;TSource&gt; other, Func&lt;TSource, double?&gt; selector)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -9490,7 +9581,7 @@ by invoking a transform function on each element of the input sequence.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static double ? Pearson&lt;TSource&gt;(this IEnumerable&lt;TSource&gt; source, IEnumerable&lt;TSource&gt; other, Func&lt;TSource, int ? &gt; selector)</code></pre>
+    <pre><code class="lang-csharp hljs">public static double? Pearson&lt;TSource&gt;(this IEnumerable&lt;TSource&gt; source, IEnumerable&lt;TSource&gt; other, Func&lt;TSource, int?&gt; selector)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -9572,7 +9663,7 @@ by invoking a transform function on each element of the input sequence.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static double ? Pearson&lt;TSource&gt;(this IEnumerable&lt;TSource&gt; source, IEnumerable&lt;TSource&gt; other, Func&lt;TSource, long ? &gt; selector)</code></pre>
+    <pre><code class="lang-csharp hljs">public static double? Pearson&lt;TSource&gt;(this IEnumerable&lt;TSource&gt; source, IEnumerable&lt;TSource&gt; other, Func&lt;TSource, long?&gt; selector)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -9654,7 +9745,7 @@ by invoking a transform function on each element of the input sequence.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static float ? Pearson&lt;TSource&gt;(this IEnumerable&lt;TSource&gt; source, IEnumerable&lt;TSource&gt; other, Func&lt;TSource, float ? &gt; selector)</code></pre>
+    <pre><code class="lang-csharp hljs">public static float? Pearson&lt;TSource&gt;(this IEnumerable&lt;TSource&gt; source, IEnumerable&lt;TSource&gt; other, Func&lt;TSource, float?&gt; selector)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -10017,7 +10108,7 @@ by invoking a transform function on each element of the input sequence.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static decimal ? Range(this IEnumerable&lt;decimal ? &gt; source)</code></pre>
+    <pre><code class="lang-csharp hljs">public static decimal? Range(this IEnumerable&lt;decimal?&gt; source)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -10067,7 +10158,7 @@ by invoking a transform function on each element of the input sequence.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static double ? Range(this IEnumerable&lt;double ? &gt; source)</code></pre>
+    <pre><code class="lang-csharp hljs">public static double? Range(this IEnumerable&lt;double?&gt; source)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -10117,7 +10208,7 @@ by invoking a transform function on each element of the input sequence.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static int ? Range(this IEnumerable&lt;int ? &gt; source)</code></pre>
+    <pre><code class="lang-csharp hljs">public static int? Range(this IEnumerable&lt;int?&gt; source)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -10167,7 +10258,7 @@ by invoking a transform function on each element of the input sequence.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static long ? Range(this IEnumerable&lt;long ? &gt; source)</code></pre>
+    <pre><code class="lang-csharp hljs">public static long? Range(this IEnumerable&lt;long?&gt; source)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -10217,7 +10308,7 @@ by invoking a transform function on each element of the input sequence.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static float ? Range(this IEnumerable&lt;float ? &gt; source)</code></pre>
+    <pre><code class="lang-csharp hljs">public static float? Range(this IEnumerable&lt;float?&gt; source)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -10610,7 +10701,7 @@ by invoking a transform function on each element of the input sequence.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static decimal ? Range&lt;TSource&gt;(this IEnumerable&lt;TSource&gt; source, Func&lt;TSource, decimal ? &gt; selector)</code></pre>
+    <pre><code class="lang-csharp hljs">public static decimal? Range&lt;TSource&gt;(this IEnumerable&lt;TSource&gt; source, Func&lt;TSource, decimal?&gt; selector)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -10683,7 +10774,7 @@ by invoking a transform function on each element of the input sequence.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static double ? Range&lt;TSource&gt;(this IEnumerable&lt;TSource&gt; source, Func&lt;TSource, double ? &gt; selector)</code></pre>
+    <pre><code class="lang-csharp hljs">public static double? Range&lt;TSource&gt;(this IEnumerable&lt;TSource&gt; source, Func&lt;TSource, double?&gt; selector)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -10756,7 +10847,7 @@ by invoking a transform function on each element of the input sequence.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static int ? Range&lt;TSource&gt;(this IEnumerable&lt;TSource&gt; source, Func&lt;TSource, int ? &gt; selector)</code></pre>
+    <pre><code class="lang-csharp hljs">public static int? Range&lt;TSource&gt;(this IEnumerable&lt;TSource&gt; source, Func&lt;TSource, int?&gt; selector)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -10829,7 +10920,7 @@ by invoking a transform function on each element of the input sequence.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static long ? Range&lt;TSource&gt;(this IEnumerable&lt;TSource&gt; source, Func&lt;TSource, long ? &gt; selector)</code></pre>
+    <pre><code class="lang-csharp hljs">public static long? Range&lt;TSource&gt;(this IEnumerable&lt;TSource&gt; source, Func&lt;TSource, long?&gt; selector)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -10902,7 +10993,7 @@ by invoking a transform function on each element of the input sequence.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static float ? Range&lt;TSource&gt;(this IEnumerable&lt;TSource&gt; source, Func&lt;TSource, float ? &gt; selector)</code></pre>
+    <pre><code class="lang-csharp hljs">public static float? Range&lt;TSource&gt;(this IEnumerable&lt;TSource&gt; source, Func&lt;TSource, float?&gt; selector)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -11260,7 +11351,7 @@ empty or contains only values that are null.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static decimal ? RootMeanSquare(this IEnumerable&lt;decimal ? &gt; source)</code></pre>
+    <pre><code class="lang-csharp hljs">public static decimal? RootMeanSquare(this IEnumerable&lt;decimal?&gt; source)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -11314,7 +11405,7 @@ empty or contains only values that are null.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static double ? RootMeanSquare(this IEnumerable&lt;double ? &gt; source)</code></pre>
+    <pre><code class="lang-csharp hljs">public static double? RootMeanSquare(this IEnumerable&lt;double?&gt; source)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -11368,7 +11459,7 @@ empty or contains only values that are null.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static double ? RootMeanSquare(this IEnumerable&lt;int ? &gt; source)</code></pre>
+    <pre><code class="lang-csharp hljs">public static double? RootMeanSquare(this IEnumerable&lt;int?&gt; source)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -11422,7 +11513,7 @@ empty or contains only values that are null.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static double ? RootMeanSquare(this IEnumerable&lt;long ? &gt; source)</code></pre>
+    <pre><code class="lang-csharp hljs">public static double? RootMeanSquare(this IEnumerable&lt;long?&gt; source)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -11476,7 +11567,7 @@ empty or contains only values that are null.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static float ? RootMeanSquare(this IEnumerable&lt;float ? &gt; source)</code></pre>
+    <pre><code class="lang-csharp hljs">public static float? RootMeanSquare(this IEnumerable&lt;float?&gt; source)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -11887,7 +11978,7 @@ by invoking a transform function on each element of the input sequence.        <
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static decimal ? RootMeanSquare&lt;TSource&gt;(this IEnumerable&lt;TSource&gt; source, Func&lt;TSource, decimal ? &gt; selector)</code></pre>
+    <pre><code class="lang-csharp hljs">public static decimal? RootMeanSquare&lt;TSource&gt;(this IEnumerable&lt;TSource&gt; source, Func&lt;TSource, decimal?&gt; selector)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -11963,7 +12054,7 @@ by invoking a transform function on each element of the input sequence.        <
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static double ? RootMeanSquare&lt;TSource&gt;(this IEnumerable&lt;TSource&gt; source, Func&lt;TSource, double ? &gt; selector)</code></pre>
+    <pre><code class="lang-csharp hljs">public static double? RootMeanSquare&lt;TSource&gt;(this IEnumerable&lt;TSource&gt; source, Func&lt;TSource, double?&gt; selector)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -12039,7 +12130,7 @@ by invoking a transform function on each element of the input sequence.        <
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static double ? RootMeanSquare&lt;TSource&gt;(this IEnumerable&lt;TSource&gt; source, Func&lt;TSource, int ? &gt; selector)</code></pre>
+    <pre><code class="lang-csharp hljs">public static double? RootMeanSquare&lt;TSource&gt;(this IEnumerable&lt;TSource&gt; source, Func&lt;TSource, int?&gt; selector)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -12115,7 +12206,7 @@ by invoking a transform function on each element of the input sequence.        <
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static double ? RootMeanSquare&lt;TSource&gt;(this IEnumerable&lt;TSource&gt; source, Func&lt;TSource, long ? &gt; selector)</code></pre>
+    <pre><code class="lang-csharp hljs">public static double? RootMeanSquare&lt;TSource&gt;(this IEnumerable&lt;TSource&gt; source, Func&lt;TSource, long?&gt; selector)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -12191,7 +12282,7 @@ by invoking a transform function on each element of the input sequence.        <
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static float ? RootMeanSquare&lt;TSource&gt;(this IEnumerable&lt;TSource&gt; source, Func&lt;TSource, float ? &gt; selector)</code></pre>
+    <pre><code class="lang-csharp hljs">public static float? RootMeanSquare&lt;TSource&gt;(this IEnumerable&lt;TSource&gt; source, Func&lt;TSource, float?&gt; selector)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -12554,7 +12645,7 @@ by invoking a transform function on each element of the input sequence.        <
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static decimal ? Skewness(this IEnumerable&lt;decimal ? &gt; source)</code></pre>
+    <pre><code class="lang-csharp hljs">public static decimal? Skewness(this IEnumerable&lt;decimal?&gt; source)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -12607,7 +12698,7 @@ by invoking a transform function on each element of the input sequence.        <
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static double ? Skewness(this IEnumerable&lt;double ? &gt; source)</code></pre>
+    <pre><code class="lang-csharp hljs">public static double? Skewness(this IEnumerable&lt;double?&gt; source)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -12660,7 +12751,7 @@ by invoking a transform function on each element of the input sequence.        <
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static double ? Skewness(this IEnumerable&lt;int ? &gt; source)</code></pre>
+    <pre><code class="lang-csharp hljs">public static double? Skewness(this IEnumerable&lt;int?&gt; source)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -12713,7 +12804,7 @@ by invoking a transform function on each element of the input sequence.        <
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static double ? Skewness(this IEnumerable&lt;long ? &gt; source)</code></pre>
+    <pre><code class="lang-csharp hljs">public static double? Skewness(this IEnumerable&lt;long?&gt; source)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -12766,7 +12857,7 @@ by invoking a transform function on each element of the input sequence.        <
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static float ? Skewness(this IEnumerable&lt;float ? &gt; source)</code></pre>
+    <pre><code class="lang-csharp hljs">public static float? Skewness(this IEnumerable&lt;float?&gt; source)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -13177,7 +13268,7 @@ by invoking a transform function on each element of the input sequence.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static decimal ? Skewness&lt;TSource&gt;(this IEnumerable&lt;TSource&gt; source, Func&lt;TSource, decimal ? &gt; selector)</code></pre>
+    <pre><code class="lang-csharp hljs">public static decimal? Skewness&lt;TSource&gt;(this IEnumerable&lt;TSource&gt; source, Func&lt;TSource, decimal?&gt; selector)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -13253,7 +13344,7 @@ by invoking a transform function on each element of the input sequence.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static double ? Skewness&lt;TSource&gt;(this IEnumerable&lt;TSource&gt; source, Func&lt;TSource, double ? &gt; selector)</code></pre>
+    <pre><code class="lang-csharp hljs">public static double? Skewness&lt;TSource&gt;(this IEnumerable&lt;TSource&gt; source, Func&lt;TSource, double?&gt; selector)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -13329,7 +13420,7 @@ by invoking a transform function on each element of the input sequence.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static double ? Skewness&lt;TSource&gt;(this IEnumerable&lt;TSource&gt; source, Func&lt;TSource, int ? &gt; selector)</code></pre>
+    <pre><code class="lang-csharp hljs">public static double? Skewness&lt;TSource&gt;(this IEnumerable&lt;TSource&gt; source, Func&lt;TSource, int?&gt; selector)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -13405,7 +13496,7 @@ by invoking a transform function on each element of the input sequence.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static double ? Skewness&lt;TSource&gt;(this IEnumerable&lt;TSource&gt; source, Func&lt;TSource, long ? &gt; selector)</code></pre>
+    <pre><code class="lang-csharp hljs">public static double? Skewness&lt;TSource&gt;(this IEnumerable&lt;TSource&gt; source, Func&lt;TSource, long?&gt; selector)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -13481,7 +13572,7 @@ by invoking a transform function on each element of the input sequence.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static float ? Skewness&lt;TSource&gt;(this IEnumerable&lt;TSource&gt; source, Func&lt;TSource, float ? &gt; selector)</code></pre>
+    <pre><code class="lang-csharp hljs">public static float? Skewness&lt;TSource&gt;(this IEnumerable&lt;TSource&gt; source, Func&lt;TSource, float?&gt; selector)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -13844,7 +13935,7 @@ by invoking a transform function on each element of the input sequence.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static decimal ? StandardDeviation(this IEnumerable&lt;decimal ? &gt; source)</code></pre>
+    <pre><code class="lang-csharp hljs">public static decimal? StandardDeviation(this IEnumerable&lt;decimal?&gt; source)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -13898,7 +13989,7 @@ empty or contains only values that are null.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static double ? StandardDeviation(this IEnumerable&lt;double ? &gt; source)</code></pre>
+    <pre><code class="lang-csharp hljs">public static double? StandardDeviation(this IEnumerable&lt;double?&gt; source)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -13952,7 +14043,7 @@ empty or contains only values that are null.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static double ? StandardDeviation(this IEnumerable&lt;int ? &gt; source)</code></pre>
+    <pre><code class="lang-csharp hljs">public static double? StandardDeviation(this IEnumerable&lt;int?&gt; source)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -14006,7 +14097,7 @@ empty or contains only values that are null.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static double ? StandardDeviation(this IEnumerable&lt;long ? &gt; source)</code></pre>
+    <pre><code class="lang-csharp hljs">public static double? StandardDeviation(this IEnumerable&lt;long?&gt; source)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -14060,7 +14151,7 @@ empty or contains only values that are null.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static float ? StandardDeviation(this IEnumerable&lt;float ? &gt; source)</code></pre>
+    <pre><code class="lang-csharp hljs">public static float? StandardDeviation(this IEnumerable&lt;float?&gt; source)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -14472,7 +14563,7 @@ by invoking a transform function on each element of the input sequence.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static decimal ? StandardDeviation&lt;TSource&gt;(this IEnumerable&lt;TSource&gt; source, Func&lt;TSource, decimal ? &gt; selector)</code></pre>
+    <pre><code class="lang-csharp hljs">public static decimal? StandardDeviation&lt;TSource&gt;(this IEnumerable&lt;TSource&gt; source, Func&lt;TSource, decimal?&gt; selector)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -14548,7 +14639,7 @@ by invoking a transform function on each element of the input sequence.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static double ? StandardDeviation&lt;TSource&gt;(this IEnumerable&lt;TSource&gt; source, Func&lt;TSource, double ? &gt; selector)</code></pre>
+    <pre><code class="lang-csharp hljs">public static double? StandardDeviation&lt;TSource&gt;(this IEnumerable&lt;TSource&gt; source, Func&lt;TSource, double?&gt; selector)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -14624,7 +14715,7 @@ by invoking a transform function on each element of the input sequence.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static double ? StandardDeviation&lt;TSource&gt;(this IEnumerable&lt;TSource&gt; source, Func&lt;TSource, int ? &gt; selector)</code></pre>
+    <pre><code class="lang-csharp hljs">public static double? StandardDeviation&lt;TSource&gt;(this IEnumerable&lt;TSource&gt; source, Func&lt;TSource, int?&gt; selector)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -14700,7 +14791,7 @@ by invoking a transform function on each element of the input sequence.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static double ? StandardDeviation&lt;TSource&gt;(this IEnumerable&lt;TSource&gt; source, Func&lt;TSource, long ? &gt; selector)</code></pre>
+    <pre><code class="lang-csharp hljs">public static double? StandardDeviation&lt;TSource&gt;(this IEnumerable&lt;TSource&gt; source, Func&lt;TSource, long?&gt; selector)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -14776,7 +14867,7 @@ by invoking a transform function on each element of the input sequence.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static float ? StandardDeviation&lt;TSource&gt;(this IEnumerable&lt;TSource&gt; source, Func&lt;TSource, float ? &gt; selector)</code></pre>
+    <pre><code class="lang-csharp hljs">public static float? StandardDeviation&lt;TSource&gt;(this IEnumerable&lt;TSource&gt; source, Func&lt;TSource, float?&gt; selector)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -15139,7 +15230,7 @@ by invoking a transform function on each element of the input sequence.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static decimal ? StandardDeviationP(this IEnumerable&lt;decimal ? &gt; source)</code></pre>
+    <pre><code class="lang-csharp hljs">public static decimal? StandardDeviationP(this IEnumerable&lt;decimal?&gt; source)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -15193,7 +15284,7 @@ empty or contains only values that are null.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static double ? StandardDeviationP(this IEnumerable&lt;double ? &gt; source)</code></pre>
+    <pre><code class="lang-csharp hljs">public static double? StandardDeviationP(this IEnumerable&lt;double?&gt; source)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -15247,7 +15338,7 @@ empty or contains only values that are null.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static double ? StandardDeviationP(this IEnumerable&lt;int ? &gt; source)</code></pre>
+    <pre><code class="lang-csharp hljs">public static double? StandardDeviationP(this IEnumerable&lt;int?&gt; source)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -15301,7 +15392,7 @@ empty or contains only values that are null.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static double ? StandardDeviationP(this IEnumerable&lt;long ? &gt; source)</code></pre>
+    <pre><code class="lang-csharp hljs">public static double? StandardDeviationP(this IEnumerable&lt;long?&gt; source)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -15355,7 +15446,7 @@ empty or contains only values that are null.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static float ? StandardDeviationP(this IEnumerable&lt;float ? &gt; source)</code></pre>
+    <pre><code class="lang-csharp hljs">public static float? StandardDeviationP(this IEnumerable&lt;float?&gt; source)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -15767,7 +15858,7 @@ by invoking a transform function on each element of the input sequence.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static decimal ? StandardDeviationP&lt;TSource&gt;(this IEnumerable&lt;TSource&gt; source, Func&lt;TSource, decimal ? &gt; selector)</code></pre>
+    <pre><code class="lang-csharp hljs">public static decimal? StandardDeviationP&lt;TSource&gt;(this IEnumerable&lt;TSource&gt; source, Func&lt;TSource, decimal?&gt; selector)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -15843,7 +15934,7 @@ by invoking a transform function on each element of the input sequence.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static double ? StandardDeviationP&lt;TSource&gt;(this IEnumerable&lt;TSource&gt; source, Func&lt;TSource, double ? &gt; selector)</code></pre>
+    <pre><code class="lang-csharp hljs">public static double? StandardDeviationP&lt;TSource&gt;(this IEnumerable&lt;TSource&gt; source, Func&lt;TSource, double?&gt; selector)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -15919,7 +16010,7 @@ by invoking a transform function on each element of the input sequence.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static double ? StandardDeviationP&lt;TSource&gt;(this IEnumerable&lt;TSource&gt; source, Func&lt;TSource, int ? &gt; selector)</code></pre>
+    <pre><code class="lang-csharp hljs">public static double? StandardDeviationP&lt;TSource&gt;(this IEnumerable&lt;TSource&gt; source, Func&lt;TSource, int?&gt; selector)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -15995,7 +16086,7 @@ by invoking a transform function on each element of the input sequence.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static double ? StandardDeviationP&lt;TSource&gt;(this IEnumerable&lt;TSource&gt; source, Func&lt;TSource, long ? &gt; selector)</code></pre>
+    <pre><code class="lang-csharp hljs">public static double? StandardDeviationP&lt;TSource&gt;(this IEnumerable&lt;TSource&gt; source, Func&lt;TSource, long?&gt; selector)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -16071,7 +16162,7 @@ by invoking a transform function on each element of the input sequence.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static float ? StandardDeviationP&lt;TSource&gt;(this IEnumerable&lt;TSource&gt; source, Func&lt;TSource, float ? &gt; selector)</code></pre>
+    <pre><code class="lang-csharp hljs">public static float? StandardDeviationP&lt;TSource&gt;(this IEnumerable&lt;TSource&gt; source, Func&lt;TSource, float?&gt; selector)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -16434,7 +16525,7 @@ by invoking a transform function on each element of the input sequence.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static decimal ? Variance(this IEnumerable&lt;decimal ? &gt; source)</code></pre>
+    <pre><code class="lang-csharp hljs">public static decimal? Variance(this IEnumerable&lt;decimal?&gt; source)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -16488,7 +16579,7 @@ empty or contains only values that are null.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static double ? Variance(this IEnumerable&lt;double ? &gt; source)</code></pre>
+    <pre><code class="lang-csharp hljs">public static double? Variance(this IEnumerable&lt;double?&gt; source)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -16542,7 +16633,7 @@ empty or contains only values that are null.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static double ? Variance(this IEnumerable&lt;int ? &gt; source)</code></pre>
+    <pre><code class="lang-csharp hljs">public static double? Variance(this IEnumerable&lt;int?&gt; source)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -16596,7 +16687,7 @@ empty or contains only values that are null.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static double ? Variance(this IEnumerable&lt;long ? &gt; source)</code></pre>
+    <pre><code class="lang-csharp hljs">public static double? Variance(this IEnumerable&lt;long?&gt; source)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -16650,7 +16741,7 @@ empty or contains only values that are null.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static float ? Variance(this IEnumerable&lt;float ? &gt; source)</code></pre>
+    <pre><code class="lang-csharp hljs">public static float? Variance(this IEnumerable&lt;float?&gt; source)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -17062,7 +17153,7 @@ by invoking a transform function on each element of the input sequence.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static decimal ? Variance&lt;TSource&gt;(this IEnumerable&lt;TSource&gt; source, Func&lt;TSource, decimal ? &gt; selector)</code></pre>
+    <pre><code class="lang-csharp hljs">public static decimal? Variance&lt;TSource&gt;(this IEnumerable&lt;TSource&gt; source, Func&lt;TSource, decimal?&gt; selector)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -17138,7 +17229,7 @@ by invoking a transform function on each element of the input sequence.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static double ? Variance&lt;TSource&gt;(this IEnumerable&lt;TSource&gt; source, Func&lt;TSource, double ? &gt; selector)</code></pre>
+    <pre><code class="lang-csharp hljs">public static double? Variance&lt;TSource&gt;(this IEnumerable&lt;TSource&gt; source, Func&lt;TSource, double?&gt; selector)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -17214,7 +17305,7 @@ by invoking a transform function on each element of the input sequence.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static double ? Variance&lt;TSource&gt;(this IEnumerable&lt;TSource&gt; source, Func&lt;TSource, int ? &gt; selector)</code></pre>
+    <pre><code class="lang-csharp hljs">public static double? Variance&lt;TSource&gt;(this IEnumerable&lt;TSource&gt; source, Func&lt;TSource, int?&gt; selector)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -17290,7 +17381,7 @@ by invoking a transform function on each element of the input sequence.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static double ? Variance&lt;TSource&gt;(this IEnumerable&lt;TSource&gt; source, Func&lt;TSource, long ? &gt; selector)</code></pre>
+    <pre><code class="lang-csharp hljs">public static double? Variance&lt;TSource&gt;(this IEnumerable&lt;TSource&gt; source, Func&lt;TSource, long?&gt; selector)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -17366,7 +17457,7 @@ by invoking a transform function on each element of the input sequence.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static float ? Variance&lt;TSource&gt;(this IEnumerable&lt;TSource&gt; source, Func&lt;TSource, float ? &gt; selector)</code></pre>
+    <pre><code class="lang-csharp hljs">public static float? Variance&lt;TSource&gt;(this IEnumerable&lt;TSource&gt; source, Func&lt;TSource, float?&gt; selector)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -17729,7 +17820,7 @@ by invoking a transform function on each element of the input sequence.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static decimal ? VarianceP(this IEnumerable&lt;decimal ? &gt; source)</code></pre>
+    <pre><code class="lang-csharp hljs">public static decimal? VarianceP(this IEnumerable&lt;decimal?&gt; source)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -17783,7 +17874,7 @@ empty or contains only values that are null.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static double ? VarianceP(this IEnumerable&lt;double ? &gt; source)</code></pre>
+    <pre><code class="lang-csharp hljs">public static double? VarianceP(this IEnumerable&lt;double?&gt; source)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -17837,7 +17928,7 @@ empty or contains only values that are null.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static double ? VarianceP(this IEnumerable&lt;int ? &gt; source)</code></pre>
+    <pre><code class="lang-csharp hljs">public static double? VarianceP(this IEnumerable&lt;int?&gt; source)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -17891,7 +17982,7 @@ empty or contains only values that are null.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static double ? VarianceP(this IEnumerable&lt;long ? &gt; source)</code></pre>
+    <pre><code class="lang-csharp hljs">public static double? VarianceP(this IEnumerable&lt;long?&gt; source)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -17945,7 +18036,7 @@ empty or contains only values that are null.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static float ? VarianceP(this IEnumerable&lt;float ? &gt; source)</code></pre>
+    <pre><code class="lang-csharp hljs">public static float? VarianceP(this IEnumerable&lt;float?&gt; source)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -18357,7 +18448,7 @@ by invoking a transform function on each element of the input sequence.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static decimal ? VarianceP&lt;TSource&gt;(this IEnumerable&lt;TSource&gt; source, Func&lt;TSource, decimal ? &gt; selector)</code></pre>
+    <pre><code class="lang-csharp hljs">public static decimal? VarianceP&lt;TSource&gt;(this IEnumerable&lt;TSource&gt; source, Func&lt;TSource, decimal?&gt; selector)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -18433,7 +18524,7 @@ by invoking a transform function on each element of the input sequence.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static double ? VarianceP&lt;TSource&gt;(this IEnumerable&lt;TSource&gt; source, Func&lt;TSource, double ? &gt; selector)</code></pre>
+    <pre><code class="lang-csharp hljs">public static double? VarianceP&lt;TSource&gt;(this IEnumerable&lt;TSource&gt; source, Func&lt;TSource, double?&gt; selector)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -18509,7 +18600,7 @@ by invoking a transform function on each element of the input sequence.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static double ? VarianceP&lt;TSource&gt;(this IEnumerable&lt;TSource&gt; source, Func&lt;TSource, int ? &gt; selector)</code></pre>
+    <pre><code class="lang-csharp hljs">public static double? VarianceP&lt;TSource&gt;(this IEnumerable&lt;TSource&gt; source, Func&lt;TSource, int?&gt; selector)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -18585,7 +18676,7 @@ by invoking a transform function on each element of the input sequence.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static double ? VarianceP&lt;TSource&gt;(this IEnumerable&lt;TSource&gt; source, Func&lt;TSource, long ? &gt; selector)</code></pre>
+    <pre><code class="lang-csharp hljs">public static double? VarianceP&lt;TSource&gt;(this IEnumerable&lt;TSource&gt; source, Func&lt;TSource, long?&gt; selector)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -18661,7 +18752,7 @@ by invoking a transform function on each element of the input sequence.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static float ? VarianceP&lt;TSource&gt;(this IEnumerable&lt;TSource&gt; source, Func&lt;TSource, float ? &gt; selector)</code></pre>
+    <pre><code class="lang-csharp hljs">public static float? VarianceP&lt;TSource&gt;(this IEnumerable&lt;TSource&gt; source, Func&lt;TSource, float?&gt; selector)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -18829,7 +18920,7 @@ by invoking a transform function on each element of the input sequence.</p>
               <a href="#top">Back to top</a>
             </span>
             
-            <span>Copyright © 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+            <span>Generated by <strong>DocFX</strong></span>
           </div>
         </div>
       </footer>
