@@ -21,7 +21,7 @@ namespace LinqStatistics
             if (comparer == null)
                 throw new ArgumentNullException(nameof(comparer));
 
-            return source.GroupBy(t => t, comparer).OrderBy(g => g.Key).Select(g => new ItemCount<T>(g.Key, g.Count()));
+            return source.GroupBy(t => t, comparer).Select(g => new ItemCount<T>(g.Key, g.Count()));
         }
 
         /// <summary>
