@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>LinqStatistics</id>
-    <version>2.2.1</version>
+    <version>2.3.0</version>
     <title>LinqStatistics</title>
     <authors>dkackman</authors>
     <owners></owners>
@@ -25,6 +25,10 @@
       - Include R squared while calculating Least Squares
       2.2.1
       - Add NetStandard library
+      2.2.2
+      - Fixed StandardDeviationP bug https://github.com/dkackman/LinqStatistics/issues/10
+      - Speed up CountEach by not ordering
+      - Add overload to CountEach to take selector and comparer
     </releaseNotes>
     <summary>
       Extensions that add simple statistical methods
@@ -34,8 +38,11 @@
     <iconUrl>https://raw.githubusercontent.com/dkackman/DynamicRestProxy/master/nugeticon.png</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <licenseUrl>http://opensource.org/licenses/Apache-2.0</licenseUrl>
-    <copyright>Copyright Don Kackman 2013</copyright>
+    <copyright>Copyright Don Kackman</copyright>
     <dependencies>
+      <group targetFramework="portable-net45+win8+wpa81+dnx45" />
+      <group targetFramework="net40" />
+      <group targetFramework="netstandard1.1" />
     </dependencies>
     <references></references>
     <tags>Linq Statistics stats portable PCL</tags>
