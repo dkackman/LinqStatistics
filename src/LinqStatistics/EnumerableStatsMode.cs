@@ -29,7 +29,7 @@ namespace LinqStatistics
         /// <returns>The modes of a sequence of values</returns>
         public static IEnumerable<T> Modes<T>(this IEnumerable<T> source) where T : struct
         {
-            return from count in source.CountEach()
+            return from count in source.CountEach().OrderBy(item => item.RepresentativeValue)
                    where count.Count > 1
                    orderby count.Count descending
                    select count.RepresentativeValue;
