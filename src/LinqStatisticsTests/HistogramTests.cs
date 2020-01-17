@@ -60,23 +60,6 @@ namespace LinqStatistics.UnitTests
         }
 
         [TestMethod]
-        public void CountEachOrdersCorrectly()
-        {
-            var list = new List<int>()
-            {
-                9, 1, 1, 2, 8, 2, 2, 3, 3, 0, 3, 3, 4, 8, 4, 5, 4, 5, 5, 1, 5, 6, 0, 6, 7
-            };
-
-            var histogram = list.CountEach().ToList();
-            Assert.AreEqual(list.Count, histogram.Select(b => b.Count).Sum());
-
-            for (int i = 0; i < histogram.Count; i++)
-            {
-                Assert.AreEqual(i, histogram[i].RepresentativeValue);
-            }
-        }
-
-        [TestMethod]
         public void HistogramUnboundedLastBinHasMaxAsInfinity()
         {
             var list = new List<int>()
