@@ -80,7 +80,7 @@ namespace LinqStatistics.NaN
             if (selector == null)
                 throw new ArgumentNullException(nameof(selector));
 
-            return source.Select(selector).StandardDeviationNaN();
+            return source.Select(selector).StandardDeviationPNaN();
         }
 
         /// <summary>
@@ -151,7 +151,7 @@ namespace LinqStatistics.NaN
             if (selector == null)
                 throw new ArgumentNullException(nameof(selector));
 
-            return source.Select(selector).StandardDeviationNaN();
+            return source.Select(selector).StandardDeviationPNaN();
         }
 
         /// <summary>
@@ -222,7 +222,7 @@ namespace LinqStatistics.NaN
             if (selector == null)
                 throw new ArgumentNullException(nameof(selector));
 
-            return source.Select(selector).StandardDeviationNaN();
+            return source.Select(selector).StandardDeviationPNaN();
         }
 
         /// <summary>
@@ -293,7 +293,7 @@ namespace LinqStatistics.NaN
             if (selector == null)
                 throw new ArgumentNullException(nameof(selector));
 
-            return source.Select(selector).StandardDeviationNaN();
+            return source.Select(selector).StandardDeviationPNaN();
         }
     }
 }

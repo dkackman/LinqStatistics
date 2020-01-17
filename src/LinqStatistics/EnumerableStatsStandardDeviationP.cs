@@ -84,7 +84,7 @@ namespace LinqStatistics
             if (selector == null)
                 throw new ArgumentNullException(nameof(selector));
 
-            return source.Select(selector).StandardDeviation();
+            return source.Select(selector).StandardDeviationP();
         }
 
         /// <summary>
@@ -159,7 +159,7 @@ namespace LinqStatistics
             if (selector == null)
                 throw new ArgumentNullException(nameof(selector));
 
-            return source.Select(selector).StandardDeviation();
+            return source.Select(selector).StandardDeviationP();
         }
 
         /// <summary>
@@ -234,7 +234,7 @@ namespace LinqStatistics
             if (selector == null)
                 throw new ArgumentNullException(nameof(selector));
 
-            return source.Select(selector).StandardDeviation();
+            return source.Select(selector).StandardDeviationP();
         }
 
         /// <summary>
@@ -309,7 +309,7 @@ namespace LinqStatistics
             if (selector == null)
                 throw new ArgumentNullException(nameof(selector));
 
-            return source.Select(selector).StandardDeviation();
+            return source.Select(selector).StandardDeviationP();
         }
 
         /// <summary>
@@ -384,7 +384,7 @@ namespace LinqStatistics
             if (selector == null)
                 throw new ArgumentNullException(nameof(selector));
 
-            return source.Select(selector).StandardDeviation();
+            return source.Select(selector).StandardDeviationP();
         }
     }
 }
