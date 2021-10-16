@@ -56,13 +56,13 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\LinqStatistics\LinqStatistics.csproj">
-      <Project>{FA474C99-3F49-493F-8F18-D0EE98961595}</Project>
-      <Name>LinqStatistics</Name>
-    </ProjectReference>
+    <None Include="app.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="app.config" />
+    <ProjectReference Include="..\LinqStatistics\LinqStatistics.csproj">
+      <Project>{fa474c99-3f49-493f-8f18-d0ee98961595}</Project>
+      <Name>LinqStatistics</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

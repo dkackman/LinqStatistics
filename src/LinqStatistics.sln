@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.26430.6
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31729.503
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{699EEBB0-156D-483E-A05A-FAF990B0BE36}"
 	ProjectSection(SolutionItems) = preProject
@@ -75,6 +75,9 @@ Global
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{0451BAEF-DF2E-4B98-8644-94EE9415E389} = {47E5B368-4238-4B16-9798-5AF5A094A987}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9E4791CA-0CD0-4C10-B8B7-C43CD5A84332}
 	EndGlobalSection
 	GlobalSection(TestCaseManagementSettings) = postSolution
 		CategoryFile = LinqStatistics.vsmdi
