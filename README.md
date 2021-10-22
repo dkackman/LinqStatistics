@@ -1,7 +1,7 @@
 LinqStatistics
 ==============
 
-[![NuGet](https://img.shields.io/nuget/dt/chia-dotnet)](https://www.nuget.org/packages/LinqStatistics/)
+[![NuGet](https://img.shields.io/nuget/dt/LinqStatistics)](https://www.nuget.org/packages/LinqStatistics/)
 
 - [API Documentation](https://dkackman.github.io/LinqStatistics/)
 - [Background](http://www.codeproject.com/Articles/42492/Using-LINQ-to-Calculate-Basic-Statistics)
