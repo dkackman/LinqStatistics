@@ -55,7 +55,7 @@ namespace LinqStatistics
         }
 
         /// <summary>
-        /// <see cref="System.Object.GetHashCode"/>
+        /// <see cref="GetHashCode"/>
         /// </summary>
         /// <returns></returns>
         public override int GetHashCode()
@@ -74,12 +74,12 @@ namespace LinqStatistics
         /// <returns></returns>
         public static bool operator ==(Bin lhs, Bin rhs)
         {
-            if (object.ReferenceEquals(null, lhs) && object.ReferenceEquals(rhs, null))
+            if (lhs is null && rhs is null)
             {
                 return true;
             }
 
-            if (object.ReferenceEquals(null, lhs) || object.ReferenceEquals(rhs, null))
+            if (lhs is null || rhs is null)
             {
                 return false;
             }
@@ -99,18 +99,13 @@ namespace LinqStatistics
         }
 
         /// <summary>
-        /// <see cref="System.Object.Equals(object)"/>
+        /// <see cref="Equals(object)"/>
         /// </summary>
         /// <param name="obj"></param>
         /// <returns></returns>
         public override bool Equals(object obj)
         {
-            if (obj is Bin b)
-            {
-                this.Equals(b);
-            }
-
-            return false;
+            return obj is Bin b && this.Equals(b);
         }
 
         /// <summary>
@@ -122,14 +117,14 @@ namespace LinqStatistics
         {
             if (base.Equals(other))
             {
-                return other.Range == this.Range && other.MaxInclusive == this.MaxInclusive;
+                return other.Range == Range && other.MaxInclusive == MaxInclusive;
             }
 
             return false;
         }
 
         /// <summary>
-        /// <see cref="System.Object.ToString"/>
+        /// <see cref="ToString"/>
         /// </summary>
         /// <returns></returns>
         public override string ToString()

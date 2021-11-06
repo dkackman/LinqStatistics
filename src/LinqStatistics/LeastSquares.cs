@@ -117,18 +117,13 @@ namespace LinqStatistics
         }
 
         /// <summary>
-        /// <see cref="System.Object.Equals(object)"/>
+        /// <see cref="Equals(object)"/>
         /// </summary>
         /// <param name="obj">The object to compare to</param>
         /// <returns>True if obj is a LeastSquares and has equal m and b values</returns>
         public override bool Equals(object obj)
         {
-            if (obj is LeastSquares ls)
-            {
-                return this == ls;
-            }
-
-            return false;
+            return obj is LeastSquares ls && this == ls;
         }
 
         /// <summary>
@@ -142,7 +137,7 @@ namespace LinqStatistics
         }
 
         /// <summary>
-        /// <see cref="System.Object.GetHashCode"/>
+        /// <see cref="GetHashCode"/>
         /// </summary>
         /// <returns>Hascode of the instance</returns>
         public override int GetHashCode()
@@ -170,7 +165,7 @@ namespace LinqStatistics
         }
 
         /// <summary>
-        /// <see cref="System.Object.ToString"/>
+        /// <see cref="object.ToString"/>
         /// </summary>
         /// <returns></returns>
         public override string ToString()

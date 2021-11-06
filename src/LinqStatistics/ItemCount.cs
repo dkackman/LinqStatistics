@@ -33,10 +33,12 @@ namespace LinqStatistics
         /// <summary>
         /// The number of times RepresentativeValue appears in the source data
         /// </summary>
-        public int Count { get;
+        public int Count {
+            get;
 
             // this is marked internal so histogram binning can update Count while counting
-            internal set; }
+            internal set;
+        }
 
         /// <summary>
         /// 
@@ -46,12 +48,12 @@ namespace LinqStatistics
         /// <returns></returns>
         public static bool operator ==(ItemCount<T> lhs, ItemCount<T> rhs)
         {
-            if (object.ReferenceEquals(null, lhs) && object.ReferenceEquals(rhs, null))
+            if (lhs is null && rhs is null)
             {
                 return true;
             }
 
-            if (object.ReferenceEquals(null, lhs) || object.ReferenceEquals(rhs, null))
+            if (lhs is null || rhs is null)
             {
                 return false;
             }
@@ -71,18 +73,13 @@ namespace LinqStatistics
         }
 
         /// <summary>
-        /// <see cref="System.Object.Equals(object)"/>
+        /// <see cref="Equals(object)"/>
         /// </summary>
         /// <param name="obj">The item to compare to.</param>
         /// <returns>True if obj is a Bin{T} and Value and Count are equal</returns>
         public override bool Equals(object obj)
         {
-            if (obj is ItemCount<T> c)
-            {
-                return this.Equals(c);
-            }
-
-            return false;
+            return obj is ItemCount<T> c && this.Equals(c);
         }
 
         /// <summary>
@@ -92,21 +89,13 @@ namespace LinqStatistics
         /// <returns></returns>
         public bool Equals(ItemCount<T> other)
         {
-            if (other == null)
-            {
-                return false;
-            }
-
-            if (RepresentativeValue != null)
-            {
-                return this.RepresentativeValue.Equals(other.RepresentativeValue) && this.Count == other.Count;
-            }
-
-            return other.RepresentativeValue == null && this.Count == other.Count;
+            return other != null && (RepresentativeValue != null
+                ? RepresentativeValue.Equals(other.RepresentativeValue) && Count == other.Count
+                : other.RepresentativeValue == null && Count == other.Count);
         }
 
         /// <summary>
-        /// <see cref="System.Object.GetHashCode"/>
+        /// <see cref="GetHashCode"/>
         /// </summary>
         /// <returns>Hash of Value and Count</returns>
         public override int GetHashCode()
@@ -123,7 +112,7 @@ namespace LinqStatistics
         }
 
         /// <summary>
-        /// <see cref="System.Object.ToString"/>
+        /// <see cref="ToString"/>
         /// </summary>
         /// <returns></returns>
         public override string ToString()

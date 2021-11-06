@@ -1,6 +1,6 @@
-﻿using System.Collections.Generic;
-using LinqStatistics.NaN;
+﻿using LinqStatistics.NaN;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System.Collections.Generic;
 
 namespace LinqStatistics.UnitTests.NaN
 {

@@ -120,12 +120,7 @@ namespace LinqStatistics
         /// </returns>
         public override bool Equals(object obj)
         {
-            if (obj is Range<T> r)
-            {
-                return this == r;
-            }
-
-            return false;
+            return obj is Range<T> r && this == r;
         }
 
         /// <summary>
@@ -147,17 +142,7 @@ namespace LinqStatistics
         /// <returns></returns>
         public int CompareTo(object obj)
         {
-            if (obj == null)
-            {
-                return 1;
-            }
-
-            if (obj is Range<T> r)
-            {
-                return this.CompareTo(r);
-            }
-
-            throw new ArgumentException("Comparand must be of type Range<T>");
+            return obj == null ? 1 : obj is Range<T> r ? this.CompareTo(r) : throw new ArgumentException("Comparand must be of type Range<T>");
         }
 
         /// <summary>
@@ -167,17 +152,7 @@ namespace LinqStatistics
         /// <returns></returns>
         public int CompareTo(Range<T> other)
         {
-            if (this < other)
-            {
-                return -1;
-            }
-
-            if (this > other)
-            {
-                return 1;
-            }
-
-            return 0;
+            return this < other ? -1 : this > other ? 1 : 0;
         }
 
         /// <summary>
@@ -207,7 +182,7 @@ namespace LinqStatistics
 
         private static string Format(string min, string max)
         {
-            return String.Format(CultureInfo.CurrentCulture, "{0} — {1}", min, max);
+            return string.Format(CultureInfo.CurrentCulture, "{0} — {1}", min, max);
         }
 
         /// <summary>

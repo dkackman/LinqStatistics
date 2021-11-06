@@ -4,7 +4,7 @@ using System.Diagnostics;
 
 namespace LinqStatistics
 {
-    static class BinFactory
+    internal static class BinFactory
     {
         public static IEnumerable<Bin> CreateBins(double min, double max, int binCount, BinningMode mode)
         {
@@ -33,7 +33,7 @@ namespace LinqStatistics
             double rangeMax = rangeMin + binSize;
 
             // first create a list of all the bins so even empty bins are accounted for
-            List<Bin> bins = new List<Bin>(binCount);
+            var bins = new List<Bin>(binCount);
             for (int i = 0; i < binCount; i++)
             {
                 if (i == binCount - 1)
@@ -60,7 +60,7 @@ namespace LinqStatistics
             double rangeMax = rangeMin + binSize;
 
             // first create a list of all the bins so even empty bins are accounted for
-            List<Bin> bins = new List<Bin>(binCount);
+            var bins = new List<Bin>(binCount);
             for (int i = 0; i < binCount; i++)
             {
                 bins.Add(new Bin(rangeMin + halfBin, rangeMin, rangeMax));
@@ -83,7 +83,7 @@ namespace LinqStatistics
             double rangeMax = rangeMin + binSize;
 
             // first create a list of all the bins so even empty bins are accounted for
-            List<Bin> bins = new List<Bin>(binCount);
+            var bins = new List<Bin>(binCount);
             for (int i = 0; i < binCount; i++)
             {
                 bins.Add(new Bin(rangeMin + halfBin, rangeMin, rangeMax));

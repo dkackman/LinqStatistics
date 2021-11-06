@@ -1,11 +1,10 @@
-﻿using System;
+﻿using LinqStatistics;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Drawing.Imaging;
-using System.Runtime.InteropServices;
 using System.IO;
-
-using LinqStatistics;
+using System.Runtime.InteropServices;
 
 namespace ConsoleApplication1
 {
@@ -35,7 +34,7 @@ namespace ConsoleApplication1
                 int? mode = colors.Mode<int>();
                 if (mode.HasValue)
                 {
-                    Color color = Color.FromArgb(mode.Value);                    
+                    Color color = Color.FromArgb(mode.Value);
                     Console.WriteLine("Modal color is R={0}, G={1}, B={2}", color.R, color.G, color.B);
                 }
                 else
