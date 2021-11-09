@@ -36,7 +36,7 @@ namespace LinqStatistics
 
     public static partial class EnumerableStats
     {
-        /// <summary>
+            /// <summary>
         /// Computes the Histogram of a sequence of int values.
         /// </summary>
         /// <param name="source">A sequence of int values to calculate the Histogram of.</param>
@@ -117,7 +117,7 @@ namespace LinqStatistics
 
             return source.Select(t => selector(t)).Histogram(binCount, mode);
         }
-        /// <summary>
+                /// <summary>
         /// Computes the Histogram of a sequence of long values.
         /// </summary>
         /// <param name="source">A sequence of long values to calculate the Histogram of.</param>
@@ -198,7 +198,7 @@ namespace LinqStatistics
 
             return source.Select(t => selector(t)).Histogram(binCount, mode);
         }
-        /// <summary>
+                /// <summary>
         /// Computes the Histogram of a sequence of float values.
         /// </summary>
         /// <param name="source">A sequence of float values to calculate the Histogram of.</param>
@@ -279,7 +279,7 @@ namespace LinqStatistics
 
             return source.Select(t => selector(t)).Histogram(binCount, mode);
         }
-        /// <summary>
+                /// <summary>
         /// Computes the Histogram of a sequence of double values.
         /// </summary>
         /// <param name="source">A sequence of double values to calculate the Histogram of.</param>
@@ -360,7 +360,7 @@ namespace LinqStatistics
 
             return source.Select(t => selector(t)).Histogram(binCount, mode);
         }
-        /// <summary>
+                /// <summary>
         /// Computes the Histogram of a sequence of decimal values.
         /// </summary>
         /// <param name="source">A sequence of decimal values to calculate the Histogram of.</param>
@@ -441,5 +441,5 @@ namespace LinqStatistics
 
             return source.Select(t => selector(t)).Histogram(binCount, mode);
         }
-    }
+            }
 }

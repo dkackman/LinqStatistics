@@ -11,7 +11,7 @@ namespace LinqStatistics
 {
     public static partial class EnumerableStats
     {
-
+    	
         /// <summary>
         /// Computes the Median of a sequence of mullable int values, or null if the source sequence is
         ///     empty or contains only values that are null.
@@ -38,8 +38,8 @@ namespace LinqStatistics
                 throw new ArgumentNullException(nameof(source));
 
             var sortedList = (from number in source
-                              orderby number
-                              select (double)number).ToList();
+                             orderby number
+                             select (double)number).ToList();
 
             int count = sortedList.Count;
             int itemIndex = count / 2;
@@ -91,7 +91,7 @@ namespace LinqStatistics
 
             return source.Select(selector).Median();
         }
-
+ 	
         /// <summary>
         /// Computes the Median of a sequence of mullable long values, or null if the source sequence is
         ///     empty or contains only values that are null.
@@ -118,8 +118,8 @@ namespace LinqStatistics
                 throw new ArgumentNullException(nameof(source));
 
             var sortedList = (from number in source
-                              orderby number
-                              select (double)number).ToList();
+                             orderby number
+                             select (double)number).ToList();
 
             int count = sortedList.Count;
             int itemIndex = count / 2;
@@ -171,7 +171,7 @@ namespace LinqStatistics
 
             return source.Select(selector).Median();
         }
-
+ 	
         /// <summary>
         /// Computes the Median of a sequence of mullable decimal values, or null if the source sequence is
         ///     empty or contains only values that are null.
@@ -198,8 +198,8 @@ namespace LinqStatistics
                 throw new ArgumentNullException(nameof(source));
 
             var sortedList = (from number in source
-                              orderby number
-                              select (decimal)number).ToList();
+                             orderby number
+                             select (decimal)number).ToList();
 
             int count = sortedList.Count;
             int itemIndex = count / 2;
@@ -251,7 +251,7 @@ namespace LinqStatistics
 
             return source.Select(selector).Median();
         }
-
+ 	
         /// <summary>
         /// Computes the Median of a sequence of mullable float values, or null if the source sequence is
         ///     empty or contains only values that are null.
@@ -278,8 +278,8 @@ namespace LinqStatistics
                 throw new ArgumentNullException(nameof(source));
 
             var sortedList = (from number in source
-                              orderby number
-                              select (float)number).ToList();
+                             orderby number
+                             select (float)number).ToList();
 
             int count = sortedList.Count;
             int itemIndex = count / 2;
@@ -331,7 +331,7 @@ namespace LinqStatistics
 
             return source.Select(selector).Median();
         }
-
+ 	
         /// <summary>
         /// Computes the Median of a sequence of mullable double values, or null if the source sequence is
         ///     empty or contains only values that are null.
@@ -358,8 +358,8 @@ namespace LinqStatistics
                 throw new ArgumentNullException(nameof(source));
 
             var sortedList = (from number in source
-                              orderby number
-                              select (double)number).ToList();
+                             orderby number
+                             select (double)number).ToList();
 
             int count = sortedList.Count;
             int itemIndex = count / 2;
@@ -411,5 +411,5 @@ namespace LinqStatistics
 
             return source.Select(selector).Median();
         }
-    }
+     }
 }

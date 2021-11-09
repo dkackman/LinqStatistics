@@ -11,7 +11,7 @@ namespace LinqStatistics
 {
     public static partial class EnumerableStats
     {
-
+    	
         /// <summary>
         /// Computes the Covariance of two sequences of nullable int values.
         /// </summary>
@@ -52,7 +52,7 @@ namespace LinqStatistics
 
             var avgSource = listSource.Average();
             var avgOther = listOther.Average();
-
+            
             double covariance = 0;
             checked
             {
@@ -64,9 +64,9 @@ namespace LinqStatistics
 
             // Average (above) will except on empty lists so we don't need to check for divide by zero here
             // Also can just use one list's count since we check that both are of the same length
-            return covariance / listSource.Count;
-        }
-
+            return covariance / listSource.Count; 
+        }               
+ 	
         /// <summary>
         /// Computes the Covariance of two sequences of nullable long values.
         /// </summary>
@@ -107,7 +107,7 @@ namespace LinqStatistics
 
             var avgSource = listSource.Average();
             var avgOther = listOther.Average();
-
+            
             double covariance = 0;
             checked
             {
@@ -119,9 +119,9 @@ namespace LinqStatistics
 
             // Average (above) will except on empty lists so we don't need to check for divide by zero here
             // Also can just use one list's count since we check that both are of the same length
-            return covariance / listSource.Count;
-        }
-
+            return covariance / listSource.Count; 
+        }               
+ 	
         /// <summary>
         /// Computes the Covariance of two sequences of nullable decimal values.
         /// </summary>
@@ -162,7 +162,7 @@ namespace LinqStatistics
 
             var avgSource = listSource.Average();
             var avgOther = listOther.Average();
-
+            
             decimal covariance = 0;
             checked
             {
@@ -174,9 +174,9 @@ namespace LinqStatistics
 
             // Average (above) will except on empty lists so we don't need to check for divide by zero here
             // Also can just use one list's count since we check that both are of the same length
-            return covariance / listSource.Count;
-        }
-
+            return covariance / listSource.Count; 
+        }               
+ 	
         /// <summary>
         /// Computes the Covariance of two sequences of nullable float values.
         /// </summary>
@@ -217,7 +217,7 @@ namespace LinqStatistics
 
             var avgSource = listSource.Average();
             var avgOther = listOther.Average();
-
+            
             float covariance = 0;
             checked
             {
@@ -229,9 +229,9 @@ namespace LinqStatistics
 
             // Average (above) will except on empty lists so we don't need to check for divide by zero here
             // Also can just use one list's count since we check that both are of the same length
-            return covariance / listSource.Count;
-        }
-
+            return covariance / listSource.Count; 
+        }               
+ 	
         /// <summary>
         /// Computes the Covariance of two sequences of nullable double values.
         /// </summary>
@@ -272,7 +272,7 @@ namespace LinqStatistics
 
             var avgSource = listSource.Average();
             var avgOther = listOther.Average();
-
+            
             double covariance = 0;
             checked
             {
@@ -284,7 +284,7 @@ namespace LinqStatistics
 
             // Average (above) will except on empty lists so we don't need to check for divide by zero here
             // Also can just use one list's count since we check that both are of the same length
-            return covariance / listSource.Count;
-        }
-    }
+            return covariance / listSource.Count; 
+        }               
+     }
 }

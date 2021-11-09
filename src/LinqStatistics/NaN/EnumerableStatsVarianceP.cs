@@ -11,7 +11,7 @@ namespace LinqStatistics.NaN
 {
     public static partial class EnumerableStats
     {
-
+    	
         /// <summary>
         /// Computes the population Variance of a sequence of nullable int values.
         /// </summary>
@@ -25,7 +25,7 @@ namespace LinqStatistics.NaN
             var values = source.AllValues();
             if (values.Any())
                 return values.VariancePNaN();
-
+            
             return null;
         }
 
@@ -46,11 +46,11 @@ namespace LinqStatistics.NaN
             double M2 = 0;
 
             checked
-            {
+            { 
                 foreach (var x in source)
                 {
                     n++;
-
+                
                     double delta = (double)x - mean;
                     mean += delta / n;
                     M2 += delta * ((double)x - mean);
@@ -104,7 +104,7 @@ namespace LinqStatistics.NaN
 
             return source.Select(selector).VariancePNaN();
         }
-
+ 	
         /// <summary>
         /// Computes the population Variance of a sequence of nullable long values.
         /// </summary>
@@ -118,7 +118,7 @@ namespace LinqStatistics.NaN
             var values = source.AllValues();
             if (values.Any())
                 return values.VariancePNaN();
-
+            
             return null;
         }
 
@@ -139,11 +139,11 @@ namespace LinqStatistics.NaN
             double M2 = 0;
 
             checked
-            {
+            { 
                 foreach (var x in source)
                 {
                     n++;
-
+                
                     double delta = (double)x - mean;
                     mean += delta / n;
                     M2 += delta * ((double)x - mean);
@@ -197,7 +197,7 @@ namespace LinqStatistics.NaN
 
             return source.Select(selector).VariancePNaN();
         }
-
+ 	
         /// <summary>
         /// Computes the population Variance of a sequence of nullable float values.
         /// </summary>
@@ -211,7 +211,7 @@ namespace LinqStatistics.NaN
             var values = source.AllValues();
             if (values.Any())
                 return values.VariancePNaN();
-
+            
             return null;
         }
 
@@ -232,11 +232,11 @@ namespace LinqStatistics.NaN
             double M2 = 0;
 
             checked
-            {
+            { 
                 foreach (var x in source)
                 {
                     n++;
-
+                
                     double delta = (double)x - mean;
                     mean += delta / n;
                     M2 += delta * ((double)x - mean);
@@ -290,7 +290,7 @@ namespace LinqStatistics.NaN
 
             return source.Select(selector).VariancePNaN();
         }
-
+ 	
         /// <summary>
         /// Computes the population Variance of a sequence of nullable double values.
         /// </summary>
@@ -304,7 +304,7 @@ namespace LinqStatistics.NaN
             var values = source.AllValues();
             if (values.Any())
                 return values.VariancePNaN();
-
+            
             return null;
         }
 
@@ -325,11 +325,11 @@ namespace LinqStatistics.NaN
             double M2 = 0;
 
             checked
-            {
+            { 
                 foreach (var x in source)
                 {
                     n++;
-
+                
                     double delta = (double)x - mean;
                     mean += delta / n;
                     M2 += delta * ((double)x - mean);
@@ -383,5 +383,5 @@ namespace LinqStatistics.NaN
 
             return source.Select(selector).VariancePNaN();
         }
-    }
+     }
 }

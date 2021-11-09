@@ -11,7 +11,7 @@ namespace LinqStatistics.NaN
 {
     public static partial class EnumerableStats
     {
-
+    	
         /// <summary>
         /// Computes the Covariance of two sequences of nullable int values.
         /// </summary>
@@ -47,10 +47,10 @@ namespace LinqStatistics.NaN
 
             if (listSource.Count != listOther.Count)
                 throw new InvalidOperationException("Collections are not of the same length");
-
+            
             var avgSource = listSource.AverageNaN();
             var avgOther = listOther.AverageNaN();
-
+            
             // because we checked that both lists are of the same length we only need to check one list is valid
             if (double.IsNaN(avgSource))
                 return double.NaN;
@@ -58,16 +58,16 @@ namespace LinqStatistics.NaN
             double covariance = 0;
 
             checked
-            {
+            { 
                 for (int i = 0; i < listSource.Count; i++)
                 {
                     covariance += (double)((listSource[i] - avgSource) * (listOther[i] - avgOther));
                 }
             }
 
-            return (double)(covariance / listSource.Count);
-        }
-
+            return (double)(covariance / listSource.Count); 
+        }               
+ 	
         /// <summary>
         /// Computes the Covariance of two sequences of nullable long values.
         /// </summary>
@@ -103,10 +103,10 @@ namespace LinqStatistics.NaN
 
             if (listSource.Count != listOther.Count)
                 throw new InvalidOperationException("Collections are not of the same length");
-
+            
             var avgSource = listSource.AverageNaN();
             var avgOther = listOther.AverageNaN();
-
+            
             // because we checked that both lists are of the same length we only need to check one list is valid
             if (double.IsNaN(avgSource))
                 return double.NaN;
@@ -114,16 +114,16 @@ namespace LinqStatistics.NaN
             double covariance = 0;
 
             checked
-            {
+            { 
                 for (int i = 0; i < listSource.Count; i++)
                 {
                     covariance += (double)((listSource[i] - avgSource) * (listOther[i] - avgOther));
                 }
             }
 
-            return (double)(covariance / listSource.Count);
-        }
-
+            return (double)(covariance / listSource.Count); 
+        }               
+ 	
         /// <summary>
         /// Computes the Covariance of two sequences of nullable float values.
         /// </summary>
@@ -159,10 +159,10 @@ namespace LinqStatistics.NaN
 
             if (listSource.Count != listOther.Count)
                 throw new InvalidOperationException("Collections are not of the same length");
-
+            
             var avgSource = listSource.AverageNaN();
             var avgOther = listOther.AverageNaN();
-
+            
             // because we checked that both lists are of the same length we only need to check one list is valid
             if (float.IsNaN(avgSource))
                 return float.NaN;
@@ -170,16 +170,16 @@ namespace LinqStatistics.NaN
             double covariance = 0;
 
             checked
-            {
+            { 
                 for (int i = 0; i < listSource.Count; i++)
                 {
                     covariance += (double)((listSource[i] - avgSource) * (listOther[i] - avgOther));
                 }
             }
 
-            return (float)(covariance / listSource.Count);
-        }
-
+            return (float)(covariance / listSource.Count); 
+        }               
+ 	
         /// <summary>
         /// Computes the Covariance of two sequences of nullable double values.
         /// </summary>
@@ -215,10 +215,10 @@ namespace LinqStatistics.NaN
 
             if (listSource.Count != listOther.Count)
                 throw new InvalidOperationException("Collections are not of the same length");
-
+            
             var avgSource = listSource.AverageNaN();
             var avgOther = listOther.AverageNaN();
-
+            
             // because we checked that both lists are of the same length we only need to check one list is valid
             if (double.IsNaN(avgSource))
                 return double.NaN;
@@ -226,14 +226,14 @@ namespace LinqStatistics.NaN
             double covariance = 0;
 
             checked
-            {
+            { 
                 for (int i = 0; i < listSource.Count; i++)
                 {
                     covariance += (double)((listSource[i] - avgSource) * (listOther[i] - avgOther));
                 }
             }
 
-            return (double)(covariance / listSource.Count);
-        }
-    }
+            return (double)(covariance / listSource.Count); 
+        }               
+     }
 }

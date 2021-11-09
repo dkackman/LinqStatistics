@@ -11,7 +11,7 @@ namespace LinqStatistics
 {
     public static partial class EnumerableStats
     {
-
+    	
         /// <summary>
         /// Computes the sample StandardDeviation of a sequence of nullable int values.
         /// </summary>
@@ -26,7 +26,7 @@ namespace LinqStatistics
             var values = source.AllValues();
             if (values.Any())
                 return values.StandardDeviation();
-
+            
             return null;
         }
 
@@ -86,7 +86,7 @@ namespace LinqStatistics
 
             return source.Select(selector).StandardDeviation();
         }
-
+ 	
         /// <summary>
         /// Computes the sample StandardDeviation of a sequence of nullable long values.
         /// </summary>
@@ -101,7 +101,7 @@ namespace LinqStatistics
             var values = source.AllValues();
             if (values.Any())
                 return values.StandardDeviation();
-
+            
             return null;
         }
 
@@ -161,7 +161,7 @@ namespace LinqStatistics
 
             return source.Select(selector).StandardDeviation();
         }
-
+ 	
         /// <summary>
         /// Computes the sample StandardDeviation of a sequence of nullable decimal values.
         /// </summary>
@@ -176,7 +176,7 @@ namespace LinqStatistics
             var values = source.AllValues();
             if (values.Any())
                 return values.StandardDeviation();
-
+            
             return null;
         }
 
@@ -236,7 +236,7 @@ namespace LinqStatistics
 
             return source.Select(selector).StandardDeviation();
         }
-
+ 	
         /// <summary>
         /// Computes the sample StandardDeviation of a sequence of nullable float values.
         /// </summary>
@@ -251,7 +251,7 @@ namespace LinqStatistics
             var values = source.AllValues();
             if (values.Any())
                 return values.StandardDeviation();
-
+            
             return null;
         }
 
@@ -311,7 +311,7 @@ namespace LinqStatistics
 
             return source.Select(selector).StandardDeviation();
         }
-
+ 	
         /// <summary>
         /// Computes the sample StandardDeviation of a sequence of nullable double values.
         /// </summary>
@@ -326,7 +326,7 @@ namespace LinqStatistics
             var values = source.AllValues();
             if (values.Any())
                 return values.StandardDeviation();
-
+            
             return null;
         }
 
@@ -386,5 +386,5 @@ namespace LinqStatistics
 
             return source.Select(selector).StandardDeviation();
         }
-    }
+     }
 }

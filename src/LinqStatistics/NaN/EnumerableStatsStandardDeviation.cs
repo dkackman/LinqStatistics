@@ -11,7 +11,7 @@ namespace LinqStatistics.NaN
 {
     public static partial class EnumerableStats
     {
-
+    	
         /// <summary>
         /// Computes the sample StandardDeviation of a sequence of nullable int values.
         /// </summary>
@@ -25,7 +25,7 @@ namespace LinqStatistics.NaN
             var values = source.AllValues();
             if (values.Any())
                 return values.StandardDeviationNaN();
-
+            
             return null;
         }
 
@@ -82,7 +82,7 @@ namespace LinqStatistics.NaN
 
             return source.Select(selector).StandardDeviationNaN();
         }
-
+ 	
         /// <summary>
         /// Computes the sample StandardDeviation of a sequence of nullable long values.
         /// </summary>
@@ -96,7 +96,7 @@ namespace LinqStatistics.NaN
             var values = source.AllValues();
             if (values.Any())
                 return values.StandardDeviationNaN();
-
+            
             return null;
         }
 
@@ -153,7 +153,7 @@ namespace LinqStatistics.NaN
 
             return source.Select(selector).StandardDeviationNaN();
         }
-
+ 	
         /// <summary>
         /// Computes the sample StandardDeviation of a sequence of nullable float values.
         /// </summary>
@@ -167,7 +167,7 @@ namespace LinqStatistics.NaN
             var values = source.AllValues();
             if (values.Any())
                 return values.StandardDeviationNaN();
-
+            
             return null;
         }
 
@@ -224,7 +224,7 @@ namespace LinqStatistics.NaN
 
             return source.Select(selector).StandardDeviationNaN();
         }
-
+ 	
         /// <summary>
         /// Computes the sample StandardDeviation of a sequence of nullable double values.
         /// </summary>
@@ -238,7 +238,7 @@ namespace LinqStatistics.NaN
             var values = source.AllValues();
             if (values.Any())
                 return values.StandardDeviationNaN();
-
+            
             return null;
         }
 
@@ -295,5 +295,5 @@ namespace LinqStatistics.NaN
 
             return source.Select(selector).StandardDeviationNaN();
         }
-    }
+     }
 }

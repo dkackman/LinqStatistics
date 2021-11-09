@@ -11,7 +11,7 @@ namespace LinqStatistics
 {
     public static partial class EnumerableStats
     {
-
+    	
         /// <summary>
         /// Computes the MinMax of a sequence of nullable int values.
         /// </summary>
@@ -32,7 +32,7 @@ namespace LinqStatistics
         /// <param name="source">The sequence of elements.</param>
         /// <returns>The MinMax.</returns>
         public static Range<int> MinMax(this IEnumerable<int> source)
-        {
+        {            
             if (source == null)
                 throw new ArgumentNullException(nameof(source));
 
@@ -93,7 +93,7 @@ namespace LinqStatistics
 
             return source.Select(selector).MinMax();
         }
-
+ 	
         /// <summary>
         /// Computes the MinMax of a sequence of nullable long values.
         /// </summary>
@@ -114,7 +114,7 @@ namespace LinqStatistics
         /// <param name="source">The sequence of elements.</param>
         /// <returns>The MinMax.</returns>
         public static Range<long> MinMax(this IEnumerable<long> source)
-        {
+        {            
             if (source == null)
                 throw new ArgumentNullException(nameof(source));
 
@@ -175,7 +175,7 @@ namespace LinqStatistics
 
             return source.Select(selector).MinMax();
         }
-
+ 	
         /// <summary>
         /// Computes the MinMax of a sequence of nullable float values.
         /// </summary>
@@ -196,7 +196,7 @@ namespace LinqStatistics
         /// <param name="source">The sequence of elements.</param>
         /// <returns>The MinMax.</returns>
         public static Range<float> MinMax(this IEnumerable<float> source)
-        {
+        {            
             if (source == null)
                 throw new ArgumentNullException(nameof(source));
 
@@ -257,7 +257,7 @@ namespace LinqStatistics
 
             return source.Select(selector).MinMax();
         }
-
+ 	
         /// <summary>
         /// Computes the MinMax of a sequence of nullable double values.
         /// </summary>
@@ -278,7 +278,7 @@ namespace LinqStatistics
         /// <param name="source">The sequence of elements.</param>
         /// <returns>The MinMax.</returns>
         public static Range<double> MinMax(this IEnumerable<double> source)
-        {
+        {            
             if (source == null)
                 throw new ArgumentNullException(nameof(source));
 
@@ -339,7 +339,7 @@ namespace LinqStatistics
 
             return source.Select(selector).MinMax();
         }
-
+ 	
         /// <summary>
         /// Computes the MinMax of a sequence of nullable decimal values.
         /// </summary>
@@ -360,7 +360,7 @@ namespace LinqStatistics
         /// <param name="source">The sequence of elements.</param>
         /// <returns>The MinMax.</returns>
         public static Range<decimal> MinMax(this IEnumerable<decimal> source)
-        {
+        {            
             if (source == null)
                 throw new ArgumentNullException(nameof(source));
 
@@ -421,5 +421,5 @@ namespace LinqStatistics
 
             return source.Select(selector).MinMax();
         }
-    }
+     }
 }

@@ -11,7 +11,7 @@ namespace LinqStatistics.NaN
 {
     public static partial class EnumerableStats
     {
-
+    	
         /// <summary>
         /// Computes the Pearson of two sequences of nullable int values.
         /// </summary>
@@ -53,7 +53,7 @@ namespace LinqStatistics.NaN
 
             return x.CovarianceNaN(y) / (x.StandardDeviationPNaN() * y.StandardDeviationPNaN());
         }
-
+        
         /// <summary>
         ///     Computes the Pearson of a sequence of nullable int values that are obtained
         ///     by invoking a transform function on each element of the input sequence.
@@ -68,10 +68,10 @@ namespace LinqStatistics.NaN
             if (source == null)
                 throw new ArgumentNullException(nameof(source));
 
-            if (other == null)
+             if (other == null)
                 throw new ArgumentNullException(nameof(other));
 
-            if (selector == null)
+           if (selector == null)
                 throw new ArgumentNullException(nameof(selector));
 
             return source.Select(selector).PearsonNaN(other.Select(selector));
@@ -99,7 +99,7 @@ namespace LinqStatistics.NaN
 
             return source.Select(selector).PearsonNaN(other.Select(selector));
         }
-
+ 	
         /// <summary>
         /// Computes the Pearson of two sequences of nullable long values.
         /// </summary>
@@ -141,7 +141,7 @@ namespace LinqStatistics.NaN
 
             return x.CovarianceNaN(y) / (x.StandardDeviationPNaN() * y.StandardDeviationPNaN());
         }
-
+        
         /// <summary>
         ///     Computes the Pearson of a sequence of nullable long values that are obtained
         ///     by invoking a transform function on each element of the input sequence.
@@ -156,10 +156,10 @@ namespace LinqStatistics.NaN
             if (source == null)
                 throw new ArgumentNullException(nameof(source));
 
-            if (other == null)
+             if (other == null)
                 throw new ArgumentNullException(nameof(other));
 
-            if (selector == null)
+           if (selector == null)
                 throw new ArgumentNullException(nameof(selector));
 
             return source.Select(selector).PearsonNaN(other.Select(selector));
@@ -187,7 +187,7 @@ namespace LinqStatistics.NaN
 
             return source.Select(selector).PearsonNaN(other.Select(selector));
         }
-
+ 	
         /// <summary>
         /// Computes the Pearson of two sequences of nullable float values.
         /// </summary>
@@ -229,7 +229,7 @@ namespace LinqStatistics.NaN
 
             return x.CovarianceNaN(y) / (x.StandardDeviationPNaN() * y.StandardDeviationPNaN());
         }
-
+        
         /// <summary>
         ///     Computes the Pearson of a sequence of nullable float values that are obtained
         ///     by invoking a transform function on each element of the input sequence.
@@ -244,10 +244,10 @@ namespace LinqStatistics.NaN
             if (source == null)
                 throw new ArgumentNullException(nameof(source));
 
-            if (other == null)
+             if (other == null)
                 throw new ArgumentNullException(nameof(other));
 
-            if (selector == null)
+           if (selector == null)
                 throw new ArgumentNullException(nameof(selector));
 
             return source.Select(selector).PearsonNaN(other.Select(selector));
@@ -275,7 +275,7 @@ namespace LinqStatistics.NaN
 
             return source.Select(selector).PearsonNaN(other.Select(selector));
         }
-
+ 	
         /// <summary>
         /// Computes the Pearson of two sequences of nullable double values.
         /// </summary>
@@ -317,7 +317,7 @@ namespace LinqStatistics.NaN
 
             return x.CovarianceNaN(y) / (x.StandardDeviationPNaN() * y.StandardDeviationPNaN());
         }
-
+        
         /// <summary>
         ///     Computes the Pearson of a sequence of nullable double values that are obtained
         ///     by invoking a transform function on each element of the input sequence.
@@ -332,10 +332,10 @@ namespace LinqStatistics.NaN
             if (source == null)
                 throw new ArgumentNullException(nameof(source));
 
-            if (other == null)
+             if (other == null)
                 throw new ArgumentNullException(nameof(other));
 
-            if (selector == null)
+           if (selector == null)
                 throw new ArgumentNullException(nameof(selector));
 
             return source.Select(selector).PearsonNaN(other.Select(selector));
@@ -363,5 +363,5 @@ namespace LinqStatistics.NaN
 
             return source.Select(selector).PearsonNaN(other.Select(selector));
         }
-    }
+     }
 }

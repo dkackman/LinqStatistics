@@ -11,7 +11,7 @@ namespace LinqStatistics
 {
     public static partial class EnumerableStats
     {
-
+    	
         /// <summary>
         /// Computes the sample Skewness of a sequence of nullable int values
         /// </summary>
@@ -44,7 +44,7 @@ namespace LinqStatistics
             long n = 0;
 
             checked
-            {
+            { 
                 foreach (var x in source)
                 {
                     n++;
@@ -97,7 +97,7 @@ namespace LinqStatistics
 
             return source.Select(selector).Skewness();
         }
-
+ 	
         /// <summary>
         /// Computes the sample Skewness of a sequence of nullable long values
         /// </summary>
@@ -130,7 +130,7 @@ namespace LinqStatistics
             long n = 0;
 
             checked
-            {
+            { 
                 foreach (var x in source)
                 {
                     n++;
@@ -183,7 +183,7 @@ namespace LinqStatistics
 
             return source.Select(selector).Skewness();
         }
-
+ 	
         /// <summary>
         /// Computes the sample Skewness of a sequence of nullable decimal values
         /// </summary>
@@ -216,7 +216,7 @@ namespace LinqStatistics
             long n = 0;
 
             checked
-            {
+            { 
                 foreach (var x in source)
                 {
                     n++;
@@ -269,7 +269,7 @@ namespace LinqStatistics
 
             return source.Select(selector).Skewness();
         }
-
+ 	
         /// <summary>
         /// Computes the sample Skewness of a sequence of nullable float values
         /// </summary>
@@ -302,7 +302,7 @@ namespace LinqStatistics
             long n = 0;
 
             checked
-            {
+            { 
                 foreach (var x in source)
                 {
                     n++;
@@ -355,7 +355,7 @@ namespace LinqStatistics
 
             return source.Select(selector).Skewness();
         }
-
+ 	
         /// <summary>
         /// Computes the sample Skewness of a sequence of nullable double values
         /// </summary>
@@ -388,7 +388,7 @@ namespace LinqStatistics
             long n = 0;
 
             checked
-            {
+            { 
                 foreach (var x in source)
                 {
                     n++;
@@ -441,5 +441,5 @@ namespace LinqStatistics
 
             return source.Select(selector).Skewness();
         }
-    }
+     }
 }

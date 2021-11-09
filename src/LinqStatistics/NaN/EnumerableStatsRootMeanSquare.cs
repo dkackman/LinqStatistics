@@ -11,7 +11,7 @@ namespace LinqStatistics.NaN
 {
     public static partial class EnumerableStats
     {
-
+    	
         /// <summary>
         ///     The RootMeanSquare of the sequence of nullable int values, or null if the source sequence is
         ///     empty or contains only values that are null.
@@ -41,7 +41,7 @@ namespace LinqStatistics.NaN
             long n = 0;
 
             checked
-            {
+            { 
                 foreach (var d in source)
                 {
                     n++;
@@ -84,15 +84,15 @@ namespace LinqStatistics.NaN
         /// <returns>The RootMeanSquare.</returns>
         public static double RootMeanSquareNaN<TSource>(this IEnumerable<TSource> source, Func<TSource, int> selector)
         {
-            if (source == null)
+             if (source == null)
                 throw new ArgumentNullException(nameof(source));
 
             if (selector == null)
                 throw new ArgumentNullException(nameof(selector));
 
-            return source.Select(selector).RootMeanSquareNaN();
+           return source.Select(selector).RootMeanSquareNaN();
         }
-
+ 	
         /// <summary>
         ///     The RootMeanSquare of the sequence of nullable long values, or null if the source sequence is
         ///     empty or contains only values that are null.
@@ -122,7 +122,7 @@ namespace LinqStatistics.NaN
             long n = 0;
 
             checked
-            {
+            { 
                 foreach (var d in source)
                 {
                     n++;
@@ -165,15 +165,15 @@ namespace LinqStatistics.NaN
         /// <returns>The RootMeanSquare.</returns>
         public static double RootMeanSquareNaN<TSource>(this IEnumerable<TSource> source, Func<TSource, long> selector)
         {
-            if (source == null)
+             if (source == null)
                 throw new ArgumentNullException(nameof(source));
 
             if (selector == null)
                 throw new ArgumentNullException(nameof(selector));
 
-            return source.Select(selector).RootMeanSquareNaN();
+           return source.Select(selector).RootMeanSquareNaN();
         }
-
+ 	
         /// <summary>
         ///     The RootMeanSquare of the sequence of nullable float values, or null if the source sequence is
         ///     empty or contains only values that are null.
@@ -203,7 +203,7 @@ namespace LinqStatistics.NaN
             long n = 0;
 
             checked
-            {
+            { 
                 foreach (var d in source)
                 {
                     n++;
@@ -246,15 +246,15 @@ namespace LinqStatistics.NaN
         /// <returns>The RootMeanSquare.</returns>
         public static float RootMeanSquareNaN<TSource>(this IEnumerable<TSource> source, Func<TSource, float> selector)
         {
-            if (source == null)
+             if (source == null)
                 throw new ArgumentNullException(nameof(source));
 
             if (selector == null)
                 throw new ArgumentNullException(nameof(selector));
 
-            return source.Select(selector).RootMeanSquareNaN();
+           return source.Select(selector).RootMeanSquareNaN();
         }
-
+ 	
         /// <summary>
         ///     The RootMeanSquare of the sequence of nullable double values, or null if the source sequence is
         ///     empty or contains only values that are null.
@@ -284,7 +284,7 @@ namespace LinqStatistics.NaN
             long n = 0;
 
             checked
-            {
+            { 
                 foreach (var d in source)
                 {
                     n++;
@@ -327,13 +327,13 @@ namespace LinqStatistics.NaN
         /// <returns>The RootMeanSquare.</returns>
         public static double RootMeanSquareNaN<TSource>(this IEnumerable<TSource> source, Func<TSource, double> selector)
         {
-            if (source == null)
+             if (source == null)
                 throw new ArgumentNullException(nameof(source));
 
             if (selector == null)
                 throw new ArgumentNullException(nameof(selector));
 
-            return source.Select(selector).RootMeanSquareNaN();
+           return source.Select(selector).RootMeanSquareNaN();
         }
-    }
+     }
 }
