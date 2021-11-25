@@ -30,7 +30,9 @@ namespace LinqStatistics
             Max = max;
 
             if (!noThrow && min.CompareTo(max) > 0)
+            {
                 throw new InvalidOperationException("Minimum must be less then maximum");
+            }
         }
 
         /// <summary>
@@ -142,7 +144,7 @@ namespace LinqStatistics
         /// <returns></returns>
         public int CompareTo(object obj)
         {
-            return obj == null ? 1 : obj is Range<T> r ? this.CompareTo(r) : throw new ArgumentException("Comparand must be of type Range<T>");
+            return obj is null ? 1 : obj is Range<T> r ? this.CompareTo(r) : throw new ArgumentException("Comparand must be of type Range<T>");
         }
 
         /// <summary>

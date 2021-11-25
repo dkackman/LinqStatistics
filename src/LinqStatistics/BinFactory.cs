@@ -9,7 +9,9 @@ namespace LinqStatistics
         public static IEnumerable<Bin> CreateBins(double min, double max, int binCount, BinningMode mode)
         {
             if (binCount <= 0)
+            {
                 throw new InvalidOperationException("binCount must be greater than 0");
+            }
 
             if (mode == BinningMode.Unbounded)
             {

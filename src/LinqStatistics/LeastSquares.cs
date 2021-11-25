@@ -71,7 +71,10 @@ namespace LinqStatistics
         /// <returns>X value (x = (y - b) / m)</returns>
         public double SolveForX(double y)
         {
-            if (M == 0.0) throw new InvalidOperationException("Cannot solve for X when the equation slope (M) is zero");
+            if (M == 0.0)
+            {
+                throw new InvalidOperationException("Cannot solve for X when the equation slope (M) is zero");
+            }
 
             return (y - B) / M;
         }
