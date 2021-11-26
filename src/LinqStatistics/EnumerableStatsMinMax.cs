@@ -41,7 +41,7 @@ namespace LinqStatistics
             var minMax = new Range<int>(int.MaxValue, int.MinValue, true);
 
             bool any = false;
-            var result = source.Aggregate<int, Range<int>>(minMax, (accumulator, value) =>
+            var result = source.Aggregate(minMax, (accumulator, value) =>
             {
                 var min = Math.Min(accumulator.Min, value);
                 var max = Math.Max(accumulator.Max, value);
@@ -123,7 +123,7 @@ namespace LinqStatistics
             var minMax = new Range<long>(long.MaxValue, long.MinValue, true);
 
             bool any = false;
-            var result = source.Aggregate<long, Range<long>>(minMax, (accumulator, value) =>
+            var result = source.Aggregate(minMax, (accumulator, value) =>
             {
                 var min = Math.Min(accumulator.Min, value);
                 var max = Math.Max(accumulator.Max, value);
@@ -205,7 +205,7 @@ namespace LinqStatistics
             var minMax = new Range<float>(float.MaxValue, float.MinValue, true);
 
             bool any = false;
-            var result = source.Aggregate<float, Range<float>>(minMax, (accumulator, value) =>
+            var result = source.Aggregate(minMax, (accumulator, value) =>
             {
                 var min = Math.Min(accumulator.Min, value);
                 var max = Math.Max(accumulator.Max, value);
@@ -287,7 +287,7 @@ namespace LinqStatistics
             var minMax = new Range<double>(double.MaxValue, double.MinValue, true);
 
             bool any = false;
-            var result = source.Aggregate<double, Range<double>>(minMax, (accumulator, value) =>
+            var result = source.Aggregate(minMax, (accumulator, value) =>
             {
                 var min = Math.Min(accumulator.Min, value);
                 var max = Math.Max(accumulator.Max, value);
@@ -369,7 +369,7 @@ namespace LinqStatistics
             var minMax = new Range<decimal>(decimal.MaxValue, decimal.MinValue, true);
 
             bool any = false;
-            var result = source.Aggregate<decimal, Range<decimal>>(minMax, (accumulator, value) =>
+            var result = source.Aggregate(minMax, (accumulator, value) =>
             {
                 var min = Math.Min(accumulator.Min, value);
                 var max = Math.Max(accumulator.Max, value);

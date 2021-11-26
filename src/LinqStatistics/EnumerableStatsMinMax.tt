@@ -53,7 +53,7 @@ namespace LinqStatistics
             var minMax = new Range<<#= type #>>(<#= type #>.MaxValue, <#= type #>.MinValue, true);
 
             bool any = false;
-            var result = source.Aggregate<<#= type #>, Range<<#= type #>>>(minMax, (accumulator, value) =>
+            var result = source.Aggregate(minMax, (accumulator, value) =>
             {
                 var min = Math.Min(accumulator.Min, value);
                 var max = Math.Max(accumulator.Max, value);
