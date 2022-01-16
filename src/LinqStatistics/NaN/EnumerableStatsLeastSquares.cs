@@ -38,11 +38,11 @@ namespace LinqStatistics.NaN
                 throw new ArgumentNullException(nameof(source));
 
             long n = 0;
-            double sumX = 0;
-            double sumY = 0;
-            double sumXX = 0;
-            double sumYY = 0;
-            double sumXY = 0;
+            var sumX = 0.0;
+            var sumY = 0.0;
+            var sumXX = 0.0;
+            var sumYY = 0.0;
+            var sumXY = 0.0;
 
             checked
             { 
@@ -60,7 +60,7 @@ namespace LinqStatistics.NaN
             if (n < 2)
                 return new LeastSquares(double.NaN, double.NaN, double.NaN);
             
-            double sumXSquared = sumX * sumX;
+            var sumXSquared = sumX * sumX;
             double denominator = n * sumXX - sumXSquared;
             if (denominator == 0.0)
             {
@@ -138,11 +138,11 @@ namespace LinqStatistics.NaN
                 throw new ArgumentNullException(nameof(source));
 
             long n = 0;
-            double sumX = 0;
-            double sumY = 0;
-            double sumXX = 0;
-            double sumYY = 0;
-            double sumXY = 0;
+            var sumX = 0.0;
+            var sumY = 0.0;
+            var sumXX = 0.0;
+            var sumYY = 0.0;
+            var sumXY = 0.0;
 
             checked
             { 
@@ -160,7 +160,7 @@ namespace LinqStatistics.NaN
             if (n < 2)
                 return new LeastSquares(double.NaN, double.NaN, double.NaN);
             
-            double sumXSquared = sumX * sumX;
+            var sumXSquared = sumX * sumX;
             double denominator = n * sumXX - sumXSquared;
             if (denominator == 0.0)
             {
@@ -238,11 +238,11 @@ namespace LinqStatistics.NaN
                 throw new ArgumentNullException(nameof(source));
 
             long n = 0;
-            double sumX = 0;
-            double sumY = 0;
-            double sumXX = 0;
-            double sumYY = 0;
-            double sumXY = 0;
+            var sumX = 0.0;
+            var sumY = 0.0;
+            var sumXX = 0.0;
+            var sumYY = 0.0;
+            var sumXY = 0.0;
 
             checked
             { 
@@ -260,7 +260,7 @@ namespace LinqStatistics.NaN
             if (n < 2)
                 return new LeastSquares(double.NaN, double.NaN, double.NaN);
             
-            double sumXSquared = sumX * sumX;
+            var sumXSquared = sumX * sumX;
             double denominator = n * sumXX - sumXSquared;
             if (denominator == 0.0)
             {
@@ -338,11 +338,11 @@ namespace LinqStatistics.NaN
                 throw new ArgumentNullException(nameof(source));
 
             long n = 0;
-            double sumX = 0;
-            double sumY = 0;
-            double sumXX = 0;
-            double sumYY = 0;
-            double sumXY = 0;
+            var sumX = 0.0;
+            var sumY = 0.0;
+            var sumXX = 0.0;
+            var sumYY = 0.0;
+            var sumXY = 0.0;
 
             checked
             { 
@@ -360,7 +360,7 @@ namespace LinqStatistics.NaN
             if (n < 2)
                 return new LeastSquares(double.NaN, double.NaN, double.NaN);
             
-            double sumXSquared = sumX * sumX;
+            var sumXSquared = sumX * sumX;
             double denominator = n * sumXX - sumXSquared;
             if (denominator == 0.0)
             {
@@ -438,11 +438,11 @@ namespace LinqStatistics.NaN
                 throw new ArgumentNullException(nameof(source));
 
             long n = 0;
-            double sumX = 0;
-            double sumY = 0;
-            double sumXX = 0;
-            double sumYY = 0;
-            double sumXY = 0;
+            var sumX = 0.0;
+            var sumY = 0.0;
+            var sumXX = 0.0;
+            var sumYY = 0.0;
+            var sumXY = 0.0;
 
             checked
             { 
@@ -460,7 +460,7 @@ namespace LinqStatistics.NaN
             if (n < 2)
                 return new LeastSquares(double.NaN, double.NaN, double.NaN);
             
-            double sumXSquared = sumX * sumX;
+            var sumXSquared = sumX * sumX;
             double denominator = n * sumXX - sumXSquared;
             if (denominator == 0.0)
             {

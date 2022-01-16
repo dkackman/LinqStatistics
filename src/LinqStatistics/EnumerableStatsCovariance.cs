@@ -56,7 +56,7 @@ namespace LinqStatistics
             double covariance = 0;
             checked
             {
-                for (int i = 0; i < listSource.Count; i++)
+                for (var i = 0; i < listSource.Count; i++)
                 {
                     covariance += (listSource[i] - avgSource) * (listOther[i] - avgOther);
                 }
@@ -111,7 +111,7 @@ namespace LinqStatistics
             double covariance = 0;
             checked
             {
-                for (int i = 0; i < listSource.Count; i++)
+                for (var i = 0; i < listSource.Count; i++)
                 {
                     covariance += (listSource[i] - avgSource) * (listOther[i] - avgOther);
                 }
@@ -166,7 +166,7 @@ namespace LinqStatistics
             decimal covariance = 0;
             checked
             {
-                for (int i = 0; i < listSource.Count; i++)
+                for (var i = 0; i < listSource.Count; i++)
                 {
                     covariance += (listSource[i] - avgSource) * (listOther[i] - avgOther);
                 }
@@ -221,7 +221,7 @@ namespace LinqStatistics
             float covariance = 0;
             checked
             {
-                for (int i = 0; i < listSource.Count; i++)
+                for (var i = 0; i < listSource.Count; i++)
                 {
                     covariance += (listSource[i] - avgSource) * (listOther[i] - avgOther);
                 }
@@ -276,7 +276,7 @@ namespace LinqStatistics
             double covariance = 0;
             checked
             {
-                for (int i = 0; i < listSource.Count; i++)
+                for (var i = 0; i < listSource.Count; i++)
                 {
                     covariance += (listSource[i] - avgSource) * (listOther[i] - avgOther);
                 }

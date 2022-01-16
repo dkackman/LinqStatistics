@@ -57,7 +57,7 @@ namespace LinqStatistics
                              orderby number
                              select (<#= type.Item2 #>)number).ToList();
 
-            int count = sortedList.Count;
+            var count = sortedList.Count;
             int itemIndex = count / 2;
 
             if (count % 2 == 0)

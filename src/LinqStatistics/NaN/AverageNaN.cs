@@ -45,7 +45,7 @@ namespace LinqStatistics.NaN
             if (source == null)
                 throw new ArgumentNullException(nameof(source));
 
-            double sum = 0;
+            var sum = 0.0;
             long n = 0;
             checked 
             {
@@ -130,7 +130,7 @@ namespace LinqStatistics.NaN
             if (source == null)
                 throw new ArgumentNullException(nameof(source));
 
-            double sum = 0;
+            var sum = 0.0;
             long n = 0;
             checked 
             {
@@ -215,7 +215,7 @@ namespace LinqStatistics.NaN
             if (source == null)
                 throw new ArgumentNullException(nameof(source));
 
-            double sum = 0;
+            var sum = 0.0;
             long n = 0;
             checked 
             {
@@ -300,7 +300,7 @@ namespace LinqStatistics.NaN
             if (source == null)
                 throw new ArgumentNullException(nameof(source));
 
-            double sum = 0;
+            var sum = 0.0;
             long n = 0;
             checked 
             {

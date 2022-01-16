@@ -70,11 +70,11 @@ namespace LinqStatistics.NaN
             if (<#= type.Item2 #>.IsNaN(avgSource))
                 return <#= type.Item2 #>.NaN;
 
-            double covariance = 0;
+            var covariance = 0.0;
 
             checked
             { 
-                for (int i = 0; i < listSource.Count; i++)
+                for (var i = 0; i < listSource.Count; i++)
                 {
                     covariance += (double)((listSource[i] - avgSource) * (listOther[i] - avgOther));
                 }

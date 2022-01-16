@@ -29,14 +29,14 @@ namespace LinqStatistics
 
         private static IEnumerable<Bin> CreateBinsMaxInclusive(double min, double max, int binCount)
         {
-            double binSize = (max - min) / binCount;
-            double halfBin = binSize / 2.0;
-            double rangeMin = min;
-            double rangeMax = rangeMin + binSize;
+            var binSize = (max - min) / binCount;
+            var halfBin = binSize / 2.0;
+            var rangeMin = min;
+            var rangeMax = rangeMin + binSize;
 
             // first create a list of all the bins so even empty bins are accounted for
             var bins = new List<Bin>(binCount);
-            for (int i = 0; i < binCount; i++)
+            for (var i = 0; i < binCount; i++)
             {
                 if (i == binCount - 1)
                 {
@@ -56,14 +56,14 @@ namespace LinqStatistics
 
         private static IEnumerable<Bin> CreateBinsUnbounded(double min, double max, int binCount)
         {
-            double binSize = (max - min) / binCount;
-            double halfBin = binSize / 2.0;
-            double rangeMin = min;
-            double rangeMax = rangeMin + binSize;
+            var binSize = (max - min) / binCount;
+            var halfBin = binSize / 2.0;
+            var rangeMin = min;
+            var rangeMax = rangeMin + binSize;
 
             // first create a list of all the bins so even empty bins are accounted for
             var bins = new List<Bin>(binCount);
-            for (int i = 0; i < binCount; i++)
+            for (var i = 0; i < binCount; i++)
             {
                 bins.Add(new Bin(rangeMin + halfBin, rangeMin, rangeMax));
                 rangeMin += binSize;
@@ -78,15 +78,15 @@ namespace LinqStatistics
 
         private static IEnumerable<Bin> CreateBinsExpandRange(double min, double max, int binCount)
         {
-            double binSize = (max - min) / ((double)binCount - 1);  // make the range such that the min and max are outside of the data set 
+            var binSize = (max - min) / ((double)binCount - 1);  // make the range such that the min and max are outside of the data set 
                                                                     // that's where the minus one comes in
-            double halfBin = binSize / 2.0;
-            double rangeMin = min - halfBin;
-            double rangeMax = rangeMin + binSize;
+            var halfBin = binSize / 2.0;
+            var rangeMin = min - halfBin;
+            var rangeMax = rangeMin + binSize;
 
             // first create a list of all the bins so even empty bins are accounted for
             var bins = new List<Bin>(binCount);
-            for (int i = 0; i < binCount; i++)
+            for (var i = 0; i < binCount; i++)
             {
                 bins.Add(new Bin(rangeMin + halfBin, rangeMin, rangeMax));
                 rangeMin += binSize;

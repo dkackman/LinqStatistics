@@ -39,7 +39,7 @@ namespace LinqStatistics
             if (source == null)
                 throw new ArgumentNullException(nameof(source));
 
-            double s = 0;
+            var s = 0.0;
             long n = 0;
 
             checked
@@ -124,7 +124,7 @@ namespace LinqStatistics
             if (source == null)
                 throw new ArgumentNullException(nameof(source));
 
-            double s = 0;
+            var s = 0.0;
             long n = 0;
 
             checked
@@ -209,7 +209,7 @@ namespace LinqStatistics
             if (source == null)
                 throw new ArgumentNullException(nameof(source));
 
-            double s = 0;
+            var s = 0.0;
             long n = 0;
 
             checked
@@ -294,7 +294,7 @@ namespace LinqStatistics
             if (source == null)
                 throw new ArgumentNullException(nameof(source));
 
-            double s = 0;
+            var s = 0.0;
             long n = 0;
 
             checked
@@ -379,7 +379,7 @@ namespace LinqStatistics
             if (source == null)
                 throw new ArgumentNullException(nameof(source));
 
-            double s = 0;
+            var s = 0.0;
             long n = 0;
 
             checked

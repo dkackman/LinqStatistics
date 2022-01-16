@@ -40,7 +40,7 @@ namespace LinqStatistics
             // so that the first comparisons in the aggregate function work as expected
             var minMax = new Range<int>(int.MaxValue, int.MinValue, true);
 
-            bool any = false;
+            var any = false;
             var result = source.Aggregate(minMax, (accumulator, value) =>
             {
                 var min = Math.Min(accumulator.Min, value);
@@ -122,7 +122,7 @@ namespace LinqStatistics
             // so that the first comparisons in the aggregate function work as expected
             var minMax = new Range<long>(long.MaxValue, long.MinValue, true);
 
-            bool any = false;
+            var any = false;
             var result = source.Aggregate(minMax, (accumulator, value) =>
             {
                 var min = Math.Min(accumulator.Min, value);
@@ -204,7 +204,7 @@ namespace LinqStatistics
             // so that the first comparisons in the aggregate function work as expected
             var minMax = new Range<float>(float.MaxValue, float.MinValue, true);
 
-            bool any = false;
+            var any = false;
             var result = source.Aggregate(minMax, (accumulator, value) =>
             {
                 var min = Math.Min(accumulator.Min, value);
@@ -286,7 +286,7 @@ namespace LinqStatistics
             // so that the first comparisons in the aggregate function work as expected
             var minMax = new Range<double>(double.MaxValue, double.MinValue, true);
 
-            bool any = false;
+            var any = false;
             var result = source.Aggregate(minMax, (accumulator, value) =>
             {
                 var min = Math.Min(accumulator.Min, value);
@@ -368,7 +368,7 @@ namespace LinqStatistics
             // so that the first comparisons in the aggregate function work as expected
             var minMax = new Range<decimal>(decimal.MaxValue, decimal.MinValue, true);
 
-            bool any = false;
+            var any = false;
             var result = source.Aggregate(minMax, (accumulator, value) =>
             {
                 var min = Math.Min(accumulator.Min, value);

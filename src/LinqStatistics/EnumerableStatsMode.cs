@@ -62,8 +62,8 @@ namespace LinqStatistics
                              orderby item
                              select item;
 
-            int count = 0;
-            int max = 0;
+            var count = 0;
+            var max = 0;
             T current = default(T);
             T? mode = new T?();
 

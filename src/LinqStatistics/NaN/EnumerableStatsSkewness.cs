@@ -36,12 +36,12 @@ namespace LinqStatistics.NaN
             if (source == null)
                 throw new ArgumentNullException(nameof(source));
 
-            double mean = (double)source.AverageNaN();
+            var mean = (double)source.AverageNaN();
             if (double.IsNaN(mean))
                 return double.NaN;
 
-            double s = (double)source.StandardDeviationNaN();
-            double M3 = 0;
+            var s = (double)source.StandardDeviationNaN();
+            var M3 = 0.0;
             long n = 0;
 
             checked
@@ -121,12 +121,12 @@ namespace LinqStatistics.NaN
             if (source == null)
                 throw new ArgumentNullException(nameof(source));
 
-            double mean = (double)source.AverageNaN();
+            var mean = (double)source.AverageNaN();
             if (double.IsNaN(mean))
                 return double.NaN;
 
-            double s = (double)source.StandardDeviationNaN();
-            double M3 = 0;
+            var s = (double)source.StandardDeviationNaN();
+            var M3 = 0.0;
             long n = 0;
 
             checked
@@ -206,12 +206,12 @@ namespace LinqStatistics.NaN
             if (source == null)
                 throw new ArgumentNullException(nameof(source));
 
-            double mean = (double)source.AverageNaN();
+            var mean = (double)source.AverageNaN();
             if (double.IsNaN(mean))
                 return float.NaN;
 
-            double s = (double)source.StandardDeviationNaN();
-            double M3 = 0;
+            var s = (double)source.StandardDeviationNaN();
+            var M3 = 0.0;
             long n = 0;
 
             checked
@@ -291,12 +291,12 @@ namespace LinqStatistics.NaN
             if (source == null)
                 throw new ArgumentNullException(nameof(source));
 
-            double mean = (double)source.AverageNaN();
+            var mean = (double)source.AverageNaN();
             if (double.IsNaN(mean))
                 return double.NaN;
 
-            double s = (double)source.StandardDeviationNaN();
-            double M3 = 0;
+            var s = (double)source.StandardDeviationNaN();
+            var M3 = 0.0;
             long n = 0;
 
             checked

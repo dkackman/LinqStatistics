@@ -2,7 +2,7 @@
 
 namespace LinqStatistics.UnitTests
 {
-    static class Extensions
+    internal static class Extensions
     {
         public static bool AboutEqual(this double x, double y)
         {

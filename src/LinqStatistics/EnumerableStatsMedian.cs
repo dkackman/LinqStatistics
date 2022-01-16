@@ -41,7 +41,7 @@ namespace LinqStatistics
                              orderby number
                              select (double)number).ToList();
 
-            int count = sortedList.Count;
+            var count = sortedList.Count;
             int itemIndex = count / 2;
 
             if (count % 2 == 0)
@@ -121,7 +121,7 @@ namespace LinqStatistics
                              orderby number
                              select (double)number).ToList();
 
-            int count = sortedList.Count;
+            var count = sortedList.Count;
             int itemIndex = count / 2;
 
             if (count % 2 == 0)
@@ -201,7 +201,7 @@ namespace LinqStatistics
                              orderby number
                              select (decimal)number).ToList();
 
-            int count = sortedList.Count;
+            var count = sortedList.Count;
             int itemIndex = count / 2;
 
             if (count % 2 == 0)
@@ -281,7 +281,7 @@ namespace LinqStatistics
                              orderby number
                              select (float)number).ToList();
 
-            int count = sortedList.Count;
+            var count = sortedList.Count;
             int itemIndex = count / 2;
 
             if (count % 2 == 0)
@@ -361,7 +361,7 @@ namespace LinqStatistics
                              orderby number
                              select (double)number).ToList();
 
-            int count = sortedList.Count;
+            var count = sortedList.Count;
             int itemIndex = count / 2;
 
             if (count % 2 == 0)

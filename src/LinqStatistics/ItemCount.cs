@@ -103,7 +103,7 @@ namespace LinqStatistics
         {
             if (RepresentativeValue == null)
             {
-                int hash = 17;
+                var hash = 17;
                 hash = hash * 23 + RepresentativeValue.GetHashCode();
                 hash = hash * 23 + Count.GetHashCode();
                 return hash;

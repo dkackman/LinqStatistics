@@ -42,8 +42,8 @@ namespace LinqStatistics.NaN
                 throw new ArgumentNullException(nameof(source));
 
             long n = 0;
-            double mean = 0;
-            double M2 = 0;
+            var mean = 0.0;
+            var M2 = 0.0;
 
             checked
             { 
@@ -51,7 +51,7 @@ namespace LinqStatistics.NaN
                 {
                     n++;
                 
-                    double delta = (double)x - mean;
+                    var delta = (double)x - mean;
                     mean += delta / n;
                     M2 += delta * ((double)x - mean);
                 }
@@ -135,8 +135,8 @@ namespace LinqStatistics.NaN
                 throw new ArgumentNullException(nameof(source));
 
             long n = 0;
-            double mean = 0;
-            double M2 = 0;
+            var mean = 0.0;
+            var M2 = 0.0;
 
             checked
             { 
@@ -144,7 +144,7 @@ namespace LinqStatistics.NaN
                 {
                     n++;
                 
-                    double delta = (double)x - mean;
+                    var delta = (double)x - mean;
                     mean += delta / n;
                     M2 += delta * ((double)x - mean);
                 }
@@ -228,8 +228,8 @@ namespace LinqStatistics.NaN
                 throw new ArgumentNullException(nameof(source));
 
             long n = 0;
-            double mean = 0;
-            double M2 = 0;
+            var mean = 0.0;
+            var M2 = 0.0;
 
             checked
             { 
@@ -237,7 +237,7 @@ namespace LinqStatistics.NaN
                 {
                     n++;
                 
-                    double delta = (double)x - mean;
+                    var delta = (double)x - mean;
                     mean += delta / n;
                     M2 += delta * ((double)x - mean);
                 }
@@ -321,8 +321,8 @@ namespace LinqStatistics.NaN
                 throw new ArgumentNullException(nameof(source));
 
             long n = 0;
-            double mean = 0;
-            double M2 = 0;
+            var mean = 0.0;
+            var M2 = 0.0;
 
             checked
             { 
@@ -330,7 +330,7 @@ namespace LinqStatistics.NaN
                 {
                     n++;
                 
-                    double delta = (double)x - mean;
+                    var delta = (double)x - mean;
                     mean += delta / n;
                     M2 += delta * ((double)x - mean);
                 }

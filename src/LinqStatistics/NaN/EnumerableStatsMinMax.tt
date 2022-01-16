@@ -52,7 +52,7 @@ namespace LinqStatistics.NaN
             // so that the first comparisons in the aggregate function work as expected
             var minMax = new Range<<#= type #>>(<#= type #>.MaxValue, <#= type #>.MinValue, true);
 
-            bool any = false;
+            var any = false;
             var result = source.Aggregate<<#= type #>, Range<<#= type #>>>(minMax, (accumulator, value) =>
             {
                 var min = Math.Min(accumulator.Min, value);

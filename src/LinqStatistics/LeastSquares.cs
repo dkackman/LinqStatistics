@@ -145,7 +145,7 @@ namespace LinqStatistics
         /// <returns>Hascode of the instance</returns>
         public override int GetHashCode()
         {
-            int hash = 17;
+            var hash = 17;
             hash = hash * 23 + M.GetHashCode();
             hash = hash * 23 + B.GetHashCode();
             hash = hash * 23 + RSquared.GetHashCode();

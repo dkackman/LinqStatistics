@@ -38,12 +38,12 @@ namespace LinqStatistics
             if (source == null)
                 throw new ArgumentNullException(nameof(source));
 
-            double mean = (double)source.Average();
+            var mean = (double)source.Average();
 
             long n = 0;
-            double meanv = 0;
-            double M2 = 0;
-            double M4 = 0;
+            var meanv = 0.0;
+            var M2 = 0.0;
+            var M4 = 0.0;
             
             checked
             { 
@@ -51,7 +51,7 @@ namespace LinqStatistics
                 {
                     n++;
 
-                    double delta = (double)x - meanv;
+                    var delta = (double)x - meanv;
                     meanv += delta / n;
                     M2 += delta * ((double)x - meanv);
                     M4 += Math.Pow((double)x - mean, 4);
@@ -136,12 +136,12 @@ namespace LinqStatistics
             if (source == null)
                 throw new ArgumentNullException(nameof(source));
 
-            double mean = (double)source.Average();
+            var mean = (double)source.Average();
 
             long n = 0;
-            double meanv = 0;
-            double M2 = 0;
-            double M4 = 0;
+            var meanv = 0.0;
+            var M2 = 0.0;
+            var M4 = 0.0;
             
             checked
             { 
@@ -149,7 +149,7 @@ namespace LinqStatistics
                 {
                     n++;
 
-                    double delta = (double)x - meanv;
+                    var delta = (double)x - meanv;
                     meanv += delta / n;
                     M2 += delta * ((double)x - meanv);
                     M4 += Math.Pow((double)x - mean, 4);
@@ -234,12 +234,12 @@ namespace LinqStatistics
             if (source == null)
                 throw new ArgumentNullException(nameof(source));
 
-            double mean = (double)source.Average();
+            var mean = (double)source.Average();
 
             long n = 0;
-            double meanv = 0;
-            double M2 = 0;
-            double M4 = 0;
+            var meanv = 0.0;
+            var M2 = 0.0;
+            var M4 = 0.0;
             
             checked
             { 
@@ -247,7 +247,7 @@ namespace LinqStatistics
                 {
                     n++;
 
-                    double delta = (double)x - meanv;
+                    var delta = (double)x - meanv;
                     meanv += delta / n;
                     M2 += delta * ((double)x - meanv);
                     M4 += Math.Pow((double)x - mean, 4);
@@ -332,12 +332,12 @@ namespace LinqStatistics
             if (source == null)
                 throw new ArgumentNullException(nameof(source));
 
-            double mean = (double)source.Average();
+            var mean = (double)source.Average();
 
             long n = 0;
-            double meanv = 0;
-            double M2 = 0;
-            double M4 = 0;
+            var meanv = 0.0;
+            var M2 = 0.0;
+            var M4 = 0.0;
             
             checked
             { 
@@ -345,7 +345,7 @@ namespace LinqStatistics
                 {
                     n++;
 
-                    double delta = (double)x - meanv;
+                    var delta = (double)x - meanv;
                     meanv += delta / n;
                     M2 += delta * ((double)x - meanv);
                     M4 += Math.Pow((double)x - mean, 4);
@@ -430,12 +430,12 @@ namespace LinqStatistics
             if (source == null)
                 throw new ArgumentNullException(nameof(source));
 
-            double mean = (double)source.Average();
+            var mean = (double)source.Average();
 
             long n = 0;
-            double meanv = 0;
-            double M2 = 0;
-            double M4 = 0;
+            var meanv = 0.0;
+            var M2 = 0.0;
+            var M4 = 0.0;
             
             checked
             { 
@@ -443,7 +443,7 @@ namespace LinqStatistics
                 {
                     n++;
 
-                    double delta = (double)x - meanv;
+                    var delta = (double)x - meanv;
                     meanv += delta / n;
                     M2 += delta * ((double)x - meanv);
                     M4 += Math.Pow((double)x - mean, 4);

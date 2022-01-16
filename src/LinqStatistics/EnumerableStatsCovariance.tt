@@ -72,7 +72,7 @@ namespace LinqStatistics
             <#= type.Item2 #> covariance = 0;
             checked
             {
-                for (int i = 0; i < listSource.Count; i++)
+                for (var i = 0; i < listSource.Count; i++)
                 {
                     covariance += (listSource[i] - avgSource) * (listOther[i] - avgOther);
                 }

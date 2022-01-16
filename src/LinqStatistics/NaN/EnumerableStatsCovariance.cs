@@ -55,11 +55,11 @@ namespace LinqStatistics.NaN
             if (double.IsNaN(avgSource))
                 return double.NaN;
 
-            double covariance = 0;
+            var covariance = 0.0;
 
             checked
             { 
-                for (int i = 0; i < listSource.Count; i++)
+                for (var i = 0; i < listSource.Count; i++)
                 {
                     covariance += (double)((listSource[i] - avgSource) * (listOther[i] - avgOther));
                 }
@@ -111,11 +111,11 @@ namespace LinqStatistics.NaN
             if (double.IsNaN(avgSource))
                 return double.NaN;
 
-            double covariance = 0;
+            var covariance = 0.0;
 
             checked
             { 
-                for (int i = 0; i < listSource.Count; i++)
+                for (var i = 0; i < listSource.Count; i++)
                 {
                     covariance += (double)((listSource[i] - avgSource) * (listOther[i] - avgOther));
                 }
@@ -167,11 +167,11 @@ namespace LinqStatistics.NaN
             if (float.IsNaN(avgSource))
                 return float.NaN;
 
-            double covariance = 0;
+            var covariance = 0.0;
 
             checked
             { 
-                for (int i = 0; i < listSource.Count; i++)
+                for (var i = 0; i < listSource.Count; i++)
                 {
                     covariance += (double)((listSource[i] - avgSource) * (listOther[i] - avgOther));
                 }
@@ -223,11 +223,11 @@ namespace LinqStatistics.NaN
             if (double.IsNaN(avgSource))
                 return double.NaN;
 
-            double covariance = 0;
+            var covariance = 0.0;
 
             checked
             { 
-                for (int i = 0; i < listSource.Count; i++)
+                for (var i = 0; i < listSource.Count; i++)
                 {
                     covariance += (double)((listSource[i] - avgSource) * (listOther[i] - avgOther));
                 }

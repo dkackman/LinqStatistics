@@ -38,9 +38,9 @@ namespace LinqStatistics
             if (source == null)
                 throw new ArgumentNullException(nameof(source));
 
-            double mean = (double)source.Average();
-            double s = (double)source.StandardDeviation();
-            double M3 = 0;
+            var mean = (double)source.Average();
+            var s = (double)source.StandardDeviation();
+            var M3 = 0.0;
             long n = 0;
 
             checked
@@ -124,9 +124,9 @@ namespace LinqStatistics
             if (source == null)
                 throw new ArgumentNullException(nameof(source));
 
-            double mean = (double)source.Average();
-            double s = (double)source.StandardDeviation();
-            double M3 = 0;
+            var mean = (double)source.Average();
+            var s = (double)source.StandardDeviation();
+            var M3 = 0.0;
             long n = 0;
 
             checked
@@ -210,9 +210,9 @@ namespace LinqStatistics
             if (source == null)
                 throw new ArgumentNullException(nameof(source));
 
-            double mean = (double)source.Average();
-            double s = (double)source.StandardDeviation();
-            double M3 = 0;
+            var mean = (double)source.Average();
+            var s = (double)source.StandardDeviation();
+            var M3 = 0.0;
             long n = 0;
 
             checked
@@ -296,9 +296,9 @@ namespace LinqStatistics
             if (source == null)
                 throw new ArgumentNullException(nameof(source));
 
-            double mean = (double)source.Average();
-            double s = (double)source.StandardDeviation();
-            double M3 = 0;
+            var mean = (double)source.Average();
+            var s = (double)source.StandardDeviation();
+            var M3 = 0.0;
             long n = 0;
 
             checked
@@ -382,9 +382,9 @@ namespace LinqStatistics
             if (source == null)
                 throw new ArgumentNullException(nameof(source));
 
-            double mean = (double)source.Average();
-            double s = (double)source.StandardDeviation();
-            double M3 = 0;
+            var mean = (double)source.Average();
+            var s = (double)source.StandardDeviation();
+            var M3 = 0.0;
             long n = 0;
 
             checked
