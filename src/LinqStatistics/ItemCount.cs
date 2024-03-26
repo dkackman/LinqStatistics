@@ -7,19 +7,13 @@ namespace LinqStatistics
     /// Represents the count of an item in a collection
     /// </summary>
     /// <typeparam name="T">The type of the item</typeparam>
-    public class ItemCount<T> : IEquatable<ItemCount<T>>
+    /// <remarks>
+    /// ctor
+    /// </remarks>
+    /// <param name="v"></param>
+    /// <param name="count"></param>
+    public class ItemCount<T>(T v, int count) : IEquatable<ItemCount<T>>
     {
-        /// <summary>
-        /// ctor
-        /// </summary>
-        /// <param name="v"></param>
-        /// <param name="count"></param>
-        public ItemCount(T v, int count)
-        {
-            RepresentativeValue = v;
-            Count = count;
-        }
-
         internal ItemCount(T v)
             : this(v, 0)
         {
@@ -28,7 +22,7 @@ namespace LinqStatistics
         /// <summary>
         /// The value represented by the bin
         /// </summary>
-        public T RepresentativeValue { get; private set; }
+        public T RepresentativeValue { get; private set; } = v;
 
         /// <summary>
         /// The number of times RepresentativeValue appears in the source data
@@ -38,7 +32,7 @@ namespace LinqStatistics
 
             // this is marked internal so histogram binning can update Count while counting
             internal set;
-        }
+        } = count;
 
         /// <summary>
         /// 
