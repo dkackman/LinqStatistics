@@ -36,7 +36,7 @@ namespace LinqStatistics
 
     public static partial class EnumerableStats
     {
-            /// <summary>
+        /// <summary>
         /// Computes the Histogram of a sequence of int values.
         /// </summary>
         /// <param name="source">A sequence of int values to calculate the Histogram of.</param>
@@ -45,8 +45,7 @@ namespace LinqStatistics
         /// <returns>The Histogram of the sequence of int values.</returns>
         public static IEnumerable<Bin> Histogram(this IEnumerable<int> source, int binCount, BinningMode mode = BinningMode.Unbounded)
         {
-            if (source == null)
-                throw new ArgumentNullException(nameof(source));
+            ArgumentNullException.ThrowIfNull(source);
 
             var minMax = source.MinMax();
 
@@ -70,8 +69,7 @@ namespace LinqStatistics
         /// <returns>The Histogram of the sequence of nullable int values.</returns>
         public static IEnumerable<Bin> Histogram(this IEnumerable<int?> source, int binCount, BinningMode mode = BinningMode.Unbounded)
         {
-            if (source == null)
-                throw new ArgumentNullException(nameof(source));
+            ArgumentNullException.ThrowIfNull(source);
 
             return source.AllValues().Histogram(binCount, mode);
         }
@@ -88,11 +86,9 @@ namespace LinqStatistics
         /// <returns>The Histogram of the sequence of int values.</returns>
         public static IEnumerable<Bin> Histogram<TSource>(this IEnumerable<TSource> source, int binCount, Func<TSource, int> selector, BinningMode mode = BinningMode.Unbounded)
         {
-            if (source == null)
-                throw new ArgumentNullException(nameof(source));
+            ArgumentNullException.ThrowIfNull(source);
 
-            if (selector == null)
-                throw new ArgumentNullException(nameof(selector));
+            ArgumentNullException.ThrowIfNull(selector);
 
             return source.Select(t => selector(t)).Histogram(binCount, mode);
         }
@@ -109,15 +105,13 @@ namespace LinqStatistics
         /// <returns>The Histogram of the sequence of nullable int values.</returns>
         public static IEnumerable<Bin> Histogram<TSource>(this IEnumerable<TSource> source, int binCount, Func<TSource, int?> selector, BinningMode mode = BinningMode.Unbounded)
         {
-            if (source == null)
-                throw new ArgumentNullException(nameof(source));
+            ArgumentNullException.ThrowIfNull(source);
 
-            if (selector == null)
-                throw new ArgumentNullException(nameof(selector));
+            ArgumentNullException.ThrowIfNull(selector);
 
             return source.Select(t => selector(t)).Histogram(binCount, mode);
         }
-                /// <summary>
+        /// <summary>
         /// Computes the Histogram of a sequence of long values.
         /// </summary>
         /// <param name="source">A sequence of long values to calculate the Histogram of.</param>
@@ -126,8 +120,7 @@ namespace LinqStatistics
         /// <returns>The Histogram of the sequence of long values.</returns>
         public static IEnumerable<Bin> Histogram(this IEnumerable<long> source, int binCount, BinningMode mode = BinningMode.Unbounded)
         {
-            if (source == null)
-                throw new ArgumentNullException(nameof(source));
+            ArgumentNullException.ThrowIfNull(source);
 
             var minMax = source.MinMax();
 
@@ -151,8 +144,7 @@ namespace LinqStatistics
         /// <returns>The Histogram of the sequence of nullable long values.</returns>
         public static IEnumerable<Bin> Histogram(this IEnumerable<long?> source, int binCount, BinningMode mode = BinningMode.Unbounded)
         {
-            if (source == null)
-                throw new ArgumentNullException(nameof(source));
+            ArgumentNullException.ThrowIfNull(source);
 
             return source.AllValues().Histogram(binCount, mode);
         }
@@ -169,11 +161,9 @@ namespace LinqStatistics
         /// <returns>The Histogram of the sequence of long values.</returns>
         public static IEnumerable<Bin> Histogram<TSource>(this IEnumerable<TSource> source, int binCount, Func<TSource, long> selector, BinningMode mode = BinningMode.Unbounded)
         {
-            if (source == null)
-                throw new ArgumentNullException(nameof(source));
+            ArgumentNullException.ThrowIfNull(source);
 
-            if (selector == null)
-                throw new ArgumentNullException(nameof(selector));
+            ArgumentNullException.ThrowIfNull(selector);
 
             return source.Select(t => selector(t)).Histogram(binCount, mode);
         }
@@ -190,15 +180,13 @@ namespace LinqStatistics
         /// <returns>The Histogram of the sequence of nullable long values.</returns>
         public static IEnumerable<Bin> Histogram<TSource>(this IEnumerable<TSource> source, int binCount, Func<TSource, long?> selector, BinningMode mode = BinningMode.Unbounded)
         {
-            if (source == null)
-                throw new ArgumentNullException(nameof(source));
+            ArgumentNullException.ThrowIfNull(source);
 
-            if (selector == null)
-                throw new ArgumentNullException(nameof(selector));
+            ArgumentNullException.ThrowIfNull(selector);
 
             return source.Select(t => selector(t)).Histogram(binCount, mode);
         }
-                /// <summary>
+        /// <summary>
         /// Computes the Histogram of a sequence of float values.
         /// </summary>
         /// <param name="source">A sequence of float values to calculate the Histogram of.</param>
@@ -207,8 +195,7 @@ namespace LinqStatistics
         /// <returns>The Histogram of the sequence of float values.</returns>
         public static IEnumerable<Bin> Histogram(this IEnumerable<float> source, int binCount, BinningMode mode = BinningMode.Unbounded)
         {
-            if (source == null)
-                throw new ArgumentNullException(nameof(source));
+            ArgumentNullException.ThrowIfNull(source);
 
             var minMax = source.MinMax();
 
@@ -232,8 +219,7 @@ namespace LinqStatistics
         /// <returns>The Histogram of the sequence of nullable float values.</returns>
         public static IEnumerable<Bin> Histogram(this IEnumerable<float?> source, int binCount, BinningMode mode = BinningMode.Unbounded)
         {
-            if (source == null)
-                throw new ArgumentNullException(nameof(source));
+            ArgumentNullException.ThrowIfNull(source);
 
             return source.AllValues().Histogram(binCount, mode);
         }
@@ -250,11 +236,9 @@ namespace LinqStatistics
         /// <returns>The Histogram of the sequence of float values.</returns>
         public static IEnumerable<Bin> Histogram<TSource>(this IEnumerable<TSource> source, int binCount, Func<TSource, float> selector, BinningMode mode = BinningMode.Unbounded)
         {
-            if (source == null)
-                throw new ArgumentNullException(nameof(source));
+            ArgumentNullException.ThrowIfNull(source);
 
-            if (selector == null)
-                throw new ArgumentNullException(nameof(selector));
+            ArgumentNullException.ThrowIfNull(selector);
 
             return source.Select(t => selector(t)).Histogram(binCount, mode);
         }
@@ -271,15 +255,13 @@ namespace LinqStatistics
         /// <returns>The Histogram of the sequence of nullable float values.</returns>
         public static IEnumerable<Bin> Histogram<TSource>(this IEnumerable<TSource> source, int binCount, Func<TSource, float?> selector, BinningMode mode = BinningMode.Unbounded)
         {
-            if (source == null)
-                throw new ArgumentNullException(nameof(source));
+            ArgumentNullException.ThrowIfNull(source);
 
-            if (selector == null)
-                throw new ArgumentNullException(nameof(selector));
+            ArgumentNullException.ThrowIfNull(selector);
 
             return source.Select(t => selector(t)).Histogram(binCount, mode);
         }
-                /// <summary>
+        /// <summary>
         /// Computes the Histogram of a sequence of double values.
         /// </summary>
         /// <param name="source">A sequence of double values to calculate the Histogram of.</param>
@@ -288,8 +270,7 @@ namespace LinqStatistics
         /// <returns>The Histogram of the sequence of double values.</returns>
         public static IEnumerable<Bin> Histogram(this IEnumerable<double> source, int binCount, BinningMode mode = BinningMode.Unbounded)
         {
-            if (source == null)
-                throw new ArgumentNullException(nameof(source));
+            ArgumentNullException.ThrowIfNull(source);
 
             var minMax = source.MinMax();
 
@@ -313,8 +294,7 @@ namespace LinqStatistics
         /// <returns>The Histogram of the sequence of nullable double values.</returns>
         public static IEnumerable<Bin> Histogram(this IEnumerable<double?> source, int binCount, BinningMode mode = BinningMode.Unbounded)
         {
-            if (source == null)
-                throw new ArgumentNullException(nameof(source));
+            ArgumentNullException.ThrowIfNull(source);
 
             return source.AllValues().Histogram(binCount, mode);
         }
@@ -331,11 +311,9 @@ namespace LinqStatistics
         /// <returns>The Histogram of the sequence of double values.</returns>
         public static IEnumerable<Bin> Histogram<TSource>(this IEnumerable<TSource> source, int binCount, Func<TSource, double> selector, BinningMode mode = BinningMode.Unbounded)
         {
-            if (source == null)
-                throw new ArgumentNullException(nameof(source));
+            ArgumentNullException.ThrowIfNull(source);
 
-            if (selector == null)
-                throw new ArgumentNullException(nameof(selector));
+            ArgumentNullException.ThrowIfNull(selector);
 
             return source.Select(t => selector(t)).Histogram(binCount, mode);
         }
@@ -352,15 +330,13 @@ namespace LinqStatistics
         /// <returns>The Histogram of the sequence of nullable double values.</returns>
         public static IEnumerable<Bin> Histogram<TSource>(this IEnumerable<TSource> source, int binCount, Func<TSource, double?> selector, BinningMode mode = BinningMode.Unbounded)
         {
-            if (source == null)
-                throw new ArgumentNullException(nameof(source));
+            ArgumentNullException.ThrowIfNull(source);
 
-            if (selector == null)
-                throw new ArgumentNullException(nameof(selector));
+            ArgumentNullException.ThrowIfNull(selector);
 
             return source.Select(t => selector(t)).Histogram(binCount, mode);
         }
-                /// <summary>
+        /// <summary>
         /// Computes the Histogram of a sequence of decimal values.
         /// </summary>
         /// <param name="source">A sequence of decimal values to calculate the Histogram of.</param>
@@ -369,8 +345,7 @@ namespace LinqStatistics
         /// <returns>The Histogram of the sequence of decimal values.</returns>
         public static IEnumerable<Bin> Histogram(this IEnumerable<decimal> source, int binCount, BinningMode mode = BinningMode.Unbounded)
         {
-            if (source == null)
-                throw new ArgumentNullException(nameof(source));
+            ArgumentNullException.ThrowIfNull(source);
 
             var minMax = source.MinMax();
 
@@ -394,8 +369,7 @@ namespace LinqStatistics
         /// <returns>The Histogram of the sequence of nullable decimal values.</returns>
         public static IEnumerable<Bin> Histogram(this IEnumerable<decimal?> source, int binCount, BinningMode mode = BinningMode.Unbounded)
         {
-            if (source == null)
-                throw new ArgumentNullException(nameof(source));
+            ArgumentNullException.ThrowIfNull(source);
 
             return source.AllValues().Histogram(binCount, mode);
         }
@@ -412,11 +386,9 @@ namespace LinqStatistics
         /// <returns>The Histogram of the sequence of decimal values.</returns>
         public static IEnumerable<Bin> Histogram<TSource>(this IEnumerable<TSource> source, int binCount, Func<TSource, decimal> selector, BinningMode mode = BinningMode.Unbounded)
         {
-            if (source == null)
-                throw new ArgumentNullException(nameof(source));
+            ArgumentNullException.ThrowIfNull(source);
 
-            if (selector == null)
-                throw new ArgumentNullException(nameof(selector));
+            ArgumentNullException.ThrowIfNull(selector);
 
             return source.Select(t => selector(t)).Histogram(binCount, mode);
         }
@@ -433,13 +405,11 @@ namespace LinqStatistics
         /// <returns>The Histogram of the sequence of nullable decimal values.</returns>
         public static IEnumerable<Bin> Histogram<TSource>(this IEnumerable<TSource> source, int binCount, Func<TSource, decimal?> selector, BinningMode mode = BinningMode.Unbounded)
         {
-            if (source == null)
-                throw new ArgumentNullException(nameof(source));
+            ArgumentNullException.ThrowIfNull(source);
 
-            if (selector == null)
-                throw new ArgumentNullException(nameof(selector));
+            ArgumentNullException.ThrowIfNull(selector);
 
             return source.Select(t => selector(t)).Histogram(binCount, mode);
         }
-            }
+    }
 }

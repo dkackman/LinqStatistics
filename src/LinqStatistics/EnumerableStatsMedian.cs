@@ -11,7 +11,7 @@ namespace LinqStatistics
 {
     public static partial class EnumerableStats
     {
-    	
+
         /// <summary>
         /// Computes the Median of a sequence of mullable int values, or null if the source sequence is
         ///     empty or contains only values that are null.
@@ -34,12 +34,11 @@ namespace LinqStatistics
         /// <returns>The Median of the sequence of values.</returns>
         public static double Median(this IEnumerable<int> source)
         {
-            if (source == null)
-                throw new ArgumentNullException(nameof(source));
+            ArgumentNullException.ThrowIfNull(source);
 
             var sortedList = (from number in source
-                             orderby number
-                             select (double)number).ToList();
+                              orderby number
+                              select (double)number).ToList();
 
             var count = sortedList.Count;
             int itemIndex = count / 2;
@@ -64,11 +63,9 @@ namespace LinqStatistics
         /// <returns>The Median of the sequence of values.</returns>
         public static double? Median<TSource>(this IEnumerable<TSource> source, Func<TSource, int?> selector)
         {
-            if (source == null)
-                throw new ArgumentNullException(nameof(source));
+            ArgumentNullException.ThrowIfNull(source);
 
-            if (selector == null)
-                throw new ArgumentNullException(nameof(selector));
+            ArgumentNullException.ThrowIfNull(selector);
 
             return source.Select(selector).Median();
         }
@@ -83,15 +80,13 @@ namespace LinqStatistics
         /// <returns>The Median of the sequence of values.</returns>
         public static double Median<TSource>(this IEnumerable<TSource> source, Func<TSource, int> selector)
         {
-            if (source == null)
-                throw new ArgumentNullException(nameof(source));
+            ArgumentNullException.ThrowIfNull(source);
 
-            if (selector == null)
-                throw new ArgumentNullException(nameof(selector));
+            ArgumentNullException.ThrowIfNull(selector);
 
             return source.Select(selector).Median();
         }
- 	
+
         /// <summary>
         /// Computes the Median of a sequence of mullable long values, or null if the source sequence is
         ///     empty or contains only values that are null.
@@ -114,12 +109,11 @@ namespace LinqStatistics
         /// <returns>The Median of the sequence of values.</returns>
         public static double Median(this IEnumerable<long> source)
         {
-            if (source == null)
-                throw new ArgumentNullException(nameof(source));
+            ArgumentNullException.ThrowIfNull(source);
 
             var sortedList = (from number in source
-                             orderby number
-                             select (double)number).ToList();
+                              orderby number
+                              select (double)number).ToList();
 
             var count = sortedList.Count;
             int itemIndex = count / 2;
@@ -144,11 +138,9 @@ namespace LinqStatistics
         /// <returns>The Median of the sequence of values.</returns>
         public static double? Median<TSource>(this IEnumerable<TSource> source, Func<TSource, long?> selector)
         {
-            if (source == null)
-                throw new ArgumentNullException(nameof(source));
+            ArgumentNullException.ThrowIfNull(source);
 
-            if (selector == null)
-                throw new ArgumentNullException(nameof(selector));
+            ArgumentNullException.ThrowIfNull(selector);
 
             return source.Select(selector).Median();
         }
@@ -163,15 +155,13 @@ namespace LinqStatistics
         /// <returns>The Median of the sequence of values.</returns>
         public static double Median<TSource>(this IEnumerable<TSource> source, Func<TSource, long> selector)
         {
-            if (source == null)
-                throw new ArgumentNullException(nameof(source));
+            ArgumentNullException.ThrowIfNull(source);
 
-            if (selector == null)
-                throw new ArgumentNullException(nameof(selector));
+            ArgumentNullException.ThrowIfNull(selector);
 
             return source.Select(selector).Median();
         }
- 	
+
         /// <summary>
         /// Computes the Median of a sequence of mullable decimal values, or null if the source sequence is
         ///     empty or contains only values that are null.
@@ -194,12 +184,11 @@ namespace LinqStatistics
         /// <returns>The Median of the sequence of values.</returns>
         public static decimal Median(this IEnumerable<decimal> source)
         {
-            if (source == null)
-                throw new ArgumentNullException(nameof(source));
+            ArgumentNullException.ThrowIfNull(source);
 
             var sortedList = (from number in source
-                             orderby number
-                             select (decimal)number).ToList();
+                              orderby number
+                              select (decimal)number).ToList();
 
             var count = sortedList.Count;
             int itemIndex = count / 2;
@@ -224,11 +213,9 @@ namespace LinqStatistics
         /// <returns>The Median of the sequence of values.</returns>
         public static decimal? Median<TSource>(this IEnumerable<TSource> source, Func<TSource, decimal?> selector)
         {
-            if (source == null)
-                throw new ArgumentNullException(nameof(source));
+            ArgumentNullException.ThrowIfNull(source);
 
-            if (selector == null)
-                throw new ArgumentNullException(nameof(selector));
+            ArgumentNullException.ThrowIfNull(selector);
 
             return source.Select(selector).Median();
         }
@@ -243,15 +230,13 @@ namespace LinqStatistics
         /// <returns>The Median of the sequence of values.</returns>
         public static decimal Median<TSource>(this IEnumerable<TSource> source, Func<TSource, decimal> selector)
         {
-            if (source == null)
-                throw new ArgumentNullException(nameof(source));
+            ArgumentNullException.ThrowIfNull(source);
 
-            if (selector == null)
-                throw new ArgumentNullException(nameof(selector));
+            ArgumentNullException.ThrowIfNull(selector);
 
             return source.Select(selector).Median();
         }
- 	
+
         /// <summary>
         /// Computes the Median of a sequence of mullable float values, or null if the source sequence is
         ///     empty or contains only values that are null.
@@ -274,12 +259,11 @@ namespace LinqStatistics
         /// <returns>The Median of the sequence of values.</returns>
         public static float Median(this IEnumerable<float> source)
         {
-            if (source == null)
-                throw new ArgumentNullException(nameof(source));
+            ArgumentNullException.ThrowIfNull(source);
 
             var sortedList = (from number in source
-                             orderby number
-                             select (float)number).ToList();
+                              orderby number
+                              select (float)number).ToList();
 
             var count = sortedList.Count;
             int itemIndex = count / 2;
@@ -304,11 +288,9 @@ namespace LinqStatistics
         /// <returns>The Median of the sequence of values.</returns>
         public static float? Median<TSource>(this IEnumerable<TSource> source, Func<TSource, float?> selector)
         {
-            if (source == null)
-                throw new ArgumentNullException(nameof(source));
+            ArgumentNullException.ThrowIfNull(source);
 
-            if (selector == null)
-                throw new ArgumentNullException(nameof(selector));
+            ArgumentNullException.ThrowIfNull(selector);
 
             return source.Select(selector).Median();
         }
@@ -323,15 +305,13 @@ namespace LinqStatistics
         /// <returns>The Median of the sequence of values.</returns>
         public static float Median<TSource>(this IEnumerable<TSource> source, Func<TSource, float> selector)
         {
-            if (source == null)
-                throw new ArgumentNullException(nameof(source));
+            ArgumentNullException.ThrowIfNull(source);
 
-            if (selector == null)
-                throw new ArgumentNullException(nameof(selector));
+            ArgumentNullException.ThrowIfNull(selector);
 
             return source.Select(selector).Median();
         }
- 	
+
         /// <summary>
         /// Computes the Median of a sequence of mullable double values, or null if the source sequence is
         ///     empty or contains only values that are null.
@@ -354,12 +334,11 @@ namespace LinqStatistics
         /// <returns>The Median of the sequence of values.</returns>
         public static double Median(this IEnumerable<double> source)
         {
-            if (source == null)
-                throw new ArgumentNullException(nameof(source));
+            ArgumentNullException.ThrowIfNull(source);
 
             var sortedList = (from number in source
-                             orderby number
-                             select (double)number).ToList();
+                              orderby number
+                              select (double)number).ToList();
 
             var count = sortedList.Count;
             int itemIndex = count / 2;
@@ -384,11 +363,9 @@ namespace LinqStatistics
         /// <returns>The Median of the sequence of values.</returns>
         public static double? Median<TSource>(this IEnumerable<TSource> source, Func<TSource, double?> selector)
         {
-            if (source == null)
-                throw new ArgumentNullException(nameof(source));
+            ArgumentNullException.ThrowIfNull(source);
 
-            if (selector == null)
-                throw new ArgumentNullException(nameof(selector));
+            ArgumentNullException.ThrowIfNull(selector);
 
             return source.Select(selector).Median();
         }
@@ -403,13 +380,11 @@ namespace LinqStatistics
         /// <returns>The Median of the sequence of values.</returns>
         public static double Median<TSource>(this IEnumerable<TSource> source, Func<TSource, double> selector)
         {
-            if (source == null)
-                throw new ArgumentNullException(nameof(source));
+            ArgumentNullException.ThrowIfNull(source);
 
-            if (selector == null)
-                throw new ArgumentNullException(nameof(selector));
+            ArgumentNullException.ThrowIfNull(selector);
 
             return source.Select(selector).Median();
         }
-     }
+    }
 }

@@ -11,7 +11,7 @@ namespace LinqStatistics
 {
     public static partial class EnumerableStats
     {
-    	
+
         /// <summary>
         /// Computes the LeastSquares of a sequence of Tuple{int?, int?} values.
         /// </summary>
@@ -34,8 +34,7 @@ namespace LinqStatistics
         /// <returns> The LeastSquares of the sequence of values.</returns>
         public static LeastSquares LeastSquares(this IEnumerable<Tuple<int, int>> source)
         {
-            if (source == null)
-                throw new ArgumentNullException(nameof(source));
+            ArgumentNullException.ThrowIfNull(source);
 
             long n = 0;
             var sumX = 0.0;
@@ -45,7 +44,7 @@ namespace LinqStatistics
             var sumXY = 0.0;
 
             checked
-            { 
+            {
                 foreach (var tuple in source)
                 {
                     n++;
@@ -59,7 +58,7 @@ namespace LinqStatistics
 
             if (n < 2)
                 throw new InvalidOperationException("Source must have at least 2 elements");
-            
+
             var sumXSquared = sumX * sumX;
             double denominator = n * sumXX - sumXSquared;
             if (denominator == 0.0)
@@ -84,11 +83,9 @@ namespace LinqStatistics
         /// <returns>The LeastSquares of the sequence of values.</returns>
         public static LeastSquares? LeastSquares<TSource>(this IEnumerable<TSource> source, Func<TSource, Tuple<int?, int?>> selector)
         {
-            if (source == null)
-                throw new ArgumentNullException(nameof(source));
+            ArgumentNullException.ThrowIfNull(source);
 
-            if (selector == null)
-                throw new ArgumentNullException(nameof(selector));
+            ArgumentNullException.ThrowIfNull(selector);
 
             return source.Select(selector).LeastSquares();
         }
@@ -103,15 +100,13 @@ namespace LinqStatistics
         /// <returns>The LeastSquares of the sequence of values.</returns>
         public static LeastSquares LeastSquares<TSource>(this IEnumerable<TSource> source, Func<TSource, Tuple<int, int>> selector)
         {
-            if (source == null)
-                throw new ArgumentNullException(nameof(source));
+            ArgumentNullException.ThrowIfNull(source);
 
-            if (selector == null)
-                throw new ArgumentNullException(nameof(selector));
+            ArgumentNullException.ThrowIfNull(selector);
 
             return source.Select(selector).LeastSquares();
         }
- 	
+
         /// <summary>
         /// Computes the LeastSquares of a sequence of Tuple{long?, long?} values.
         /// </summary>
@@ -134,8 +129,7 @@ namespace LinqStatistics
         /// <returns> The LeastSquares of the sequence of values.</returns>
         public static LeastSquares LeastSquares(this IEnumerable<Tuple<long, long>> source)
         {
-            if (source == null)
-                throw new ArgumentNullException(nameof(source));
+            ArgumentNullException.ThrowIfNull(source);
 
             long n = 0;
             var sumX = 0.0;
@@ -145,7 +139,7 @@ namespace LinqStatistics
             var sumXY = 0.0;
 
             checked
-            { 
+            {
                 foreach (var tuple in source)
                 {
                     n++;
@@ -159,7 +153,7 @@ namespace LinqStatistics
 
             if (n < 2)
                 throw new InvalidOperationException("Source must have at least 2 elements");
-            
+
             var sumXSquared = sumX * sumX;
             double denominator = n * sumXX - sumXSquared;
             if (denominator == 0.0)
@@ -184,11 +178,9 @@ namespace LinqStatistics
         /// <returns>The LeastSquares of the sequence of values.</returns>
         public static LeastSquares? LeastSquares<TSource>(this IEnumerable<TSource> source, Func<TSource, Tuple<long?, long?>> selector)
         {
-            if (source == null)
-                throw new ArgumentNullException(nameof(source));
+            ArgumentNullException.ThrowIfNull(source);
 
-            if (selector == null)
-                throw new ArgumentNullException(nameof(selector));
+            ArgumentNullException.ThrowIfNull(selector);
 
             return source.Select(selector).LeastSquares();
         }
@@ -203,15 +195,13 @@ namespace LinqStatistics
         /// <returns>The LeastSquares of the sequence of values.</returns>
         public static LeastSquares LeastSquares<TSource>(this IEnumerable<TSource> source, Func<TSource, Tuple<long, long>> selector)
         {
-            if (source == null)
-                throw new ArgumentNullException(nameof(source));
+            ArgumentNullException.ThrowIfNull(source);
 
-            if (selector == null)
-                throw new ArgumentNullException(nameof(selector));
+            ArgumentNullException.ThrowIfNull(selector);
 
             return source.Select(selector).LeastSquares();
         }
- 	
+
         /// <summary>
         /// Computes the LeastSquares of a sequence of Tuple{float?, float?} values.
         /// </summary>
@@ -234,8 +224,7 @@ namespace LinqStatistics
         /// <returns> The LeastSquares of the sequence of values.</returns>
         public static LeastSquares LeastSquares(this IEnumerable<Tuple<float, float>> source)
         {
-            if (source == null)
-                throw new ArgumentNullException(nameof(source));
+            ArgumentNullException.ThrowIfNull(source);
 
             long n = 0;
             var sumX = 0.0;
@@ -245,7 +234,7 @@ namespace LinqStatistics
             var sumXY = 0.0;
 
             checked
-            { 
+            {
                 foreach (var tuple in source)
                 {
                     n++;
@@ -259,7 +248,7 @@ namespace LinqStatistics
 
             if (n < 2)
                 throw new InvalidOperationException("Source must have at least 2 elements");
-            
+
             var sumXSquared = sumX * sumX;
             double denominator = n * sumXX - sumXSquared;
             if (denominator == 0.0)
@@ -284,11 +273,9 @@ namespace LinqStatistics
         /// <returns>The LeastSquares of the sequence of values.</returns>
         public static LeastSquares? LeastSquares<TSource>(this IEnumerable<TSource> source, Func<TSource, Tuple<float?, float?>> selector)
         {
-            if (source == null)
-                throw new ArgumentNullException(nameof(source));
+            ArgumentNullException.ThrowIfNull(source);
 
-            if (selector == null)
-                throw new ArgumentNullException(nameof(selector));
+            ArgumentNullException.ThrowIfNull(selector);
 
             return source.Select(selector).LeastSquares();
         }
@@ -303,15 +290,13 @@ namespace LinqStatistics
         /// <returns>The LeastSquares of the sequence of values.</returns>
         public static LeastSquares LeastSquares<TSource>(this IEnumerable<TSource> source, Func<TSource, Tuple<float, float>> selector)
         {
-            if (source == null)
-                throw new ArgumentNullException(nameof(source));
+            ArgumentNullException.ThrowIfNull(source);
 
-            if (selector == null)
-                throw new ArgumentNullException(nameof(selector));
+            ArgumentNullException.ThrowIfNull(selector);
 
             return source.Select(selector).LeastSquares();
         }
- 	
+
         /// <summary>
         /// Computes the LeastSquares of a sequence of Tuple{double?, double?} values.
         /// </summary>
@@ -334,8 +319,7 @@ namespace LinqStatistics
         /// <returns> The LeastSquares of the sequence of values.</returns>
         public static LeastSquares LeastSquares(this IEnumerable<Tuple<double, double>> source)
         {
-            if (source == null)
-                throw new ArgumentNullException(nameof(source));
+            ArgumentNullException.ThrowIfNull(source);
 
             long n = 0;
             var sumX = 0.0;
@@ -345,7 +329,7 @@ namespace LinqStatistics
             var sumXY = 0.0;
 
             checked
-            { 
+            {
                 foreach (var tuple in source)
                 {
                     n++;
@@ -359,7 +343,7 @@ namespace LinqStatistics
 
             if (n < 2)
                 throw new InvalidOperationException("Source must have at least 2 elements");
-            
+
             var sumXSquared = sumX * sumX;
             double denominator = n * sumXX - sumXSquared;
             if (denominator == 0.0)
@@ -384,11 +368,9 @@ namespace LinqStatistics
         /// <returns>The LeastSquares of the sequence of values.</returns>
         public static LeastSquares? LeastSquares<TSource>(this IEnumerable<TSource> source, Func<TSource, Tuple<double?, double?>> selector)
         {
-            if (source == null)
-                throw new ArgumentNullException(nameof(source));
+            ArgumentNullException.ThrowIfNull(source);
 
-            if (selector == null)
-                throw new ArgumentNullException(nameof(selector));
+            ArgumentNullException.ThrowIfNull(selector);
 
             return source.Select(selector).LeastSquares();
         }
@@ -403,15 +385,13 @@ namespace LinqStatistics
         /// <returns>The LeastSquares of the sequence of values.</returns>
         public static LeastSquares LeastSquares<TSource>(this IEnumerable<TSource> source, Func<TSource, Tuple<double, double>> selector)
         {
-            if (source == null)
-                throw new ArgumentNullException(nameof(source));
+            ArgumentNullException.ThrowIfNull(source);
 
-            if (selector == null)
-                throw new ArgumentNullException(nameof(selector));
+            ArgumentNullException.ThrowIfNull(selector);
 
             return source.Select(selector).LeastSquares();
         }
- 	
+
         /// <summary>
         /// Computes the LeastSquares of a sequence of Tuple{decimal?, decimal?} values.
         /// </summary>
@@ -434,8 +414,7 @@ namespace LinqStatistics
         /// <returns> The LeastSquares of the sequence of values.</returns>
         public static LeastSquares LeastSquares(this IEnumerable<Tuple<decimal, decimal>> source)
         {
-            if (source == null)
-                throw new ArgumentNullException(nameof(source));
+            ArgumentNullException.ThrowIfNull(source);
 
             long n = 0;
             var sumX = 0.0;
@@ -445,7 +424,7 @@ namespace LinqStatistics
             var sumXY = 0.0;
 
             checked
-            { 
+            {
                 foreach (var tuple in source)
                 {
                     n++;
@@ -459,7 +438,7 @@ namespace LinqStatistics
 
             if (n < 2)
                 throw new InvalidOperationException("Source must have at least 2 elements");
-            
+
             var sumXSquared = sumX * sumX;
             double denominator = n * sumXX - sumXSquared;
             if (denominator == 0.0)
@@ -484,11 +463,9 @@ namespace LinqStatistics
         /// <returns>The LeastSquares of the sequence of values.</returns>
         public static LeastSquares? LeastSquares<TSource>(this IEnumerable<TSource> source, Func<TSource, Tuple<decimal?, decimal?>> selector)
         {
-            if (source == null)
-                throw new ArgumentNullException(nameof(source));
+            ArgumentNullException.ThrowIfNull(source);
 
-            if (selector == null)
-                throw new ArgumentNullException(nameof(selector));
+            ArgumentNullException.ThrowIfNull(selector);
 
             return source.Select(selector).LeastSquares();
         }
@@ -503,13 +480,11 @@ namespace LinqStatistics
         /// <returns>The LeastSquares of the sequence of values.</returns>
         public static LeastSquares LeastSquares<TSource>(this IEnumerable<TSource> source, Func<TSource, Tuple<decimal, decimal>> selector)
         {
-            if (source == null)
-                throw new ArgumentNullException(nameof(source));
+            ArgumentNullException.ThrowIfNull(source);
 
-            if (selector == null)
-                throw new ArgumentNullException(nameof(selector));
+            ArgumentNullException.ThrowIfNull(selector);
 
             return source.Select(selector).LeastSquares();
         }
-     }
+    }
 }

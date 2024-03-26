@@ -1,42 +1,15 @@
-﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.31729.503
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34714.143
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{699EEBB0-156D-483E-A05A-FAF990B0BE36}"
 	ProjectSection(SolutionItems) = preProject
 		.editorconfig = .editorconfig
-		LinqStatistics.vsmdi = LinqStatistics.vsmdi
-		LocalTestRun.testrunconfig = LocalTestRun.testrunconfig
-		PackageInfo.cs = PackageInfo.cs
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinqStatistics", "LinqStatistics\LinqStatistics.csproj", "{FA474C99-3F49-493F-8F18-D0EE98961595}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LinqStatistics", "LinqStatistics\LinqStatistics.csproj", "{FA474C99-3F49-493F-8F18-D0EE98961595}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinqStatisticsTests", "LinqStatisticsTests\LinqStatisticsTests.csproj", "{394BAB08-076A-4290-92C4-63531E2BF87E}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApplication1", "ConsoleApplication1\ConsoleApplication1.csproj", "{9EFCB775-B429-4EF3-9813-B9539D94A230}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "NuGet", "NuGet", "{47E5B368-4238-4B16-9798-5AF5A094A987}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinqStatistics.Packager", "LinqStatistics.Packager\LinqStatistics.Packager.csproj", "{0451BAEF-DF2E-4B98-8644-94EE9415E389}"
-	ProjectSection(ProjectDependencies) = postProject
-		{BD1DE502-8AA8-4041-971F-2D313E06609B} = {BD1DE502-8AA8-4041-971F-2D313E06609B}
-		{FA474C99-3F49-493F-8F18-D0EE98961595} = {FA474C99-3F49-493F-8F18-D0EE98961595}
-		{E24B68F3-4A84-484B-BDE3-A4BE60B971C5} = {E24B68F3-4A84-484B-BDE3-A4BE60B971C5}
-	EndProjectSection
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinqStatistics.Portable", "LinqStatistics.Portable\LinqStatistics.Portable.csproj", "{BD1DE502-8AA8-4041-971F-2D313E06609B}"
-	ProjectSection(ProjectDependencies) = postProject
-		{FA474C99-3F49-493F-8F18-D0EE98961595} = {FA474C99-3F49-493F-8F18-D0EE98961595}
-	EndProjectSection
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinqStatistics.NetStandard", "LinqStatistics.NetStandard\LinqStatistics.NetStandard.csproj", "{E24B68F3-4A84-484B-BDE3-A4BE60B971C5}"
-	ProjectSection(ProjectDependencies) = postProject
-		{FA474C99-3F49-493F-8F18-D0EE98961595} = {FA474C99-3F49-493F-8F18-D0EE98961595}
-	EndProjectSection
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinqStatisticsTests.netstandard", "LinqStatisticsTests.NetStandard\LinqStatisticsTests.netstandard.csproj", "{A595B82D-8F0D-4EBE-917B-C26B4908E69D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LinqStatisticsTests", "LinqStatisticsTests\LinqStatisticsTests.csproj", "{394BAB08-076A-4290-92C4-63531E2BF87E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -52,30 +25,9 @@ Global
 		{394BAB08-076A-4290-92C4-63531E2BF87E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{394BAB08-076A-4290-92C4-63531E2BF87E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{394BAB08-076A-4290-92C4-63531E2BF87E}.Release|Any CPU.Build.0 = Release|Any CPU
-		{9EFCB775-B429-4EF3-9813-B9539D94A230}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{9EFCB775-B429-4EF3-9813-B9539D94A230}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{9EFCB775-B429-4EF3-9813-B9539D94A230}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{9EFCB775-B429-4EF3-9813-B9539D94A230}.Release|Any CPU.Build.0 = Release|Any CPU
-		{0451BAEF-DF2E-4B98-8644-94EE9415E389}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0451BAEF-DF2E-4B98-8644-94EE9415E389}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{BD1DE502-8AA8-4041-971F-2D313E06609B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{BD1DE502-8AA8-4041-971F-2D313E06609B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{BD1DE502-8AA8-4041-971F-2D313E06609B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{BD1DE502-8AA8-4041-971F-2D313E06609B}.Release|Any CPU.Build.0 = Release|Any CPU
-		{E24B68F3-4A84-484B-BDE3-A4BE60B971C5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E24B68F3-4A84-484B-BDE3-A4BE60B971C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E24B68F3-4A84-484B-BDE3-A4BE60B971C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E24B68F3-4A84-484B-BDE3-A4BE60B971C5}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A595B82D-8F0D-4EBE-917B-C26B4908E69D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A595B82D-8F0D-4EBE-917B-C26B4908E69D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A595B82D-8F0D-4EBE-917B-C26B4908E69D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A595B82D-8F0D-4EBE-917B-C26B4908E69D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(NestedProjects) = preSolution
-		{0451BAEF-DF2E-4B98-8644-94EE9415E389} = {47E5B368-4238-4B16-9798-5AF5A094A987}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {9E4791CA-0CD0-4C10-B8B7-C43CD5A84332}

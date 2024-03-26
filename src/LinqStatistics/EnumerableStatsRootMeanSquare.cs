@@ -11,7 +11,7 @@ namespace LinqStatistics
 {
     public static partial class EnumerableStats
     {
-    	
+
         /// <summary>
         ///     The RootMeanSquare of the sequence of nullable int values, or null if the source sequence is
         ///     empty or contains only values that are null.
@@ -36,14 +36,13 @@ namespace LinqStatistics
         /// <remarks>![equation](~/images/rms.gif)</remarks>
         public static double RootMeanSquare(this IEnumerable<int> source)
         {
-            if (source == null)
-                throw new ArgumentNullException(nameof(source));
+            ArgumentNullException.ThrowIfNull(source);
 
             var s = 0.0;
             long n = 0;
 
             checked
-            { 
+            {
                 foreach (var d in source)
                 {
                     n++;
@@ -68,11 +67,9 @@ namespace LinqStatistics
         /// <remarks>![equation](~/images/rms.gif)</remarks>
         public static double? RootMeanSquare<TSource>(this IEnumerable<TSource> source, Func<TSource, int?> selector)
         {
-            if (source == null)
-                throw new ArgumentNullException(nameof(source));
+            ArgumentNullException.ThrowIfNull(source);
 
-            if (selector == null)
-                throw new ArgumentNullException(nameof(selector));
+            ArgumentNullException.ThrowIfNull(selector);
 
             return source.Select(selector).RootMeanSquare();
         }
@@ -88,15 +85,13 @@ namespace LinqStatistics
         /// <remarks>![equation](~/images/rms.gif)</remarks>
         public static double RootMeanSquare<TSource>(this IEnumerable<TSource> source, Func<TSource, int> selector)
         {
-             if (source == null)
-                throw new ArgumentNullException(nameof(source));
+            ArgumentNullException.ThrowIfNull(source);
 
-            if (selector == null)
-                throw new ArgumentNullException(nameof(selector));
+            ArgumentNullException.ThrowIfNull(selector);
 
-           return source.Select(selector).RootMeanSquare();
+            return source.Select(selector).RootMeanSquare();
         }
- 	
+
         /// <summary>
         ///     The RootMeanSquare of the sequence of nullable long values, or null if the source sequence is
         ///     empty or contains only values that are null.
@@ -121,14 +116,13 @@ namespace LinqStatistics
         /// <remarks>![equation](~/images/rms.gif)</remarks>
         public static double RootMeanSquare(this IEnumerable<long> source)
         {
-            if (source == null)
-                throw new ArgumentNullException(nameof(source));
+            ArgumentNullException.ThrowIfNull(source);
 
             var s = 0.0;
             long n = 0;
 
             checked
-            { 
+            {
                 foreach (var d in source)
                 {
                     n++;
@@ -153,11 +147,9 @@ namespace LinqStatistics
         /// <remarks>![equation](~/images/rms.gif)</remarks>
         public static double? RootMeanSquare<TSource>(this IEnumerable<TSource> source, Func<TSource, long?> selector)
         {
-            if (source == null)
-                throw new ArgumentNullException(nameof(source));
+            ArgumentNullException.ThrowIfNull(source);
 
-            if (selector == null)
-                throw new ArgumentNullException(nameof(selector));
+            ArgumentNullException.ThrowIfNull(selector);
 
             return source.Select(selector).RootMeanSquare();
         }
@@ -173,15 +165,13 @@ namespace LinqStatistics
         /// <remarks>![equation](~/images/rms.gif)</remarks>
         public static double RootMeanSquare<TSource>(this IEnumerable<TSource> source, Func<TSource, long> selector)
         {
-             if (source == null)
-                throw new ArgumentNullException(nameof(source));
+            ArgumentNullException.ThrowIfNull(source);
 
-            if (selector == null)
-                throw new ArgumentNullException(nameof(selector));
+            ArgumentNullException.ThrowIfNull(selector);
 
-           return source.Select(selector).RootMeanSquare();
+            return source.Select(selector).RootMeanSquare();
         }
- 	
+
         /// <summary>
         ///     The RootMeanSquare of the sequence of nullable decimal values, or null if the source sequence is
         ///     empty or contains only values that are null.
@@ -206,14 +196,13 @@ namespace LinqStatistics
         /// <remarks>![equation](~/images/rms.gif)</remarks>
         public static decimal RootMeanSquare(this IEnumerable<decimal> source)
         {
-            if (source == null)
-                throw new ArgumentNullException(nameof(source));
+            ArgumentNullException.ThrowIfNull(source);
 
             var s = 0.0;
             long n = 0;
 
             checked
-            { 
+            {
                 foreach (var d in source)
                 {
                     n++;
@@ -238,11 +227,9 @@ namespace LinqStatistics
         /// <remarks>![equation](~/images/rms.gif)</remarks>
         public static decimal? RootMeanSquare<TSource>(this IEnumerable<TSource> source, Func<TSource, decimal?> selector)
         {
-            if (source == null)
-                throw new ArgumentNullException(nameof(source));
+            ArgumentNullException.ThrowIfNull(source);
 
-            if (selector == null)
-                throw new ArgumentNullException(nameof(selector));
+            ArgumentNullException.ThrowIfNull(selector);
 
             return source.Select(selector).RootMeanSquare();
         }
@@ -258,15 +245,13 @@ namespace LinqStatistics
         /// <remarks>![equation](~/images/rms.gif)</remarks>
         public static decimal RootMeanSquare<TSource>(this IEnumerable<TSource> source, Func<TSource, decimal> selector)
         {
-             if (source == null)
-                throw new ArgumentNullException(nameof(source));
+            ArgumentNullException.ThrowIfNull(source);
 
-            if (selector == null)
-                throw new ArgumentNullException(nameof(selector));
+            ArgumentNullException.ThrowIfNull(selector);
 
-           return source.Select(selector).RootMeanSquare();
+            return source.Select(selector).RootMeanSquare();
         }
- 	
+
         /// <summary>
         ///     The RootMeanSquare of the sequence of nullable float values, or null if the source sequence is
         ///     empty or contains only values that are null.
@@ -291,14 +276,13 @@ namespace LinqStatistics
         /// <remarks>![equation](~/images/rms.gif)</remarks>
         public static float RootMeanSquare(this IEnumerable<float> source)
         {
-            if (source == null)
-                throw new ArgumentNullException(nameof(source));
+            ArgumentNullException.ThrowIfNull(source);
 
             var s = 0.0;
             long n = 0;
 
             checked
-            { 
+            {
                 foreach (var d in source)
                 {
                     n++;
@@ -323,11 +307,9 @@ namespace LinqStatistics
         /// <remarks>![equation](~/images/rms.gif)</remarks>
         public static float? RootMeanSquare<TSource>(this IEnumerable<TSource> source, Func<TSource, float?> selector)
         {
-            if (source == null)
-                throw new ArgumentNullException(nameof(source));
+            ArgumentNullException.ThrowIfNull(source);
 
-            if (selector == null)
-                throw new ArgumentNullException(nameof(selector));
+            ArgumentNullException.ThrowIfNull(selector);
 
             return source.Select(selector).RootMeanSquare();
         }
@@ -343,15 +325,13 @@ namespace LinqStatistics
         /// <remarks>![equation](~/images/rms.gif)</remarks>
         public static float RootMeanSquare<TSource>(this IEnumerable<TSource> source, Func<TSource, float> selector)
         {
-             if (source == null)
-                throw new ArgumentNullException(nameof(source));
+            ArgumentNullException.ThrowIfNull(source);
 
-            if (selector == null)
-                throw new ArgumentNullException(nameof(selector));
+            ArgumentNullException.ThrowIfNull(selector);
 
-           return source.Select(selector).RootMeanSquare();
+            return source.Select(selector).RootMeanSquare();
         }
- 	
+
         /// <summary>
         ///     The RootMeanSquare of the sequence of nullable double values, or null if the source sequence is
         ///     empty or contains only values that are null.
@@ -376,14 +356,13 @@ namespace LinqStatistics
         /// <remarks>![equation](~/images/rms.gif)</remarks>
         public static double RootMeanSquare(this IEnumerable<double> source)
         {
-            if (source == null)
-                throw new ArgumentNullException(nameof(source));
+            ArgumentNullException.ThrowIfNull(source);
 
             var s = 0.0;
             long n = 0;
 
             checked
-            { 
+            {
                 foreach (var d in source)
                 {
                     n++;
@@ -408,11 +387,9 @@ namespace LinqStatistics
         /// <remarks>![equation](~/images/rms.gif)</remarks>
         public static double? RootMeanSquare<TSource>(this IEnumerable<TSource> source, Func<TSource, double?> selector)
         {
-            if (source == null)
-                throw new ArgumentNullException(nameof(source));
+            ArgumentNullException.ThrowIfNull(source);
 
-            if (selector == null)
-                throw new ArgumentNullException(nameof(selector));
+            ArgumentNullException.ThrowIfNull(selector);
 
             return source.Select(selector).RootMeanSquare();
         }
@@ -428,13 +405,11 @@ namespace LinqStatistics
         /// <remarks>![equation](~/images/rms.gif)</remarks>
         public static double RootMeanSquare<TSource>(this IEnumerable<TSource> source, Func<TSource, double> selector)
         {
-             if (source == null)
-                throw new ArgumentNullException(nameof(source));
+            ArgumentNullException.ThrowIfNull(source);
 
-            if (selector == null)
-                throw new ArgumentNullException(nameof(selector));
+            ArgumentNullException.ThrowIfNull(selector);
 
-           return source.Select(selector).RootMeanSquare();
+            return source.Select(selector).RootMeanSquare();
         }
-     }
+    }
 }

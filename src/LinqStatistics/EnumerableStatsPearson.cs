@@ -11,7 +11,7 @@ namespace LinqStatistics
 {
     public static partial class EnumerableStats
     {
-    	
+
         /// <summary>
         /// Computes the Pearson of two sequences of nullable int values.
         /// </summary>
@@ -48,15 +48,14 @@ namespace LinqStatistics
         /// <remarks>![equation](~/images/pearson.gif)</remarks>
         public static double Pearson(this IEnumerable<Tuple<int, int>> source)
         {
-            if (source == null)
-                throw new ArgumentNullException(nameof(source));
+            ArgumentNullException.ThrowIfNull(source);
 
             var x = source.Select(t => t.Item1);
             var y = source.Select(t => t.Item2);
 
             return x.Covariance(y) / (x.StandardDeviationP() * y.StandardDeviationP());
         }
-        
+
         /// <summary>
         ///     Computes the Pearson of a sequence of nullable int values that are obtained
         ///     by invoking a transform function on each element of the input sequence.
@@ -69,14 +68,11 @@ namespace LinqStatistics
         /// <remarks>![equation](~/images/pearson.gif)</remarks>
         public static double? Pearson<TSource>(this IEnumerable<TSource> source, IEnumerable<TSource> other, Func<TSource, int?> selector)
         {
-            if (source == null)
-                throw new ArgumentNullException(nameof(source));
+            ArgumentNullException.ThrowIfNull(source);
 
-             if (other == null)
-                throw new ArgumentNullException(nameof(other));
+            ArgumentNullException.ThrowIfNull(selector);
 
-           if (selector == null)
-                throw new ArgumentNullException(nameof(selector));
+            ArgumentNullException.ThrowIfNull(other);
 
             return source.Select(selector).Pearson(other.Select(selector));
         }
@@ -93,18 +89,15 @@ namespace LinqStatistics
         /// <remarks>![equation](~/images/pearson.gif)</remarks>
         public static double Pearson<TSource>(this IEnumerable<TSource> source, IEnumerable<TSource> other, Func<TSource, int> selector)
         {
-            if (source == null)
-                throw new ArgumentNullException(nameof(source));
+            ArgumentNullException.ThrowIfNull(source);
 
-            if (other == null)
-                throw new ArgumentNullException(nameof(other));
+            ArgumentNullException.ThrowIfNull(selector);
 
-            if (selector == null)
-                throw new ArgumentNullException(nameof(selector));
+            ArgumentNullException.ThrowIfNull(other);
 
             return source.Select(selector).Pearson(other.Select(selector));
         }
- 	
+
         /// <summary>
         /// Computes the Pearson of two sequences of nullable long values.
         /// </summary>
@@ -141,15 +134,14 @@ namespace LinqStatistics
         /// <remarks>![equation](~/images/pearson.gif)</remarks>
         public static double Pearson(this IEnumerable<Tuple<long, long>> source)
         {
-            if (source == null)
-                throw new ArgumentNullException(nameof(source));
+            ArgumentNullException.ThrowIfNull(source);
 
             var x = source.Select(t => t.Item1);
             var y = source.Select(t => t.Item2);
 
             return x.Covariance(y) / (x.StandardDeviationP() * y.StandardDeviationP());
         }
-        
+
         /// <summary>
         ///     Computes the Pearson of a sequence of nullable long values that are obtained
         ///     by invoking a transform function on each element of the input sequence.
@@ -162,14 +154,11 @@ namespace LinqStatistics
         /// <remarks>![equation](~/images/pearson.gif)</remarks>
         public static double? Pearson<TSource>(this IEnumerable<TSource> source, IEnumerable<TSource> other, Func<TSource, long?> selector)
         {
-            if (source == null)
-                throw new ArgumentNullException(nameof(source));
+            ArgumentNullException.ThrowIfNull(source);
 
-             if (other == null)
-                throw new ArgumentNullException(nameof(other));
+            ArgumentNullException.ThrowIfNull(selector);
 
-           if (selector == null)
-                throw new ArgumentNullException(nameof(selector));
+            ArgumentNullException.ThrowIfNull(other);
 
             return source.Select(selector).Pearson(other.Select(selector));
         }
@@ -186,18 +175,15 @@ namespace LinqStatistics
         /// <remarks>![equation](~/images/pearson.gif)</remarks>
         public static double Pearson<TSource>(this IEnumerable<TSource> source, IEnumerable<TSource> other, Func<TSource, long> selector)
         {
-            if (source == null)
-                throw new ArgumentNullException(nameof(source));
+            ArgumentNullException.ThrowIfNull(source);
 
-            if (other == null)
-                throw new ArgumentNullException(nameof(other));
+            ArgumentNullException.ThrowIfNull(selector);
 
-            if (selector == null)
-                throw new ArgumentNullException(nameof(selector));
+            ArgumentNullException.ThrowIfNull(other);
 
             return source.Select(selector).Pearson(other.Select(selector));
         }
- 	
+
         /// <summary>
         /// Computes the Pearson of two sequences of nullable decimal values.
         /// </summary>
@@ -234,15 +220,14 @@ namespace LinqStatistics
         /// <remarks>![equation](~/images/pearson.gif)</remarks>
         public static decimal Pearson(this IEnumerable<Tuple<decimal, decimal>> source)
         {
-            if (source == null)
-                throw new ArgumentNullException(nameof(source));
+            ArgumentNullException.ThrowIfNull(source);
 
             var x = source.Select(t => t.Item1);
             var y = source.Select(t => t.Item2);
 
             return x.Covariance(y) / (x.StandardDeviationP() * y.StandardDeviationP());
         }
-        
+
         /// <summary>
         ///     Computes the Pearson of a sequence of nullable decimal values that are obtained
         ///     by invoking a transform function on each element of the input sequence.
@@ -255,14 +240,11 @@ namespace LinqStatistics
         /// <remarks>![equation](~/images/pearson.gif)</remarks>
         public static decimal? Pearson<TSource>(this IEnumerable<TSource> source, IEnumerable<TSource> other, Func<TSource, decimal?> selector)
         {
-            if (source == null)
-                throw new ArgumentNullException(nameof(source));
+            ArgumentNullException.ThrowIfNull(source);
 
-             if (other == null)
-                throw new ArgumentNullException(nameof(other));
+            ArgumentNullException.ThrowIfNull(selector);
 
-           if (selector == null)
-                throw new ArgumentNullException(nameof(selector));
+            ArgumentNullException.ThrowIfNull(other);
 
             return source.Select(selector).Pearson(other.Select(selector));
         }
@@ -279,18 +261,15 @@ namespace LinqStatistics
         /// <remarks>![equation](~/images/pearson.gif)</remarks>
         public static decimal Pearson<TSource>(this IEnumerable<TSource> source, IEnumerable<TSource> other, Func<TSource, decimal> selector)
         {
-            if (source == null)
-                throw new ArgumentNullException(nameof(source));
+            ArgumentNullException.ThrowIfNull(source);
 
-            if (other == null)
-                throw new ArgumentNullException(nameof(other));
+            ArgumentNullException.ThrowIfNull(selector);
 
-            if (selector == null)
-                throw new ArgumentNullException(nameof(selector));
+            ArgumentNullException.ThrowIfNull(other);
 
             return source.Select(selector).Pearson(other.Select(selector));
         }
- 	
+
         /// <summary>
         /// Computes the Pearson of two sequences of nullable float values.
         /// </summary>
@@ -327,15 +306,14 @@ namespace LinqStatistics
         /// <remarks>![equation](~/images/pearson.gif)</remarks>
         public static float Pearson(this IEnumerable<Tuple<float, float>> source)
         {
-            if (source == null)
-                throw new ArgumentNullException(nameof(source));
+            ArgumentNullException.ThrowIfNull(source);
 
             var x = source.Select(t => t.Item1);
             var y = source.Select(t => t.Item2);
 
             return x.Covariance(y) / (x.StandardDeviationP() * y.StandardDeviationP());
         }
-        
+
         /// <summary>
         ///     Computes the Pearson of a sequence of nullable float values that are obtained
         ///     by invoking a transform function on each element of the input sequence.
@@ -348,14 +326,11 @@ namespace LinqStatistics
         /// <remarks>![equation](~/images/pearson.gif)</remarks>
         public static float? Pearson<TSource>(this IEnumerable<TSource> source, IEnumerable<TSource> other, Func<TSource, float?> selector)
         {
-            if (source == null)
-                throw new ArgumentNullException(nameof(source));
+            ArgumentNullException.ThrowIfNull(source);
 
-             if (other == null)
-                throw new ArgumentNullException(nameof(other));
+            ArgumentNullException.ThrowIfNull(selector);
 
-           if (selector == null)
-                throw new ArgumentNullException(nameof(selector));
+            ArgumentNullException.ThrowIfNull(other);
 
             return source.Select(selector).Pearson(other.Select(selector));
         }
@@ -372,18 +347,15 @@ namespace LinqStatistics
         /// <remarks>![equation](~/images/pearson.gif)</remarks>
         public static float Pearson<TSource>(this IEnumerable<TSource> source, IEnumerable<TSource> other, Func<TSource, float> selector)
         {
-            if (source == null)
-                throw new ArgumentNullException(nameof(source));
+            ArgumentNullException.ThrowIfNull(source);
 
-            if (other == null)
-                throw new ArgumentNullException(nameof(other));
+            ArgumentNullException.ThrowIfNull(selector);
 
-            if (selector == null)
-                throw new ArgumentNullException(nameof(selector));
+            ArgumentNullException.ThrowIfNull(other);
 
             return source.Select(selector).Pearson(other.Select(selector));
         }
- 	
+
         /// <summary>
         /// Computes the Pearson of two sequences of nullable double values.
         /// </summary>
@@ -420,15 +392,14 @@ namespace LinqStatistics
         /// <remarks>![equation](~/images/pearson.gif)</remarks>
         public static double Pearson(this IEnumerable<Tuple<double, double>> source)
         {
-            if (source == null)
-                throw new ArgumentNullException(nameof(source));
+            ArgumentNullException.ThrowIfNull(source);
 
             var x = source.Select(t => t.Item1);
             var y = source.Select(t => t.Item2);
 
             return x.Covariance(y) / (x.StandardDeviationP() * y.StandardDeviationP());
         }
-        
+
         /// <summary>
         ///     Computes the Pearson of a sequence of nullable double values that are obtained
         ///     by invoking a transform function on each element of the input sequence.
@@ -441,14 +412,11 @@ namespace LinqStatistics
         /// <remarks>![equation](~/images/pearson.gif)</remarks>
         public static double? Pearson<TSource>(this IEnumerable<TSource> source, IEnumerable<TSource> other, Func<TSource, double?> selector)
         {
-            if (source == null)
-                throw new ArgumentNullException(nameof(source));
+            ArgumentNullException.ThrowIfNull(source);
 
-             if (other == null)
-                throw new ArgumentNullException(nameof(other));
+            ArgumentNullException.ThrowIfNull(selector);
 
-           if (selector == null)
-                throw new ArgumentNullException(nameof(selector));
+            ArgumentNullException.ThrowIfNull(other);
 
             return source.Select(selector).Pearson(other.Select(selector));
         }
@@ -465,16 +433,13 @@ namespace LinqStatistics
         /// <remarks>![equation](~/images/pearson.gif)</remarks>
         public static double Pearson<TSource>(this IEnumerable<TSource> source, IEnumerable<TSource> other, Func<TSource, double> selector)
         {
-            if (source == null)
-                throw new ArgumentNullException(nameof(source));
+            ArgumentNullException.ThrowIfNull(source);
 
-            if (other == null)
-                throw new ArgumentNullException(nameof(other));
+            ArgumentNullException.ThrowIfNull(selector);
 
-            if (selector == null)
-                throw new ArgumentNullException(nameof(selector));
+            ArgumentNullException.ThrowIfNull(other);
 
             return source.Select(selector).Pearson(other.Select(selector));
         }
-     }
+    }
 }

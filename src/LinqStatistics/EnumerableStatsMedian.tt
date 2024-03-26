@@ -50,8 +50,7 @@ namespace LinqStatistics
         /// <returns>The Median of the sequence of values.</returns>
         public static <#= type.Item2 #> Median(this IEnumerable<<#= type.Item1 #>> source)
         {
-            if (source == null)
-                throw new ArgumentNullException(nameof(source));
+            ArgumentNullException.ThrowIfNull(source);
 
             var sortedList = (from number in source
                              orderby number
@@ -80,11 +79,9 @@ namespace LinqStatistics
         /// <returns>The Median of the sequence of values.</returns>
         public static <#= type.Item2 #>? Median<TSource>(this IEnumerable<TSource> source, Func<TSource, <#= type.Item1 #>?> selector)
         {
-            if (source == null)
-                throw new ArgumentNullException(nameof(source));
+            ArgumentNullException.ThrowIfNull(source);
 
-            if (selector == null)
-                throw new ArgumentNullException(nameof(selector));
+            ArgumentNullException.ThrowIfNull(selector);
 
             return source.Select(selector).Median();
         }
@@ -99,11 +96,9 @@ namespace LinqStatistics
         /// <returns>The Median of the sequence of values.</returns>
         public static <#= type.Item2 #> Median<TSource>(this IEnumerable<TSource> source, Func<TSource, <#= type.Item1 #>> selector)
         {
-            if (source == null)
-                throw new ArgumentNullException(nameof(source));
+            ArgumentNullException.ThrowIfNull(source);
 
-            if (selector == null)
-                throw new ArgumentNullException(nameof(selector));
+            ArgumentNullException.ThrowIfNull(selector);
 
             return source.Select(selector).Median();
         }

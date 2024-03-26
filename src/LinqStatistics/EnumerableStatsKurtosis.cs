@@ -11,7 +11,7 @@ namespace LinqStatistics
 {
     public static partial class EnumerableStats
     {
-    	
+
         /// <summary>
         /// Computes the sample Kurtosis of a sequence of nullable int values
         /// </summary>
@@ -35,8 +35,7 @@ namespace LinqStatistics
         /// <remarks>![equation](~/images/kurtosis.gif)</remarks>
         public static double Kurtosis(this IEnumerable<int> source)
         {
-            if (source == null)
-                throw new ArgumentNullException(nameof(source));
+            ArgumentNullException.ThrowIfNull(source);
 
             var mean = (double)source.Average();
 
@@ -44,9 +43,9 @@ namespace LinqStatistics
             var meanv = 0.0;
             var M2 = 0.0;
             var M4 = 0.0;
-            
+
             checked
-            { 
+            {
                 foreach (var x in source)
                 {
                     n++;
@@ -81,11 +80,9 @@ namespace LinqStatistics
         /// <remarks>![equation](~/images/kurtosis.gif)</remarks>
         public static double Kurtosis<TSource>(this IEnumerable<TSource> source, Func<TSource, int> selector)
         {
-            if (source == null)
-                throw new ArgumentNullException(nameof(source));
+            ArgumentNullException.ThrowIfNull(source);
 
-            if (selector == null)
-                throw new ArgumentNullException(nameof(selector));
+            ArgumentNullException.ThrowIfNull(selector);
 
             return source.Select(selector).Kurtosis();
         }
@@ -101,15 +98,13 @@ namespace LinqStatistics
         /// <remarks>![equation](~/images/kurtosis.gif)</remarks>
         public static double? Kurtosis<TSource>(this IEnumerable<TSource> source, Func<TSource, int?> selector)
         {
-            if (source == null)
-                throw new ArgumentNullException(nameof(source));
+            ArgumentNullException.ThrowIfNull(source);
 
-            if (selector == null)
-                throw new ArgumentNullException(nameof(selector));
+            ArgumentNullException.ThrowIfNull(selector);
 
             return source.Select(selector).Kurtosis();
         }
- 	
+
         /// <summary>
         /// Computes the sample Kurtosis of a sequence of nullable long values
         /// </summary>
@@ -133,8 +128,7 @@ namespace LinqStatistics
         /// <remarks>![equation](~/images/kurtosis.gif)</remarks>
         public static double Kurtosis(this IEnumerable<long> source)
         {
-            if (source == null)
-                throw new ArgumentNullException(nameof(source));
+            ArgumentNullException.ThrowIfNull(source);
 
             var mean = (double)source.Average();
 
@@ -142,9 +136,9 @@ namespace LinqStatistics
             var meanv = 0.0;
             var M2 = 0.0;
             var M4 = 0.0;
-            
+
             checked
-            { 
+            {
                 foreach (var x in source)
                 {
                     n++;
@@ -179,11 +173,9 @@ namespace LinqStatistics
         /// <remarks>![equation](~/images/kurtosis.gif)</remarks>
         public static double Kurtosis<TSource>(this IEnumerable<TSource> source, Func<TSource, long> selector)
         {
-            if (source == null)
-                throw new ArgumentNullException(nameof(source));
+            ArgumentNullException.ThrowIfNull(source);
 
-            if (selector == null)
-                throw new ArgumentNullException(nameof(selector));
+            ArgumentNullException.ThrowIfNull(selector);
 
             return source.Select(selector).Kurtosis();
         }
@@ -199,15 +191,13 @@ namespace LinqStatistics
         /// <remarks>![equation](~/images/kurtosis.gif)</remarks>
         public static double? Kurtosis<TSource>(this IEnumerable<TSource> source, Func<TSource, long?> selector)
         {
-            if (source == null)
-                throw new ArgumentNullException(nameof(source));
+            ArgumentNullException.ThrowIfNull(source);
 
-            if (selector == null)
-                throw new ArgumentNullException(nameof(selector));
+            ArgumentNullException.ThrowIfNull(selector);
 
             return source.Select(selector).Kurtosis();
         }
- 	
+
         /// <summary>
         /// Computes the sample Kurtosis of a sequence of nullable decimal values
         /// </summary>
@@ -231,8 +221,7 @@ namespace LinqStatistics
         /// <remarks>![equation](~/images/kurtosis.gif)</remarks>
         public static decimal Kurtosis(this IEnumerable<decimal> source)
         {
-            if (source == null)
-                throw new ArgumentNullException(nameof(source));
+            ArgumentNullException.ThrowIfNull(source);
 
             var mean = (double)source.Average();
 
@@ -240,9 +229,9 @@ namespace LinqStatistics
             var meanv = 0.0;
             var M2 = 0.0;
             var M4 = 0.0;
-            
+
             checked
-            { 
+            {
                 foreach (var x in source)
                 {
                     n++;
@@ -277,11 +266,9 @@ namespace LinqStatistics
         /// <remarks>![equation](~/images/kurtosis.gif)</remarks>
         public static decimal Kurtosis<TSource>(this IEnumerable<TSource> source, Func<TSource, decimal> selector)
         {
-            if (source == null)
-                throw new ArgumentNullException(nameof(source));
+            ArgumentNullException.ThrowIfNull(source);
 
-            if (selector == null)
-                throw new ArgumentNullException(nameof(selector));
+            ArgumentNullException.ThrowIfNull(selector);
 
             return source.Select(selector).Kurtosis();
         }
@@ -297,15 +284,13 @@ namespace LinqStatistics
         /// <remarks>![equation](~/images/kurtosis.gif)</remarks>
         public static decimal? Kurtosis<TSource>(this IEnumerable<TSource> source, Func<TSource, decimal?> selector)
         {
-            if (source == null)
-                throw new ArgumentNullException(nameof(source));
+            ArgumentNullException.ThrowIfNull(source);
 
-            if (selector == null)
-                throw new ArgumentNullException(nameof(selector));
+            ArgumentNullException.ThrowIfNull(selector);
 
             return source.Select(selector).Kurtosis();
         }
- 	
+
         /// <summary>
         /// Computes the sample Kurtosis of a sequence of nullable float values
         /// </summary>
@@ -329,8 +314,7 @@ namespace LinqStatistics
         /// <remarks>![equation](~/images/kurtosis.gif)</remarks>
         public static float Kurtosis(this IEnumerable<float> source)
         {
-            if (source == null)
-                throw new ArgumentNullException(nameof(source));
+            ArgumentNullException.ThrowIfNull(source);
 
             var mean = (double)source.Average();
 
@@ -338,9 +322,9 @@ namespace LinqStatistics
             var meanv = 0.0;
             var M2 = 0.0;
             var M4 = 0.0;
-            
+
             checked
-            { 
+            {
                 foreach (var x in source)
                 {
                     n++;
@@ -375,11 +359,9 @@ namespace LinqStatistics
         /// <remarks>![equation](~/images/kurtosis.gif)</remarks>
         public static float Kurtosis<TSource>(this IEnumerable<TSource> source, Func<TSource, float> selector)
         {
-            if (source == null)
-                throw new ArgumentNullException(nameof(source));
+            ArgumentNullException.ThrowIfNull(source);
 
-            if (selector == null)
-                throw new ArgumentNullException(nameof(selector));
+            ArgumentNullException.ThrowIfNull(selector);
 
             return source.Select(selector).Kurtosis();
         }
@@ -395,15 +377,13 @@ namespace LinqStatistics
         /// <remarks>![equation](~/images/kurtosis.gif)</remarks>
         public static float? Kurtosis<TSource>(this IEnumerable<TSource> source, Func<TSource, float?> selector)
         {
-            if (source == null)
-                throw new ArgumentNullException(nameof(source));
+            ArgumentNullException.ThrowIfNull(source);
 
-            if (selector == null)
-                throw new ArgumentNullException(nameof(selector));
+            ArgumentNullException.ThrowIfNull(selector);
 
             return source.Select(selector).Kurtosis();
         }
- 	
+
         /// <summary>
         /// Computes the sample Kurtosis of a sequence of nullable double values
         /// </summary>
@@ -427,8 +407,7 @@ namespace LinqStatistics
         /// <remarks>![equation](~/images/kurtosis.gif)</remarks>
         public static double Kurtosis(this IEnumerable<double> source)
         {
-            if (source == null)
-                throw new ArgumentNullException(nameof(source));
+            ArgumentNullException.ThrowIfNull(source);
 
             var mean = (double)source.Average();
 
@@ -436,9 +415,9 @@ namespace LinqStatistics
             var meanv = 0.0;
             var M2 = 0.0;
             var M4 = 0.0;
-            
+
             checked
-            { 
+            {
                 foreach (var x in source)
                 {
                     n++;
@@ -473,11 +452,9 @@ namespace LinqStatistics
         /// <remarks>![equation](~/images/kurtosis.gif)</remarks>
         public static double Kurtosis<TSource>(this IEnumerable<TSource> source, Func<TSource, double> selector)
         {
-            if (source == null)
-                throw new ArgumentNullException(nameof(source));
+            ArgumentNullException.ThrowIfNull(source);
 
-            if (selector == null)
-                throw new ArgumentNullException(nameof(selector));
+            ArgumentNullException.ThrowIfNull(selector);
 
             return source.Select(selector).Kurtosis();
         }
@@ -493,13 +470,11 @@ namespace LinqStatistics
         /// <remarks>![equation](~/images/kurtosis.gif)</remarks>
         public static double? Kurtosis<TSource>(this IEnumerable<TSource> source, Func<TSource, double?> selector)
         {
-            if (source == null)
-                throw new ArgumentNullException(nameof(source));
+            ArgumentNullException.ThrowIfNull(source);
 
-            if (selector == null)
-                throw new ArgumentNullException(nameof(selector));
+            ArgumentNullException.ThrowIfNull(selector);
 
             return source.Select(selector).Kurtosis();
         }
-     }
+    }
 }

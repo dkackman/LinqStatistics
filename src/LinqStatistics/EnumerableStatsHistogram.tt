@@ -59,8 +59,7 @@ namespace LinqStatistics
         /// <returns>The Histogram of the sequence of <#= type #> values.</returns>
         public static IEnumerable<Bin> Histogram(this IEnumerable<<#= type #>> source, int binCount, BinningMode mode = BinningMode.Unbounded)
         {
-            if (source == null)
-                throw new ArgumentNullException(nameof(source));
+            ArgumentNullException.ThrowIfNull(source);
 
             var minMax = source.MinMax();
 
@@ -84,8 +83,7 @@ namespace LinqStatistics
         /// <returns>The Histogram of the sequence of nullable <#= type #> values.</returns>
         public static IEnumerable<Bin> Histogram(this IEnumerable<<#= type #>?> source, int binCount, BinningMode mode = BinningMode.Unbounded)
         {
-            if (source == null)
-                throw new ArgumentNullException(nameof(source));
+            ArgumentNullException.ThrowIfNull(source);
 
             return source.AllValues().Histogram(binCount, mode);
         }
@@ -102,11 +100,9 @@ namespace LinqStatistics
         /// <returns>The Histogram of the sequence of <#= type #> values.</returns>
         public static IEnumerable<Bin> Histogram<TSource>(this IEnumerable<TSource> source, int binCount, Func<TSource, <#= type #>> selector, BinningMode mode = BinningMode.Unbounded)
         {
-            if (source == null)
-                throw new ArgumentNullException(nameof(source));
+            ArgumentNullException.ThrowIfNull(source);
 
-            if (selector == null)
-                throw new ArgumentNullException(nameof(selector));
+            ArgumentNullException.ThrowIfNull(selector);
 
             return source.Select(t => selector(t)).Histogram(binCount, mode);
         }
@@ -123,11 +119,9 @@ namespace LinqStatistics
         /// <returns>The Histogram of the sequence of nullable <#= type #> values.</returns>
         public static IEnumerable<Bin> Histogram<TSource>(this IEnumerable<TSource> source, int binCount, Func<TSource, <#= type #>?> selector, BinningMode mode = BinningMode.Unbounded)
         {
-            if (source == null)
-                throw new ArgumentNullException(nameof(source));
+            ArgumentNullException.ThrowIfNull(source);
 
-            if (selector == null)
-                throw new ArgumentNullException(nameof(selector));
+            ArgumentNullException.ThrowIfNull(selector);
 
             return source.Select(t => selector(t)).Histogram(binCount, mode);
         }

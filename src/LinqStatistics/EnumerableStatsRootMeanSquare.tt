@@ -52,8 +52,7 @@ namespace LinqStatistics
         /// <remarks>![equation](~/images/rms.gif)</remarks>
         public static <#= type.Item2 #> RootMeanSquare(this IEnumerable<<#= type.Item1 #>> source)
         {
-            if (source == null)
-                throw new ArgumentNullException(nameof(source));
+            ArgumentNullException.ThrowIfNull(source);
 
             var s = 0.0;
             long n = 0;
@@ -84,11 +83,9 @@ namespace LinqStatistics
         /// <remarks>![equation](~/images/rms.gif)</remarks>
         public static <#= type.Item2 #>? RootMeanSquare<TSource>(this IEnumerable<TSource> source, Func<TSource, <#= type.Item1 #>?> selector)
         {
-            if (source == null)
-                throw new ArgumentNullException(nameof(source));
+            ArgumentNullException.ThrowIfNull(source);
 
-            if (selector == null)
-                throw new ArgumentNullException(nameof(selector));
+            ArgumentNullException.ThrowIfNull(selector);
 
             return source.Select(selector).RootMeanSquare();
         }
@@ -104,13 +101,11 @@ namespace LinqStatistics
         /// <remarks>![equation](~/images/rms.gif)</remarks>
         public static <#= type.Item2 #> RootMeanSquare<TSource>(this IEnumerable<TSource> source, Func<TSource, <#= type.Item1 #>> selector)
         {
-             if (source == null)
-                throw new ArgumentNullException(nameof(source));
+            ArgumentNullException.ThrowIfNull(source);
 
-            if (selector == null)
-                throw new ArgumentNullException(nameof(selector));
+            ArgumentNullException.ThrowIfNull(selector);
 
-           return source.Select(selector).RootMeanSquare();
+            return source.Select(selector).RootMeanSquare();
         }
  <# } #>
     }

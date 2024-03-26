@@ -11,7 +11,7 @@ namespace LinqStatistics
 {
     public static partial class EnumerableStats
     {
-    	
+
         /// <summary>
         /// Computes the sample Skewness of a sequence of nullable int values
         /// </summary>
@@ -35,8 +35,7 @@ namespace LinqStatistics
         /// <remarks>![equation](~/images/skewness.gif)</remarks>
         public static double Skewness(this IEnumerable<int> source)
         {
-            if (source == null)
-                throw new ArgumentNullException(nameof(source));
+            ArgumentNullException.ThrowIfNull(source);
 
             var mean = (double)source.Average();
             var s = (double)source.StandardDeviation();
@@ -44,7 +43,7 @@ namespace LinqStatistics
             long n = 0;
 
             checked
-            { 
+            {
                 foreach (var x in source)
                 {
                     n++;
@@ -69,11 +68,9 @@ namespace LinqStatistics
         /// <remarks>![equation](~/images/skewness.gif)</remarks>
         public static double Skewness<TSource>(this IEnumerable<TSource> source, Func<TSource, int> selector)
         {
-            if (source == null)
-                throw new ArgumentNullException(nameof(source));
+            ArgumentNullException.ThrowIfNull(source);
 
-            if (selector == null)
-                throw new ArgumentNullException(nameof(selector));
+            ArgumentNullException.ThrowIfNull(selector);
 
             return source.Select(selector).Skewness();
         }
@@ -89,15 +86,13 @@ namespace LinqStatistics
         /// <remarks>![equation](~/images/skewness.gif)</remarks>
         public static double? Skewness<TSource>(this IEnumerable<TSource> source, Func<TSource, int?> selector)
         {
-            if (source == null)
-                throw new ArgumentNullException(nameof(source));
+            ArgumentNullException.ThrowIfNull(source);
 
-            if (selector == null)
-                throw new ArgumentNullException(nameof(selector));
+            ArgumentNullException.ThrowIfNull(selector);
 
             return source.Select(selector).Skewness();
         }
- 	
+
         /// <summary>
         /// Computes the sample Skewness of a sequence of nullable long values
         /// </summary>
@@ -121,8 +116,7 @@ namespace LinqStatistics
         /// <remarks>![equation](~/images/skewness.gif)</remarks>
         public static double Skewness(this IEnumerable<long> source)
         {
-            if (source == null)
-                throw new ArgumentNullException(nameof(source));
+            ArgumentNullException.ThrowIfNull(source);
 
             var mean = (double)source.Average();
             var s = (double)source.StandardDeviation();
@@ -130,7 +124,7 @@ namespace LinqStatistics
             long n = 0;
 
             checked
-            { 
+            {
                 foreach (var x in source)
                 {
                     n++;
@@ -155,11 +149,9 @@ namespace LinqStatistics
         /// <remarks>![equation](~/images/skewness.gif)</remarks>
         public static double Skewness<TSource>(this IEnumerable<TSource> source, Func<TSource, long> selector)
         {
-            if (source == null)
-                throw new ArgumentNullException(nameof(source));
+            ArgumentNullException.ThrowIfNull(source);
 
-            if (selector == null)
-                throw new ArgumentNullException(nameof(selector));
+            ArgumentNullException.ThrowIfNull(selector);
 
             return source.Select(selector).Skewness();
         }
@@ -175,15 +167,13 @@ namespace LinqStatistics
         /// <remarks>![equation](~/images/skewness.gif)</remarks>
         public static double? Skewness<TSource>(this IEnumerable<TSource> source, Func<TSource, long?> selector)
         {
-            if (source == null)
-                throw new ArgumentNullException(nameof(source));
+            ArgumentNullException.ThrowIfNull(source);
 
-            if (selector == null)
-                throw new ArgumentNullException(nameof(selector));
+            ArgumentNullException.ThrowIfNull(selector);
 
             return source.Select(selector).Skewness();
         }
- 	
+
         /// <summary>
         /// Computes the sample Skewness of a sequence of nullable decimal values
         /// </summary>
@@ -207,8 +197,7 @@ namespace LinqStatistics
         /// <remarks>![equation](~/images/skewness.gif)</remarks>
         public static decimal Skewness(this IEnumerable<decimal> source)
         {
-            if (source == null)
-                throw new ArgumentNullException(nameof(source));
+            ArgumentNullException.ThrowIfNull(source);
 
             var mean = (double)source.Average();
             var s = (double)source.StandardDeviation();
@@ -216,7 +205,7 @@ namespace LinqStatistics
             long n = 0;
 
             checked
-            { 
+            {
                 foreach (var x in source)
                 {
                     n++;
@@ -241,11 +230,9 @@ namespace LinqStatistics
         /// <remarks>![equation](~/images/skewness.gif)</remarks>
         public static decimal Skewness<TSource>(this IEnumerable<TSource> source, Func<TSource, decimal> selector)
         {
-            if (source == null)
-                throw new ArgumentNullException(nameof(source));
+            ArgumentNullException.ThrowIfNull(source);
 
-            if (selector == null)
-                throw new ArgumentNullException(nameof(selector));
+            ArgumentNullException.ThrowIfNull(selector);
 
             return source.Select(selector).Skewness();
         }
@@ -261,15 +248,13 @@ namespace LinqStatistics
         /// <remarks>![equation](~/images/skewness.gif)</remarks>
         public static decimal? Skewness<TSource>(this IEnumerable<TSource> source, Func<TSource, decimal?> selector)
         {
-            if (source == null)
-                throw new ArgumentNullException(nameof(source));
+            ArgumentNullException.ThrowIfNull(source);
 
-            if (selector == null)
-                throw new ArgumentNullException(nameof(selector));
+            ArgumentNullException.ThrowIfNull(selector);
 
             return source.Select(selector).Skewness();
         }
- 	
+
         /// <summary>
         /// Computes the sample Skewness of a sequence of nullable float values
         /// </summary>
@@ -293,8 +278,7 @@ namespace LinqStatistics
         /// <remarks>![equation](~/images/skewness.gif)</remarks>
         public static float Skewness(this IEnumerable<float> source)
         {
-            if (source == null)
-                throw new ArgumentNullException(nameof(source));
+            ArgumentNullException.ThrowIfNull(source);
 
             var mean = (double)source.Average();
             var s = (double)source.StandardDeviation();
@@ -302,7 +286,7 @@ namespace LinqStatistics
             long n = 0;
 
             checked
-            { 
+            {
                 foreach (var x in source)
                 {
                     n++;
@@ -327,11 +311,9 @@ namespace LinqStatistics
         /// <remarks>![equation](~/images/skewness.gif)</remarks>
         public static float Skewness<TSource>(this IEnumerable<TSource> source, Func<TSource, float> selector)
         {
-            if (source == null)
-                throw new ArgumentNullException(nameof(source));
+            ArgumentNullException.ThrowIfNull(source);
 
-            if (selector == null)
-                throw new ArgumentNullException(nameof(selector));
+            ArgumentNullException.ThrowIfNull(selector);
 
             return source.Select(selector).Skewness();
         }
@@ -347,15 +329,13 @@ namespace LinqStatistics
         /// <remarks>![equation](~/images/skewness.gif)</remarks>
         public static float? Skewness<TSource>(this IEnumerable<TSource> source, Func<TSource, float?> selector)
         {
-            if (source == null)
-                throw new ArgumentNullException(nameof(source));
+            ArgumentNullException.ThrowIfNull(source);
 
-            if (selector == null)
-                throw new ArgumentNullException(nameof(selector));
+            ArgumentNullException.ThrowIfNull(selector);
 
             return source.Select(selector).Skewness();
         }
- 	
+
         /// <summary>
         /// Computes the sample Skewness of a sequence of nullable double values
         /// </summary>
@@ -379,8 +359,7 @@ namespace LinqStatistics
         /// <remarks>![equation](~/images/skewness.gif)</remarks>
         public static double Skewness(this IEnumerable<double> source)
         {
-            if (source == null)
-                throw new ArgumentNullException(nameof(source));
+            ArgumentNullException.ThrowIfNull(source);
 
             var mean = (double)source.Average();
             var s = (double)source.StandardDeviation();
@@ -388,7 +367,7 @@ namespace LinqStatistics
             long n = 0;
 
             checked
-            { 
+            {
                 foreach (var x in source)
                 {
                     n++;
@@ -413,11 +392,9 @@ namespace LinqStatistics
         /// <remarks>![equation](~/images/skewness.gif)</remarks>
         public static double Skewness<TSource>(this IEnumerable<TSource> source, Func<TSource, double> selector)
         {
-            if (source == null)
-                throw new ArgumentNullException(nameof(source));
+            ArgumentNullException.ThrowIfNull(source);
 
-            if (selector == null)
-                throw new ArgumentNullException(nameof(selector));
+            ArgumentNullException.ThrowIfNull(selector);
 
             return source.Select(selector).Skewness();
         }
@@ -433,13 +410,11 @@ namespace LinqStatistics
         /// <remarks>![equation](~/images/skewness.gif)</remarks>
         public static double? Skewness<TSource>(this IEnumerable<TSource> source, Func<TSource, double?> selector)
         {
-            if (source == null)
-                throw new ArgumentNullException(nameof(source));
+            ArgumentNullException.ThrowIfNull(source);
 
-            if (selector == null)
-                throw new ArgumentNullException(nameof(selector));
+            ArgumentNullException.ThrowIfNull(selector);
 
             return source.Select(selector).Skewness();
         }
-     }
+    }
 }

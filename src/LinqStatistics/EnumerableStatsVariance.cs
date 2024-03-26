@@ -11,7 +11,7 @@ namespace LinqStatistics
 {
     public static partial class EnumerableStats
     {
-    	
+
         /// <summary>
         /// Computes the sample Variance of a sequence of nullable int values.
         /// </summary>
@@ -26,7 +26,7 @@ namespace LinqStatistics
             var values = source.AllValues();
             if (values.Any())
                 return values.Variance();
-            
+
             return null;
         }
 
@@ -40,19 +40,18 @@ namespace LinqStatistics
         /// <remarks>![equation](~/images/var.gif)</remarks>
         public static double Variance(this IEnumerable<int> source)
         {
-            if (source == null)
-                throw new ArgumentNullException(nameof(source));
+            ArgumentNullException.ThrowIfNull(source);
 
             long n = 0;
             var mean = 0.0;
             var M2 = 0.0;
 
             checked
-            { 
+            {
                 foreach (var x in source)
                 {
                     n++;
-                
+
                     var delta = (double)x - mean;
                     mean += delta / n;
                     M2 += delta * ((double)x - mean);
@@ -78,11 +77,9 @@ namespace LinqStatistics
         /// <remarks>![equation](~/images/var.gif)</remarks>
         public static double? Variance<TSource>(this IEnumerable<TSource> source, Func<TSource, int?> selector)
         {
-            if (source == null)
-                throw new ArgumentNullException(nameof(source));
+            ArgumentNullException.ThrowIfNull(source);
 
-            if (selector == null)
-                throw new ArgumentNullException(nameof(selector));
+            ArgumentNullException.ThrowIfNull(selector);
 
             return source.Select(selector).Variance();
         }
@@ -100,15 +97,13 @@ namespace LinqStatistics
         /// <remarks>![equation](~/images/var.gif)</remarks>
         public static double Variance<TSource>(this IEnumerable<TSource> source, Func<TSource, int> selector)
         {
-            if (source == null)
-                throw new ArgumentNullException(nameof(source));
+            ArgumentNullException.ThrowIfNull(source);
 
-            if (selector == null)
-                throw new ArgumentNullException(nameof(selector));
+            ArgumentNullException.ThrowIfNull(selector);
 
             return source.Select(selector).Variance();
         }
- 	
+
         /// <summary>
         /// Computes the sample Variance of a sequence of nullable long values.
         /// </summary>
@@ -123,7 +118,7 @@ namespace LinqStatistics
             var values = source.AllValues();
             if (values.Any())
                 return values.Variance();
-            
+
             return null;
         }
 
@@ -137,19 +132,18 @@ namespace LinqStatistics
         /// <remarks>![equation](~/images/var.gif)</remarks>
         public static double Variance(this IEnumerable<long> source)
         {
-            if (source == null)
-                throw new ArgumentNullException(nameof(source));
+            ArgumentNullException.ThrowIfNull(source);
 
             long n = 0;
             var mean = 0.0;
             var M2 = 0.0;
 
             checked
-            { 
+            {
                 foreach (var x in source)
                 {
                     n++;
-                
+
                     var delta = (double)x - mean;
                     mean += delta / n;
                     M2 += delta * ((double)x - mean);
@@ -175,11 +169,9 @@ namespace LinqStatistics
         /// <remarks>![equation](~/images/var.gif)</remarks>
         public static double? Variance<TSource>(this IEnumerable<TSource> source, Func<TSource, long?> selector)
         {
-            if (source == null)
-                throw new ArgumentNullException(nameof(source));
+            ArgumentNullException.ThrowIfNull(source);
 
-            if (selector == null)
-                throw new ArgumentNullException(nameof(selector));
+            ArgumentNullException.ThrowIfNull(selector);
 
             return source.Select(selector).Variance();
         }
@@ -197,15 +189,13 @@ namespace LinqStatistics
         /// <remarks>![equation](~/images/var.gif)</remarks>
         public static double Variance<TSource>(this IEnumerable<TSource> source, Func<TSource, long> selector)
         {
-            if (source == null)
-                throw new ArgumentNullException(nameof(source));
+            ArgumentNullException.ThrowIfNull(source);
 
-            if (selector == null)
-                throw new ArgumentNullException(nameof(selector));
+            ArgumentNullException.ThrowIfNull(selector);
 
             return source.Select(selector).Variance();
         }
- 	
+
         /// <summary>
         /// Computes the sample Variance of a sequence of nullable decimal values.
         /// </summary>
@@ -220,7 +210,7 @@ namespace LinqStatistics
             var values = source.AllValues();
             if (values.Any())
                 return values.Variance();
-            
+
             return null;
         }
 
@@ -234,19 +224,18 @@ namespace LinqStatistics
         /// <remarks>![equation](~/images/var.gif)</remarks>
         public static decimal Variance(this IEnumerable<decimal> source)
         {
-            if (source == null)
-                throw new ArgumentNullException(nameof(source));
+            ArgumentNullException.ThrowIfNull(source);
 
             long n = 0;
             var mean = 0.0;
             var M2 = 0.0;
 
             checked
-            { 
+            {
                 foreach (var x in source)
                 {
                     n++;
-                
+
                     var delta = (double)x - mean;
                     mean += delta / n;
                     M2 += delta * ((double)x - mean);
@@ -272,11 +261,9 @@ namespace LinqStatistics
         /// <remarks>![equation](~/images/var.gif)</remarks>
         public static decimal? Variance<TSource>(this IEnumerable<TSource> source, Func<TSource, decimal?> selector)
         {
-            if (source == null)
-                throw new ArgumentNullException(nameof(source));
+            ArgumentNullException.ThrowIfNull(source);
 
-            if (selector == null)
-                throw new ArgumentNullException(nameof(selector));
+            ArgumentNullException.ThrowIfNull(selector);
 
             return source.Select(selector).Variance();
         }
@@ -294,15 +281,13 @@ namespace LinqStatistics
         /// <remarks>![equation](~/images/var.gif)</remarks>
         public static decimal Variance<TSource>(this IEnumerable<TSource> source, Func<TSource, decimal> selector)
         {
-            if (source == null)
-                throw new ArgumentNullException(nameof(source));
+            ArgumentNullException.ThrowIfNull(source);
 
-            if (selector == null)
-                throw new ArgumentNullException(nameof(selector));
+            ArgumentNullException.ThrowIfNull(selector);
 
             return source.Select(selector).Variance();
         }
- 	
+
         /// <summary>
         /// Computes the sample Variance of a sequence of nullable float values.
         /// </summary>
@@ -317,7 +302,7 @@ namespace LinqStatistics
             var values = source.AllValues();
             if (values.Any())
                 return values.Variance();
-            
+
             return null;
         }
 
@@ -331,19 +316,18 @@ namespace LinqStatistics
         /// <remarks>![equation](~/images/var.gif)</remarks>
         public static float Variance(this IEnumerable<float> source)
         {
-            if (source == null)
-                throw new ArgumentNullException(nameof(source));
+            ArgumentNullException.ThrowIfNull(source);
 
             long n = 0;
             var mean = 0.0;
             var M2 = 0.0;
 
             checked
-            { 
+            {
                 foreach (var x in source)
                 {
                     n++;
-                
+
                     var delta = (double)x - mean;
                     mean += delta / n;
                     M2 += delta * ((double)x - mean);
@@ -369,11 +353,9 @@ namespace LinqStatistics
         /// <remarks>![equation](~/images/var.gif)</remarks>
         public static float? Variance<TSource>(this IEnumerable<TSource> source, Func<TSource, float?> selector)
         {
-            if (source == null)
-                throw new ArgumentNullException(nameof(source));
+            ArgumentNullException.ThrowIfNull(source);
 
-            if (selector == null)
-                throw new ArgumentNullException(nameof(selector));
+            ArgumentNullException.ThrowIfNull(selector);
 
             return source.Select(selector).Variance();
         }
@@ -391,15 +373,13 @@ namespace LinqStatistics
         /// <remarks>![equation](~/images/var.gif)</remarks>
         public static float Variance<TSource>(this IEnumerable<TSource> source, Func<TSource, float> selector)
         {
-            if (source == null)
-                throw new ArgumentNullException(nameof(source));
+            ArgumentNullException.ThrowIfNull(source);
 
-            if (selector == null)
-                throw new ArgumentNullException(nameof(selector));
+            ArgumentNullException.ThrowIfNull(selector);
 
             return source.Select(selector).Variance();
         }
- 	
+
         /// <summary>
         /// Computes the sample Variance of a sequence of nullable double values.
         /// </summary>
@@ -414,7 +394,7 @@ namespace LinqStatistics
             var values = source.AllValues();
             if (values.Any())
                 return values.Variance();
-            
+
             return null;
         }
 
@@ -428,19 +408,18 @@ namespace LinqStatistics
         /// <remarks>![equation](~/images/var.gif)</remarks>
         public static double Variance(this IEnumerable<double> source)
         {
-            if (source == null)
-                throw new ArgumentNullException(nameof(source));
+            ArgumentNullException.ThrowIfNull(source);
 
             long n = 0;
             var mean = 0.0;
             var M2 = 0.0;
 
             checked
-            { 
+            {
                 foreach (var x in source)
                 {
                     n++;
-                
+
                     var delta = (double)x - mean;
                     mean += delta / n;
                     M2 += delta * ((double)x - mean);
@@ -466,11 +445,9 @@ namespace LinqStatistics
         /// <remarks>![equation](~/images/var.gif)</remarks>
         public static double? Variance<TSource>(this IEnumerable<TSource> source, Func<TSource, double?> selector)
         {
-            if (source == null)
-                throw new ArgumentNullException(nameof(source));
+            ArgumentNullException.ThrowIfNull(source);
 
-            if (selector == null)
-                throw new ArgumentNullException(nameof(selector));
+            ArgumentNullException.ThrowIfNull(selector);
 
             return source.Select(selector).Variance();
         }
@@ -488,13 +465,11 @@ namespace LinqStatistics
         /// <remarks>![equation](~/images/var.gif)</remarks>
         public static double Variance<TSource>(this IEnumerable<TSource> source, Func<TSource, double> selector)
         {
-            if (source == null)
-                throw new ArgumentNullException(nameof(source));
+            ArgumentNullException.ThrowIfNull(source);
 
-            if (selector == null)
-                throw new ArgumentNullException(nameof(selector));
+            ArgumentNullException.ThrowIfNull(selector);
 
             return source.Select(selector).Variance();
         }
-     }
+    }
 }

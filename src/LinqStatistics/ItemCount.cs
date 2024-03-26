@@ -33,8 +33,7 @@ namespace LinqStatistics
         /// <summary>
         /// The number of times RepresentativeValue appears in the source data
         /// </summary>
-        public int Count
-        {
+        public int Count {
             get;
 
             // this is marked internal so histogram binning can update Count while counting
