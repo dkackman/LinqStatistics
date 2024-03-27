@@ -11,7 +11,7 @@ namespace LinqStatistics
 {
     public static partial class EnumerableStats
     {
-
+    	
         /// <summary>
         /// Computes the Range of a sequence of nullable int values.
         /// </summary>
@@ -70,7 +70,7 @@ namespace LinqStatistics
 
             return source.Select(selector).Range();
         }
-
+ 	
         /// <summary>
         /// Computes the Range of a sequence of nullable long values.
         /// </summary>
@@ -129,7 +129,7 @@ namespace LinqStatistics
 
             return source.Select(selector).Range();
         }
-
+ 	
         /// <summary>
         /// Computes the Range of a sequence of nullable float values.
         /// </summary>
@@ -188,7 +188,7 @@ namespace LinqStatistics
 
             return source.Select(selector).Range();
         }
-
+ 	
         /// <summary>
         /// Computes the Range of a sequence of nullable double values.
         /// </summary>
@@ -247,7 +247,7 @@ namespace LinqStatistics
 
             return source.Select(selector).Range();
         }
-
+ 	
         /// <summary>
         /// Computes the Range of a sequence of nullable decimal values.
         /// </summary>
@@ -306,5 +306,64 @@ namespace LinqStatistics
 
             return source.Select(selector).Range();
         }
-    }
+ 	
+        /// <summary>
+        /// Computes the Range of a sequence of nullable Int128 values.
+        /// </summary>
+        /// <param name="source">The sequence of elements.</param>
+        /// <returns>The Range.</returns>
+        public static Int128? Range(this IEnumerable<Int128?> source)
+        {
+            var values = source.AllValues();
+            if (values.Any())
+                return values.Range();
+
+            return null;
+        }
+
+        /// <summary>
+        /// Computes the Range of a sequence of Int128 values.
+        /// </summary>
+        /// <param name="source">The sequence of elements.</param>
+        /// <returns>The Range.</returns>
+        public static Int128 Range(this IEnumerable<Int128> source)
+        {
+            var range = source.MinMax();
+            return range.Max - range.Min;
+        }
+
+        /// <summary>
+        ///     Computes the Range of a sequence of nullable Int128 values that are obtained
+        ///     by invoking a transform function on each element of the input sequence.
+        /// </summary>
+        /// <typeparam name="TSource">The type of the elements of source.</typeparam>
+        /// <param name="source">The sequence of elements.</param>
+        /// <param name="selector">A transform function to apply to each element.</param>
+        /// <returns>The Range.</returns>
+        public static Int128? Range<TSource>(this IEnumerable<TSource> source, Func<TSource, Int128?> selector)
+        {
+            ArgumentNullException.ThrowIfNull(source);
+
+            ArgumentNullException.ThrowIfNull(selector);
+
+            return source.Select(selector).Range();
+        }
+
+        /// <summary>
+        ///     Computes the Range of a sequence of Int128 values that are obtained
+        ///     by invoking a transform function on each element of the input sequence.
+        /// </summary>
+        /// <typeparam name="TSource">The type of the elements of source.</typeparam>
+        /// <param name="source">The sequence of elements.</param>
+        /// <param name="selector">A transform function to apply to each element.</param>
+        /// <returns>The Range.</returns>
+        public static Int128 Range<TSource>(this IEnumerable<TSource> source, Func<TSource, Int128> selector)
+        {
+            ArgumentNullException.ThrowIfNull(source);
+
+            ArgumentNullException.ThrowIfNull(selector);
+
+            return source.Select(selector).Range();
+        }
+     }
 }

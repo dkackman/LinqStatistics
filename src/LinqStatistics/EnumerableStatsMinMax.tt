@@ -19,7 +19,7 @@ namespace LinqStatistics
     {
     <# var types = new List<string>()
     {
-        "int", "long", "float", "double", "decimal"
+        "int", "long", "float", "double", "decimal", "Int128"
     };
 
     foreach(var type in types)
@@ -54,8 +54,8 @@ namespace LinqStatistics
             var any = false;
             var result = source.Aggregate(minMax, (accumulator, value) =>
             {
-                var min = Math.Min(accumulator.Min, value);
-                var max = Math.Max(accumulator.Max, value);
+                var min = <#= type #>.Min(accumulator.Min, value);
+                var max = <#= type #>.Max(accumulator.Max, value);
                 any = true;
 
                 return new Range<<#= type #>>(min, max);

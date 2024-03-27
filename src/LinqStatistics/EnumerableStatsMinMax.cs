@@ -11,7 +11,7 @@ namespace LinqStatistics
 {
     public static partial class EnumerableStats
     {
-
+    	
         /// <summary>
         /// Computes the MinMax of a sequence of nullable int values.
         /// </summary>
@@ -32,7 +32,7 @@ namespace LinqStatistics
         /// <param name="source">The sequence of elements.</param>
         /// <returns>The MinMax.</returns>
         public static Range<int> MinMax(this IEnumerable<int> source)
-        {
+        {            
             ArgumentNullException.ThrowIfNull(source);
 
             // initialize minimum to max possible value and maximum to minimum possible value
@@ -42,8 +42,8 @@ namespace LinqStatistics
             var any = false;
             var result = source.Aggregate(minMax, (accumulator, value) =>
             {
-                var min = Math.Min(accumulator.Min, value);
-                var max = Math.Max(accumulator.Max, value);
+                var min = int.Min(accumulator.Min, value);
+                var max = int.Max(accumulator.Max, value);
                 any = true;
 
                 return new Range<int>(min, max);
@@ -88,7 +88,7 @@ namespace LinqStatistics
 
             return source.Select(selector).MinMax();
         }
-
+ 	
         /// <summary>
         /// Computes the MinMax of a sequence of nullable long values.
         /// </summary>
@@ -109,7 +109,7 @@ namespace LinqStatistics
         /// <param name="source">The sequence of elements.</param>
         /// <returns>The MinMax.</returns>
         public static Range<long> MinMax(this IEnumerable<long> source)
-        {
+        {            
             ArgumentNullException.ThrowIfNull(source);
 
             // initialize minimum to max possible value and maximum to minimum possible value
@@ -119,8 +119,8 @@ namespace LinqStatistics
             var any = false;
             var result = source.Aggregate(minMax, (accumulator, value) =>
             {
-                var min = Math.Min(accumulator.Min, value);
-                var max = Math.Max(accumulator.Max, value);
+                var min = long.Min(accumulator.Min, value);
+                var max = long.Max(accumulator.Max, value);
                 any = true;
 
                 return new Range<long>(min, max);
@@ -165,7 +165,7 @@ namespace LinqStatistics
 
             return source.Select(selector).MinMax();
         }
-
+ 	
         /// <summary>
         /// Computes the MinMax of a sequence of nullable float values.
         /// </summary>
@@ -186,7 +186,7 @@ namespace LinqStatistics
         /// <param name="source">The sequence of elements.</param>
         /// <returns>The MinMax.</returns>
         public static Range<float> MinMax(this IEnumerable<float> source)
-        {
+        {            
             ArgumentNullException.ThrowIfNull(source);
 
             // initialize minimum to max possible value and maximum to minimum possible value
@@ -196,8 +196,8 @@ namespace LinqStatistics
             var any = false;
             var result = source.Aggregate(minMax, (accumulator, value) =>
             {
-                var min = Math.Min(accumulator.Min, value);
-                var max = Math.Max(accumulator.Max, value);
+                var min = float.Min(accumulator.Min, value);
+                var max = float.Max(accumulator.Max, value);
                 any = true;
 
                 return new Range<float>(min, max);
@@ -242,7 +242,7 @@ namespace LinqStatistics
 
             return source.Select(selector).MinMax();
         }
-
+ 	
         /// <summary>
         /// Computes the MinMax of a sequence of nullable double values.
         /// </summary>
@@ -263,7 +263,7 @@ namespace LinqStatistics
         /// <param name="source">The sequence of elements.</param>
         /// <returns>The MinMax.</returns>
         public static Range<double> MinMax(this IEnumerable<double> source)
-        {
+        {            
             ArgumentNullException.ThrowIfNull(source);
 
             // initialize minimum to max possible value and maximum to minimum possible value
@@ -273,8 +273,8 @@ namespace LinqStatistics
             var any = false;
             var result = source.Aggregate(minMax, (accumulator, value) =>
             {
-                var min = Math.Min(accumulator.Min, value);
-                var max = Math.Max(accumulator.Max, value);
+                var min = double.Min(accumulator.Min, value);
+                var max = double.Max(accumulator.Max, value);
                 any = true;
 
                 return new Range<double>(min, max);
@@ -319,7 +319,7 @@ namespace LinqStatistics
 
             return source.Select(selector).MinMax();
         }
-
+ 	
         /// <summary>
         /// Computes the MinMax of a sequence of nullable decimal values.
         /// </summary>
@@ -340,7 +340,7 @@ namespace LinqStatistics
         /// <param name="source">The sequence of elements.</param>
         /// <returns>The MinMax.</returns>
         public static Range<decimal> MinMax(this IEnumerable<decimal> source)
-        {
+        {            
             ArgumentNullException.ThrowIfNull(source);
 
             // initialize minimum to max possible value and maximum to minimum possible value
@@ -350,8 +350,8 @@ namespace LinqStatistics
             var any = false;
             var result = source.Aggregate(minMax, (accumulator, value) =>
             {
-                var min = Math.Min(accumulator.Min, value);
-                var max = Math.Max(accumulator.Max, value);
+                var min = decimal.Min(accumulator.Min, value);
+                var max = decimal.Max(accumulator.Max, value);
                 any = true;
 
                 return new Range<decimal>(min, max);
@@ -396,5 +396,82 @@ namespace LinqStatistics
 
             return source.Select(selector).MinMax();
         }
-    }
+ 	
+        /// <summary>
+        /// Computes the MinMax of a sequence of nullable Int128 values.
+        /// </summary>
+        /// <param name="source">The sequence of elements.</param>
+        /// <returns>The MinMax.</returns>
+        public static Range<Int128>? MinMax(this IEnumerable<Int128?> source)
+        {
+            IEnumerable<Int128> values = source.AllValues();
+            if (values.Any())
+                return values.MinMax();
+
+            return null;
+        }
+
+        /// <summary>
+        /// Computes the MinMax of a sequence of Int128 values.
+        /// </summary>
+        /// <param name="source">The sequence of elements.</param>
+        /// <returns>The MinMax.</returns>
+        public static Range<Int128> MinMax(this IEnumerable<Int128> source)
+        {            
+            ArgumentNullException.ThrowIfNull(source);
+
+            // initialize minimum to max possible value and maximum to minimum possible value
+            // so that the first comparisons in the aggregate function work as expected
+            var minMax = new Range<Int128>(Int128.MaxValue, Int128.MinValue, true);
+
+            var any = false;
+            var result = source.Aggregate(minMax, (accumulator, value) =>
+            {
+                var min = Int128.Min(accumulator.Min, value);
+                var max = Int128.Max(accumulator.Max, value);
+                any = true;
+
+                return new Range<Int128>(min, max);
+            });
+
+            if (any)
+                return result;
+
+            throw new InvalidOperationException("source sequence contains no elements");
+        }
+
+        /// <summary>
+        ///     Computes the MinMax of a sequence of nullable Int128 values that are obtained
+        ///     by invoking a transform function on each element of the input sequence.
+        /// </summary>
+        /// <typeparam name="TSource">The type of the elements of source.</typeparam>
+        /// <param name="source">The sequence of elements.</param>
+        /// <param name="selector">A transform function to apply to each element.</param>
+        /// <returns>The MinMax.</returns>
+        public static Range<Int128>? MinMax<TSource>(this IEnumerable<TSource> source, Func<TSource, Int128?> selector)
+        {
+            ArgumentNullException.ThrowIfNull(source);
+
+            ArgumentNullException.ThrowIfNull(selector);
+
+            return source.Select(selector).MinMax();
+        }
+
+        /// <summary>
+        ///     Computes the MinMax of a sequence of Int128 values that are obtained
+        ///     by invoking a transform function on each element of the input sequence.
+        /// </summary>
+        /// <typeparam name="TSource">The type of the elements of source.</typeparam>
+        /// <param name="source">The sequence of elements.</param>
+        /// <param name="selector">A transform function to apply to each element.</param>
+        /// <returns>The MinMax.</returns>
+        public static Range<Int128> MinMax<TSource>(this IEnumerable<TSource> source, Func<TSource, Int128> selector)
+        {
+            ArgumentNullException.ThrowIfNull(source);
+
+            ArgumentNullException.ThrowIfNull(selector);
+
+            return source.Select(selector).MinMax();
+        }
+     }
 }

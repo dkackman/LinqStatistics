@@ -19,7 +19,7 @@ namespace LinqStatistics
     {
     <# var types = new List<string>()
     {
-        "int", "long", "float", "double", "decimal"
+        "int", "long", "float", "double", "decimal", "Int128"
     };
 
     foreach(var type in types)

@@ -36,7 +36,7 @@ namespace LinqStatistics
 
     public static partial class EnumerableStats
     {
-        /// <summary>
+            /// <summary>
         /// Computes the Histogram of a sequence of int values.
         /// </summary>
         /// <param name="source">A sequence of int values to calculate the Histogram of.</param>
@@ -111,7 +111,7 @@ namespace LinqStatistics
 
             return source.Select(t => selector(t)).Histogram(binCount, mode);
         }
-        /// <summary>
+                /// <summary>
         /// Computes the Histogram of a sequence of long values.
         /// </summary>
         /// <param name="source">A sequence of long values to calculate the Histogram of.</param>
@@ -186,7 +186,7 @@ namespace LinqStatistics
 
             return source.Select(t => selector(t)).Histogram(binCount, mode);
         }
-        /// <summary>
+                /// <summary>
         /// Computes the Histogram of a sequence of float values.
         /// </summary>
         /// <param name="source">A sequence of float values to calculate the Histogram of.</param>
@@ -261,7 +261,7 @@ namespace LinqStatistics
 
             return source.Select(t => selector(t)).Histogram(binCount, mode);
         }
-        /// <summary>
+                /// <summary>
         /// Computes the Histogram of a sequence of double values.
         /// </summary>
         /// <param name="source">A sequence of double values to calculate the Histogram of.</param>
@@ -336,7 +336,7 @@ namespace LinqStatistics
 
             return source.Select(t => selector(t)).Histogram(binCount, mode);
         }
-        /// <summary>
+                /// <summary>
         /// Computes the Histogram of a sequence of decimal values.
         /// </summary>
         /// <param name="source">A sequence of decimal values to calculate the Histogram of.</param>
@@ -411,5 +411,80 @@ namespace LinqStatistics
 
             return source.Select(t => selector(t)).Histogram(binCount, mode);
         }
-    }
+                /// <summary>
+        /// Computes the Histogram of a sequence of Int128 values.
+        /// </summary>
+        /// <param name="source">A sequence of Int128 values to calculate the Histogram of.</param>
+        /// <param name="binCount">The number of bins into which to segregate the data.</param>
+        /// <param name="mode">The method used to determine the range of each bin</param>
+        /// <returns>The Histogram of the sequence of Int128 values.</returns>
+        public static IEnumerable<Bin> Histogram(this IEnumerable<Int128> source, int binCount, BinningMode mode = BinningMode.Unbounded)
+        {
+            ArgumentNullException.ThrowIfNull(source);
+
+            var minMax = source.MinMax();
+
+            var bins = BinFactory.CreateBins((double)minMax.Min, (double)minMax.Max, binCount, mode);
+
+            foreach (var value in source)
+            {
+                var bin = bins.First(b => b.Contains((double)value));
+                bin.Count++;
+            }
+
+            return bins;
+        }
+
+        /// <summary>
+        /// Computes the Histogram of a sequence of nullable Int128 values.
+        /// </summary>
+        /// <param name="source">A sequence of nullable Int128 values to calculate the Histogram of.</param>
+        /// <param name="binCount">The number of bins into which to segregate the data.</param>
+        /// <param name="mode">The method used to determine the range of each bin</param>
+        /// <returns>The Histogram of the sequence of nullable Int128 values.</returns>
+        public static IEnumerable<Bin> Histogram(this IEnumerable<Int128?> source, int binCount, BinningMode mode = BinningMode.Unbounded)
+        {
+            ArgumentNullException.ThrowIfNull(source);
+
+            return source.AllValues().Histogram(binCount, mode);
+        }
+
+        /// <summary>
+        /// Computes the Histogram of a sequence of Int128 values that are obtained
+        /// by invoking a transform function on each element of the input sequence.
+        /// </summary>
+        /// <typeparam name="TSource">The type of the elements of source.</typeparam>
+        /// <param name="source">A sequence of values to calculate the Histogram of.</param>
+        /// <param name="binCount">The number of bins into which to segregate the data.</param>
+        /// <param name="selector">A transform function to apply to each element.</param>
+        /// <param name="mode">The method used to determine the range of each bin</param>
+        /// <returns>The Histogram of the sequence of Int128 values.</returns>
+        public static IEnumerable<Bin> Histogram<TSource>(this IEnumerable<TSource> source, int binCount, Func<TSource, Int128> selector, BinningMode mode = BinningMode.Unbounded)
+        {
+            ArgumentNullException.ThrowIfNull(source);
+
+            ArgumentNullException.ThrowIfNull(selector);
+
+            return source.Select(t => selector(t)).Histogram(binCount, mode);
+        }
+
+        /// <summary>
+        /// Computes the Histogram of a sequence of nullable Int128 values that are obtained
+        /// by invoking a transform function on each element of the input sequence.
+        /// </summary>
+        /// <typeparam name="TSource">The type of the elements of source.</typeparam>
+        /// <param name="source">A sequence of values to calculate the Histogram of.</param>
+        /// <param name="binCount">The number of bins into which to segregate the data.</param>
+        /// <param name="selector">A transform function to apply to each element.</param>
+        /// <param name="mode">The method used to determine the range of each bin</param>
+        /// <returns>The Histogram of the sequence of nullable Int128 values.</returns>
+        public static IEnumerable<Bin> Histogram<TSource>(this IEnumerable<TSource> source, int binCount, Func<TSource, Int128?> selector, BinningMode mode = BinningMode.Unbounded)
+        {
+            ArgumentNullException.ThrowIfNull(source);
+
+            ArgumentNullException.ThrowIfNull(selector);
+
+            return source.Select(t => selector(t)).Histogram(binCount, mode);
+        }
+            }
 }

@@ -11,7 +11,7 @@ namespace LinqStatistics
 {
     public static partial class EnumerableStats
     {
-
+    	
         /// <summary>
         ///     The RootMeanSquare of the sequence of nullable int values, or null if the source sequence is
         ///     empty or contains only values that are null.
@@ -42,7 +42,7 @@ namespace LinqStatistics
             long n = 0;
 
             checked
-            {
+            { 
                 foreach (var d in source)
                 {
                     n++;
@@ -91,7 +91,7 @@ namespace LinqStatistics
 
             return source.Select(selector).RootMeanSquare();
         }
-
+ 	
         /// <summary>
         ///     The RootMeanSquare of the sequence of nullable long values, or null if the source sequence is
         ///     empty or contains only values that are null.
@@ -122,7 +122,7 @@ namespace LinqStatistics
             long n = 0;
 
             checked
-            {
+            { 
                 foreach (var d in source)
                 {
                     n++;
@@ -171,7 +171,7 @@ namespace LinqStatistics
 
             return source.Select(selector).RootMeanSquare();
         }
-
+ 	
         /// <summary>
         ///     The RootMeanSquare of the sequence of nullable decimal values, or null if the source sequence is
         ///     empty or contains only values that are null.
@@ -202,7 +202,7 @@ namespace LinqStatistics
             long n = 0;
 
             checked
-            {
+            { 
                 foreach (var d in source)
                 {
                     n++;
@@ -251,7 +251,7 @@ namespace LinqStatistics
 
             return source.Select(selector).RootMeanSquare();
         }
-
+ 	
         /// <summary>
         ///     The RootMeanSquare of the sequence of nullable float values, or null if the source sequence is
         ///     empty or contains only values that are null.
@@ -282,7 +282,7 @@ namespace LinqStatistics
             long n = 0;
 
             checked
-            {
+            { 
                 foreach (var d in source)
                 {
                     n++;
@@ -331,7 +331,7 @@ namespace LinqStatistics
 
             return source.Select(selector).RootMeanSquare();
         }
-
+ 	
         /// <summary>
         ///     The RootMeanSquare of the sequence of nullable double values, or null if the source sequence is
         ///     empty or contains only values that are null.
@@ -362,7 +362,7 @@ namespace LinqStatistics
             long n = 0;
 
             checked
-            {
+            { 
                 foreach (var d in source)
                 {
                     n++;
@@ -411,5 +411,5 @@ namespace LinqStatistics
 
             return source.Select(selector).RootMeanSquare();
         }
-    }
+     }
 }
