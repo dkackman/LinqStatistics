@@ -9,7 +9,7 @@ namespace LinqStatistics
         /// <summary>
         /// Calculates the modes of a sequences of elements
         /// </summary>
-        /// <typeparam name="T">The type of the elemensts in the source sequence</typeparam>
+        /// <typeparam name="T">The type of the elements in the source sequence</typeparam>
         /// <param name="source">A sequence of values to calculate the Modes of.</param>
         /// <returns>The modes of a sequence of values</returns>
         public static IEnumerable<T> Modes<T>(this IEnumerable<T?> source) where T : struct
@@ -18,13 +18,13 @@ namespace LinqStatistics
             if (values.Any())
                 return values.Modes<T>();
 
-            return Enumerable.Empty<T>();
+            return [];
         }
 
         /// <summary>
         /// Calculates the modes of a sequences of nullable elements
         /// </summary>
-        /// <typeparam name="T">The type of the elemensts in the source sequence</typeparam>
+        /// <typeparam name="T">The type of the elements in the source sequence</typeparam>
         /// <param name="source">A sequence of values to calculate the Modes of.</param>
         /// <returns>The modes of a sequence of values</returns>
         public static IEnumerable<T> Modes<T>(this IEnumerable<T> source) where T : struct
@@ -38,7 +38,7 @@ namespace LinqStatistics
         /// <summary>
         /// Calculates the mode of a sequences of elements
         /// </summary>
-        /// <typeparam name="T">The type of the elemensts in the source sequence</typeparam>
+        /// <typeparam name="T">The type of the elements in the source sequence</typeparam>
         /// <param name="source">A sequence of values to calculate the Mode of.</param>
         /// <returns>The mode of a sequence of values</returns>
         public static T? Mode<T>(this IEnumerable<T?> source) where T : struct
@@ -53,7 +53,7 @@ namespace LinqStatistics
         /// <summary>
         /// Calculates the Mode of a sequences of elements
         /// </summary>
-        /// <typeparam name="T">The type of the elemensts in the source sequence</typeparam>
+        /// <typeparam name="T">The type of the elements in the source sequence</typeparam>
         /// <param name="source">A sequence of values to calculate the Mode of.</param>
         /// <returns>The Mode of a sequence of values</returns>
         public static T? Mode<T>(this IEnumerable<T> source) where T : struct
@@ -64,10 +64,10 @@ namespace LinqStatistics
 
             var count = 0;
             var max = 0;
-            T current = default(T);
-            T? mode = new T?();
+            var current = default(T);
+            var mode = new T?();
 
-            foreach (T next in sortedList)
+            foreach (var next in sortedList)
             {
                 if (!current.Equals(next))
                 {
@@ -100,11 +100,9 @@ namespace LinqStatistics
         /// <returns>The Mode of the sequence of values.</returns>
         public static TMode? Mode<TSource, TMode>(this IEnumerable<TSource> source, Func<TSource, TMode> selector) where TMode : struct
         {
-            if (source == null)
-                throw new ArgumentNullException(nameof(source));
+            ArgumentNullException.ThrowIfNull(source);
 
-            if (selector == null)
-                throw new ArgumentNullException(nameof(selector));
+            ArgumentNullException.ThrowIfNull(selector);
 
             return source.Select(selector).Mode<TMode>();
         }
@@ -120,11 +118,9 @@ namespace LinqStatistics
         /// <returns>The Mode of the sequence of values.</returns>
         public static TMode? Mode<TSource, TMode>(this IEnumerable<TSource> source, Func<TSource, TMode?> selector) where TMode : struct
         {
-            if (source == null)
-                throw new ArgumentNullException(nameof(source));
+            ArgumentNullException.ThrowIfNull(source);
 
-            if (selector == null)
-                throw new ArgumentNullException(nameof(selector));
+            ArgumentNullException.ThrowIfNull(selector);
 
             return source.Select(selector).Mode<TMode>();
         }

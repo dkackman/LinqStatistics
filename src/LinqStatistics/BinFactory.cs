@@ -79,7 +79,7 @@ namespace LinqStatistics
         private static IEnumerable<Bin> CreateBinsExpandRange(double min, double max, int binCount)
         {
             var binSize = (max - min) / ((double)binCount - 1);  // make the range such that the min and max are outside of the data set 
-                                                                    // that's where the minus one comes in
+                                                                 // that's where the minus one comes in
             var halfBin = binSize / 2.0;
             var rangeMin = min - halfBin;
             var rangeMax = rangeMin + binSize;

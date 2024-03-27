@@ -11,7 +11,7 @@ namespace LinqStatistics
 {
     public static partial class EnumerableStats
     {
-    	
+
         /// <summary>
         /// Computes the sample StandardDeviation of a sequence of nullable int values.
         /// </summary>
@@ -26,7 +26,7 @@ namespace LinqStatistics
             var values = source.AllValues();
             if (values.Any())
                 return values.StandardDeviation();
-            
+
             return null;
         }
 
@@ -56,11 +56,9 @@ namespace LinqStatistics
         /// <remarks>![equation](~/images/stdev.gif)</remarks>
         public static double? StandardDeviation<TSource>(this IEnumerable<TSource> source, Func<TSource, int?> selector)
         {
-            if (source == null)
-                throw new ArgumentNullException(nameof(source));
+            ArgumentNullException.ThrowIfNull(source);
 
-            if (selector == null)
-                throw new ArgumentNullException(nameof(selector));
+            ArgumentNullException.ThrowIfNull(selector);
 
             return source.Select(selector).StandardDeviation();
         }
@@ -78,15 +76,13 @@ namespace LinqStatistics
         /// <remarks>![equation](~/images/stdev.gif)</remarks>
         public static double StandardDeviation<TSource>(this IEnumerable<TSource> source, Func<TSource, int> selector)
         {
-            if (source == null)
-                throw new ArgumentNullException(nameof(source));
+            ArgumentNullException.ThrowIfNull(source);
 
-            if (selector == null)
-                throw new ArgumentNullException(nameof(selector));
+            ArgumentNullException.ThrowIfNull(selector);
 
             return source.Select(selector).StandardDeviation();
         }
- 	
+
         /// <summary>
         /// Computes the sample StandardDeviation of a sequence of nullable long values.
         /// </summary>
@@ -101,7 +97,7 @@ namespace LinqStatistics
             var values = source.AllValues();
             if (values.Any())
                 return values.StandardDeviation();
-            
+
             return null;
         }
 
@@ -131,11 +127,9 @@ namespace LinqStatistics
         /// <remarks>![equation](~/images/stdev.gif)</remarks>
         public static double? StandardDeviation<TSource>(this IEnumerable<TSource> source, Func<TSource, long?> selector)
         {
-            if (source == null)
-                throw new ArgumentNullException(nameof(source));
+            ArgumentNullException.ThrowIfNull(source);
 
-            if (selector == null)
-                throw new ArgumentNullException(nameof(selector));
+            ArgumentNullException.ThrowIfNull(selector);
 
             return source.Select(selector).StandardDeviation();
         }
@@ -153,15 +147,13 @@ namespace LinqStatistics
         /// <remarks>![equation](~/images/stdev.gif)</remarks>
         public static double StandardDeviation<TSource>(this IEnumerable<TSource> source, Func<TSource, long> selector)
         {
-            if (source == null)
-                throw new ArgumentNullException(nameof(source));
+            ArgumentNullException.ThrowIfNull(source);
 
-            if (selector == null)
-                throw new ArgumentNullException(nameof(selector));
+            ArgumentNullException.ThrowIfNull(selector);
 
             return source.Select(selector).StandardDeviation();
         }
- 	
+
         /// <summary>
         /// Computes the sample StandardDeviation of a sequence of nullable decimal values.
         /// </summary>
@@ -176,7 +168,7 @@ namespace LinqStatistics
             var values = source.AllValues();
             if (values.Any())
                 return values.StandardDeviation();
-            
+
             return null;
         }
 
@@ -206,11 +198,9 @@ namespace LinqStatistics
         /// <remarks>![equation](~/images/stdev.gif)</remarks>
         public static decimal? StandardDeviation<TSource>(this IEnumerable<TSource> source, Func<TSource, decimal?> selector)
         {
-            if (source == null)
-                throw new ArgumentNullException(nameof(source));
+            ArgumentNullException.ThrowIfNull(source);
 
-            if (selector == null)
-                throw new ArgumentNullException(nameof(selector));
+            ArgumentNullException.ThrowIfNull(selector);
 
             return source.Select(selector).StandardDeviation();
         }
@@ -228,15 +218,13 @@ namespace LinqStatistics
         /// <remarks>![equation](~/images/stdev.gif)</remarks>
         public static decimal StandardDeviation<TSource>(this IEnumerable<TSource> source, Func<TSource, decimal> selector)
         {
-            if (source == null)
-                throw new ArgumentNullException(nameof(source));
+            ArgumentNullException.ThrowIfNull(source);
 
-            if (selector == null)
-                throw new ArgumentNullException(nameof(selector));
+            ArgumentNullException.ThrowIfNull(selector);
 
             return source.Select(selector).StandardDeviation();
         }
- 	
+
         /// <summary>
         /// Computes the sample StandardDeviation of a sequence of nullable float values.
         /// </summary>
@@ -251,7 +239,7 @@ namespace LinqStatistics
             var values = source.AllValues();
             if (values.Any())
                 return values.StandardDeviation();
-            
+
             return null;
         }
 
@@ -281,11 +269,9 @@ namespace LinqStatistics
         /// <remarks>![equation](~/images/stdev.gif)</remarks>
         public static float? StandardDeviation<TSource>(this IEnumerable<TSource> source, Func<TSource, float?> selector)
         {
-            if (source == null)
-                throw new ArgumentNullException(nameof(source));
+            ArgumentNullException.ThrowIfNull(source);
 
-            if (selector == null)
-                throw new ArgumentNullException(nameof(selector));
+            ArgumentNullException.ThrowIfNull(selector);
 
             return source.Select(selector).StandardDeviation();
         }
@@ -303,15 +289,13 @@ namespace LinqStatistics
         /// <remarks>![equation](~/images/stdev.gif)</remarks>
         public static float StandardDeviation<TSource>(this IEnumerable<TSource> source, Func<TSource, float> selector)
         {
-            if (source == null)
-                throw new ArgumentNullException(nameof(source));
+            ArgumentNullException.ThrowIfNull(source);
 
-            if (selector == null)
-                throw new ArgumentNullException(nameof(selector));
+            ArgumentNullException.ThrowIfNull(selector);
 
             return source.Select(selector).StandardDeviation();
         }
- 	
+
         /// <summary>
         /// Computes the sample StandardDeviation of a sequence of nullable double values.
         /// </summary>
@@ -326,7 +310,7 @@ namespace LinqStatistics
             var values = source.AllValues();
             if (values.Any())
                 return values.StandardDeviation();
-            
+
             return null;
         }
 
@@ -356,11 +340,9 @@ namespace LinqStatistics
         /// <remarks>![equation](~/images/stdev.gif)</remarks>
         public static double? StandardDeviation<TSource>(this IEnumerable<TSource> source, Func<TSource, double?> selector)
         {
-            if (source == null)
-                throw new ArgumentNullException(nameof(source));
+            ArgumentNullException.ThrowIfNull(source);
 
-            if (selector == null)
-                throw new ArgumentNullException(nameof(selector));
+            ArgumentNullException.ThrowIfNull(selector);
 
             return source.Select(selector).StandardDeviation();
         }
@@ -378,13 +360,11 @@ namespace LinqStatistics
         /// <remarks>![equation](~/images/stdev.gif)</remarks>
         public static double StandardDeviation<TSource>(this IEnumerable<TSource> source, Func<TSource, double> selector)
         {
-            if (source == null)
-                throw new ArgumentNullException(nameof(source));
+            ArgumentNullException.ThrowIfNull(source);
 
-            if (selector == null)
-                throw new ArgumentNullException(nameof(selector));
+            ArgumentNullException.ThrowIfNull(selector);
 
             return source.Select(selector).StandardDeviation();
         }
-     }
+    }
 }

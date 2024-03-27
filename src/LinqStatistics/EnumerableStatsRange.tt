@@ -19,7 +19,7 @@ namespace LinqStatistics
     {
     <# var types = new List<string>()
     {
-        "int", "long", "float", "double", "decimal"
+        "int", "long", "float", "double", "decimal", "Int128"
     };
 
     foreach(var type in types)
@@ -59,11 +59,9 @@ namespace LinqStatistics
         /// <returns>The Range.</returns>
         public static <#= type #>? Range<TSource>(this IEnumerable<TSource> source, Func<TSource, <#= type #>?> selector)
         {
-            if (source == null)
-                throw new ArgumentNullException(nameof(source));
+            ArgumentNullException.ThrowIfNull(source);
 
-            if (selector == null)
-                throw new ArgumentNullException(nameof(selector));
+            ArgumentNullException.ThrowIfNull(selector);
 
             return source.Select(selector).Range();
         }
@@ -78,11 +76,9 @@ namespace LinqStatistics
         /// <returns>The Range.</returns>
         public static <#= type #> Range<TSource>(this IEnumerable<TSource> source, Func<TSource, <#= type #>> selector)
         {
-            if (source == null)
-                throw new ArgumentNullException(nameof(source));
+            ArgumentNullException.ThrowIfNull(source);
 
-            if (selector == null)
-                throw new ArgumentNullException(nameof(selector));
+            ArgumentNullException.ThrowIfNull(selector);
 
             return source.Select(selector).Range();
         }

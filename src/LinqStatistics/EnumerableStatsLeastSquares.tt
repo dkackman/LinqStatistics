@@ -19,7 +19,7 @@ namespace LinqStatistics
     {
     <# var types = new List<string>()
     {
-        "int", "long", "float", "double", "decimal"
+        "int", "long", "float", "double", "decimal", "Int128"
     };
 
     foreach(var type in types)
@@ -46,8 +46,7 @@ namespace LinqStatistics
         /// <returns> The LeastSquares of the sequence of values.</returns>
         public static LeastSquares LeastSquares(this IEnumerable<Tuple<<#= type #>, <#= type #>>> source)
         {
-            if (source == null)
-                throw new ArgumentNullException(nameof(source));
+            ArgumentNullException.ThrowIfNull(source);
 
             long n = 0;
             var sumX = 0.0;
@@ -96,11 +95,9 @@ namespace LinqStatistics
         /// <returns>The LeastSquares of the sequence of values.</returns>
         public static LeastSquares? LeastSquares<TSource>(this IEnumerable<TSource> source, Func<TSource, Tuple<<#= type #>?, <#= type #>?>> selector)
         {
-            if (source == null)
-                throw new ArgumentNullException(nameof(source));
+            ArgumentNullException.ThrowIfNull(source);
 
-            if (selector == null)
-                throw new ArgumentNullException(nameof(selector));
+            ArgumentNullException.ThrowIfNull(selector);
 
             return source.Select(selector).LeastSquares();
         }
@@ -115,11 +112,9 @@ namespace LinqStatistics
         /// <returns>The LeastSquares of the sequence of values.</returns>
         public static LeastSquares LeastSquares<TSource>(this IEnumerable<TSource> source, Func<TSource, Tuple<<#= type #>, <#= type #>>> selector)
         {
-            if (source == null)
-                throw new ArgumentNullException(nameof(source));
+            ArgumentNullException.ThrowIfNull(source);
 
-            if (selector == null)
-                throw new ArgumentNullException(nameof(selector));
+            ArgumentNullException.ThrowIfNull(selector);
 
             return source.Select(selector).LeastSquares();
         }

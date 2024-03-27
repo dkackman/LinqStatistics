@@ -1,18 +1,23 @@
 {
-  "homepages": [],
-  "source_base_path": "C:/Users/dkack/src/github/dkackman/LinqStatistics/docfx",
+  "source_base_path": "C:/Users/don/src/github/dkackman/LinqStatistics/docfx",
   "xrefmap": "xrefmap.yml",
   "files": [
+    {
+      "type": "Resource",
+      "output": {
+        "resource": {
+          "relative_path": "index.json"
+        }
+      }
+    },
     {
       "type": "ManagedReference",
       "source_relative_path": "api/LinqStatistics.Bin.yml",
       "output": {
         ".html": {
-          "relative_path": "api/LinqStatistics.Bin.html",
-          "hash": "q5V/Z6ch6GgcB1SHgt40BQ=="
+          "relative_path": "api/LinqStatistics.Bin.html"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -20,11 +25,9 @@
       "source_relative_path": "api/LinqStatistics.BinningMode.yml",
       "output": {
         ".html": {
-          "relative_path": "api/LinqStatistics.BinningMode.html",
-          "hash": "7BQE3x/BS3hjvwWO4O+4rw=="
+          "relative_path": "api/LinqStatistics.BinningMode.html"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -32,11 +35,9 @@
       "source_relative_path": "api/LinqStatistics.EnumerableStats.yml",
       "output": {
         ".html": {
-          "relative_path": "api/LinqStatistics.EnumerableStats.html",
-          "hash": "TKQuoPhj0Z0u4XxjPoxEMQ=="
+          "relative_path": "api/LinqStatistics.EnumerableStats.html"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -44,11 +45,9 @@
       "source_relative_path": "api/LinqStatistics.ItemCount-1.yml",
       "output": {
         ".html": {
-          "relative_path": "api/LinqStatistics.ItemCount-1.html",
-          "hash": "C66oyov05gau6zrwr28riQ=="
+          "relative_path": "api/LinqStatistics.ItemCount-1.html"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -56,35 +55,9 @@
       "source_relative_path": "api/LinqStatistics.LeastSquares.yml",
       "output": {
         ".html": {
-          "relative_path": "api/LinqStatistics.LeastSquares.html",
-          "hash": "LsYYrRNU9vtBqcTfC4SUxQ=="
+          "relative_path": "api/LinqStatistics.LeastSquares.html"
         }
       },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/LinqStatistics.NaN.EnumerableStats.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/LinqStatistics.NaN.EnumerableStats.html",
-          "hash": "dvsotfz3VaNl7rkBl0o83g=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/LinqStatistics.NaN.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/LinqStatistics.NaN.html",
-          "hash": "mJ53l29VxCyXUf+/M7uZ1w=="
-        }
-      },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -92,11 +65,9 @@
       "source_relative_path": "api/LinqStatistics.Range-1.yml",
       "output": {
         ".html": {
-          "relative_path": "api/LinqStatistics.Range-1.html",
-          "hash": "HzHNjHsfNotXPEuzJXFNaQ=="
+          "relative_path": "api/LinqStatistics.Range-1.html"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -104,11 +75,9 @@
       "source_relative_path": "api/LinqStatistics.yml",
       "output": {
         ".html": {
-          "relative_path": "api/LinqStatistics.html",
-          "hash": "GJV/En8nalplX4qjFB2Sfg=="
+          "relative_path": "api/LinqStatistics.html"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -116,11 +85,9 @@
       "source_relative_path": "api/index.md",
       "output": {
         ".html": {
-          "relative_path": "api/index.html",
-          "hash": "4sY+sUqc/jeXCHCqQShZMA=="
+          "relative_path": "api/index.html"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -128,11 +95,12 @@
       "source_relative_path": "api/toc.yml",
       "output": {
         ".html": {
-          "relative_path": "api/toc.html",
-          "hash": "Iiho5CsiE4yBaOYhqYxiKg=="
+          "relative_path": "api/toc.html"
+        },
+        ".json": {
+          "relative_path": "api/toc.json"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -143,7 +111,6 @@
           "relative_path": "images/covar.gif"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -154,7 +121,6 @@
           "relative_path": "images/kurtosis.gif"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -165,7 +131,6 @@
           "relative_path": "images/ls.gif"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -176,7 +141,6 @@
           "relative_path": "images/ls_b.gif"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -187,7 +151,6 @@
           "relative_path": "images/ls_m.gif"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -198,7 +161,6 @@
           "relative_path": "images/pearson.gif"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -209,7 +171,6 @@
           "relative_path": "images/rms.gif"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -220,7 +181,6 @@
           "relative_path": "images/skewness.gif"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -231,7 +191,6 @@
           "relative_path": "images/stdev.gif"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -242,7 +201,6 @@
           "relative_path": "images/stdevp.gif"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -253,7 +211,6 @@
           "relative_path": "images/var.gif"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -264,7 +221,6 @@
           "relative_path": "images/varp.gif"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -272,11 +228,9 @@
       "source_relative_path": "index.md",
       "output": {
         ".html": {
-          "relative_path": "index.html",
-          "hash": "l4f72ap3a+SKLa6ZBUFEBg=="
+          "relative_path": "index.html"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -284,65 +238,15 @@
       "source_relative_path": "toc.yml",
       "output": {
         ".html": {
-          "relative_path": "toc.html",
-          "hash": "EIhwD2+o19OxxQFCB6JJTg=="
+          "relative_path": "toc.html"
+        },
+        ".json": {
+          "relative_path": "toc.json"
         }
       },
-      "is_incremental": false,
       "version": ""
     }
   ],
-  "incremental_info": [
-    {
-      "status": {
-        "can_incremental": false,
-        "details": "Cannot build incrementally because docfx version changed from 2.45.1.0 to 2.48.0.0.",
-        "incrementalPhase": "build",
-        "total_file_count": 0,
-        "skipped_file_count": 0,
-        "full_build_reason_code": "DocfxVersionChanged"
-      },
-      "processors": {
-        "ResourceDocumentProcessor": {
-          "can_incremental": false,
-          "details": "Processor ResourceDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
-          "incrementalPhase": "build",
-          "total_file_count": 0,
-          "skipped_file_count": 0
-        },
-        "TocDocumentProcessor": {
-          "can_incremental": false,
-          "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
-          "incrementalPhase": "build",
-          "total_file_count": 0,
-          "skipped_file_count": 0
-        },
-        "ConceptualDocumentProcessor": {
-          "can_incremental": false,
-          "incrementalPhase": "build",
-          "total_file_count": 2,
-          "skipped_file_count": 0
-        },
-        "ManagedReferenceDocumentProcessor": {
-          "can_incremental": false,
-          "incrementalPhase": "build",
-          "total_file_count": 9,
-          "skipped_file_count": 0
-        }
-      }
-    },
-    {
-      "status": {
-        "can_incremental": true,
-        "details": "Can support incremental post processing.",
-        "incrementalPhase": "postProcessing",
-        "total_file_count": 0,
-        "skipped_file_count": 0
-      },
-      "processors": {}
-    }
-  ],
-  "version_info": {},
   "groups": [
     {
       "xrefmap": "xrefmap.yml"

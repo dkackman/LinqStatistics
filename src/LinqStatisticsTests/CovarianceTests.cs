@@ -1,7 +1,6 @@
-﻿using LinqStatistics.NaN;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace LinqStatistics.UnitTests
 {
@@ -46,7 +45,7 @@ namespace LinqStatistics.UnitTests
             IEnumerable<double> source = TestData.GetDoubles();
             IEnumerable<double> other = TestData.GetDoubles();
 
-            double result = source.Covariance(other);
+            double result = source.CovarianceNaN(other);
 
             Assert.AreEqual(3.081875, result, double.Epsilon);
         }

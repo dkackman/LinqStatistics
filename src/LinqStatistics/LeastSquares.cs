@@ -59,7 +59,7 @@ namespace LinqStatistics
         /// </summary>
         /// <param name="x">X value to solve for</param>
         /// <returns>Y value (y = Mx + B)</returns>
-        public double Solve(double x)
+        public readonly double Solve(double x)
         {
             return (M * x) + B;
         }
@@ -69,7 +69,7 @@ namespace LinqStatistics
         /// </summary>
         /// <param name="y">Y value to solve for</param>
         /// <returns>X value (x = (y - b) / m)</returns>
-        public double SolveForX(double y)
+        public readonly double SolveForX(double y)
         {
             if (M == 0.0)
             {
@@ -124,7 +124,7 @@ namespace LinqStatistics
         /// </summary>
         /// <param name="obj">The object to compare to</param>
         /// <returns>True if obj is a LeastSquares and has equal m and b values</returns>
-        public override bool Equals(object obj)
+        public override readonly bool Equals(object obj)
         {
             return obj is LeastSquares ls && this == ls;
         }
@@ -134,7 +134,7 @@ namespace LinqStatistics
         /// </summary>
         /// <param name="other"></param>
         /// <returns>True if other has equal m and b values</returns>
-        public bool Equals(LeastSquares other)
+        public readonly bool Equals(LeastSquares other)
         {
             return this == other;
         }
@@ -142,14 +142,10 @@ namespace LinqStatistics
         /// <summary>
         /// <see cref="GetHashCode"/>
         /// </summary>
-        /// <returns>Hascode of the instance</returns>
-        public override int GetHashCode()
+        /// <returns>Hash code of the instance</returns>
+        public override readonly int GetHashCode()
         {
-            var hash = 17;
-            hash = hash * 23 + M.GetHashCode();
-            hash = hash * 23 + B.GetHashCode();
-            hash = hash * 23 + RSquared.GetHashCode();
-            return hash;
+            return HashCode.Combine(M, B, RSquared);
         }
 
         /// <summary>
@@ -171,7 +167,7 @@ namespace LinqStatistics
         /// <see cref="object.ToString"/>
         /// </summary>
         /// <returns></returns>
-        public override string ToString()
+        public override readonly string ToString()
         {
             return Format(M.ToString(CultureInfo.CurrentCulture), B.ToString(CultureInfo.CurrentCulture));
         }
@@ -181,7 +177,7 @@ namespace LinqStatistics
         /// </summary>
         /// <param name="provider"></param>
         /// <returns></returns>
-        public string ToString(IFormatProvider provider)
+        public readonly string ToString(IFormatProvider provider)
         {
             return Format(M.ToString(provider), B.ToString(provider));
         }
@@ -191,7 +187,7 @@ namespace LinqStatistics
         /// </summary>
         /// <param name="format"></param>
         /// <returns></returns>
-        public string ToString(string format)
+        public readonly string ToString(string format)
         {
             return Format(M.ToString(format, CultureInfo.CurrentCulture), B.ToString(format, CultureInfo.CurrentCulture));
         }
@@ -200,11 +196,11 @@ namespace LinqStatistics
         /// 
         /// </summary>
         /// <param name="format"></param>
-        /// <param name="provider"></param>
+        /// <param name="formatProvider"></param>
         /// <returns></returns>
-        public string ToString(string format, IFormatProvider provider)
+        public readonly string ToString(string format, IFormatProvider formatProvider)
         {
-            return Format(M.ToString(format, provider), B.ToString(format, provider));
+            return Format(M.ToString(format, formatProvider), B.ToString(format, formatProvider));
         }
     }
 }

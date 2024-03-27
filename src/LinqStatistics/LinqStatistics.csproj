@@ -1,259 +1,213 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>9.0.30729</ProductVersion>
-    <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{FA474C99-3F49-493F-8F18-D0EE98961595}</ProjectGuid>
+    <TargetFramework>net8.0</TargetFramework>
     <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>LinqStatistics</RootNamespace>
-    <AssemblyName>LinqStatistics</AssemblyName>
-    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
-    <FileAlignment>512</FileAlignment>
-    <FileUpgradeFlags>
-    </FileUpgradeFlags>
-    <UpgradeBackupLocation>
-    </UpgradeBackupLocation>
-    <OldToolsVersion>3.5</OldToolsVersion>
-    <TargetFrameworkProfile>
-    </TargetFrameworkProfile>
-    <NuGetPackageImportStamp>
-    </NuGetPackageImportStamp>
     <EnableNETAnalyzers>true</EnableNETAnalyzers>
     <AnalysisMode>AllEnabledByDefault</AnalysisMode>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-    <Prefer32Bit>false</Prefer32Bit>
+    <GenerateAssemblyInfo>True</GenerateAssemblyInfo>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
     <DocumentationFile>bin\Release\LinqStatistics.XML</DocumentationFile>
     <NoWarn>1591</NoWarn>
     <RunCodeAnalysis>false</RunCodeAnalysis>
     <CodeAnalysisIgnoreGeneratedCode>false</CodeAnalysisIgnoreGeneratedCode>
-    <Prefer32Bit>false</Prefer32Bit>
+    <Configuration>net40</Configuration>
+    <IsTrimmable>True</IsTrimmable>
+    <IsAotCompatible>True</IsAotCompatible>
+    <CheckForOverflowUnderflow>True</CheckForOverflowUnderflow>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="System" />
-    <Reference Include="System.Core">
+    <Reference Update="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\PackageInfo.cs">
-      <Link>Properties\PackageInfo.cs</Link>
-    </Compile>
-    <Compile Include="Bin.cs" />
-    <Compile Include="BinFactory.cs" />
-    <Compile Include="EnumerableStatsMinMax.cs">
+    <Compile Update="EnumerableStatsMinMax.cs">
       <DependentUpon>EnumerableStatsMinMax.tt</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
-    <Compile Include="EnumerableStatsSkewness.cs">
+    <Compile Update="EnumerableStatsSkewness.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>EnumerableStatsSkewness.tt</DependentUpon>
     </Compile>
-    <Compile Include="EnumerableStatsCovariance.cs">
+    <Compile Update="EnumerableStatsCovariance.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>EnumerableStatsCovariance.tt</DependentUpon>
     </Compile>
-    <Compile Include="EnumerableStatsKurtosis.cs">
+    <Compile Update="EnumerableStatsKurtosis.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>EnumerableStatsKurtosis.tt</DependentUpon>
     </Compile>
-    <Compile Include="EnumerableStatsLeastSquares.cs">
+    <Compile Update="EnumerableStatsLeastSquares.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>EnumerableStatsLeastSquares.tt</DependentUpon>
     </Compile>
-    <Compile Include="EnumerableStatsMedian.cs">
+    <Compile Update="EnumerableStatsMedian.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>EnumerableStatsMedian.tt</DependentUpon>
     </Compile>
-    <Compile Include="EnumerableStatsPearson.cs">
+    <Compile Update="EnumerableStatsPearson.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>EnumerableStatsPearson.tt</DependentUpon>
     </Compile>
-    <Compile Include="EnumerableStatsRange.cs">
+    <Compile Update="EnumerableStatsRange.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>EnumerableStatsRange.tt</DependentUpon>
     </Compile>
-    <Compile Include="EnumerableStatsRootMeanSquare.cs">
+    <Compile Update="EnumerableStatsRootMeanSquare.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>EnumerableStatsRootMeanSquare.tt</DependentUpon>
     </Compile>
-    <Compile Include="EnumerableStatsStandardDeviation.cs">
+    <Compile Update="EnumerableStatsStandardDeviation.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>EnumerableStatsStandardDeviation.tt</DependentUpon>
     </Compile>
-    <Compile Include="EnumerableStatsStandardDeviationP.cs">
+    <Compile Update="EnumerableStatsStandardDeviationP.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>EnumerableStatsStandardDeviationP.tt</DependentUpon>
     </Compile>
-    <Compile Include="EnumerableStatsVariance.cs">
+    <Compile Update="EnumerableStatsVariance.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>EnumerableStatsVariance.tt</DependentUpon>
     </Compile>
-    <Compile Include="EnumerableStatsVarianceP.cs">
+    <Compile Update="EnumerableStatsVarianceP.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>EnumerableStatsVarianceP.tt</DependentUpon>
     </Compile>
-    <Compile Include="GlobalSuppressions.cs" />
-    <Compile Include="ItemCount.cs" />
-    <Compile Include="EnumerableStatsBinCount.cs" />
-    <Compile Include="EnumerableStatsCountEach.cs" />
-    <Compile Include="EnumerableStats.cs" />
-    <Compile Include="EnumerableStatsMode.cs" />
-    <Compile Include="EnumerableStatsHistogram.cs">
+    <Compile Update="EnumerableStatsHistogram.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>EnumerableStatsHistogram.tt</DependentUpon>
     </Compile>
-    <Compile Include="LeastSquares.cs" />
-    <Compile Include="NaN\AverageNaN.cs">
+    <Compile Update="AverageNaN.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>AverageNaN.tt</DependentUpon>
     </Compile>
-    <Compile Include="NaN\EnumerableStatsCovariance.cs">
-      <DependentUpon>EnumerableStatsCovariance.tt</DependentUpon>
+    <Compile Update="EnumerableStatsCovarianceNaN.cs">
+      <DependentUpon>EnumerableStatsCovarianceNaN.tt</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
-    <Compile Include="NaN\EnumerableStatsKurtosis.cs">
-      <DependentUpon>EnumerableStatsKurtosis.tt</DependentUpon>
+    <Compile Update="EnumerableStatsKurtosisNaN.cs">
+      <DependentUpon>EnumerableStatsKurtosisNaN.tt</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
-    <Compile Include="NaN\EnumerableStatsLeastSquares.cs">
-      <DependentUpon>EnumerableStatsLeastSquares.tt</DependentUpon>
+    <Compile Update="EnumerableStatsLeastSquaresNaN.cs">
+      <DependentUpon>EnumerableStatsLeastSquaresNaN.tt</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
-    <Compile Include="NaN\EnumerableStatsMinMax.cs">
-      <DependentUpon>EnumerableStatsMinMax.tt</DependentUpon>
+    <Compile Update="EnumerableStatsMinMaxNaN.cs">
+      <DependentUpon>EnumerableStatsMinMaxNaN.tt</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
-    <Compile Include="NaN\EnumerableStatsPearson.cs">
-      <DependentUpon>EnumerableStatsPearson.tt</DependentUpon>
+    <Compile Update="EnumerableStatsPearsonNaN.cs">
+      <DependentUpon>EnumerableStatsPearsonNaN.tt</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
-    <Compile Include="NaN\EnumerableStatsRange.cs">
-      <DependentUpon>EnumerableStatsRange.tt</DependentUpon>
+    <Compile Update="EnumerableStatsRangeNaN.cs">
+      <DependentUpon>EnumerableStatsRangeNaN.tt</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
-    <Compile Include="NaN\EnumerableStatsRootMeanSquare.cs">
-      <DependentUpon>EnumerableStatsRootMeanSquare.tt</DependentUpon>
+    <Compile Update="EnumerableStatsRootMeanSquareNaN.cs">
+      <DependentUpon>EnumerableStatsRootMeanSquareNaN.tt</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
-    <Compile Include="NaN\EnumerableStatsSkewness.cs">
-      <DependentUpon>EnumerableStatsSkewness.tt</DependentUpon>
+    <Compile Update="EnumerableStatsSkewnessNaN.cs">
+      <DependentUpon>EnumerableStatsSkewnessNaN.tt</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
-    <Compile Include="NaN\EnumerableStatsStandardDeviation.cs">
-      <DependentUpon>EnumerableStatsStandardDeviation.tt</DependentUpon>
+    <Compile Update="EnumerableStatsStandardDeviationNaN.cs">
+      <DependentUpon>EnumerableStatsStandardDeviationNaN.tt</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
-    <Compile Include="NaN\EnumerableStatsStandardDeviationP.cs">
-      <DependentUpon>EnumerableStatsStandardDeviationP.tt</DependentUpon>
+    <Compile Update="EnumerableStatsStandardDeviationPNaN.cs">
+      <DependentUpon>EnumerableStatsStandardDeviationPNaN.tt</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
-    <Compile Include="NaN\EnumerableStatsVariance.cs">
-      <DependentUpon>EnumerableStatsVariance.tt</DependentUpon>
+    <Compile Update="EnumerableStatsVarianceNaN.cs">
+      <DependentUpon>EnumerableStatsVarianceNaN.tt</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
-    <Compile Include="NaN\EnumerableStatsVarianceP.cs">
-      <DependentUpon>EnumerableStatsVarianceP.tt</DependentUpon>
+    <Compile Update="EnumerableStatsVariancePNaN.cs">
+      <DependentUpon>EnumerableStatsVariancePNaN.tt</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Range.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="EnumerableStatsSkewness.tt">
+    <None Update="EnumerableStatsSkewness.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>EnumerableStatsSkewness.cs</LastGenOutput>
     </None>
-    <None Include="EnumerableStatsCovariance.tt">
+    <None Update="EnumerableStatsCovariance.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>EnumerableStatsCovariance.cs</LastGenOutput>
     </None>
-    <None Include="EnumerableStatsHistogram.tt">
+    <None Update="EnumerableStatsHistogram.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>EnumerableStatsHistogram.cs</LastGenOutput>
     </None>
-    <None Include="EnumerableStatsKurtosis.tt">
+    <None Update="EnumerableStatsKurtosis.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>EnumerableStatsKurtosis.cs</LastGenOutput>
     </None>
-    <None Include="EnumerableStatsLeastSquares.tt">
+    <None Update="EnumerableStatsLeastSquares.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>EnumerableStatsLeastSquares.cs</LastGenOutput>
     </None>
-    <None Include="EnumerableStatsMedian.tt">
+    <None Update="EnumerableStatsMedian.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>EnumerableStatsMedian.cs</LastGenOutput>
     </None>
-    <None Include="EnumerableStatsPearson.tt">
+    <None Update="EnumerableStatsPearson.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>EnumerableStatsPearson.cs</LastGenOutput>
     </None>
-    <None Include="EnumerableStatsRange.tt">
+    <None Update="EnumerableStatsRange.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>EnumerableStatsRange.cs</LastGenOutput>
     </None>
-    <None Include="EnumerableStatsRootMeanSquare.tt">
+    <None Update="EnumerableStatsRootMeanSquare.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>EnumerableStatsRootMeanSquare.cs</LastGenOutput>
     </None>
-    <None Include="EnumerableStatsStandardDeviation.tt">
+    <None Update="EnumerableStatsStandardDeviation.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>EnumerableStatsStandardDeviation.cs</LastGenOutput>
     </None>
-    <None Include="EnumerableStatsStandardDeviationP.tt">
+    <None Update="EnumerableStatsStandardDeviationP.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>EnumerableStatsStandardDeviationP.cs</LastGenOutput>
     </None>
-    <None Include="EnumerableStatsVariance.tt">
+    <None Update="EnumerableStatsVariance.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>EnumerableStatsVariance.cs</LastGenOutput>
     </None>
-    <None Include="EnumerableStatsVarianceP.tt">
+    <None Update="EnumerableStatsVarianceP.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>EnumerableStatsVarianceP.cs</LastGenOutput>
     </None>
@@ -262,99 +216,130 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="EnumerableStatsMinMax.tt">
+    <None Update="EnumerableStatsMinMax.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>EnumerableStatsMinMax.cs</LastGenOutput>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="NaN\EnumerableStatsVariance.tt">
+    <None Update="EnumerableStatsVarianceNaN.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>EnumerableStatsVariance.cs</LastGenOutput>
+      <LastGenOutput>EnumerableStatsVarianceNaN.cs</LastGenOutput>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="NaN\EnumerableStatsCovariance.tt">
+    <None Update="EnumerableStatsCovarianceNaN.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>EnumerableStatsCovariance.cs</LastGenOutput>
+      <LastGenOutput>EnumerableStatsCovarianceNaN.cs</LastGenOutput>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="NaN\EnumerableStatsVarianceP.tt">
+    <None Update="EnumerableStatsVariancePNaN.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>EnumerableStatsVarianceP.cs</LastGenOutput>
+      <LastGenOutput>EnumerableStatsVariancePNaN.cs</LastGenOutput>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="NaN\EnumerableStatsStandardDeviationP.tt">
+    <None Update="EnumerableStatsStandardDeviationPNaN.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>EnumerableStatsStandardDeviationP.cs</LastGenOutput>
+      <LastGenOutput>EnumerableStatsStandardDeviationPNaN.cs</LastGenOutput>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="NaN\EnumerableStatsStandardDeviation.tt">
+    <None Update="EnumerableStatsStandardDeviationNaN.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>EnumerableStatsStandardDeviation.cs</LastGenOutput>
+      <LastGenOutput>EnumerableStatsStandardDeviationNaN.cs</LastGenOutput>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="NaN\EnumerableStatsSkewness.tt">
+    <None Update="EnumerableStatsSkewnessNaN.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>EnumerableStatsSkewness.cs</LastGenOutput>
+      <LastGenOutput>EnumerableStatsSkewnessNaN.cs</LastGenOutput>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="NaN\EnumerableStatsRootMeanSquare.tt">
+    <None Update="EnumerableStatsRootMeanSquareNaN.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>EnumerableStatsRootMeanSquare.cs</LastGenOutput>
+      <LastGenOutput>EnumerableStatsRootMeanSquareNaN.cs</LastGenOutput>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="NaN\EnumerableStatsPearson.tt">
+    <None Update="EnumerableStatsPearsonNaN.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>EnumerableStatsPearson.cs</LastGenOutput>
+      <LastGenOutput>EnumerableStatsPearsonNaN.cs</LastGenOutput>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="NaN\EnumerableStatsKurtosis.tt">
+    <None Update="EnumerableStatsKurtosisNaN.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>EnumerableStatsKurtosis.cs</LastGenOutput>
+      <LastGenOutput>EnumerableStatsKurtosisNaN.cs</LastGenOutput>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="NaN\EnumerableStatsMinMax.tt">
+    <None Update="EnumerableStatsMinMaxNaN.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>EnumerableStatsMinMax.cs</LastGenOutput>
+      <LastGenOutput>EnumerableStatsMinMaxNaN.cs</LastGenOutput>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="NaN\EnumerableStatsRange.tt">
+    <None Update="EnumerableStatsRangeNaN.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>EnumerableStatsRange.cs</LastGenOutput>
+      <LastGenOutput>EnumerableStatsRangeNaN.cs</LastGenOutput>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="NaN\EnumerableStatsLeastSquares.tt">
+    <None Update="EnumerableStatsLeastSquaresNaN.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>EnumerableStatsLeastSquares.cs</LastGenOutput>
+      <LastGenOutput>EnumerableStatsLeastSquaresNaN.cs</LastGenOutput>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="NaN\AverageNaN.tt">
+    <None Update="AverageNaN.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>AverageNaN.cs</LastGenOutput>
     </None>
   </ItemGroup>
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <Folder Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\License.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+    <None Include="..\..\nugeticon.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+    <None Include="..\..\README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
   <PropertyGroup>
-    <PostBuildEvent>
-    </PostBuildEvent>
+    <AssemblyTitle>LinqStatistics</AssemblyTitle>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <Version>3.0.1</Version>
+    <Company>dkackman</Company>
+    <Copyright>2019-2024</Copyright>
+    <PackageProjectUrl>https://github.com/dkackman/LinqStatistics</PackageProjectUrl>
+    <Description>Linq extensions to calculate basic statistics</Description>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <RepositoryUrl>https://github.com/dkackman/LinqStatistics</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageTags>.net; statistics; linq;</PackageTags>
+    <PackageReleaseNotes>Update to .net core 8</PackageReleaseNotes>
+    <PackageLicenseFile>License.md</PackageLicenseFile>
+    <IncludeSymbols>True</IncludeSymbols>
+    <EnforceCodeStyleInBuild>True</EnforceCodeStyleInBuild>
+    <Title>LinqStatistics</Title>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+    <PackageIcon>nugeticon.png</PackageIcon>
   </PropertyGroup>
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
-       Other similar extension points exist, see Microsoft.Common.targets.
-  <Target Name="BeforeBuild">
-  </Target>
-  <Target Name="AfterBuild">
-  </Target>
-  -->
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <Configuration>net40</Configuration>
+    <IsTrimmable>True</IsTrimmable>
+    <IsAotCompatible>True</IsAotCompatible>
+    <CheckForOverflowUnderflow>True</CheckForOverflowUnderflow>
+  </PropertyGroup>
 </Project>

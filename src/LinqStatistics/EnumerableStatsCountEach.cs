@@ -15,11 +15,9 @@ namespace LinqStatistics
         /// <returns>The count of each unique element</returns>
         public static IEnumerable<ItemCount<T>> CountEach<T>(this IEnumerable<T> source, IEqualityComparer<T> comparer)
         {
-            if (source == null)
-                throw new ArgumentNullException(nameof(source));
+            ArgumentNullException.ThrowIfNull(source);
 
-            if (comparer == null)
-                throw new ArgumentNullException(nameof(comparer));
+            ArgumentNullException.ThrowIfNull(comparer);
 
             return source.GroupBy(t => t, comparer).Select(g => new ItemCount<T>(g.Key, g.Count()));
         }
@@ -32,8 +30,7 @@ namespace LinqStatistics
         /// <returns>The count of each unique element</returns>
         public static IEnumerable<ItemCount<T>> CountEach<T>(this IEnumerable<T> source)
         {
-            if (source == null)
-                throw new ArgumentNullException(nameof(source));
+            ArgumentNullException.ThrowIfNull(source);
 
             return source.CountEach(EqualityComparer<T>.Default);
         }
@@ -48,11 +45,9 @@ namespace LinqStatistics
         /// <returns>The count of each unique element</returns>
         public static IEnumerable<ItemCount<TResult>> CountEach<TSource, TResult>(this IEnumerable<TSource> source, Func<TSource, TResult> selector)
         {
-            if (source == null)
-                throw new ArgumentNullException(nameof(source));
+            ArgumentNullException.ThrowIfNull(source);
 
-            if (selector == null)
-                throw new ArgumentNullException(nameof(selector));
+            ArgumentNullException.ThrowIfNull(selector);
 
             return source.Select(selector).CountEach();
         }
@@ -68,14 +63,11 @@ namespace LinqStatistics
         /// <returns>The count of each unique element</returns>
         public static IEnumerable<ItemCount<TResult>> CountEach<TSource, TResult>(this IEnumerable<TSource> source, Func<TSource, TResult> selector, IEqualityComparer<TResult> comparer)
         {
-            if (source == null)
-                throw new ArgumentNullException(nameof(source));
+            ArgumentNullException.ThrowIfNull(source);
 
-            if (selector == null)
-                throw new ArgumentNullException(nameof(selector));
+            ArgumentNullException.ThrowIfNull(selector);
 
-            if (comparer == null)
-                throw new ArgumentNullException(nameof(comparer));
+            ArgumentNullException.ThrowIfNull(comparer);
 
             return source.Select(selector).CountEach(comparer);
         }

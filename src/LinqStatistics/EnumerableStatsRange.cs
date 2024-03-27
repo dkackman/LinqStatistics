@@ -47,11 +47,9 @@ namespace LinqStatistics
         /// <returns>The Range.</returns>
         public static int? Range<TSource>(this IEnumerable<TSource> source, Func<TSource, int?> selector)
         {
-            if (source == null)
-                throw new ArgumentNullException(nameof(source));
+            ArgumentNullException.ThrowIfNull(source);
 
-            if (selector == null)
-                throw new ArgumentNullException(nameof(selector));
+            ArgumentNullException.ThrowIfNull(selector);
 
             return source.Select(selector).Range();
         }
@@ -66,11 +64,9 @@ namespace LinqStatistics
         /// <returns>The Range.</returns>
         public static int Range<TSource>(this IEnumerable<TSource> source, Func<TSource, int> selector)
         {
-            if (source == null)
-                throw new ArgumentNullException(nameof(source));
+            ArgumentNullException.ThrowIfNull(source);
 
-            if (selector == null)
-                throw new ArgumentNullException(nameof(selector));
+            ArgumentNullException.ThrowIfNull(selector);
 
             return source.Select(selector).Range();
         }
@@ -110,11 +106,9 @@ namespace LinqStatistics
         /// <returns>The Range.</returns>
         public static long? Range<TSource>(this IEnumerable<TSource> source, Func<TSource, long?> selector)
         {
-            if (source == null)
-                throw new ArgumentNullException(nameof(source));
+            ArgumentNullException.ThrowIfNull(source);
 
-            if (selector == null)
-                throw new ArgumentNullException(nameof(selector));
+            ArgumentNullException.ThrowIfNull(selector);
 
             return source.Select(selector).Range();
         }
@@ -129,11 +123,9 @@ namespace LinqStatistics
         /// <returns>The Range.</returns>
         public static long Range<TSource>(this IEnumerable<TSource> source, Func<TSource, long> selector)
         {
-            if (source == null)
-                throw new ArgumentNullException(nameof(source));
+            ArgumentNullException.ThrowIfNull(source);
 
-            if (selector == null)
-                throw new ArgumentNullException(nameof(selector));
+            ArgumentNullException.ThrowIfNull(selector);
 
             return source.Select(selector).Range();
         }
@@ -173,11 +165,9 @@ namespace LinqStatistics
         /// <returns>The Range.</returns>
         public static float? Range<TSource>(this IEnumerable<TSource> source, Func<TSource, float?> selector)
         {
-            if (source == null)
-                throw new ArgumentNullException(nameof(source));
+            ArgumentNullException.ThrowIfNull(source);
 
-            if (selector == null)
-                throw new ArgumentNullException(nameof(selector));
+            ArgumentNullException.ThrowIfNull(selector);
 
             return source.Select(selector).Range();
         }
@@ -192,11 +182,9 @@ namespace LinqStatistics
         /// <returns>The Range.</returns>
         public static float Range<TSource>(this IEnumerable<TSource> source, Func<TSource, float> selector)
         {
-            if (source == null)
-                throw new ArgumentNullException(nameof(source));
+            ArgumentNullException.ThrowIfNull(source);
 
-            if (selector == null)
-                throw new ArgumentNullException(nameof(selector));
+            ArgumentNullException.ThrowIfNull(selector);
 
             return source.Select(selector).Range();
         }
@@ -236,11 +224,9 @@ namespace LinqStatistics
         /// <returns>The Range.</returns>
         public static double? Range<TSource>(this IEnumerable<TSource> source, Func<TSource, double?> selector)
         {
-            if (source == null)
-                throw new ArgumentNullException(nameof(source));
+            ArgumentNullException.ThrowIfNull(source);
 
-            if (selector == null)
-                throw new ArgumentNullException(nameof(selector));
+            ArgumentNullException.ThrowIfNull(selector);
 
             return source.Select(selector).Range();
         }
@@ -255,11 +241,9 @@ namespace LinqStatistics
         /// <returns>The Range.</returns>
         public static double Range<TSource>(this IEnumerable<TSource> source, Func<TSource, double> selector)
         {
-            if (source == null)
-                throw new ArgumentNullException(nameof(source));
+            ArgumentNullException.ThrowIfNull(source);
 
-            if (selector == null)
-                throw new ArgumentNullException(nameof(selector));
+            ArgumentNullException.ThrowIfNull(selector);
 
             return source.Select(selector).Range();
         }
@@ -299,11 +283,9 @@ namespace LinqStatistics
         /// <returns>The Range.</returns>
         public static decimal? Range<TSource>(this IEnumerable<TSource> source, Func<TSource, decimal?> selector)
         {
-            if (source == null)
-                throw new ArgumentNullException(nameof(source));
+            ArgumentNullException.ThrowIfNull(source);
 
-            if (selector == null)
-                throw new ArgumentNullException(nameof(selector));
+            ArgumentNullException.ThrowIfNull(selector);
 
             return source.Select(selector).Range();
         }
@@ -318,11 +300,68 @@ namespace LinqStatistics
         /// <returns>The Range.</returns>
         public static decimal Range<TSource>(this IEnumerable<TSource> source, Func<TSource, decimal> selector)
         {
-            if (source == null)
-                throw new ArgumentNullException(nameof(source));
+            ArgumentNullException.ThrowIfNull(source);
 
-            if (selector == null)
-                throw new ArgumentNullException(nameof(selector));
+            ArgumentNullException.ThrowIfNull(selector);
+
+            return source.Select(selector).Range();
+        }
+ 	
+        /// <summary>
+        /// Computes the Range of a sequence of nullable Int128 values.
+        /// </summary>
+        /// <param name="source">The sequence of elements.</param>
+        /// <returns>The Range.</returns>
+        public static Int128? Range(this IEnumerable<Int128?> source)
+        {
+            var values = source.AllValues();
+            if (values.Any())
+                return values.Range();
+
+            return null;
+        }
+
+        /// <summary>
+        /// Computes the Range of a sequence of Int128 values.
+        /// </summary>
+        /// <param name="source">The sequence of elements.</param>
+        /// <returns>The Range.</returns>
+        public static Int128 Range(this IEnumerable<Int128> source)
+        {
+            var range = source.MinMax();
+            return range.Max - range.Min;
+        }
+
+        /// <summary>
+        ///     Computes the Range of a sequence of nullable Int128 values that are obtained
+        ///     by invoking a transform function on each element of the input sequence.
+        /// </summary>
+        /// <typeparam name="TSource">The type of the elements of source.</typeparam>
+        /// <param name="source">The sequence of elements.</param>
+        /// <param name="selector">A transform function to apply to each element.</param>
+        /// <returns>The Range.</returns>
+        public static Int128? Range<TSource>(this IEnumerable<TSource> source, Func<TSource, Int128?> selector)
+        {
+            ArgumentNullException.ThrowIfNull(source);
+
+            ArgumentNullException.ThrowIfNull(selector);
+
+            return source.Select(selector).Range();
+        }
+
+        /// <summary>
+        ///     Computes the Range of a sequence of Int128 values that are obtained
+        ///     by invoking a transform function on each element of the input sequence.
+        /// </summary>
+        /// <typeparam name="TSource">The type of the elements of source.</typeparam>
+        /// <param name="source">The sequence of elements.</param>
+        /// <param name="selector">A transform function to apply to each element.</param>
+        /// <returns>The Range.</returns>
+        public static Int128 Range<TSource>(this IEnumerable<TSource> source, Func<TSource, Int128> selector)
+        {
+            ArgumentNullException.ThrowIfNull(source);
+
+            ArgumentNullException.ThrowIfNull(selector);
 
             return source.Select(selector).Range();
         }

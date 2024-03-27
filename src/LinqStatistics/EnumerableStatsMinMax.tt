@@ -19,7 +19,7 @@ namespace LinqStatistics
     {
     <# var types = new List<string>()
     {
-        "int", "long", "float", "double", "decimal"
+        "int", "long", "float", "double", "decimal", "Int128"
     };
 
     foreach(var type in types)
@@ -45,8 +45,7 @@ namespace LinqStatistics
         /// <returns>The MinMax.</returns>
         public static Range<<#= type #>> MinMax(this IEnumerable<<#= type #>> source)
         {            
-            if (source == null)
-                throw new ArgumentNullException(nameof(source));
+            ArgumentNullException.ThrowIfNull(source);
 
             // initialize minimum to max possible value and maximum to minimum possible value
             // so that the first comparisons in the aggregate function work as expected
@@ -55,8 +54,8 @@ namespace LinqStatistics
             var any = false;
             var result = source.Aggregate(minMax, (accumulator, value) =>
             {
-                var min = Math.Min(accumulator.Min, value);
-                var max = Math.Max(accumulator.Max, value);
+                var min = <#= type #>.Min(accumulator.Min, value);
+                var max = <#= type #>.Max(accumulator.Max, value);
                 any = true;
 
                 return new Range<<#= type #>>(min, max);
@@ -78,11 +77,9 @@ namespace LinqStatistics
         /// <returns>The MinMax.</returns>
         public static Range<<#= type #>>? MinMax<TSource>(this IEnumerable<TSource> source, Func<TSource, <#= type #>?> selector)
         {
-            if (source == null)
-                throw new ArgumentNullException(nameof(source));
+            ArgumentNullException.ThrowIfNull(source);
 
-            if (selector == null)
-                throw new ArgumentNullException(nameof(selector));
+            ArgumentNullException.ThrowIfNull(selector);
 
             return source.Select(selector).MinMax();
         }
@@ -97,11 +94,9 @@ namespace LinqStatistics
         /// <returns>The MinMax.</returns>
         public static Range<<#= type #>> MinMax<TSource>(this IEnumerable<TSource> source, Func<TSource, <#= type #>> selector)
         {
-            if (source == null)
-                throw new ArgumentNullException(nameof(source));
+            ArgumentNullException.ThrowIfNull(source);
 
-            if (selector == null)
-                throw new ArgumentNullException(nameof(selector));
+            ArgumentNullException.ThrowIfNull(selector);
 
             return source.Select(selector).MinMax();
         }

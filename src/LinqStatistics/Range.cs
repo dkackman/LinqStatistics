@@ -120,7 +120,7 @@ namespace LinqStatistics
         /// <returns>
         /// true if <paramref name="obj"/> and this instance are the same type and represent the same value; otherwise, false.
         /// </returns>
-        public override bool Equals(object obj)
+        public override readonly bool Equals(object obj)
         {
             return obj is Range<T> r && this == r;
         }
@@ -132,7 +132,7 @@ namespace LinqStatistics
         /// <returns>
         /// true if the current object is equal to the <paramref name="other"/> parameter; otherwise, false.
         /// </returns>
-        public bool Equals(Range<T> other)
+        public readonly bool Equals(Range<T> other)
         {
             return this == other;
         }
@@ -152,7 +152,7 @@ namespace LinqStatistics
         /// </summary>
         /// <param name="other"></param>
         /// <returns></returns>
-        public int CompareTo(Range<T> other)
+        public readonly int CompareTo(Range<T> other)
         {
             return this < other ? -1 : this > other ? 1 : 0;
         }
@@ -163,7 +163,7 @@ namespace LinqStatistics
         /// <returns>
         /// A 32-bit signed integer that is the hash code for this instance.
         /// </returns>
-        public override int GetHashCode()
+        public override readonly int GetHashCode()
         {
             var hash = 17;
             hash = hash * 23 + Min.GetHashCode();
@@ -177,7 +177,7 @@ namespace LinqStatistics
         /// <returns>
         /// A <see cref="string"/> representation of the range
         /// </returns>
-        public override string ToString()
+        public override readonly string ToString()
         {
             return Format(Min.ToString(), Max.ToString());
         }
@@ -192,7 +192,7 @@ namespace LinqStatistics
         /// </summary>
         /// <param name="provider"></param>
         /// <returns></returns>
-        public string ToString(IFormatProvider provider)
+        public readonly string ToString(IFormatProvider provider)
         {
             return Format(Min.ToString(null, provider), Max.ToString(null, provider));
         }
@@ -202,7 +202,7 @@ namespace LinqStatistics
         /// </summary>
         /// <param name="format"></param>
         /// <returns></returns>
-        public string ToString(string format)
+        public readonly string ToString(string format)
         {
             return Format(Min.ToString(format, CultureInfo.CurrentCulture), Max.ToString(format, CultureInfo.CurrentCulture));
         }
@@ -211,11 +211,11 @@ namespace LinqStatistics
         /// 
         /// </summary>
         /// <param name="format"></param>
-        /// <param name="provider"></param>
+        /// <param name="formatProvider"></param>
         /// <returns></returns>
-        public string ToString(string format, IFormatProvider provider)
+        public readonly string ToString(string format, IFormatProvider formatProvider)
         {
-            return Format(Min.ToString(format, provider), Max.ToString(format, provider));
+            return Format(Min.ToString(format, formatProvider), Max.ToString(format, formatProvider));
         }
     }
 }

@@ -51,8 +51,7 @@ namespace LinqStatistics
         /// <remarks>![equation](~/images/skewness.gif)</remarks>
         public static <#= type.Item2 #> Skewness(this IEnumerable<<#= type.Item1 #>> source)
         {
-            if (source == null)
-                throw new ArgumentNullException(nameof(source));
+            ArgumentNullException.ThrowIfNull(source);
 
             var mean = (double)source.Average();
             var s = (double)source.StandardDeviation();
@@ -85,11 +84,9 @@ namespace LinqStatistics
         /// <remarks>![equation](~/images/skewness.gif)</remarks>
         public static <#= type.Item2 #> Skewness<TSource>(this IEnumerable<TSource> source, Func<TSource, <#= type.Item1 #>> selector)
         {
-            if (source == null)
-                throw new ArgumentNullException(nameof(source));
+            ArgumentNullException.ThrowIfNull(source);
 
-            if (selector == null)
-                throw new ArgumentNullException(nameof(selector));
+            ArgumentNullException.ThrowIfNull(selector);
 
             return source.Select(selector).Skewness();
         }
@@ -105,11 +102,9 @@ namespace LinqStatistics
         /// <remarks>![equation](~/images/skewness.gif)</remarks>
         public static <#= type.Item2 #>? Skewness<TSource>(this IEnumerable<TSource> source, Func<TSource, <#= type.Item1 #>?> selector)
         {
-            if (source == null)
-                throw new ArgumentNullException(nameof(source));
+            ArgumentNullException.ThrowIfNull(source);
 
-            if (selector == null)
-                throw new ArgumentNullException(nameof(selector));
+            ArgumentNullException.ThrowIfNull(selector);
 
             return source.Select(selector).Skewness();
         }
