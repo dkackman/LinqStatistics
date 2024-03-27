@@ -1,5 +1,6 @@
 # LinqStatistics
 
+[![.NET](https://github.com/dkackman/LinqStatistics/actions/workflows/dotnet.yml/badge.svg)](https://github.com/dkackman/LinqStatistics/actions/workflows/dotnet.yml)
 [![NuGet](https://img.shields.io/nuget/dt/LinqStatistics)](https://www.nuget.org/packages/LinqStatistics/)
 
 - [API Documentation](https://dkackman.github.io/LinqStatistics/)
