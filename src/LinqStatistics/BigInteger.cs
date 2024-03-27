@@ -7,14 +7,13 @@ namespace LinqStatistics
 {
     /// <summary>
     /// Static class with statistical extension methods for <see cref="IEnumerable{T}"/>
-    /// Methods return NaN instead of throwing exceptions in cases that would result in divide by zero
     /// </summary>
     public static partial class EnumerableStats
     {
         /// <summary>
         /// Computes the Sum of a sequence of nullable BigInteger values.
         /// </summary>
-        /// <param name="source">A sequence of nullable int values to calculate the Sum of.</param>
+        /// <param name="source">A sequence of nullable BigInteger values to calculate the Sum of.</param>
         /// <returns>       
         ///     The Sum of the sequence of values, or null if the source sequence is
         ///     empty or contains only values that are null.
@@ -36,9 +35,9 @@ namespace LinqStatistics
         }
 
         /// <summary>
-        /// Computes the Sum of a sequence of int values.
+        /// Computes the Sum of a sequence of BigInteger values.
         /// </summary>
-        /// <param name="source">A sequence of int values to calculate the Sum of.</param>
+        /// <param name="source">A sequence of BigInteger values to calculate the Sum of.</param>
         /// <returns>       
         ///     The Sum of the sequence of values.
         /// </returns>
@@ -55,7 +54,7 @@ namespace LinqStatistics
         }
 
         /// <summary>
-        /// Computes the Sum of a sequence of nullable int values that are obtained
+        /// Computes the Sum of a sequence of nullable BigInteger values that are obtained
         ///     by invoking a transform function on each element of the input sequence.
         /// </summary>
         /// <typeparam name="TSource">The type of the elements of source.</typeparam>
@@ -74,7 +73,7 @@ namespace LinqStatistics
         }
 
         /// <summary>
-        /// Computes the Sum of a sequence of int values that are obtained
+        /// Computes the Sum of a sequence of BigInteger values that are obtained
         ///     by invoking a transform function on each element of the input sequence.
         /// </summary>
         /// <typeparam name="TSource">The type of the elements of source.</typeparam>

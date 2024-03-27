@@ -14,14 +14,10 @@
           "src": "../src/LinqStatistics"
         }
       ],
-      "dest": "api",
-      "shouldSkipMarkup": false
+      "dest": "api"
     }
   ],
   "build": {
-    "xref": [
-      "xref/msdn.4.5.2.zip"
-    ],
     "content": [
       {
         "files": [
@@ -64,13 +60,16 @@
         ]
       }
     ],
-    "dest": "_site",
-    "globalMetadataFiles": [],
-    "fileMetadataFiles": [],
+    "output": "_site",
     "template": [
-      "default"
+      "default",
+      "modern"
     ],
-    "postProcessors": [],
-    "noLangKeyword": false
+    "globalMetadata": {
+      "_appName": "LinqStatistics",
+      "_appTitle": "LinqStatistics",
+      "_enableSearch": true,
+      "pdf": true
+    }
   }
 }
