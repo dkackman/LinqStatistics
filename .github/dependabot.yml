@@ -9,3 +9,4 @@ updates:
     directory: "/src/LinqStatistics/" # Location of package manifests
     schedule:
       interval: "daily"
+
