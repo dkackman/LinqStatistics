@@ -39,6 +39,10 @@ static void Main(string[] args)
 }
 ```
 
+## Building
+
+This project makes heavy use of T4 templates. You will need Visual Studio and [this extension](https://github.com/RdJNL/TextTemplatingCore) if you want to build from source. VSCode doesn't seem to support T4 templates, nor does `dotnet build`.
+
 ## Older Versions
 
 The latest version of this library target .NET 8 LTS. If you need to target older versions of .NET, you can find the appropriate version of this library on NuGet. [Version 2.3.0](https://www.nuget.org/packages/LinqStatistics/?version=2.3.0) targets .Net Standard 1.1 and .Net Framework 4.x.
