@@ -227,5 +227,5 @@ namespace LinqStatistics
 
             return (double)(covariance / listSource.Count);
         }
-    }
+     }
 }

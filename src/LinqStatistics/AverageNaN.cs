@@ -15,12 +15,12 @@ namespace LinqStatistics
     /// </summary>
     public static partial class EnumerableStats
     {
-    	
+
         /// <summary>
         /// Computes the sample Average of a sequence of nullable int values.
         /// </summary>
         /// <param name="source">A sequence of nullable int values to calculate the Average of.</param>
-        /// <returns>       
+        /// <returns>
         ///     The Average of the sequence of values, or null if the source sequence is
         ///     empty or contains only values that are null.
         /// </returns>
@@ -29,7 +29,7 @@ namespace LinqStatistics
             var values = source.AllValues();
             if (values.Any())
                 return values.AverageNaN();
-            
+
             return null;
         }
 
@@ -37,7 +37,7 @@ namespace LinqStatistics
         /// Computes the sample Average of a sequence of int values.
         /// </summary>
         /// <param name="source">A sequence of int values to calculate the Average of.</param>
-        /// <returns>       
+        /// <returns>
         ///     The Average of the sequence of values.
         /// </returns>
         public static double AverageNaN(this IEnumerable<int> source)
@@ -46,9 +46,9 @@ namespace LinqStatistics
 
             var sum = 0.0;
             long n = 0;
-            checked 
+            checked
             {
-                foreach (var v in source) 
+                foreach (var v in source)
                 {
                     sum += v;
                     n++;
@@ -65,7 +65,7 @@ namespace LinqStatistics
         /// <typeparam name="TSource">The type of the elements of source.</typeparam>
         /// <param name="source">The sequence of elements.</param>
         /// <param name="selector">A transform function to apply to each element.</param>
-        /// <returns>       
+        /// <returns>
         ///     The Average of the sequence of values.
         /// </returns>
         public static double? AverageNaN<TSource>(this IEnumerable<TSource> source, Func<TSource, int?> selector)
@@ -84,7 +84,7 @@ namespace LinqStatistics
         /// <typeparam name="TSource">The type of the elements of source.</typeparam>
         /// <param name="source">The sequence of elements.</param>
         /// <param name="selector">A transform function to apply to each element.</param>
-        /// <returns>       
+        /// <returns>
         ///     The Average of the sequence of values.
         /// </returns>
         public static double AverageNaN<TSource>(this IEnumerable<TSource> source, Func<TSource, int> selector)
@@ -95,12 +95,12 @@ namespace LinqStatistics
 
             return source.Select(selector).AverageNaN();
         }
- 	
+
         /// <summary>
         /// Computes the sample Average of a sequence of nullable long values.
         /// </summary>
         /// <param name="source">A sequence of nullable long values to calculate the Average of.</param>
-        /// <returns>       
+        /// <returns>
         ///     The Average of the sequence of values, or null if the source sequence is
         ///     empty or contains only values that are null.
         /// </returns>
@@ -109,7 +109,7 @@ namespace LinqStatistics
             var values = source.AllValues();
             if (values.Any())
                 return values.AverageNaN();
-            
+
             return null;
         }
 
@@ -117,7 +117,7 @@ namespace LinqStatistics
         /// Computes the sample Average of a sequence of long values.
         /// </summary>
         /// <param name="source">A sequence of long values to calculate the Average of.</param>
-        /// <returns>       
+        /// <returns>
         ///     The Average of the sequence of values.
         /// </returns>
         public static double AverageNaN(this IEnumerable<long> source)
@@ -126,9 +126,9 @@ namespace LinqStatistics
 
             var sum = 0.0;
             long n = 0;
-            checked 
+            checked
             {
-                foreach (var v in source) 
+                foreach (var v in source)
                 {
                     sum += v;
                     n++;
@@ -145,7 +145,7 @@ namespace LinqStatistics
         /// <typeparam name="TSource">The type of the elements of source.</typeparam>
         /// <param name="source">The sequence of elements.</param>
         /// <param name="selector">A transform function to apply to each element.</param>
-        /// <returns>       
+        /// <returns>
         ///     The Average of the sequence of values.
         /// </returns>
         public static double? AverageNaN<TSource>(this IEnumerable<TSource> source, Func<TSource, long?> selector)
@@ -164,7 +164,7 @@ namespace LinqStatistics
         /// <typeparam name="TSource">The type of the elements of source.</typeparam>
         /// <param name="source">The sequence of elements.</param>
         /// <param name="selector">A transform function to apply to each element.</param>
-        /// <returns>       
+        /// <returns>
         ///     The Average of the sequence of values.
         /// </returns>
         public static double AverageNaN<TSource>(this IEnumerable<TSource> source, Func<TSource, long> selector)
@@ -175,12 +175,12 @@ namespace LinqStatistics
 
             return source.Select(selector).AverageNaN();
         }
- 	
+
         /// <summary>
         /// Computes the sample Average of a sequence of nullable float values.
         /// </summary>
         /// <param name="source">A sequence of nullable float values to calculate the Average of.</param>
-        /// <returns>       
+        /// <returns>
         ///     The Average of the sequence of values, or null if the source sequence is
         ///     empty or contains only values that are null.
         /// </returns>
@@ -189,7 +189,7 @@ namespace LinqStatistics
             var values = source.AllValues();
             if (values.Any())
                 return values.AverageNaN();
-            
+
             return null;
         }
 
@@ -197,7 +197,7 @@ namespace LinqStatistics
         /// Computes the sample Average of a sequence of float values.
         /// </summary>
         /// <param name="source">A sequence of float values to calculate the Average of.</param>
-        /// <returns>       
+        /// <returns>
         ///     The Average of the sequence of values.
         /// </returns>
         public static float AverageNaN(this IEnumerable<float> source)
@@ -206,9 +206,9 @@ namespace LinqStatistics
 
             var sum = 0.0;
             long n = 0;
-            checked 
+            checked
             {
-                foreach (var v in source) 
+                foreach (var v in source)
                 {
                     sum += v;
                     n++;
@@ -225,7 +225,7 @@ namespace LinqStatistics
         /// <typeparam name="TSource">The type of the elements of source.</typeparam>
         /// <param name="source">The sequence of elements.</param>
         /// <param name="selector">A transform function to apply to each element.</param>
-        /// <returns>       
+        /// <returns>
         ///     The Average of the sequence of values.
         /// </returns>
         public static float? AverageNaN<TSource>(this IEnumerable<TSource> source, Func<TSource, float?> selector)
@@ -244,7 +244,7 @@ namespace LinqStatistics
         /// <typeparam name="TSource">The type of the elements of source.</typeparam>
         /// <param name="source">The sequence of elements.</param>
         /// <param name="selector">A transform function to apply to each element.</param>
-        /// <returns>       
+        /// <returns>
         ///     The Average of the sequence of values.
         /// </returns>
         public static float AverageNaN<TSource>(this IEnumerable<TSource> source, Func<TSource, float> selector)
@@ -255,12 +255,12 @@ namespace LinqStatistics
 
             return source.Select(selector).AverageNaN();
         }
- 	
+
         /// <summary>
         /// Computes the sample Average of a sequence of nullable double values.
         /// </summary>
         /// <param name="source">A sequence of nullable double values to calculate the Average of.</param>
-        /// <returns>       
+        /// <returns>
         ///     The Average of the sequence of values, or null if the source sequence is
         ///     empty or contains only values that are null.
         /// </returns>
@@ -269,7 +269,7 @@ namespace LinqStatistics
             var values = source.AllValues();
             if (values.Any())
                 return values.AverageNaN();
-            
+
             return null;
         }
 
@@ -277,7 +277,7 @@ namespace LinqStatistics
         /// Computes the sample Average of a sequence of double values.
         /// </summary>
         /// <param name="source">A sequence of double values to calculate the Average of.</param>
-        /// <returns>       
+        /// <returns>
         ///     The Average of the sequence of values.
         /// </returns>
         public static double AverageNaN(this IEnumerable<double> source)
@@ -286,9 +286,9 @@ namespace LinqStatistics
 
             var sum = 0.0;
             long n = 0;
-            checked 
+            checked
             {
-                foreach (var v in source) 
+                foreach (var v in source)
                 {
                     sum += v;
                     n++;
@@ -305,7 +305,7 @@ namespace LinqStatistics
         /// <typeparam name="TSource">The type of the elements of source.</typeparam>
         /// <param name="source">The sequence of elements.</param>
         /// <param name="selector">A transform function to apply to each element.</param>
-        /// <returns>       
+        /// <returns>
         ///     The Average of the sequence of values.
         /// </returns>
         public static double? AverageNaN<TSource>(this IEnumerable<TSource> source, Func<TSource, double?> selector)
@@ -324,7 +324,7 @@ namespace LinqStatistics
         /// <typeparam name="TSource">The type of the elements of source.</typeparam>
         /// <param name="source">The sequence of elements.</param>
         /// <param name="selector">A transform function to apply to each element.</param>
-        /// <returns>       
+        /// <returns>
         ///     The Average of the sequence of values.
         /// </returns>
         public static double AverageNaN<TSource>(this IEnumerable<TSource> source, Func<TSource, double> selector)

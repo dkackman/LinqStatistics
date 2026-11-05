@@ -56,7 +56,7 @@ namespace LinqStatistics
 
         /// <summary>
         /// Computes the RootMeanSquare of a sequence of nullable int values that are obtained
-        /// by invoking a transform function on each element of the input sequence.        
+        /// by invoking a transform function on each element of the input sequence.
         /// </summary>
         /// <typeparam name="TSource">The type of the elements of source.</typeparam>
         /// <param name="source">A sequence of values to calculate the RootMeanSquare of.</param>
@@ -73,7 +73,7 @@ namespace LinqStatistics
 
         /// <summary>
         /// Computes the RootMeanSquare of a sequence of int values that are obtained
-        /// by invoking a transform function on each element of the input sequence.        
+        /// by invoking a transform function on each element of the input sequence.
         /// </summary>
         /// <typeparam name="TSource">The type of the elements of source.</typeparam>
         /// <param name="source">A sequence of values to calculate the RootMeanSquare of.</param>
@@ -85,7 +85,7 @@ namespace LinqStatistics
 
             ArgumentNullException.ThrowIfNull(selector);
 
-            return source.Select(selector).RootMeanSquareNaN();
+           return source.Select(selector).RootMeanSquareNaN();
         }
 
         /// <summary>
@@ -132,7 +132,7 @@ namespace LinqStatistics
 
         /// <summary>
         /// Computes the RootMeanSquare of a sequence of nullable long values that are obtained
-        /// by invoking a transform function on each element of the input sequence.        
+        /// by invoking a transform function on each element of the input sequence.
         /// </summary>
         /// <typeparam name="TSource">The type of the elements of source.</typeparam>
         /// <param name="source">A sequence of values to calculate the RootMeanSquare of.</param>
@@ -149,7 +149,7 @@ namespace LinqStatistics
 
         /// <summary>
         /// Computes the RootMeanSquare of a sequence of long values that are obtained
-        /// by invoking a transform function on each element of the input sequence.        
+        /// by invoking a transform function on each element of the input sequence.
         /// </summary>
         /// <typeparam name="TSource">The type of the elements of source.</typeparam>
         /// <param name="source">A sequence of values to calculate the RootMeanSquare of.</param>
@@ -161,7 +161,7 @@ namespace LinqStatistics
 
             ArgumentNullException.ThrowIfNull(selector);
 
-            return source.Select(selector).RootMeanSquareNaN();
+           return source.Select(selector).RootMeanSquareNaN();
         }
 
         /// <summary>
@@ -208,7 +208,7 @@ namespace LinqStatistics
 
         /// <summary>
         /// Computes the RootMeanSquare of a sequence of nullable float values that are obtained
-        /// by invoking a transform function on each element of the input sequence.        
+        /// by invoking a transform function on each element of the input sequence.
         /// </summary>
         /// <typeparam name="TSource">The type of the elements of source.</typeparam>
         /// <param name="source">A sequence of values to calculate the RootMeanSquare of.</param>
@@ -225,7 +225,7 @@ namespace LinqStatistics
 
         /// <summary>
         /// Computes the RootMeanSquare of a sequence of float values that are obtained
-        /// by invoking a transform function on each element of the input sequence.        
+        /// by invoking a transform function on each element of the input sequence.
         /// </summary>
         /// <typeparam name="TSource">The type of the elements of source.</typeparam>
         /// <param name="source">A sequence of values to calculate the RootMeanSquare of.</param>
@@ -237,7 +237,7 @@ namespace LinqStatistics
 
             ArgumentNullException.ThrowIfNull(selector);
 
-            return source.Select(selector).RootMeanSquareNaN();
+           return source.Select(selector).RootMeanSquareNaN();
         }
 
         /// <summary>
@@ -284,7 +284,7 @@ namespace LinqStatistics
 
         /// <summary>
         /// Computes the RootMeanSquare of a sequence of nullable double values that are obtained
-        /// by invoking a transform function on each element of the input sequence.        
+        /// by invoking a transform function on each element of the input sequence.
         /// </summary>
         /// <typeparam name="TSource">The type of the elements of source.</typeparam>
         /// <param name="source">A sequence of values to calculate the RootMeanSquare of.</param>
@@ -301,7 +301,7 @@ namespace LinqStatistics
 
         /// <summary>
         /// Computes the RootMeanSquare of a sequence of double values that are obtained
-        /// by invoking a transform function on each element of the input sequence.        
+        /// by invoking a transform function on each element of the input sequence.
         /// </summary>
         /// <typeparam name="TSource">The type of the elements of source.</typeparam>
         /// <param name="source">A sequence of values to calculate the RootMeanSquare of.</param>
@@ -313,7 +313,7 @@ namespace LinqStatistics
 
             ArgumentNullException.ThrowIfNull(selector);
 
-            return source.Select(selector).RootMeanSquareNaN();
+           return source.Select(selector).RootMeanSquareNaN();
         }
-    }
+     }
 }

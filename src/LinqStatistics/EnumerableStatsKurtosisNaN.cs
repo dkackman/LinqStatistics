@@ -379,5 +379,5 @@ namespace LinqStatistics
 
             return source.Select(selector).KurtosisNaN();
         }
-    }
+     }
 }

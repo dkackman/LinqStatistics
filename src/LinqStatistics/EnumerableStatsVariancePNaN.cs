@@ -16,7 +16,7 @@ namespace LinqStatistics
         /// Computes the population Variance of a sequence of nullable int values.
         /// </summary>
         /// <param name="source">A sequence of nullable int values to calculate the population Variance of.</param>
-        /// <returns>       
+        /// <returns>
         ///     The Variance of the sequence of values, or null if the source sequence is
         ///     empty or contains only values that are null.
         /// </returns>
@@ -33,7 +33,7 @@ namespace LinqStatistics
         /// Computes the population Variance of a sequence of int values.
         /// </summary>
         /// <param name="source">A sequence of int values to calculate the population Variance of.</param>
-        /// <returns>       
+        /// <returns>
         ///     The Variance of the sequence of values.
         /// </returns>
         public static double VariancePNaN(this IEnumerable<int> source)
@@ -69,7 +69,7 @@ namespace LinqStatistics
         /// <typeparam name="TSource">The type of the elements of source.</typeparam>
         /// <param name="source">The sequence of elements.</param>
         /// <param name="selector">A transform function to apply to each element.</param>
-        /// <returns>       
+        /// <returns>
         ///     The Variance of the sequence of values.
         /// </returns>
         public static double? VariancePNaN<TSource>(this IEnumerable<TSource> source, Func<TSource, int?> selector)
@@ -88,7 +88,7 @@ namespace LinqStatistics
         /// <typeparam name="TSource">The type of the elements of source.</typeparam>
         /// <param name="source">The sequence of elements.</param>
         /// <param name="selector">A transform function to apply to each element.</param>
-        /// <returns>       
+        /// <returns>
         ///     The Variance of the sequence of values.
         /// </returns>
         public static double VariancePNaN<TSource>(this IEnumerable<TSource> source, Func<TSource, int> selector)
@@ -104,7 +104,7 @@ namespace LinqStatistics
         /// Computes the population Variance of a sequence of nullable long values.
         /// </summary>
         /// <param name="source">A sequence of nullable long values to calculate the population Variance of.</param>
-        /// <returns>       
+        /// <returns>
         ///     The Variance of the sequence of values, or null if the source sequence is
         ///     empty or contains only values that are null.
         /// </returns>
@@ -121,7 +121,7 @@ namespace LinqStatistics
         /// Computes the population Variance of a sequence of long values.
         /// </summary>
         /// <param name="source">A sequence of long values to calculate the population Variance of.</param>
-        /// <returns>       
+        /// <returns>
         ///     The Variance of the sequence of values.
         /// </returns>
         public static double VariancePNaN(this IEnumerable<long> source)
@@ -157,7 +157,7 @@ namespace LinqStatistics
         /// <typeparam name="TSource">The type of the elements of source.</typeparam>
         /// <param name="source">The sequence of elements.</param>
         /// <param name="selector">A transform function to apply to each element.</param>
-        /// <returns>       
+        /// <returns>
         ///     The Variance of the sequence of values.
         /// </returns>
         public static double? VariancePNaN<TSource>(this IEnumerable<TSource> source, Func<TSource, long?> selector)
@@ -176,7 +176,7 @@ namespace LinqStatistics
         /// <typeparam name="TSource">The type of the elements of source.</typeparam>
         /// <param name="source">The sequence of elements.</param>
         /// <param name="selector">A transform function to apply to each element.</param>
-        /// <returns>       
+        /// <returns>
         ///     The Variance of the sequence of values.
         /// </returns>
         public static double VariancePNaN<TSource>(this IEnumerable<TSource> source, Func<TSource, long> selector)
@@ -192,7 +192,7 @@ namespace LinqStatistics
         /// Computes the population Variance of a sequence of nullable float values.
         /// </summary>
         /// <param name="source">A sequence of nullable float values to calculate the population Variance of.</param>
-        /// <returns>       
+        /// <returns>
         ///     The Variance of the sequence of values, or null if the source sequence is
         ///     empty or contains only values that are null.
         /// </returns>
@@ -209,7 +209,7 @@ namespace LinqStatistics
         /// Computes the population Variance of a sequence of float values.
         /// </summary>
         /// <param name="source">A sequence of float values to calculate the population Variance of.</param>
-        /// <returns>       
+        /// <returns>
         ///     The Variance of the sequence of values.
         /// </returns>
         public static float VariancePNaN(this IEnumerable<float> source)
@@ -245,7 +245,7 @@ namespace LinqStatistics
         /// <typeparam name="TSource">The type of the elements of source.</typeparam>
         /// <param name="source">The sequence of elements.</param>
         /// <param name="selector">A transform function to apply to each element.</param>
-        /// <returns>       
+        /// <returns>
         ///     The Variance of the sequence of values.
         /// </returns>
         public static float? VariancePNaN<TSource>(this IEnumerable<TSource> source, Func<TSource, float?> selector)
@@ -264,7 +264,7 @@ namespace LinqStatistics
         /// <typeparam name="TSource">The type of the elements of source.</typeparam>
         /// <param name="source">The sequence of elements.</param>
         /// <param name="selector">A transform function to apply to each element.</param>
-        /// <returns>       
+        /// <returns>
         ///     The Variance of the sequence of values.
         /// </returns>
         public static float VariancePNaN<TSource>(this IEnumerable<TSource> source, Func<TSource, float> selector)
@@ -280,7 +280,7 @@ namespace LinqStatistics
         /// Computes the population Variance of a sequence of nullable double values.
         /// </summary>
         /// <param name="source">A sequence of nullable double values to calculate the population Variance of.</param>
-        /// <returns>       
+        /// <returns>
         ///     The Variance of the sequence of values, or null if the source sequence is
         ///     empty or contains only values that are null.
         /// </returns>
@@ -297,7 +297,7 @@ namespace LinqStatistics
         /// Computes the population Variance of a sequence of double values.
         /// </summary>
         /// <param name="source">A sequence of double values to calculate the population Variance of.</param>
-        /// <returns>       
+        /// <returns>
         ///     The Variance of the sequence of values.
         /// </returns>
         public static double VariancePNaN(this IEnumerable<double> source)
@@ -333,7 +333,7 @@ namespace LinqStatistics
         /// <typeparam name="TSource">The type of the elements of source.</typeparam>
         /// <param name="source">The sequence of elements.</param>
         /// <param name="selector">A transform function to apply to each element.</param>
-        /// <returns>       
+        /// <returns>
         ///     The Variance of the sequence of values.
         /// </returns>
         public static double? VariancePNaN<TSource>(this IEnumerable<TSource> source, Func<TSource, double?> selector)
@@ -352,7 +352,7 @@ namespace LinqStatistics
         /// <typeparam name="TSource">The type of the elements of source.</typeparam>
         /// <param name="source">The sequence of elements.</param>
         /// <param name="selector">A transform function to apply to each element.</param>
-        /// <returns>       
+        /// <returns>
         ///     The Variance of the sequence of values.
         /// </returns>
         public static double VariancePNaN<TSource>(this IEnumerable<TSource> source, Func<TSource, double> selector)
@@ -363,5 +363,5 @@ namespace LinqStatistics
 
             return source.Select(selector).VariancePNaN();
         }
-    }
+     }
 }

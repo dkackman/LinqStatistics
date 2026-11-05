@@ -342,4 +342,9 @@
     <IsAotCompatible>True</IsAotCompatible>
     <CheckForOverflowUnderflow>True</CheckForOverflowUnderflow>
   </PropertyGroup>
+  <!-- Opt-in: dotnet build -p:TransformT4=true (or dotnet pack/publish -p:TransformT4=true) -->
+  <Target Name="TransformT4Templates" BeforeTargets="BeforeBuild" Condition="'$(TransformT4)' == 'true'">
+    <Exec Condition="'$(OS)' == 'Windows_NT'" Command="powershell -NoProfile -ExecutionPolicy Bypass -File &quot;$(MSBuildProjectDirectory)\..\..\scripts\transform-t4.ps1&quot;" />
+    <Exec Condition="'$(OS)' != 'Windows_NT'" Command="bash &quot;$(MSBuildProjectDirectory)/../../scripts/transform-t4.sh&quot;" />
+  </Target>
 </Project>

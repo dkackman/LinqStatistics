@@ -416,5 +416,5 @@ namespace LinqStatistics
 
             return source.Select(selector).Skewness();
         }
-    }
+     }
 }

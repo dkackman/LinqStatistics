@@ -335,5 +335,5 @@ namespace LinqStatistics
 
             return source.Select(selector).PearsonNaN(other.Select(selector));
         }
-    }
+     }
 }

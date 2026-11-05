@@ -16,7 +16,7 @@ namespace LinqStatistics
         /// Computes the sample StandardDeviation of a sequence of nullable int values.
         /// </summary>
         /// <param name="source">A sequence of nullable int values to calculate the StandardDeviation of.</param>
-        /// <returns>       
+        /// <returns>
         ///     The StandardDeviation of the sequence of values, or null if the source sequence is
         ///     empty or contains only values that are null.
         /// </returns>
@@ -34,7 +34,7 @@ namespace LinqStatistics
         /// Computes the sample StandardDeviation of a sequence of int values.
         /// </summary>
         /// <param name="source">A sequence of int values to calculate the StandardDeviation of.</param>
-        /// <returns>       
+        /// <returns>
         ///     The StandardDeviation of the sequence of values.
         /// </returns>
         /// <remarks>![equation](~/images/stdev.gif)</remarks>
@@ -50,7 +50,7 @@ namespace LinqStatistics
         /// <typeparam name="TSource">The type of the elements of source.</typeparam>
         /// <param name="source">The sequence of elements.</param>
         /// <param name="selector">A transform function to apply to each element.</param>
-        /// <returns>       
+        /// <returns>
         ///     The StandardDeviation of the sequence of values.
         /// </returns>
         /// <remarks>![equation](~/images/stdev.gif)</remarks>
@@ -70,7 +70,7 @@ namespace LinqStatistics
         /// <typeparam name="TSource">The type of the elements of source.</typeparam>
         /// <param name="source">The sequence of elements.</param>
         /// <param name="selector">A transform function to apply to each element.</param>
-        /// <returns>       
+        /// <returns>
         ///     The StandardDeviation of the sequence of values.
         /// </returns>
         /// <remarks>![equation](~/images/stdev.gif)</remarks>
@@ -87,7 +87,7 @@ namespace LinqStatistics
         /// Computes the sample StandardDeviation of a sequence of nullable long values.
         /// </summary>
         /// <param name="source">A sequence of nullable long values to calculate the StandardDeviation of.</param>
-        /// <returns>       
+        /// <returns>
         ///     The StandardDeviation of the sequence of values, or null if the source sequence is
         ///     empty or contains only values that are null.
         /// </returns>
@@ -105,7 +105,7 @@ namespace LinqStatistics
         /// Computes the sample StandardDeviation of a sequence of long values.
         /// </summary>
         /// <param name="source">A sequence of long values to calculate the StandardDeviation of.</param>
-        /// <returns>       
+        /// <returns>
         ///     The StandardDeviation of the sequence of values.
         /// </returns>
         /// <remarks>![equation](~/images/stdev.gif)</remarks>
@@ -121,7 +121,7 @@ namespace LinqStatistics
         /// <typeparam name="TSource">The type of the elements of source.</typeparam>
         /// <param name="source">The sequence of elements.</param>
         /// <param name="selector">A transform function to apply to each element.</param>
-        /// <returns>       
+        /// <returns>
         ///     The StandardDeviation of the sequence of values.
         /// </returns>
         /// <remarks>![equation](~/images/stdev.gif)</remarks>
@@ -141,7 +141,7 @@ namespace LinqStatistics
         /// <typeparam name="TSource">The type of the elements of source.</typeparam>
         /// <param name="source">The sequence of elements.</param>
         /// <param name="selector">A transform function to apply to each element.</param>
-        /// <returns>       
+        /// <returns>
         ///     The StandardDeviation of the sequence of values.
         /// </returns>
         /// <remarks>![equation](~/images/stdev.gif)</remarks>
@@ -158,7 +158,7 @@ namespace LinqStatistics
         /// Computes the sample StandardDeviation of a sequence of nullable decimal values.
         /// </summary>
         /// <param name="source">A sequence of nullable decimal values to calculate the StandardDeviation of.</param>
-        /// <returns>       
+        /// <returns>
         ///     The StandardDeviation of the sequence of values, or null if the source sequence is
         ///     empty or contains only values that are null.
         /// </returns>
@@ -176,7 +176,7 @@ namespace LinqStatistics
         /// Computes the sample StandardDeviation of a sequence of decimal values.
         /// </summary>
         /// <param name="source">A sequence of decimal values to calculate the StandardDeviation of.</param>
-        /// <returns>       
+        /// <returns>
         ///     The StandardDeviation of the sequence of values.
         /// </returns>
         /// <remarks>![equation](~/images/stdev.gif)</remarks>
@@ -192,7 +192,7 @@ namespace LinqStatistics
         /// <typeparam name="TSource">The type of the elements of source.</typeparam>
         /// <param name="source">The sequence of elements.</param>
         /// <param name="selector">A transform function to apply to each element.</param>
-        /// <returns>       
+        /// <returns>
         ///     The StandardDeviation of the sequence of values.
         /// </returns>
         /// <remarks>![equation](~/images/stdev.gif)</remarks>
@@ -212,7 +212,7 @@ namespace LinqStatistics
         /// <typeparam name="TSource">The type of the elements of source.</typeparam>
         /// <param name="source">The sequence of elements.</param>
         /// <param name="selector">A transform function to apply to each element.</param>
-        /// <returns>       
+        /// <returns>
         ///     The StandardDeviation of the sequence of values.
         /// </returns>
         /// <remarks>![equation](~/images/stdev.gif)</remarks>
@@ -229,7 +229,7 @@ namespace LinqStatistics
         /// Computes the sample StandardDeviation of a sequence of nullable float values.
         /// </summary>
         /// <param name="source">A sequence of nullable float values to calculate the StandardDeviation of.</param>
-        /// <returns>       
+        /// <returns>
         ///     The StandardDeviation of the sequence of values, or null if the source sequence is
         ///     empty or contains only values that are null.
         /// </returns>
@@ -247,7 +247,7 @@ namespace LinqStatistics
         /// Computes the sample StandardDeviation of a sequence of float values.
         /// </summary>
         /// <param name="source">A sequence of float values to calculate the StandardDeviation of.</param>
-        /// <returns>       
+        /// <returns>
         ///     The StandardDeviation of the sequence of values.
         /// </returns>
         /// <remarks>![equation](~/images/stdev.gif)</remarks>
@@ -263,7 +263,7 @@ namespace LinqStatistics
         /// <typeparam name="TSource">The type of the elements of source.</typeparam>
         /// <param name="source">The sequence of elements.</param>
         /// <param name="selector">A transform function to apply to each element.</param>
-        /// <returns>       
+        /// <returns>
         ///     The StandardDeviation of the sequence of values.
         /// </returns>
         /// <remarks>![equation](~/images/stdev.gif)</remarks>
@@ -283,7 +283,7 @@ namespace LinqStatistics
         /// <typeparam name="TSource">The type of the elements of source.</typeparam>
         /// <param name="source">The sequence of elements.</param>
         /// <param name="selector">A transform function to apply to each element.</param>
-        /// <returns>       
+        /// <returns>
         ///     The StandardDeviation of the sequence of values.
         /// </returns>
         /// <remarks>![equation](~/images/stdev.gif)</remarks>
@@ -300,7 +300,7 @@ namespace LinqStatistics
         /// Computes the sample StandardDeviation of a sequence of nullable double values.
         /// </summary>
         /// <param name="source">A sequence of nullable double values to calculate the StandardDeviation of.</param>
-        /// <returns>       
+        /// <returns>
         ///     The StandardDeviation of the sequence of values, or null if the source sequence is
         ///     empty or contains only values that are null.
         /// </returns>
@@ -318,7 +318,7 @@ namespace LinqStatistics
         /// Computes the sample StandardDeviation of a sequence of double values.
         /// </summary>
         /// <param name="source">A sequence of double values to calculate the StandardDeviation of.</param>
-        /// <returns>       
+        /// <returns>
         ///     The StandardDeviation of the sequence of values.
         /// </returns>
         /// <remarks>![equation](~/images/stdev.gif)</remarks>
@@ -334,7 +334,7 @@ namespace LinqStatistics
         /// <typeparam name="TSource">The type of the elements of source.</typeparam>
         /// <param name="source">The sequence of elements.</param>
         /// <param name="selector">A transform function to apply to each element.</param>
-        /// <returns>       
+        /// <returns>
         ///     The StandardDeviation of the sequence of values.
         /// </returns>
         /// <remarks>![equation](~/images/stdev.gif)</remarks>
@@ -354,7 +354,7 @@ namespace LinqStatistics
         /// <typeparam name="TSource">The type of the elements of source.</typeparam>
         /// <param name="source">The sequence of elements.</param>
         /// <param name="selector">A transform function to apply to each element.</param>
-        /// <returns>       
+        /// <returns>
         ///     The StandardDeviation of the sequence of values.
         /// </returns>
         /// <remarks>![equation](~/images/stdev.gif)</remarks>
@@ -366,5 +366,5 @@ namespace LinqStatistics
 
             return source.Select(selector).StandardDeviation();
         }
-    }
+     }
 }

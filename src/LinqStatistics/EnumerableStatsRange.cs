@@ -11,7 +11,7 @@ namespace LinqStatistics
 {
     public static partial class EnumerableStats
     {
-    	
+
         /// <summary>
         /// Computes the Range of a sequence of nullable int values.
         /// </summary>
@@ -70,7 +70,7 @@ namespace LinqStatistics
 
             return source.Select(selector).Range();
         }
- 	
+
         /// <summary>
         /// Computes the Range of a sequence of nullable long values.
         /// </summary>
@@ -129,7 +129,7 @@ namespace LinqStatistics
 
             return source.Select(selector).Range();
         }
- 	
+
         /// <summary>
         /// Computes the Range of a sequence of nullable float values.
         /// </summary>
@@ -188,7 +188,7 @@ namespace LinqStatistics
 
             return source.Select(selector).Range();
         }
- 	
+
         /// <summary>
         /// Computes the Range of a sequence of nullable double values.
         /// </summary>
@@ -247,7 +247,7 @@ namespace LinqStatistics
 
             return source.Select(selector).Range();
         }
- 	
+
         /// <summary>
         /// Computes the Range of a sequence of nullable decimal values.
         /// </summary>
@@ -306,7 +306,7 @@ namespace LinqStatistics
 
             return source.Select(selector).Range();
         }
- 	
+
         /// <summary>
         /// Computes the Range of a sequence of nullable Int128 values.
         /// </summary>

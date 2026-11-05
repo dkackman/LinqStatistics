@@ -276,5 +276,5 @@ namespace LinqStatistics
             // Also can just use one list's count since we check that both are of the same length
             return covariance / listSource.Count;
         }
-    }
+     }
 }
